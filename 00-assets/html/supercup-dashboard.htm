@@ -397,11 +397,8 @@
     }
 
     function mediaUrl(file) {
-      try {
-        return new URL(String(file || ""), "../../00-eslmedia/").toString();
-      } catch (error) {
-        return "#";
-      }
+      const clean = String(file || "").replace(/^(\.\/|\.\.\/)+/, "");
+      return clean ? `../../00-eslmedia/content/${clean}` : "#";
     }
 
     function mediaRelevance(article, leagueToken, activeSection) {

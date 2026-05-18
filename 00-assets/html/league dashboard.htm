@@ -186,7 +186,8 @@
       leaders: "../../00-build/database/leaders.json",
       injuries: "../../00-build/database/injuries.json",
       capreport: "../../00-build/database/capreport.json",
-      players: "../../00-build/database/players.json"
+      players: "../../00-build/database/players.json",
+      schedule: "../../00-build/database/schedule.json"
     };
 
     const PAGE_VIEWPORT = "width=device-width, initial-scale=1.0";
@@ -238,7 +239,7 @@
       }
     }
 
-    const state = { standings: [], leaders: [], injuries: [], capreport: [], players: [], activeLeagueSlug: null };
+    const state = { standings: [], leaders: [], injuries: [], capreport: [], players: [], scheduleSections: [], activeLeagueSlug: null };
     const shortLeagueLabel = (title) => String(title || "").replace(/\s+Standings$/i, "").trim();
     const num = (value) => Number.isFinite(Number(value)) ? Number(value) : 0;
     const formatSigned = (value) => { const n = num(value); return `${n > 0 ? "+" : ""}${n.toFixed(1)}`; };
@@ -311,8 +312,51 @@
       root.querySelectorAll(".league-btn").forEach((btn) => btn.addEventListener("click", () => { state.activeLeagueSlug = btn.dataset.slug; renderDashboard(); }));
     }
 
-    function getRaceMeta(activeSection, index, total) {
-      const token = extractLeagueToken(activeSection && activeSection.title);
+    function rosterId(value) {
+      return String(value || "").replace(/^.*[\\/]/, "").replace(/\.html?$/i, "").toLowerCase();
+    }
+
+    function isRegularSeasonSection(section) {
+      return /regular season/i.test(String(section && section.title || ""));
+    }
+
+    function buildRemainingGamesByTeam() {
+      const sections = state.scheduleSections.filter(isRegularSeasonSection);
+      const remaining = {};
+      sections.forEach((section) => {
+        (section.days || []).forEach((day) => {
+          (day.games || []).forEach((game) => {
+            if (String(game.status || "").toLowerCase() !== "scheduled") return;
+            [game.homeTeam, game.awayTeam].forEach((teamId) => {
+              const key = rosterId(teamId);
+              if (!key) return;
+              remaining[key] = (remaining[key] || 0) + 1;
+            });
+          });
+        });
+      });
+      return remaining;
+    }
+
+    function teamRemainingGames(team, remainingByTeam) {
+      return remainingByTeam[rosterId(team.rosterFile || team.rosterUrl)] || 0;
+    }
+
+    function isGuaranteedTopSlot(team, teams, slots, remainingByTeam) {
+      const minWins = num(team.wins);
+      const possibleChasers = teams.filter((other) => other !== team).filter((other) =>
+        num(other.wins) + teamRemainingGames(other, remainingByTeam) >= minWins
+      );
+      return possibleChasers.length < slots;
+    }
+
+    function isGuaranteedBottomSlot(team, teams, slots, remainingByTeam) {
+      const maxWins = num(team.wins) + teamRemainingGames(team, remainingByTeam);
+      const definitelyAhead = teams.filter((other) => other !== team).filter((other) => num(other.wins) > maxWins);
+      return definitelyAhead.length >= teams.length - slots;
+    }
+
+    function getRaceHighlightMeta(token, index, total) {
       if (token === "CLB" && index === 0) return { className: "race-champion", label: "Champ" };
       if (token === "CLB" && index >= total - 2) return { className: "race-relegated", label: "Rel" };
       if (token === "ELB" && index <= 1) return { className: "race-promoted", label: "Prom" };
@@ -321,19 +365,39 @@
       return { className: "", label: "" };
     }
 
+    function isRaceLabelGuaranteed(token, label, team, teams, remainingByTeam) {
+      if (token === "CLB" && label === "Champ") return isGuaranteedTopSlot(team, teams, 1, remainingByTeam);
+      if (token === "CLB" && label === "Rel") return isGuaranteedBottomSlot(team, teams, 2, remainingByTeam);
+      if (token === "ELB" && label === "Prom") return isGuaranteedTopSlot(team, teams, 2, remainingByTeam);
+      if (token === "ELB" && label === "Rel") return isGuaranteedBottomSlot(team, teams, 1, remainingByTeam);
+      if (token === "ECL" && label === "Prom") return isGuaranteedTopSlot(team, teams, 1, remainingByTeam);
+      return false;
+    }
+
+    function getRaceMeta(activeSection, team, teams, index, remainingByTeam) {
+      const token = extractLeagueToken(activeSection && activeSection.title);
+      const highlight = getRaceHighlightMeta(token, index, teams.length);
+      if (!highlight.label) return highlight;
+      return {
+        className: highlight.className,
+        label: isRaceLabelGuaranteed(token, highlight.label, team, teams, remainingByTeam) ? highlight.label : ""
+      };
+    }
+
     function renderStandings(activeSection) {
       const standingsBody = document.getElementById("standingsBody");
       const standingsCards = document.getElementById("standingsCards");
       const teams = [...(activeSection.teams || [])].sort((a, b) => num(b.wins) - num(a.wins) || num(a.losses) - num(b.losses));
+      const remainingByTeam = buildRemainingGamesByTeam();
       standingsBody.innerHTML = teams.map((team, index) => {
         const diffClass = num(team.diff) >= 0 ? "diff-pos" : "diff-neg";
-        const race = getRaceMeta(activeSection, index, teams.length);
+        const race = getRaceMeta(activeSection, team, teams, index, remainingByTeam);
         const raceLabel = race.label ? `<span class="race-pill">${race.label}</span>` : "";
         return `<tr class="${race.className}"><td class="team-name"><a href="${normalizeHref(team.rosterUrl)}">${team.team}</a>${raceLabel}</td><td>${team.wins}-${team.losses}</td><td>${formatGb(team.gb)}</td><td class="${diffClass}">${formatSigned(team.diff)}</td><td>${team.streak || "-"}</td></tr>`;
       }).join("");
       standingsCards.innerHTML = teams.map((team, index) => {
         const diffClass = num(team.diff) >= 0 ? "diff-pos" : "diff-neg";
-        const race = getRaceMeta(activeSection, index, teams.length);
+        const race = getRaceMeta(activeSection, team, teams, index, remainingByTeam);
         const raceLabel = race.label ? `<span class="race-pill">${race.label}</span>` : "";
         return `<a class="standing-card ${race.className}" href="${normalizeHref(team.rosterUrl)}">
           <div class="standing-card-head"><div class="standing-card-team">${team.team}${raceLabel}</div><div class="standing-card-rank">#${index + 1}</div></div>
@@ -401,11 +465,8 @@
     }
 
     function mediaUrl(file) {
-      try {
-        return new URL(String(file || ""), "../../00-eslmedia/").toString();
-      } catch (error) {
-        return "#";
-      }
+      const clean = String(file || "").replace(/^(\.\/|\.\.\/)+/, "");
+      return clean ? `../../00-eslmedia/content/${clean}` : "#";
     }
 
     function mediaRelevance(article, leagueToken, activeSection) {
@@ -511,18 +572,20 @@
       const status = document.getElementById("statusText");
       try {
         setParentFluidContent(true);
-        const [standingsRes, leadersRes, injuriesRes, capRes, playersRes] = await Promise.all([fetch(DATA_URLS.standings), fetch(DATA_URLS.leaders), fetch(DATA_URLS.injuries), fetch(DATA_URLS.capreport), fetch(DATA_URLS.players)]);
-        if (!standingsRes.ok || !leadersRes.ok || !injuriesRes.ok || !capRes.ok || !playersRes.ok) throw new Error("One or more feeds failed to load");
+        const [standingsRes, leadersRes, injuriesRes, capRes, playersRes, scheduleRes] = await Promise.all([fetch(DATA_URLS.standings), fetch(DATA_URLS.leaders), fetch(DATA_URLS.injuries), fetch(DATA_URLS.capreport), fetch(DATA_URLS.players), fetch(DATA_URLS.schedule)]);
+        if (!standingsRes.ok || !leadersRes.ok || !injuriesRes.ok || !capRes.ok || !playersRes.ok || !scheduleRes.ok) throw new Error("One or more feeds failed to load");
         const standingsData = await standingsRes.json();
         const leadersData = await leadersRes.json();
         const injuriesData = await injuriesRes.json();
         const capData = await capRes.json();
         const playersData = await playersRes.json();
+        const scheduleData = await scheduleRes.json();
         state.standings = Array.isArray(standingsData.sections) ? standingsData.sections : [];
         state.leaders = Array.isArray(leadersData.sections) ? leadersData.sections : [];
         state.injuries = Array.isArray(injuriesData.injuries) ? injuriesData.injuries : [];
         state.capreport = Array.isArray(capData.sections) ? capData.sections : [];
         state.players = Array.isArray(playersData) ? playersData : [];
+        state.scheduleSections = Array.isArray(scheduleData.sections) ? scheduleData.sections : [];
         if (!state.standings.length) throw new Error("Standings feed is empty");
         state.activeLeagueSlug = state.standings[0].slug;
         renderDashboard();
