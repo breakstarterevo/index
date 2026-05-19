@@ -130,6 +130,61 @@ def slugify(value):
     return re.sub(r"[^a-z0-9]+", "_", text).strip("_")
 
 
+def parse_two_column_player_table(html, title, first_key, second_key):
+    table_match = re.search(
+        rf"<td class=tableheader[^>]*>\s*&nbsp;{re.escape(title)}</td></tr>(.*?)</table>",
+        html,
+        re.IGNORECASE | re.DOTALL,
+    )
+    if not table_match:
+        return []
+
+    rows = []
+    row_matches = re.finditer(
+        r"<tr(?:[^>]*class=(?P<class>[^\s>]+)[^>]*)?>(?P<html>.*?)</tr>",
+        table_match.group(1),
+        re.IGNORECASE | re.DOTALL,
+    )
+    for row_match in row_matches:
+        cells = re.findall(
+            r"<td[^>]*class=main[^>]*>(.*?)</td>",
+            row_match.group("html"),
+            re.IGNORECASE | re.DOTALL,
+        )
+        if len(cells) < 2:
+            continue
+
+        rows.append(
+            {
+                first_key: strip_tags(cells[0]),
+                second_key: strip_tags(cells[1]),
+                "rowClass": (row_match.group("class") or "").lower(),
+            }
+        )
+    return rows
+
+
+def parse_player_awards_and_achievements(html):
+    awards = parse_two_column_player_table(html, "Awards & Achievements", "season", "award")
+    for award in awards:
+        text = award.get("award", "")
+        count_match = re.match(r"^(?P<label>.*?):\s*(?P<count>\d+)$", text)
+        award["isTotal"] = award.get("season") == "Total"
+        if count_match:
+            award["label"] = clean(count_match.group("label"))
+            award["count"] = int(count_match.group("count"))
+
+    return {
+        "awards": awards,
+        "achievementTotals": [award for award in awards if award.get("isTotal")],
+        "seasonAwards": [award for award in awards if not award.get("isTotal")],
+    }
+
+
+def parse_player_transactions(html):
+    return parse_two_column_player_table(html, "Transactions", "date", "action")
+
+
 def make_unique_headers(headers):
     counts = {}
     unique = []
@@ -476,6 +531,8 @@ def parse_player_page(html, filename, team_lookup, ratings_by_name):
         "source": "player_page",
     }
     player.update(parse_current_salary(html))
+    player.update(parse_player_awards_and_achievements(html))
+    player["transactions"] = parse_player_transactions(html)
 
     for key, value in zip(ATTR_KEYS, attr_values):
         player[key] = value

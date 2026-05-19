@@ -419,13 +419,15 @@
       display: flex;
       flex-direction: column;
     }
-    .stats-panel .gamelog-panel {
+    .stats-panel .gamelog-panel,
+    .stats-panel .history-panel {
       border: 0;
       background: transparent;
       margin: 0;
       min-width: 0;
     }
-    .stats-panel .gamelog-panel .panel-head {
+    .stats-panel .gamelog-panel .panel-head,
+    .stats-panel .history-panel .panel-head {
       border-top: 1px solid var(--line);
     }
     .stats-panel .panel-head {
@@ -658,6 +660,42 @@
     .gamelog-wrap .gamelog-table th:nth-child(2) {
       z-index: 8;
     }
+    .history-wrap {
+      max-height: min(42vh, 360px);
+      overflow: auto;
+      border-bottom: 1px solid var(--line);
+      scrollbar-gutter: stable;
+    }
+    .history-wrap .history-table {
+      min-width: min(620px, 100%);
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .history-wrap .history-table th,
+    .history-wrap .history-table td {
+      font-size: 0.76rem;
+      padding: 0.32rem 0.42rem;
+      text-align: left;
+    }
+    .history-wrap .history-table th:first-child,
+    .history-wrap .history-table td:first-child,
+    .history-wrap .history-table th:nth-child(2),
+    .history-wrap .history-table td:nth-child(2) {
+      left: auto;
+      min-width: 0;
+      position: static;
+      width: auto;
+      z-index: auto;
+    }
+    .history-wrap .history-table th:first-child,
+    .history-wrap .history-table td:first-child {
+      width: 86px;
+      white-space: nowrap;
+    }
+    .history-wrap .history-table th:nth-child(2),
+    .history-wrap .history-table td:nth-child(2) {
+      white-space: normal;
+    }
     @media (max-width: 1050px) {
       .player-header {
         grid-template-columns: 1fr;
@@ -834,6 +872,24 @@
           </div>
           <div class="table-wrap gamelog-wrap">
             <table class="data-table gamelog-table" id="gamelogTable"></table>
+          </div>
+        </div>
+        <div class="history-panel" id="awardsPanel">
+          <div class="panel-head">
+            <h2 class="panel-title">Awards &amp; Achievements</h2>
+            <div class="note" id="awardsNote">Career honors</div>
+          </div>
+          <div class="table-wrap history-wrap">
+            <table class="data-table history-table" id="awardsTable"></table>
+          </div>
+        </div>
+        <div class="history-panel" id="transactionsPanel">
+          <div class="panel-head">
+            <h2 class="panel-title">Transactions</h2>
+            <div class="note" id="transactionsNote">Player movement</div>
+          </div>
+          <div class="table-wrap history-wrap">
+            <table class="data-table history-table" id="transactionsTable"></table>
           </div>
         </div>
       </section>
@@ -1335,6 +1391,44 @@
       makeTableSortable(table);
     }
 
+    function renderTwoColumnHistoryTable(tableId, noteId, rows, columns, emptyText) {
+      const table = document.getElementById(tableId);
+      const note = document.getElementById(noteId);
+      const safeRows = Array.isArray(rows) ? rows : [];
+      if (note) {
+        note.textContent = safeRows.length ? `${safeRows.length} row${safeRows.length === 1 ? "" : "s"}` : "No records";
+      }
+      if (!safeRows.length) {
+        table.innerHTML = `<tbody><tr><td><div class="empty">${escapeHtml(emptyText)}</div></td></tr></tbody>`;
+        return;
+      }
+      const head = `<thead><tr>${columns.map((column) => `<th>${escapeHtml(column.label)}</th>`).join("")}</tr></thead>`;
+      const body = safeRows.map((row) => {
+        const trClass = row && row.rowClass ? ` class="${escapeHtml(row.rowClass)}"` : "";
+        return `<tr${trClass}>${columns.map((column) => `<td>${fmt(row && row[column.key])}</td>`).join("")}</tr>`;
+      }).join("");
+      table.innerHTML = `${head}<tbody>${body}</tbody>`;
+      makeTableSortable(table);
+    }
+
+    function renderAwardsAndTransactions() {
+      const player = state.current || {};
+      renderTwoColumnHistoryTable(
+        "awardsTable",
+        "awardsNote",
+        player.awards,
+        [{ key: "season", label: "Season" }, { key: "award", label: "Award" }],
+        "No awards or achievements"
+      );
+      renderTwoColumnHistoryTable(
+        "transactionsTable",
+        "transactionsNote",
+        player.transactions,
+        [{ key: "date", label: "Date" }, { key: "action", label: "Action" }],
+        "No transactions"
+      );
+    }
+
     function getPlayerMediaMatchSlugs(player) {
       const set = new Set();
       if (!player) return set;
@@ -1582,6 +1676,7 @@
         renderTabs();
         renderTable();
         renderGameLogs();
+        renderAwardsAndTransactions();
         await renderPlayerArticles();
       } catch (error) {
         document.getElementById("playerName").textContent = "Unified player unavailable";
