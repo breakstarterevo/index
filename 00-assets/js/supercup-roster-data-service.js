@@ -6,6 +6,9 @@
     playerStats: "../../00-build/database/supercup/player_stats.json",
     schedule: "../../00-build/database/supercup/schedule.json",
     injuries: "../../00-build/database/supercup/injuries.json",
+    capReport: "../../00-build/database/supercup/capreport.json",
+    monthlyTeamForm: "../../00-build/database/supercup/monthly/monthly_team_form.json",
+    teamStats: "../../00-build/database/supercup/team_stats.json",
     humanCoaches: "../../00-SuperCup/humancoaches.htm"
   };
 
@@ -13,6 +16,54 @@
     baseData: null,
     rosterBundleByFile: new Map()
   };
+
+  function repoRootPrefix() {
+    if (!window.location || !window.location.pathname) return "";
+    const marker = "/00-assets/";
+    const markerIndex = window.location.pathname.indexOf(marker);
+    return markerIndex >= 0 ? window.location.pathname.slice(0, markerIndex) : "";
+  }
+
+  function rootCandidate(path) {
+    const clean = String(path || "").replace(/^(\.\.\/)+/, "").replace(/^\.\/+/, "");
+    return `${repoRootPrefix()}/${clean}`.replace(/\/{2,}/g, "/");
+  }
+
+  function pathCandidates(path) {
+    const urls = [path, rootCandidate(path)];
+    return urls.filter(Boolean).filter((url, index) => urls.indexOf(url) === index);
+  }
+
+  function cacheBust(url) {
+    const joiner = String(url).includes("?") ? "&" : "?";
+    return `${url}${joiner}v=${Date.now()}`;
+  }
+
+  async function fetchFirst(path) {
+    let lastResponse = null;
+    for (const candidate of pathCandidates(path)) {
+      try {
+        const res = await fetch(cacheBust(candidate), { cache: "no-store" });
+        if (res.ok) return res;
+        lastResponse = res;
+      } catch (error) {
+        // Try the next portable path candidate.
+      }
+    }
+    return lastResponse || fetch(path);
+  }
+
+  async function optionalJson(path) {
+    for (const candidate of pathCandidates(path)) {
+      try {
+        const res = await fetch(cacheBust(candidate), { cache: "no-store" });
+        if (res.ok) return await res.json();
+      } catch (error) {
+        // Optional feeds should not block the roster page.
+      }
+    }
+    return null;
+  }
 
   function normalizeRosterFile(v) {
     const s = String(v || "").trim();
@@ -82,14 +133,17 @@
   async function loadBaseData(paths = DEFAULT_PATHS) {
     if (cache.baseData) return cache.baseData;
 
-    const [standingsRes, teamsRes, playersRes, playerStatsRes, scheduleRes, injuriesRes, coachesRes] = await Promise.all([
-      fetch(paths.standings),
-      fetch(paths.teams),
-      fetch(paths.players),
-      fetch(paths.playerStats),
-      fetch(paths.schedule),
-      fetch(paths.injuries),
-      fetch(paths.humanCoaches)
+    const [standingsRes, teamsRes, playersRes, playerStatsRes, scheduleRes, injuriesRes, coachesRes, capReportData, monthlyTeamFormData, teamStatsData] = await Promise.all([
+      fetchFirst(paths.standings),
+      fetchFirst(paths.teams),
+      fetchFirst(paths.players),
+      fetchFirst(paths.playerStats),
+      fetchFirst(paths.schedule),
+      fetchFirst(paths.injuries),
+      fetchFirst(paths.humanCoaches),
+      optionalJson(paths.capReport),
+      optionalJson(paths.monthlyTeamForm),
+      optionalJson(paths.teamStats)
     ]);
 
     const [standingsData, teamsData, playersData, playerStatsData, scheduleData, injuriesData, coachesHtml] = await Promise.all([
@@ -109,6 +163,9 @@
       playerStats: Array.isArray(playerStatsData.players) ? playerStatsData.players : [],
       scheduleSections: Array.isArray(scheduleData.sections) ? scheduleData.sections : [],
       injuries: Array.isArray(injuriesData.injuries) ? injuriesData.injuries : [],
+      capReport: capReportData && Array.isArray(capReportData.sections) ? capReportData.sections : [],
+      monthlyTeamForm: monthlyTeamFormData && monthlyTeamFormData.tiers ? monthlyTeamFormData.tiers : {},
+      teamStats: teamStatsData && Array.isArray(teamStatsData.teams) ? teamStatsData.teams : [],
       coachesByRoster: parseCoachMap(coachesHtml)
     };
 

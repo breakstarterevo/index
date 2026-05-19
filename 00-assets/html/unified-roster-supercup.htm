@@ -31,8 +31,9 @@
       margin: 0;
       display: grid;
       gap: 0.9rem;
-      overflow-x: auto;
+      overflow-x: visible;
       padding-bottom: 0.2rem;
+      position: relative;
     }
     .hero {
       display: grid;
@@ -299,6 +300,182 @@
       gap: 0.9rem;
       align-items: stretch;
     }
+    .gm-layout {
+      display: grid;
+      grid-template-columns: minmax(500px, 0.92fr) minmax(520px, 1.08fr);
+      gap: 0.9rem;
+      align-items: start;
+      position: relative;
+    }
+    .gm-layout > .top-modules {
+      display: contents;
+    }
+    .gm-dashboard-panel {
+      position: absolute;
+      top: 0.8rem;
+      left: calc(100% + 0.9rem);
+      width: 320px;
+      z-index: 1;
+    }
+    .gm-dashboard-grid {
+      display: grid;
+      gap: 0.55rem;
+    }
+    .gm-card {
+      border: 1px solid var(--line);
+      background: #fbfaf6;
+      padding: 0.55rem;
+    }
+    .gm-card h3 {
+      margin: 0 0 0.45rem;
+      color: var(--team-color);
+      font-size: 0.64rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .gm-stat-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.42rem;
+    }
+    .gm-stat-grid div {
+      border-left: 3px solid var(--team-color);
+      background: #fff;
+      padding: 0.36rem 0.42rem;
+    }
+    .gm-stat-grid span,
+    .gm-bar-label,
+    .gm-bar-value {
+      color: var(--muted);
+      display: block;
+      font-size: 0.58rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .gm-stat-grid strong {
+      display: block;
+      margin-top: 0.12rem;
+      font-family: var(--font-serif);
+      font-size: 0.96rem;
+      line-height: 1.05;
+    }
+    .gm-chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.32rem;
+    }
+    .gm-chip {
+      border: 1px solid var(--line);
+      background: #fff;
+      color: var(--muted);
+      font-size: 0.58rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      padding: 0.18rem 0.3rem;
+      text-transform: uppercase;
+    }
+    .gm-chip.stable {
+      background: #e8f5e9;
+      border-color: #b7d9bb;
+      color: #285b2c;
+    }
+    .gm-chip.watch {
+      background: #fff4d6;
+      border-color: #e0c56c;
+      color: #765b00;
+    }
+    .gm-chip.critical {
+      background: #ffe2e2;
+      border-color: #e0a0a0;
+      color: #8a1f1f;
+    }
+    .gm-bar-row {
+      display: grid;
+      grid-template-columns: 42px minmax(0, 1fr) 82px;
+      gap: 0.42rem;
+      align-items: center;
+      margin: 0.28rem 0;
+    }
+    .gm-bar-track {
+      height: 0.48rem;
+      background: #ece7dc;
+      border: 1px solid var(--line);
+    }
+    .gm-bar-track span {
+      display: block;
+      height: 100%;
+      background: linear-gradient(90deg, var(--team-color), var(--team-color-2));
+    }
+    .gm-mini-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      gap: 0.34rem;
+    }
+    .gm-mini-list li {
+      display: flex;
+      justify-content: space-between;
+      gap: 0.6rem;
+      border-bottom: 1px solid rgba(217, 210, 194, 0.72);
+      padding-bottom: 0.3rem;
+      font-size: 0.74rem;
+      line-height: 1.25;
+    }
+    .gm-mini-list li:last-child {
+      border-bottom: 0;
+      padding-bottom: 0;
+    }
+    .gm-mini-list a {
+      color: inherit;
+      font-weight: 800;
+      text-decoration: none;
+    }
+    .gm-mini-list a:hover {
+      color: var(--team-color);
+      text-decoration: underline;
+    }
+    .gm-mini-list strong {
+      color: var(--team-color);
+      flex: 0 0 auto;
+      font-size: 0.64rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .gm-mini-list em {
+      color: var(--muted);
+      display: block;
+      font-size: 0.64rem;
+      font-style: normal;
+      margin-top: 0.08rem;
+    }
+    .gm-count {
+      color: var(--team-color);
+      float: right;
+      font-family: var(--font-serif);
+      font-size: 1.55rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-left: 0.45rem;
+    }
+    .gm-subhead {
+      color: #e4002b;
+      font-size: 0.6rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      margin: 0.45rem 0 0.18rem;
+      text-transform: uppercase;
+    }
+    .gm-subhead:first-of-type {
+      margin-top: 0;
+    }
+    .gm-empty {
+      color: var(--muted);
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.25rem 0;
+    }
     .top-modules > .panel {
       display: flex;
       flex-direction: column;
@@ -311,9 +488,9 @@
       min-width: 0;
       display: flex;
       align-items: flex-start;
-      overflow: auto;
-      -webkit-overflow-scrolling: touch;
-      overscroll-behavior: contain;
+      overflow: visible;
+      position: relative;
+      z-index: 2;
     }
     #seasonInfoTable {
       min-width: 0;
@@ -385,7 +562,9 @@
       border: 1px solid #7c7c7c;
       background: #d7d7d7;
       padding: 0.55rem;
-      width: min(560px, 100%);
+      width: min(500px, 100%);
+      margin-left: auto;
+      margin-right: auto;
     }
     .weekday-grid,
     .day-grid {
@@ -552,9 +731,12 @@
       .hero { grid-template-columns: 70px 1fr; }
       .hero-actions { grid-column: 1 / -1; justify-items: stretch; }
       .team-picker, .btn-link { min-width: 0; width: 100%; }
-      .top-modules { grid-template-columns: 1fr; }
+      .gm-layout { grid-template-columns: 1fr; }
+      .gm-dashboard-panel { order: 2; position: static; grid-column: auto; width: auto; }
+      .gm-layout > .top-modules { display: grid; grid-template-columns: 1fr; }
       .top-modules .table-wrap.season-info-scroll {
-        max-height: min(56vh, 520px);
+        overflow: auto;
+        max-height: none;
       }
     }
     .panel-head-end {
@@ -805,8 +987,9 @@
       </div>
     </section>
 
-    <section class="top-modules">
-      <section class="panel schedule-panel">
+    <section class="gm-layout">
+      <section class="top-modules">
+        <section class="panel schedule-panel">
         <div class="panel-head">
           <h2 class="panel-title">Season Schedule</h2>
           <div class="status" id="scheduleStatus"></div>
@@ -829,16 +1012,25 @@
           </div>
         </div>
         <div class="schedule-list" id="scheduleList" hidden></div>
-      </section>
+        </section>
 
-      <section class="panel">
+        <section class="panel">
         <div class="panel-head">
           <h2 class="panel-title">Season Info</h2>
         </div>
         <div class="table-wrap season-info-scroll">
           <table class="data-table" id="seasonInfoTable"></table>
         </div>
+        </section>
       </section>
+
+      <aside class="panel gm-dashboard-panel">
+        <div class="panel-head">
+          <h2 class="panel-title">GM Dashboard</h2>
+          <div class="status">Roster office</div>
+        </div>
+        <div class="gm-dashboard-grid" id="gmDashboardBody"></div>
+      </aside>
     </section>
 
     <section class="panel roster-data-panel">
@@ -877,7 +1069,8 @@
   </main>
 
   <script src="../js/supercup-player-page-destination.js"></script>
-  <script src="../js/supercup-roster-data-service.js"></script>
+  <script src="../js/supercup-roster-data-service.js?v=gm-dashboard-feeds-2"></script>
+  <script src="../js/gm-dashboard.js?v=gm-dashboard-feeds-2"></script>
   <script>
 
     const COLUMN_PRESET_KEY = "unifiedRosterColumnPreset";
@@ -916,6 +1109,9 @@
       playerStats: [],
       scheduleSections: [],
       injuries: [],
+      capReport: [],
+      monthlyTeamForm: {},
+      teamStats: [],
       coachesByRoster: {},
       teamDirectory: [],
       current: null,
@@ -964,7 +1160,7 @@
         }
         if (content) {
           content.style.minWidth = enabled ? "0" : "";
-          content.style.overflowX = enabled ? "hidden" : "";
+          content.style.overflowX = enabled ? "visible" : "";
         }
         if (shell) {
           shell.style.minWidth = enabled ? "0" : "";
@@ -1437,6 +1633,29 @@
       syncScheduleViewControls();
     }
 
+    function renderGMDashboard() {
+      if (!window.UnifiedRosterGMDashboard) return;
+      window.UnifiedRosterGMDashboard.render({
+        state,
+        rootId: "gmDashboardBody",
+        helpers: { toPlayerHref, scheduleBoxHref, parseDate: parseScheduleDate }
+      });
+    }
+
+    function placeGMDashboardForViewport() {
+      const panel = document.querySelector(".gm-dashboard-panel");
+      const layout = document.querySelector(".gm-layout");
+      const statsPanel = document.querySelectorAll(".roster-data-panel")[1];
+      if (!panel || !layout || !statsPanel) return;
+      if (window.matchMedia("(max-width: 980px)").matches) {
+        if (statsPanel.nextElementSibling !== panel) {
+          statsPanel.insertAdjacentElement("afterend", panel);
+        }
+      } else if (panel.parentElement !== layout) {
+        layout.appendChild(panel);
+      }
+    }
+
     function renderCalendar() {
       const teamId = state.current.teamId;
       const games = collectTeamGames(teamId).filter((g) => g.dateObj);
@@ -1553,6 +1772,9 @@
         state.playerStats = base.playerStats;
         state.scheduleSections = base.scheduleSections;
         state.injuries = base.injuries;
+        state.capReport = base.capReport || [];
+        state.monthlyTeamForm = base.monthlyTeamForm || {};
+        state.teamStats = base.teamStats || [];
         state.coachesByRoster = base.coachesByRoster;
         state.teamDirectory = window.SupercupRosterDataService.buildTeamDirectory(state.standings);
         state.current = window.SupercupRosterDataService.findTeamFromQuery(state.teamDirectory, window.location.search);
@@ -1576,8 +1798,11 @@
         renderPlayerTable();
         renderStatsTable();
         renderSchedule();
+        placeGMDashboardForViewport();
+        renderGMDashboard();
         syncColumnPresetButtons();
         bindColumnPresetControls();
+        window.addEventListener("resize", placeGMDashboardForViewport);
         document.querySelectorAll("[data-schedule-view]").forEach((btn) => {
           btn.addEventListener("click", () => {
             state.scheduleView = btn.dataset.scheduleView === "list" ? "list" : "calendar";
