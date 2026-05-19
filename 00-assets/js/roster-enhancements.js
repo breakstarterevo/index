@@ -128,6 +128,18 @@
     return name && playerMaps.byName[name] ? playerMaps.byName[name] : null;
   }
 
+  function findLinkedPlayerRecord(row, playerMaps) {
+    var playerLink = row.querySelector('a[href*="player"]');
+    var href = playerLink ? core.normalizePlayerUrl(playerLink.getAttribute("href") || "").replace(/\\/g, "/").toLowerCase() : "";
+    var name = core.normalizeName(playerLink ? playerLink.textContent : "");
+
+    if (href && playerMaps.byUrl[href]) {
+      return playerMaps.byUrl[href];
+    }
+
+    return name && playerMaps.byName[name] ? playerMaps.byName[name] : null;
+  }
+
   function setRosterRatingCell(cell, value) {
     var text = formatRatingValue(value);
 
@@ -218,6 +230,71 @@
     }
   }
 
+  function isFreeAgentOrDraftPage() {
+    var path = String(window.location.pathname || "").replace(/\\/g, "/");
+    return /\/(?:freeagents|potentialfreeagents|draft)\.htm$/i.test(path);
+  }
+
+  function getDirectHeaderRow(table) {
+    return Array.prototype.slice.call(table.rows || []).find(function (row) {
+      return row.querySelector("td.header");
+    }) || null;
+  }
+
+  function getRatingColumnIndexes(headerRow) {
+    var result = { curIndex: -1, futIndex: -1 };
+    var headerCells = headerRow ? Array.prototype.slice.call(headerRow.children) : [];
+
+    headerCells.forEach(function (headerCell, index) {
+      var label = String(headerCell.textContent || "").replace(/[^a-zA-Z]/g, "").toUpperCase();
+      if (label.indexOf("CUR") === 0) {
+        result.curIndex = index;
+      } else if (label.indexOf("FUT") === 0) {
+        result.futIndex = index;
+      }
+    });
+
+    return result;
+  }
+
+  function enhanceFreeAgentAndDraftRatingTables(players) {
+    if (!isFreeAgentOrDraftPage()) {
+      return;
+    }
+
+    var settings = core.getSettings();
+    var showNumbers = settings.rosterRatingDisplay === "numbers";
+    var playerMaps = buildPlayerRecordMaps(players);
+    var enhancedCount = 0;
+
+    Array.prototype.slice.call(document.querySelectorAll("table")).forEach(function (table) {
+      var headerRow = getDirectHeaderRow(table);
+      var ratingColumns = getRatingColumnIndexes(headerRow);
+
+      if (ratingColumns.curIndex === -1 || ratingColumns.futIndex === -1) {
+        return;
+      }
+
+      Array.prototype.slice.call(table.querySelectorAll("tr.row1, tr.row2")).forEach(function (row) {
+        var player = findLinkedPlayerRecord(row, playerMaps);
+        var curCell = row.children[ratingColumns.curIndex];
+        var futCell = row.children[ratingColumns.futIndex];
+
+        if (!player || !curCell || !futCell) {
+          return;
+        }
+
+        setRosterRatingCellDisplay(curCell, player.overall, showNumbers);
+        setRosterRatingCellDisplay(futCell, player.potential, showNumbers);
+        enhancedCount += 1;
+      });
+    });
+
+    if (enhancedCount) {
+      ensureRosterRatingStyles();
+    }
+  }
+
   function injectPlayerRatingPills(player) {
     if (!core.isPlayerPage()) {
       return;
@@ -283,16 +360,18 @@
   }
 
   function initRosterRatings() {
-    if (!core.isRosterPage()) {
+    if (!core.isRosterPage() && !isFreeAgentOrDraftPage()) {
       return;
     }
 
     core.loadJsonData("players.json")
       .then(function (players) {
         enhanceRosterRatingTables(players);
+        enhanceFreeAgentAndDraftRatingTables(players);
       })
       .catch(function () {
         enhanceRosterRatingTables([]);
+        enhanceFreeAgentAndDraftRatingTables([]);
       });
   }
 

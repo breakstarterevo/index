@@ -261,9 +261,9 @@
     addSettingsSelect(form, {
       id: "setting-roster-ratings",
       name: "rosterRatingDisplay",
-      label: "Roster Rating Display",
+      label: "Rating Display",
       value: settings.rosterRatingDisplay || "colors",
-      help: "Shows Cur/Fut as readable rating pills on roster attribute tables.",
+      help: "Shows Cur/Fut as readable rating pills on roster, free agent, and draft preview tables.",
       options: [
         { value: "colors", label: "Color Boxes" },
         { value: "numbers", label: "Number Pills" }
