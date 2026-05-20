@@ -63,6 +63,34 @@
       background: var(--card);
       padding: 0.5rem 0.6rem;
     }
+    .breadcrumbs {
+      border: 1px solid var(--line);
+      background: var(--card);
+    }
+    .breadcrumbs {
+      align-items: center;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.32rem;
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      padding: 0.42rem 0.55rem;
+      text-transform: uppercase;
+    }
+    .breadcrumbs a {
+      color: var(--team-color);
+      text-decoration: none;
+    }
+    .breadcrumbs a:hover { text-decoration: underline; }
+    .breadcrumbs-current {
+      color: var(--ink);
+      min-width: 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
     .player-search {
       flex: 1 1 360px;
       max-width: 520px;
@@ -770,6 +798,11 @@
         gap: 0.38rem;
         padding: 0.36rem 0.45rem;
       }
+      .breadcrumbs {
+        font-size: 0.58rem;
+        letter-spacing: 0.08em;
+        padding: 0.34rem 0.42rem;
+      }
       .player-search {
         flex: 1 1 auto;
         max-width: none;
@@ -801,6 +834,15 @@
 </head>
 <body>
   <div class="shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../../index.htm" target="_top">League</a>
+      <span>/</span>
+      <a href="./league%20dashboard.htm">Dashboard</a>
+      <span>/</span>
+      <a id="crumbTeamLink" href="./league%20dashboard.htm">Team</a>
+      <span>/</span>
+      <span class="breadcrumbs-current" id="crumbPlayerName">Player</span>
+    </nav>
     <div class="topbar">
       <div class="player-search" id="playerSearchWrap">
         <input class="player-search-input" id="playerSearchInput" type="search" autocomplete="off" spellcheck="false" aria-label="Search players" aria-controls="playerSearchResults" aria-expanded="false">
@@ -1307,6 +1349,16 @@
       const teamLink = document.getElementById("teamLink");
       teamLink.href = team ? `./unified-roster.htm?file=${encodeURIComponent(team.rosterFile)}` : "./league%20dashboard.htm";
       teamLink.textContent = team ? "Team Page" : "Dashboard";
+      const teamHref = team ? `./unified-roster.htm?file=${encodeURIComponent(team.rosterFile)}` : "./league%20dashboard.htm";
+      const crumbTeamLink = document.getElementById("crumbTeamLink");
+      const crumbPlayerName = document.getElementById("crumbPlayerName");
+      if (crumbTeamLink) {
+        crumbTeamLink.href = teamHref;
+        crumbTeamLink.textContent = team ? team.teamName : "Team";
+      }
+      if (crumbPlayerName) {
+        crumbPlayerName.textContent = p.name || "Player";
+      }
       renderLogo(teamName);
       setTeamColors(team);
     }
