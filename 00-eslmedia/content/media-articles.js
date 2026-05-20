@@ -29,6 +29,25 @@ window.ESL_MEDIA_ARTICLES = [
   // ESL_MEDIA_CMS_START
   // ESL_MEDIA_CMS_END
   {
+    file: "articles/supercup_group_stage_wrap_up.html",
+    title: "Super Cup Group Stage Wrap-Up: Bayern Took The Tiebreak",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-05-20-01",
+    tag: "Super Cup",
+    author: "Graham Trent",
+    meta: "Group Stage Wrap-Up",
+    blurb: "Bayern Munich, AC Milan, and Manchester United all finished 7-1, but the Super Cup bracket now has several uncomfortable first-round traps.",
+    teams: [
+      "AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona",
+      "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart",
+      "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Marseille",
+      "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP",
+      "Tottenham Hotspur", "Valencia"
+    ],
+    playerTags: ["Darwin Cook", "James Donaldson", "Larry Drew", "Moses Malone", "Tree Rollins"]
+  },
+  {
     file: "articles/march_1982_mvp_race.html",
     title: "March MVP Race: Carroll Crashes The Top Line",
     category: "Analysis",
