@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unified League Leaders</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    :root {
+      --team-color: #111b36;
+      --ink: #202124;
+      --paper: #f6f7f9;
+      --card: #ffffff;
+      --line: #d8dee7;
+      --muted: #5f6368;
+      --soft: #f1f4f8;
+      --font-sans: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      padding: 0.85rem;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-sans);
+    }
+    a { color: inherit; }
+    .shell {
+      display: grid;
+      gap: 0.75rem;
+      max-width: 1280px;
+      width: min(1280px, 100%);
+    }
+    .breadcrumbs,
+    .topbar,
+    .panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+    }
+    .breadcrumbs {
+      align-items: center;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.32rem;
+      font-size: 0.68rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      padding: 0.42rem 0.55rem;
+      text-transform: uppercase;
+    }
+    .breadcrumbs a,
+    .leader-name a,
+    .team-link,
+    .player-link {
+      color: var(--team-color);
+      text-decoration: none;
+    }
+    .breadcrumbs a:hover,
+    .leader-name a:hover,
+    .team-link:hover,
+    .player-link:hover { text-decoration: underline; }
+    .breadcrumbs-current { color: var(--ink); }
+    .panel-title,
+    .leader-meta,
+    th {
+      font-size: 0.68rem;
+      font-weight: 850;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .panel-title { color: var(--team-color); }
+    .topbar {
+      display: grid;
+      gap: 0.55rem;
+      grid-template-columns: minmax(220px, 1fr) auto;
+      padding: 0.58rem;
+    }
+    .filters {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.42rem;
+      justify-content: flex-end;
+    }
+    .search-input,
+    .filter-select {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      font: inherit;
+      min-height: 32px;
+      padding: 0.35rem 0.45rem;
+    }
+    .search-input:focus,
+    .filter-select:focus {
+      border-color: var(--team-color);
+      outline: 2px solid color-mix(in srgb, var(--team-color) 22%, transparent);
+      outline-offset: 1px;
+    }
+    .tabs {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem;
+    }
+    .tab-btn {
+      background: #fff;
+      border: 1px solid var(--line);
+      color: var(--ink);
+      cursor: pointer;
+      font: inherit;
+      font-size: 0.72rem;
+      font-weight: 850;
+      letter-spacing: 0.08em;
+      min-height: 30px;
+      padding: 0.32rem 0.48rem;
+      text-transform: uppercase;
+    }
+    .tab-btn.active {
+      background: var(--team-color);
+      border-color: var(--team-color);
+      color: #fff;
+    }
+    .panel {
+      border-top: 4px solid var(--team-color);
+      padding: 0.8rem;
+    }
+    .panel-head {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.55rem;
+      justify-content: space-between;
+      margin-bottom: 0.7rem;
+    }
+    .status {
+      color: var(--muted);
+      font-size: 0.68rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .leader-grid {
+      display: grid;
+      gap: 0.55rem;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+    .leader-card {
+      border: 1px solid var(--line);
+      border-left: 4px solid var(--team-color);
+      display: grid;
+      gap: 0.2rem;
+      min-width: 0;
+      padding: 0.48rem 0.52rem;
+    }
+    .leader-rank {
+      color: var(--team-color);
+      font-size: 0.66rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+    .leader-name {
+      font-size: 0.98rem;
+      font-weight: 900;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .leader-meta {
+      color: var(--muted);
+      letter-spacing: 0.1em;
+    }
+    .leader-value {
+      align-items: baseline;
+      display: flex;
+      gap: 0.28rem;
+      margin-top: 0.08rem;
+    }
+    .leader-value strong {
+      font-size: 1.38rem;
+      line-height: 1;
+    }
+    .leader-value span {
+      color: var(--muted);
+      font-size: 0.66rem;
+      font-weight: 850;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .chip-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.22rem;
+      margin-top: 0.08rem;
+    }
+    .rating-chip,
+    .info-chip {
+      border: 1px solid var(--line);
+      display: inline-flex;
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.08em;
+      line-height: 1;
+      padding: 0.22rem 0.3rem;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .rating-purple { background: #7e22ce; border-color: #7e22ce; color: #fff; }
+    .rating-blue { background: #1d4ed8; border-color: #1d4ed8; color: #fff; }
+    .rating-green { background: #15803d; border-color: #15803d; color: #fff; }
+    .rating-yellow { background: #facc15; border-color: #eab308; color: #1f2937; }
+    .rating-orange { background: #f97316; border-color: #ea580c; color: #fff; }
+    .table-wrap {
+      border: 1px solid var(--line);
+      max-height: min(680px, 72vh);
+      overflow: auto;
+    }
+    table {
+      border-collapse: collapse;
+      min-width: 900px;
+      width: 100%;
+    }
+    th,
+    td {
+      border-bottom: 1px solid var(--line);
+      padding: 0.44rem 0.5rem;
+      text-align: left;
+      vertical-align: middle;
+      white-space: nowrap;
+    }
+    th {
+      background: var(--team-color);
+      color: #fff;
+      cursor: pointer;
+      position: sticky;
+      top: 0;
+      z-index: 2;
+    }
+    tbody tr:nth-child(even) { background: #f8fafc; }
+    tbody tr:hover { background: #eef3fb; }
+    tbody tr.favorite-leader-row td {
+      background: #fff3bf !important;
+      font-weight: 850;
+    }
+    tbody tr.favorite-leader-row td:first-child { box-shadow: inset 4px 0 0 var(--team-color); padding-left: 0.7rem; }
+    .leader-card.favorite-leader-card {
+      background: #fff3bf;
+      box-shadow: inset 4px 0 0 var(--team-color);
+    }
+    td.num,
+    th.num { text-align: right; }
+    #leadersTable th:nth-child(1),
+    #leadersTable td:nth-child(1) { width: 5.5rem; }
+    #leadersTable th:nth-child(2),
+    #leadersTable td:nth-child(2) {
+      min-width: 18rem;
+      width: 28%;
+      white-space: normal;
+    }
+    #leadersTable th:nth-child(3),
+    #leadersTable td:nth-child(3) { width: 4.5rem; }
+    #leadersTable th:nth-child(4),
+    #leadersTable td:nth-child(4) { min-width: 10rem; width: 16%; }
+    #leadersTable th:nth-child(5),
+    #leadersTable td:nth-child(5) {
+      width: 4.5rem;
+      text-align: center;
+    }
+    .empty {
+      color: var(--muted);
+      padding: 1rem;
+      text-align: center;
+    }
+    @media (max-width: 860px) {
+      body { padding: 0.55rem; }
+      .topbar { grid-template-columns: 1fr; }
+      .filters { justify-content: stretch; }
+      .search-input,
+      .filter-select { width: 100%; }
+      .leader-grid { grid-template-columns: 1fr; }
+      .breadcrumbs {
+        font-size: 0.58rem;
+        letter-spacing: 0.08em;
+        padding: 0.34rem 0.42rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../../index.htm" target="_top">League</a>
+      <span>/</span>
+      <a href="./league%20dashboard.htm">Dashboard</a>
+      <span>/</span>
+      <span class="breadcrumbs-current">League Leaders</span>
+    </nav>
+
+    <section class="topbar">
+      <input class="search-input" id="leaderSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Search player or team">
+      <div class="filters">
+        <select class="filter-select" id="positionFilter" aria-label="Position filter">
+          <option value="all">All Positions</option>
+        </select>
+        <select class="filter-select" id="teamFilter" aria-label="Team filter">
+          <option value="all">All Teams</option>
+        </select>
+      </div>
+      <div class="tabs" id="tierTabs" aria-label="Tier tabs"></div>
+      <div class="tabs" id="categoryTabs" aria-label="Category tabs"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2 class="panel-title" id="podiumTitle">Top Leaders</h2>
+        <div class="status" id="podiumStatus"></div>
+      </div>
+      <div class="leader-grid" id="leaderPodium"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2 class="panel-title">Leaderboard</h2>
+        <div class="status" id="tableStatus"></div>
+      </div>
+      <div class="table-wrap">
+        <table id="leadersTable">
+          <thead></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script>
+    const DATA_URLS = {
+      leaders: "../../00-build/database/leaders.json",
+      players: "../../00-build/database/players.json",
+      standings: "../../00-build/database/standings.json"
+    };
+    const SETTINGS_KEY = "leagueSiteSettings";
+
+    const state = {
+      sections: [],
+      players: [],
+      standings: [],
+      playerByFile: new Map(),
+      tier: "",
+      category: "",
+      query: "",
+      position: "all",
+      team: "all",
+      sortKey: "rank",
+      sortDir: "asc"
+    };
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        "\"": "&quot;",
+        "'": "&#39;"
+      })[char]);
+    }
+
+    function normalize(value) {
+      return String(value || "").trim().toLowerCase();
+    }
+    function normalizeTeamName(value) {
+      return String(value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
+    }
+    function getSiteSettings() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}");
+        return parsed && typeof parsed === "object" ? parsed : {};
+      } catch (error) {
+        return {};
+      }
+    }
+    function favoriteTeamName() {
+      return getSiteSettings().favoriteTeam || "";
+    }
+    function isFavoriteTeamName(teamName) {
+      const favorite = normalizeTeamName(favoriteTeamName());
+      return favorite && normalizeTeamName(teamName) === favorite;
+    }
+    function favoriteTierSlug() {
+      const favorite = normalizeTeamName(favoriteTeamName());
+      if (!favorite) return "";
+      const standingsSection = state.standings.find((entry) => (entry.teams || []).some((team) => normalizeTeamName(team.team) === favorite));
+      const token = leagueToken(standingsSection && standingsSection.title);
+      const leadersSection = state.sections.find((entry) => leagueToken(entry.title) === token);
+      return leadersSection ? leadersSection.slug : "";
+    }
+
+    function playerIdFromFile(file) {
+      return String(file || "").replace(/\.htm$/i, "");
+    }
+
+    function unifiedPlayerHref(row) {
+      const id = playerIdFromFile(row.playerFile);
+      return id ? `./unified-player.htm?id=${encodeURIComponent(id)}` : "#";
+    }
+
+    function unifiedTeamHref(row) {
+      return row.teamFile ? `./unified-roster.htm?file=${encodeURIComponent(row.teamFile)}` : "./league%20dashboard.htm";
+    }
+
+    function ratingClass(value) {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return "";
+      if (n >= 151) return "rating-purple";
+      if (n >= 115) return "rating-blue";
+      if (n >= 100) return "rating-green";
+      if (n >= 80) return "rating-yellow";
+      return "rating-orange";
+    }
+
+    function leaderValueSort(row) {
+      const value = Number(row.value);
+      if (Number.isFinite(value)) return value;
+      const parsed = Number(String(row.valueText || "").replace(/[%,$]/g, ""));
+      return Number.isFinite(parsed) ? parsed : Number.NEGATIVE_INFINITY;
+    }
+
+    function sectionShortTitle(sectionTitle) {
+      return String(sectionTitle || "").replace(/\s+League Leaders$/i, "");
+    }
+
+    function leagueToken(title) {
+      return String(title || "").trim().split(/\s+/)[0].toUpperCase();
+    }
+
+    function allCategories() {
+      const seen = new Map();
+      state.sections.forEach((section) => {
+        (section.categories || []).forEach((category) => {
+          if (!seen.has(category.slug)) seen.set(category.slug, category.title);
+        });
+      });
+      return Array.from(seen, ([slug, title]) => ({ slug, title }));
+    }
+
+    function getPlayer(row) {
+      return state.playerByFile.get(String(row.playerFile || "").toLowerCase()) || null;
+    }
+
+    function baseRowsForView() {
+      const rows = [];
+      state.sections.forEach((section) => {
+        if (state.tier !== "all" && section.slug !== state.tier) return;
+        (section.categories || []).forEach((category) => {
+          if (category.slug !== state.category) return;
+          (category.leaders || []).forEach((leader) => {
+            rows.push({
+              ...leader,
+              tierTitle: sectionShortTitle(section.title),
+              tierSlug: section.slug,
+              categoryTitle: category.title,
+              categorySlug: category.slug,
+              playerMeta: getPlayer(leader)
+            });
+          });
+        });
+      });
+
+      if (state.tier === "all") {
+        rows.sort((a, b) => leaderValueSort(b) - leaderValueSort(a));
+        rows.forEach((row, index) => { row.displayRank = index + 1; });
+      } else {
+        rows.forEach((row) => { row.displayRank = row.rank; });
+      }
+      return rows;
+    }
+
+    function filteredRowsForView() {
+      const query = normalize(state.query);
+      return baseRowsForView().filter((row) => {
+        const player = row.playerMeta || {};
+        if (state.position !== "all" && normalize(player.pos) !== state.position) return false;
+        if (state.team !== "all" && normalize(row.teamName) !== state.team) return false;
+        if (!query) return true;
+        return normalize(`${row.player} ${row.teamName} ${row.tierTitle} ${player.pos || ""}`).includes(query);
+      });
+    }
+
+    function sortedRows() {
+      const rows = filteredRowsForView();
+      const dir = state.sortDir === "asc" ? 1 : -1;
+      rows.sort((a, b) => {
+        let av;
+        let bv;
+        if (state.sortKey === "value") {
+          av = leaderValueSort(a);
+          bv = leaderValueSort(b);
+        } else if (state.sortKey === "ovr" || state.sortKey === "pot") {
+          av = Number((a.playerMeta || {})[state.sortKey === "ovr" ? "overall" : "potential"]);
+          bv = Number((b.playerMeta || {})[state.sortKey === "ovr" ? "overall" : "potential"]);
+          if (!Number.isFinite(av)) av = -1;
+          if (!Number.isFinite(bv)) bv = -1;
+        } else if (state.sortKey === "age") {
+          av = Number((a.playerMeta || {}).age);
+          bv = Number((b.playerMeta || {}).age);
+          if (!Number.isFinite(av)) av = -1;
+          if (!Number.isFinite(bv)) bv = -1;
+        } else if (state.sortKey === "rank") {
+          av = Number(a.displayRank);
+          bv = Number(b.displayRank);
+        } else if (state.sortKey === "pos") {
+          av = normalize((a.playerMeta || {}).pos);
+          bv = normalize((b.playerMeta || {}).pos);
+          return av.localeCompare(bv, undefined, { numeric: true, sensitivity: "base" }) * dir;
+        } else {
+          av = normalize(a[state.sortKey] || "");
+          bv = normalize(b[state.sortKey] || "");
+          return av.localeCompare(bv, undefined, { numeric: true, sensitivity: "base" }) * dir;
+        }
+        return (av - bv) * dir;
+      });
+      return rows;
+    }
+
+    function renderTabs() {
+      const tierTabs = document.getElementById("tierTabs");
+      const categoryTabs = document.getElementById("categoryTabs");
+      const tiers = [{ slug: "all", title: "All Tiers" }].concat(state.sections.map((section) => ({
+        slug: section.slug,
+        title: sectionShortTitle(section.title)
+      })));
+      const categories = allCategories();
+
+      tierTabs.innerHTML = tiers.map((tier) =>
+        `<button class="tab-btn${tier.slug === state.tier ? " active" : ""}" type="button" data-tier="${escapeHtml(tier.slug)}">${escapeHtml(tier.title)}</button>`
+      ).join("");
+      categoryTabs.innerHTML = categories.map((category) =>
+        `<button class="tab-btn${category.slug === state.category ? " active" : ""}" type="button" data-category="${escapeHtml(category.slug)}">${escapeHtml(category.title)}</button>`
+      ).join("");
+
+      tierTabs.querySelectorAll("[data-tier]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.tier = button.dataset.tier;
+          state.sortKey = "rank";
+          state.sortDir = "asc";
+          render();
+        });
+      });
+      categoryTabs.querySelectorAll("[data-category]").forEach((button) => {
+        button.addEventListener("click", () => {
+          state.category = button.dataset.category;
+          state.sortKey = "rank";
+          state.sortDir = "asc";
+          render();
+        });
+      });
+    }
+
+    function renderFilters() {
+      const positionFilter = document.getElementById("positionFilter");
+      const teamFilter = document.getElementById("teamFilter");
+      const posValue = state.position;
+      const teamValue = state.team;
+      const positions = new Set();
+      const teams = new Set();
+      baseRowsForView().forEach((row) => {
+        const player = row.playerMeta || {};
+        if (player.pos) positions.add(player.pos);
+        if (row.teamName) teams.add(row.teamName);
+      });
+
+      positionFilter.innerHTML = `<option value="all">All Positions</option>` +
+        Array.from(positions).sort().map((pos) => `<option value="${escapeHtml(normalize(pos))}">${escapeHtml(pos)}</option>`).join("");
+      teamFilter.innerHTML = `<option value="all">All Teams</option>` +
+        Array.from(teams).sort((a, b) => a.localeCompare(b)).map((team) => `<option value="${escapeHtml(normalize(team))}">${escapeHtml(team)}</option>`).join("");
+
+      positionFilter.value = Array.from(positionFilter.options).some((o) => o.value === posValue) ? posValue : "all";
+      teamFilter.value = Array.from(teamFilter.options).some((o) => o.value === teamValue) ? teamValue : "all";
+      state.position = positionFilter.value;
+      state.team = teamFilter.value;
+    }
+
+    function ratingChip(label, value) {
+      if (value == null || value === "") return "";
+      return `<span class="rating-chip ${ratingClass(value)}">${label} ${escapeHtml(value)}</span>`;
+    }
+
+    function currentCategoryTitle() {
+      const category = allCategories().find((item) => item.slug === state.category);
+      return category ? category.title : "Leaders";
+    }
+
+    function currentTierTitle() {
+      if (state.tier === "all") return "All tiers";
+      const section = state.sections.find((item) => item.slug === state.tier);
+      return section ? sectionShortTitle(section.title) : "Tier";
+    }
+
+    function renderPodium(rows) {
+      const root = document.getElementById("leaderPodium");
+      const top = rows.slice(0, 3);
+      document.getElementById("podiumTitle").textContent = `${currentCategoryTitle()} Leaders`;
+      document.getElementById("podiumStatus").textContent = currentTierTitle();
+      if (!top.length) {
+        root.innerHTML = `<div class="empty">No leaders match the current filters.</div>`;
+        return;
+      }
+      root.innerHTML = top.map((row) => {
+        const player = row.playerMeta || {};
+        return `
+          <article class="leader-card${isFavoriteTeamName(row.teamName) ? " favorite-leader-card" : ""}">
+            <div class="leader-rank">#${escapeHtml(row.displayRank)} ${escapeHtml(row.tierTitle)}</div>
+            <div class="leader-name"><a href="${unifiedPlayerHref(row)}">${escapeHtml(row.player)}</a></div>
+            <div class="leader-meta">${escapeHtml(player.pos || "--")} / <a class="team-link" href="${unifiedTeamHref(row)}">${escapeHtml(row.teamName || "Team")}</a></div>
+            <div class="leader-value"><strong>${escapeHtml(row.valueText ?? row.value ?? "--")}</strong><span>${escapeHtml(currentCategoryTitle())}</span></div>
+            <div class="chip-row">
+              ${ratingChip("OVR", player.overall)}
+              ${ratingChip("POT", player.potential)}
+              ${player.age ? `<span class="info-chip">Age ${escapeHtml(player.age)}</span>` : ""}
+            </div>
+          </article>
+        `;
+      }).join("");
+    }
+
+    function header(label, key, alignRight = false) {
+      const active = state.sortKey === key;
+      const arrow = active ? (state.sortDir === "asc" ? " ▲" : " ▼") : "";
+      return `<th class="${alignRight ? "num" : ""}" data-sort="${key}">${label}${arrow}</th>`;
+    }
+
+    function renderTable(rows) {
+      const table = document.getElementById("leadersTable");
+      const thead = table.querySelector("thead");
+      const tbody = table.querySelector("tbody");
+      thead.innerHTML = `<tr>
+        ${header("Rank", "rank", true)}
+        ${header("Player", "player")}
+        ${header("Pos", "pos")}
+        ${header("Team", "teamName")}
+        ${header("Tier", "tierTitle")}
+        ${header(currentCategoryTitle(), "value", true)}
+        ${header("Age", "age", true)}
+        ${header("OVR", "ovr", true)}
+        ${header("POT", "pot", true)}
+      </tr>`;
+
+      if (!rows.length) {
+        tbody.innerHTML = `<tr><td colspan="9"><div class="empty">No leaders match the current filters.</div></td></tr>`;
+      } else {
+        tbody.innerHTML = rows.map((row) => {
+          const player = row.playerMeta || {};
+          return `<tr class="${isFavoriteTeamName(row.teamName) ? "favorite-leader-row" : ""}">
+            <td class="num">${escapeHtml(row.displayRank)}</td>
+            <td><a class="player-link" href="${unifiedPlayerHref(row)}">${escapeHtml(row.player)}</a></td>
+            <td>${escapeHtml(player.pos || "--")}</td>
+            <td><a class="team-link" href="${unifiedTeamHref(row)}">${escapeHtml(row.teamName || "--")}</a></td>
+            <td>${escapeHtml(row.tierTitle)}</td>
+            <td class="num"><strong>${escapeHtml(row.valueText ?? row.value ?? "--")}</strong></td>
+            <td class="num">${escapeHtml(player.age || "--")}</td>
+            <td class="num">${ratingChip("OVR", player.overall)}</td>
+            <td class="num">${ratingChip("POT", player.potential)}</td>
+          </tr>`;
+        }).join("");
+      }
+
+      thead.querySelectorAll("[data-sort]").forEach((cell) => {
+        cell.addEventListener("click", () => {
+          const key = cell.dataset.sort;
+          if (state.sortKey === key) {
+            state.sortDir = state.sortDir === "asc" ? "desc" : "asc";
+          } else {
+            state.sortKey = key;
+            state.sortDir = key === "player" || key === "teamName" || key === "tierTitle" || key === "pos" ? "asc" : "desc";
+          }
+          render();
+        });
+      });
+
+      document.getElementById("tableStatus").textContent = `${rows.length} shown`;
+    }
+
+    function render() {
+      renderTabs();
+      renderFilters();
+      const rows = sortedRows();
+      renderPodium(rows);
+      renderTable(rows);
+    }
+
+    function bindControls() {
+      document.getElementById("leaderSearch").addEventListener("input", (event) => {
+        state.query = event.target.value;
+        render();
+      });
+      document.getElementById("positionFilter").addEventListener("change", (event) => {
+        state.position = event.target.value;
+        render();
+      });
+      document.getElementById("teamFilter").addEventListener("change", (event) => {
+        state.team = event.target.value;
+        render();
+      });
+    }
+
+    async function init() {
+      try {
+        const [leadersRes, playersRes, standingsRes] = await Promise.all([
+          fetch(DATA_URLS.leaders),
+          fetch(DATA_URLS.players),
+          fetch(DATA_URLS.standings)
+        ]);
+        if (!leadersRes.ok || !playersRes.ok || !standingsRes.ok) throw new Error("Could not load leaders feeds");
+        const leadersData = await leadersRes.json();
+        const playersData = await playersRes.json();
+        const standingsData = await standingsRes.json();
+        state.sections = Array.isArray(leadersData.sections) ? leadersData.sections : [];
+        state.players = Array.isArray(playersData) ? playersData : [];
+        state.standings = Array.isArray(standingsData.sections) ? standingsData.sections : [];
+        state.players.forEach((player) => {
+          const file = String(player.url || "").split("/").pop().toLowerCase();
+          if (file) state.playerByFile.set(file, player);
+        });
+        state.tier = favoriteTierSlug() || "all";
+        const firstCategory = allCategories()[0];
+        state.category = firstCategory ? firstCategory.slug : "";
+        bindControls();
+        render();
+      } catch (error) {
+        document.getElementById("leaderPodium").innerHTML = `<div class="empty">Could not load unified league leaders.</div>`;
+        document.querySelector("#leadersTable tbody").innerHTML = `<tr><td colspan="9"><div class="empty">Could not load leaders data.</div></td></tr>`;
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>

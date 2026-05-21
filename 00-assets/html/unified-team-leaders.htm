@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unified Team Leaders</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    :root { --team-color:#111b36; --ink:#202124; --paper:#f6f7f9; --card:#fff; --line:#d8dee7; --muted:#5f6368; --good:#15803d; --bad:#b91c1c; --font-sans:"Graphik","Helvetica Neue",Helvetica,Arial,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:.85rem; background:var(--paper); color:var(--ink); font-family:var(--font-sans); }
+    .shell { display:grid; gap:.75rem; max-width:1280px; width:min(1280px,100%); }
+    .breadcrumbs,.topbar,.panel { background:var(--card); border:1px solid var(--line); }
+    .breadcrumbs { align-items:center; color:var(--muted); display:flex; flex-wrap:wrap; gap:.32rem; font-size:.68rem; font-weight:850; letter-spacing:.12em; padding:.42rem .55rem; text-transform:uppercase; }
+    .breadcrumbs a,.team-link { color:var(--team-color); text-decoration:none; }
+    .breadcrumbs a:hover,.team-link:hover { text-decoration:underline; }
+    .breadcrumbs-current { color:var(--ink); }
+    .topbar { display:grid; gap:.55rem; grid-template-columns:minmax(220px,1fr) auto; padding:.58rem; }
+    .search-input,.filter-select { background:#fff; border:1px solid var(--line); color:var(--ink); font:inherit; min-height:32px; padding:.35rem .45rem; }
+    .filters,.tabs { display:flex; flex-wrap:wrap; gap:.35rem; justify-content:flex-end; }
+    .tab-btn { background:#fff; border:1px solid var(--line); color:var(--ink); cursor:pointer; font:inherit; font-size:.72rem; font-weight:850; letter-spacing:.08em; min-height:30px; padding:.32rem .48rem; text-transform:uppercase; }
+    .tab-btn.active { background:var(--team-color); border-color:var(--team-color); color:#fff; }
+    .panel { border-top:4px solid var(--team-color); padding:.8rem; }
+    .panel-head { align-items:center; display:flex; flex-wrap:wrap; gap:.55rem; justify-content:space-between; margin-bottom:.7rem; }
+    .panel-title,.status,th,.leader-meta { font-size:.68rem; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+    .panel-title { color:var(--team-color); margin:0; }
+    .status,.leader-meta { color:var(--muted); }
+    .leader-grid { display:grid; gap:.65rem; grid-template-columns:repeat(3,minmax(0,1fr)); margin-bottom:.75rem; }
+    .leader-card { border:1px solid var(--line); border-left:4px solid var(--team-color); padding:.65rem; background:#fff; }
+    .leader-rank { color:var(--team-color); font-size:.66rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+    .leader-value { display:block; font-size:1.5rem; font-weight:950; margin:.15rem 0; }
+    .table-wrap { border:1px solid var(--line); overflow:auto; }
+    table { border-collapse:collapse; min-width:820px; width:100%; }
+    th,td { border-bottom:1px solid var(--line); padding:.48rem .5rem; text-align:right; white-space:nowrap; }
+    th { background:var(--team-color); color:#fff; position:sticky; top:0; z-index:2; }
+    th:first-child,td:first-child { text-align:left; }
+    tbody tr:nth-child(even) { background:#f8fafc; }
+    tbody tr:hover { background:#eef3fb; }
+    tbody tr.favorite-team-row td { background:#fff3bf !important; font-weight:850; }
+    tbody tr.favorite-team-row td:first-child { box-shadow:inset 4px 0 0 var(--team-color); padding-left:.7rem; }
+    .leader-card.favorite-team-card { background:#fff3bf; box-shadow:inset 4px 0 0 var(--team-color); }
+    .rank-cell { color:var(--muted); font-weight:850; letter-spacing:.08em; }
+    .good { color:var(--good); font-weight:850; }
+    .bad { color:var(--bad); font-weight:850; }
+    @media(max-width:860px){ body{padding:.55rem}.topbar{grid-template-columns:1fr}.filters{justify-content:stretch}.search-input,.filter-select{width:100%}.leader-grid{grid-template-columns:1fr}.breadcrumbs{font-size:.58rem;letter-spacing:.08em;padding:.34rem .42rem} }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../../index.htm" target="_top">League</a><span>/</span><a href="./league%20dashboard.htm">Dashboard</a><span>/</span><span class="breadcrumbs-current">Team Leaders</span>
+    </nav>
+    <section class="topbar">
+      <input class="search-input" id="leaderSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Search team">
+      <div class="filters">
+        <select class="filter-select" id="viewFilter"><option value="team">Team Stat</option><option value="opponent">Opponent Stat</option><option value="margin">Margin</option></select>
+      </div>
+      <div class="tabs" id="tierTabs" aria-label="Tier tabs"></div>
+      <div class="tabs" id="statTabs" aria-label="Stat tabs"></div>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><h1 class="panel-title" id="panelTitle">Team Leaders</h1><div class="status" id="tableStatus"></div></div>
+      <div class="leader-grid" id="leaderCards"></div>
+      <div class="table-wrap"><table id="leadersTable"><thead></thead><tbody></tbody></table></div>
+    </section>
+  </main>
+  <script>
+    const DATA_URLS = { teamStats:"../../00-build/database/team_stats.json", standings:"../../00-build/database/standings.json" };
+    const SETTINGS_KEY = "leagueSiteSettings";
+    const state = { teams: [], standings: [], tier: "", stat: "", view: "team", query: "" };
+    function escapeHtml(value) { return String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", "\"":"&quot;", "'":"&#39;" })[char]); }
+    function normalize(value) { return String(value || "").trim().toLowerCase(); }
+    function normalizeTeamName(value) { return String(value || "").toLowerCase().replace(/[^a-z0-9]/g, ""); }
+    function tierTitle(title) { return String(title || "").replace(/\s+Standings$/i, ""); }
+    function teamHref(row) { return row.file ? `./unified-roster.htm?file=${encodeURIComponent(row.file)}` : "./league%20dashboard.htm"; }
+    function getSiteSettings() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}");
+        return parsed && typeof parsed === "object" ? parsed : {};
+      } catch (error) {
+        return {};
+      }
+    }
+    function favoriteTeamName() { return getSiteSettings().favoriteTeam || ""; }
+    function isFavoriteTeamName(teamName) {
+      const favorite = normalizeTeamName(favoriteTeamName());
+      return favorite && normalizeTeamName(teamName) === favorite;
+    }
+    function favoriteTierSlug() {
+      const favorite = normalizeTeamName(favoriteTeamName());
+      if (!favorite) return "";
+      const section = state.standings.find((entry) => (entry.teams || []).some((team) => normalizeTeamName(team.team) === favorite));
+      return section ? section.slug : "";
+    }
+    function statList() {
+      const first = state.teams[0] && state.teams[0].stats || {};
+      return Object.keys(first).map((key) => ({ key, label: first[key].label || key }));
+    }
+    function standingMap() {
+      const map = new Map();
+      state.standings.forEach((section) => (section.teams || []).forEach((team, index) => map.set(String(team.rosterFile || "").toLowerCase(), { tier: tierTitle(section.title), tierSlug: section.slug, standing: index + 1, record: `${team.wins}-${team.losses}` })));
+      return map;
+    }
+    function baseRows() {
+      const map = standingMap();
+      return state.teams.map((team) => {
+        const standing = map.get(String(team.file || "").toLowerCase()) || {};
+        const stat = team.stats && team.stats[state.stat] || {};
+        const view = stat[state.view] || {};
+        return { ...team, tier: standing.tier || "Unknown", tierSlug: standing.tierSlug || "", standing: standing.standing || "", record: standing.record || "", statLabel: stat.label || state.stat, value: view.value, conferenceRank: view.conferenceRank, totalRank: view.totalRank };
+      }).filter((row) => state.tier === "all" || row.tierSlug === state.tier);
+    }
+    function filteredRows() {
+      const q = normalize(state.query);
+      return baseRows().filter((row) => !q || normalize(`${row.team} ${row.tier}`).includes(q));
+    }
+    function sortRows(rows) {
+      const rankKey = state.tier === "all" ? "totalRank" : "conferenceRank";
+      return [...rows].sort((a, b) => {
+        const ar = Number(a[rankKey]);
+        const br = Number(b[rankKey]);
+        if (Number.isFinite(ar) && Number.isFinite(br) && ar !== br) return ar - br;
+        return Number(b.value) - Number(a.value);
+      });
+    }
+    function renderTabs() {
+      const tierRoot = document.getElementById("tierTabs");
+      const tiers = [{ slug:"all", title:"All Tiers" }].concat(state.standings.map((s) => ({ slug:s.slug, title:tierTitle(s.title) })));
+      tierRoot.innerHTML = tiers.map((tier) => `<button class="tab-btn${tier.slug === state.tier ? " active" : ""}" type="button" data-tier="${escapeHtml(tier.slug)}">${escapeHtml(tier.title)}</button>`).join("");
+      tierRoot.querySelectorAll("[data-tier]").forEach((btn) => btn.addEventListener("click", () => { state.tier = btn.dataset.tier; render(); }));
+      const statRoot = document.getElementById("statTabs");
+      statRoot.innerHTML = statList().map((stat) => `<button class="tab-btn${stat.key === state.stat ? " active" : ""}" type="button" data-stat="${escapeHtml(stat.key)}">${escapeHtml(stat.label)}</button>`).join("");
+      statRoot.querySelectorAll("[data-stat]").forEach((btn) => btn.addEventListener("click", () => { state.stat = btn.dataset.stat; render(); }));
+    }
+    function renderCards(rows) {
+      document.getElementById("leaderCards").innerHTML = rows.slice(0, 3).map((row, index) => `<article class="leader-card${isFavoriteTeamName(row.team) ? " favorite-team-card" : ""}"><div class="leader-rank">#${index + 1} ${escapeHtml(row.tier)}</div><span class="leader-value">${escapeHtml(row.value ?? "--")}</span><a class="team-link" href="${teamHref(row)}">${escapeHtml(row.team)}</a><div class="leader-meta">${escapeHtml(row.statLabel)} / ${escapeHtml(state.view)}</div></article>`).join("");
+    }
+    function renderTable(rows) {
+      document.getElementById("leadersTable").querySelector("thead").innerHTML = `<tr><th>#</th><th>Team</th><th>Tier</th><th>Record</th><th>${escapeHtml(rows[0]?.statLabel || "Value")}</th><th>CR</th><th>TR</th></tr>`;
+      document.getElementById("leadersTable").querySelector("tbody").innerHTML = rows.map((row, index) => `<tr class="${isFavoriteTeamName(row.team) ? "favorite-team-row" : ""}"><td class="rank-cell">${index + 1}</td><td><a class="team-link" href="${teamHref(row)}">${escapeHtml(row.team)}</a></td><td>${escapeHtml(row.tier)}</td><td>${escapeHtml(row.record || "-")}</td><td class="${Number(row.value) >= 0 && state.view === "margin" ? "good" : Number(row.value) < 0 && state.view === "margin" ? "bad" : ""}">${escapeHtml(row.value ?? "--")}</td><td>${escapeHtml(row.conferenceRank ?? "-")}</td><td>${escapeHtml(row.totalRank ?? "-")}</td></tr>`).join("");
+      document.getElementById("tableStatus").textContent = `${rows.length} teams`;
+      document.getElementById("panelTitle").textContent = `${rows[0]?.statLabel || "Team"} Leaders`;
+    }
+    function render() {
+      renderTabs();
+      const rows = sortRows(filteredRows());
+      renderCards(rows);
+      renderTable(rows);
+    }
+    async function init() {
+      const [teamStatsRes, standingsRes] = await Promise.all([fetch(DATA_URLS.teamStats), fetch(DATA_URLS.standings)]);
+      const [teamStatsData, standingsData] = await Promise.all([teamStatsRes.json(), standingsRes.json()]);
+      state.teams = Array.isArray(teamStatsData.teams) ? teamStatsData.teams : [];
+      state.standings = Array.isArray(standingsData.sections) ? standingsData.sections : [];
+      state.stat = statList()[0]?.key || "";
+      state.tier = favoriteTierSlug() || "all";
+      document.getElementById("leaderSearch").addEventListener("input", (e) => { state.query = e.target.value; render(); });
+      document.getElementById("viewFilter").addEventListener("change", (e) => { state.view = e.target.value; render(); });
+      render();
+    }
+    init().catch(() => { document.getElementById("tableStatus").textContent = "Team leaders unavailable"; });
+  </script>
+</body>
+</html>

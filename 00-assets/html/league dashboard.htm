@@ -47,11 +47,14 @@
     .standings-table tr.race-champion { background:#f4d35e; }
     .standings-table tr.race-promoted { background:#b7e3be; }
     .standings-table tr.race-relegated { background:#efb6b6; }
+    .standings-table tr.favorite-team-row td { font-weight:800; }
+    .standings-table tr.favorite-team-row td:first-child { box-shadow:inset 4px 0 0 var(--blue); padding-left:.45rem; }
     .standings-cards { display:none; }
     .standing-card { border:1px solid var(--line); background:#faf8f2; color:inherit; display:grid; gap:.5rem; padding:.65rem; text-decoration:none; }
     .standing-card.race-champion { background:#f4d35e; }
     .standing-card.race-promoted { background:#b7e3be; }
     .standing-card.race-relegated { background:#efb6b6; }
+    .standing-card.favorite-team-row { box-shadow:inset 4px 0 0 var(--blue); font-weight:800; }
     .standing-card-head { align-items:center; display:flex; justify-content:space-between; gap:.55rem; }
     .standing-card-team { font-family:var(--font-serif); font-size:1.05rem; line-height:1.15; }
     .standing-card-rank { color:var(--mid); font-size:.64rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
@@ -119,8 +122,9 @@
       <div class="kicker">League Intelligence Board</div>
       <div class="utility-grid">
         <div class="quick-links">
-          <a class="quick-link" href="../../standings.htm">Standings</a>
-          <a class="quick-link" href="../../leaders.htm">League Leaders</a>
+          <a class="quick-link" href="./unified-standings.htm">Standings</a>
+          <a class="quick-link" href="./unified-leaders.htm">League Leaders</a>
+          <a class="quick-link" href="./unified-team-leaders.htm">Team Leaders</a>
           <a class="quick-link" href="../../injuries.htm">Injuries</a>
           <a class="quick-link" href="../../capreport.htm">Cap Report</a>
           <a class="quick-link" href="../../transactions.htm">Transactions</a>
@@ -239,12 +243,14 @@
       }
     }
 
+    const SETTINGS_KEY = "leagueSiteSettings";
     const state = { standings: [], leaders: [], injuries: [], capreport: [], players: [], scheduleSections: [], activeLeagueSlug: null };
     const shortLeagueLabel = (title) => String(title || "").replace(/\s+Standings$/i, "").trim();
     const num = (value) => Number.isFinite(Number(value)) ? Number(value) : 0;
     const formatSigned = (value) => { const n = num(value); return `${n > 0 ? "+" : ""}${n.toFixed(1)}`; };
     const formatGb = (value) => value === "-" || value === undefined || value === null || value === "" ? "-" : num(value).toFixed(1);
     const extractLeagueToken = (title) => String(title || "").split(" ")[0].toUpperCase();
+    const normalizeTeamName = (value) => String(value || "").toLowerCase().replace(/[^a-z0-9]/g, "");
     const findMatchingLeaders = (leagueToken) => state.leaders.find((section) => extractLeagueToken(section.title) === leagueToken) || null;
     const findMatchingCap = (leagueToken) => {
       const tokenMap = { CLB: "champions", ELB: "europa", ECL: "conference" };
@@ -314,6 +320,31 @@
 
     function rosterId(value) {
       return String(value || "").replace(/^.*[\\/]/, "").replace(/\.html?$/i, "").toLowerCase();
+    }
+
+    function getSiteSettings() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}");
+        return parsed && typeof parsed === "object" ? parsed : {};
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function favoriteTeamName() {
+      return getSiteSettings().favoriteTeam || "";
+    }
+
+    function isFavoriteTeamName(teamName) {
+      const favorite = normalizeTeamName(favoriteTeamName());
+      return favorite && normalizeTeamName(teamName) === favorite;
+    }
+
+    function favoriteLeagueSlugFromStandings() {
+      const favorite = normalizeTeamName(favoriteTeamName());
+      if (!favorite) return "";
+      const section = state.standings.find((entry) => (entry.teams || []).some((team) => normalizeTeamName(team.team) === favorite));
+      return section ? section.slug : "";
     }
 
     function isRegularSeasonSection(section) {
@@ -393,13 +424,15 @@
         const diffClass = num(team.diff) >= 0 ? "diff-pos" : "diff-neg";
         const race = getRaceMeta(activeSection, team, teams, index, remainingByTeam);
         const raceLabel = race.label ? `<span class="race-pill">${race.label}</span>` : "";
-        return `<tr class="${race.className}"><td class="team-name"><a href="${normalizeHref(team.rosterUrl)}">${team.team}</a>${raceLabel}</td><td>${team.wins}-${team.losses}</td><td>${formatGb(team.gb)}</td><td class="${diffClass}">${formatSigned(team.diff)}</td><td>${team.streak || "-"}</td></tr>`;
+        const rowClass = [race.className, isFavoriteTeamName(team.team) ? "favorite-team-row" : ""].filter(Boolean).join(" ");
+        return `<tr class="${rowClass}"><td class="team-name"><a href="${normalizeHref(team.rosterUrl)}">${team.team}</a>${raceLabel}</td><td>${team.wins}-${team.losses}</td><td>${formatGb(team.gb)}</td><td class="${diffClass}">${formatSigned(team.diff)}</td><td>${team.streak || "-"}</td></tr>`;
       }).join("");
       standingsCards.innerHTML = teams.map((team, index) => {
         const diffClass = num(team.diff) >= 0 ? "diff-pos" : "diff-neg";
         const race = getRaceMeta(activeSection, team, teams, index, remainingByTeam);
         const raceLabel = race.label ? `<span class="race-pill">${race.label}</span>` : "";
-        return `<a class="standing-card ${race.className}" href="${normalizeHref(team.rosterUrl)}">
+        const cardClass = [race.className, isFavoriteTeamName(team.team) ? "favorite-team-row" : ""].filter(Boolean).join(" ");
+        return `<a class="standing-card ${cardClass}" href="${normalizeHref(team.rosterUrl)}">
           <div class="standing-card-head"><div class="standing-card-team">${team.team}${raceLabel}</div><div class="standing-card-rank">#${index + 1}</div></div>
           <div class="standing-card-stats">
             <div class="standing-card-stat"><span>Record</span><strong>${team.wins}-${team.losses}</strong></div>
@@ -587,7 +620,7 @@
         state.players = Array.isArray(playersData) ? playersData : [];
         state.scheduleSections = Array.isArray(scheduleData.sections) ? scheduleData.sections : [];
         if (!state.standings.length) throw new Error("Standings feed is empty");
-        state.activeLeagueSlug = state.standings[0].slug;
+        state.activeLeagueSlug = favoriteLeagueSlugFromStandings() || state.standings[0].slug;
         renderDashboard();
         bindSearch();
         bindMobileCollapses();

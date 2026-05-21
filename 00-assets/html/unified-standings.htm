@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unified Standings</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    :root { --team-color:#111b36; --ink:#202124; --paper:#f6f7f9; --card:#fff; --line:#d8dee7; --muted:#5f6368; --good:#15803d; --bad:#b91c1c; --font-sans:"Graphik","Helvetica Neue",Helvetica,Arial,sans-serif; }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:.85rem; background:var(--paper); color:var(--ink); font-family:var(--font-sans); }
+    .shell { display:grid; gap:.75rem; max-width:1280px; width:min(1280px,100%); }
+    .breadcrumbs,.topbar,.panel { background:var(--card); border:1px solid var(--line); }
+    .breadcrumbs { align-items:center; color:var(--muted); display:flex; flex-wrap:wrap; gap:.32rem; font-size:.68rem; font-weight:850; letter-spacing:.12em; padding:.42rem .55rem; text-transform:uppercase; }
+    .breadcrumbs a,.team-link { color:var(--team-color); text-decoration:none; }
+    .breadcrumbs a:hover,.team-link:hover { text-decoration:underline; }
+    .breadcrumbs-current { color:var(--ink); }
+    .topbar { display:grid; gap:.55rem; grid-template-columns:minmax(220px,1fr) auto; padding:.58rem; }
+    .search-input,.filter-select { background:#fff; border:1px solid var(--line); color:var(--ink); font:inherit; min-height:32px; padding:.35rem .45rem; }
+    .filters,.tabs { display:flex; flex-wrap:wrap; gap:.35rem; justify-content:flex-end; }
+    .tab-btn { background:#fff; border:1px solid var(--line); color:var(--ink); cursor:pointer; font:inherit; font-size:.72rem; font-weight:850; letter-spacing:.08em; min-height:30px; padding:.32rem .48rem; text-transform:uppercase; }
+    .tab-btn.active { background:var(--team-color); border-color:var(--team-color); color:#fff; }
+    .panel { border-top:4px solid var(--team-color); padding:.8rem; }
+    .panel-head { align-items:center; display:flex; flex-wrap:wrap; gap:.55rem; justify-content:space-between; margin-bottom:.7rem; }
+    .panel-title,.status,th { font-size:.68rem; font-weight:850; letter-spacing:.14em; text-transform:uppercase; }
+    .panel-title { color:var(--team-color); margin:0; }
+    .status { color:var(--muted); }
+    .table-wrap { border:1px solid var(--line); overflow:auto; }
+    table { border-collapse:collapse; min-width:900px; width:100%; }
+    th,td { border-bottom:1px solid var(--line); padding:.48rem .5rem; text-align:right; white-space:nowrap; }
+    th { background:var(--team-color); color:#fff; cursor:pointer; position:sticky; top:0; z-index:2; }
+    th:first-child,td:first-child { text-align:left; }
+    tbody tr:nth-child(even) { background:#f8fafc; }
+    tbody tr:hover { background:#eef3fb; }
+    tbody tr.race-champion { background:#f4d35e; }
+    tbody tr.race-promoted { background:#b7e3be; }
+    tbody tr.race-relegated { background:#efb6b6; }
+    tbody tr.favorite-team-row td { font-weight:850; }
+    tbody tr.favorite-team-row td:first-child { box-shadow:inset 4px 0 0 var(--team-color); padding-left:.7rem; }
+    .rank-cell { color:var(--muted); font-weight:850; letter-spacing:.08em; }
+    .diff-pos { color:var(--good); font-weight:850; }
+    .diff-neg { color:var(--bad); font-weight:850; }
+    .race-pill { border:1px solid rgba(17,27,54,.24); color:var(--team-color); display:inline-block; font-size:.52rem; font-weight:900; letter-spacing:.12em; line-height:1; margin-left:.35rem; padding:.13rem .28rem; text-transform:uppercase; vertical-align:middle; }
+    .form-grid { display:grid; gap:.65rem; grid-template-columns:repeat(3,minmax(0,1fr)); margin-bottom:.75rem; }
+    .form-card { border:1px solid var(--line); border-left:4px solid var(--team-color); padding:.65rem; background:#fff; }
+    .form-label { color:var(--muted); font-size:.62rem; font-weight:850; letter-spacing:.12em; text-transform:uppercase; }
+    .form-value { display:block; font-size:1.35rem; font-weight:950; margin-top:.18rem; }
+    @media(max-width:860px){ body{padding:.55rem}.topbar{grid-template-columns:1fr}.filters{justify-content:stretch}.search-input,.filter-select{width:100%}.form-grid{grid-template-columns:1fr}.breadcrumbs{font-size:.58rem;letter-spacing:.08em;padding:.34rem .42rem} }
+  </style>
+</head>
+<body>
+  <main class="shell">
+    <nav class="breadcrumbs" aria-label="Breadcrumb">
+      <a href="../../index.htm" target="_top">League</a><span>/</span><a href="./league%20dashboard.htm">Dashboard</a><span>/</span><span class="breadcrumbs-current">Standings</span>
+    </nav>
+    <section class="topbar">
+      <input class="search-input" id="standingsSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Search team">
+      <div class="filters">
+        <select class="filter-select" id="sortPreset" aria-label="Sort preset">
+          <option value="standing">League Order</option>
+          <option value="wins">Most Wins</option>
+          <option value="diff">Best Diff</option>
+          <option value="last10">Best Last 10</option>
+        </select>
+      </div>
+      <div class="tabs" id="tierTabs" aria-label="Tier tabs"></div>
+    </section>
+    <section class="panel">
+      <div class="panel-head"><h1 class="panel-title">Standings</h1><div class="status" id="tableStatus"></div></div>
+      <div class="form-grid" id="summaryCards"></div>
+      <div class="table-wrap">
+        <table id="standingsTable"><thead></thead><tbody></tbody></table>
+      </div>
+    </section>
+  </main>
+  <script>
+    const DATA_URLS = {
+      standings: "../../00-build/database/standings.json",
+      schedule: "../../00-build/database/schedule.json"
+    };
+    const SETTINGS_KEY = "leagueSiteSettings";
+    const state = { sections: [], scheduleSections: [], tier: "", query: "", sortPreset: "standing", sortKey: "standing", sortDir: "asc" };
+
+    function escapeHtml(value) {
+      return String(value ?? "").replace(/[&<>"']/g, (char) => ({ "&":"&amp;", "<":"&lt;", ">":"&gt;", "\"":"&quot;", "'":"&#39;" })[char]);
+    }
+    function normalize(value) { return String(value || "").trim().toLowerCase(); }
+    function normalizeTeamName(value) { return String(value || "").toLowerCase().replace(/[^a-z0-9]/g, ""); }
+    function num(value) { return Number.isFinite(Number(value)) ? Number(value) : 0; }
+    function tierTitle(title) { return String(title || "").replace(/\s+Standings$/i, ""); }
+    function teamHref(team) { return team.rosterFile ? `./unified-roster.htm?file=${encodeURIComponent(team.rosterFile)}` : "./league%20dashboard.htm"; }
+    function formatSigned(value) { const n = Number(value); return Number.isFinite(n) && n > 0 ? `+${n}` : String(value ?? "-"); }
+    function diffClass(value) { const n = Number(value); return n > 0 ? "diff-pos" : n < 0 ? "diff-neg" : ""; }
+    function last10Wins(value) { const match = String(value || "").match(/(\d+)-(\d+)/); return match ? Number(match[1]) : -1; }
+    function extractLeagueToken(title) { return String(title || "").split(" ")[0].toUpperCase(); }
+
+    function getSiteSettings() {
+      try {
+        const parsed = JSON.parse(localStorage.getItem(SETTINGS_KEY) || "{}");
+        return parsed && typeof parsed === "object" ? parsed : {};
+      } catch (error) {
+        return {};
+      }
+    }
+
+    function favoriteTeamName() { return getSiteSettings().favoriteTeam || ""; }
+    function isFavoriteTeamName(teamName) {
+      const favorite = normalizeTeamName(favoriteTeamName());
+      return favorite && normalizeTeamName(teamName) === favorite;
+    }
+    function favoriteTierSlug() {
+      const favorite = normalizeTeamName(favoriteTeamName());
+      if (!favorite) return "";
+      const section = state.sections.find((entry) => (entry.teams || []).some((team) => normalizeTeamName(team.team) === favorite));
+      return section ? section.slug : "";
+    }
+
+    function rosterId(value) {
+      return String(value || "").replace(/^.*[\\/]/, "").replace(/\.html?$/i, "").toLowerCase();
+    }
+    function isRegularSeasonSection(section) {
+      return /regular season/i.test(String(section && section.title || ""));
+    }
+    function buildRemainingGamesByTeam() {
+      const remaining = {};
+      state.scheduleSections.filter(isRegularSeasonSection).forEach((section) => {
+        (section.days || []).forEach((day) => {
+          (day.games || []).forEach((game) => {
+            if (String(game.status || "").toLowerCase() !== "scheduled") return;
+            [game.homeTeam, game.awayTeam].forEach((teamId) => {
+              const key = rosterId(teamId);
+              if (key) remaining[key] = (remaining[key] || 0) + 1;
+            });
+          });
+        });
+      });
+      return remaining;
+    }
+    function teamRemainingGames(team, remainingByTeam) {
+      return remainingByTeam[rosterId(team.rosterFile || team.rosterUrl)] || 0;
+    }
+    function isGuaranteedTopSlot(team, teams, slots, remainingByTeam) {
+      const minWins = num(team.wins);
+      const possibleChasers = teams.filter((other) => other !== team).filter((other) => num(other.wins) + teamRemainingGames(other, remainingByTeam) >= minWins);
+      return possibleChasers.length < slots;
+    }
+    function isGuaranteedBottomSlot(team, teams, slots, remainingByTeam) {
+      const maxWins = num(team.wins) + teamRemainingGames(team, remainingByTeam);
+      const definitelyAhead = teams.filter((other) => other !== team).filter((other) => num(other.wins) > maxWins);
+      return definitelyAhead.length >= teams.length - slots;
+    }
+    function getRaceHighlightMeta(token, index, total) {
+      if (token === "CLB" && index === 0) return { className: "race-champion", label: "Champ" };
+      if (token === "CLB" && index >= total - 2) return { className: "race-relegated", label: "Rel" };
+      if (token === "ELB" && index <= 1) return { className: "race-promoted", label: "Prom" };
+      if (token === "ELB" && index === total - 1) return { className: "race-relegated", label: "Rel" };
+      if (token === "ECL" && index === 0) return { className: "race-promoted", label: "Prom" };
+      return { className: "", label: "" };
+    }
+    function isRaceLabelGuaranteed(token, label, team, teams, remainingByTeam) {
+      if (token === "CLB" && label === "Champ") return isGuaranteedTopSlot(team, teams, 1, remainingByTeam);
+      if (token === "CLB" && label === "Rel") return isGuaranteedBottomSlot(team, teams, 2, remainingByTeam);
+      if (token === "ELB" && label === "Prom") return isGuaranteedTopSlot(team, teams, 2, remainingByTeam);
+      if (token === "ELB" && label === "Rel") return isGuaranteedBottomSlot(team, teams, 1, remainingByTeam);
+      if (token === "ECL" && label === "Prom") return isGuaranteedTopSlot(team, teams, 1, remainingByTeam);
+      return false;
+    }
+    function getRaceMeta(sectionTitle, team, teams, index, remainingByTeam) {
+      const token = extractLeagueToken(sectionTitle);
+      const highlight = getRaceHighlightMeta(token, index, teams.length);
+      if (!highlight.label) return highlight;
+      return {
+        className: highlight.className,
+        label: isRaceLabelGuaranteed(token, highlight.label, team, teams, remainingByTeam) ? highlight.label : ""
+      };
+    }
+
+    function baseRows() {
+      const rows = [];
+      state.sections.forEach((section) => {
+        if (section.slug !== state.tier) return;
+        const teams = [...(section.teams || [])].sort((a, b) => num(b.wins) - num(a.wins) || num(a.losses) - num(b.losses));
+        teams.forEach((team, index) => rows.push({ ...team, sectionTitle: section.title, sectionTeams: teams, tierSlug: section.slug, tier: tierTitle(section.title), standing: index + 1 }));
+      });
+      return rows;
+    }
+    function filteredRows() {
+      const q = normalize(state.query);
+      return baseRows().filter((row) => !q || normalize(`${row.team} ${row.tier}`).includes(q));
+    }
+    function sortedRows() {
+      const rows = filteredRows();
+      const preset = state.sortPreset;
+      if (preset === "standing") return rows.sort((a, b) => a.tier.localeCompare(b.tier) || a.standing - b.standing);
+      if (preset === "wins") return rows.sort((a, b) => b.wins - a.wins || b.diff - a.diff);
+      if (preset === "diff") return rows.sort((a, b) => b.diff - a.diff || b.wins - a.wins);
+      if (preset === "last10") return rows.sort((a, b) => last10Wins(b.last10) - last10Wins(a.last10) || b.diff - a.diff);
+      return rows;
+    }
+    function renderTabs() {
+      const root = document.getElementById("tierTabs");
+      const tiers = state.sections.map((s) => ({ slug:s.slug, title:tierTitle(s.title) }));
+      root.innerHTML = tiers.map((tier) => `<button class="tab-btn${tier.slug === state.tier ? " active" : ""}" type="button" data-tier="${escapeHtml(tier.slug)}">${escapeHtml(tier.title)}</button>`).join("");
+      root.querySelectorAll("[data-tier]").forEach((btn) => btn.addEventListener("click", () => { state.tier = btn.dataset.tier; render(); }));
+    }
+    function renderSummary(rows) {
+      const bestRecord = [...rows].sort((a, b) => b.wins - a.wins || b.diff - a.diff)[0];
+      const bestDiff = [...rows].sort((a, b) => b.diff - a.diff)[0];
+      const hottest = [...rows].sort((a, b) => last10Wins(b.last10) - last10Wins(a.last10) || b.diff - a.diff)[0];
+      const cards = [
+        ["Best Record", bestRecord, bestRecord ? `${bestRecord.wins}-${bestRecord.losses}` : "--"],
+        ["Best Diff", bestDiff, bestDiff ? formatSigned(bestDiff.diff) : "--"],
+        ["Best Last 10", hottest, hottest ? hottest.last10 : "--"]
+      ];
+      document.getElementById("summaryCards").innerHTML = cards.map(([label, team, value]) => `<div class="form-card"><div class="form-label">${label}</div><span class="form-value">${escapeHtml(value)}</span><a class="team-link" href="${team ? teamHref(team) : "#"}">${escapeHtml(team ? team.team : "No team")}</a></div>`).join("");
+    }
+    function renderTable(rows) {
+      const table = document.getElementById("standingsTable");
+      table.querySelector("thead").innerHTML = `<tr><th>#</th><th>Team</th><th>Tier</th><th>W-L</th><th>Pct</th><th>GB</th><th>Home</th><th>Road</th><th>PF</th><th>PA</th><th>Diff</th><th>Last 10</th><th>Streak</th></tr>`;
+      const remainingByTeam = buildRemainingGamesByTeam();
+      table.querySelector("tbody").innerHTML = rows.map((row) => {
+        const race = getRaceMeta(row.sectionTitle, row, row.sectionTeams, row.standing - 1, remainingByTeam);
+        const raceLabel = race.label ? `<span class="race-pill">${escapeHtml(race.label)}</span>` : "";
+        const rowClass = [race.className, isFavoriteTeamName(row.team) ? "favorite-team-row" : ""].filter(Boolean).join(" ");
+        return `<tr class="${rowClass}"><td class="rank-cell">${row.standing}</td><td><a class="team-link" href="${teamHref(row)}">${escapeHtml(row.team)}</a>${raceLabel}</td><td>${escapeHtml(row.tier)}</td><td>${row.wins}-${row.losses}</td><td>${escapeHtml(row.pct ?? "-")}</td><td>${escapeHtml(row.gb ?? "-")}</td><td>${escapeHtml(row.home || "-")}</td><td>${escapeHtml(row.road || "-")}</td><td>${escapeHtml(row.pf ?? "-")}</td><td>${escapeHtml(row.pa ?? "-")}</td><td class="${diffClass(row.diff)}">${formatSigned(row.diff)}</td><td>${escapeHtml(row.last10 || "-")}</td><td>${escapeHtml(row.streak || "-")}</td></tr>`;
+      }).join("");
+      document.getElementById("tableStatus").textContent = `${rows.length} teams`;
+    }
+    function render() {
+      renderTabs();
+      const rows = sortedRows();
+      renderSummary(rows);
+      renderTable(rows);
+    }
+    async function init() {
+      const [standingsRes, scheduleRes] = await Promise.all([fetch(DATA_URLS.standings), fetch(DATA_URLS.schedule)]);
+      const [data, scheduleData] = await Promise.all([standingsRes.json(), scheduleRes.json()]);
+      state.sections = Array.isArray(data.sections) ? data.sections : [];
+      state.scheduleSections = Array.isArray(scheduleData.sections) ? scheduleData.sections : [];
+      state.tier = favoriteTierSlug() || state.sections[0]?.slug || "";
+      document.getElementById("standingsSearch").addEventListener("input", (e) => { state.query = e.target.value; render(); });
+      document.getElementById("sortPreset").addEventListener("change", (e) => { state.sortPreset = e.target.value; render(); });
+      render();
+    }
+    init().catch(() => { document.getElementById("tableStatus").textContent = "Standings unavailable"; });
+  </script>
+</body>
+</html>
