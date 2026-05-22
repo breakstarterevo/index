@@ -1,0 +1,29 @@
+{
+  "source": "00-build/history",
+  "updatedAtUtc": "2026-05-22T10:55:36.719980+00:00",
+  "seasonCount": 1,
+  "seasons": [
+    {
+      "season": "season-1",
+      "label": "1981-1982",
+      "archivedAtUtc": "2026-05-22T10:55:36.685677+00:00",
+      "jsonCount": 34,
+      "manifest": "season-1/manifest.json",
+      "database": "season-1/database",
+      "feeds": {
+        "players.json": true,
+        "player_stats.json": true,
+        "standings.json": true,
+        "leaders.json": true,
+        "teams.json": true,
+        "team_stats.json": true,
+        "awards.json": true,
+        "season_awards.json": true,
+        "youth_intake.json": true,
+        "youth_intake_players.json": true,
+        "supercup/standings.json": true,
+        "supercup/leaders.json": true
+      }
+    }
+  ]
+}

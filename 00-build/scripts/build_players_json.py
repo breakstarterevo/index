@@ -25,6 +25,7 @@ FREE_AGENTS_OUT = os.path.join(DATABASE_DIR, "freeagents.json")
 LEADERS_OUT = os.path.join(DATABASE_DIR, "leaders.json")
 GAME_RESULTS_OUT = os.path.join(DATABASE_DIR, "game_results.json")
 AWARDS_OUT = os.path.join(DATABASE_DIR, "awards.json")
+SEASON_AWARDS_OUT = os.path.join(DATABASE_DIR, "season_awards.json")
 STANDINGS_PATH = os.path.normpath(os.path.join(PROJECT_ROOT, "standings.htm"))
 CAPREPORT_PATH = os.path.normpath(os.path.join(PROJECT_ROOT, "capreport.htm"))
 INJURIES_PATH = os.path.normpath(os.path.join(PROJECT_ROOT, "injuries.htm"))
@@ -33,6 +34,7 @@ FREE_AGENTS_PATH = os.path.normpath(os.path.join(PROJECT_ROOT, "freeagents.htm")
 DRAFT_PATH = os.path.normpath(os.path.join(PROJECT_ROOT, "draft.htm"))
 LEADERS_PATH = os.path.normpath(os.path.join(PROJECT_ROOT, "leaders.htm"))
 AWARDS_PATH = os.path.normpath(os.path.join(PROJECT_ROOT, "awards.htm"))
+SEASON_AWARDS_PATH = os.path.normpath(os.path.join(PROJECT_ROOT, "seasonawards.htm"))
 MDB_PATH = os.path.normpath(os.path.join(PROJECT_ROOT, "LeagueOutput.mdb"))
 
 # The 16 numerical stats in your roster files
@@ -1394,6 +1396,100 @@ def parse_awards_sections(html, team_lookup):
     return sections
 
 
+def parse_season_award_rows(table_html):
+    row_matches = re.findall(
+        r"<tr[^>]*class=(row1|row2)[^>]*>(.*?)</tr>",
+        table_html,
+        re.IGNORECASE | re.DOTALL,
+    )
+    awards = []
+
+    for row_class, row_html in row_matches:
+        cells = re.findall(r"<td[^>]*class=main[^>]*>(.*?)</td>", row_html, re.IGNORECASE | re.DOTALL)
+        if len(cells) < 9:
+            continue
+
+        award = strip_tags(cells[0])
+        person_name = strip_tags(cells[2])
+        team_name = strip_tags(cells[3])
+        if not award and not person_name and not team_name:
+            continue
+
+        person_link = re.search(
+            r'<a[^>]+href=(["\']?)([^"\'\s>]+)\1[^>]*>(.*?)</a>',
+            cells[2],
+            re.IGNORECASE | re.DOTALL,
+        )
+        team_link = re.search(
+            r'<a[^>]+href=(["\']?)([^"\'\s>]+)\1[^>]*>(.*?)</a>',
+            cells[3],
+            re.IGNORECASE | re.DOTALL,
+        )
+        person_url = normalize_schedule_url(person_link.group(2)) if person_link else ""
+        team_url = normalize_schedule_url(team_link.group(2)) if team_link else ""
+
+        awards.append(
+            {
+                "award": award,
+                "pos": strip_tags(cells[1]),
+                "person": person_name,
+                "personUrl": person_url,
+                "personFile": person_url.split("/")[-1] if person_url else "",
+                "team": team_name,
+                "teamUrl": team_url,
+                "teamFile": team_url.split("/")[-1] if team_url else "",
+                "ppg": parse_numeric_value(cells[4]),
+                "rpg": parse_numeric_value(cells[5]),
+                "apg": parse_numeric_value(cells[6]),
+                "spg": parse_numeric_value(cells[7]),
+                "bpg": parse_numeric_value(cells[8]),
+                "rowClass": row_class.lower(),
+            }
+        )
+
+    return awards
+
+
+def empty_season_awards_data():
+    return {
+        "source": os.path.basename(SEASON_AWARDS_PATH),
+        "missing": True,
+        "sectionCount": 0,
+        "awardCount": 0,
+        "sections": [],
+    }
+
+
+def parse_season_awards_sections(html):
+    sections = []
+    table_matches = re.findall(
+        r"<table[^>]*>\s*<tr><td class=tableheader[^>]*>&nbsp;(.*?)</td></tr>(.*?)</table>",
+        html,
+        re.IGNORECASE | re.DOTALL,
+    )
+
+    for title_html, table_html in table_matches:
+        title = strip_tags(title_html)
+        if not title:
+            continue
+
+        sections.append(
+            {
+                "title": title,
+                "slug": re.sub(r"[^a-z0-9]+", "-", title.lower()).strip("-"),
+                "awards": parse_season_award_rows(table_html),
+            }
+        )
+
+    return {
+        "source": os.path.basename(SEASON_AWARDS_PATH),
+        "missing": False,
+        "sectionCount": len(sections),
+        "awardCount": sum(len(section["awards"]) for section in sections),
+        "sections": sections,
+    }
+
+
 def normalize_schedule_url(url):
     return clean(url).replace("\\", "/")
 
@@ -1807,6 +1903,23 @@ def main():
             json.dump(awards_data, f, indent=4)
     else:
         print(f"Warning: {AWARDS_PATH} not found. Skipping awards JSON.")
+
+    if os.path.exists(SEASON_AWARDS_PATH):
+        with open(SEASON_AWARDS_PATH, "r", encoding="latin-1") as f:
+            season_awards_html = f.read()
+        season_awards_data = parse_season_awards_sections(season_awards_html)
+    else:
+        season_awards_data = empty_season_awards_data()
+
+    with open(SEASON_AWARDS_OUT, "w", encoding="utf-8") as f:
+        json.dump(season_awards_data, f, indent=4)
+    if season_awards_data.get("missing"):
+        print(f"Warning: {SEASON_AWARDS_PATH} not found. Wrote empty season awards JSON.")
+    else:
+        print(
+            f"Final count: {season_awards_data['awardCount']} season awards across "
+            f"{season_awards_data['sectionCount']} sections saved to {SEASON_AWARDS_OUT}"
+        )
         
     print(f"\nFinal count: {len(all_players)} players saved to {PLAYERS_OUT}")
     print(f"Final count: {attached_potential_count} players enriched with potential letter grades")

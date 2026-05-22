@@ -1,8 +1,28 @@
 {
   "season": "season-1",
+  "label": "1981-1982",
   "source": "00-build/database",
-  "archived_at_utc": "2026-05-22T09:13:37.012398+00:00",
-  "json_count": 33,
+  "archived_at_utc": "2026-05-22T10:55:36.685677+00:00",
+  "json_count": 34,
+  "feeds": {
+    "players.json": true,
+    "player_stats.json": true,
+    "standings.json": true,
+    "leaders.json": true,
+    "teams.json": true,
+    "team_stats.json": true,
+    "awards.json": true,
+    "season_awards.json": true,
+    "youth_intake.json": true,
+    "youth_intake_players.json": true,
+    "supercup/standings.json": true,
+    "supercup/leaders.json": true
+  },
+  "season_awards": {
+    "missing": false,
+    "sectionCount": 3,
+    "awardCount": 120
+  },
   "files": [
     {
       "path": "awards.json",
@@ -63,6 +83,10 @@
     {
       "path": "schedule.json",
       "bytes": 506444
+    },
+    {
+      "path": "season_awards.json",
+      "bytes": 77600
     },
     {
       "path": "standings.json",
@@ -130,11 +154,11 @@
     },
     {
       "path": "youth_intake.json",
-      "bytes": 100895
+      "bytes": 81592
     },
     {
       "path": "youth_intake_players.json",
-      "bytes": 85217
+      "bytes": 64202
     }
   ]
 }
