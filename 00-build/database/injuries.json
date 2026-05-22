@@ -8,7 +8,7 @@
             "team": "roster25",
             "teamName": "Valencia",
             "rosterUrl": "./rosters/roster25.htm",
-            "length": "242",
+            "length": "219",
             "injury": "Torn MCL",
             "rowClass": "row1"
         },
@@ -19,8 +19,30 @@
             "team": "roster18",
             "teamName": "Ajax",
             "rosterUrl": "./rosters/roster18.htm",
-            "length": "194",
+            "length": "171",
             "injury": "Ruptured Achilles",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "PF",
+            "name": "George Johnson",
+            "url": "",
+            "team": "roster11",
+            "teamName": "Atletico Madrid",
+            "rosterUrl": "./rosters/roster11.htm",
+            "length": "61",
+            "injury": "Broken Arm",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "SF",
+            "name": "Mike Mitchell",
+            "url": "",
+            "team": "roster15",
+            "teamName": "Marseille",
+            "rosterUrl": "./rosters/roster15.htm",
+            "length": "36",
+            "injury": "Broken Foot",
             "rowClass": "row2"
         },
         {
@@ -30,9 +52,42 @@
             "team": "roster6",
             "teamName": "Crystal Palace",
             "rosterUrl": "./rosters/roster6.htm",
-            "length": "52",
+            "length": "29",
             "injury": "Broken Foot",
             "rowClass": "row1"
+        },
+        {
+            "pos": "PG",
+            "name": "Rickey Green",
+            "url": "",
+            "team": "roster16",
+            "teamName": "Sheffield United",
+            "rosterUrl": "./rosters/roster16.htm",
+            "length": "25",
+            "injury": "Broken Foot",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "C",
+            "name": "Artis Gilmore",
+            "url": "",
+            "team": "roster6",
+            "teamName": "Crystal Palace",
+            "rosterUrl": "./rosters/roster6.htm",
+            "length": "25",
+            "injury": "Broken Finger",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "SF",
+            "name": "Alex English",
+            "url": "",
+            "team": "roster6",
+            "teamName": "Crystal Palace",
+            "rosterUrl": "./rosters/roster6.htm",
+            "length": "21",
+            "injury": "Broken Cheekbone",
+            "rowClass": "row2"
         },
         {
             "pos": "C",
@@ -41,9 +96,53 @@
             "team": "roster23",
             "teamName": "Sporting CP",
             "rosterUrl": "./rosters/roster23.htm",
-            "length": "41",
+            "length": "18",
             "injury": "Broken Foot",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PG",
+            "name": "Reggie Theus",
+            "url": "",
+            "team": "roster6",
+            "teamName": "Crystal Palace",
+            "rosterUrl": "./rosters/roster6.htm",
+            "length": "17",
+            "injury": "Pinched Nerve",
             "rowClass": "row2"
+        },
+        {
+            "pos": "SG",
+            "name": "Mike Bantom",
+            "url": "",
+            "team": "roster14",
+            "teamName": "Juventus",
+            "rosterUrl": "./rosters/roster14.htm",
+            "length": "17",
+            "injury": "Patellar Tendanitis",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "C",
+            "name": "Jeff Ruland",
+            "url": "",
+            "team": "roster5",
+            "teamName": "Manchester United",
+            "rosterUrl": "./rosters/roster5.htm",
+            "length": "16",
+            "injury": "Broken Cheekbone",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "SG",
+            "name": "Danny Ainge",
+            "url": "",
+            "team": "roster20",
+            "teamName": "Monaco",
+            "rosterUrl": "./rosters/roster20.htm",
+            "length": "14",
+            "injury": "Torn Abdominal Muscle",
+            "rowClass": "row1"
         },
         {
             "pos": "SG",
@@ -52,9 +151,9 @@
             "team": "roster7",
             "teamName": "Bayern Munich",
             "rosterUrl": "./rosters/roster7.htm",
-            "length": "27",
+            "length": "4",
             "injury": "Broken Foot",
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "pos": "SF",
@@ -63,64 +162,20 @@
             "team": "roster22",
             "teamName": "Tottenham Hotspur",
             "rosterUrl": "./rosters/roster22.htm",
-            "length": "26",
+            "length": "3",
             "injury": "Torn Abdominal Muscle",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SG",
-            "name": "Brian Taylor",
-            "url": "",
-            "team": "roster23",
-            "teamName": "Sporting CP",
-            "rosterUrl": "./rosters/roster23.htm",
-            "length": "12",
-            "injury": "Strained Back",
             "rowClass": "row1"
         },
         {
             "pos": "SF",
-            "name": "Adrian Dantley",
+            "name": "Bernard King",
             "url": "",
-            "team": "roster11",
-            "teamName": "Atletico Madrid",
-            "rosterUrl": "./rosters/roster11.htm",
-            "length": "12",
-            "injury": "Sprained Ankle",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SF",
-            "name": "John Long",
-            "url": "",
-            "team": "roster22",
-            "teamName": "Tottenham Hotspur",
-            "rosterUrl": "./rosters/roster22.htm",
-            "length": "7",
-            "injury": "Bruised Jaw",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "PF",
-            "name": "Clemon Johnson",
-            "url": "",
-            "team": "roster26",
-            "teamName": "Inter Milan",
-            "rosterUrl": "./rosters/roster26.htm",
-            "length": "1",
-            "injury": "Sprained Ankle",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "C",
-            "name": "Robert Parish",
-            "url": "",
-            "team": "roster15",
-            "teamName": "Marseille",
-            "rosterUrl": "./rosters/roster15.htm",
-            "length": "1",
+            "team": "roster7",
+            "teamName": "Bayern Munich",
+            "rosterUrl": "./rosters/roster7.htm",
+            "length": "3",
             "injury": "Sprained Knee",
-            "rowClass": "row1"
+            "rowClass": "row2"
         }
     ]
 }
