@@ -15,46 +15,8 @@
     interviews: "Interviews"
   };
 
-  function ensureMediaNavStyles() {
-    if (document.getElementById("media-compact-nav-styles")) return;
-    const style = document.createElement("style");
-    style.id = "media-compact-nav-styles";
-    style.textContent = `
-      .media-breadcrumbs,.media-compact-nav{width:min(1280px,calc(100% - 2.5rem));margin-left:auto;margin-right:auto}
-      .media-breadcrumbs{align-items:center;color:var(--mid,#524633);display:flex;flex-wrap:wrap;gap:.35rem;font-size:.68rem;font-weight:800;letter-spacing:.16em;padding:.65rem 0 0;text-transform:uppercase}
-      .media-breadcrumbs a{color:var(--gold,#111b36);text-decoration:none}
-      .media-breadcrumbs a:hover{text-decoration:underline}
-      .media-breadcrumbs-current{color:var(--ink,#0f0f0f);min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-      .media-compact-nav{display:none;gap:.4rem;overflow-x:auto;padding-top:.55rem;scrollbar-width:thin}
-      .media-compact-nav a{border:1px solid var(--light,#e3d7bf);background:var(--cream,#fff);color:var(--ink,#0f0f0f);flex:0 0 auto;font-size:.68rem;font-weight:850;letter-spacing:.12em;padding:.42rem .52rem;text-decoration:none;text-transform:uppercase;white-space:nowrap}
-      .media-compact-nav a:hover{border-color:var(--gold,#111b36);color:var(--gold,#111b36)}
-      @media(max-width:700px){.site-topbar-nav{display:none!important}.media-breadcrumbs,.media-compact-nav{width:min(100%,calc(100% - 1.25rem))}.media-breadcrumbs{font-size:.58rem;gap:.28rem;letter-spacing:.1em;padding-top:.5rem}.media-compact-nav{display:flex}}
-    `;
-    document.head.appendChild(style);
-  }
-
   function ensureMediaNav(currentLabel) {
-    if (document.querySelector(".media-breadcrumbs")) return;
-    ensureMediaNavStyles();
-    const topbar = document.querySelector(".site-topbar");
-    if (!topbar) return;
-    const crumbs = document.createElement("nav");
-    crumbs.className = "media-breadcrumbs";
-    crumbs.setAttribute("aria-label", "Breadcrumb");
-    crumbs.innerHTML = `<a href="../../index.htm">League</a><span>/</span><a href="../homepage.html">Media</a><span>/</span><span class="media-breadcrumbs-current">${safe(currentLabel || "Media")}</span>`;
-    const compact = document.createElement("nav");
-    compact.className = "media-compact-nav";
-    compact.setAttribute("aria-label", "ESL Media quick links");
-    compact.innerHTML = `
-      <a href="../homepage.html">Home</a>
-      <a href="all-articles.html">All</a>
-      <a href="analysis.html">Analysis</a>
-      <a href="scouting.html">Scouting</a>
-      <a href="interviews.html">Interviews</a>
-      <a href="../../index.htm">League</a>
-    `;
-    topbar.insertAdjacentElement("afterend", compact);
-    topbar.insertAdjacentElement("afterend", crumbs);
+    return currentLabel;
   }
 
   function renderCard(article) {

@@ -1443,7 +1443,9 @@ nav {
 
   .site-topbar-nav,
   .topbar-nav {
-    display: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
   }
 
   .media-breadcrumbs,
@@ -1459,7 +1461,7 @@ nav {
   }
 
   .media-compact-nav {
-    display: flex;
+    display: none;
   }
 
   .esl-teams-panel {

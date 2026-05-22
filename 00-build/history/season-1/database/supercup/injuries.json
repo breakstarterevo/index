@@ -1,0 +1,27 @@
+{
+    "source": "injuries.htm",
+    "injuries": [
+        {
+            "pos": "PG",
+            "name": "Kelvin Ransey",
+            "url": "",
+            "team": "roster28",
+            "teamName": "Valencia",
+            "rosterUrl": "./rosters/roster28.htm",
+            "length": "56",
+            "injury": "Torn MCL",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "SG",
+            "name": "Butch Carter",
+            "url": "",
+            "team": "roster7",
+            "teamName": "Ajax",
+            "rosterUrl": "./rosters/roster7.htm",
+            "length": "8",
+            "injury": "Ruptured Achilles",
+            "rowClass": "row2"
+        }
+    ]
+}
