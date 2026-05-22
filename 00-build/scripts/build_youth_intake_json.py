@@ -178,6 +178,47 @@ def _find_sheet(sheets, desired_name):
     return "", []
 
 
+def _find_database_sheets(sheets):
+    found = []
+    seen = set()
+    for desired_name in ("Current Intake", "DATATBASE", "DATABASE"):
+        sheet_name, rows = _find_sheet(sheets, desired_name)
+        key = _normalize_key(sheet_name)
+        if sheet_name and key not in seen:
+            seen.add(key)
+            found.append((sheet_name, rows))
+    return found
+
+
+def _populated_field_count(player):
+    return sum(1 for value in player.values() if str(value or "").strip())
+
+
+def _build_combined_database_lookup(sheets):
+    lookup = {}
+    sheet_names = []
+    for sheet_name, rows in _find_database_sheets(sheets):
+        sheet_names.append(sheet_name)
+        for key, player in _build_database_lookup(rows).items():
+            existing = lookup.get(key)
+            if existing is None or _populated_field_count(player) > _populated_field_count(existing):
+                lookup[key] = player
+    return lookup, sheet_names
+
+
+def _build_combined_current_intake_players(sheets):
+    players_by_name = {}
+    for _sheet_name, rows in _find_database_sheets(sheets):
+        for player in _build_current_intake_players(rows):
+            key = _normalize_key(player.get("name", ""))
+            if not key:
+                continue
+            existing = players_by_name.get(key)
+            if existing is None or _populated_field_count(player) > _populated_field_count(existing):
+                players_by_name[key] = player
+    return sorted(players_by_name.values(), key=lambda p: str(p.get("name", "")).lower())
+
+
 def _build_database_lookup(rows):
     if not rows:
         return {}
@@ -402,17 +443,12 @@ def _build_intake_map(rows, known_team_names=None):
 
 def build_youth_intake_payload(xlsx_path: str):
     sheets = _xlsx_sheet_rows(xlsx_path)
-    db_sheet_name, db_rows = _find_sheet(sheets, "Current Intake")
-    if not db_sheet_name:
-        db_sheet_name, db_rows = _find_sheet(sheets, "DATATBASE")
-    if not db_sheet_name:
-        db_sheet_name, db_rows = _find_sheet(sheets, "DATABASE")
     intake_sheet_name, intake_rows = _find_sheet(sheets, "INTAKE list")
     focus_sheet_name, focus_rows = _find_sheet(sheets, "Position focus")
     if not focus_sheet_name:
         focus_sheet_name, focus_rows = _find_sheet(sheets, "TeamList")
 
-    player_lookup = _build_database_lookup(db_rows)
+    player_lookup, db_sheet_names = _build_combined_database_lookup(sheets)
     focus_map = _build_position_focus_map(focus_rows)
     intake_map = _build_intake_map(intake_rows, known_team_names=[info.get("team", "") for info in focus_map.values()])
 
@@ -458,7 +494,7 @@ def build_youth_intake_payload(xlsx_path: str):
     return {
         "source": os.path.relpath(xlsx_path, PROJECT_ROOT).replace("\\", "/"),
         "sheetsUsed": {
-            "database": db_sheet_name,
+            "database": db_sheet_names,
             "intakeList": intake_sheet_name,
             "positionFocus": focus_sheet_name,
         },
@@ -484,12 +520,7 @@ def main():
 
     payload = build_youth_intake_payload(XLSX_PATH)
     sheets = _xlsx_sheet_rows(XLSX_PATH)
-    db_sheet_name, db_rows = _find_sheet(sheets, "Current Intake")
-    if not db_sheet_name:
-        db_sheet_name, db_rows = _find_sheet(sheets, "DATATBASE")
-    if not db_sheet_name:
-        db_sheet_name, db_rows = _find_sheet(sheets, "DATABASE")
-    players_payload = _build_current_intake_players(db_rows)
+    players_payload = _build_combined_current_intake_players(sheets)
 
     with open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
         json.dump(payload, handle, indent=2, ensure_ascii=False)
