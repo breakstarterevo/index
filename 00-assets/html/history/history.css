@@ -35,7 +35,7 @@ a:hover { text-decoration: underline; }
   grid-template-columns: minmax(280px, 1fr) minmax(260px, 560px);
   gap: 18px;
   align-items: center;
-  padding: 8px 28px;
+  padding: 6px 28px;
 }
 
 .history-brand {
@@ -46,15 +46,15 @@ a:hover { text-decoration: underline; }
 }
 
 .history-logo {
-  width: 62px;
-  height: 42px;
+  width: 54px;
+  height: 36px;
   object-fit: contain;
 }
 
 .history-title {
   display: block;
   color: #51565f;
-  font-size: 30px;
+  font-size: 26px;
   font-weight: 800;
   letter-spacing: 0;
   line-height: .95;
@@ -64,7 +64,7 @@ a:hover { text-decoration: underline; }
 .history-subtitle {
   display: block;
   color: #6c7480;
-  font-size: 15px;
+  font-size: 13px;
   font-weight: 700;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -197,30 +197,63 @@ a:hover { text-decoration: underline; }
 .history-page {
   max-width: 1320px;
   margin: 0 auto;
-  padding: 16px 18px 40px;
+  padding: 12px 18px 40px;
 }
 
 .history-hero {
   background: #fff;
   border: 1px solid var(--hist-line);
-  border-left: 8px solid var(--hist-ink);
-  padding: 18px 20px;
-  margin-bottom: 14px;
+  border-left: 5px solid var(--hist-ink);
+  padding: 10px 14px;
+  margin-bottom: 10px;
 }
 
 .eyebrow {
   color: var(--hist-ink);
-  font-size: 13px;
+  font-size: 10px;
   font-weight: 900;
-  letter-spacing: 4px;
+  letter-spacing: 2px;
   text-transform: uppercase;
 }
 
 h1 {
-  margin: 6px 0 8px;
+  margin: 2px 0 5px;
   color: #20242c;
-  font-size: 42px;
-  line-height: 1.02;
+  font-size: 26px;
+  line-height: 1.05;
+}
+
+.hero-deck {
+  max-width: 760px;
+  margin: 0 0 8px;
+  color: var(--hist-muted);
+  font-size: 13px;
+  line-height: 1.35;
+}
+
+body:not([data-page="index"]) .hero-deck {
+  display: none;
+}
+
+body[data-page="index"] .history-hero {
+  border-left-width: 8px;
+  padding: 16px 20px;
+  margin-bottom: 14px;
+}
+
+body[data-page="index"] .eyebrow {
+  font-size: 12px;
+  letter-spacing: 3px;
+}
+
+body[data-page="index"] h1 {
+  font-size: 34px;
+  margin: 4px 0 8px;
+}
+
+body[data-page="team"] .history-hero,
+body[data-page="player"] .history-hero {
+  align-items: center;
 }
 
 h2 {
@@ -260,6 +293,7 @@ h3 {
 
 .status-active { background: #c7f0d0; border-color: #84c795; }
 .status-retired { background: #eceff4; border-color: #c8d0dc; }
+.status-champion { background: #f7d95b; border-color: #b88700; color: #4a3200; }
 .status-promoted { background: #c7f0d0; border-color: #57a76a; color: #064b20; }
 .status-relegated { background: #ffd1d1; border-color: #d97979; color: #800000; }
 
@@ -343,6 +377,59 @@ table.ref-table {
 .ref-table .num { text-align: right; font-variant-numeric: tabular-nums; }
 .ref-table tfoot td { background: #f0f2f5; font-weight: 800; }
 
+.player-stats-table-wrap {
+  -webkit-overflow-scrolling: touch;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.player-stats-table-wrap .ref-table {
+  min-width: 720px;
+  width: max-content;
+}
+
+.player-stats-table-wrap .ref-table th:first-child,
+.player-stats-table-wrap .ref-table td:first-child,
+.player-stats-table-wrap .ref-table th:nth-child(2),
+.player-stats-table-wrap .ref-table td:nth-child(2) {
+  position: sticky;
+  z-index: 3;
+}
+
+.player-stats-table-wrap .ref-table th:first-child,
+.player-stats-table-wrap .ref-table td:first-child {
+  left: 0;
+  min-width: 100px;
+  width: 100px;
+}
+
+.player-stats-table-wrap .ref-table th:nth-child(2),
+.player-stats-table-wrap .ref-table td:nth-child(2) {
+  left: 100px;
+  min-width: 70px;
+  width: 70px;
+}
+
+.player-stats-table-wrap .ref-table th:first-child,
+.player-stats-table-wrap .ref-table th:nth-child(2) {
+  z-index: 4;
+}
+
+.player-stats-table-wrap .ref-table td:first-child,
+.player-stats-table-wrap .ref-table td:nth-child(2) {
+  background: #fff;
+}
+
+.player-stats-table-wrap .ref-table tr:nth-child(even) td:first-child,
+.player-stats-table-wrap .ref-table tr:nth-child(even) td:nth-child(2) {
+  background: #f7f9fc;
+}
+
+.player-stats-table-wrap .ref-table th:nth-child(2),
+.player-stats-table-wrap .ref-table td:nth-child(2) {
+  box-shadow: 8px 0 10px -10px rgba(8, 24, 50, 0.75);
+}
+
 .rank-good { color: #006b3a; font-weight: 800; }
 .rank-bad { color: #a40000; font-weight: 800; }
 
@@ -389,6 +476,322 @@ select, .small-input {
   object-fit: contain;
 }
 
+.dashboard-grid,
+.quick-link-grid,
+.team-directory-grid,
+.timeline-grid,
+.filter-bar {
+  display: grid;
+  gap: 12px;
+}
+
+.dashboard-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 14px;
+}
+
+.dashboard-card,
+.quick-link-grid a,
+.team-directory-card,
+.timeline-card {
+  background: #fff;
+  border: 1px solid var(--hist-line);
+  border-top: 4px solid var(--hist-ink);
+  color: var(--hist-ink);
+  display: block;
+  padding: 12px;
+}
+
+.dashboard-card:hover,
+.quick-link-grid a:hover,
+.team-directory-card:hover {
+  box-shadow: 0 6px 18px rgba(8, 24, 50, .12);
+  text-decoration: none;
+}
+
+.dashboard-card-label,
+.quick-link-grid span {
+  color: #9b0000;
+  display: block;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 6px;
+  text-transform: uppercase;
+}
+
+.dashboard-card strong {
+  display: block;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.dashboard-card p,
+.timeline-card p {
+  color: var(--hist-muted);
+  line-height: 1.4;
+  margin: 8px 0 0;
+}
+
+.quick-link-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-bottom: 14px;
+}
+
+.quick-link-grid strong {
+  display: block;
+  line-height: 1.35;
+}
+
+.team-directory-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.team-directory-card {
+  align-items: center;
+  display: grid;
+  grid-template-columns: 42px minmax(0, 1fr) auto;
+  gap: 10px;
+}
+
+.team-directory-card img {
+  height: 36px;
+  object-fit: contain;
+  width: 36px;
+}
+
+.team-directory-card strong,
+.team-directory-card small {
+  display: block;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.team-directory-card small {
+  color: var(--hist-muted);
+  font-weight: 700;
+  margin-top: 3px;
+}
+
+.filter-bar {
+  align-items: end;
+  grid-template-columns: repeat(6, minmax(130px, 1fr));
+}
+
+.compact-controls {
+  border-top-width: 2px;
+  padding: 8px 10px;
+}
+
+.compact-controls h2 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+}
+
+.compact-controls .filter-bar {
+  gap: 8px;
+}
+
+.filter-bar label {
+  color: var(--hist-muted);
+  display: grid;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.chart-wrap {
+  border: 1px solid #d8dee8;
+  overflow-x: auto;
+  padding: 8px;
+}
+
+.history-chart {
+  display: block;
+  min-width: 420px;
+  width: 100%;
+}
+
+.chart-wrap {
+  max-height: 230px;
+}
+
+.position-chart {
+  max-height: 210px;
+  min-width: 420px;
+}
+
+.chart-axis {
+  stroke: #8d99a8;
+  stroke-width: 1;
+}
+
+.chart-y,
+.history-chart text {
+  fill: #556276;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.chart-series polyline,
+.position-line {
+  fill: none;
+  stroke: var(--series-color, #0645ad);
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-width: 3;
+}
+
+.chart-series circle {
+  fill: var(--series-color, #0645ad);
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.chart-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.chart-legend span {
+  align-items: center;
+  color: var(--hist-muted);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 900;
+  gap: 5px;
+}
+
+.chart-legend i {
+  display: inline-block;
+  height: 10px;
+  width: 18px;
+}
+
+.tier-band {
+  fill: #f8fafc;
+}
+
+.tier-band-1 {
+  fill: #edf3fb;
+}
+
+.tier-band-2 {
+  fill: #f7f2e7;
+}
+
+.tier-label {
+  fill: var(--hist-ink);
+  font-size: 14px;
+  font-weight: 900;
+}
+
+.position-line {
+  stroke: #081832;
+}
+
+.position-dot circle {
+  fill: #0645ad;
+  stroke: #fff;
+  stroke-width: 2;
+}
+
+.position-dot.promoted circle {
+  fill: #16833a;
+}
+
+.position-dot.champion circle {
+  fill: #f7d95b;
+  stroke: #b88700;
+}
+
+.position-dot.relegated circle {
+  fill: #d71920;
+}
+
+.position-dot text {
+  fill: var(--hist-ink);
+  font-size: 12px;
+  font-weight: 900;
+  pointer-events: none;
+}
+
+.timeline-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.timeline-card {
+  border-top-color: #a66400;
+  position: relative;
+}
+
+.timeline-card div:first-child {
+  align-items: baseline;
+  display: flex;
+  gap: 8px;
+  justify-content: space-between;
+}
+
+.timeline-card div:first-child span {
+  color: #9b0000;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.compare-card .history-chart {
+  min-width: 360px;
+}
+
+.alphabet-jump {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.alphabet-jump a,
+.alphabet-jump span {
+  align-items: center;
+  border: 1px solid var(--hist-line);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 900;
+  height: 26px;
+  justify-content: center;
+  width: 26px;
+}
+
+.alphabet-jump span {
+  background: #eef2f6;
+  color: #9aa5b1;
+}
+
+.alphabet-section h2 {
+  font-size: 22px;
+  letter-spacing: 2px;
+}
+
+.alphabet-name-grid {
+  column-gap: 18px;
+  columns: 4 180px;
+}
+
+.alphabet-name-grid a {
+  break-inside: avoid;
+  display: block;
+  font-weight: 700;
+  line-height: 1.35;
+  padding: 3px 0;
+}
+
 .muted { color: var(--hist-muted); }
 .empty { padding: 16px; color: var(--hist-muted); background: #f7f9fc; border: 1px dashed #c8d0dc; }
 
@@ -403,5 +806,33 @@ select, .small-input {
   .history-grid,
   .history-grid.three,
   .history-grid.main-rail { grid-template-columns: 1fr; }
+  .dashboard-grid,
+  .quick-link-grid,
+  .team-directory-grid,
+  .timeline-grid,
+  .filter-bar { grid-template-columns: 1fr; }
+  .chart-wrap {
+    display: none;
+  }
+  .player-stats-table-wrap .ref-table th:first-child,
+  .player-stats-table-wrap .ref-table td:first-child {
+    left: 0;
+    min-width: 88px;
+    position: sticky;
+    width: 88px;
+    z-index: 3;
+  }
+  .player-stats-table-wrap .ref-table th:nth-child(2),
+  .player-stats-table-wrap .ref-table td:nth-child(2) {
+    left: 88px;
+    min-width: 64px;
+    position: sticky;
+    width: 64px;
+    z-index: 3;
+  }
+  .player-stats-table-wrap .ref-table th:first-child,
+  .player-stats-table-wrap .ref-table th:nth-child(2) {
+    z-index: 4;
+  }
   h1 { font-size: 32px; }
 }
