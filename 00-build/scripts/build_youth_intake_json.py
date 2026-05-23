@@ -181,7 +181,7 @@ def _find_sheet(sheets, desired_name):
 def _find_database_sheets(sheets):
     found = []
     seen = set()
-    for desired_name in ("Current Intake", "DATATBASE", "DATABASE"):
+    for desired_name in ("Current Intake", "DATATBASE", "DATABASE", "TIER 1", "TIER 2", "TIER 3"):
         sheet_name, rows = _find_sheet(sheets, desired_name)
         key = _normalize_key(sheet_name)
         if sheet_name and key not in seen:

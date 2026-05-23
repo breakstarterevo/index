@@ -493,7 +493,8 @@
     featureRow.appendChild(makeLeagueLogoLink());
     shell.appendChild(featureRow);
     shell.appendChild(makeMenuGroup("Media", [
-      { label: "ESL Media", href: core.paths.eslMedia, target: "_top", logo: "eslm" }
+      { label: "ESL Media", href: core.paths.eslMedia, target: "_top", logo: "eslm" },
+      { label: "ESL Reference", href: core.paths.eslReference, target: "_top", className: "league-menu-link--accent" }
     ]));
     groups.forEach(function (group) {
       shell.appendChild(makeMenuGroup(group.title, group.links, { collapsed: !!group.collapsed }));

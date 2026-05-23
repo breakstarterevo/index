@@ -231,12 +231,25 @@
     return teamIds.has(fileStem(player.team)) || teamNames.has(String(player.teamLabel || player.team || "").toLowerCase());
   }
 
+  function currentPlayerForIdentity(identity) {
+    return (state.currentPlayers || []).find((player) =>
+      String(player.name || "").toLowerCase() === String(identity.name || "").toLowerCase()
+      && String(player.ht || "") === String(identity.height || "")
+    ) || null;
+  }
+
+  function identityStatus(identity) {
+    const player = currentPlayerForIdentity(identity);
+    if (!player) return { label: "Retired", key: "retired" };
+    const team = String(player.teamLabel || player.team || "").trim().toLowerCase();
+    if (team === "draft") return { label: "Incoming Prospect", key: "prospect" };
+    if (team === "fa" || team === "free agent" || team === "free agents") return { label: "Free Agent", key: "free-agent" };
+    if (isRealCurrentTeam(player)) return { label: "Active", key: "active" };
+    return { label: "Free Agent", key: "free-agent" };
+  }
+
   function isIdentityActive(identity) {
-    return (state.currentPlayers || []).some((player) => {
-      return isRealCurrentTeam(player)
-        && String(player.name || "").toLowerCase() === String(identity.name || "").toLowerCase()
-        && String(player.ht || "") === String(identity.height || "");
-    });
+    return identityStatus(identity).key === "active";
   }
 
   function identityForSeasonPlayer(season, playerFile) {
@@ -318,6 +331,7 @@
             <button type="submit">Search</button>
             <div class="history-results" id="historyResults"></div>
           </form>
+          <a class="history-index-button" href="../../../index.htm">Back to Index</a>
         </div>
         <nav class="history-nav">
           <div class="history-nav-item"><a class="history-nav-link" href="index.htm">Archive Home</a><div class="history-mega" id="megaHome"><div class="mega-line"><strong>Jump:</strong> <a href="players.htm">Players</a> | <a href="teams.htm">Teams</a> | <a href="leaders.htm">Leaders</a> | <a href="compare.htm">Compare</a></div></div></div>
@@ -446,7 +460,7 @@
       return `<td class="${numberish ? "num" : ""}">${esc(value)}</td>`;
     }).join("")}</tr>`);
 
-    const controls = `<div class="selector-row"><label for="playerStatTable"><strong>Table</strong></label><select id="playerStatTable">${keys.map((key) => `<option value="${esc(key)}" ${key === tableKey ? "selected" : ""}>${esc(stats[key].title || key.replace(/_/g, " "))}</option>`).join("")}</select><span class="pill">Source: ${esc(stat.name || "")}</span></div>`;
+    const controls = `<div class="selector-row"><label for="playerStatTable"><strong>Table</strong></label><select id="playerStatTable">${keys.map((key) => `<option value="${esc(key)}" ${key === tableKey ? "selected" : ""}>${esc(stats[key].title || key.replace(/_/g, " "))}</option>`).join("")}</select></div>`;
     const tableOnly = table(headers, rows, "No archived rows for this table")
       .replace('class="table-wrap"', 'class="table-wrap player-stats-table-wrap"');
     return {
@@ -520,6 +534,8 @@
   async function renderIndex() {
     const season = await loadSeason(latestSeason());
     const facts = await dashboardFacts(season);
+    const allTimeGreats = await rankedPlayers({ limit: 8 });
+    const activeGreats = await rankedPlayers({ activeOnly: true, limit: 8 });
     $("#history-app").innerHTML = `
       <section class="dashboard-grid">
         ${dashboardCard("Top Club", teamMini(facts.champion.team, facts.champion.rosterFile), `${esc(facts.champion.wins)}-${esc(facts.champion.losses)} in ${esc(facts.champion.tier)} with a ${esc(facts.champion.diff)} point diff.`)}
@@ -534,6 +550,8 @@
         </div>
         <div>
           <section class="reference-section"><h2>Season Index</h2>${table(["Season", "Summary", "Leaders", "Youth"], (state.index.seasons || []).map((s) => `<tr><td>${esc(s.label || s.season)}</td><td><a href="season.htm?season=${s.season}">Summary</a></td><td><a href="leaders.htm?season=${s.season}">Leaders</a></td><td><a href="youth-intake.htm?season=${s.season}">Youth Intake</a></td></tr>`))}</section>
+          <section class="reference-section"><h2>All-Time Greats</h2>${table(["Player", "Peak", "Season"], allTimeGreats.map((p) => `<tr><td><a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a></td><td>${ratingChip("OVR", p.overall)}</td><td>${esc(seasonLabel(p.season))}</td></tr>`), "No archived players")}</section>
+          <section class="reference-section"><h2>Current Greats</h2>${table(["Player", "Peak", "Season"], activeGreats.map((p) => `<tr><td><a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a></td><td>${ratingChip("OVR", p.overall)}</td><td>${esc(seasonLabel(p.season))}</td></tr>`), "No active historical matches")}</section>
           <section class="reference-section"><h2>Team Directory</h2><div class="mega-grid">${(season.standings.sections || []).map((section) => `<div><h3>${esc(tierFromTitle(section.title))}</h3>${(section.teams || []).map((team) => `<div>${teamMini(team.team, team.rosterFile)}</div>`).join("")}</div>`).join("")}</div></section>
         </div>
       </div>
@@ -548,6 +566,7 @@
       return parts.at(-1) || "";
     };
     const players = (state.playerIndex?.identities || [])
+      .filter((player) => (player.appearances || []).some((appearance) => (num(appearance.overall) || 0) >= 50))
       .slice()
       .sort((a, b) => lastName(a.name).localeCompare(lastName(b.name), undefined, { sensitivity: "base" }) || String(a.name).localeCompare(String(b.name), undefined, { sensitivity: "base" }));
     const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ".split("");
@@ -557,7 +576,7 @@
       return `<section class="reference-section alphabet-section" id="letter-${letter}"><h2>${letter}</h2><div class="alphabet-name-grid">${rows.map((player) => `<a href="player.htm?key=${encodeURIComponent(player.key)}">${esc(player.name)}</a>`).join("")}</div></section>`;
     }).join("");
     $("#history-app").innerHTML = `
-      <section class="reference-section compact-controls"><h2>Players by Last Name</h2><div class="alphabet-jump">${letters.map((letter) => players.some((player) => lastName(player.name).charAt(0).toUpperCase() === letter) ? `<a href="#letter-${letter}">${letter}</a>` : `<span>${letter}</span>`).join("")}</div></section>
+      <section class="reference-section compact-controls alphabet-controls"><h2>Players by Last Name</h2><div class="alphabet-jump">${letters.map((letter) => players.some((player) => lastName(player.name).charAt(0).toUpperCase() === letter) ? `<a href="#letter-${letter}">${letter}</a>` : `<span>${letter}</span>`).join("")}</div></section>
       ${sections || `<section class="reference-section"><div class="empty">No archived players</div></section>`}`;
   }
 
@@ -702,12 +721,12 @@
     const latestStats = statSnapshots.slice().sort((a, b) => seasonNumber(a.season) - seasonNumber(b.season)).at(-1)?.stat;
     const selectedStatTable = params().get("table") || "season_averages";
     const playerStatsView = renderPlayerStatTable(latestStats, selectedStatTable);
-    const active = isIdentityActive(identity);
+    const status = identityStatus(identity);
     $("#history-app").innerHTML = `
       <section class="history-hero">
         <div class="eyebrow">Historical Player</div>
         <h1>${esc(identity.name)}</h1>
-        <div class="history-meta"><span class="pill ${active ? "status-active" : "status-retired"}">${active ? "Active" : "Retired"}</span><span class="pill">${esc(identity.height)}</span><span class="pill">First: ${esc(seasonLabel(identity.firstSeason))}</span><span class="pill">Latest: ${esc(seasonLabel(identity.latestSeason))}</span></div>
+        <div class="history-meta"><span class="pill status-${esc(status.key)}">${esc(status.label)}</span><span class="pill">${esc(identity.height)}</span><span class="pill">First: ${esc(seasonLabel(identity.firstSeason))}</span><span class="pill">Latest: ${esc(seasonLabel(identity.latestSeason))}</span></div>
       </section>
       <div class="history-grid main-rail">
         <div>
@@ -879,7 +898,7 @@
     });
     if (selectedTeam !== "all") leaders = leaders.filter(({ leader }) => fileStem(leader.teamFile) === selectedTeam);
     if (selectedPos !== "all") leaders = leaders.filter(({ player }) => String(player.pos || "") === selectedPos);
-    if (selectedStatus !== "all") leaders = leaders.filter(({ identity }) => selectedStatus === "active" ? identity && isIdentityActive(identity) : identity && !isIdentityActive(identity));
+    if (selectedStatus !== "all") leaders = leaders.filter(({ identity }) => identity && identityStatus(identity).key === selectedStatus);
     leaders = leaders.slice(0, Number(selectedLimit) || 25);
     $("#history-app").innerHTML = `
       <section class="reference-section compact-controls"><h2>Filters</h2><div class="filter-bar">
@@ -888,10 +907,10 @@
         <label>Tier <select id="tierFilter"><option value="all">All</option>${[...new Set(allCategories.map((item) => item.tier))].map((tier) => `<option value="${esc(tier)}" ${selectedTier === tier ? "selected" : ""}>${esc(tier)}</option>`).join("")}</select></label>
         <label>Team <select id="teamFilter"><option value="all">All</option>${teams.map((team) => `<option value="${esc(team.id)}" ${selectedTeam === team.id ? "selected" : ""}>${esc(team.team)}</option>`).join("")}</select></label>
         <label>Pos <select id="posFilter"><option value="all">All</option>${["PG", "SG", "SF", "PF", "C"].map((pos) => `<option value="${pos}" ${selectedPos === pos ? "selected" : ""}>${pos}</option>`).join("")}</select></label>
-        <label>Status <select id="statusFilter"><option value="all">All</option><option value="active" ${selectedStatus === "active" ? "selected" : ""}>Active</option><option value="retired" ${selectedStatus === "retired" ? "selected" : ""}>Retired</option></select></label>
+        <label>Status <select id="statusFilter"><option value="all">All</option><option value="active" ${selectedStatus === "active" ? "selected" : ""}>Active</option><option value="prospect" ${selectedStatus === "prospect" ? "selected" : ""}>Incoming Prospect</option><option value="free-agent" ${selectedStatus === "free-agent" ? "selected" : ""}>Free Agent</option><option value="retired" ${selectedStatus === "retired" ? "selected" : ""}>Retired</option></select></label>
         <label>Rows <select id="limitFilter">${["10", "25", "50", "100"].map((limit) => `<option value="${limit}" ${selectedLimit === limit ? "selected" : ""}>Top ${limit}</option>`).join("")}</select></label>
       </div></section>
-      <section class="reference-section"><h2>${esc(active?.category?.title || "Leaders")} <span class="muted">${esc(active?.tier || "")}</span></h2>${table(["Rank", "Player", "Pos", "Status", "Team", "Value"], leaders.map(({ leader, player, identity }) => `<tr><td class="num">${esc(leader.rank)}</td><td>${playerLink(selected, leader.playerFile, leader.player)}</td><td>${esc(player.pos || "-")}</td><td>${identity ? (isIdentityActive(identity) ? "Active" : "Retired") : "-"}</td><td>${teamLink(leader.teamFile, leader.teamName)}</td><td class="num">${esc(leader.valueText || leader.value)}</td></tr>`), "No leaders match these filters")}</section>`;
+      <section class="reference-section"><h2>${esc(active?.category?.title || "Leaders")} <span class="muted">${esc(active?.tier || "")}</span></h2>${table(["Rank", "Player", "Pos", "Status", "Team", "Value"], leaders.map(({ leader, player, identity }) => `<tr><td class="num">${esc(leader.rank)}</td><td>${playerLink(selected, leader.playerFile, leader.player)}</td><td>${esc(player.pos || "-")}</td><td>${identity ? esc(identityStatus(identity).label) : "-"}</td><td>${teamLink(leader.teamFile, leader.teamName)}</td><td class="num">${esc(leader.valueText || leader.value)}</td></tr>`), "No leaders match these filters")}</section>`;
     const update = () => {
       const next = new URL("leaders.htm", window.location.href);
       next.searchParams.set("season", $("#seasonSelect")?.value || selected);
@@ -943,7 +962,7 @@
     const appearances = identity.appearances || [];
     const peak = appearances.slice().sort((a, b) => (num(b.overall) || 0) - (num(a.overall) || 0))[0] || {};
     return `<section class="reference-section compare-card"><h2>${esc(identity.name)}</h2>
-      <div class="history-meta"><span class="pill">${isIdentityActive(identity) ? "Active" : "Retired"}</span><span class="pill">${esc(identity.height)}</span><span class="pill">${appearances.length} Seasons</span></div>
+      <div class="history-meta"><span class="pill status-${esc(identityStatus(identity).key)}">${esc(identityStatus(identity).label)}</span><span class="pill">${esc(identity.height)}</span><span class="pill">${appearances.length} Seasons</span></div>
       <p>Peak: ${ratingChip("OVR", peak.overall)} ${esc(peak.team || "")} | ${esc(seasonLabel(peak.season))}</p>
       ${table(["Season", "Team", "Age", "OVR", "POT"], appearances.map((a) => `<tr><td>${esc(seasonLabel(a.season))}</td><td>${esc(a.team)}</td><td class="num">${esc(a.age)}</td><td>${ratingChip("OVR", a.overall)}</td><td>${ratingChip("POT", a.potential)}</td></tr>`), "No appearances")}</section>`;
   }
@@ -1009,7 +1028,18 @@
     if (page === "youth") await renderYouth();
     if (page === "compare") await renderCompare();
     setupSortableTables($("#history-app"));
-    if (!keepScroll) window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    if (window.location.hash) {
+      scrollToHash(window.location.hash);
+    } else if (!keepScroll) {
+      window.scrollTo({ top: 0, left: 0, behavior: "instant" });
+    }
+  }
+
+  function scrollToHash(hash) {
+    const id = decodeURIComponent(String(hash || "").replace(/^#/, ""));
+    if (!id) return;
+    const target = document.getElementById(id);
+    if (target) target.scrollIntoView({ block: "start" });
   }
 
   function isInternalHistoryUrl(url) {
@@ -1024,7 +1054,13 @@
     }
     const next = `${url.pathname}${url.search}${url.hash}`;
     const current = `${window.location.pathname}${window.location.search}${window.location.hash}`;
+    const nextRoute = `${url.pathname}${url.search}`;
+    const currentRoute = `${window.location.pathname}${window.location.search}`;
     if (next !== current) window.history.pushState({}, "", url.href);
+    if (nextRoute === currentRoute && url.hash) {
+      scrollToHash(url.hash);
+      return;
+    }
     renderRoute(options).catch((error) => {
       console.error(error);
       const app = $("#history-app");

@@ -91,6 +91,12 @@
     .media-title { color:var(--blue); font-family:var(--font-serif); font-size:1.1rem; line-height:1.14; }
     .media-blurb { color:var(--ink); font-size:.84rem; line-height:1.35; }
     .media-meta { color:var(--mid); font-size:.64rem; font-weight:800; letter-spacing:.12em; text-transform:uppercase; }
+    .reference-card { border:1px solid var(--blue); background:#faf8f2; color:inherit; display:grid; gap:.45rem; padding:.82rem; text-decoration:none; }
+    .reference-card:hover { background:#f2efe7; text-decoration:none; }
+    .reference-card-kicker { color:var(--mid); font-size:.61rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
+    .reference-card-title { color:var(--blue); font-family:var(--font-serif); font-size:1.3rem; line-height:1.05; }
+    .reference-card-copy { color:var(--ink); font-size:.84rem; line-height:1.35; }
+    .reference-card-cta { color:var(--blue); font-size:.64rem; font-weight:800; letter-spacing:.14em; text-transform:uppercase; }
     @media (max-width:1020px){ .utility-grid{grid-template-columns:1fr} .leaders-grid{grid-template-columns:repeat(2,minmax(0,1fr))} .dash-main{grid-template-columns:1fr} }
     @media (max-width:650px){
       body.dashboard-page{padding:.65rem}
@@ -166,6 +172,14 @@
       </div>
 
       <div class="dash-side">
+        <section class="panel">
+          <a class="reference-card" href="./history/index.htm" target="_top">
+            <span class="reference-card-kicker">ESL Reference</span>
+            <span class="reference-card-title">Archive, records, and club history</span>
+            <span class="reference-card-copy">Browse archived seasons, player career arcs, leaderboards, youth intake history, and team timelines.</span>
+            <span class="reference-card-cta">View Reference</span>
+          </a>
+        </section>
         <section class="panel mobile-collapsible is-open">
           <div class="panel-head"><h2 class="panel-title">Injury Watch</h2><button class="collapse-toggle" type="button">Hide</button><div class="panel-note">Longest current injuries</div></div>
           <ul class="injury-list collapse-body" id="injuryList"><li class="injury-row">Loading injuries</li></ul>

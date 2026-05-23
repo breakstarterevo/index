@@ -9,6 +9,7 @@
   var ABSOLUTE_PATHS = {
     eslMedia: toSitePath("00-eslmedia/homepage.html"),
     eslMediaLogo: toSitePath("00-eslmedia/content/article images/ESLM.png"),
+    eslReference: toSitePath("00-assets/html/history/index.htm"),
     depthCharts: toSitePath("00-assets/html/depthcharts.htm"),
     tradeTool: toSitePath("00-assets/html/trade-tool.htm"),
     youthIntake: toSitePath("00-assets/html/youth-intake.htm"),

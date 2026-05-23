@@ -32,7 +32,7 @@ a:hover { text-decoration: underline; }
 
 .history-brand-row {
   display: grid;
-  grid-template-columns: minmax(280px, 1fr) minmax(260px, 560px);
+  grid-template-columns: minmax(280px, 1fr) minmax(260px, 560px) auto;
   gap: 18px;
   align-items: center;
   padding: 6px 28px;
@@ -92,6 +92,27 @@ a:hover { text-decoration: underline; }
   font-size: 19px;
   font-weight: 700;
   cursor: pointer;
+}
+
+.history-index-button {
+  align-items: center;
+  border: 1px solid var(--hist-ink);
+  color: var(--hist-ink);
+  display: inline-flex;
+  font-size: 12px;
+  font-weight: 900;
+  justify-content: center;
+  letter-spacing: 1px;
+  min-height: 36px;
+  padding: 0 12px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.history-index-button:hover {
+  background: var(--hist-ink);
+  color: #fff;
+  text-decoration: none;
 }
 
 .history-results {
@@ -293,6 +314,8 @@ h3 {
 
 .status-active { background: #c7f0d0; border-color: #84c795; }
 .status-retired { background: #eceff4; border-color: #c8d0dc; }
+.status-prospect { background: #e7f0ff; border-color: #91b7e8; }
+.status-free-agent { background: #fff1cf; border-color: #d6a642; }
 .status-champion { background: #f7d95b; border-color: #b88700; color: #4a3200; }
 .status-promoted { background: #c7f0d0; border-color: #57a76a; color: #064b20; }
 .status-relegated { background: #ffd1d1; border-color: #d97979; color: #800000; }
@@ -595,6 +618,12 @@ select, .small-input {
   gap: 8px;
 }
 
+.alphabet-controls {
+  position: sticky;
+  top: 112px;
+  z-index: 12;
+}
+
 .filter-bar label {
   color: var(--hist-muted);
   display: grid;
@@ -779,6 +808,10 @@ select, .small-input {
   letter-spacing: 2px;
 }
 
+.alphabet-section {
+  scroll-margin-top: 128px;
+}
+
 .alphabet-name-grid {
   column-gap: 18px;
   columns: 4 180px;
@@ -799,10 +832,12 @@ select, .small-input {
   .history-brand-row { grid-template-columns: 1fr; padding: 8px 12px; }
   .history-title { font-size: 23px; }
   .history-search { grid-template-columns: 1fr 88px; }
+  .history-index-button { justify-self: stretch; }
   .history-results { right: 100px; }
   .history-nav { overflow-x: auto; padding-left: 0; }
   .history-nav-link { padding: 0 16px; }
   .history-mega { position: fixed; top: 108px; max-height: 70vh; overflow: auto; }
+  .alphabet-controls { top: 186px; }
   .history-grid,
   .history-grid.three,
   .history-grid.main-rail { grid-template-columns: 1fr; }
