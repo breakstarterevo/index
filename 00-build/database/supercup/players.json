@@ -3453,7 +3453,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PF",
-        "age": "16",
+        "age": "17",
         "ht": "6-8",
         "wt": "224",
         "experience": "Rookie",
@@ -5094,7 +5094,7 @@
         "team": "roster5",
         "teamLabel": "AC Milan",
         "pos": "PF",
-        "age": "24",
+        "age": "25",
         "ht": "6-9",
         "wt": "235",
         "experience": "Rookie",
@@ -5297,6 +5297,20 @@
                 "isTotal": true,
                 "label": "Player of the Game",
                 "count": 4
+            },
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row1",
+                "isTotal": false
             }
         ],
         "achievementTotals": [
@@ -5307,9 +5321,24 @@
                 "isTotal": true,
                 "label": "Player of the Game",
                 "count": 4
+            },
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
             }
         ],
-        "seasonAwards": [],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row1",
+                "isTotal": false
+            }
+        ],
         "transactions": [],
         "Ins": "91",
         "Jps": "63",
@@ -9145,7 +9174,7 @@
         "team": "roster16",
         "teamLabel": "Manchester City",
         "pos": "PG",
-        "age": "31",
+        "age": "32",
         "ht": "5-9",
         "wt": "165",
         "experience": "Rookie",
@@ -11763,7 +11792,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "C",
-        "age": "20",
+        "age": "21",
         "ht": "7-0",
         "wt": "195",
         "experience": "Rookie",
@@ -14425,7 +14454,7 @@
         "team": "roster16",
         "teamLabel": "Manchester City",
         "pos": "PF",
-        "age": "22",
+        "age": "23",
         "ht": "6-7",
         "wt": "210",
         "experience": "Rookie",
@@ -20274,7 +20303,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "30",
+        "age": "31",
         "ht": "6-11",
         "wt": "218",
         "experience": "Rookie",
@@ -21721,7 +21750,7 @@
         "team": "roster15",
         "teamLabel": "Crystal Palace",
         "pos": "SF",
-        "age": "20",
+        "age": "21",
         "ht": "6-9",
         "wt": "218",
         "experience": "Rookie",
@@ -23037,7 +23066,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "C",
-        "age": "21",
+        "age": "22",
         "ht": "6-11",
         "wt": "232",
         "experience": "Rookie",
@@ -30366,7 +30395,7 @@
         "team": "roster28",
         "teamLabel": "Valencia",
         "pos": "PG",
-        "age": "18",
+        "age": "19",
         "ht": "6-1",
         "wt": "185",
         "experience": "Rookie",
@@ -31547,7 +31576,7 @@
         "team": "roster21",
         "teamLabel": "Marseille",
         "pos": "SG",
-        "age": "26",
+        "age": "27",
         "ht": "6-6",
         "wt": "190",
         "experience": "Rookie",
@@ -31742,9 +31771,40 @@
         "source": "player_page",
         "currentSalary": 3808068.0,
         "currentSalaryText": "$3,808,068",
-        "awards": [],
-        "achievementTotals": [],
-        "seasonAwards": [],
+        "awards": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
+        "achievementTotals": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            }
+        ],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
         "transactions": [],
         "Ins": "53",
         "Jps": "38",
@@ -36062,9 +36122,40 @@
         "source": "player_page",
         "currentSalary": 760000.0,
         "currentSalaryText": "$760,000",
-        "awards": [],
-        "achievementTotals": [],
-        "seasonAwards": [],
+        "awards": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
+        "achievementTotals": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            }
+        ],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
         "transactions": [],
         "Ins": "51",
         "Jps": "40",
@@ -40897,7 +40988,7 @@
         "team": "roster28",
         "teamLabel": "Valencia",
         "pos": "PG",
-        "age": "21",
+        "age": "22",
         "ht": "6-2",
         "wt": "170",
         "experience": "Rookie",
@@ -40991,7 +41082,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "31",
+        "age": "32",
         "ht": "6-5",
         "wt": "191",
         "experience": "Rookie",
@@ -42142,6 +42233,20 @@
                 "isTotal": true,
                 "label": "Player of the Week",
                 "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
             }
         ],
         "achievementTotals": [
@@ -42160,9 +42265,24 @@
                 "isTotal": true,
                 "label": "Player of the Week",
                 "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
             }
         ],
-        "seasonAwards": [],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
         "transactions": [],
         "Ins": "59",
         "Jps": "55",
@@ -46374,7 +46494,7 @@
         "url": "../players/player266.htm",
         "team": "roster11",
         "teamLabel": "Bayern Munich",
-        "pos": "PF",
+        "pos": "SG",
         "age": "21",
         "ht": "6-8",
         "wt": "175",
@@ -46390,6 +46510,20 @@
                 "isTotal": true,
                 "label": "Player of the Game",
                 "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row1",
+                "isTotal": false
             }
         ],
         "achievementTotals": [
@@ -46400,9 +46534,24 @@
                 "isTotal": true,
                 "label": "Player of the Game",
                 "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
             }
         ],
-        "seasonAwards": [],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row1",
+                "isTotal": false
+            }
+        ],
         "transactions": [],
         "Ins": "51",
         "Jps": "68",
@@ -46487,7 +46636,7 @@
         "team": "roster19",
         "teamLabel": "Juventus",
         "pos": "PG",
-        "age": "22",
+        "age": "23",
         "ht": "6-1",
         "wt": "170",
         "experience": "Rookie",
@@ -49791,6 +49940,34 @@
                 "isTotal": true,
                 "label": "Player of the Game",
                 "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Playoff MVP: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Playoff MVP",
+                "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "ESC Playoff MVP",
+                "rowClass": "row2",
+                "isTotal": false
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row1",
+                "isTotal": false
             }
         ],
         "achievementTotals": [
@@ -49801,9 +49978,38 @@
                 "isTotal": true,
                 "label": "Player of the Game",
                 "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Playoff MVP: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Playoff MVP",
+                "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
             }
         ],
-        "seasonAwards": [],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "ESC Playoff MVP",
+                "rowClass": "row2",
+                "isTotal": false
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row1",
+                "isTotal": false
+            }
+        ],
         "transactions": [],
         "Ins": "69",
         "Jps": "64",
@@ -51211,9 +51417,40 @@
         "source": "player_page",
         "currentSalary": 5950107.0,
         "currentSalaryText": "$5,950,107",
-        "awards": [],
-        "achievementTotals": [],
-        "seasonAwards": [],
+        "awards": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
+        "achievementTotals": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            }
+        ],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
         "transactions": [],
         "Ins": "56",
         "Jps": "78",
@@ -53268,7 +53505,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "24",
+        "age": "25",
         "ht": "6-11",
         "wt": "242",
         "experience": "Rookie",
@@ -56103,7 +56340,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "34",
+        "age": "35",
         "ht": "6-11",
         "wt": "245",
         "experience": "Rookie",
@@ -58296,9 +58533,40 @@
         "source": "player_page",
         "currentSalary": 4930245.0,
         "currentSalaryText": "$4,930,245",
-        "awards": [],
-        "achievementTotals": [],
-        "seasonAwards": [],
+        "awards": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
+        "achievementTotals": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            }
+        ],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
         "transactions": [],
         "Ins": "49",
         "Jps": "36",
@@ -59547,7 +59815,7 @@
         "team": "roster22",
         "teamLabel": "Monaco",
         "pos": "PF",
-        "age": "24",
+        "age": "25",
         "ht": "6-10",
         "wt": "220",
         "experience": "Rookie",
@@ -60298,7 +60566,7 @@
         "team": "roster8",
         "teamLabel": "Aston Villa",
         "pos": "SG",
-        "age": "25",
+        "age": "26",
         "ht": "6-6",
         "wt": "200",
         "experience": "Rookie",
@@ -60399,9 +60667,40 @@
         "source": "player_page",
         "currentSalary": 3204659.0,
         "currentSalaryText": "$3,204,659",
-        "awards": [],
-        "achievementTotals": [],
-        "seasonAwards": [],
+        "awards": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
+        "achievementTotals": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            }
+        ],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
         "transactions": [],
         "Ins": "36",
         "Jps": "29",
@@ -60587,9 +60886,40 @@
         "source": "player_page",
         "currentSalary": 760000.0,
         "currentSalaryText": "$760,000",
-        "awards": [],
-        "achievementTotals": [],
-        "seasonAwards": [],
+        "awards": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
+        "achievementTotals": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            }
+        ],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
         "transactions": [],
         "Ins": "50",
         "Jps": "52",
@@ -63630,7 +63960,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "16",
+        "age": "17",
         "ht": "6-3",
         "wt": "227",
         "experience": "Rookie",
@@ -66165,16 +66495,47 @@
         "team": "roster11",
         "teamLabel": "Bayern Munich",
         "pos": "PF",
-        "age": "24",
+        "age": "25",
         "ht": "6-9",
         "wt": "210",
         "experience": "Rookie",
         "source": "player_page",
         "currentSalary": 1593852.0,
         "currentSalaryText": "$1,593,852",
-        "awards": [],
-        "achievementTotals": [],
-        "seasonAwards": [],
+        "awards": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
+        "achievementTotals": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            }
+        ],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
         "transactions": [
             {
                 "date": "8/10/1981",
@@ -67255,8 +67616,16 @@
             },
             {
                 "season": "Total",
-                "award": "Blocks Leader: 1",
+                "award": "Championships: 1",
                 "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Blocks Leader: 1",
+                "rowClass": "row2",
                 "isTotal": true,
                 "label": "Blocks Leader",
                 "count": 1
@@ -67264,18 +67633,24 @@
             {
                 "season": "1981",
                 "award": "ESC Defensive Player of the Year",
-                "rowClass": "row2",
-                "isTotal": false
-            },
-            {
-                "season": "1981",
-                "award": "ESC All-Defensive First Team",
                 "rowClass": "row1",
                 "isTotal": false
             },
             {
                 "season": "1981",
+                "award": "ESC All-Defensive First Team",
+                "rowClass": "row2",
+                "isTotal": false
+            },
+            {
+                "season": "1981",
                 "award": "ESC Blocks Leader",
+                "rowClass": "row1",
+                "isTotal": false
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
                 "rowClass": "row2",
                 "isTotal": false
             }
@@ -67299,8 +67674,16 @@
             },
             {
                 "season": "Total",
-                "award": "Blocks Leader: 1",
+                "award": "Championships: 1",
                 "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Blocks Leader: 1",
+                "rowClass": "row2",
                 "isTotal": true,
                 "label": "Blocks Leader",
                 "count": 1
@@ -67310,18 +67693,24 @@
             {
                 "season": "1981",
                 "award": "ESC Defensive Player of the Year",
-                "rowClass": "row2",
-                "isTotal": false
-            },
-            {
-                "season": "1981",
-                "award": "ESC All-Defensive First Team",
                 "rowClass": "row1",
                 "isTotal": false
             },
             {
                 "season": "1981",
+                "award": "ESC All-Defensive First Team",
+                "rowClass": "row2",
+                "isTotal": false
+            },
+            {
+                "season": "1981",
                 "award": "ESC Blocks Leader",
+                "rowClass": "row1",
+                "isTotal": false
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
                 "rowClass": "row2",
                 "isTotal": false
             }
@@ -67699,9 +68088,40 @@
         "source": "player_page",
         "currentSalary": 760000.0,
         "currentSalaryText": "$760,000",
-        "awards": [],
-        "achievementTotals": [],
-        "seasonAwards": [],
+        "awards": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            },
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
+        "achievementTotals": [
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Championships",
+                "count": 1
+            }
+        ],
+        "seasonAwards": [
+            {
+                "season": "1981",
+                "award": "Super Cup Champion",
+                "rowClass": "row2",
+                "isTotal": false
+            }
+        ],
         "transactions": [],
         "Ins": "62",
         "Jps": "39",
