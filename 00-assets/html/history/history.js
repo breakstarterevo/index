@@ -124,7 +124,8 @@
       seasonAwards: await fetchJson(`${base}season_awards.json`, { sections: [], missing: true }),
       youth: await fetchJson(`${base}youth_intake.json`, { teams: [] }),
       supercupStandings: await fetchJson(`${base}supercup/standings.json`, { sections: [] }),
-      supercupLeaders: await fetchJson(`${base}supercup/leaders.json`, { sections: [] })
+      supercupLeaders: await fetchJson(`${base}supercup/leaders.json`, { sections: [] }),
+      supercupResults: await fetchJson(`${base}supercup/game_results.json`, { results: [] })
     };
     state.seasonCache.set(season, data);
     return data;
@@ -339,6 +340,7 @@
           <div class="history-nav-item"><a class="history-nav-link" href="teams.htm">Teams</a><div class="history-mega" id="megaTeams"><div class="empty">Loading teams...</div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="season.htm">Seasons</a><div class="history-mega" id="megaSeasons"></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="leaders.htm">Leaders</a><div class="history-mega"><div class="mega-line"><strong>Leaderboards:</strong> <a href="leaders.htm">Player Leaders</a> | <a href="season.htm">Season Summaries</a></div></div></div>
+          <div class="history-nav-item"><a class="history-nav-link" href="supercup.htm">Super Cup</a><div class="history-mega"><div class="mega-line"><strong>Cup Archive:</strong> <a href="supercup.htm#knockout">Knockout Bracket</a> | <a href="supercup.htm#group-stage">Group Stage</a> | <a href="supercup.htm#cup-leaders">Stat Leaders</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="youth-intake.htm">Youth Intake</a><div class="history-mega"><div class="mega-line"><strong>Draft History:</strong> <a href="youth-intake.htm">Youth Intake by Season</a> | <a href="youth-intake.htm#franchise">Franchise Intake History</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="compare.htm">Compare</a><div class="history-mega"><div class="mega-line"><strong>Compare:</strong> <a href="compare.htm?type=players">Players</a> | <a href="compare.htm?type=teams">Teams</a></div></div></div>
         </nav>
@@ -363,6 +365,7 @@
         <a href="season.htm?season=${encodeURIComponent(seasonItem.season)}">Summary</a> |
         <a href="season.htm?season=${encodeURIComponent(seasonItem.season)}#standings">Standings</a> |
         <a href="leaders.htm?season=${encodeURIComponent(seasonItem.season)}">Leaders</a> |
+        <a href="supercup.htm?season=${encodeURIComponent(seasonItem.season)}">Super Cup</a> |
         <a href="youth-intake.htm?season=${encodeURIComponent(seasonItem.season)}">Youth Intake</a>
       </div>`).join("");
   }
@@ -403,6 +406,7 @@
         { terms: ["teams", "clubs", "franchises"], label: "Team Directory", href: "teams.htm" },
         { terms: ["season", "standings", "champions", "promoted", "promotion", "relegated", "relegation"], label: "Season Summary", href: "season.htm" },
         { terms: ["leaders", "leaderboard", "mvp", "points", "rebounds", "assists"], label: "Leaderboards", href: "leaders.htm" },
+        { terms: ["super cup", "supercup", "cup", "knockout", "bracket", "group stage"], label: "Super Cup Archive", href: "supercup.htm" },
         { terms: ["youth", "intake", "draft", "rookies"], label: "Youth Intake", href: "youth-intake.htm" },
         { terms: ["compare", "versus", "vs"], label: "Compare Players and Teams", href: "compare.htm" }
       ];
@@ -527,6 +531,7 @@
         <a href="players.htm"><span>Players</span><strong>All-time and active greats</strong></a>
         <a href="teams.htm"><span>Teams</span><strong>Club histories and timelines</strong></a>
         <a href="leaders.htm"><span>Leaders</span><strong>Filtered season leaderboards</strong></a>
+        <a href="supercup.htm"><span>Super Cup</span><strong>Knockouts, groups and leaders</strong></a>
         <a href="compare.htm"><span>Compare</span><strong>Player and team head-to-heads</strong></a>
       </div>`;
   }
@@ -549,7 +554,7 @@
           <section class="reference-section"><h2>Latest Season Standings</h2>${renderStandings(season)}</section>
         </div>
         <div>
-          <section class="reference-section"><h2>Season Index</h2>${table(["Season", "Summary", "Leaders", "Youth"], (state.index.seasons || []).map((s) => `<tr><td>${esc(s.label || s.season)}</td><td><a href="season.htm?season=${s.season}">Summary</a></td><td><a href="leaders.htm?season=${s.season}">Leaders</a></td><td><a href="youth-intake.htm?season=${s.season}">Youth Intake</a></td></tr>`))}</section>
+          <section class="reference-section"><h2>Season Index</h2>${table(["Season", "Summary", "Leaders", "Super Cup", "Youth"], (state.index.seasons || []).map((s) => `<tr><td>${esc(s.label || s.season)}</td><td><a href="season.htm?season=${s.season}">Summary</a></td><td><a href="leaders.htm?season=${s.season}">Leaders</a></td><td><a href="supercup.htm?season=${s.season}">Cup</a></td><td><a href="youth-intake.htm?season=${s.season}">Youth Intake</a></td></tr>`))}</section>
           <section class="reference-section"><h2>All-Time Greats</h2>${table(["Player", "Peak", "Season"], allTimeGreats.map((p) => `<tr><td><a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a></td><td>${ratingChip("OVR", p.overall)}</td><td>${esc(seasonLabel(p.season))}</td></tr>`), "No archived players")}</section>
           <section class="reference-section"><h2>Current Greats</h2>${table(["Player", "Peak", "Season"], activeGreats.map((p) => `<tr><td><a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a></td><td>${ratingChip("OVR", p.overall)}</td><td>${esc(seasonLabel(p.season))}</td></tr>`), "No active historical matches")}</section>
           <section class="reference-section"><h2>Team Directory</h2><div class="mega-grid">${(season.standings.sections || []).map((section) => `<div><h3>${esc(tierFromTitle(section.title))}</h3>${(section.teams || []).map((team) => `<div>${teamMini(team.team, team.rosterFile)}</div>`).join("")}</div>`).join("")}</div></section>
@@ -861,7 +866,7 @@
         <section class="reference-section"><h2>Season Awards</h2>${table(["Tier", "Award", "Person", "Team"], (data.seasonAwards.sections || []).flatMap((section) => (section.awards || []).map((award) => `<tr><td>${esc(section.title)}</td><td>${esc(award.award)}</td><td>${playerLink(selected, award.personFile, award.person)}</td><td>${teamLink(award.teamFile, award.team)}</td></tr>`)), "Archived season awards unavailable")}</section>
         <section class="reference-section"><h2>Weekly / Monthly Awards</h2>${renderArchiveAwards(data)}</section>
       </div>
-      <section class="reference-section"><h2>Super Cup</h2>${renderSupercup(data)}</section>`;
+      <section class="reference-section"><h2>Super Cup <a class="section-link" href="supercup.htm?season=${encodeURIComponent(selected)}">Full Cup Archive</a></h2>${renderSupercup(data)}</section>`;
     $("#seasonSelect")?.addEventListener("change", (event) => { navigate(`season.htm?season=${encodeURIComponent(event.target.value)}`); });
   }
 
@@ -876,6 +881,96 @@
     return `<div class="history-grid"><div>${table(["Group", "Team", "W-L", "Diff", "Streak"], standingsRows, "No archived Super Cup standings")}</div><div>${table(["Category", "Player", "Team", "Value"], leaderRows, "No archived Super Cup leaders")}</div></div>`;
   }
 
+  function supercupTeam(team) {
+    const logo = logoFor(team);
+    return `<span class="cup-team">${logo ? `<img src="${logo}" alt="">` : ""}<strong>${esc(team)}</strong></span>`;
+  }
+
+  function supercupSeedMap(data) {
+    const teams = data.supercupStandings.sections?.[0]?.teams || [];
+    return new Map(teams.map((team, index) => [team.team, index + 1]));
+  }
+
+  function gameDateValue(value) {
+    const parts = String(value || "").split("/").map(Number);
+    if (parts.length !== 3) return String(value || "");
+    const [day, month, year] = parts;
+    return new Date(year, month - 1, day).getTime();
+  }
+
+  function supercupRoundGames(data) {
+    const games = (data.supercupResults.results || [])
+      .filter((game) => game.sectionSlug === "playoffs")
+      .slice()
+      .sort((a, b) => gameDateValue(a.date) - gameDateValue(b.date) || String(a.boxscoreFile).localeCompare(String(b.boxscoreFile)));
+    const grouped = [];
+    games.forEach((game) => {
+      const round = grouped.find((entry) => entry.date === game.date);
+      if (round) round.games.push(game);
+      else grouped.push({ date: game.date, games: [game] });
+    });
+    const titles = grouped.length === 4
+      ? ["First Round", "Quarterfinals", "Semifinals", "Final"]
+      : grouped.map((_round, index) => `Round ${index + 1}`);
+    return grouped.map((round, index) => ({ ...round, title: titles[index] }));
+  }
+
+  function supercupMatchCard(game, seeds) {
+    const winner = game.winnerName;
+    const teams = [
+      { name: game.awayTeamName, score: game.awayScore },
+      { name: game.homeTeamName, score: game.homeScore }
+    ].sort((a, b) => (seeds.get(a.name) || 99) - (seeds.get(b.name) || 99));
+    return `<article class="cup-match">
+      ${teams.map((team) => `<div class="cup-match-row ${team.name === winner ? "winner" : ""}"><span class="cup-seed">#${esc(seeds.get(team.name) || "-")}</span>${supercupTeam(team.name)}<strong class="cup-score">${esc(team.score)}</strong></div>`).join("")}
+      <div class="cup-date">${esc(game.date)}</div>
+    </article>`;
+  }
+
+  function renderSupercupBracket(data) {
+    const rounds = supercupRoundGames(data);
+    const seeds = supercupSeedMap(data);
+    if (!rounds.length) return `<div class="empty">No archived Super Cup knockout results</div>`;
+    return `<div class="cup-bracket">${rounds.map((round) => `
+      <section class="cup-round">
+        <h3>${esc(round.title)}</h3>
+        <div class="cup-round-matches">${round.games.map((game) => supercupMatchCard(game, seeds)).join("")}</div>
+      </section>`).join("")}</div>`;
+  }
+
+  function renderSupercupStandings(data) {
+    return (data.supercupStandings.sections || []).map((section) => `
+      <section class="reference-section">
+        <h2>${esc(section.title || "Group Stage Standings")}</h2>
+        ${table(["#", "Team", "W-L", "PCT", "GB", "PF", "PA", "DIFF", "L10", "Streak"], (section.teams || []).map((team, index) => `
+          <tr><td class="num">${index + 1}</td><td>${supercupTeam(team.team)}</td><td class="num">${esc(team.wins)}-${esc(team.losses)}</td><td class="num">${esc(team.pct)}</td><td class="num">${esc(team.gb)}</td><td class="num">${esc(team.pf)}</td><td class="num">${esc(team.pa)}</td><td class="num">${esc(team.diff)}</td><td class="num">${esc(team.last10)}</td><td>${esc(team.streak)}</td></tr>`), "No archived Super Cup standings")}
+      </section>`).join("");
+  }
+
+  function renderSupercupLeaders(data) {
+    const categories = (data.supercupLeaders.sections || []).flatMap((section) => section.categories || []);
+    if (!categories.length) return `<div class="empty">No archived Super Cup leaders</div>`;
+    return `<div class="history-grid three">${categories.map((category) => `
+      <section class="reference-section">
+        <h2>${esc(category.title)}</h2>
+        ${table(["#", "Player", "Team", "Value"], (category.leaders || []).slice(0, 5).map((leader) => `<tr><td class="num">${esc(leader.rank)}</td><td>${esc(leader.player)}</td><td>${esc(leader.teamName)}</td><td class="num">${esc(leader.valueText || leader.value)}</td></tr>`), "No archived leaders")}
+      </section>`).join("")}</div>`;
+  }
+
+  async function renderSupercupPage() {
+    const selected = selectedSeasonOrLatest();
+    const data = await loadSeason(selected);
+    $("#history-app").innerHTML = `
+      <section class="reference-section compact-controls"><h2>Super Cup Archive</h2><div class="filter-bar">
+        <label>Season ${seasonSelector(selected)}</label>
+        <div class="history-meta"><span class="pill">Archive Only</span></div>
+      </div></section>
+      <section class="reference-section cup-feature" id="knockout"><h2>Knockout Bracket <span class="muted">${esc(seasonLabel(selected))}</span></h2>${renderSupercupBracket(data)}</section>
+      <div id="group-stage">${renderSupercupStandings(data)}</div>
+      <section class="reference-section" id="cup-leaders"><h2>Stat Leaders</h2>${renderSupercupLeaders(data)}</section>`;
+    $("#seasonSelect")?.addEventListener("change", (event) => { navigate(`supercup.htm?season=${encodeURIComponent(event.target.value)}`); });
+  }
+
   async function renderLeaders() {
     const selected = selectedSeasonOrLatest();
     const data = await loadSeason(selected);
@@ -887,8 +982,12 @@
     const selectedStatus = p.get("status") || "all";
     const selectedLimit = p.get("limit") || "25";
     const categoryOptions = selectedTier === "all" ? allCategories : allCategories.filter((item) => item.tier === selectedTier);
-    const selectedCat = p.get("category") || categoryOptions[0]?.category?.slug || "";
-    const active = categoryOptions.find((item) => item.category.slug === selectedCat) || categoryOptions[0] || allCategories[0];
+    const categoryKey = (item) => `${item.tier}:${item.category.slug}`;
+    const selectedCat = p.get("category") || (categoryOptions[0] ? categoryKey(categoryOptions[0]) : "");
+    const active = categoryOptions.find((item) => categoryKey(item) === selectedCat)
+      || categoryOptions.find((item) => item.category.slug === selectedCat)
+      || categoryOptions[0]
+      || allCategories[0];
     const teams = allTeamsFromLatest(data).sort((a, b) => a.team.localeCompare(b.team));
     const playerByFile = new Map((data.players || []).map((player) => [String(player.url || "").split("/").pop(), player]));
     let leaders = (active?.category?.leaders || []).map((leader) => {
@@ -903,7 +1002,7 @@
     $("#history-app").innerHTML = `
       <section class="reference-section compact-controls"><h2>Filters</h2><div class="filter-bar">
         <label>Season ${seasonSelector(selected)}</label>
-        <label>Category <select id="categorySelect">${categoryOptions.map((item) => `<option value="${esc(item.category.slug)}" ${item.category.slug === active?.category?.slug ? "selected" : ""}>${esc(item.tier)} | ${esc(item.category.title)}</option>`).join("")}</select></label>
+        <label>Category <select id="categorySelect">${categoryOptions.map((item) => `<option value="${esc(categoryKey(item))}" ${item === active ? "selected" : ""}>${esc(item.tier)} | ${esc(item.category.title)}</option>`).join("")}</select></label>
         <label>Tier <select id="tierFilter"><option value="all">All</option>${[...new Set(allCategories.map((item) => item.tier))].map((tier) => `<option value="${esc(tier)}" ${selectedTier === tier ? "selected" : ""}>${esc(tier)}</option>`).join("")}</select></label>
         <label>Team <select id="teamFilter"><option value="all">All</option>${teams.map((team) => `<option value="${esc(team.id)}" ${selectedTeam === team.id ? "selected" : ""}>${esc(team.team)}</option>`).join("")}</select></label>
         <label>Pos <select id="posFilter"><option value="all">All</option>${["PG", "SG", "SF", "PF", "C"].map((pos) => `<option value="${pos}" ${selectedPos === pos ? "selected" : ""}>${pos}</option>`).join("")}</select></label>
@@ -915,7 +1014,7 @@
       const next = new URL("leaders.htm", window.location.href);
       next.searchParams.set("season", $("#seasonSelect")?.value || selected);
       next.searchParams.set("tier", $("#tierFilter")?.value || selectedTier);
-      next.searchParams.set("category", $("#categorySelect")?.value || selectedCat);
+      next.searchParams.set("category", $("#categorySelect")?.value || (active ? categoryKey(active) : selectedCat));
       next.searchParams.set("team", $("#teamFilter")?.value || selectedTeam);
       next.searchParams.set("pos", $("#posFilter")?.value || selectedPos);
       next.searchParams.set("status", $("#statusFilter")?.value || selectedStatus);
@@ -1008,6 +1107,7 @@
     if (file === "team.htm") return "team";
     if (file === "season.htm") return "season";
     if (file === "leaders.htm") return "leaders";
+    if (file === "supercup.htm") return "supercup";
     if (file === "youth-intake.htm") return "youth";
     if (file === "compare.htm") return "compare";
     return "index";
@@ -1025,6 +1125,7 @@
     if (page === "team") await renderTeam();
     if (page === "season") await renderSeason();
     if (page === "leaders") await renderLeaders();
+    if (page === "supercup") await renderSupercupPage();
     if (page === "youth") await renderYouth();
     if (page === "compare") await renderCompare();
     setupSortableTables($("#history-app"));

@@ -2,7 +2,7 @@
   "season": "season-1",
   "label": "1981-1982",
   "source": "00-build/database",
-  "archived_at_utc": "2026-05-22T10:55:36.685677+00:00",
+  "archived_at_utc": "2026-05-25T03:34:56.486285+00:00",
   "json_count": 34,
   "feeds": {
     "players.json": true,
@@ -106,11 +106,11 @@
     },
     {
       "path": "supercup/game_results.json",
-      "bytes": 85114
+      "bytes": 95417
     },
     {
       "path": "supercup/injuries.json",
-      "bytes": 719
+      "bytes": 1053
     },
     {
       "path": "supercup/leaders.json",
@@ -118,19 +118,19 @@
     },
     {
       "path": "supercup/player_gamelogs.json",
-      "bytes": 2620207
+      "bytes": 2856026
     },
     {
       "path": "supercup/player_stats.json",
-      "bytes": 10230569
+      "bytes": 10521647
     },
     {
       "path": "supercup/players.json",
-      "bytes": 1854347
+      "bytes": 1866905
     },
     {
       "path": "supercup/schedule.json",
-      "bytes": 118704
+      "bytes": 125768
     },
     {
       "path": "supercup/standings.json",
@@ -154,11 +154,11 @@
     },
     {
       "path": "youth_intake.json",
-      "bytes": 81592
+      "bytes": 101715
     },
     {
       "path": "youth_intake_players.json",
-      "bytes": 64202
+      "bytes": 2351361
     }
   ]
 }

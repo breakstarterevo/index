@@ -339,6 +339,115 @@ h3 {
   overflow: hidden;
 }
 
+.section-link {
+  float: right;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.cup-feature {
+  border-top-color: #9b0000;
+}
+
+.cup-bracket {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(4, minmax(220px, 1fr));
+  overflow-x: auto;
+}
+
+.cup-round {
+  background: #f7f9fc;
+  border: 1px solid var(--hist-line);
+  min-width: 220px;
+}
+
+.cup-round h3 {
+  background: var(--hist-head);
+  border-bottom: 2px solid #9b0000;
+  color: var(--hist-ink);
+  font-size: 11px;
+  letter-spacing: .14em;
+  margin: 0;
+  padding: 10px;
+  text-transform: uppercase;
+}
+
+.cup-round-matches {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  justify-content: space-around;
+  min-height: 100%;
+  padding: 10px;
+}
+
+.cup-match {
+  background: #fff;
+  border: 1px solid var(--hist-line);
+  padding: 7px;
+}
+
+.cup-match-row {
+  align-items: center;
+  display: grid;
+  gap: 6px;
+  grid-template-columns: 28px minmax(0, 1fr) 36px;
+  padding: 3px 0;
+}
+
+.cup-match-row + .cup-match-row {
+  border-top: 1px solid #e4e8ef;
+}
+
+.cup-match-row.winner .cup-team,
+.cup-match-row.winner .cup-score {
+  color: #08652e;
+  font-weight: 900;
+}
+
+.cup-seed {
+  color: var(--hist-muted);
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.cup-team {
+  align-items: center;
+  display: inline-flex;
+  gap: 6px;
+  min-width: 0;
+}
+
+.cup-team img {
+  height: 20px;
+  object-fit: contain;
+  width: 20px;
+}
+
+.cup-team strong {
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.cup-score {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.cup-date {
+  border-top: 1px solid #e4e8ef;
+  color: var(--hist-muted);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: .1em;
+  margin-top: 4px;
+  padding-top: 5px;
+  text-transform: uppercase;
+}
+
 .table-wrap {
   overflow-x: auto;
   border: 1px solid #d8dee8;
@@ -841,6 +950,7 @@ select, .small-input {
   .history-grid,
   .history-grid.three,
   .history-grid.main-rail { grid-template-columns: 1fr; }
+  .cup-bracket { grid-template-columns: 1fr; overflow: visible; }
   .dashboard-grid,
   .quick-link-grid,
   .team-directory-grid,

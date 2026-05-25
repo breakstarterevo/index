@@ -3,14 +3,25 @@
     "injuries": [
         {
             "pos": "PG",
+            "name": "Andrew Toney",
+            "url": "",
+            "team": "roster24",
+            "teamName": "Real Madrid",
+            "rosterUrl": "./rosters/roster24.htm",
+            "length": "103",
+            "injury": "Broken Leg",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PG",
             "name": "Kelvin Ransey",
             "url": "",
             "team": "roster28",
             "teamName": "Valencia",
             "rosterUrl": "./rosters/roster28.htm",
-            "length": "56",
+            "length": "49",
             "injury": "Torn MCL",
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "pos": "SG",
@@ -19,9 +30,9 @@
             "team": "roster7",
             "teamName": "Ajax",
             "rosterUrl": "./rosters/roster7.htm",
-            "length": "8",
+            "length": "1",
             "injury": "Ruptured Achilles",
-            "rowClass": "row2"
+            "rowClass": "row1"
         }
     ]
 }
