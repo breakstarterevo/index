@@ -664,11 +664,20 @@
     const width = 560;
     const height = 190;
     const pad = { top: 14, right: 16, bottom: 28, left: 46 };
-    const tierSize = Math.max(18, ...positionHistory.map((row) => row.standing.teamCount || 18));
+    const tierSize = 100;
     const maxRank = tierSize * 3;
     const x = (index) => pad.left + (positionHistory.length === 1 ? (width - pad.left - pad.right) / 2 : index * ((width - pad.left - pad.right) / (positionHistory.length - 1)));
     const y = (rank) => pad.top + (rank - 1) * ((height - pad.top - pad.bottom) / Math.max(1, maxRank - 1));
-    const points = positionHistory.map(({ standing }, index) => `${x(index)},${y(teamOverallRank(standing))}`).join(" ");
+    const chartRank = (standing) => {
+      const tierOffset = (tierSortValue(standing.tier) - 1) * tierSize;
+      const position = Number(standing.position || 1);
+      const teamCount = Math.max(1, Number(standing.teamCount || 1));
+      const tierPosition = teamCount === 1
+        ? tierSize / 2
+        : 1 + ((position - 1) / (teamCount - 1)) * (tierSize - 1);
+      return tierOffset + tierPosition;
+    };
+    const points = positionHistory.map(({ standing }, index) => `${x(index)},${y(chartRank(standing))}`).join(" ");
     const bands = ["CLB", "ELB", "ECL"].map((tier, index) => {
       const y1 = y(index * tierSize + 1);
       const y2 = y((index + 1) * tierSize);
@@ -676,7 +685,7 @@
     }).join("");
     const dots = positionHistory.map(({ season, standing }, index) => {
       const marker = movementMarker(standing.tier, standing.position, standing.teamCount);
-      const rank = teamOverallRank(standing);
+      const rank = chartRank(standing);
       return `<g class="position-dot ${marker === "C" ? "champion" : marker === "P" ? "promoted" : marker === "R" ? "relegated" : ""}">
         <circle cx="${x(index)}" cy="${y(rank)}" r="4"></circle>
         ${marker ? `<text x="${x(index) + 9}" y="${y(rank) + 4}" text-anchor="start">${marker}</text>` : ""}

@@ -4,7 +4,6 @@
     "database": [
       "Current Intake",
       "Database",
-      "TIER 1",
       "TIER 2",
       "Tier 3"
     ],
@@ -691,10 +690,10 @@
     },
     {
       "team": "Barcelona",
-      "gm": "Tanush",
+      "gm": "ELJeffe",
       "tierRaw": "Tier 3 — Prospect",
       "tier": "ECL",
-      "positionFocus": "SG",
+      "positionFocus": "SF",
       "intakePlayers": [
         {
           "name": "Festus Ezeli",
@@ -1773,11 +1772,8 @@
           "Stamina": 69,
           "Picname": 0,
           "InjuryAvoidance": 74,
-          "POT": 107,
-          "Tier": "B",
-          "Column1": "",
-          "tierRaw": "B",
-          "tier": "B"
+          "tierRaw": "",
+          "tier": ""
         },
         {
           "name": "Cody Martin",
@@ -1824,11 +1820,8 @@
           "Stamina": 71,
           "Picname": 0,
           "InjuryAvoidance": 99,
-          "POT": 97,
-          "Tier": "C",
-          "Column1": "",
-          "tierRaw": "C",
-          "tier": "C"
+          "tierRaw": "",
+          "tier": ""
         },
         {
           "name": "Derrick Favors",
@@ -1875,11 +1868,8 @@
           "Stamina": 74,
           "Picname": 0,
           "InjuryAvoidance": 5,
-          "POT": 102,
-          "Tier": "B",
-          "Column1": "",
-          "tierRaw": "B",
-          "tier": "B"
+          "tierRaw": "",
+          "tier": ""
         },
         {
           "name": "Ozell Jones",
@@ -1926,11 +1916,8 @@
           "Stamina": 67,
           "Picname": 0,
           "InjuryAvoidance": 81,
-          "POT": 86,
-          "Tier": "D",
-          "Column1": "",
-          "tierRaw": "D",
-          "tier": "D"
+          "tierRaw": "",
+          "tier": ""
         }
       ]
     },
