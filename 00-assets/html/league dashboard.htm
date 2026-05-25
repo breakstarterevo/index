@@ -207,6 +207,7 @@
       players: "../../00-build/database/players.json",
       schedule: "../../00-build/database/schedule.json"
     };
+    const fetchFresh = (url) => fetch(url, { cache: "no-store" });
 
     const PAGE_VIEWPORT = "width=device-width, initial-scale=1.0";
     let parentViewportMeta = null;
@@ -619,7 +620,7 @@
       const status = document.getElementById("statusText");
       try {
         setParentFluidContent(true);
-        const [standingsRes, leadersRes, injuriesRes, capRes, playersRes, scheduleRes] = await Promise.all([fetch(DATA_URLS.standings), fetch(DATA_URLS.leaders), fetch(DATA_URLS.injuries), fetch(DATA_URLS.capreport), fetch(DATA_URLS.players), fetch(DATA_URLS.schedule)]);
+        const [standingsRes, leadersRes, injuriesRes, capRes, playersRes, scheduleRes] = await Promise.all([fetchFresh(DATA_URLS.standings), fetchFresh(DATA_URLS.leaders), fetchFresh(DATA_URLS.injuries), fetchFresh(DATA_URLS.capreport), fetchFresh(DATA_URLS.players), fetchFresh(DATA_URLS.schedule)]);
         if (!standingsRes.ok || !leadersRes.ok || !injuriesRes.ok || !capRes.ok || !playersRes.ok || !scheduleRes.ok) throw new Error("One or more feeds failed to load");
         const standingsData = await standingsRes.json();
         const leadersData = await leadersRes.json();

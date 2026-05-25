@@ -119,6 +119,134 @@
                         }
                     },
                     {
+                        "team": "Benfica",
+                        "overall": {
+                            "record": "28-14",
+                            "streak": "W1",
+                            "last3": "WLW",
+                            "avgMargin": 5.17,
+                            "pointDiff": 217,
+                            "bestWin": {
+                                "date": "1/4/1982",
+                                "opponent": "Marseille",
+                                "result": "W",
+                                "margin": 43,
+                                "score": "@Benfica 137, Marseille 94",
+                                "boxscoreUrl": "./boxes/box77-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "3/12/1982",
+                                "opponent": "Chelsea",
+                                "result": "L",
+                                "margin": 37,
+                                "score": "@Chelsea 118, Benfica 81",
+                                "boxscoreUrl": "./boxes/box144-3.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 9
+                        },
+                        "latestSim": {
+                            "record": "3-2",
+                            "streak": "W1",
+                            "last3": "WLW",
+                            "avgMargin": 1.6,
+                            "pointDiff": 8,
+                            "bestWin": {
+                                "date": "4/22/1982",
+                                "opponent": "Monaco",
+                                "result": "W",
+                                "margin": 24,
+                                "score": "Benfica 120, @Monaco 96",
+                                "boxscoreUrl": "./boxes/box185-6.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "4/19/1982",
+                                "opponent": "Sheffield United",
+                                "result": "L",
+                                "margin": 16,
+                                "score": "Sheffield United 114, @Benfica 98",
+                                "boxscoreUrl": "./boxes/box182-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 1
+                        },
+                        "rosterUrl": "./rosters/roster13.htm",
+                        "starPlayer": {
+                            "name": "Moses Malone",
+                            "url": "../players/player872.htm",
+                            "pos": "C",
+                            "age": "25",
+                            "overall": "148",
+                            "potential": "151"
+                        }
+                    },
+                    {
+                        "team": "Sheffield United",
+                        "overall": {
+                            "record": "27-15",
+                            "streak": "W2",
+                            "last3": "LWW",
+                            "avgMargin": 5.64,
+                            "pointDiff": 237,
+                            "bestWin": {
+                                "date": "11/26/1981",
+                                "opponent": "Aston Villa",
+                                "result": "W",
+                                "margin": 42,
+                                "score": "@Sheffield United 128, Aston Villa 86",
+                                "boxscoreUrl": "./boxes/box38-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "1/18/1982",
+                                "opponent": "Marseille",
+                                "result": "L",
+                                "margin": 24,
+                                "score": "@Marseille 139, Sheffield United 115",
+                                "boxscoreUrl": "./boxes/box91-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 9
+                        },
+                        "latestSim": {
+                            "record": "4-2",
+                            "streak": "W2",
+                            "last3": "LWW",
+                            "avgMargin": 7.5,
+                            "pointDiff": 45,
+                            "bestWin": {
+                                "date": "4/4/1982",
+                                "opponent": "Marseille",
+                                "result": "W",
+                                "margin": 22,
+                                "score": "@Sheffield United 133, Marseille 111",
+                                "boxscoreUrl": "./boxes/box167-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "4/9/1982",
+                                "opponent": "Juventus",
+                                "result": "L",
+                                "margin": 10,
+                                "score": "@Juventus 115, Sheffield United 105",
+                                "boxscoreUrl": "./boxes/box172-3.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 0
+                        },
+                        "rosterUrl": "./rosters/roster16.htm",
+                        "starPlayer": {
+                            "name": "Rickey Green",
+                            "url": "../players/player882.htm",
+                            "pos": "PG",
+                            "age": "25",
+                            "overall": "119",
+                            "potential": "124"
+                        }
+                    },
+                    {
                         "team": "AC Milan",
                         "overall": {
                             "record": "27-15",
@@ -437,134 +565,6 @@
                             "overall": "137",
                             "potential": "138"
                         }
-                    },
-                    {
-                        "team": "Brighton",
-                        "overall": {
-                            "record": "17-25",
-                            "streak": "L3",
-                            "last3": "LLL",
-                            "avgMargin": -2.57,
-                            "pointDiff": -108,
-                            "bestWin": {
-                                "date": "4/8/1982",
-                                "opponent": "Manchester United",
-                                "result": "W",
-                                "margin": 35,
-                                "score": "Brighton 133, @Manchester United 98",
-                                "boxscoreUrl": "./boxes/box171-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "1/18/1982",
-                                "opponent": "AFC Richmond",
-                                "result": "L",
-                                "margin": 48,
-                                "score": "@AFC Richmond 103, Brighton 55",
-                                "boxscoreUrl": "./boxes/box91-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 4
-                        },
-                        "latestSim": {
-                            "record": "2-4",
-                            "streak": "L3",
-                            "last3": "LLL",
-                            "avgMargin": 0.67,
-                            "pointDiff": 4,
-                            "bestWin": {
-                                "date": "4/8/1982",
-                                "opponent": "Manchester United",
-                                "result": "W",
-                                "margin": 35,
-                                "score": "Brighton 133, @Manchester United 98",
-                                "boxscoreUrl": "./boxes/box171-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/22/1982",
-                                "opponent": "AFC Richmond",
-                                "result": "L",
-                                "margin": 22,
-                                "score": "@AFC Richmond 132, Brighton 110",
-                                "boxscoreUrl": "./boxes/box185-4.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 1
-                        },
-                        "rosterUrl": "./rosters/roster10.htm",
-                        "starPlayer": {
-                            "name": "Kiki Vandeweghe",
-                            "url": "../players/player701.htm",
-                            "pos": "SF",
-                            "age": "21",
-                            "overall": "137",
-                            "potential": "151"
-                        }
-                    },
-                    {
-                        "team": "Manchester United",
-                        "overall": {
-                            "record": "9-33",
-                            "streak": "W1",
-                            "last3": "LLW",
-                            "avgMargin": -9.93,
-                            "pointDiff": -417,
-                            "bestWin": {
-                                "date": "3/2/1982",
-                                "opponent": "Crystal Palace",
-                                "result": "W",
-                                "margin": 25,
-                                "score": "@Manchester United 117, Crystal Palace 92",
-                                "boxscoreUrl": "./boxes/box134-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/8/1982",
-                                "opponent": "Brighton",
-                                "result": "L",
-                                "margin": 35,
-                                "score": "Brighton 133, @Manchester United 98",
-                                "boxscoreUrl": "./boxes/box171-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 8
-                        },
-                        "latestSim": {
-                            "record": "2-5",
-                            "streak": "W1",
-                            "last3": "LLW",
-                            "avgMargin": -11.43,
-                            "pointDiff": -80,
-                            "bestWin": {
-                                "date": "4/22/1982",
-                                "opponent": "Crystal Palace",
-                                "result": "W",
-                                "margin": 16,
-                                "score": "@Manchester United 120, Crystal Palace 104",
-                                "boxscoreUrl": "./boxes/box185-2.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/8/1982",
-                                "opponent": "Brighton",
-                                "result": "L",
-                                "margin": 35,
-                                "score": "Brighton 133, @Manchester United 98",
-                                "boxscoreUrl": "./boxes/box171-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 1
-                        },
-                        "rosterUrl": "./rosters/roster5.htm",
-                        "starPlayer": {
-                            "name": "Walter Davis",
-                            "url": "../players/player706.htm",
-                            "pos": "SG",
-                            "age": "25",
-                            "overall": "128",
-                            "potential": "136"
-                        }
                     }
                 ]
             },
@@ -617,131 +617,67 @@
                 ],
                 "teamPool": [
                     {
-                        "team": "Benfica",
+                        "team": "FL Fart",
                         "overall": {
-                            "record": "28-14",
+                            "record": "29-13",
                             "streak": "W1",
                             "last3": "WLW",
-                            "avgMargin": 5.17,
-                            "pointDiff": 217,
+                            "avgMargin": 5.79,
+                            "pointDiff": 243,
                             "bestWin": {
-                                "date": "1/4/1982",
-                                "opponent": "Marseille",
+                                "date": "4/9/1982",
+                                "opponent": "Valencia",
                                 "result": "W",
-                                "margin": 43,
-                                "score": "@Benfica 137, Marseille 94",
-                                "boxscoreUrl": "./boxes/box77-2.htm",
+                                "margin": 28,
+                                "score": "@FL Fart 121, Valencia 93",
+                                "boxscoreUrl": "./boxes/box172-7.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "3/12/1982",
-                                "opponent": "Chelsea",
+                                "date": "4/10/1982",
+                                "opponent": "Barcelona",
                                 "result": "L",
-                                "margin": 37,
-                                "score": "@Chelsea 118, Benfica 81",
-                                "boxscoreUrl": "./boxes/box144-3.htm",
+                                "margin": 28,
+                                "score": "@Barcelona 109, FL Fart 81",
+                                "boxscoreUrl": "./boxes/box173-1.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 9
+                            "closeGameCount": 8
                         },
                         "latestSim": {
-                            "record": "3-2",
+                            "record": "4-3",
                             "streak": "W1",
                             "last3": "WLW",
-                            "avgMargin": 1.6,
-                            "pointDiff": 8,
+                            "avgMargin": 4.0,
+                            "pointDiff": 28,
                             "bestWin": {
-                                "date": "4/22/1982",
-                                "opponent": "Monaco",
+                                "date": "4/9/1982",
+                                "opponent": "Valencia",
                                 "result": "W",
-                                "margin": 24,
-                                "score": "Benfica 120, @Monaco 96",
-                                "boxscoreUrl": "./boxes/box185-6.htm",
+                                "margin": 28,
+                                "score": "@FL Fart 121, Valencia 93",
+                                "boxscoreUrl": "./boxes/box172-7.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "4/19/1982",
-                                "opponent": "Sheffield United",
+                                "date": "4/10/1982",
+                                "opponent": "Barcelona",
                                 "result": "L",
-                                "margin": 16,
-                                "score": "Sheffield United 114, @Benfica 98",
-                                "boxscoreUrl": "./boxes/box182-2.htm",
+                                "margin": 28,
+                                "score": "@Barcelona 109, FL Fart 81",
+                                "boxscoreUrl": "./boxes/box173-1.htm",
                                 "section": "Regular Season"
                             },
                             "closeGameCount": 1
                         },
-                        "rosterUrl": "./rosters/roster13.htm",
+                        "rosterUrl": "./rosters/roster27.htm",
                         "starPlayer": {
-                            "name": "Moses Malone",
-                            "url": "../players/player872.htm",
+                            "name": "Alton Lister",
+                            "url": "../players/player1050.htm",
                             "pos": "C",
-                            "age": "25",
-                            "overall": "148",
-                            "potential": "151"
-                        }
-                    },
-                    {
-                        "team": "Sheffield United",
-                        "overall": {
-                            "record": "27-15",
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": 5.64,
-                            "pointDiff": 237,
-                            "bestWin": {
-                                "date": "11/26/1981",
-                                "opponent": "Aston Villa",
-                                "result": "W",
-                                "margin": 42,
-                                "score": "@Sheffield United 128, Aston Villa 86",
-                                "boxscoreUrl": "./boxes/box38-2.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "1/18/1982",
-                                "opponent": "Marseille",
-                                "result": "L",
-                                "margin": 24,
-                                "score": "@Marseille 139, Sheffield United 115",
-                                "boxscoreUrl": "./boxes/box91-2.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 9
-                        },
-                        "latestSim": {
-                            "record": "4-2",
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": 7.5,
-                            "pointDiff": 45,
-                            "bestWin": {
-                                "date": "4/4/1982",
-                                "opponent": "Marseille",
-                                "result": "W",
-                                "margin": 22,
-                                "score": "@Sheffield United 133, Marseille 111",
-                                "boxscoreUrl": "./boxes/box167-2.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/9/1982",
-                                "opponent": "Juventus",
-                                "result": "L",
-                                "margin": 10,
-                                "score": "@Juventus 115, Sheffield United 105",
-                                "boxscoreUrl": "./boxes/box172-3.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 0
-                        },
-                        "rosterUrl": "./rosters/roster16.htm",
-                        "starPlayer": {
-                            "name": "Rickey Green",
-                            "url": "../players/player882.htm",
-                            "pos": "PG",
-                            "age": "25",
-                            "overall": "119",
-                            "potential": "124"
+                            "age": "21",
+                            "overall": "117",
+                            "potential": "125"
                         }
                     },
                     {
@@ -937,6 +873,70 @@
                         }
                     },
                     {
+                        "team": "Brighton",
+                        "overall": {
+                            "record": "17-25",
+                            "streak": "L3",
+                            "last3": "LLL",
+                            "avgMargin": -2.57,
+                            "pointDiff": -108,
+                            "bestWin": {
+                                "date": "4/8/1982",
+                                "opponent": "Manchester United",
+                                "result": "W",
+                                "margin": 35,
+                                "score": "Brighton 133, @Manchester United 98",
+                                "boxscoreUrl": "./boxes/box171-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "1/18/1982",
+                                "opponent": "AFC Richmond",
+                                "result": "L",
+                                "margin": 48,
+                                "score": "@AFC Richmond 103, Brighton 55",
+                                "boxscoreUrl": "./boxes/box91-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 4
+                        },
+                        "latestSim": {
+                            "record": "2-4",
+                            "streak": "L3",
+                            "last3": "LLL",
+                            "avgMargin": 0.67,
+                            "pointDiff": 4,
+                            "bestWin": {
+                                "date": "4/8/1982",
+                                "opponent": "Manchester United",
+                                "result": "W",
+                                "margin": 35,
+                                "score": "Brighton 133, @Manchester United 98",
+                                "boxscoreUrl": "./boxes/box171-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "4/22/1982",
+                                "opponent": "AFC Richmond",
+                                "result": "L",
+                                "margin": 22,
+                                "score": "@AFC Richmond 132, Brighton 110",
+                                "boxscoreUrl": "./boxes/box185-4.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 1
+                        },
+                        "rosterUrl": "./rosters/roster10.htm",
+                        "starPlayer": {
+                            "name": "Kiki Vandeweghe",
+                            "url": "../players/player701.htm",
+                            "pos": "SF",
+                            "age": "21",
+                            "overall": "137",
+                            "potential": "151"
+                        }
+                    },
+                    {
                         "team": "Ajax",
                         "overall": {
                             "record": "15-27",
@@ -1059,73 +1059,73 @@
                             "name": "Purvis Short",
                             "url": "../players/player879.htm",
                             "pos": "SF",
-                            "age": "22",
+                            "age": "23",
                             "overall": "119",
                             "potential": "131"
                         }
                     },
                     {
-                        "team": "Aston Villa",
+                        "team": "Manchester United",
                         "overall": {
-                            "record": "10-32",
-                            "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -7.5,
-                            "pointDiff": -315,
+                            "record": "9-33",
+                            "streak": "W1",
+                            "last3": "LLW",
+                            "avgMargin": -9.93,
+                            "pointDiff": -417,
                             "bestWin": {
-                                "date": "3/8/1982",
-                                "opponent": "Ajax",
+                                "date": "3/2/1982",
+                                "opponent": "Crystal Palace",
                                 "result": "W",
-                                "margin": 29,
-                                "score": "@Aston Villa 122, Ajax 93",
-                                "boxscoreUrl": "./boxes/box140-3.htm",
+                                "margin": 25,
+                                "score": "@Manchester United 117, Crystal Palace 92",
+                                "boxscoreUrl": "./boxes/box134-1.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "11/26/1981",
-                                "opponent": "Sheffield United",
+                                "date": "4/8/1982",
+                                "opponent": "Brighton",
                                 "result": "L",
-                                "margin": 42,
-                                "score": "@Sheffield United 128, Aston Villa 86",
-                                "boxscoreUrl": "./boxes/box38-2.htm",
+                                "margin": 35,
+                                "score": "Brighton 133, @Manchester United 98",
+                                "boxscoreUrl": "./boxes/box171-1.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 13
+                            "closeGameCount": 8
                         },
                         "latestSim": {
-                            "record": "1-4",
-                            "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -9.4,
-                            "pointDiff": -47,
+                            "record": "2-5",
+                            "streak": "W1",
+                            "last3": "LLW",
+                            "avgMargin": -11.43,
+                            "pointDiff": -80,
                             "bestWin": {
-                                "date": "4/21/1982",
-                                "opponent": "Ajax",
+                                "date": "4/22/1982",
+                                "opponent": "Crystal Palace",
                                 "result": "W",
-                                "margin": 9,
-                                "score": "Aston Villa 116, @Ajax 107",
-                                "boxscoreUrl": "./boxes/box184-3.htm",
+                                "margin": 16,
+                                "score": "@Manchester United 120, Crystal Palace 104",
+                                "boxscoreUrl": "./boxes/box185-2.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "4/22/1982",
-                                "opponent": "Juventus",
+                                "date": "4/8/1982",
+                                "opponent": "Brighton",
                                 "result": "L",
-                                "margin": 30,
-                                "score": "@Juventus 112, Aston Villa 82",
-                                "boxscoreUrl": "./boxes/box185-8.htm",
+                                "margin": 35,
+                                "score": "Brighton 133, @Manchester United 98",
+                                "boxscoreUrl": "./boxes/box171-1.htm",
                                 "section": "Regular Season"
                             },
                             "closeGameCount": 1
                         },
-                        "rosterUrl": "./rosters/roster19.htm",
+                        "rosterUrl": "./rosters/roster5.htm",
                         "starPlayer": {
-                            "name": "Bill Laimbeer",
-                            "url": "../players/player874.htm",
-                            "pos": "C",
-                            "age": "22",
-                            "overall": "124",
-                            "potential": "146"
+                            "name": "Walter Davis",
+                            "url": "../players/player706.htm",
+                            "pos": "SG",
+                            "age": "25",
+                            "overall": "128",
+                            "potential": "136"
                         }
                     }
                 ]
@@ -1178,70 +1178,6 @@
                     "../../00-build/database/player_stats.json"
                 ],
                 "teamPool": [
-                    {
-                        "team": "FL Fart",
-                        "overall": {
-                            "record": "29-13",
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 5.79,
-                            "pointDiff": 243,
-                            "bestWin": {
-                                "date": "4/9/1982",
-                                "opponent": "Valencia",
-                                "result": "W",
-                                "margin": 28,
-                                "score": "@FL Fart 121, Valencia 93",
-                                "boxscoreUrl": "./boxes/box172-7.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/10/1982",
-                                "opponent": "Barcelona",
-                                "result": "L",
-                                "margin": 28,
-                                "score": "@Barcelona 109, FL Fart 81",
-                                "boxscoreUrl": "./boxes/box173-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 8
-                        },
-                        "latestSim": {
-                            "record": "4-3",
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 4.0,
-                            "pointDiff": 28,
-                            "bestWin": {
-                                "date": "4/9/1982",
-                                "opponent": "Valencia",
-                                "result": "W",
-                                "margin": 28,
-                                "score": "@FL Fart 121, Valencia 93",
-                                "boxscoreUrl": "./boxes/box172-7.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/10/1982",
-                                "opponent": "Barcelona",
-                                "result": "L",
-                                "margin": 28,
-                                "score": "@Barcelona 109, FL Fart 81",
-                                "boxscoreUrl": "./boxes/box173-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 1
-                        },
-                        "rosterUrl": "./rosters/roster27.htm",
-                        "starPlayer": {
-                            "name": "Alton Lister",
-                            "url": "../players/player1050.htm",
-                            "pos": "C",
-                            "age": "21",
-                            "overall": "117",
-                            "potential": "125"
-                        }
-                    },
                     {
                         "team": "Inter Milan",
                         "overall": {
@@ -1429,7 +1365,7 @@
                             "name": "Joe Barry Carroll",
                             "url": "../players/player710.htm",
                             "pos": "C",
-                            "age": "21",
+                            "age": "22",
                             "overall": "121",
                             "potential": "131"
                         }
@@ -1493,7 +1429,7 @@
                             "name": "Allen Leavell",
                             "url": "../players/player1054.htm",
                             "pos": "PG",
-                            "age": "22",
+                            "age": "23",
                             "overall": "117",
                             "potential": "118"
                         }
@@ -1557,7 +1493,7 @@
                             "name": "Isiah Thomas",
                             "url": "../players/player1047.htm",
                             "pos": "SG",
-                            "age": "18",
+                            "age": "19",
                             "overall": "123",
                             "potential": "141"
                         }
@@ -1681,6 +1617,70 @@
                             "overall": "115",
                             "potential": "117"
                         }
+                    },
+                    {
+                        "team": "Aston Villa",
+                        "overall": {
+                            "record": "10-32",
+                            "streak": "L1",
+                            "last3": "LWL",
+                            "avgMargin": -7.5,
+                            "pointDiff": -315,
+                            "bestWin": {
+                                "date": "3/8/1982",
+                                "opponent": "Ajax",
+                                "result": "W",
+                                "margin": 29,
+                                "score": "@Aston Villa 122, Ajax 93",
+                                "boxscoreUrl": "./boxes/box140-3.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "11/26/1981",
+                                "opponent": "Sheffield United",
+                                "result": "L",
+                                "margin": 42,
+                                "score": "@Sheffield United 128, Aston Villa 86",
+                                "boxscoreUrl": "./boxes/box38-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 13
+                        },
+                        "latestSim": {
+                            "record": "1-4",
+                            "streak": "L1",
+                            "last3": "LWL",
+                            "avgMargin": -9.4,
+                            "pointDiff": -47,
+                            "bestWin": {
+                                "date": "4/21/1982",
+                                "opponent": "Ajax",
+                                "result": "W",
+                                "margin": 9,
+                                "score": "Aston Villa 116, @Ajax 107",
+                                "boxscoreUrl": "./boxes/box184-3.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "4/22/1982",
+                                "opponent": "Juventus",
+                                "result": "L",
+                                "margin": 30,
+                                "score": "@Juventus 112, Aston Villa 82",
+                                "boxscoreUrl": "./boxes/box185-8.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 1
+                        },
+                        "rosterUrl": "./rosters/roster19.htm",
+                        "starPlayer": {
+                            "name": "Bill Laimbeer",
+                            "url": "../players/player874.htm",
+                            "pos": "C",
+                            "age": "23",
+                            "overall": "124",
+                            "potential": "146"
+                        }
                     }
                 ]
             }
@@ -1737,7 +1737,7 @@
                         {
                             "team": "Bayern Munich",
                             "record": "1-5",
-                            "standingRank": 4,
+                            "standingRank": 2,
                             "streak": "L1",
                             "last3": "LWL",
                             "avgMargin": -15.33,
@@ -1749,7 +1749,7 @@
                         {
                             "team": "Crystal Palace",
                             "record": "1-5",
-                            "standingRank": 6,
+                            "standingRank": 1,
                             "streak": "L1",
                             "last3": "LWL",
                             "avgMargin": -7.0,
@@ -1757,18 +1757,6 @@
                             "gapToLine": 0,
                             "status": "on_or_below_line",
                             "rosterUrl": "./rosters/roster6.htm"
-                        },
-                        {
-                            "team": "Manchester United",
-                            "record": "2-5",
-                            "standingRank": 8,
-                            "streak": "W1",
-                            "last3": "LLW",
-                            "avgMargin": -11.43,
-                            "pointDiff": -80,
-                            "gapToLine": 1,
-                            "status": "above_safety",
-                            "rosterUrl": "./rosters/roster5.htm"
                         },
                         {
                             "team": "Atletico Madrid",
@@ -1781,6 +1769,18 @@
                             "gapToLine": 1,
                             "status": "above_safety",
                             "rosterUrl": "./rosters/roster11.htm"
+                        },
+                        {
+                            "team": "Benfica",
+                            "record": "3-2",
+                            "standingRank": 7,
+                            "streak": "W1",
+                            "last3": "WLW",
+                            "avgMargin": 1.6,
+                            "pointDiff": 8,
+                            "gapToLine": 2,
+                            "status": "above_safety",
+                            "rosterUrl": "./rosters/roster13.htm"
                         }
                     ]
                 },
@@ -1817,28 +1817,28 @@
                             "rosterUrl": "./rosters/roster15.htm"
                         },
                         {
-                            "team": "Sheffield United",
-                            "record": "4-2",
-                            "standingRank": 2,
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": 7.5,
-                            "pointDiff": 45,
-                            "gapToLine": 0,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster16.htm"
-                        },
-                        {
-                            "team": "Benfica",
-                            "record": "3-2",
-                            "standingRank": 1,
+                            "team": "FL Fart",
+                            "record": "4-3",
+                            "standingRank": 8,
                             "streak": "W1",
                             "last3": "WLW",
-                            "avgMargin": 1.6,
-                            "pointDiff": 8,
+                            "avgMargin": 4.0,
+                            "pointDiff": 28,
+                            "gapToLine": 0,
+                            "status": "on_or_above_line",
+                            "rosterUrl": "./rosters/roster27.htm"
+                        },
+                        {
+                            "team": "Chelsea",
+                            "record": "3-2",
+                            "standingRank": 5,
+                            "streak": "L1",
+                            "last3": "WWL",
+                            "avgMargin": -1.2,
+                            "pointDiff": -6,
                             "gapToLine": 1,
                             "status": "chasing",
-                            "rosterUrl": "./rosters/roster13.htm"
+                            "rosterUrl": "./rosters/roster17.htm"
                         }
                     ]
                 },
@@ -1863,16 +1863,16 @@
                             "rosterUrl": "./rosters/roster20.htm"
                         },
                         {
-                            "team": "Aston Villa",
-                            "record": "1-4",
-                            "standingRank": 8,
-                            "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -9.4,
-                            "pointDiff": -47,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster19.htm"
+                            "team": "Manchester United",
+                            "record": "2-5",
+                            "standingRank": 1,
+                            "streak": "W1",
+                            "last3": "LLW",
+                            "avgMargin": -11.43,
+                            "pointDiff": -80,
+                            "gapToLine": 1,
+                            "status": "above_safety",
+                            "rosterUrl": "./rosters/roster5.htm"
                         },
                         {
                             "team": "Ajax",
@@ -1899,7 +1899,7 @@
                         {
                             "team": "Barcelona",
                             "record": "5-2",
-                            "standingRank": 3,
+                            "standingRank": 5,
                             "streak": "W1",
                             "last3": "LLW",
                             "avgMargin": 7.86,
@@ -1911,7 +1911,7 @@
                         {
                             "team": "Inter Milan",
                             "record": "4-2",
-                            "standingRank": 2,
+                            "standingRank": 7,
                             "streak": "W3",
                             "last3": "WWW",
                             "avgMargin": 5.83,
@@ -1923,7 +1923,7 @@
                         {
                             "team": "Manchester City",
                             "record": "4-2",
-                            "standingRank": 5,
+                            "standingRank": 8,
                             "streak": "W1",
                             "last3": "WLW",
                             "avgMargin": 5.67,
@@ -1973,7 +1973,7 @@
                     "team": "AFC Richmond",
                     "tier": "Tier 1",
                     "tierShort": "T1",
-                    "standingRank": 1,
+                    "standingRank": 6,
                     "rosterUrl": "./rosters/roster12.htm",
                     "rosterFile": "roster12.htm",
                     "standingsLast10": "9-1",
@@ -2370,7 +2370,7 @@
                     "team": "Sporting CP",
                     "tier": "Tier 3",
                     "tierShort": "T3",
-                    "standingRank": 8,
+                    "standingRank": 4,
                     "rosterUrl": "./rosters/roster23.htm",
                     "rosterFile": "roster23.htm",
                     "standingsLast10": "0-10",
@@ -2631,7 +2631,7 @@
                     "team": "Bayern Munich",
                     "tier": "Tier 1",
                     "tierShort": "T1",
-                    "standingRank": 4,
+                    "standingRank": 2,
                     "rosterUrl": "./rosters/roster7.htm",
                     "rosterFile": "roster7.htm",
                     "standingsLast10": "3-7",
@@ -2872,7 +2872,7 @@
                     "type": "game",
                     "title": "Closest Game of the Month",
                     "summary": "Manchester United edged Brighton by 1 in the tightest finish of the sim.",
-                    "tier": "Tier 1",
+                    "tier": "Tier 2",
                     "importance": 84,
                     "data": {
                         "section": "Regular Season",
@@ -2922,27 +2922,27 @@
                     "id": "upset-of-the-month",
                     "type": "game",
                     "title": "Upset of the Month",
-                    "summary": "Ajax landed the sharpest upset of the sim by beating Benfica.",
-                    "tier": "Tier 2",
+                    "summary": "Manchester City landed the sharpest upset of the sim by beating Paris Saint-Germain.",
+                    "tier": "Tier 3",
                     "importance": 82,
                     "data": {
                         "section": "Regular Season",
                         "sectionSlug": "regular-season",
-                        "date": "4/9/1982",
-                        "matchupText": "@Ajax 118, Benfica 105",
-                        "boxscoreUrl": "./boxes/box172-2.htm",
-                        "boxscoreFile": "box172-2.htm",
-                        "homeTeam": "roster18",
-                        "homeTeamName": "Ajax",
-                        "homeScore": 118,
-                        "awayTeam": "roster13",
-                        "awayTeamName": "Benfica",
-                        "awayScore": 105,
-                        "winner": "roster18",
-                        "winnerName": "Ajax",
-                        "loser": "roster13",
-                        "loserName": "Benfica",
-                        "margin": 13
+                        "date": "4/1/1982",
+                        "matchupText": "Manchester City 116, @Paris Saint-Germain 104",
+                        "boxscoreUrl": "./boxes/box164-4.htm",
+                        "boxscoreFile": "box164-4.htm",
+                        "homeTeam": "roster21",
+                        "homeTeamName": "Paris Saint-Germain",
+                        "homeScore": 104,
+                        "awayTeam": "roster28",
+                        "awayTeamName": "Manchester City",
+                        "awayScore": 116,
+                        "winner": "roster28",
+                        "winnerName": "Manchester City",
+                        "loser": "roster21",
+                        "loserName": "Paris Saint-Germain",
+                        "margin": 12
                     }
                 }
             ],
@@ -2986,7 +2986,7 @@
                         "name": "Bill Laimbeer",
                         "url": "../players/player874.htm",
                         "pos": "C",
-                        "age": "22",
+                        "age": "23",
                         "overall": "124",
                         "potential": "146"
                     }
@@ -3107,7 +3107,7 @@
                         "name": "Allen Leavell",
                         "url": "../players/player1054.htm",
                         "pos": "PG",
-                        "age": "22",
+                        "age": "23",
                         "overall": "117",
                         "potential": "118"
                     }
@@ -3140,7 +3140,7 @@
                         "name": "Purvis Short",
                         "url": "../players/player879.htm",
                         "pos": "SF",
-                        "age": "22",
+                        "age": "23",
                         "overall": "119",
                         "potential": "131"
                     }
@@ -3151,7 +3151,7 @@
                         "name": "Joe Barry Carroll",
                         "url": "../players/player710.htm",
                         "pos": "C",
-                        "age": "21",
+                        "age": "22",
                         "overall": "121",
                         "potential": "131"
                     }
@@ -3206,7 +3206,7 @@
                         "name": "Isiah Thomas",
                         "url": "../players/player1047.htm",
                         "pos": "SG",
-                        "age": "18",
+                        "age": "19",
                         "overall": "123",
                         "potential": "141"
                     }
@@ -3286,8 +3286,8 @@
                             "usage": 28.6
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 82.56
+                        "leaderboardPresence": false,
+                        "candidateScore": 78.56
                     },
                     {
                         "name": "Larry Bird",
@@ -3316,8 +3316,8 @@
                             "usage": 26.3
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 71.26
+                        "leaderboardPresence": false,
+                        "candidateScore": 67.26
                     },
                     {
                         "name": "Adrian Dantley",
@@ -3346,8 +3346,8 @@
                             "usage": 32.0
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 68.22
+                        "leaderboardPresence": false,
+                        "candidateScore": 64.22
                     },
                     {
                         "name": "Sidney Moncrief",
@@ -3376,8 +3376,8 @@
                             "usage": 27.1
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 67.0
+                        "leaderboardPresence": false,
+                        "candidateScore": 63.0
                     },
                     {
                         "name": "George Gervin",
@@ -3406,8 +3406,8 @@
                             "usage": 30.0
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 65.19
+                        "leaderboardPresence": false,
+                        "candidateScore": 61.19
                     },
                     {
                         "name": "Mark Aguirre",
@@ -3436,8 +3436,8 @@
                             "usage": 31.7
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 63.79
+                        "leaderboardPresence": false,
+                        "candidateScore": 59.79
                     },
                     {
                         "name": "Julius Erving",
@@ -3466,8 +3466,8 @@
                             "usage": 24.5
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 63.03
+                        "leaderboardPresence": false,
+                        "candidateScore": 59.03
                     },
                     {
                         "name": "Kevin McHale",
@@ -3528,8 +3528,8 @@
                             "usage": 32.8
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 115.07
+                        "leaderboardPresence": false,
+                        "candidateScore": 111.07
                     },
                     {
                         "name": "Kareem Abdul-Jabbar",
@@ -3558,8 +3558,8 @@
                             "usage": 34.1
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 89.08
+                        "leaderboardPresence": false,
+                        "candidateScore": 85.08
                     },
                     {
                         "name": "Larry Nance",
@@ -3588,8 +3588,8 @@
                             "usage": 24.6
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 75.11
+                        "leaderboardPresence": false,
+                        "candidateScore": 71.11
                     },
                     {
                         "name": "Robert Parish",
@@ -3618,38 +3618,8 @@
                             "usage": 21.3
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 71.67
-                    },
-                    {
-                        "name": "Jack Sikma",
-                        "team": "roster17",
-                        "teamName": "Chelsea",
-                        "pos": "C",
-                        "url": "../players/player870.htm",
-                        "overall": "139",
-                        "season": {
-                            "games": 42,
-                            "minutes": 37.3,
-                            "points": 22.9,
-                            "rebounds": 9.2,
-                            "assists": 3.3,
-                            "steals": 0.6,
-                            "blocks": 1.2,
-                            "fgPct": 0.481,
-                            "ftPct": 0.853,
-                            "threePct": 0.262
-                        },
-                        "efficiency": {
-                            "per": 22.0,
-                            "ewa": 8.9,
-                            "plusMinus": 3.5,
-                            "tsPct": 0.568,
-                            "usage": 26.2
-                        },
-                        "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 69.65
+                        "leaderboardPresence": false,
+                        "candidateScore": 67.67
                     },
                     {
                         "name": "Steve Johnson",
@@ -3682,6 +3652,36 @@
                         "candidateScore": 65.88
                     },
                     {
+                        "name": "Jack Sikma",
+                        "team": "roster17",
+                        "teamName": "Chelsea",
+                        "pos": "C",
+                        "url": "../players/player870.htm",
+                        "overall": "139",
+                        "season": {
+                            "games": 42,
+                            "minutes": 37.3,
+                            "points": 22.9,
+                            "rebounds": 9.2,
+                            "assists": 3.3,
+                            "steals": 0.6,
+                            "blocks": 1.2,
+                            "fgPct": 0.481,
+                            "ftPct": 0.853,
+                            "threePct": 0.262
+                        },
+                        "efficiency": {
+                            "per": 22.0,
+                            "ewa": 8.9,
+                            "plusMinus": 3.5,
+                            "tsPct": 0.568,
+                            "usage": 26.2
+                        },
+                        "awardWinner": true,
+                        "leaderboardPresence": false,
+                        "candidateScore": 65.65
+                    },
+                    {
                         "name": "Jim Paxson",
                         "team": "roster17",
                         "teamName": "Chelsea",
@@ -3708,8 +3708,8 @@
                             "usage": 27.2
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 60.48
+                        "leaderboardPresence": false,
+                        "candidateScore": 56.48
                     },
                     {
                         "name": "Danny Ainge",
@@ -3738,8 +3738,8 @@
                             "usage": 24.8
                         },
                         "awardWinner": false,
-                        "leaderboardPresence": true,
-                        "candidateScore": 58.41
+                        "leaderboardPresence": false,
+                        "candidateScore": 54.41
                     }
                 ],
                 "Tier 3": [
@@ -3770,8 +3770,8 @@
                             "usage": 29.2
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 87.6
+                        "leaderboardPresence": false,
+                        "candidateScore": 83.6
                     },
                     {
                         "name": "Kelly Tripucka",
@@ -3800,8 +3800,8 @@
                             "usage": 32.1
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 84.02
+                        "leaderboardPresence": false,
+                        "candidateScore": 80.02
                     },
                     {
                         "name": "Joe Barry Carroll",
@@ -3830,8 +3830,8 @@
                             "usage": 30.2
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 81.48
+                        "leaderboardPresence": false,
+                        "candidateScore": 77.48
                     },
                     {
                         "name": "David Thompson",
@@ -3860,8 +3860,8 @@
                             "usage": 31.4
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 80.08
+                        "leaderboardPresence": false,
+                        "candidateScore": 76.08
                     },
                     {
                         "name": "World B. Free",
@@ -3890,38 +3890,8 @@
                             "usage": 32.5
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 72.44
-                    },
-                    {
-                        "name": "Allen Leavell",
-                        "team": "roster28",
-                        "teamName": "Manchester City",
-                        "pos": "PG",
-                        "url": "../players/player1054.htm",
-                        "overall": "117",
-                        "season": {
-                            "games": 42,
-                            "minutes": 38.4,
-                            "points": 17.5,
-                            "rebounds": 3.0,
-                            "assists": 9.1,
-                            "steals": 2.5,
-                            "blocks": 0.1,
-                            "fgPct": 0.418,
-                            "ftPct": 0.81,
-                            "threePct": 0.211
-                        },
-                        "efficiency": {
-                            "per": 21.2,
-                            "ewa": 8.2,
-                            "plusMinus": 1.6,
-                            "tsPct": 0.529,
-                            "usage": 23.5
-                        },
-                        "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 63.57
+                        "leaderboardPresence": false,
+                        "candidateScore": 68.44
                     },
                     {
                         "name": "Otis Birdsong",
@@ -3954,6 +3924,36 @@
                         "candidateScore": 61.05
                     },
                     {
+                        "name": "Allen Leavell",
+                        "team": "roster28",
+                        "teamName": "Manchester City",
+                        "pos": "PG",
+                        "url": "../players/player1054.htm",
+                        "overall": "117",
+                        "season": {
+                            "games": 42,
+                            "minutes": 38.4,
+                            "points": 17.5,
+                            "rebounds": 3.0,
+                            "assists": 9.1,
+                            "steals": 2.5,
+                            "blocks": 0.1,
+                            "fgPct": 0.418,
+                            "ftPct": 0.81,
+                            "threePct": 0.211
+                        },
+                        "efficiency": {
+                            "per": 21.2,
+                            "ewa": 8.2,
+                            "plusMinus": 1.6,
+                            "tsPct": 0.529,
+                            "usage": 23.5
+                        },
+                        "awardWinner": true,
+                        "leaderboardPresence": false,
+                        "candidateScore": 59.57
+                    },
+                    {
                         "name": "Isiah Thomas",
                         "team": "roster25",
                         "teamName": "Valencia",
@@ -3980,8 +3980,8 @@
                             "usage": 28.5
                         },
                         "awardWinner": false,
-                        "leaderboardPresence": true,
-                        "candidateScore": 60.05
+                        "leaderboardPresence": false,
+                        "candidateScore": 56.05
                     }
                 ]
             },

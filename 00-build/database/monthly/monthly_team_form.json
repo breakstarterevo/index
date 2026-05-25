@@ -9,7 +9,7 @@
                 "team": "AFC Richmond",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 1,
+                "standingRank": 6,
                 "rosterUrl": "./rosters/roster12.htm",
                 "rosterFile": "roster12.htm",
                 "standingsLast10": "9-1",
@@ -279,7 +279,7 @@
                 "team": "AC Milan",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 2,
+                "standingRank": 4,
                 "rosterUrl": "./rosters/roster9.htm",
                 "rosterFile": "roster9.htm",
                 "standingsLast10": "9-1",
@@ -402,131 +402,247 @@
                 "last3": "WWW"
             },
             {
-                "team": "Brighton",
+                "team": "Sheffield United",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 7,
-                "rosterUrl": "./rosters/roster10.htm",
-                "rosterFile": "roster10.htm",
-                "standingsLast10": "3-7",
-                "wins": 2,
-                "losses": 4,
+                "standingRank": 8,
+                "rosterUrl": "./rosters/roster16.htm",
+                "rosterFile": "roster16.htm",
+                "standingsLast10": "5-5",
+                "wins": 4,
+                "losses": 2,
                 "games": 6,
-                "pointsFor": 708,
-                "pointsAgainst": 704,
-                "pointDiff": 4,
-                "avgMargin": 0.67,
-                "streak": "L3",
+                "pointsFor": 684,
+                "pointsAgainst": 639,
+                "pointDiff": 45,
+                "avgMargin": 7.5,
+                "streak": "W2",
                 "recentResults": [
                     {
-                        "date": "4/1/1982",
-                        "opponent": "Manchester United",
-                        "result": "L",
-                        "margin": 1,
-                        "score": "@Manchester United 129, Brighton 128",
-                        "boxscoreUrl": "./boxes/box164-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/2/1982",
-                        "opponent": "Manchester United",
+                        "date": "4/4/1982",
+                        "opponent": "Marseille",
                         "result": "W",
-                        "margin": 8,
-                        "score": "@Brighton 112, Manchester United 104",
-                        "boxscoreUrl": "./boxes/box165-1.htm",
+                        "margin": 22,
+                        "score": "@Sheffield United 133, Marseille 111",
+                        "boxscoreUrl": "./boxes/box167-2.htm",
                         "section": "Regular Season"
                     },
                     {
-                        "date": "4/8/1982",
-                        "opponent": "Manchester United",
+                        "date": "4/5/1982",
+                        "opponent": "Marseille",
                         "result": "W",
-                        "margin": 35,
-                        "score": "Brighton 133, @Manchester United 98",
-                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "margin": 7,
+                        "score": "Sheffield United 116, @Marseille 109",
+                        "boxscoreUrl": "./boxes/box168-4.htm",
                         "section": "Regular Season"
                     },
                     {
-                        "date": "4/15/1982",
-                        "opponent": "Real Madrid",
+                        "date": "4/9/1982",
+                        "opponent": "Juventus",
                         "result": "L",
-                        "margin": 8,
-                        "score": "@Real Madrid 119, Brighton 111",
-                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "margin": 10,
+                        "score": "@Juventus 115, Sheffield United 105",
+                        "boxscoreUrl": "./boxes/box172-3.htm",
                         "section": "Regular Season"
                     },
                     {
-                        "date": "4/20/1982",
-                        "opponent": "AFC Richmond",
+                        "date": "4/14/1982",
+                        "opponent": "Chelsea",
                         "result": "L",
                         "margin": 8,
-                        "score": "AFC Richmond 122, @Brighton 114",
-                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "score": "@Chelsea 113, Sheffield United 105",
+                        "boxscoreUrl": "./boxes/box177-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1982",
+                        "opponent": "Benfica",
+                        "result": "W",
+                        "margin": 16,
+                        "score": "Sheffield United 114, @Benfica 98",
+                        "boxscoreUrl": "./boxes/box182-2.htm",
                         "section": "Regular Season"
                     },
                     {
                         "date": "4/22/1982",
-                        "opponent": "AFC Richmond",
-                        "result": "L",
-                        "margin": 22,
-                        "score": "@AFC Richmond 132, Brighton 110",
-                        "boxscoreUrl": "./boxes/box185-4.htm",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 18,
+                        "score": "@Sheffield United 111, Chelsea 93",
+                        "boxscoreUrl": "./boxes/box185-7.htm",
                         "section": "Regular Season"
                     }
                 ],
                 "bestWin": {
-                    "date": "4/8/1982",
-                    "opponent": "Manchester United",
+                    "date": "4/4/1982",
+                    "opponent": "Marseille",
                     "result": "W",
-                    "margin": 35,
-                    "score": "Brighton 133, @Manchester United 98",
-                    "boxscoreUrl": "./boxes/box171-1.htm",
+                    "margin": 22,
+                    "score": "@Sheffield United 133, Marseille 111",
+                    "boxscoreUrl": "./boxes/box167-2.htm",
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "4/22/1982",
-                    "opponent": "AFC Richmond",
+                    "date": "4/9/1982",
+                    "opponent": "Juventus",
                     "result": "L",
-                    "margin": 22,
-                    "score": "@AFC Richmond 132, Brighton 110",
-                    "boxscoreUrl": "./boxes/box185-4.htm",
+                    "margin": 10,
+                    "score": "@Juventus 115, Sheffield United 105",
+                    "boxscoreUrl": "./boxes/box172-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/4/1982",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 22,
+                        "score": "@Sheffield United 133, Marseille 111",
+                        "boxscoreUrl": "./boxes/box167-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1982",
+                        "opponent": "Benfica",
+                        "result": "W",
+                        "margin": 16,
+                        "score": "Sheffield United 114, @Benfica 98",
+                        "boxscoreUrl": "./boxes/box182-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/22/1982",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 18,
+                        "score": "@Sheffield United 111, Chelsea 93",
+                        "boxscoreUrl": "./boxes/box185-7.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "4-2",
+                "closeGameCount": 0,
+                "last3": "LWW"
+            },
+            {
+                "team": "Benfica",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 7,
+                "rosterUrl": "./rosters/roster13.htm",
+                "rosterFile": "roster13.htm",
+                "standingsLast10": "7-3",
+                "wins": 3,
+                "losses": 2,
+                "games": 5,
+                "pointsFor": 549,
+                "pointsAgainst": 541,
+                "pointDiff": 8,
+                "avgMargin": 1.6,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/5/1982",
+                        "opponent": "Ajax",
+                        "result": "W",
+                        "margin": 9,
+                        "score": "Benfica 113, @Ajax 104",
+                        "boxscoreUrl": "./boxes/box168-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1982",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 13,
+                        "score": "@Ajax 118, Benfica 105",
+                        "boxscoreUrl": "./boxes/box172-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1982",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "@Benfica 113, Marseille 109",
+                        "boxscoreUrl": "./boxes/box178-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1982",
+                        "opponent": "Sheffield United",
+                        "result": "L",
+                        "margin": 16,
+                        "score": "Sheffield United 114, @Benfica 98",
+                        "boxscoreUrl": "./boxes/box182-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/22/1982",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 24,
+                        "score": "Benfica 120, @Monaco 96",
+                        "boxscoreUrl": "./boxes/box185-6.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/22/1982",
+                    "opponent": "Monaco",
+                    "result": "W",
+                    "margin": 24,
+                    "score": "Benfica 120, @Monaco 96",
+                    "boxscoreUrl": "./boxes/box185-6.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/19/1982",
+                    "opponent": "Sheffield United",
+                    "result": "L",
+                    "margin": 16,
+                    "score": "Sheffield United 114, @Benfica 98",
+                    "boxscoreUrl": "./boxes/box182-2.htm",
                     "section": "Regular Season"
                 },
                 "closeGames": [
                     {
-                        "date": "4/1/1982",
-                        "opponent": "Manchester United",
-                        "result": "L",
-                        "margin": 1,
-                        "score": "@Manchester United 129, Brighton 128",
-                        "boxscoreUrl": "./boxes/box164-1.htm",
+                        "date": "4/15/1982",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "@Benfica 113, Marseille 109",
+                        "boxscoreUrl": "./boxes/box178-3.htm",
                         "section": "Regular Season"
                     }
                 ],
                 "blowoutWins": [
                     {
-                        "date": "4/8/1982",
-                        "opponent": "Manchester United",
+                        "date": "4/22/1982",
+                        "opponent": "Monaco",
                         "result": "W",
-                        "margin": 35,
-                        "score": "Brighton 133, @Manchester United 98",
-                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "margin": 24,
+                        "score": "Benfica 120, @Monaco 96",
+                        "boxscoreUrl": "./boxes/box185-6.htm",
                         "section": "Regular Season"
                     }
                 ],
                 "blowoutLosses": [
                     {
-                        "date": "4/22/1982",
-                        "opponent": "AFC Richmond",
+                        "date": "4/19/1982",
+                        "opponent": "Sheffield United",
                         "result": "L",
-                        "margin": 22,
-                        "score": "@AFC Richmond 132, Brighton 110",
-                        "boxscoreUrl": "./boxes/box185-4.htm",
+                        "margin": 16,
+                        "score": "Sheffield United 114, @Benfica 98",
+                        "boxscoreUrl": "./boxes/box182-2.htm",
                         "section": "Regular Season"
                     }
                 ],
-                "record": "2-4",
+                "record": "3-2",
                 "closeGameCount": 1,
-                "last3": "LLL"
+                "last3": "WLW"
             },
             {
                 "team": "Atletico Madrid",
@@ -665,164 +781,10 @@
                 "last3": "LLL"
             },
             {
-                "team": "Manchester United",
-                "tier": "Tier 1",
-                "tierShort": "T1",
-                "standingRank": 8,
-                "rosterUrl": "./rosters/roster5.htm",
-                "rosterFile": "roster5.htm",
-                "standingsLast10": "3-7",
-                "wins": 2,
-                "losses": 5,
-                "games": 7,
-                "pointsFor": 749,
-                "pointsAgainst": 829,
-                "pointDiff": -80,
-                "avgMargin": -11.43,
-                "streak": "W1",
-                "recentResults": [
-                    {
-                        "date": "4/1/1982",
-                        "opponent": "Brighton",
-                        "result": "W",
-                        "margin": 1,
-                        "score": "@Manchester United 129, Brighton 128",
-                        "boxscoreUrl": "./boxes/box164-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/2/1982",
-                        "opponent": "Brighton",
-                        "result": "L",
-                        "margin": 8,
-                        "score": "@Brighton 112, Manchester United 104",
-                        "boxscoreUrl": "./boxes/box165-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/7/1982",
-                        "opponent": "Real Madrid",
-                        "result": "L",
-                        "margin": 23,
-                        "score": "@Real Madrid 116, Manchester United 93",
-                        "boxscoreUrl": "./boxes/box170-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/8/1982",
-                        "opponent": "Brighton",
-                        "result": "L",
-                        "margin": 35,
-                        "score": "Brighton 133, @Manchester United 98",
-                        "boxscoreUrl": "./boxes/box171-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/12/1982",
-                        "opponent": "AC Milan",
-                        "result": "L",
-                        "margin": 19,
-                        "score": "@AC Milan 116, Manchester United 97",
-                        "boxscoreUrl": "./boxes/box175-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/16/1982",
-                        "opponent": "AC Milan",
-                        "result": "L",
-                        "margin": 12,
-                        "score": "AC Milan 120, @Manchester United 108",
-                        "boxscoreUrl": "./boxes/box179-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/22/1982",
-                        "opponent": "Crystal Palace",
-                        "result": "W",
-                        "margin": 16,
-                        "score": "@Manchester United 120, Crystal Palace 104",
-                        "boxscoreUrl": "./boxes/box185-2.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "4/22/1982",
-                    "opponent": "Crystal Palace",
-                    "result": "W",
-                    "margin": 16,
-                    "score": "@Manchester United 120, Crystal Palace 104",
-                    "boxscoreUrl": "./boxes/box185-2.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": {
-                    "date": "4/8/1982",
-                    "opponent": "Brighton",
-                    "result": "L",
-                    "margin": 35,
-                    "score": "Brighton 133, @Manchester United 98",
-                    "boxscoreUrl": "./boxes/box171-1.htm",
-                    "section": "Regular Season"
-                },
-                "closeGames": [
-                    {
-                        "date": "4/1/1982",
-                        "opponent": "Brighton",
-                        "result": "W",
-                        "margin": 1,
-                        "score": "@Manchester United 129, Brighton 128",
-                        "boxscoreUrl": "./boxes/box164-1.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutWins": [
-                    {
-                        "date": "4/22/1982",
-                        "opponent": "Crystal Palace",
-                        "result": "W",
-                        "margin": 16,
-                        "score": "@Manchester United 120, Crystal Palace 104",
-                        "boxscoreUrl": "./boxes/box185-2.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutLosses": [
-                    {
-                        "date": "4/7/1982",
-                        "opponent": "Real Madrid",
-                        "result": "L",
-                        "margin": 23,
-                        "score": "@Real Madrid 116, Manchester United 93",
-                        "boxscoreUrl": "./boxes/box170-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/8/1982",
-                        "opponent": "Brighton",
-                        "result": "L",
-                        "margin": 35,
-                        "score": "Brighton 133, @Manchester United 98",
-                        "boxscoreUrl": "./boxes/box171-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/12/1982",
-                        "opponent": "AC Milan",
-                        "result": "L",
-                        "margin": 19,
-                        "score": "@AC Milan 116, Manchester United 97",
-                        "boxscoreUrl": "./boxes/box175-1.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "record": "2-5",
-                "closeGameCount": 1,
-                "last3": "LLW"
-            },
-            {
                 "team": "Crystal Palace",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 6,
+                "standingRank": 1,
                 "rosterUrl": "./rosters/roster6.htm",
                 "rosterFile": "roster6.htm",
                 "standingsLast10": "3-7",
@@ -957,7 +919,7 @@
                 "team": "Bayern Munich",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 4,
+                "standingRank": 2,
                 "rosterUrl": "./rosters/roster7.htm",
                 "rosterFile": "roster7.htm",
                 "standingsLast10": "3-7",
@@ -1361,245 +1323,147 @@
                 "last3": "LWW"
             },
             {
-                "team": "Sheffield United",
+                "team": "FL Fart",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 2,
-                "rosterUrl": "./rosters/roster16.htm",
-                "rosterFile": "roster16.htm",
-                "standingsLast10": "5-5",
+                "standingRank": 8,
+                "rosterUrl": "./rosters/roster27.htm",
+                "rosterFile": "roster27.htm",
+                "standingsLast10": "7-3",
                 "wins": 4,
-                "losses": 2,
-                "games": 6,
-                "pointsFor": 684,
-                "pointsAgainst": 639,
-                "pointDiff": 45,
-                "avgMargin": 7.5,
-                "streak": "W2",
+                "losses": 3,
+                "games": 7,
+                "pointsFor": 718,
+                "pointsAgainst": 690,
+                "pointDiff": 28,
+                "avgMargin": 4.0,
+                "streak": "W1",
                 "recentResults": [
                     {
                         "date": "4/4/1982",
-                        "opponent": "Marseille",
-                        "result": "W",
-                        "margin": 22,
-                        "score": "@Sheffield United 133, Marseille 111",
-                        "boxscoreUrl": "./boxes/box167-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/5/1982",
-                        "opponent": "Marseille",
-                        "result": "W",
-                        "margin": 7,
-                        "score": "Sheffield United 116, @Marseille 109",
-                        "boxscoreUrl": "./boxes/box168-4.htm",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 10,
+                        "score": "@Barcelona 116, FL Fart 106",
+                        "boxscoreUrl": "./boxes/box167-5.htm",
                         "section": "Regular Season"
                     },
                     {
                         "date": "4/9/1982",
-                        "opponent": "Juventus",
+                        "opponent": "Valencia",
+                        "result": "W",
+                        "margin": 28,
+                        "score": "@FL Fart 121, Valencia 93",
+                        "boxscoreUrl": "./boxes/box172-7.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1982",
+                        "opponent": "Barcelona",
                         "result": "L",
-                        "margin": 10,
-                        "score": "@Juventus 115, Sheffield United 105",
-                        "boxscoreUrl": "./boxes/box172-3.htm",
+                        "margin": 28,
+                        "score": "@Barcelona 109, FL Fart 81",
+                        "boxscoreUrl": "./boxes/box173-1.htm",
                         "section": "Regular Season"
                     },
                     {
                         "date": "4/14/1982",
-                        "opponent": "Chelsea",
-                        "result": "L",
-                        "margin": 8,
-                        "score": "@Chelsea 113, Sheffield United 105",
-                        "boxscoreUrl": "./boxes/box177-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/19/1982",
-                        "opponent": "Benfica",
-                        "result": "W",
-                        "margin": 16,
-                        "score": "Sheffield United 114, @Benfica 98",
-                        "boxscoreUrl": "./boxes/box182-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/22/1982",
-                        "opponent": "Chelsea",
-                        "result": "W",
-                        "margin": 18,
-                        "score": "@Sheffield United 111, Chelsea 93",
-                        "boxscoreUrl": "./boxes/box185-7.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "4/4/1982",
-                    "opponent": "Marseille",
-                    "result": "W",
-                    "margin": 22,
-                    "score": "@Sheffield United 133, Marseille 111",
-                    "boxscoreUrl": "./boxes/box167-2.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": {
-                    "date": "4/9/1982",
-                    "opponent": "Juventus",
-                    "result": "L",
-                    "margin": 10,
-                    "score": "@Juventus 115, Sheffield United 105",
-                    "boxscoreUrl": "./boxes/box172-3.htm",
-                    "section": "Regular Season"
-                },
-                "closeGames": [],
-                "blowoutWins": [
-                    {
-                        "date": "4/4/1982",
-                        "opponent": "Marseille",
+                        "opponent": "Paris Saint-Germain",
                         "result": "W",
                         "margin": 22,
-                        "score": "@Sheffield United 133, Marseille 111",
-                        "boxscoreUrl": "./boxes/box167-2.htm",
+                        "score": "@FL Fart 112, Paris Saint-Germain 90",
+                        "boxscoreUrl": "./boxes/box177-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1982",
+                        "opponent": "Manchester City",
+                        "result": "W",
+                        "margin": 11,
+                        "score": "FL Fart 103, @Manchester City 92",
+                        "boxscoreUrl": "./boxes/box181-1.htm",
                         "section": "Regular Season"
                     },
                     {
                         "date": "4/19/1982",
-                        "opponent": "Benfica",
-                        "result": "W",
-                        "margin": 16,
-                        "score": "Sheffield United 114, @Benfica 98",
-                        "boxscoreUrl": "./boxes/box182-2.htm",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Manchester City 95, FL Fart 92",
+                        "boxscoreUrl": "./boxes/box182-3.htm",
                         "section": "Regular Season"
                     },
                     {
                         "date": "4/22/1982",
-                        "opponent": "Chelsea",
+                        "opponent": "Sporting CP",
                         "result": "W",
-                        "margin": 18,
-                        "score": "@Sheffield United 111, Chelsea 93",
-                        "boxscoreUrl": "./boxes/box185-7.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutLosses": [],
-                "record": "4-2",
-                "closeGameCount": 0,
-                "last3": "LWW"
-            },
-            {
-                "team": "Benfica",
-                "tier": "Tier 2",
-                "tierShort": "T2",
-                "standingRank": 1,
-                "rosterUrl": "./rosters/roster13.htm",
-                "rosterFile": "roster13.htm",
-                "standingsLast10": "7-3",
-                "wins": 3,
-                "losses": 2,
-                "games": 5,
-                "pointsFor": 549,
-                "pointsAgainst": 541,
-                "pointDiff": 8,
-                "avgMargin": 1.6,
-                "streak": "W1",
-                "recentResults": [
-                    {
-                        "date": "4/5/1982",
-                        "opponent": "Ajax",
-                        "result": "W",
-                        "margin": 9,
-                        "score": "Benfica 113, @Ajax 104",
-                        "boxscoreUrl": "./boxes/box168-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/9/1982",
-                        "opponent": "Ajax",
-                        "result": "L",
-                        "margin": 13,
-                        "score": "@Ajax 118, Benfica 105",
-                        "boxscoreUrl": "./boxes/box172-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/15/1982",
-                        "opponent": "Marseille",
-                        "result": "W",
-                        "margin": 4,
-                        "score": "@Benfica 113, Marseille 109",
-                        "boxscoreUrl": "./boxes/box178-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/19/1982",
-                        "opponent": "Sheffield United",
-                        "result": "L",
-                        "margin": 16,
-                        "score": "Sheffield United 114, @Benfica 98",
-                        "boxscoreUrl": "./boxes/box182-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/22/1982",
-                        "opponent": "Monaco",
-                        "result": "W",
-                        "margin": 24,
-                        "score": "Benfica 120, @Monaco 96",
-                        "boxscoreUrl": "./boxes/box185-6.htm",
+                        "margin": 8,
+                        "score": "FL Fart 103, @Sporting CP 95",
+                        "boxscoreUrl": "./boxes/box185-9.htm",
                         "section": "Regular Season"
                     }
                 ],
                 "bestWin": {
-                    "date": "4/22/1982",
-                    "opponent": "Monaco",
+                    "date": "4/9/1982",
+                    "opponent": "Valencia",
                     "result": "W",
-                    "margin": 24,
-                    "score": "Benfica 120, @Monaco 96",
-                    "boxscoreUrl": "./boxes/box185-6.htm",
+                    "margin": 28,
+                    "score": "@FL Fart 121, Valencia 93",
+                    "boxscoreUrl": "./boxes/box172-7.htm",
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "4/19/1982",
-                    "opponent": "Sheffield United",
+                    "date": "4/10/1982",
+                    "opponent": "Barcelona",
                     "result": "L",
-                    "margin": 16,
-                    "score": "Sheffield United 114, @Benfica 98",
-                    "boxscoreUrl": "./boxes/box182-2.htm",
+                    "margin": 28,
+                    "score": "@Barcelona 109, FL Fart 81",
+                    "boxscoreUrl": "./boxes/box173-1.htm",
                     "section": "Regular Season"
                 },
                 "closeGames": [
                     {
-                        "date": "4/15/1982",
-                        "opponent": "Marseille",
-                        "result": "W",
-                        "margin": 4,
-                        "score": "@Benfica 113, Marseille 109",
-                        "boxscoreUrl": "./boxes/box178-3.htm",
+                        "date": "4/19/1982",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Manchester City 95, FL Fart 92",
+                        "boxscoreUrl": "./boxes/box182-3.htm",
                         "section": "Regular Season"
                     }
                 ],
                 "blowoutWins": [
                     {
-                        "date": "4/22/1982",
-                        "opponent": "Monaco",
+                        "date": "4/9/1982",
+                        "opponent": "Valencia",
                         "result": "W",
-                        "margin": 24,
-                        "score": "Benfica 120, @Monaco 96",
-                        "boxscoreUrl": "./boxes/box185-6.htm",
+                        "margin": 28,
+                        "score": "@FL Fart 121, Valencia 93",
+                        "boxscoreUrl": "./boxes/box172-7.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1982",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "W",
+                        "margin": 22,
+                        "score": "@FL Fart 112, Paris Saint-Germain 90",
+                        "boxscoreUrl": "./boxes/box177-3.htm",
                         "section": "Regular Season"
                     }
                 ],
                 "blowoutLosses": [
                     {
-                        "date": "4/19/1982",
-                        "opponent": "Sheffield United",
+                        "date": "4/10/1982",
+                        "opponent": "Barcelona",
                         "result": "L",
-                        "margin": 16,
-                        "score": "Sheffield United 114, @Benfica 98",
-                        "boxscoreUrl": "./boxes/box182-2.htm",
+                        "margin": 28,
+                        "score": "@Barcelona 109, FL Fart 81",
+                        "boxscoreUrl": "./boxes/box173-1.htm",
                         "section": "Regular Season"
                     }
                 ],
-                "record": "3-2",
+                "record": "4-3",
                 "closeGameCount": 1,
                 "last3": "WLW"
             },
@@ -1712,6 +1576,133 @@
                 "last3": "WWL"
             },
             {
+                "team": "Brighton",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 2,
+                "rosterUrl": "./rosters/roster10.htm",
+                "rosterFile": "roster10.htm",
+                "standingsLast10": "3-7",
+                "wins": 2,
+                "losses": 4,
+                "games": 6,
+                "pointsFor": 708,
+                "pointsAgainst": 704,
+                "pointDiff": 4,
+                "avgMargin": 0.67,
+                "streak": "L3",
+                "recentResults": [
+                    {
+                        "date": "4/1/1982",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Manchester United 129, Brighton 128",
+                        "boxscoreUrl": "./boxes/box164-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/2/1982",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 8,
+                        "score": "@Brighton 112, Manchester United 104",
+                        "boxscoreUrl": "./boxes/box165-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1982",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 35,
+                        "score": "Brighton 133, @Manchester United 98",
+                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1982",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "@Real Madrid 119, Brighton 111",
+                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/20/1982",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "AFC Richmond 122, @Brighton 114",
+                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/22/1982",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 22,
+                        "score": "@AFC Richmond 132, Brighton 110",
+                        "boxscoreUrl": "./boxes/box185-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/8/1982",
+                    "opponent": "Manchester United",
+                    "result": "W",
+                    "margin": 35,
+                    "score": "Brighton 133, @Manchester United 98",
+                    "boxscoreUrl": "./boxes/box171-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/22/1982",
+                    "opponent": "AFC Richmond",
+                    "result": "L",
+                    "margin": 22,
+                    "score": "@AFC Richmond 132, Brighton 110",
+                    "boxscoreUrl": "./boxes/box185-4.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/1/1982",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Manchester United 129, Brighton 128",
+                        "boxscoreUrl": "./boxes/box164-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/8/1982",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 35,
+                        "score": "Brighton 133, @Manchester United 98",
+                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/22/1982",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 22,
+                        "score": "@AFC Richmond 132, Brighton 110",
+                        "boxscoreUrl": "./boxes/box185-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "2-4",
+                "closeGameCount": 1,
+                "last3": "LLL"
+            },
+            {
                 "team": "Ajax",
                 "tier": "Tier 2",
                 "tierShort": "T2",
@@ -1810,112 +1801,158 @@
                 "last3": "WLL"
             },
             {
-                "team": "Aston Villa",
+                "team": "Manchester United",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 8,
-                "rosterUrl": "./rosters/roster19.htm",
-                "rosterFile": "roster19.htm",
-                "standingsLast10": "2-8",
-                "wins": 1,
-                "losses": 4,
-                "games": 5,
-                "pointsFor": 494,
-                "pointsAgainst": 541,
-                "pointDiff": -47,
-                "avgMargin": -9.4,
-                "streak": "L1",
+                "standingRank": 1,
+                "rosterUrl": "./rosters/roster5.htm",
+                "rosterFile": "roster5.htm",
+                "standingsLast10": "3-7",
+                "wins": 2,
+                "losses": 5,
+                "games": 7,
+                "pointsFor": 749,
+                "pointsAgainst": 829,
+                "pointDiff": -80,
+                "avgMargin": -11.43,
+                "streak": "W1",
                 "recentResults": [
                     {
-                        "date": "4/4/1982",
-                        "opponent": "Chelsea",
-                        "result": "L",
-                        "margin": 14,
-                        "score": "@Chelsea 96, Aston Villa 82",
-                        "boxscoreUrl": "./boxes/box167-3.htm",
+                        "date": "4/1/1982",
+                        "opponent": "Brighton",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Manchester United 129, Brighton 128",
+                        "boxscoreUrl": "./boxes/box164-1.htm",
                         "section": "Regular Season"
                     },
                     {
-                        "date": "4/11/1982",
-                        "opponent": "Marseille",
+                        "date": "4/2/1982",
+                        "opponent": "Brighton",
                         "result": "L",
-                        "margin": 9,
-                        "score": "Marseille 117, @Aston Villa 108",
-                        "boxscoreUrl": "./boxes/box174-4.htm",
+                        "margin": 8,
+                        "score": "@Brighton 112, Manchester United 104",
+                        "boxscoreUrl": "./boxes/box165-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1982",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 23,
+                        "score": "@Real Madrid 116, Manchester United 93",
+                        "boxscoreUrl": "./boxes/box170-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1982",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 35,
+                        "score": "Brighton 133, @Manchester United 98",
+                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1982",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 19,
+                        "score": "@AC Milan 116, Manchester United 97",
+                        "boxscoreUrl": "./boxes/box175-1.htm",
                         "section": "Regular Season"
                     },
                     {
                         "date": "4/16/1982",
-                        "opponent": "Ajax",
+                        "opponent": "AC Milan",
                         "result": "L",
-                        "margin": 3,
-                        "score": "@Ajax 109, Aston Villa 106",
-                        "boxscoreUrl": "./boxes/box179-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/21/1982",
-                        "opponent": "Ajax",
-                        "result": "W",
-                        "margin": 9,
-                        "score": "Aston Villa 116, @Ajax 107",
-                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "margin": 12,
+                        "score": "AC Milan 120, @Manchester United 108",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
                         "section": "Regular Season"
                     },
                     {
                         "date": "4/22/1982",
-                        "opponent": "Juventus",
-                        "result": "L",
-                        "margin": 30,
-                        "score": "@Juventus 112, Aston Villa 82",
-                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "opponent": "Crystal Palace",
+                        "result": "W",
+                        "margin": 16,
+                        "score": "@Manchester United 120, Crystal Palace 104",
+                        "boxscoreUrl": "./boxes/box185-2.htm",
                         "section": "Regular Season"
                     }
                 ],
                 "bestWin": {
-                    "date": "4/21/1982",
-                    "opponent": "Ajax",
+                    "date": "4/22/1982",
+                    "opponent": "Crystal Palace",
                     "result": "W",
-                    "margin": 9,
-                    "score": "Aston Villa 116, @Ajax 107",
-                    "boxscoreUrl": "./boxes/box184-3.htm",
+                    "margin": 16,
+                    "score": "@Manchester United 120, Crystal Palace 104",
+                    "boxscoreUrl": "./boxes/box185-2.htm",
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "4/22/1982",
-                    "opponent": "Juventus",
+                    "date": "4/8/1982",
+                    "opponent": "Brighton",
                     "result": "L",
-                    "margin": 30,
-                    "score": "@Juventus 112, Aston Villa 82",
-                    "boxscoreUrl": "./boxes/box185-8.htm",
+                    "margin": 35,
+                    "score": "Brighton 133, @Manchester United 98",
+                    "boxscoreUrl": "./boxes/box171-1.htm",
                     "section": "Regular Season"
                 },
                 "closeGames": [
                     {
-                        "date": "4/16/1982",
-                        "opponent": "Ajax",
-                        "result": "L",
-                        "margin": 3,
-                        "score": "@Ajax 109, Aston Villa 106",
-                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "date": "4/1/1982",
+                        "opponent": "Brighton",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Manchester United 129, Brighton 128",
+                        "boxscoreUrl": "./boxes/box164-1.htm",
                         "section": "Regular Season"
                     }
                 ],
-                "blowoutWins": [],
-                "blowoutLosses": [
+                "blowoutWins": [
                     {
                         "date": "4/22/1982",
-                        "opponent": "Juventus",
-                        "result": "L",
-                        "margin": 30,
-                        "score": "@Juventus 112, Aston Villa 82",
-                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "opponent": "Crystal Palace",
+                        "result": "W",
+                        "margin": 16,
+                        "score": "@Manchester United 120, Crystal Palace 104",
+                        "boxscoreUrl": "./boxes/box185-2.htm",
                         "section": "Regular Season"
                     }
                 ],
-                "record": "1-4",
+                "blowoutLosses": [
+                    {
+                        "date": "4/7/1982",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 23,
+                        "score": "@Real Madrid 116, Manchester United 93",
+                        "boxscoreUrl": "./boxes/box170-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1982",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 35,
+                        "score": "Brighton 133, @Manchester United 98",
+                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1982",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 19,
+                        "score": "@AC Milan 116, Manchester United 97",
+                        "boxscoreUrl": "./boxes/box175-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "2-5",
                 "closeGameCount": 1,
-                "last3": "LWL"
+                "last3": "LLW"
             },
             {
                 "team": "Monaco",
@@ -2076,7 +2113,7 @@
                 "team": "Barcelona",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 3,
+                "standingRank": 5,
                 "rosterUrl": "./rosters/roster24.htm",
                 "rosterFile": "roster24.htm",
                 "standingsLast10": "7-3",
@@ -2211,7 +2248,7 @@
                 "team": "Inter Milan",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 2,
+                "standingRank": 7,
                 "rosterUrl": "./rosters/roster26.htm",
                 "rosterFile": "roster26.htm",
                 "standingsLast10": "7-3",
@@ -2337,7 +2374,7 @@
                 "team": "Manchester City",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 5,
+                "standingRank": 8,
                 "rosterUrl": "./rosters/roster28.htm",
                 "rosterFile": "roster28.htm",
                 "standingsLast10": "6-4",
@@ -2460,155 +2497,10 @@
                 "last3": "WLW"
             },
             {
-                "team": "FL Fart",
-                "tier": "Tier 3",
-                "tierShort": "T3",
-                "standingRank": 1,
-                "rosterUrl": "./rosters/roster27.htm",
-                "rosterFile": "roster27.htm",
-                "standingsLast10": "7-3",
-                "wins": 4,
-                "losses": 3,
-                "games": 7,
-                "pointsFor": 718,
-                "pointsAgainst": 690,
-                "pointDiff": 28,
-                "avgMargin": 4.0,
-                "streak": "W1",
-                "recentResults": [
-                    {
-                        "date": "4/4/1982",
-                        "opponent": "Barcelona",
-                        "result": "L",
-                        "margin": 10,
-                        "score": "@Barcelona 116, FL Fart 106",
-                        "boxscoreUrl": "./boxes/box167-5.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/9/1982",
-                        "opponent": "Valencia",
-                        "result": "W",
-                        "margin": 28,
-                        "score": "@FL Fart 121, Valencia 93",
-                        "boxscoreUrl": "./boxes/box172-7.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/10/1982",
-                        "opponent": "Barcelona",
-                        "result": "L",
-                        "margin": 28,
-                        "score": "@Barcelona 109, FL Fart 81",
-                        "boxscoreUrl": "./boxes/box173-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/14/1982",
-                        "opponent": "Paris Saint-Germain",
-                        "result": "W",
-                        "margin": 22,
-                        "score": "@FL Fart 112, Paris Saint-Germain 90",
-                        "boxscoreUrl": "./boxes/box177-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/18/1982",
-                        "opponent": "Manchester City",
-                        "result": "W",
-                        "margin": 11,
-                        "score": "FL Fart 103, @Manchester City 92",
-                        "boxscoreUrl": "./boxes/box181-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/19/1982",
-                        "opponent": "Manchester City",
-                        "result": "L",
-                        "margin": 3,
-                        "score": "@Manchester City 95, FL Fart 92",
-                        "boxscoreUrl": "./boxes/box182-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/22/1982",
-                        "opponent": "Sporting CP",
-                        "result": "W",
-                        "margin": 8,
-                        "score": "FL Fart 103, @Sporting CP 95",
-                        "boxscoreUrl": "./boxes/box185-9.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "4/9/1982",
-                    "opponent": "Valencia",
-                    "result": "W",
-                    "margin": 28,
-                    "score": "@FL Fart 121, Valencia 93",
-                    "boxscoreUrl": "./boxes/box172-7.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": {
-                    "date": "4/10/1982",
-                    "opponent": "Barcelona",
-                    "result": "L",
-                    "margin": 28,
-                    "score": "@Barcelona 109, FL Fart 81",
-                    "boxscoreUrl": "./boxes/box173-1.htm",
-                    "section": "Regular Season"
-                },
-                "closeGames": [
-                    {
-                        "date": "4/19/1982",
-                        "opponent": "Manchester City",
-                        "result": "L",
-                        "margin": 3,
-                        "score": "@Manchester City 95, FL Fart 92",
-                        "boxscoreUrl": "./boxes/box182-3.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutWins": [
-                    {
-                        "date": "4/9/1982",
-                        "opponent": "Valencia",
-                        "result": "W",
-                        "margin": 28,
-                        "score": "@FL Fart 121, Valencia 93",
-                        "boxscoreUrl": "./boxes/box172-7.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/14/1982",
-                        "opponent": "Paris Saint-Germain",
-                        "result": "W",
-                        "margin": 22,
-                        "score": "@FL Fart 112, Paris Saint-Germain 90",
-                        "boxscoreUrl": "./boxes/box177-3.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutLosses": [
-                    {
-                        "date": "4/10/1982",
-                        "opponent": "Barcelona",
-                        "result": "L",
-                        "margin": 28,
-                        "score": "@Barcelona 109, FL Fart 81",
-                        "boxscoreUrl": "./boxes/box173-1.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "record": "4-3",
-                "closeGameCount": 1,
-                "last3": "WLW"
-            },
-            {
                 "team": "Tottenham Hotspur",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 7,
+                "standingRank": 3,
                 "rosterUrl": "./rosters/roster22.htm",
                 "rosterFile": "roster22.htm",
                 "standingsLast10": "6-4",
@@ -2715,7 +2607,7 @@
                 "team": "Paris Saint-Germain",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 4,
+                "standingRank": 2,
                 "rosterUrl": "./rosters/roster21.htm",
                 "rosterFile": "roster21.htm",
                 "standingsLast10": "4-6",
@@ -2965,10 +2857,118 @@
                 "last3": "LLW"
             },
             {
+                "team": "Aston Villa",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 1,
+                "rosterUrl": "./rosters/roster19.htm",
+                "rosterFile": "roster19.htm",
+                "standingsLast10": "2-8",
+                "wins": 1,
+                "losses": 4,
+                "games": 5,
+                "pointsFor": 494,
+                "pointsAgainst": 541,
+                "pointDiff": -47,
+                "avgMargin": -9.4,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/4/1982",
+                        "opponent": "Chelsea",
+                        "result": "L",
+                        "margin": 14,
+                        "score": "@Chelsea 96, Aston Villa 82",
+                        "boxscoreUrl": "./boxes/box167-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1982",
+                        "opponent": "Marseille",
+                        "result": "L",
+                        "margin": 9,
+                        "score": "Marseille 117, @Aston Villa 108",
+                        "boxscoreUrl": "./boxes/box174-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1982",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Ajax 109, Aston Villa 106",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1982",
+                        "opponent": "Ajax",
+                        "result": "W",
+                        "margin": 9,
+                        "score": "Aston Villa 116, @Ajax 107",
+                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/22/1982",
+                        "opponent": "Juventus",
+                        "result": "L",
+                        "margin": 30,
+                        "score": "@Juventus 112, Aston Villa 82",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/21/1982",
+                    "opponent": "Ajax",
+                    "result": "W",
+                    "margin": 9,
+                    "score": "Aston Villa 116, @Ajax 107",
+                    "boxscoreUrl": "./boxes/box184-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/22/1982",
+                    "opponent": "Juventus",
+                    "result": "L",
+                    "margin": 30,
+                    "score": "@Juventus 112, Aston Villa 82",
+                    "boxscoreUrl": "./boxes/box185-8.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/16/1982",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Ajax 109, Aston Villa 106",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/22/1982",
+                        "opponent": "Juventus",
+                        "result": "L",
+                        "margin": 30,
+                        "score": "@Juventus 112, Aston Villa 82",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "1-4",
+                "closeGameCount": 1,
+                "last3": "LWL"
+            },
+            {
                 "team": "Sporting CP",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 8,
+                "standingRank": 4,
                 "rosterUrl": "./rosters/roster23.htm",
                 "rosterFile": "roster23.htm",
                 "standingsLast10": "0-10",
