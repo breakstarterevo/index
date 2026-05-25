@@ -10,6 +10,8 @@ Use this file when the task is "where does this field come from?" or "which file
   - Parallel generated JSON for Super Cup
 - `00-build/database/monthly/`
   - Derived editorial/context JSON
+- `00-build/history/`
+  - Archived per-season copies of generated JSON plus cross-season indexes
 
 ## Main producer
 
@@ -30,6 +32,20 @@ From its path setup and output definitions, it produces:
 - `leaders.json`
 - `game_results.json`
 - `awards.json`
+- `season_awards.json`
+
+`00-build/scripts/build_youth_intake_json.py` produces:
+
+- `youth_intake.json`
+- `youth_intake_players.json`
+
+from `00-assets/spreadsheet/Youth Intake.xlsx`.
+
+`00-build/scripts/archive_season_jsons.py` copies generated feeds into `00-build/history/season-*/database/` and updates:
+
+- `00-build/history/index.json`
+- `00-build/history/player_index.json`
+- per-season `player_history_keys.json`
 
 ## Key source-of-truth mapping
 
@@ -47,6 +63,7 @@ From `build_players_json.py`:
   - `leaders.htm`
   - `awards.htm`
   - `draft.htm`
+  - `seasonawards.htm`
 - ratings enrichment may come from:
   - `LeagueOutput.mdb`
 
@@ -56,6 +73,8 @@ From `build_players_json.py`:
 - If OVR/POT or related ratings look missing, check whether `LeagueOutput.mdb` exists and whether the build imported it.
 - If a standings or cap figure looks wrong, check the corresponding root `.htm` input before blaming the frontend.
 - If a monthly narrative or prompt package looks wrong, trace it through `00-build/database/monthly/` rather than directly from article output.
+- If a history page looks wrong, check whether `archive_season_jsons.py` was run for that season and whether the affected feed exists under `00-build/history/season-*/database/`.
+- If youth intake data looks wrong, inspect `00-assets/spreadsheet/Youth Intake.xlsx` before changing the emitted JSON.
 
 ## Trust order
 

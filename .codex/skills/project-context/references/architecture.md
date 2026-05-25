@@ -10,6 +10,38 @@ This repo mixes generated league-export pages with custom assets and build outpu
 - `00-build/` contains build scripts and generated JSON databases.
 - `00-eslmedia/` contains the editorial/media site and prompt/content system.
 - `00-SuperCup/` is a parallel competition surface with its own build entrypoint.
+- `00-build/history/` contains archived season feed snapshots and history indexes produced by `archive_season_jsons.py`.
+
+## Site branches
+
+- Main index / live league site
+  - Entry: `index.htm`
+  - Shell behavior: `00-assets/js/index.js`
+  - Shared enhancement assets: `00-assets/js/` and `00-assets/css/styles.css`
+  - Data: `00-build/database/*.json`
+  - Build: `00-build/scripts/build.py`
+
+- History site
+  - Entry shells: `00-assets/html/history/`
+  - Main script/style: `00-assets/html/history/history.js` and `00-assets/html/history/history.css`
+  - Data: `00-build/history/`
+  - Producer: `00-build/scripts/archive_season_jsons.py`
+  - Rule: do not fix history by editing live `00-build/database/` feeds unless the archive is being regenerated.
+
+- ESL Media
+  - Homepage: `00-eslmedia/homepage.html`
+  - Article files: `00-eslmedia/content/articles/`
+  - Manifest: `00-eslmedia/content/media-articles.js`
+  - CMS drafts: `00-eslmedia/content/cms/articles/`
+  - CMS exporter: `00-build/scripts/build_esl_media_static_cms.py`
+  - Monthly data/prompt builders: `build_monthly_jsons.py` and `build_media_package_prompts.py`
+  - Validator: `00-build/scripts/validate_media_site.py`
+
+- Super Cup
+  - Entry: `00-SuperCup/index.htm`
+  - Shells: `00-assets/html/*supercup*`
+  - Data: `00-build/database/supercup/`
+  - Build: `00-build/scripts/build_supercup.py`
 
 ## Editing guidance
 
@@ -17,6 +49,8 @@ This repo mixes generated league-export pages with custom assets and build outpu
 - For missing links/scripts/styles in generated league pages, check `00-build/scripts/inject_css_js.py`.
 - For data-backed league features, confirm which file in `00-build/database/` powers the page before editing frontend code.
 - For Super Cup work, check `00-build/scripts/build_supercup.py` and `00-assets/html/*supercup*` before editing emitted HTML.
+- For season history pages, check `00-assets/html/history/`, `00-assets/html/history/history.js`, and `00-build/history/` before changing live-season feeds.
+- For standalone tools, check maintained shells in `00-assets/html/` such as `depthcharts.htm`, `trade-tool.htm`, and `youth-intake.htm`.
 
 ## Injection model
 
