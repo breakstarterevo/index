@@ -234,7 +234,12 @@
       ".league-menu-group.is-collapsed .league-menu-toggle::after { content: '+'; }",
       ".league-menu-links { display: flex; flex-direction: column; gap: 0; padding-top: 0; }",
       ".league-menu-group.is-collapsed .league-menu-links { display: none; }",
-      "@media (max-height: 680px) { .league-menu-link { font-size: 9.2pt; padding: 5px 6px 5px 8px; } .league-menu-toggle { font-size: 8.1pt; padding: 6px 6px 2px 8px; } .league-menu-feature-row { min-height: 42px; padding-left: 6px; padding-right: 6px; } .league-menu-feature { min-height: 34px; } .league-menu-logo { max-height: 32px; } }"
+      "@media (max-height: 680px) { .league-menu-link { font-size: 9.2pt; padding: 5px 6px 5px 8px; } .league-menu-toggle { font-size: 8.1pt; padding: 6px 6px 2px 8px; } .league-menu-feature-row { min-height: 42px; padding-left: 6px; padding-right: 6px; } .league-menu-feature { min-height: 34px; } .league-menu-logo { max-height: 32px; } }",
+      "html.league-pref-density-compact .league-menu-link { padding-top: 4px; padding-bottom: 4px; }",
+      "html.league-pref-density-compact .league-menu-toggle { padding-top: 5px; padding-bottom: 2px; }",
+      "html.league-pref-density-spacious .league-menu-link { padding-top: 8px; padding-bottom: 8px; }",
+      "html.league-pref-density-spacious .league-menu-toggle { padding-top: 9px; padding-bottom: 4px; }",
+      "@media (max-height: 680px) { html.league-pref-density-compact .league-menu-link { padding-top: 3px; padding-bottom: 3px; } html.league-pref-density-compact .league-menu-toggle { padding-top: 4px; padding-bottom: 1px; } }"
     ].join("");
     document.head.appendChild(style);
   }
@@ -388,11 +393,16 @@
         links: [
           { label: "Injuries", href: "injuries.htm" },
           { label: "Cap Report", href: "capreport.htm" },
+          { label: "Free Agents", href: "freeagents.htm" },
+          { label: "Potential FAs", href: "potentialfreeagents.htm" }
+        ]
+      },
+      {
+        title: "Tools",
+        links: [
           { label: "Depth Charts", href: core.paths.depthCharts },
           { label: "Trade Tool", href: core.paths.tradeTool },
-          { label: "Free Agents", href: "freeagents.htm" },
-          { label: "Waiver Wire", href: "waiverwire.htm" },
-          { label: "Potential FAs", href: "potentialfreeagents.htm" }
+          { label: "Training Camp", href: core.paths.trainingCamp }
         ]
       },
       {
@@ -401,7 +411,6 @@
           { label: "Youth Intake", href: core.paths.youthIntake },
           { label: "Awards", href: "awards.htm" },
           { label: "Season Awards", href: "seasonawards.htm" },
-          { label: "Playoff Standings", href: "playoffstandings.htm" },
           { label: "Past Champs", href: "champs.htm" }
         ]
       },
@@ -417,6 +426,8 @@
         links: [
           { label: "Draft Preview", href: "draft.htm" },
           { label: "Available Staff", href: "staff.htm" },
+          { label: "Waiver Wire", href: "waiverwire.htm" },
+          { label: "Playoff Standings", href: "playoffstandings.htm" },
           { label: "Playoffs", href: "playoffs.htm" },
           { label: "Playoff Leaders", href: "playoffleaders.htm" }
         ],

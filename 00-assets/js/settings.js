@@ -251,7 +251,7 @@
       name: "tableDensity",
       label: "Table Density",
       value: settings.tableDensity || "normal",
-      help: "Changes vertical spacing in generated tables.",
+      help: "Changes vertical spacing in generated tables and the sidebar menu.",
       options: [
         { value: "compact", label: "Compact" },
         { value: "normal", label: "Normal" },

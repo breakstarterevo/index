@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.35, maximum-scale=5.0, user-scalable=yes">
+  <title>Training Camp Changes</title>
+  <link rel="icon" type="image/png" href="../../00-build/database/favicon.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <style>
+    :root {
+      --ink: #111318;
+      --blue: #111b36;
+      --paper: #f4f2ec;
+      --card: #ffffff;
+      --line: #d9d2c2;
+      --muted: #5a5246;
+      --green: #1f6d3d;
+      --red: #9d1f1f;
+      --tc-table-header: var(--blue);
+      --font-sans: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font-serif: "Tiempos Headline", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 1rem;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: var(--font-sans);
+    }
+
+    .tc-shell {
+      display: grid;
+      gap: .9rem;
+      width: min(1540px, 100%);
+    }
+
+    .tc-header {
+      align-items: end;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-top: 4px solid var(--blue);
+      box-shadow: 4px 4px 0 rgba(17, 27, 54, .09);
+      display: grid;
+      gap: .8rem;
+      grid-template-columns: minmax(0, 1fr) auto;
+      padding: .8rem 1rem;
+    }
+
+    .tc-kicker {
+      color: var(--blue);
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .18em;
+      margin: 0 0 .18rem;
+      text-transform: uppercase;
+    }
+
+    .tc-title {
+      color: var(--ink);
+      font-family: var(--font-serif);
+      font-size: 1.72rem;
+      line-height: 1.1;
+      margin: 0;
+    }
+
+    .tc-subtitle {
+      color: var(--muted);
+      font-size: .83rem;
+      margin: .24rem 0 0;
+    }
+
+    .tc-controls {
+      align-items: end;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+    }
+
+    .tc-control {
+      display: grid;
+      gap: .25rem;
+    }
+
+    .tc-label {
+      color: var(--muted);
+      font-size: .61rem;
+      font-weight: 700;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+    }
+
+    .tc-select,
+    .tc-button {
+      background: #fff;
+      border: 1px solid #c4cde3;
+      color: var(--ink);
+      font: inherit;
+      font-size: .81rem;
+      height: 34px;
+      padding: 0 .62rem;
+    }
+
+    .tc-select {
+      min-width: 185px;
+    }
+
+    .tc-button {
+      align-items: center;
+      background: #eef2fb;
+      color: var(--blue);
+      display: inline-flex;
+      font-size: .65rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .tc-panel {
+      background: var(--card);
+      border: 1px solid var(--line);
+      padding: .78rem;
+    }
+
+    .tc-panel-head {
+      align-items: baseline;
+      border-bottom: 2px solid var(--blue);
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      justify-content: space-between;
+      margin-bottom: .6rem;
+      padding-bottom: .48rem;
+    }
+
+    .tc-panel-title {
+      color: var(--blue);
+      font-size: .73rem;
+      letter-spacing: .18em;
+      margin: 0;
+      text-transform: uppercase;
+    }
+
+    .tc-status {
+      color: var(--muted);
+      font-size: .64rem;
+      font-weight: 700;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .tc-summary {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      margin-bottom: .72rem;
+    }
+
+    .tc-chip {
+      background: #faf8f2;
+      border: 1px solid var(--line);
+      color: var(--muted);
+      display: grid;
+      gap: .1rem;
+      min-width: 96px;
+      padding: .42rem .52rem;
+    }
+
+    .tc-chip span {
+      font-size: .55rem;
+      font-weight: 700;
+      letter-spacing: .14em;
+      text-transform: uppercase;
+    }
+
+    .tc-chip strong {
+      color: var(--blue);
+      font-size: 1rem;
+    }
+
+    .tc-chip--positive strong { color: var(--green); }
+    .tc-chip--negative strong { color: var(--red); }
+
+    .tc-table-wrap {
+      border: 1px solid var(--line);
+      max-height: calc(100vh - 260px);
+      overflow: auto;
+    }
+
+    .tc-table {
+      border-collapse: separate;
+      border-spacing: 0;
+      font-size: .82rem;
+      min-width: 1250px;
+      width: 100%;
+    }
+
+    .tc-table th {
+      background: var(--tc-table-header);
+      border-bottom: 1px solid #263352;
+      color: #fff;
+      font-size: .6rem;
+      font-weight: 700;
+      height: 35px;
+      letter-spacing: .11em;
+      padding: 0 .35rem;
+      position: sticky;
+      text-align: center;
+      text-transform: uppercase;
+      top: 0;
+      z-index: 3;
+    }
+
+    .tc-table th:first-child,
+    .tc-table th:nth-child(2) {
+      text-align: left;
+    }
+
+    .tc-sort-button {
+      align-items: center;
+      background: transparent;
+      border: 0;
+      color: inherit;
+      cursor: pointer;
+      display: inline-flex;
+      font: inherit;
+      font-weight: inherit;
+      gap: .22rem;
+      justify-content: inherit;
+      letter-spacing: inherit;
+      padding: 0;
+      text-transform: inherit;
+    }
+
+    .tc-sort-button::after {
+      content: "";
+      font-size: .54rem;
+      min-width: .48rem;
+      opacity: .72;
+    }
+
+    .tc-sort-button[data-direction="desc"]::after { content: "\25BC"; }
+    .tc-sort-button[data-direction="asc"]::after { content: "\25B2"; }
+
+    .tc-sort-button:focus {
+      outline: 1px solid rgba(255, 255, 255, .85);
+      outline-offset: 2px;
+    }
+
+    .tc-table td {
+      background: #fff;
+      border-bottom: 1px solid #ebe5da;
+      height: 34px;
+      padding: 0 .35rem;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .tc-table tr:hover td:not(.delta) {
+      background: #faf8f2;
+    }
+
+    .tc-table .col-player {
+      left: 0;
+      max-width: 176px;
+      min-width: 176px;
+      position: sticky;
+      text-align: left;
+      width: 176px;
+      z-index: 2;
+    }
+
+    .tc-table th.col-player { z-index: 5; }
+
+    .tc-table .col-team {
+      max-width: 112px;
+      min-width: 112px;
+      text-align: left;
+      width: 112px;
+    }
+
+    .tc-table .col-pos { min-width: 38px; }
+    .tc-table .col-age { min-width: 38px; }
+    .tc-table .col-rating { min-width: 47px; }
+    .tc-table .col-key { border-left: 2px solid #c8bfae; min-width: 50px; }
+    .tc-table .col-net { border-left: 2px solid #c8bfae; font-weight: 800; min-width: 55px; }
+
+    .tc-player {
+      color: var(--ink);
+      display: block;
+      font-family: var(--font-serif);
+      font-size: .93rem;
+      overflow: hidden;
+      text-decoration: none;
+      text-overflow: ellipsis;
+    }
+
+    .tc-player:hover,
+    .tc-team:hover {
+      color: var(--blue);
+      text-decoration: underline;
+    }
+
+    .tc-team {
+      color: var(--muted);
+      font-size: .72rem;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-decoration: none;
+      text-transform: uppercase;
+    }
+
+    .delta {
+      font-size: .84rem;
+      font-weight: 700;
+    }
+
+    .tc-delta-trigger {
+      align-items: center;
+      background: transparent;
+      border: 0;
+      color: inherit;
+      cursor: help;
+      display: inline-flex;
+      flex-direction: column;
+      font: inherit;
+      font-weight: inherit;
+      gap: .08rem;
+      justify-content: center;
+      line-height: 1;
+      min-height: 30px;
+      min-width: 100%;
+      padding: 0;
+    }
+
+    .tc-delta-trigger:focus {
+      outline: 2px solid currentColor;
+      outline-offset: -2px;
+    }
+
+    .tc-delta-values {
+      display: none;
+      font-size: .53rem;
+      font-weight: 700;
+      letter-spacing: .03em;
+    }
+
+    .tc-delta-trigger:focus .tc-delta-values {
+      display: block;
+    }
+
+    .delta--positive {
+      background: #dceccf !important;
+      color: #166534;
+    }
+
+    .delta--positive.delta--strong {
+      background: #9bc379 !important;
+    }
+
+    .delta--negative {
+      background: #f7d4d4 !important;
+      color: #991b1b;
+    }
+
+    .delta--negative.delta--strong {
+      background: #ed9a9a !important;
+    }
+
+    .tc-empty {
+      color: var(--muted);
+      font-size: .86rem;
+      padding: 2.3rem .6rem;
+      text-align: center;
+    }
+
+    @media (max-width: 760px) {
+      body { padding: .62rem; }
+      .tc-header { grid-template-columns: 1fr; padding: .7rem; }
+      .tc-controls { align-items: stretch; }
+      .tc-select { min-width: 0; width: 100%; }
+      .tc-table-wrap { max-height: calc(100vh - 310px); }
+    }
+  </style>
+</head>
+<body>
+  <main class="tc-shell">
+    <header class="tc-header">
+      <div>
+        <p class="tc-kicker">Player Development</p>
+        <h1 class="tc-title">Training Camp Changes</h1>
+        <p class="tc-subtitle">Current ratings compared with the pre-camp player snapshot. Positive movement is green; regression is red.</p>
+      </div>
+      <div class="tc-controls">
+        <label class="tc-control">
+          <span class="tc-label">Team View</span>
+          <select class="tc-select" id="teamPicker" aria-label="Choose team"></select>
+        </label>
+        <a class="tc-button" href="./league%20dashboard.htm">Back To Dashboard</a>
+      </div>
+    </header>
+
+    <section class="tc-panel">
+      <div class="tc-panel-head">
+        <h2 class="tc-panel-title" id="viewTitle">All Teams</h2>
+        <span class="tc-status" id="statusText">Loading rating snapshots</span>
+      </div>
+      <div class="tc-summary" id="summary"></div>
+      <div class="tc-table-wrap" id="tableRoot"></div>
+    </section>
+  </main>
+
+  <script>
+    (function () {
+      "use strict";
+
+      var CURRENT_URL = "../../00-build/database/players.json";
+      var PREVIOUS_URL = "../../00-build/database/PreTC/players.json";
+      var SKILLS = [
+        { key: "Ins", label: "Ins" }, { key: "Jps", label: "Jps" },
+        { key: "Fts", label: "Fts" }, { key: "3ps", label: "3ps" },
+        { key: "Hnd", label: "Hnd" }, { key: "Pas", label: "Pas" },
+        { key: "Orb", label: "Orb" }, { key: "Drb", label: "Drb" },
+        { key: "Psd", label: "Psd" }, { key: "Prd", label: "Prd" },
+        { key: "Stl", label: "Stl" }, { key: "Blk", label: "Blk" },
+        { key: "Qkn", label: "Qkn" }, { key: "Jmp", label: "Jmp" },
+        { key: "Str", label: "Str" }, { key: "Sta", label: "Sta" }
+      ];
+      var KEY_RATINGS = [
+        { key: "overall", label: "Ovr" },
+        { key: "potential", label: "Pot" }
+      ];
+      var MINIMUM_OVR = 50;
+      var state = { rows: [], team: "__ALL__", sort: "team", direction: "asc", colorByTeam: {}, colorRequest: 0 };
+
+      function esc(value) {
+        return String(value == null ? "" : value)
+          .replace(/&/g, "&amp;")
+          .replace(/</g, "&lt;")
+          .replace(/>/g, "&gt;")
+          .replace(/"/g, "&quot;");
+      }
+
+      function valueOf(player, key) {
+        var number = Number(player && player[key]);
+        return Number.isFinite(number) ? number : 0;
+      }
+
+      function playerId(player) {
+        return String(player && (player.url || player.name) || "").toLowerCase();
+      }
+
+      function playerHref(player) {
+        var match = String(player.url || "").match(/player(\d+)\.htm/i);
+        return match ? "./unified-player.htm?id=player" + encodeURIComponent(match[1]) : "";
+      }
+
+      function teamHref(player) {
+        return player.team && player.team !== "FA"
+          ? "./unified-roster.htm?file=" + encodeURIComponent(player.team + ".htm")
+          : "";
+      }
+
+      function formatDelta(delta) {
+        return delta > 0 ? "+" + delta : (delta < 0 ? String(delta) : "");
+      }
+
+      function deltaClass(delta) {
+        if (!delta) return "delta";
+        var tone = delta > 0 ? "delta delta--positive" : "delta delta--negative";
+        return Math.abs(delta) >= 3 ? tone + " delta--strong" : tone;
+      }
+
+      function calculateRows(current, previous) {
+        var priorById = new Map(previous.map(function (player) {
+          return [playerId(player), player];
+        }));
+
+        return current.map(function (player) {
+          if (valueOf(player, "overall") < MINIMUM_OVR) return null;
+          var prior = priorById.get(playerId(player));
+          if (!prior) return null;
+          var deltas = {};
+          SKILLS.concat(KEY_RATINGS).forEach(function (column) {
+            deltas[column.key] = valueOf(player, column.key) - valueOf(prior, column.key);
+          });
+          var hasChange = SKILLS.concat(KEY_RATINGS).some(function (column) {
+            return deltas[column.key] !== 0;
+          });
+          if (!hasChange) return null;
+          var total = SKILLS.reduce(function (sum, column) {
+            return sum + deltas[column.key];
+          }, 0);
+          return { player: player, prior: prior, deltas: deltas, total: total };
+        }).filter(Boolean);
+      }
+
+      function visibleRows() {
+        var rows = state.team === "__ALL__" ? state.rows : state.rows.filter(function (row) {
+          return row.player.team === state.team;
+        });
+        return sortRows(rows);
+      }
+
+      function compareName(left, right) {
+        var team = String(left.player.teamLabel || "").localeCompare(String(right.player.teamLabel || ""));
+        return team || String(left.player.name || "").localeCompare(String(right.player.name || ""));
+      }
+
+      function compareText(left, right, key) {
+        return String(left.player[key] || "").localeCompare(String(right.player[key] || ""), undefined, { numeric: true, sensitivity: "base" });
+      }
+
+      function sortRows(rows) {
+        return rows.slice().sort(function (left, right) {
+          var direction = state.direction === "asc" ? 1 : -1;
+          if (state.sort === "player") return direction * String(left.player.name || "").localeCompare(String(right.player.name || ""), undefined, { sensitivity: "base" });
+          if (state.sort === "pos") return direction * compareText(left, right, "pos") || compareName(left, right);
+          if (state.sort === "age") return direction * (valueOf(left.player, "age") - valueOf(right.player, "age")) || compareName(left, right);
+          if (state.sort === "net") return direction * (left.total - right.total) || compareName(left, right);
+          if (state.sort === "overall") return direction * (left.deltas.overall - right.deltas.overall) || direction * (left.total - right.total) || compareName(left, right);
+          if (state.sort === "potential") return direction * (left.deltas.potential - right.deltas.potential) || direction * (left.total - right.total) || compareName(left, right);
+          if (SKILLS.some(function (column) { return column.key === state.sort; })) {
+            return direction * (left.deltas[state.sort] - right.deltas[state.sort]) || direction * (left.total - right.total) || compareName(left, right);
+          }
+          return compareName(left, right);
+        });
+      }
+
+      function extractTeamColor(htmlText) {
+        var style = (String(htmlText || "").match(/<style[^>]*>([\s\S]*?)<\/style>/i) || [])[1] || "";
+        var match = style.match(/td\.teamheader\s*\{[^}]*background:\s*([^;]+);/i);
+        return match ? String(match[1]).trim() : "#111b36";
+      }
+
+      function setTableHeaderColor() {
+        var selectedTeam = state.team;
+        var request = ++state.colorRequest;
+        if (selectedTeam === "__ALL__" || selectedTeam === "FA") {
+          document.documentElement.style.setProperty("--tc-table-header", "#111b36");
+          return;
+        }
+        if (state.colorByTeam[selectedTeam]) {
+          document.documentElement.style.setProperty("--tc-table-header", state.colorByTeam[selectedTeam]);
+          return;
+        }
+        fetch("../../rosters/" + encodeURIComponent(selectedTeam) + ".htm", { cache: "no-store" })
+          .then(function (response) {
+            if (!response.ok) throw new Error("Team color could not be loaded.");
+            return response.text();
+          })
+          .then(function (htmlText) {
+            var color = extractTeamColor(htmlText);
+            state.colorByTeam[selectedTeam] = color;
+            if (request === state.colorRequest && state.team === selectedTeam) {
+              document.documentElement.style.setProperty("--tc-table-header", color);
+            }
+          })
+          .catch(function () {
+            if (request === state.colorRequest && state.team === selectedTeam) {
+              document.documentElement.style.setProperty("--tc-table-header", "#111b36");
+            }
+          });
+      }
+
+      function linkMarkup(href, className, text) {
+        return href ? '<a class="' + className + '" href="' + esc(href) + '">' + esc(text) + "</a>" : esc(text);
+      }
+
+      function renderRatingDelta(row, column) {
+        var delta = row.deltas[column.key];
+        var keyClass = column.key === "overall" ? " col-key" : "";
+        if (!delta) {
+          return '<td class="delta col-rating' + keyClass + '"></td>';
+        }
+        var before = valueOf(row.prior, column.key);
+        var after = valueOf(row.player, column.key);
+        var title = column.label + ": " + before + " -> " + after;
+        return '<td class="' + deltaClass(delta) + " col-rating" + keyClass + '">' +
+          '<button class="tc-delta-trigger" type="button" title="' + esc(title) + '" aria-label="' + esc(column.label + " change " + formatDelta(delta) + ", " + before + " to " + after) + '">' +
+            '<span>' + esc(formatDelta(delta)) + "</span>" +
+            '<span class="tc-delta-values">' + esc(before + " > " + after) + "</span>" +
+          "</button></td>";
+      }
+
+      function sortHeader(label, key, headerClass) {
+        var active = state.sort === key;
+        var direction = active ? state.direction : "";
+        var ariaSort = active ? (key === "team" ? "ascending" : (state.direction === "desc" ? "descending" : "ascending")) : "none";
+        return '<th class="' + headerClass + '" aria-sort="' + ariaSort + '">' +
+          '<button class="tc-sort-button" type="button" data-sort="' + key + '" data-direction="' + direction + '">' + label + "</button></th>";
+      }
+
+      function bindSortHeaders() {
+        Array.prototype.slice.call(document.querySelectorAll(".tc-sort-button")).forEach(function (button) {
+          button.addEventListener("click", function () {
+            var nextSort = button.getAttribute("data-sort");
+            if (nextSort === "team") {
+              state.sort = "team";
+              state.direction = "asc";
+            } else if (state.sort === nextSort) {
+              state.direction = state.direction === "desc" ? "asc" : "desc";
+            } else {
+              state.sort = nextSort;
+              state.direction = ["player", "pos", "age"].indexOf(nextSort) >= 0 ? "asc" : "desc";
+            }
+            render();
+          });
+        });
+      }
+
+      function renderSummary(rows) {
+        var improved = rows.filter(function (row) { return row.total > 0; }).length;
+        var declined = rows.filter(function (row) { return row.total < 0; }).length;
+        var total = rows.reduce(function (sum, row) { return sum + row.total; }, 0);
+        document.getElementById("summary").innerHTML =
+          '<div class="tc-chip"><span>Players Changed</span><strong>' + rows.length + "</strong></div>" +
+          '<div class="tc-chip tc-chip--positive"><span>Net Improvers</span><strong>' + improved + "</strong></div>" +
+          '<div class="tc-chip tc-chip--negative"><span>Net Decliners</span><strong>' + declined + "</strong></div>" +
+          '<div class="tc-chip ' + (total < 0 ? "tc-chip--negative" : "tc-chip--positive") + '"><span>Total Skill Delta</span><strong>' + esc(formatDelta(total) || "0") + "</strong></div>";
+      }
+
+      function renderTable(rows) {
+        var root = document.getElementById("tableRoot");
+        if (!rows.length) {
+          root.innerHTML = '<div class="tc-empty">No rating changes found for this team in the two player snapshots.</div>';
+          return;
+        }
+
+        var heads = SKILLS.concat(KEY_RATINGS).map(function (column) {
+          var keyClass = column.key === "overall" ? " col-key" : "";
+          return sortHeader(column.label, column.key, "col-rating" + keyClass);
+        }).join("");
+        var body = rows.map(function (row) {
+          var player = row.player;
+          var ratings = SKILLS.concat(KEY_RATINGS).map(function (column) {
+            return renderRatingDelta(row, column);
+          }).join("");
+          return "<tr>" +
+            '<td class="col-player">' + linkMarkup(playerHref(player), "tc-player", player.name) + "</td>" +
+            '<td class="col-team">' + linkMarkup(teamHref(player), "tc-team", player.teamLabel || player.team || "FA") + "</td>" +
+            '<td class="col-pos">' + esc(player.pos || "") + "</td>" +
+            '<td class="col-age">' + esc(player.age || "") + "</td>" +
+            ratings +
+            '<td class="' + deltaClass(row.total) + ' col-net">' + esc(formatDelta(row.total) || "0") + "</td>" +
+          "</tr>";
+        }).join("");
+
+        root.innerHTML = '<table class="tc-table"><thead><tr>' +
+          sortHeader("Player", "player", "col-player") + sortHeader("Team", "team", "col-team") + sortHeader("Pos", "pos", "col-pos") + sortHeader("Age", "age", "col-age") +
+          heads +
+          sortHeader("Net", "net", "col-net") + "</tr></thead><tbody>" + body + "</tbody></table>";
+        bindSortHeaders();
+      }
+
+      function render() {
+        var rows = visibleRows();
+        var picker = document.getElementById("teamPicker");
+        var selectedLabel = picker.options[picker.selectedIndex] ? picker.options[picker.selectedIndex].textContent : "All Teams";
+        document.getElementById("viewTitle").textContent = selectedLabel + " Rating Movement";
+        document.getElementById("statusText").textContent = rows.length + " players changed";
+        renderSummary(rows);
+        renderTable(rows);
+        setTableHeaderColor();
+      }
+
+      function initializePicker(players) {
+        var picker = document.getElementById("teamPicker");
+        var teams = Array.from(new Map(players.map(function (player) {
+          return [player.team, player.teamLabel || player.team || "Free Agents"];
+        })).entries()).sort(function (a, b) {
+          return String(a[1]).localeCompare(String(b[1]));
+        });
+        picker.innerHTML = '<option value="__ALL__">All Teams</option>' + teams.map(function (team) {
+          return '<option value="' + esc(team[0]) + '">' + esc(team[1]) + "</option>";
+        }).join("");
+        picker.addEventListener("change", function () {
+          state.team = picker.value;
+          render();
+        });
+      }
+
+      Promise.all([
+        fetch(CURRENT_URL, { cache: "no-store" }).then(function (response) {
+          if (!response.ok) throw new Error("Current player ratings could not be loaded.");
+          return response.json();
+        }),
+        fetch(PREVIOUS_URL, { cache: "no-store" }).then(function (response) {
+          if (!response.ok) throw new Error("Previous snapshot was not found in database/PreTC/players.json.");
+          return response.json();
+        })
+      ]).then(function (data) {
+        state.rows = calculateRows(data[0], data[1]);
+        initializePicker(data[0]);
+        render();
+      }).catch(function (error) {
+        document.getElementById("statusText").textContent = "Unable to load";
+        document.getElementById("tableRoot").innerHTML = '<div class="tc-empty">' + esc(error.message || "Unable to load rating snapshots.") + "</div>";
+      });
+    }());
+  </script>
+</body>
+</html>

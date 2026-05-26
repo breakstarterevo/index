@@ -12,6 +12,7 @@
     eslReference: toSitePath("00-assets/html/history/index.htm"),
     depthCharts: toSitePath("00-assets/html/depthcharts.htm"),
     tradeTool: toSitePath("00-assets/html/trade-tool.htm"),
+    trainingCamp: toSitePath("00-assets/html/training-camp.htm"),
     youthIntake: toSitePath("00-assets/html/youth-intake.htm"),
     unifiedLeaders: toSitePath("00-assets/html/unified-leaders.htm"),
     unifiedStandings: toSitePath("00-assets/html/unified-standings.htm"),
