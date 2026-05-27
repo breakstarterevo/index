@@ -98,6 +98,11 @@ def _height_text_from_inches(value):
     return f"{inches // 12}-{inches % 12}" if inches > 0 else ""
 
 
+def _player_id_from_url(value):
+    match = re.search(r"(player\d+)\.html?$", str(value or ""), re.IGNORECASE)
+    return match.group(1).lower() if match else ""
+
+
 def _load_player_ratings(path: str):
     try:
         with open(path, "r", encoding="utf-8") as source:
@@ -129,22 +134,32 @@ def _rated_player_for_intake(player, team_name, rating_lookup):
     candidates = matching_build or candidates
     team_key = _normalize_key(team_name)
     age = str(player.get("Age", "") or "").strip()
-    candidates.sort(
-        key=lambda candidate: (
-            _normalize_key(candidate.get("teamLabel", candidate.get("team", ""))) == team_key,
-            age and str(candidate.get("age", "") or "").strip() == age,
-            _normalize_key(candidate.get("teamLabel", candidate.get("team", ""))) == "draft",
-        ),
-        reverse=True,
-    )
-    return candidates[0]
+    team_matches = [
+        candidate
+        for candidate in candidates
+        if _normalize_key(candidate.get("teamLabel", candidate.get("team", ""))) == team_key
+    ]
+    if team_matches:
+        return team_matches[0]
+
+    age_matches = [
+        candidate
+        for candidate in candidates
+        if age and str(candidate.get("age", "") or "").strip() == age
+    ]
+    if len(age_matches) == 1:
+        return age_matches[0]
+    if len(candidates) == 1:
+        return candidates[0]
+    return {}
 
 
 def _enrich_intake_player(player, team_name, rating_lookup):
     enriched = dict(player)
     rated_player = _rated_player_for_intake(enriched, team_name, rating_lookup)
+    enriched["playerId"] = rated_player.get("playerId", "") or _player_id_from_url(rated_player.get("url", ""))
     enriched["overall"] = _parse_overall(rated_player.get("overall", ""))
-    enriched["potential"] = _parse_overall(rated_player.get("potential", ""))
+    enriched["potential"] = _parse_overall(rated_player.get("potential", "") or enriched.get("POT", ""))
     return enriched
 
 
@@ -242,7 +257,7 @@ def _find_sheet(sheets, desired_name):
 def _find_database_sheets(sheets):
     found = []
     seen = set()
-    for desired_name in ("Current Intake", "DATATBASE", "DATABASE", "TIER 1", "TIER 2", "TIER 3"):
+    for desired_name in ("Current Intake", "Sheet8", "DATATBASE", "DATABASE", "TIER 1", "TIER 2", "TIER 3"):
         sheet_name, rows = _find_sheet(sheets, desired_name)
         key = _normalize_key(sheet_name)
         if sheet_name and key not in seen:

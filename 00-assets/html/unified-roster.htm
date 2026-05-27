@@ -1498,22 +1498,13 @@
       return "rating-orange";
     }
 
-    function youthPlayerRecord(player) {
-      const key = normalizeName(player && (player.name || `${player.FirstName || ""} ${player.LastName || ""}`));
-      if (!key) return null;
-      const currentTeamName = state.current ? state.current.teamName : "";
-      const teamMatch = (state.players || []).find((p) => normalizeName(p.name) === key && normalizeName(p.teamLabel) === normalizeName(currentTeamName));
-      const fallback = teamMatch || (state.players || []).find((p) => normalizeName(p.name) === key);
-      return fallback || null;
-    }
-
     function youthPlayerUrl(player) {
-      const record = youthPlayerRecord(player);
-      return record && record.url ? record.url : "";
+      const playerId = String(player && player.playerId || "").trim();
+      return playerId ? `../players/${playerId}.htm` : "";
     }
 
-    function youthRatingCell(record, field) {
-      const text = record && record[field] !== undefined && record[field] !== null && record[field] !== "" ? String(record[field]) : "-";
+    function youthRatingCell(player, field) {
+      const text = player && player[field] !== undefined && player[field] !== null && player[field] !== "" ? String(player[field]) : "-";
       return { text, color: "", className: ratingTierClass(text) };
     }
 
@@ -1526,14 +1517,13 @@
         return;
       }
       const rows = players.map((player, index) => {
-        const record = youthPlayerRecord(player);
         return [
           { text: String(player.Uniform || index + 1), color: "" },
-          { text: player.name || `${player.FirstName || ""} ${player.LastName || ""}`.trim() || "Unnamed Player", color: "", href: record && record.url ? record.url : "" },
+          { text: player.name || `${player.FirstName || ""} ${player.LastName || ""}`.trim() || "Unnamed Player", color: "", href: youthPlayerUrl(player) },
           { text: player.Position || "-", color: "" },
           { text: youthValue(player, "Age", "", false), color: "" },
-          youthRatingCell(record, "overall"),
-          youthRatingCell(record, "potential"),
+          youthRatingCell(player, "overall"),
+          youthRatingCell(player, "potential"),
           youthCell(player, "InsideScoring", "PotInside", usePotential),
           youthCell(player, "JumpShot", "PotJumpShot", usePotential),
           youthCell(player, "FtShot", "PotFtShot", usePotential),

@@ -71,13 +71,11 @@
 
   <script>
     const URLS = {
-      intake: "../../00-build/database/youth_intake.json",
-      players: "../../00-build/database/players.json"
+      intake: "../../00-build/database/youth_intake.json"
     };
 
     const state = {
       teams: [],
-      playerLinks: new Map(),
       current: null,
       mode: "potential",
       sortKey: "name",
@@ -88,19 +86,9 @@
       return String(v || "").toLowerCase().replace(/[0-9]+$/g, "").replace(/[^a-z0-9]/g, "");
     }
 
-    function normalizeHref(url) {
-      const clean = String(url || "").trim().replace(/^(\.\/|\.\.\/)+/, "");
-      return clean ? `../../${clean}` : "";
-    }
-
-    function buildUnifiedPlayerHref(url, name) {
-      const clean = String(url || "").trim();
-      const idMatch = clean.match(/player(\d+)\.htm/i);
-      if (idMatch) {
-        return `./unified-player.htm?id=${encodeURIComponent(`player${idMatch[1]}`)}`;
-      }
-      const trimmedName = String(name || "").trim();
-      return trimmedName ? `./unified-player.htm?name=${encodeURIComponent(trimmedName)}` : "";
+    function buildUnifiedPlayerHref(playerId) {
+      const clean = String(playerId || "").trim();
+      return clean ? `./unified-player.htm?id=${encodeURIComponent(clean)}` : "";
     }
 
     function q(name) {
@@ -124,8 +112,12 @@
       const common = ["Position", "Age", ...ratings];
       const regular = ["InsideScoring", "JumpShot", "FtShot", "3pShot", "3pUsage", "Handling", "Passing", "PostDefense", "PerimeterDefense", "Stealing", "Blocking", "OReb", "DReb", "Fouling", "Strength", "Quickness", "Jumping", "Stamina", "InjuryAvoidance"];
       const potential = ["PotInside", "PotJumpShot", "PotFtShot", "Pot3pShot", "3pUsage", "PotHandling", "PotPassing", "PotPostDefense", "PotPerimeterDefense", "PotStealing", "PotBlocking", "PotOReb", "PotDReb", "Fouling", "Strength", "Quickness", "Jumping", "Stamina", "InjuryAvoidance"];
-      const columns = ["name", ...(includeTeamColumn ? ["team", "teamTier"] : []), ...common, ...(state.mode === "potential" ? potential : regular)];
-      const rows = players.map((p) => columns.map((c) => c === "name" ? p.name : (p[c] ?? "")));
+      const columns = ["name", ...(includeTeamColumn ? ["team"] : []), "tier", ...common, ...(state.mode === "potential" ? potential : regular)];
+      const rows = players.map((p) => {
+        const row = columns.map((c) => c === "name" ? p.name : (p[c] ?? ""));
+        row.playerId = p.playerId || "";
+        return row;
+      });
       return { columns, rows };
     }
 
@@ -150,7 +142,7 @@
       if (index === 0) return "Name";
       if (String(key || "").toLowerCase() === "team") return "Team";
       const map = {
-        teamTier: "Tier",
+        tier: "Tier",
         overall: "OVR",
         potential: "POT",
         Height: "HT",
@@ -197,7 +189,7 @@
       if (index === 0) return "col-name";
       const lower = String(key || "").toLowerCase();
       if (lower === "team") return "col-team";
-      if (lower === "teamtier") return "col-stat";
+      if (lower === "tier") return "col-stat";
       if (lower === "position") return "col-pos";
       if (lower === "age") return "col-age";
       if (lower === "height") return "col-height";
@@ -217,7 +209,7 @@
           .filter((t) => t.team !== "__ALL__" && normalizeName(t.team) !== "team")
           .flatMap((t) => (Array.isArray(t.intakePlayers) ? t.intakePlayers : []).map((entry) => {
             const name = String((entry && entry.name) || "").trim();
-            return { ...entry, name, team: t.team, teamTier: t.tier || "" };
+            return { ...entry, name, team: t.team };
           }));
       } else {
         const intake = Array.isArray(team.intakePlayers) ? team.intakePlayers : [];
@@ -250,7 +242,7 @@
         ? rows.map((row) => {
             const nameIndex = columns.findIndex((c) => c === "name");
             const name = String((nameIndex >= 0 ? row[nameIndex] : row[0]) || "");
-            const href = state.playerLinks.get(normalizeName(name)) || "";
+            const href = buildUnifiedPlayerHref(row.playerId);
             const nameHtml = href ? `<a href="${href}">${name}</a>` : name;
             const cells = row.map((cell, idx) => `<td class="${columnClass(columns[idx], idx)}">${columns[idx] === "name" ? nameHtml : (cell === "" ? "-" : cell)}</td>`).join("");
             return `<tr>${cells}</tr>`;
@@ -297,10 +289,7 @@
 
     async function init() {
       try {
-        const [intakeData, players] = await Promise.all([
-          loadJson(URLS.intake),
-          loadJson(URLS.players)
-        ]);
+        const intakeData = await loadJson(URLS.intake);
         state.teams = Array.isArray(intakeData.teams)
           ? intakeData.teams
               .filter((t) => normalizeName(t && t.team) !== "team")
@@ -308,11 +297,6 @@
               .sort((a, b) => a.team.localeCompare(b.team))
           : [];
         state.teams.unshift({ team: "__ALL__", intakePlayers: [] });
-        (Array.isArray(players) ? players : []).forEach((p) => {
-          const href = buildUnifiedPlayerHref(p && p.url, p && p.name);
-          if (!href) return;
-          state.playerLinks.set(normalizeName(p.name), href);
-        });
         state.current = findTeamFromQuery();
         if (!q("team")) state.current = state.teams[0] || state.current;
         if (!state.current) throw new Error("No teams in intake file");

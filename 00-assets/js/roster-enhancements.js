@@ -88,15 +88,15 @@
   }
 
   function buildPlayerRecordMaps(players) {
-    var byUrl = {};
+    var byFile = {};
     var byName = {};
 
     (players || []).forEach(function (player) {
-      var normalizedUrl = core.normalizePlayerUrl(player && player.url ? player.url : "").replace(/\\/g, "/").toLowerCase();
+      var file = core.getPlayerFileFromUrl(player && player.url ? player.url : "");
       var normalizedName = core.normalizeName(player && player.name);
 
-      if (normalizedUrl) {
-        byUrl[normalizedUrl] = player;
+      if (file) {
+        byFile[file] = player;
       }
 
       if (normalizedName && !byName[normalizedName]) {
@@ -105,7 +105,7 @@
     });
 
     return {
-      byUrl: byUrl,
+      byFile: byFile,
       byName: byName
     };
   }
@@ -118,11 +118,11 @@
   function findRosterPlayerRecord(row, playerMaps) {
     var playerLink = row.querySelector('a[href*="player"]');
     var playerCell = row.children[1];
-    var href = playerLink ? core.normalizePlayerUrl(playerLink.getAttribute("href") || "").replace(/\\/g, "/").toLowerCase() : "";
+    var file = playerLink ? core.getPlayerFileFromUrl(playerLink.getAttribute("href") || "") : "";
     var name = core.normalizeName(playerCell ? playerCell.textContent : "");
 
-    if (href && playerMaps.byUrl[href]) {
-      return playerMaps.byUrl[href];
+    if (file && playerMaps.byFile[file]) {
+      return playerMaps.byFile[file];
     }
 
     return name && playerMaps.byName[name] ? playerMaps.byName[name] : null;
@@ -130,11 +130,11 @@
 
   function findLinkedPlayerRecord(row, playerMaps) {
     var playerLink = row.querySelector('a[href*="player"]');
-    var href = playerLink ? core.normalizePlayerUrl(playerLink.getAttribute("href") || "").replace(/\\/g, "/").toLowerCase() : "";
+    var file = playerLink ? core.getPlayerFileFromUrl(playerLink.getAttribute("href") || "") : "";
     var name = core.normalizeName(playerLink ? playerLink.textContent : "");
 
-    if (href && playerMaps.byUrl[href]) {
-      return playerMaps.byUrl[href];
+    if (file && playerMaps.byFile[file]) {
+      return playerMaps.byFile[file];
     }
 
     return name && playerMaps.byName[name] ? playerMaps.byName[name] : null;

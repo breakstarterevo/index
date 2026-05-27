@@ -553,6 +553,7 @@ def parse_player_page(html, filename, team_lookup, ratings):
 
     attr_values = values[1:1 + len(ATTR_KEYS)] if len(values) > len(ATTR_KEYS) else []
     player = {
+        "playerId": f"player{player_id_from_file(filename)}",
         "name": name,
         "url": f"../players/{filename}",
         "team": team_lookup.get(normalize_name(raw_team), raw_team),
@@ -656,6 +657,7 @@ def parse_player_stats_page(html, filename, player):
         }
 
     return {
+        "playerId": player.get("playerId", f"player{player_id_from_file(filename)}"),
         "name": player.get("name", ""),
         "url": player.get("url", f"../players/{filename}"),
         "team": player.get("team", ""),
@@ -695,6 +697,7 @@ def parse_player_gamelogs_page(html, filename, player):
         break
 
     return {
+        "playerId": player.get("playerId", f"player{player_id_from_file(filename)}"),
         "name": player.get("name", ""),
         "url": player.get("url", f"../players/{filename}"),
         "team": player.get("team", ""),

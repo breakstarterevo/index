@@ -73,9 +73,14 @@
     return `${Math.floor(inches / 12)}-${inches % 12}`;
   }
 
-  function youthPlayerLink(player) {
+  function youthPlayerLink(player, season) {
     const name = String(player?.name || "").trim();
     if (!name) return "";
+    const playerId = String(player?.playerId || "").trim();
+    const archivedKey = playerId && season ? state.playerIndex?.seasonMaps?.[season]?.[`${playerId}.htm`] : "";
+    if (archivedKey) {
+      return `<a href="player.htm?key=${encodeURIComponent(archivedKey)}">${esc(name)}</a>`;
+    }
     const height = heightTextFromInches(player.Height);
     const candidates = (state.playerIndex?.identities || []).filter((identity) => {
       if (String(identity.name || "").toLowerCase() !== name.toLowerCase()) return false;
@@ -813,10 +818,11 @@
     return table(["Player", "Pos", "Age", "College", "OVR", "POT"], players.map((p) => {
       const name = String(p.name || "").toLowerCase();
       const height = heightTextFromInches(p.Height);
-      const ratedPlayer = (data.players || []).find((player) => String(player.name || "").toLowerCase() === name && (!height || String(player.ht || "") === height))
-        || (data.players || []).find((player) => String(player.name || "").toLowerCase() === name)
-        || {};
-      return `<tr><td>${youthPlayerLink(p)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td></tr>`;
+      const ratedPlayer = p.overall !== undefined || p.potential !== undefined ? p
+        : (data.players || []).find((player) => String(player.name || "").toLowerCase() === name && (!height || String(player.ht || "") === height))
+          || (data.players || []).find((player) => String(player.name || "").toLowerCase() === name)
+          || {};
+      return `<tr><td>${youthPlayerLink(p, data.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td></tr>`;
     }), "No archived youth intake");
   }
 
@@ -1047,7 +1053,7 @@
     const selectedTeam = params().get("team") || teams[0]?.team || "";
     const team = teams.find((row) => row.team === selectedTeam) || teams[0] || {};
     const allData = await allSeasonData();
-    const franchiseRows = allData.flatMap((seasonData) => (seasonData.youth.teams || []).filter((row) => !selectedTeam || row.team === selectedTeam).flatMap((row) => (row.intakePlayers || []).map((p) => `<tr><td>${esc(seasonLabel(seasonData.season))}</td><td>${esc(row.team)}</td><td>${youthPlayerLink(p)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td></tr>`)));
+    const franchiseRows = allData.flatMap((seasonData) => (seasonData.youth.teams || []).filter((row) => !selectedTeam || row.team === selectedTeam).flatMap((row) => (row.intakePlayers || []).map((p) => `<tr><td>${esc(seasonLabel(seasonData.season))}</td><td>${esc(row.team)}</td><td>${youthPlayerLink(p, seasonData.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td></tr>`)));
     $("#history-app").innerHTML = `
       <section class="reference-section compact-controls"><h2>Youth Intake Controls</h2><div class="filter-bar">
         <label>Season ${seasonSelector(selected)}</label>
