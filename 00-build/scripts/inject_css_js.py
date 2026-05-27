@@ -11,6 +11,8 @@ Usage:
 import os
 import sys
 
+from atomic_write import atomic_write_text
+
 
 SCRIPT_ROOT = os.path.dirname(os.path.abspath(__file__))
 BUILD_DIR = os.path.dirname(SCRIPT_ROOT)
@@ -132,8 +134,7 @@ def inject_file(filepath, dry_run, target_root):
     if dry_run:
         print(f"DRY RUN: would update {filepath}")
     else:
-        with open(filepath, "w", encoding="latin-1") as f:
-            f.write(html)
+        atomic_write_text(filepath, html, encoding="latin-1")
         print(f"UPDATED: {filepath}")
 
     return "updated"

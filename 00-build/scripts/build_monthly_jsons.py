@@ -3,6 +3,8 @@ import os
 from collections import defaultdict
 from datetime import datetime
 
+from atomic_write import atomic_dump_json
+
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BUILD_DIR = os.path.dirname(ROOT)
@@ -449,28 +451,23 @@ def main():
         overall_game_results_data,
         ["standings.json", "game_results.json"],
     )
-    with open(OVERALL_TEAM_FORM_PATH, "w", encoding="utf-8") as handle:
-        json.dump(overall_team_form, handle, indent=4)
+    atomic_dump_json(OVERALL_TEAM_FORM_PATH, overall_team_form, indent=4)
 
     latest_sim_results = build_latest_sim_results(game_results_data)
-    with open(LATEST_SIM_RESULTS_PATH, "w", encoding="utf-8") as handle:
-        json.dump(latest_sim_results, handle, indent=4)
+    atomic_dump_json(LATEST_SIM_RESULTS_PATH, latest_sim_results, indent=4)
 
     monthly_team_form = build_team_form(
         standings_data,
         latest_sim_results,
         ["standings.json", "monthly/latest_sim_results.json"],
     )
-    with open(MONTHLY_TEAM_FORM_PATH, "w", encoding="utf-8") as handle:
-        json.dump(monthly_team_form, handle, indent=4)
+    atomic_dump_json(MONTHLY_TEAM_FORM_PATH, monthly_team_form, indent=4)
 
     tier_race_snapshot = build_tier_race_snapshot(monthly_team_form)
-    with open(TIER_RACE_SNAPSHOT_PATH, "w", encoding="utf-8") as handle:
-        json.dump(tier_race_snapshot, handle, indent=4)
+    atomic_dump_json(TIER_RACE_SNAPSHOT_PATH, tier_race_snapshot, indent=4)
 
     monthly_storylines = build_monthly_storylines(monthly_team_form, latest_sim_results, tier_race_snapshot)
-    with open(MONTHLY_STORYLINES_PATH, "w", encoding="utf-8") as handle:
-        json.dump(monthly_storylines, handle, indent=4)
+    atomic_dump_json(MONTHLY_STORYLINES_PATH, monthly_storylines, indent=4)
 
     overall_team_count = sum(len(teams) for teams in overall_team_form.get("tiers", {}).values())
     monthly_team_count = sum(len(teams) for teams in monthly_team_form.get("tiers", {}).values())

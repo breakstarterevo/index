@@ -5,6 +5,8 @@ import subprocess
 from html import unescape
 from html.parser import HTMLParser
 
+from atomic_write import atomic_dump_json
+
 # 1. PATH SETUP
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BUILD_DIR = os.path.dirname(ROOT)
@@ -1778,38 +1780,33 @@ def main():
     all_player_stats.sort(key=lambda player: player["name"])
     all_player_gamelogs.sort(key=lambda player: player["name"])
 
-    with open(PLAYERS_OUT, "w", encoding="utf-8") as f:
-        json.dump(all_players, f, indent=4)
+    atomic_dump_json(PLAYERS_OUT, all_players, indent=4)
 
     player_stats_data = {
         "source": "players/*.htm",
         "players": all_player_stats,
     }
 
-    with open(PLAYER_STATS_OUT, "w", encoding="utf-8") as f:
-        json.dump(player_stats_data, f, indent=4)
+    atomic_dump_json(PLAYER_STATS_OUT, player_stats_data, indent=4)
 
     player_gamelogs_data = {
         "source": "players/*.htm",
         "players": all_player_gamelogs,
     }
 
-    with open(PLAYER_GAMELOGS_OUT, "w", encoding="utf-8") as f:
-        json.dump(player_gamelogs_data, f, indent=4)
+    atomic_dump_json(PLAYER_GAMELOGS_OUT, player_gamelogs_data, indent=4)
 
     team_stats_data = {
         "source": "rosters/*.htm",
         "teams": sorted(all_team_stats, key=lambda team: team["team"]),
     }
 
-    with open(TEAM_STATS_OUT, "w", encoding="utf-8") as f:
-        json.dump(team_stats_data, f, indent=4)
+    atomic_dump_json(TEAM_STATS_OUT, team_stats_data, indent=4)
 
     attach_star_players(all_teams, all_players)
     all_teams.sort(key=lambda team: team["name"])
 
-    with open(TEAMS_OUT, "w", encoding="utf-8") as f:
-        json.dump(all_teams, f, indent=4)
+    atomic_dump_json(TEAMS_OUT, all_teams, indent=4)
 
     with open(STANDINGS_PATH, "r", encoding="latin-1") as f:
         standings_html = f.read()
@@ -1819,8 +1816,7 @@ def main():
         "sections": parse_standings_sections(standings_html),
     }
 
-    with open(STANDINGS_OUT, "w", encoding="utf-8") as f:
-        json.dump(standings_data, f, indent=4)
+    atomic_dump_json(STANDINGS_OUT, standings_data, indent=4)
 
     with open(CAPREPORT_PATH, "r", encoding="latin-1") as f:
         capreport_html = f.read()
@@ -1830,8 +1826,7 @@ def main():
         "sections": parse_capreport_sections(capreport_html),
     }
 
-    with open(CAPREPORT_OUT, "w", encoding="utf-8") as f:
-        json.dump(capreport_data, f, indent=4)
+    atomic_dump_json(CAPREPORT_OUT, capreport_data, indent=4)
 
     with open(INJURIES_PATH, "r", encoding="latin-1") as f:
         injuries_html = f.read()
@@ -1841,8 +1836,7 @@ def main():
         "injuries": parse_injuries(injuries_html, team_lookup),
     }
 
-    with open(INJURIES_OUT, "w", encoding="utf-8") as f:
-        json.dump(injuries_data, f, indent=4)
+    atomic_dump_json(INJURIES_OUT, injuries_data, indent=4)
 
     with open(SCHEDULE_PATH, "r", encoding="latin-1") as f:
         schedule_html = f.read()
@@ -1852,24 +1846,21 @@ def main():
         "sections": parse_schedule_sections(schedule_html, team_lookup),
     }
 
-    with open(SCHEDULE_OUT, "w", encoding="utf-8") as f:
-        json.dump(schedule_data, f, indent=4)
+    atomic_dump_json(SCHEDULE_OUT, schedule_data, indent=4)
 
     game_results_data = {
         "source": os.path.basename(SCHEDULE_PATH),
         "results": build_game_results(schedule_data["sections"]),
     }
 
-    with open(GAME_RESULTS_OUT, "w", encoding="utf-8") as f:
-        json.dump(game_results_data, f, indent=4)
+    atomic_dump_json(GAME_RESULTS_OUT, game_results_data, indent=4)
 
     free_agents_data = {
         "source": os.path.basename(FREE_AGENTS_PATH),
         "players": parse_free_agents(free_agents_html, ratings_by_name),
     }
 
-    with open(FREE_AGENTS_OUT, "w", encoding="utf-8") as f:
-        json.dump(free_agents_data, f, indent=4)
+    atomic_dump_json(FREE_AGENTS_OUT, free_agents_data, indent=4)
 
     with open(LEADERS_PATH, "r", encoding="latin-1") as f:
         leaders_html = f.read()
@@ -1879,8 +1870,7 @@ def main():
         "sections": parse_leaders_sections(leaders_html, team_lookup),
     }
 
-    with open(LEADERS_OUT, "w", encoding="utf-8") as f:
-        json.dump(leaders_data, f, indent=4)
+    atomic_dump_json(LEADERS_OUT, leaders_data, indent=4)
 
     awards_section_count = 0
     awards_count = 0
@@ -1899,8 +1889,7 @@ def main():
             for category in section.get("categories", [])
         )
 
-        with open(AWARDS_OUT, "w", encoding="utf-8") as f:
-            json.dump(awards_data, f, indent=4)
+        atomic_dump_json(AWARDS_OUT, awards_data, indent=4)
     else:
         print(f"Warning: {AWARDS_PATH} not found. Skipping awards JSON.")
 
@@ -1911,8 +1900,7 @@ def main():
     else:
         season_awards_data = empty_season_awards_data()
 
-    with open(SEASON_AWARDS_OUT, "w", encoding="utf-8") as f:
-        json.dump(season_awards_data, f, indent=4)
+    atomic_dump_json(SEASON_AWARDS_OUT, season_awards_data, indent=4)
     if season_awards_data.get("missing"):
         print(f"Warning: {SEASON_AWARDS_PATH} not found. Wrote empty season awards JSON.")
     else:

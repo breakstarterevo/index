@@ -6,6 +6,8 @@ import sys
 import zipfile
 import xml.etree.ElementTree as ET
 
+from atomic_write import atomic_dump_json
+
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BUILD_DIR = os.path.dirname(ROOT)
@@ -522,10 +524,8 @@ def main():
     sheets = _xlsx_sheet_rows(XLSX_PATH)
     players_payload = _build_combined_current_intake_players(sheets)
 
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
-        json.dump(payload, handle, indent=2, ensure_ascii=False)
-    with open(OUTPUT_PLAYERS_PATH, "w", encoding="utf-8") as handle:
-        json.dump(players_payload, handle, indent=4, ensure_ascii=False)
+    atomic_dump_json(OUTPUT_PATH, payload, indent=2, ensure_ascii=False)
+    atomic_dump_json(OUTPUT_PLAYERS_PATH, players_payload, indent=4, ensure_ascii=False)
 
     print(f"Wrote {OUTPUT_PATH} ({payload.get('counts', {}).get('teams', 0)} teams)")
     print(f"Wrote {OUTPUT_PLAYERS_PATH} ({len(players_payload)} players)")

@@ -3,25 +3,146 @@
     "injuries": [
         {
             "pos": "PG",
-            "name": "Kelvin Ransey",
+            "name": "Micheal Ray Richardson",
+            "url": "",
+            "team": "roster7",
+            "teamName": "Bayern Munich",
+            "rosterUrl": "./rosters/roster7.htm",
+            "length": "18",
+            "injury": "Patellar Tendanitis",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PG",
+            "name": "Larry Drew",
+            "url": "",
+            "team": "roster27",
+            "teamName": "FL Fart",
+            "rosterUrl": "./rosters/roster27.htm",
+            "length": "17",
+            "injury": "Broken Foot",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "SF",
+            "name": "Eddie Johnson",
+            "url": "",
+            "team": "roster6",
+            "teamName": "Crystal Palace",
+            "rosterUrl": "./rosters/roster6.htm",
+            "length": "14",
+            "injury": "Broken Finger",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "SF",
+            "name": "Mike Newlin",
             "url": "",
             "team": "roster25",
             "teamName": "Valencia",
             "rosterUrl": "./rosters/roster25.htm",
-            "length": "128",
-            "injury": "Torn MCL",
+            "length": "13",
+            "injury": "Sprained Ankle",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "SG",
+            "name": "John Drew",
+            "url": "",
+            "team": "roster16",
+            "teamName": "Sheffield United",
+            "rosterUrl": "./rosters/roster16.htm",
+            "length": "12",
+            "injury": "Broken Cheekbone",
             "rowClass": "row1"
         },
         {
             "pos": "SG",
-            "name": "Butch Carter",
+            "name": "Brian Taylor",
             "url": "",
-            "team": "roster18",
-            "teamName": "Ajax",
-            "rosterUrl": "./rosters/roster18.htm",
-            "length": "80",
-            "injury": "Ruptured Achilles",
+            "team": "roster23",
+            "teamName": "Sporting CP",
+            "rosterUrl": "./rosters/roster23.htm",
+            "length": "12",
+            "injury": "Patellar Tendanitis",
             "rowClass": "row2"
+        },
+        {
+            "pos": "PF",
+            "name": "Bobby Jones",
+            "url": "",
+            "team": "roster16",
+            "teamName": "Sheffield United",
+            "rosterUrl": "./rosters/roster16.htm",
+            "length": "10",
+            "injury": "Sprained Knee",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "C",
+            "name": "Bill Cartwright",
+            "url": "",
+            "team": "roster16",
+            "teamName": "Sheffield United",
+            "rosterUrl": "./rosters/roster16.htm",
+            "length": "8",
+            "injury": "Pinched Nerve",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "SG",
+            "name": "Darrell Griffith",
+            "url": "",
+            "team": "roster6",
+            "teamName": "Crystal Palace",
+            "rosterUrl": "./rosters/roster6.htm",
+            "length": "7",
+            "injury": "Broken Cheekbone",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "C",
+            "name": "Jerome Whitehead",
+            "url": "",
+            "team": "roster5",
+            "teamName": "Manchester United",
+            "rosterUrl": "./rosters/roster5.htm",
+            "length": "5",
+            "injury": "Sprained Knee",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "PG",
+            "name": "Johnny Davis",
+            "url": "",
+            "team": "roster22",
+            "teamName": "Tottenham Hotspur",
+            "rosterUrl": "./rosters/roster22.htm",
+            "length": "4",
+            "injury": "Strained Back",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PG",
+            "name": "Kenny Higgs",
+            "url": "",
+            "team": "roster26",
+            "teamName": "Inter Milan",
+            "rosterUrl": "./rosters/roster26.htm",
+            "length": "1",
+            "injury": "Sprained Knee",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "PG",
+            "name": "Greg Anthony",
+            "url": "",
+            "team": "roster10",
+            "teamName": "Brighton",
+            "rosterUrl": "./rosters/roster10.htm",
+            "length": "1",
+            "injury": "Fractured Nose",
+            "rowClass": "row1"
         }
     ]
 }

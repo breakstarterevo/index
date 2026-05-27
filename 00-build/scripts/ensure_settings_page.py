@@ -5,6 +5,8 @@ Keeps the browser-only league settings page present after generated HTML refresh
 
 import os
 
+from atomic_write import atomic_write_text
+
 ROOT_FOLDER = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SETTINGS_PATH = os.path.join(ROOT_FOLDER, "00-assets", "html", "settings.htm")
 
@@ -31,8 +33,7 @@ def main():
         return
 
     os.makedirs(os.path.dirname(SETTINGS_PATH), exist_ok=True)
-    with open(SETTINGS_PATH, "w", encoding="utf-8", newline="\n") as handle:
-        handle.write(SETTINGS_HTML)
+    atomic_write_text(SETTINGS_PATH, SETTINGS_HTML, newline="\n")
     print(f"CREATED: {SETTINGS_PATH}")
 
 

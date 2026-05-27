@@ -2,6 +2,8 @@ import json
 import os
 import re
 
+from atomic_write import atomic_dump_json
+
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
 BUILD_DIR = os.path.dirname(ROOT)
@@ -671,8 +673,7 @@ def main():
         },
     }
 
-    with open(OUTPUT_PATH, "w", encoding="utf-8") as handle:
-        json.dump(output, handle, indent=4)
+    atomic_dump_json(OUTPUT_PATH, output, indent=4)
 
     print(f"Final count: 1 monthly editorial package saved to {OUTPUT_PATH}")
 
