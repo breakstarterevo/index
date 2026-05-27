@@ -72,13 +72,11 @@
   <script>
     const URLS = {
       intake: "../../00-build/database/youth_intake.json",
-      intakePlayers: "../../00-build/database/youth_intake_players.json",
       players: "../../00-build/database/players.json"
     };
 
     const state = {
       teams: [],
-      intakeLookup: new Map(),
       playerLinks: new Map(),
       current: null,
       mode: "potential",
@@ -122,26 +120,11 @@
 
     function buildTableRows(players, includeTeamColumn) {
       if (!players.length) return { columns: ["Name"], rows: [] };
-      const keys = [];
-      const hidden = new Set(["city", "state", "college", "dob", "picname", "uniform", "number"]);
-      players.forEach((p) => {
-        Object.keys(p).forEach((k) => {
-          const keyNorm = String(k || "").toLowerCase();
-          if (k !== "name" && !hidden.has(keyNorm) && !keys.includes(k)) keys.push(k);
-        });
-      });
-      const extraPotential = new Set(["3pusage", "fouling", "injuryavoidance", "position", "age"]);
-      const potentialKeys = keys.filter((k) => {
-        const norm = String(k || "").toLowerCase();
-        return /pot/i.test(norm) || extraPotential.has(norm);
-      });
-      const regularKeys = keys.filter((k) => {
-        const norm = String(k || "").toLowerCase();
-        return !/pot/i.test(norm) && !extraPotential.has(norm);
-      });
-      const visibleKeys = state.mode === "potential" ? potentialKeys : regularKeys;
-      const fallbackKeys = visibleKeys.length ? visibleKeys : keys;
-      const columns = includeTeamColumn ? ["name", "team", ...fallbackKeys] : ["name", ...fallbackKeys];
+      const ratings = ["overall", "potential"];
+      const common = ["Position", "Age", ...ratings];
+      const regular = ["InsideScoring", "JumpShot", "FtShot", "3pShot", "3pUsage", "Handling", "Passing", "PostDefense", "PerimeterDefense", "Stealing", "Blocking", "OReb", "DReb", "Fouling", "Strength", "Quickness", "Jumping", "Stamina", "InjuryAvoidance"];
+      const potential = ["PotInside", "PotJumpShot", "PotFtShot", "Pot3pShot", "3pUsage", "PotHandling", "PotPassing", "PotPostDefense", "PotPerimeterDefense", "PotStealing", "PotBlocking", "PotOReb", "PotDReb", "Fouling", "Strength", "Quickness", "Jumping", "Stamina", "InjuryAvoidance"];
+      const columns = ["name", ...(includeTeamColumn ? ["team", "teamTier"] : []), ...common, ...(state.mode === "potential" ? potential : regular)];
       const rows = players.map((p) => columns.map((c) => c === "name" ? p.name : (p[c] ?? "")));
       return { columns, rows };
     }
@@ -167,6 +150,9 @@
       if (index === 0) return "Name";
       if (String(key || "").toLowerCase() === "team") return "Team";
       const map = {
+        teamTier: "Tier",
+        overall: "OVR",
+        potential: "POT",
         Height: "HT",
         Weight: "WT",
         Position: "POS",
@@ -211,6 +197,7 @@
       if (index === 0) return "col-name";
       const lower = String(key || "").toLowerCase();
       if (lower === "team") return "col-team";
+      if (lower === "teamtier") return "col-stat";
       if (lower === "position") return "col-pos";
       if (lower === "age") return "col-age";
       if (lower === "height") return "col-height";
@@ -230,15 +217,13 @@
           .filter((t) => t.team !== "__ALL__" && normalizeName(t.team) !== "team")
           .flatMap((t) => (Array.isArray(t.intakePlayers) ? t.intakePlayers : []).map((entry) => {
             const name = String((entry && entry.name) || "").trim();
-            const fromDb = state.intakeLookup.get(normalizeName(name));
-            return fromDb ? { ...fromDb, name, team: t.team } : { name, team: t.team };
+            return { ...entry, name, team: t.team, teamTier: t.tier || "" };
           }));
       } else {
         const intake = Array.isArray(team.intakePlayers) ? team.intakePlayers : [];
         detailed = intake.map((entry) => {
           const name = String((entry && entry.name) || "").trim();
-          const fromDb = state.intakeLookup.get(normalizeName(name));
-          return fromDb ? { ...fromDb, name } : { name };
+          return { ...entry, name };
         });
       }
       const built = buildTableRows(detailed, includeTeamColumn);
@@ -312,9 +297,8 @@
 
     async function init() {
       try {
-        const [intakeData, intakePlayers, players] = await Promise.all([
+        const [intakeData, players] = await Promise.all([
           loadJson(URLS.intake),
-          loadJson(URLS.intakePlayers),
           loadJson(URLS.players)
         ]);
         state.teams = Array.isArray(intakeData.teams)
@@ -324,10 +308,6 @@
               .sort((a, b) => a.team.localeCompare(b.team))
           : [];
         state.teams.unshift({ team: "__ALL__", intakePlayers: [] });
-        (Array.isArray(intakePlayers) ? intakePlayers : []).forEach((p) => {
-          if (!p || !p.name) return;
-          state.intakeLookup.set(normalizeName(p.name), p);
-        });
         (Array.isArray(players) ? players : []).forEach((p) => {
           const href = buildUnifiedPlayerHref(p && p.url, p && p.name);
           if (!href) return;

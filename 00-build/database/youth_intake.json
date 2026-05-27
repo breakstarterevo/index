@@ -69,7 +69,9 @@
           "Picname": 0,
           "InjuryAvoidance": 74,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 99,
+          "potential": 114
         },
         {
           "name": "Naz Reid",
@@ -117,7 +119,9 @@
           "Picname": 0,
           "InjuryAvoidance": 61,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 80,
+          "potential": 97
         }
       ]
     },
@@ -174,7 +178,9 @@
           "Picname": 0,
           "InjuryAvoidance": 74,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 99,
+          "potential": 102
         },
         {
           "name": "Alex Len",
@@ -222,7 +228,9 @@
           "Picname": 0,
           "InjuryAvoidance": 84,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 88,
+          "potential": 93
         }
       ]
     },
@@ -279,7 +287,9 @@
           "Picname": 0,
           "InjuryAvoidance": 61,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 77,
+          "potential": 86
         },
         {
           "name": "Wayne Ellington",
@@ -327,7 +337,9 @@
           "Picname": 0,
           "InjuryAvoidance": 76,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 82,
+          "potential": 84
         },
         {
           "name": "Scott Skiles",
@@ -375,7 +387,9 @@
           "Picname": 0,
           "InjuryAvoidance": 23,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 85,
+          "potential": 118
         }
       ]
     },
@@ -432,7 +446,9 @@
           "Picname": 0,
           "InjuryAvoidance": 56,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 117,
+          "potential": 125
         },
         {
           "name": "Oliver Miller",
@@ -480,7 +496,9 @@
           "Picname": 0,
           "InjuryAvoidance": 64,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 94,
+          "potential": 94
         },
         {
           "name": "Michael Ansley",
@@ -528,7 +546,9 @@
           "Picname": 0,
           "InjuryAvoidance": 59,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 72,
+          "potential": 72
         },
         {
           "name": "Matt Barnes",
@@ -579,7 +599,9 @@
           "Tier": "B",
           "Column1": "",
           "tierRaw": "B",
-          "tier": "B"
+          "tier": "B",
+          "overall": 87,
+          "potential": 105
         }
       ]
     },
@@ -636,7 +658,9 @@
           "Picname": 0,
           "InjuryAvoidance": 52,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 102,
+          "potential": 118
         },
         {
           "name": "Damian Jones",
@@ -684,7 +708,9 @@
           "Picname": 0,
           "InjuryAvoidance": 32,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 79,
+          "potential": 89
         }
       ]
     },
@@ -741,7 +767,9 @@
           "Picname": 0,
           "InjuryAvoidance": 77,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 91,
+          "potential": 108
         },
         {
           "name": "Dan McClintock",
@@ -789,7 +817,9 @@
           "Picname": 0,
           "InjuryAvoidance": 70,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 84,
+          "potential": 93
         },
         {
           "name": "Jalen Duren",
@@ -837,7 +867,9 @@
           "Picname": 0,
           "InjuryAvoidance": 55,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 111,
+          "potential": 122
         },
         {
           "name": "Myles Turner",
@@ -885,7 +917,9 @@
           "Picname": 0,
           "InjuryAvoidance": 65,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 95,
+          "potential": 101
         }
       ]
     },
@@ -942,7 +976,9 @@
           "Picname": 0,
           "InjuryAvoidance": 68,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 97,
+          "potential": 106
         },
         {
           "name": "Tre Mann",
@@ -990,7 +1026,62 @@
           "Picname": 0,
           "InjuryAvoidance": 85,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 83,
+          "potential": 94
+        },
+        {
+          "name": "Kyle Lowry",
+          "FirstName": "Kyle",
+          "LastName": "Lowry",
+          "Height": 72,
+          "Weight": 175,
+          "Position": "PG",
+          "DOB": 31496,
+          "Age": 19,
+          "Uniform": 7,
+          "City": "Philadelphia",
+          "State": "PA",
+          "College": "Villanova",
+          "InsideScoring": 21,
+          "PotInside": 56,
+          "JumpShot": 28,
+          "PotJumpShot": 54,
+          "FtShot": 76,
+          "PotFtShot": 76,
+          "3pShot": 61,
+          "Pot3pShot": 76,
+          "3pUsage": 24,
+          "Handling": 41,
+          "PotHandling": 88,
+          "Passing": 43,
+          "PotPassing": 71,
+          "PostDefense": 19,
+          "PotPostDefense": 26,
+          "PerimeterDefense": 49,
+          "PotPerimeterDefense": 81,
+          "Stealing": 44,
+          "PotStealing": 74,
+          "Blocking": 16,
+          "PotBlocking": 20,
+          "OReb": 10,
+          "PotOReb": 27,
+          "DReb": 21,
+          "PotDReb": 40,
+          "Fouling": 38,
+          "Strength": 37,
+          "Quickness": 96,
+          "Jumping": 90,
+          "Stamina": 78,
+          "Picname": 0,
+          "InjuryAvoidance": 80,
+          "POT": 121,
+          "Tier": "B",
+          "Column1": "",
+          "tierRaw": "B",
+          "tier": "B",
+          "overall": 90,
+          "potential": 134
         }
       ]
     },
@@ -1050,7 +1141,9 @@
           "Tier": "B",
           "Column1": "",
           "tierRaw": "B",
-          "tier": "B"
+          "tier": "B",
+          "overall": 93,
+          "potential": 106
         },
         {
           "name": "Eric White",
@@ -1101,7 +1194,9 @@
           "Tier": "C",
           "Column1": "",
           "tierRaw": "C",
-          "tier": "C"
+          "tier": "C",
+          "overall": 79,
+          "potential": 79
         },
         {
           "name": "Chris Bosh",
@@ -1152,7 +1247,9 @@
           "Tier": "A",
           "Column1": "",
           "tierRaw": "A",
-          "tier": "A"
+          "tier": "A",
+          "overall": 98,
+          "potential": 128
         }
       ]
     },
@@ -1209,7 +1306,9 @@
           "Picname": 0,
           "InjuryAvoidance": 93,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 99,
+          "potential": 101
         },
         {
           "name": "Jeff Grayer",
@@ -1257,7 +1356,9 @@
           "Picname": 0,
           "InjuryAvoidance": 27,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 83,
+          "potential": 83
         }
       ]
     },
@@ -1314,7 +1415,9 @@
           "Picname": 0,
           "InjuryAvoidance": 61,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 95,
+          "potential": 111
         },
         {
           "name": "Kenny Battle",
@@ -1362,7 +1465,9 @@
           "Picname": 0,
           "InjuryAvoidance": 93,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 83,
+          "potential": 87
         },
         {
           "name": "Chet Holmgren",
@@ -1410,7 +1515,9 @@
           "Picname": 0,
           "InjuryAvoidance": 31,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 108,
+          "potential": 110
         }
       ]
     },
@@ -1467,7 +1574,9 @@
           "Picname": 0,
           "InjuryAvoidance": 35,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 96,
+          "potential": 119
         },
         {
           "name": "Fred Roberts",
@@ -1515,7 +1624,9 @@
           "Picname": 0,
           "InjuryAvoidance": 88,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 85,
+          "potential": 93
         }
       ]
     },
@@ -1572,7 +1683,9 @@
           "Picname": 0,
           "InjuryAvoidance": 18,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 88,
+          "potential": 120
         },
         {
           "name": "Fred Roberts",
@@ -1620,7 +1733,9 @@
           "Picname": 0,
           "InjuryAvoidance": 88,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 85,
+          "potential": 93
         },
         {
           "name": "Davis Bertans",
@@ -1668,7 +1783,9 @@
           "Picname": 0,
           "InjuryAvoidance": 61,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 80,
+          "potential": 85
         },
         {
           "name": "Vincent Askew",
@@ -1716,7 +1833,9 @@
           "Picname": 0,
           "InjuryAvoidance": 36,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 73,
+          "potential": 86
         }
       ]
     },
@@ -1773,7 +1892,9 @@
           "Picname": 0,
           "InjuryAvoidance": 74,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 94,
+          "potential": 119
         },
         {
           "name": "Cody Martin",
@@ -1821,7 +1942,9 @@
           "Picname": 0,
           "InjuryAvoidance": 99,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 91,
+          "potential": 98
         },
         {
           "name": "Derrick Favors",
@@ -1869,7 +1992,9 @@
           "Picname": 0,
           "InjuryAvoidance": 5,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 79,
+          "potential": 91
         },
         {
           "name": "Ozell Jones",
@@ -1917,7 +2042,9 @@
           "Picname": 0,
           "InjuryAvoidance": 81,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 86,
+          "potential": 86
         }
       ]
     },
@@ -1974,7 +2101,9 @@
           "Picname": 0,
           "InjuryAvoidance": 42,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 97,
+          "potential": 105
         },
         {
           "name": "Kyle O'Quinn",
@@ -2022,7 +2151,9 @@
           "Picname": 0,
           "InjuryAvoidance": 58,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 96,
+          "potential": 105
         },
         {
           "name": "Semih Erden",
@@ -2070,7 +2201,9 @@
           "Picname": 0,
           "InjuryAvoidance": 20,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 86,
+          "potential": 86
         }
       ]
     },
@@ -2127,7 +2260,9 @@
           "Picname": 0,
           "InjuryAvoidance": 48,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 92,
+          "potential": 102
         },
         {
           "name": "Naji Marshall",
@@ -2175,7 +2310,9 @@
           "Picname": 0,
           "InjuryAvoidance": 92,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 85,
+          "potential": 85
         },
         {
           "name": "Eddy Curry",
@@ -2223,7 +2360,9 @@
           "Picname": 0,
           "InjuryAvoidance": 50,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 86,
+          "potential": 104
         },
         {
           "name": "John Stroeder",
@@ -2271,7 +2410,9 @@
           "Picname": 0,
           "InjuryAvoidance": 97,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 73,
+          "potential": 79
         }
       ]
     },
@@ -2328,7 +2469,9 @@
           "Picname": 0,
           "InjuryAvoidance": 69,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 87,
+          "potential": 95
         },
         {
           "name": "Dirk Minniefield",
@@ -2376,7 +2519,9 @@
           "Picname": 0,
           "InjuryAvoidance": 89,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 95,
+          "potential": 97
         }
       ]
     },
@@ -2433,7 +2578,9 @@
           "Picname": 0,
           "InjuryAvoidance": 4,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 105,
+          "potential": 122
         },
         {
           "name": "John Battle",
@@ -2481,7 +2628,9 @@
           "Picname": 0,
           "InjuryAvoidance": 66,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 77,
+          "potential": 92
         },
         {
           "name": "Harold Keeling",
@@ -2529,7 +2678,9 @@
           "Picname": 0,
           "InjuryAvoidance": 22,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 78,
+          "potential": 81
         }
       ]
     },
@@ -2586,7 +2737,9 @@
           "Picname": 0,
           "InjuryAvoidance": 57,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 90,
+          "potential": 104
         },
         {
           "name": "Timofey Mozgov",
@@ -2634,7 +2787,9 @@
           "Picname": 0,
           "InjuryAvoidance": 56,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 86,
+          "potential": 87
         },
         {
           "name": "Andre Drummond",
@@ -2682,7 +2837,9 @@
           "Picname": 0,
           "InjuryAvoidance": 60,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 100,
+          "potential": 123
         }
       ]
     },
@@ -2739,7 +2896,9 @@
           "Picname": 0,
           "InjuryAvoidance": 18,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 89,
+          "potential": 106
         },
         {
           "name": "Jaylin Williams",
@@ -2787,7 +2946,9 @@
           "Picname": 0,
           "InjuryAvoidance": 20,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 75,
+          "potential": 82
         },
         {
           "name": "Greg Grant",
@@ -2835,7 +2996,9 @@
           "Picname": 0,
           "InjuryAvoidance": 29,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 72,
+          "potential": 86
         },
         {
           "name": "Steve Nash",
@@ -2883,7 +3046,9 @@
           "Picname": 0,
           "InjuryAvoidance": 52,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 112,
+          "potential": 139
         }
       ]
     },
@@ -2940,7 +3105,9 @@
           "Picname": 0,
           "InjuryAvoidance": 26,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 97,
+          "potential": 106
         },
         {
           "name": "Kobe Brown",
@@ -2988,7 +3155,9 @@
           "Picname": 0,
           "InjuryAvoidance": 36,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 76,
+          "potential": 89
         }
       ]
     },
@@ -3045,7 +3214,9 @@
           "Picname": 0,
           "InjuryAvoidance": 53,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 74,
+          "potential": 104
         },
         {
           "name": "Richard Anderson",
@@ -3096,7 +3267,9 @@
           "Tier": "C",
           "Column1": "",
           "tierRaw": "C",
-          "tier": "C"
+          "tier": "C",
+          "overall": 77,
+          "potential": 79
         },
         {
           "name": "Coby White",
@@ -3144,7 +3317,9 @@
           "Picname": 0,
           "InjuryAvoidance": 52,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 89,
+          "potential": 97
         }
       ]
     },
@@ -3201,7 +3376,9 @@
           "Picname": 0,
           "InjuryAvoidance": 37,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 95,
+          "potential": 107
         },
         {
           "name": "Killian Hayes",
@@ -3249,7 +3426,9 @@
           "Picname": 0,
           "InjuryAvoidance": 49,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 85,
+          "potential": 110
         },
         {
           "name": "Larry Robinson",
@@ -3297,7 +3476,9 @@
           "Picname": 0,
           "InjuryAvoidance": 86,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 71,
+          "potential": 82
         },
         {
           "name": "Jalen Jones",
@@ -3345,7 +3526,9 @@
           "Picname": 0,
           "InjuryAvoidance": 88,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 81,
+          "potential": 84
         }
       ]
     },
@@ -3402,7 +3585,9 @@
           "Picname": 0,
           "InjuryAvoidance": 75,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 88,
+          "potential": 101
         },
         {
           "name": "DeMarre Carroll",
@@ -3450,7 +3635,9 @@
           "Picname": 0,
           "InjuryAvoidance": 38,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 85,
+          "potential": 90
         },
         {
           "name": "Vincent Askew",
@@ -3498,7 +3685,9 @@
           "Picname": 0,
           "InjuryAvoidance": 36,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 73,
+          "potential": 98
         },
         {
           "name": "Doug Christie",
@@ -3546,7 +3735,9 @@
           "Picname": 0,
           "InjuryAvoidance": 79,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 110,
+          "potential": 134
         }
       ]
     },
@@ -3603,7 +3794,9 @@
           "Picname": 0,
           "InjuryAvoidance": 6,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 96,
+          "potential": 117
         },
         {
           "name": "Maxi Kleber",
@@ -3651,7 +3844,9 @@
           "Picname": 0,
           "InjuryAvoidance": 97,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 90,
+          "potential": 91
         },
         {
           "name": "A.C. Green",
@@ -3699,7 +3894,9 @@
           "Picname": 0,
           "InjuryAvoidance": 92,
           "tierRaw": "",
-          "tier": ""
+          "tier": "",
+          "overall": 92,
+          "potential": 111
         },
         {
           "name": "Chris Johnson",
@@ -3750,7 +3947,9 @@
           "Tier": "D",
           "Column1": "",
           "tierRaw": "D",
-          "tier": "D"
+          "tier": "D",
+          "overall": 80,
+          "potential": 84
         }
       ]
     }

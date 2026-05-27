@@ -810,7 +810,14 @@
   function renderYouthTeam(data, teamName, limit = Infinity) {
     const youthTeam = (data.youth.teams || []).find((row) => row.team === teamName);
     const players = (youthTeam?.intakePlayers || []).slice(0, limit);
-    return table(["Player", "Pos", "Age", "College", "INS", "JPS", "HND", "PSD"], players.map((p) => `<tr><td>${youthPlayerLink(p)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td class="num">${esc(p.InsideScoring)}</td><td class="num">${esc(p.JumpShot)}</td><td class="num">${esc(p.Handling)}</td><td class="num">${esc(p.PostDefense)}</td></tr>`), "No archived youth intake");
+    return table(["Player", "Pos", "Age", "College", "OVR", "POT"], players.map((p) => {
+      const name = String(p.name || "").toLowerCase();
+      const height = heightTextFromInches(p.Height);
+      const ratedPlayer = (data.players || []).find((player) => String(player.name || "").toLowerCase() === name && (!height || String(player.ht || "") === height))
+        || (data.players || []).find((player) => String(player.name || "").toLowerCase() === name)
+        || {};
+      return `<tr><td>${youthPlayerLink(p)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td></tr>`;
+    }), "No archived youth intake");
   }
 
   function movementMarker(tier, position, teamCount) {

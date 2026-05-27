@@ -16,6 +16,7 @@ PROJECT_ROOT = os.path.dirname(BUILD_DIR)
 XLSX_PATH = os.path.join(PROJECT_ROOT, "00-assets", "spreadsheet", "Youth Intake.xlsx")
 OUTPUT_PATH = os.path.join(BUILD_DIR, "database", "youth_intake.json")
 OUTPUT_PLAYERS_PATH = os.path.join(BUILD_DIR, "database", "youth_intake_players.json")
+PLAYERS_PATH = os.path.join(BUILD_DIR, "database", "players.json")
 
 TEAM_ALIASES = {
     "arsenal": "Sheffield United",
@@ -87,6 +88,64 @@ def _parse_overall(value):
         return int(number) if number.is_integer() else number
     except ValueError:
         return text
+
+
+def _height_text_from_inches(value):
+    try:
+        inches = int(float(str(value or "").strip()))
+    except ValueError:
+        return ""
+    return f"{inches // 12}-{inches % 12}" if inches > 0 else ""
+
+
+def _load_player_ratings(path: str):
+    try:
+        with open(path, "r", encoding="utf-8") as source:
+            players = json.load(source)
+    except (FileNotFoundError, json.JSONDecodeError):
+        return {}
+
+    lookup = {}
+    for player in players if isinstance(players, list) else []:
+        key = _normalize_key(player.get("name", ""))
+        if key:
+            lookup.setdefault(key, []).append(player)
+    return lookup
+
+
+def _rated_player_for_intake(player, team_name, rating_lookup):
+    candidates = rating_lookup.get(_normalize_key(player.get("name", "")), [])
+    if not candidates:
+        return {}
+
+    height = _height_text_from_inches(player.get("Height", ""))
+    position = str(player.get("Position", "") or "").strip().lower()
+    matching_build = [
+        candidate
+        for candidate in candidates
+        if (not height or str(candidate.get("ht", "")) == height)
+        and (not position or str(candidate.get("pos", "")).strip().lower() == position)
+    ]
+    candidates = matching_build or candidates
+    team_key = _normalize_key(team_name)
+    age = str(player.get("Age", "") or "").strip()
+    candidates.sort(
+        key=lambda candidate: (
+            _normalize_key(candidate.get("teamLabel", candidate.get("team", ""))) == team_key,
+            age and str(candidate.get("age", "") or "").strip() == age,
+            _normalize_key(candidate.get("teamLabel", candidate.get("team", ""))) == "draft",
+        ),
+        reverse=True,
+    )
+    return candidates[0]
+
+
+def _enrich_intake_player(player, team_name, rating_lookup):
+    enriched = dict(player)
+    rated_player = _rated_player_for_intake(enriched, team_name, rating_lookup)
+    enriched["overall"] = _parse_overall(rated_player.get("overall", ""))
+    enriched["potential"] = _parse_overall(rated_player.get("potential", ""))
+    return enriched
 
 
 def _xlsx_sheet_rows(path: str):
@@ -443,7 +502,7 @@ def _build_intake_map(rows, known_team_names=None):
     return intake_by_team
 
 
-def build_youth_intake_payload(xlsx_path: str):
+def build_youth_intake_payload(xlsx_path: str, rating_lookup=None):
     sheets = _xlsx_sheet_rows(xlsx_path)
     intake_sheet_name, intake_rows = _find_sheet(sheets, "INTAKE list")
     focus_sheet_name, focus_rows = _find_sheet(sheets, "Position focus")
@@ -462,6 +521,7 @@ def build_youth_intake_payload(xlsx_path: str):
             all_team_names.append(team_name)
 
     teams = []
+    rating_lookup = rating_lookup or {}
     for team_key in sorted(all_team_names):
         focus_info = focus_map.get(team_key, {})
         team_name = focus_info.get("team") or _first_non_empty([name for name in intake_map.keys() if _normalize_key(name) == team_key]) or team_key
@@ -476,13 +536,13 @@ def build_youth_intake_payload(xlsx_path: str):
         for player_name in intake_names:
             db_data = player_lookup.get(_normalize_key(player_name), {})
             if db_data:
-                intake_players.append(db_data)
+                intake_players.append(_enrich_intake_player(db_data, team_name, rating_lookup))
             else:
-                intake_players.append({
+                intake_players.append(_enrich_intake_player({
                     "name": player_name,
                     "tierRaw": "",
                     "tier": "",
-                })
+                }, team_name, rating_lookup))
 
         teams.append({
             "team": team_name,
@@ -520,7 +580,8 @@ def main():
         print(f"Error: spreadsheet not found at {XLSX_PATH}")
         return 1
 
-    payload = build_youth_intake_payload(XLSX_PATH)
+    ratings = _load_player_ratings(PLAYERS_PATH)
+    payload = build_youth_intake_payload(XLSX_PATH, ratings)
     sheets = _xlsx_sheet_rows(XLSX_PATH)
     players_payload = _build_combined_current_intake_players(sheets)
 
