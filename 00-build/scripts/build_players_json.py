@@ -66,6 +66,20 @@ def normalize_name(name):
     return clean(name).casefold()
 
 
+def player_id_from_file(value):
+    match = re.search(r"player(\d+)\.html?$", str(value or ""), re.IGNORECASE)
+    return match.group(1) if match else ""
+
+
+def find_rating(ratings, name, player_file=""):
+    player_id = player_id_from_file(player_file)
+    if player_id:
+        rating = ratings["by_id"].get(player_id)
+        if rating:
+            return rating
+    return ratings["by_name"].get(normalize_name(name), {})
+
+
 def strip_tags(value):
     return clean(re.sub(r"<[^>]+>", " ", value))
 
@@ -275,7 +289,7 @@ def parse_team_season_info(html, team):
 def load_mdb_ratings():
     if not os.path.exists(MDB_PATH):
         print(f"Warning: {MDB_PATH} not found. Skipping OVR/POT import.")
-        return {}
+        return {"by_id": {}, "by_name": {}}
 
     powershell_script = rf"""
 [Console]::OutputEncoding = [System.Text.UTF8Encoding]::new($false)
@@ -285,13 +299,14 @@ $connStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=$path;Persist Security
 $conn = New-Object System.Data.OleDb.OleDbConnection($connStr)
 $conn.Open()
 $cmd = $conn.CreateCommand()
-$cmd.CommandText = "SELECT Name, OverallRating, OverallPotential FROM Player"
+$cmd.CommandText = "SELECT ID, Name, OverallRating, OverallPotential FROM Player"
 $adapter = New-Object System.Data.OleDb.OleDbDataAdapter($cmd)
 $table = New-Object System.Data.DataTable
 [void]$adapter.Fill($table)
 $conn.Close()
 $rows = foreach ($row in $table.Rows) {{
     [PSCustomObject]@{{
+        id = [string]$row.ID
         name = [string]$row.Name
         overall = if ($null -eq $row.OverallRating -or [string]::IsNullOrWhiteSpace([string]$row.OverallRating)) {{ "" }} else {{ [string]$row.OverallRating }}
         potential = if ($null -eq $row.OverallPotential -or [string]::IsNullOrWhiteSpace([string]$row.OverallPotential)) {{ "" }} else {{ [string]$row.OverallPotential }}
@@ -310,33 +325,48 @@ $rows | ConvertTo-Json -Compress
         )
     except Exception as exc:
         print(f"Warning: failed to read ratings from MDB ({exc}).")
-        return {}
+        return {"by_id": {}, "by_name": {}}
 
     raw = result.stdout.strip()
     if not raw:
-        return {}
+        return {"by_id": {}, "by_name": {}}
 
     try:
         rows = json.loads(raw)
     except json.JSONDecodeError as exc:
         print(f"Warning: could not parse MDB ratings JSON ({exc}).")
-        return {}
+        return {"by_id": {}, "by_name": {}}
 
     if isinstance(rows, dict):
         rows = [rows]
 
+    ratings_by_id = {}
     ratings_by_name = {}
+    duplicate_names = set()
     for row in rows:
         name = normalize_name(row.get("name", ""))
-        if not name:
-            continue
-        ratings_by_name[name] = {
+        rating = {
             "overall": row.get("overall", "") or "",
             "potential": row.get("potential", "") or "",
         }
+        player_id = str(row.get("id", "") or "").strip()
+        if player_id:
+            ratings_by_id[player_id] = rating
+        if not name:
+            continue
+        if name in ratings_by_name:
+            duplicate_names.add(name)
+        else:
+            ratings_by_name[name] = rating
 
-    print(f"Loaded OVR/POT ratings for {len(ratings_by_name)} players from MDB.")
-    return ratings_by_name
+    for name in duplicate_names:
+        ratings_by_name.pop(name, None)
+
+    print(
+        f"Loaded OVR/POT ratings for {len(ratings_by_id)} MDB player IDs "
+        f"({len(duplicate_names)} duplicate names require ID matching)."
+    )
+    return {"by_id": ratings_by_id, "by_name": ratings_by_name}
 
 def extract_team_metadata(html, filename):
     team_id = os.path.splitext(filename)[0]
@@ -471,7 +501,7 @@ def attach_star_players(teams, players):
         team["starPlayer"] = star_by_team.get(team["id"])
 
 
-def parse_player_page(html, filename, team_lookup, ratings_by_name):
+def parse_player_page(html, filename, team_lookup, ratings):
     name_matches = re.findall(r"<td class=teamheader>([^<]+?)&nbsp;", html, re.IGNORECASE)
     name = clean(name_matches[-1]) if name_matches else ""
     if not name:
@@ -541,7 +571,7 @@ def parse_player_page(html, filename, team_lookup, ratings_by_name):
     for key, value in zip(ATTR_KEYS, attr_values):
         player[key] = value
 
-    rating_data = ratings_by_name.get(normalize_name(name), {})
+    rating_data = find_rating(ratings, name, filename)
     player["overall"] = rating_data.get("overall", "")
     player["potential"] = rating_data.get("potential", "")
     return player
@@ -1123,7 +1153,7 @@ def attach_contracts(players, contract_entries, contract_years):
     return attached
 
 
-def parse_free_agents(html, ratings_by_name):
+def parse_free_agents(html, ratings):
     normalized_html = re.sub(
         r"<table border=1 cellpadding=0 cellspacing=0><td bgcolor=([#A-Za-z0-9]+) width=10 height=10></td></tr></table>",
         lambda match: f"__COLOR__{match.group(1)}__",
@@ -1151,9 +1181,9 @@ def parse_free_agents(html, ratings_by_name):
             continue
 
         name = strip_tags(player_link.group(3))
-        ratings = ratings_by_name.get(normalize_name(name), {})
         player_url = normalize_schedule_url(player_link.group(2))
         player_file = player_url.split("/")[-1]
+        rating_data = find_rating(ratings, name, player_file)
         player_number = parse_numeric_value(cells[0])
         cur_color_match = re.search(r"__COLOR__([#A-Za-z0-9]+)__", cells[6], re.IGNORECASE)
         fut_color_match = re.search(r"__COLOR__([#A-Za-z0-9]+)__", cells[7], re.IGNORECASE)
@@ -1171,8 +1201,8 @@ def parse_free_agents(html, ratings_by_name):
             "wt": parse_numeric_value(cells[5]),
             "currentRatingColor": cur_color,
             "futureRatingColor": fut_color,
-            "currentRating": ratings.get("overall", "") or "",
-            "futureRating": ratings.get("potential", "") or "",
+            "currentRating": rating_data.get("overall", "") or "",
+            "futureRating": rating_data.get("potential", "") or "",
             "Ins": parse_numeric_value(cells[8]),
             "Jps": parse_numeric_value(cells[9]),
             "Fts": parse_numeric_value(cells[10]),
@@ -1719,7 +1749,7 @@ def main():
         print(f"Error: {LEADERS_PATH} not found.")
         return
 
-    ratings_by_name = load_mdb_ratings()
+    ratings = load_mdb_ratings()
     all_teams = []
     all_team_stats = []
     potential_grade_entries = []
@@ -1756,7 +1786,7 @@ def main():
         with open(path, "r", encoding="latin-1") as f:
             html = f.read()
 
-        player = parse_player_page(html, file, team_lookup, ratings_by_name)
+        player = parse_player_page(html, file, team_lookup, ratings)
         if player:
             all_players.append(player)
             all_player_stats.append(parse_player_stats_page(html, file, player))
@@ -1857,7 +1887,7 @@ def main():
 
     free_agents_data = {
         "source": os.path.basename(FREE_AGENTS_PATH),
-        "players": parse_free_agents(free_agents_html, ratings_by_name),
+        "players": parse_free_agents(free_agents_html, ratings),
     }
 
     atomic_dump_json(FREE_AGENTS_OUT, free_agents_data, indent=4)
