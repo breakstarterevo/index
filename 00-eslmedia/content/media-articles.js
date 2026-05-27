@@ -27,6 +27,54 @@ window.ESL_TEAM_LOGOS = {
 
 window.ESL_MEDIA_ARTICLES = [
   // ESL_MEDIA_CMS_START
+  {
+    file: "articles/season_2_preseason_sim_1_tier_1_power_rankings.html",
+    title: "Season 2 Preseason Tier 1 Power Rankings: Richmond Set The First Standard",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-05-27-04",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 2 - Preseason Sim 1",
+    blurb: "Richmond's 5-1 opening is the clearest Tier 1 statement, while Real Madrid and AC Milan establish the early group most likely to press them.",
+    teams: ["AC Milan", "AFC Richmond", "Atletico Madrid", "Bayern Munich", "Benfica", "Crystal Palace", "Real Madrid", "Sheffield United"]
+  },
+  {
+    file: "articles/season_2_preseason_sim_1_tier_2_power_rankings.html",
+    title: "Season 2 Preseason Tier 2 Power Rankings: Ajax Found The Fast Lane",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-05-27-03",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 2 - Preseason Sim 1",
+    blurb: "Ajax open with five wins and the division's best margin, while Brighton and Juventus make the top of Tier 2 immediately competitive.",
+    teams: ["Ajax", "Brighton", "Chelsea", "FL Fart", "Juventus", "Manchester United", "Marseille", "Monaco"]
+  },
+  {
+    file: "articles/season_2_preseason_sim_1_tier_3_power_rankings.html",
+    title: "Season 2 Preseason Tier 3 Power Rankings: Villa Left A Mark",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-05-27-02",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 2 - Preseason Sim 1",
+    blurb: "Aston Villa and Sporting CP both open 5-1, but Villa's overwhelming scoring margin makes the first Tier 3 ranking unusually decisive.",
+    teams: ["Aston Villa", "Barcelona", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur", "Valencia"]
+  },
+  {
+    file: "articles/season_2_preseason_sim_1_month_in_review.html",
+    title: "Preseason Sim 1 Review: Villa Made The Loudest Entrance",
+    category: "Recap",
+    desk: "Analysis",
+    sortKey: "2026-05-27-01",
+    tag: "Month in Review",
+    author: "Graham Trent",
+    meta: "Season 2 - Preseason Sim 1",
+    blurb: "Aston Villa crushed the opening examination, Richmond and Ajax looked ready immediately, and two winless starts made the preseason harder to dismiss.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Juventus", "Manchester City", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sporting CP", "Tottenham Hotspur"]
+  },
   // ESL_MEDIA_CMS_END
   {
     file: "articles/supercup_group_stage_wrap_up.html",
