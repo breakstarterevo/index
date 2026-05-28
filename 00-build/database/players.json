@@ -3183,17 +3183,17 @@
         "Hnd": "50",
         "Pas": "61",
         "Orb": "75",
-        "Drb": "42",
+        "Drb": "47",
         "Psd": "51",
         "Prd": "54",
         "Stl": "53",
         "Blk": "57",
         "Qkn": "74",
         "Str": "67",
-        "Jmp": "73",
+        "Jmp": "78",
         "Sta": "90",
-        "overall": "135",
-        "potential": "135",
+        "overall": "136",
+        "potential": "137",
         "potentials": {
             "Ins": "A",
             "Jps": "B",
@@ -3866,7 +3866,7 @@
         "Fts": "79",
         "3ps": "37",
         "Hnd": "89",
-        "Pas": "79",
+        "Pas": "89",
         "Orb": "15",
         "Drb": "17",
         "Psd": "19",
@@ -3877,15 +3877,15 @@
         "Str": "45",
         "Jmp": "75",
         "Sta": "86",
-        "overall": "119",
-        "potential": "119",
+        "overall": "122",
+        "potential": "122",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
             "Fts": "A",
             "3ps": "D",
             "Hnd": "A",
-            "Pas": "B",
+            "Pas": "A",
             "Orb": "F",
             "Drb": "F",
             "Psd": "F",
@@ -7185,7 +7185,7 @@
         "Pas": "31",
         "Orb": "74",
         "Drb": "86",
-        "Psd": "75",
+        "Psd": "85",
         "Prd": "15",
         "Stl": "23",
         "Blk": "84",
@@ -7193,8 +7193,8 @@
         "Str": "93",
         "Jmp": "100",
         "Sta": "82",
-        "overall": "131",
-        "potential": "131",
+        "overall": "134",
+        "potential": "134",
         "potentials": {
             "Ins": "B",
             "Jps": "D",
@@ -7204,7 +7204,7 @@
             "Pas": "D",
             "Orb": "B",
             "Drb": "A",
-            "Psd": "B",
+            "Psd": "A",
             "Prd": "F",
             "Stl": "D",
             "Blk": "A"
@@ -11979,8 +11979,8 @@
         "playerId": "player1078",
         "name": "Bob Gross",
         "url": "../players/player1078.htm",
-        "team": "roster24",
-        "teamLabel": "Barcelona",
+        "team": "roster13",
+        "teamLabel": "Benfica",
         "pos": "PF",
         "age": "27",
         "ht": "6-6",
@@ -15893,7 +15893,7 @@
                 "rowClass": "row1"
             }
         ],
-        "Ins": "77",
+        "Ins": "87",
         "Jps": "63",
         "Fts": "72",
         "3ps": "1",
@@ -15909,10 +15909,10 @@
         "Str": "76",
         "Jmp": "88",
         "Sta": "86",
-        "overall": "113",
-        "potential": "114",
+        "overall": "116",
+        "potential": "117",
         "potentials": {
-            "Ins": "B",
+            "Ins": "A",
             "Jps": "B",
             "Fts": "B",
             "3ps": "F",
@@ -15925,8 +15925,8 @@
             "Stl": "C",
             "Blk": "D"
         },
-        "potentialCurrentColor": "#307B1A",
-        "potentialFutureColor": "#307B1A",
+        "potentialCurrentColor": "#0052C3",
+        "potentialFutureColor": "#0052C3",
         "contracts": [
             {
                 "year": "1982",
@@ -16092,7 +16092,7 @@
         "Ins": "49",
         "Jps": "61",
         "Fts": "59",
-        "3ps": "58",
+        "3ps": "62",
         "Hnd": "37",
         "Pas": "10",
         "Orb": "12",
@@ -16105,8 +16105,8 @@
         "Str": "44",
         "Jmp": "61",
         "Sta": "80",
-        "overall": "93",
-        "potential": "106",
+        "overall": "94",
+        "potential": "107",
         "potentials": {
             "Ins": "B",
             "Jps": "B",
@@ -16170,8 +16170,8 @@
         "playerId": "player1084",
         "name": "Campy Russell",
         "url": "../players/player1084.htm",
-        "team": "roster24",
-        "teamLabel": "Barcelona",
+        "team": "roster13",
+        "teamLabel": "Benfica",
         "pos": "PF",
         "age": "28",
         "ht": "6-8",
@@ -18925,13 +18925,13 @@
         "Psd": "62",
         "Prd": "41",
         "Stl": "42",
-        "Blk": "78",
+        "Blk": "87",
         "Qkn": "53",
-        "Str": "62",
+        "Str": "67",
         "Jmp": "43",
         "Sta": "79",
-        "overall": "108",
-        "potential": "110",
+        "overall": "110",
+        "potential": "112",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
@@ -18944,7 +18944,7 @@
             "Psd": "B",
             "Prd": "C",
             "Stl": "C",
-            "Blk": "B"
+            "Blk": "A"
         },
         "potentialCurrentColor": "#307B1A",
         "potentialFutureColor": "#307B1A",
@@ -25455,15 +25455,15 @@
         "Orb": "35",
         "Drb": "27",
         "Psd": "30",
-        "Prd": "71",
+        "Prd": "76",
         "Stl": "80",
         "Blk": "30",
         "Qkn": "91",
         "Str": "54",
-        "Jmp": "46",
+        "Jmp": "51",
         "Sta": "90",
-        "overall": "143",
-        "potential": "143",
+        "overall": "145",
+        "potential": "146",
         "potentials": {
             "Ins": "A",
             "Jps": "B",
@@ -27874,7 +27874,7 @@
                 "rowClass": "row1"
             }
         ],
-        "Ins": "49",
+        "Ins": "54",
         "Jps": "31",
         "Fts": "80",
         "3ps": "16",
@@ -27882,7 +27882,7 @@
         "Pas": "24",
         "Orb": "66",
         "Drb": "63",
-        "Psd": "56",
+        "Psd": "60",
         "Prd": "23",
         "Stl": "36",
         "Blk": "57",
@@ -27890,8 +27890,8 @@
         "Str": "63",
         "Jmp": "51",
         "Sta": "70",
-        "overall": "94",
-        "potential": "119",
+        "overall": "96",
+        "potential": "122",
         "potentials": {
             "Ins": "A",
             "Jps": "B",
@@ -28640,20 +28640,26 @@
         "playerId": "player260",
         "name": "Derrick Favors",
         "url": "../players/player260.htm",
-        "team": "roster26",
-        "teamLabel": "Inter Milan",
+        "team": "FA",
+        "teamLabel": "FA",
         "pos": "PF",
         "age": "19",
         "ht": "6-10",
         "wt": "246",
         "experience": "Rookie",
         "source": "player_page",
-        "currentSalary": 5000000.0,
-        "currentSalaryText": "$5,000,000",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
-        "transactions": [],
+        "transactions": [
+            {
+                "date": "11/2/1982",
+                "action": "Released by Inter Milan",
+                "rowClass": "row1"
+            }
+        ],
         "Ins": "30",
         "Jps": "14",
         "Fts": "55",
@@ -28691,23 +28697,23 @@
         "contracts": [
             {
                 "year": "1982",
-                "salary": 5000000.0,
-                "salaryText": "$5,000,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1983",
-                "salary": 5000000.0,
-                "salaryText": "$5,000,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1984",
-                "salary": 5000000.0,
-                "salaryText": "$5,000,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1985",
-                "salary": 5000000.0,
-                "salaryText": "$5,000,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1986",
@@ -31540,7 +31546,7 @@
         "achievementTotals": [],
         "seasonAwards": [],
         "transactions": [],
-        "Ins": "34",
+        "Ins": "44",
         "Jps": "21",
         "Fts": "53",
         "3ps": "0",
@@ -31556,8 +31562,8 @@
         "Str": "77",
         "Jmp": "98",
         "Sta": "71",
-        "overall": "86",
-        "potential": "104",
+        "overall": "89",
+        "potential": "107",
         "potentials": {
             "Ins": "B",
             "Jps": "D",
@@ -31649,7 +31655,7 @@
         "Pas": "22",
         "Orb": "67",
         "Drb": "68",
-        "Psd": "57",
+        "Psd": "61",
         "Prd": "35",
         "Stl": "51",
         "Blk": "83",
@@ -31657,8 +31663,8 @@
         "Str": "70",
         "Jmp": "94",
         "Sta": "75",
-        "overall": "108",
-        "potential": "108",
+        "overall": "109",
+        "potential": "109",
         "potentials": {
             "Ins": "C",
             "Jps": "D",
@@ -31668,7 +31674,7 @@
             "Pas": "D",
             "Orb": "B",
             "Drb": "B",
-            "Psd": "C",
+            "Psd": "B",
             "Prd": "D",
             "Stl": "C",
             "Blk": "A"
@@ -36577,7 +36583,7 @@
             }
         ],
         "Ins": "37",
-        "Jps": "89",
+        "Jps": "97",
         "Fts": "75",
         "3ps": "0",
         "Hnd": "27",
@@ -36592,8 +36598,8 @@
         "Str": "74",
         "Jmp": "61",
         "Sta": "76",
-        "overall": "90",
-        "potential": "90",
+        "overall": "92",
+        "potential": "92",
         "potentials": {
             "Ins": "D",
             "Jps": "A",
@@ -37758,8 +37764,8 @@
         "Str": "56",
         "Jmp": "97",
         "Sta": "88",
-        "overall": "144",
-        "potential": "144",
+        "overall": "147",
+        "potential": "147",
         "potentials": {
             "Ins": "A",
             "Jps": "B",
@@ -39193,20 +39199,26 @@
         "playerId": "player256",
         "name": "Greg Grant",
         "url": "../players/player256.htm",
-        "team": "roster21",
-        "teamLabel": "Paris Saint-Germain",
+        "team": "FA",
+        "teamLabel": "FA",
         "pos": "PG",
         "age": "23",
         "ht": "5-7",
         "wt": "146",
         "experience": "Rookie",
         "source": "player_page",
-        "currentSalary": 380000.0,
-        "currentSalaryText": "$380,000",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
-        "transactions": [],
+        "transactions": [
+            {
+                "date": "11/2/1982",
+                "action": "Released by Paris Saint-Germain",
+                "rowClass": "row1"
+            }
+        ],
         "Ins": "33",
         "Jps": "27",
         "Fts": "63",
@@ -39244,8 +39256,8 @@
         "contracts": [
             {
                 "year": "1982",
-                "salary": 380000.0,
-                "salaryText": "$380,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1983",
@@ -43335,7 +43347,7 @@
                 "rowClass": "row1"
             }
         ],
-        "Ins": "84",
+        "Ins": "89",
         "Jps": "43",
         "Fts": "85",
         "3ps": "40",
@@ -43349,10 +43361,10 @@
         "Blk": "60",
         "Qkn": "28",
         "Str": "57",
-        "Jmp": "84",
+        "Jmp": "89",
         "Sta": "92",
-        "overall": "141",
-        "potential": "141",
+        "overall": "143",
+        "potential": "143",
         "potentials": {
             "Ins": "A",
             "Jps": "C",
@@ -46682,13 +46694,13 @@
         "Psd": "59",
         "Prd": "25",
         "Stl": "31",
-        "Blk": "91",
+        "Blk": "95",
         "Qkn": "23",
         "Str": "69",
         "Jmp": "45",
         "Sta": "65",
         "overall": "95",
-        "potential": "104",
+        "potential": "105",
         "potentials": {
             "Ins": "D",
             "Jps": "D",
@@ -54662,8 +54674,8 @@
         "playerId": "player258",
         "name": "Jrue Holiday",
         "url": "../players/player258.htm",
-        "team": "roster21",
-        "teamLabel": "Paris Saint-Germain",
+        "team": "roster27",
+        "teamLabel": "FL Fart",
         "pos": "PG",
         "age": "19",
         "ht": "6-4",
@@ -56396,8 +56408,8 @@
         "playerId": "player1049",
         "name": "Kelly Tripucka",
         "url": "../players/player1049.htm",
-        "team": "roster24",
-        "teamLabel": "Barcelona",
+        "team": "roster21",
+        "teamLabel": "Paris Saint-Germain",
         "pos": "SF",
         "age": "21",
         "ht": "6-6",
@@ -56561,6 +56573,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Barcelona with pick #4 of round 1 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "11/2/1982",
+                "action": "Traded to Paris Saint-Germain",
+                "rowClass": "row2"
             }
         ],
         "Ins": "95",
@@ -58330,7 +58347,7 @@
         "Pas": "25",
         "Orb": "75",
         "Drb": "62",
-        "Psd": "63",
+        "Psd": "73",
         "Prd": "23",
         "Stl": "20",
         "Blk": "84",
@@ -58338,8 +58355,8 @@
         "Str": "88",
         "Jmp": "82",
         "Sta": "80",
-        "overall": "117",
-        "potential": "127",
+        "overall": "119",
+        "potential": "130",
         "potentials": {
             "Ins": "A",
             "Jps": "B",
@@ -59314,7 +59331,7 @@
         "Fts": "77",
         "3ps": "76",
         "Hnd": "63",
-        "Pas": "71",
+        "Pas": "85",
         "Orb": "7",
         "Drb": "20",
         "Psd": "21",
@@ -59325,15 +59342,15 @@
         "Str": "39",
         "Jmp": "39",
         "Sta": "90",
-        "overall": "99",
-        "potential": "114",
+        "overall": "100",
+        "potential": "115",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
             "Fts": "B",
             "3ps": "A",
             "Hnd": "A",
-            "Pas": "B",
+            "Pas": "A",
             "Orb": "F",
             "Drb": "D",
             "Psd": "D",
@@ -59341,8 +59358,8 @@
             "Stl": "B",
             "Blk": "D"
         },
-        "potentialCurrentColor": "#EDBE30",
-        "potentialFutureColor": "#307B1A",
+        "potentialCurrentColor": "#307B1A",
+        "potentialFutureColor": "#0052C3",
         "contracts": [
             {
                 "year": "1982",
@@ -59648,13 +59665,13 @@
         "Psd": "54",
         "Prd": "19",
         "Stl": "23",
-        "Blk": "88",
+        "Blk": "96",
         "Qkn": "43",
         "Str": "57",
         "Jmp": "54",
         "Sta": "75",
-        "overall": "99",
-        "potential": "99",
+        "overall": "100",
+        "potential": "101",
         "potentials": {
             "Ins": "C",
             "Jps": "D",
@@ -59669,8 +59686,8 @@
             "Stl": "D",
             "Blk": "A"
         },
-        "potentialCurrentColor": "#EDBE30",
-        "potentialFutureColor": "#EDBE30",
+        "potentialCurrentColor": "#307B1A",
+        "potentialFutureColor": "#307B1A",
         "contracts": [
             {
                 "year": "1982",
@@ -60042,7 +60059,7 @@
         "Fts": "75",
         "3ps": "68",
         "Hnd": "51",
-        "Pas": "53",
+        "Pas": "63",
         "Orb": "11",
         "Drb": "23",
         "Psd": "20",
@@ -60053,8 +60070,8 @@
         "Str": "38",
         "Jmp": "90",
         "Sta": "78",
-        "overall": "90",
-        "potential": "134",
+        "overall": "93",
+        "potential": "137",
         "potentials": {
             "Ins": "B",
             "Jps": "C",
@@ -60194,15 +60211,15 @@
         "Orb": "18",
         "Drb": "23",
         "Psd": "20",
-        "Prd": "71",
+        "Prd": "81",
         "Stl": "82",
         "Blk": "9",
         "Qkn": "91",
         "Str": "59",
         "Jmp": "38",
         "Sta": "81",
-        "overall": "123",
-        "potential": "125",
+        "overall": "127",
+        "potential": "128",
         "potentials": {
             "Ins": "D",
             "Jps": "A",
@@ -60213,7 +60230,7 @@
             "Orb": "F",
             "Drb": "D",
             "Psd": "D",
-            "Prd": "B",
+            "Prd": "A",
             "Stl": "A",
             "Blk": "F"
         },
@@ -60710,10 +60727,10 @@
         "Blk": "52",
         "Qkn": "70",
         "Str": "71",
-        "Jmp": "64",
+        "Jmp": "69",
         "Sta": "91",
-        "overall": "173",
-        "potential": "179",
+        "overall": "176",
+        "potential": "182",
         "potentials": {
             "Ins": "A",
             "Jps": "B",
@@ -61157,16 +61174,16 @@
         "playerId": "player1118",
         "name": "Larry Kenon",
         "url": "../players/player1118.htm",
-        "team": "roster21",
-        "teamLabel": "Paris Saint-Germain",
-        "pos": "C",
+        "team": "FA",
+        "teamLabel": "FA",
+        "pos": "PF",
         "age": "26",
         "ht": "6-9",
         "wt": "225",
         "experience": "1 year",
         "source": "player_page",
-        "currentSalary": 555000.0,
-        "currentSalaryText": "$555,000",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -61180,6 +61197,11 @@
                 "date": "11/3/1981",
                 "action": "Traded to Paris Saint-Germain",
                 "rowClass": "row2"
+            },
+            {
+                "date": "11/2/1982",
+                "action": "Released by Paris Saint-Germain",
+                "rowClass": "row1"
             }
         ],
         "Ins": "56",
@@ -61219,8 +61241,8 @@
         "contracts": [
             {
                 "year": "1982",
-                "salary": 555000.0,
-                "salaryText": "$555,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1983",
@@ -66315,7 +66337,7 @@
                 "rowClass": "row1"
             }
         ],
-        "Ins": "93",
+        "Ins": "96",
         "Jps": "62",
         "Fts": "66",
         "3ps": "1",
@@ -66323,16 +66345,16 @@
         "Pas": "55",
         "Orb": "79",
         "Drb": "50",
-        "Psd": "50",
+        "Psd": "54",
         "Prd": "58",
-        "Stl": "72",
+        "Stl": "73",
         "Blk": "42",
-        "Qkn": "68",
+        "Qkn": "70",
         "Str": "67",
         "Jmp": "67",
         "Sta": "88",
-        "overall": "123",
-        "potential": "129",
+        "overall": "128",
+        "potential": "133",
         "potentials": {
             "Ins": "A",
             "Jps": "B",
@@ -66342,9 +66364,9 @@
             "Pas": "C",
             "Orb": "A",
             "Drb": "C",
-            "Psd": "C",
+            "Psd": "B",
             "Prd": "C",
-            "Stl": "B",
+            "Stl": "A",
             "Blk": "C"
         },
         "potentialCurrentColor": "#0052C3",
@@ -70553,7 +70575,7 @@
         "Ins": "45",
         "Jps": "64",
         "Fts": "46",
-        "3ps": "66",
+        "3ps": "70",
         "Hnd": "43",
         "Pas": "17",
         "Orb": "48",
@@ -70566,8 +70588,8 @@
         "Str": "67",
         "Jmp": "48",
         "Sta": "74",
-        "overall": "105",
-        "potential": "114",
+        "overall": "106",
+        "potential": "115",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
@@ -70583,7 +70605,7 @@
             "Blk": "F"
         },
         "potentialCurrentColor": "#307B1A",
-        "potentialFutureColor": "#307B1A",
+        "potentialFutureColor": "#0052C3",
         "contracts": [
             {
                 "year": "1982",
@@ -73069,16 +73091,16 @@
         "Pas": "23",
         "Orb": "100",
         "Drb": "91",
-        "Psd": "93",
+        "Psd": "100",
         "Prd": "29",
         "Stl": "38",
-        "Blk": "71",
+        "Blk": "74",
         "Qkn": "27",
         "Str": "69",
         "Jmp": "100",
         "Sta": "92",
-        "overall": "152",
-        "potential": "152",
+        "overall": "154",
+        "potential": "154",
         "potentials": {
             "Ins": "A",
             "Jps": "D",
@@ -76068,8 +76090,8 @@
         "playerId": "player730",
         "name": "Otis Birdsong",
         "url": "../players/player730.htm",
-        "team": "roster21",
-        "teamLabel": "Paris Saint-Germain",
+        "team": "roster24",
+        "teamLabel": "Barcelona",
         "pos": "SG",
         "age": "23",
         "ht": "6-4",
@@ -76149,6 +76171,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by AC Milan with pick #7 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "11/2/1982",
+                "action": "Traded to Barcelona",
+                "rowClass": "row2"
             }
         ],
         "Ins": "98",
@@ -79273,8 +79300,8 @@
         "playerId": "player1095",
         "name": "Quinn Buckner",
         "url": "../players/player1095.htm",
-        "team": "roster21",
-        "teamLabel": "Paris Saint-Germain",
+        "team": "roster27",
+        "teamLabel": "FL Fart",
         "pos": "PG",
         "age": "26",
         "ht": "6-3",
@@ -83275,15 +83302,15 @@
         "Orb": "24",
         "Drb": "19",
         "Psd": "22",
-        "Prd": "54",
+        "Prd": "58",
         "Stl": "57",
         "Blk": "21",
         "Qkn": "76",
         "Str": "52",
         "Jmp": "59",
         "Sta": "72",
-        "overall": "95",
-        "potential": "111",
+        "overall": "96",
+        "potential": "112",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
@@ -83294,7 +83321,7 @@
             "Orb": "D",
             "Drb": "D",
             "Psd": "D",
-            "Prd": "C",
+            "Prd": "B",
             "Stl": "C",
             "Blk": "D"
         },
@@ -84361,18 +84388,18 @@
         "Fts": "68",
         "3ps": "37",
         "Hnd": "53",
-        "Pas": "50",
+        "Pas": "55",
         "Orb": "44",
         "Drb": "50",
         "Psd": "42",
         "Prd": "58",
         "Stl": "72",
         "Blk": "35",
-        "Qkn": "74",
+        "Qkn": "79",
         "Str": "55",
         "Jmp": "40",
         "Sta": "93",
-        "overall": "122",
+        "overall": "123",
         "potential": "123",
         "potentials": {
             "Ins": "B",
@@ -85564,7 +85591,7 @@
         "Fts": "60",
         "3ps": "23",
         "Hnd": "58",
-        "Pas": "66",
+        "Pas": "74",
         "Orb": "23",
         "Drb": "32",
         "Psd": "25",
@@ -85575,8 +85602,8 @@
         "Str": "13",
         "Jmp": "74",
         "Sta": "80",
-        "overall": "89",
-        "potential": "95",
+        "overall": "92",
+        "potential": "97",
         "potentials": {
             "Ins": "C",
             "Jps": "D",
@@ -89100,16 +89127,16 @@
         "playerId": "player1080",
         "name": "Sonny Parker",
         "url": "../players/player1080.htm",
-        "team": "roster9",
-        "teamLabel": "AC Milan",
-        "pos": "SF",
+        "team": "FA",
+        "teamLabel": "FA",
+        "pos": "SG",
         "age": "25",
         "ht": "6-6",
         "wt": "215",
         "experience": "1 year",
         "source": "player_page",
-        "currentSalary": 1958293.0,
-        "currentSalaryText": "$1,958,293",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -89118,6 +89145,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Paris Saint-Germain with pick #3 of round 7 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "11/2/1982",
+                "action": "Released by AC Milan",
+                "rowClass": "row2"
             }
         ],
         "Ins": "37",
@@ -89157,8 +89189,8 @@
         "contracts": [
             {
                 "year": "1982",
-                "salary": 1958293.0,
-                "salaryText": "$1,958,293"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1983",
@@ -89201,16 +89233,16 @@
         "playerId": "player1099",
         "name": "Spencer Haywood",
         "url": "../players/player1099.htm",
-        "team": "roster27",
-        "teamLabel": "FL Fart",
+        "team": "FA",
+        "teamLabel": "FA",
         "pos": "PF",
         "age": "31",
         "ht": "6-8",
         "wt": "231",
         "experience": "1 year",
         "source": "player_page",
-        "currentSalary": 1917456.0,
-        "currentSalaryText": "$1,917,456",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [
             {
                 "season": "Total",
@@ -89278,6 +89310,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by FL Fart with pick #6 of round 7 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "11/2/1982",
+                "action": "Released by FL Fart",
+                "rowClass": "row2"
             }
         ],
         "Ins": "55",
@@ -89317,8 +89354,8 @@
         "contracts": [
             {
                 "year": "1982",
-                "salary": 1917456.0,
-                "salaryText": "$1,917,456"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1983",
@@ -91889,12 +91926,12 @@
         "Psd": "62",
         "Prd": "15",
         "Stl": "24",
-        "Blk": "85",
+        "Blk": "89",
         "Qkn": "22",
         "Str": "72",
         "Jmp": "70",
         "Sta": "72",
-        "overall": "92",
+        "overall": "93",
         "potential": "102",
         "potentials": {
             "Ins": "C",
@@ -94862,14 +94899,14 @@
         "Drb": "20",
         "Psd": "29",
         "Prd": "40",
-        "Stl": "52",
+        "Stl": "60",
         "Blk": "24",
         "Qkn": "86",
         "Str": "41",
         "Jmp": "42",
         "Sta": "75",
-        "overall": "83",
-        "potential": "94",
+        "overall": "84",
+        "potential": "95",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -95053,7 +95090,7 @@
         "Pas": "21",
         "Orb": "74",
         "Drb": "80",
-        "Psd": "79",
+        "Psd": "89",
         "Prd": "14",
         "Stl": "29",
         "Blk": "100",
@@ -95061,8 +95098,8 @@
         "Str": "78",
         "Jmp": "53",
         "Sta": "84",
-        "overall": "117",
-        "potential": "118",
+        "overall": "120",
+        "potential": "121",
         "potentials": {
             "Ins": "D",
             "Jps": "C",
@@ -95072,7 +95109,7 @@
             "Pas": "D",
             "Orb": "B",
             "Drb": "B",
-            "Psd": "B",
+            "Psd": "A",
             "Prd": "F",
             "Stl": "D",
             "Blk": "A"
@@ -97250,20 +97287,26 @@
         "playerId": "player370",
         "name": "Vincent Askew",
         "url": "../players/player370.htm",
-        "team": "roster27",
-        "teamLabel": "FL Fart",
+        "team": "FA",
+        "teamLabel": "FA",
         "pos": "SF",
         "age": "20",
         "ht": "6-6",
         "wt": "236",
         "experience": "Rookie",
         "source": "player_page",
-        "currentSalary": 532000.0,
-        "currentSalaryText": "$532,000",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
-        "transactions": [],
+        "transactions": [
+            {
+                "date": "11/2/1982",
+                "action": "Released by FL Fart",
+                "rowClass": "row1"
+            }
+        ],
         "Ins": "29",
         "Jps": "25",
         "Fts": "70",
@@ -97301,8 +97344,8 @@
         "contracts": [
             {
                 "year": "1982",
-                "salary": 532000.0,
-                "salaryText": "$532,000"
+                "salary": 380000.0,
+                "salaryText": "$380,000"
             },
             {
                 "year": "1983",
@@ -97958,16 +98001,16 @@
         "playerId": "player1109",
         "name": "Wally Walker",
         "url": "../players/player1109.htm",
-        "team": "roster27",
-        "teamLabel": "FL Fart",
+        "team": "FA",
+        "teamLabel": "FA",
         "pos": "SG",
         "age": "26",
         "ht": "6-6",
         "wt": "201",
         "experience": "1 year",
         "source": "player_page",
-        "currentSalary": 1198410.0,
-        "currentSalaryText": "$1,198,410",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [
             {
                 "season": "Total",
@@ -98007,6 +98050,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by FL Fart with pick #6 of round 9 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "11/2/1982",
+                "action": "Released by FL Fart",
+                "rowClass": "row2"
             }
         ],
         "Ins": "48",
@@ -98046,8 +98094,8 @@
         "contracts": [
             {
                 "year": "1982",
-                "salary": 1198410.0,
-                "salaryText": "$1,198,410"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1983",
@@ -98240,13 +98288,13 @@
         "Psd": "58",
         "Prd": "18",
         "Stl": "20",
-        "Blk": "81",
+        "Blk": "89",
         "Qkn": "48",
         "Str": "54",
         "Jmp": "48",
         "Sta": "79",
-        "overall": "99",
-        "potential": "99",
+        "overall": "100",
+        "potential": "101",
         "potentials": {
             "Ins": "C",
             "Jps": "D",
@@ -98261,8 +98309,8 @@
             "Stl": "D",
             "Blk": "A"
         },
-        "potentialCurrentColor": "#EDBE30",
-        "potentialFutureColor": "#EDBE30",
+        "potentialCurrentColor": "#307B1A",
+        "potentialFutureColor": "#307B1A",
         "contracts": [
             {
                 "year": "1982",
@@ -100014,12 +100062,12 @@
         "Prd": "63",
         "Stl": "59",
         "Blk": "14",
-        "Qkn": "93",
+        "Qkn": "98",
         "Str": "41",
         "Jmp": "100",
         "Sta": "92",
-        "overall": "132",
-        "potential": "135",
+        "overall": "135",
+        "potential": "137",
         "potentials": {
             "Ins": "A",
             "Jps": "C",
