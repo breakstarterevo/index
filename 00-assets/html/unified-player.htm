@@ -1154,7 +1154,7 @@
       const stats = state.currentStats && state.currentStats.stats;
       const rows = stats && stats.season_averages && Array.isArray(stats.season_averages.rows) ? stats.season_averages.rows : [];
       const realRows = rows.filter((r) => String(r.season || "").toLowerCase() !== "career");
-      return realRows[realRows.length - 1] || rows[0] || {};
+      return realRows.slice().sort((a, b) => Number(b.season) - Number(a.season))[0] || rows[0] || {};
     }
 
     function setTeamColors(team) {
