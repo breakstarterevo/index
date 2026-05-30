@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.35, maximum-scale=5.0, user-scalable=yes">
+  <title>Camps Submission Planner</title>
+  <link rel="icon" type="image/png" href="../../00-build/database/favicon.png">
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/camps.js" defer></script>
+  <style>
+    :root {
+      --camp-accent: #111b36;
+      --camp-paper: #f4f2ec;
+      --camp-card: #ffffff;
+      --camp-ink: #111318;
+      --camp-muted: #5a5246;
+      --camp-line: #d9d2c2;
+      --camp-soft: #faf8f2;
+      --camp-good: #1f6d3d;
+      --camp-warn: #9a5b00;
+      --camp-bad: #9d1f1f;
+      --font-sans: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --font-serif: "Tiempos Headline", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      background: var(--camp-paper);
+      color: var(--camp-ink);
+      font-family: var(--font-sans);
+      margin: 0;
+      padding: 1rem;
+    }
+
+    .camp-shell {
+      display: grid;
+      gap: .9rem;
+      width: min(1380px, 100%);
+    }
+
+    .camp-header,
+    .camp-panel {
+      background: var(--camp-card);
+      border: 1px solid var(--camp-line);
+      border-top: 4px solid var(--camp-accent);
+      box-shadow: 4px 4px 0 rgba(17, 27, 54, .09);
+    }
+
+    .camp-header {
+      display: grid;
+      gap: .8rem;
+      grid-template-columns: minmax(0, 1fr) auto;
+      padding: .85rem 1rem;
+    }
+
+    .camp-kicker,
+    .camp-label,
+    .camp-panel-title,
+    .camp-status,
+    .camp-chip span,
+    .camp-warning-title,
+    .camp-entry-meta,
+    .camp-template-label {
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .camp-kicker {
+      color: var(--camp-accent);
+      font-size: .65rem;
+      margin: 0 0 .2rem;
+    }
+
+    .camp-title {
+      font-family: var(--font-serif);
+      font-size: 1.8rem;
+      line-height: 1.05;
+      margin: 0;
+    }
+
+    .camp-subtitle {
+      color: var(--camp-muted);
+      font-size: .84rem;
+      margin: .26rem 0 0;
+      max-width: 70rem;
+    }
+
+    .camp-actions {
+      align-items: end;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      justify-content: flex-end;
+    }
+
+    .camp-layout {
+      align-items: start;
+      display: grid;
+      gap: .9rem;
+      grid-template-columns: minmax(460px, .92fr) minmax(420px, .78fr);
+    }
+
+    .camp-stack {
+      display: grid;
+      gap: .9rem;
+      min-width: 0;
+    }
+
+    .camp-panel {
+      min-width: 0;
+      padding: .82rem;
+    }
+
+    .camp-panel-head {
+      align-items: baseline;
+      border-bottom: 2px solid var(--camp-accent);
+      display: flex;
+      gap: .55rem;
+      justify-content: space-between;
+      margin-bottom: .72rem;
+      padding-bottom: .5rem;
+    }
+
+    .camp-panel-title {
+      color: var(--camp-accent);
+      font-size: .72rem;
+      margin: 0;
+    }
+
+    .camp-status {
+      color: var(--camp-muted);
+      font-size: .62rem;
+      text-align: right;
+    }
+
+    .camp-grid {
+      display: grid;
+      gap: .62rem;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .camp-grid--three {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .camp-control {
+      display: grid;
+      gap: .28rem;
+      min-width: 0;
+    }
+
+    .camp-select-row {
+      display: grid;
+      gap: .35rem;
+      grid-template-columns: minmax(260px, 1fr) auto;
+    }
+
+    .camp-control--player {
+      min-width: 360px;
+    }
+
+    .camp-control--wide {
+      grid-column: 1 / -1;
+    }
+
+    .camp-label {
+      color: var(--camp-muted);
+      font-size: .61rem;
+    }
+
+    .camp-select,
+    .camp-input,
+    .camp-range,
+    .camp-output,
+    .camp-button {
+      border: 1px solid #c4cde3;
+      color: var(--camp-ink);
+      font: inherit;
+      font-size: .82rem;
+      min-width: 0;
+    }
+
+    .camp-select,
+    .camp-input {
+      background: #fff;
+      height: 34px;
+      padding: 0 .55rem;
+      width: 100%;
+    }
+
+    .camp-range-wrap {
+      align-items: center;
+      display: grid;
+      gap: .34rem;
+      grid-template-columns: minmax(0, 1fr) 56px;
+    }
+
+    .camp-range {
+      accent-color: var(--camp-accent);
+      border: 0;
+      height: 28px;
+      min-width: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    .camp-range-value {
+      text-align: center;
+    }
+
+    .camp-rating-change {
+      color: var(--camp-muted);
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .04em;
+      min-height: .85rem;
+    }
+
+    .camp-select:focus,
+    .camp-input:focus,
+    .camp-output:focus {
+      border-color: var(--camp-accent);
+      outline: 2px solid rgba(17, 27, 54, .16);
+      outline-offset: 0;
+    }
+
+    .camp-button {
+      align-items: center;
+      background: #eef2fb;
+      color: var(--camp-accent);
+      cursor: pointer;
+      display: inline-flex;
+      font-size: .66rem;
+      font-weight: 800;
+      justify-content: center;
+      letter-spacing: .11em;
+      min-height: 34px;
+      padding: 0 .68rem;
+      text-decoration: none;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .camp-button:hover,
+    .camp-button:focus {
+      background: #e2e8f7;
+      border-color: var(--camp-accent);
+      outline: none;
+    }
+
+    .camp-button--primary {
+      background: var(--camp-accent);
+      border-color: var(--camp-accent);
+      color: #fff;
+    }
+
+    .camp-button--danger {
+      background: #fff2f2;
+      border-color: #e5b7b7;
+      color: var(--camp-bad);
+    }
+
+    .camp-button:disabled {
+      cursor: not-allowed;
+      opacity: .55;
+    }
+
+    .camp-summary {
+      display: grid;
+      gap: .45rem;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+    }
+
+    .camp-chip {
+      background: var(--camp-soft);
+      border: 1px solid var(--camp-line);
+      display: grid;
+      gap: .12rem;
+      min-height: 54px;
+      padding: .42rem .5rem;
+    }
+
+    .camp-chip span {
+      color: var(--camp-muted);
+      font-size: .54rem;
+    }
+
+    .camp-chip strong {
+      color: var(--camp-accent);
+      font-size: 1.02rem;
+      line-height: 1;
+    }
+
+    .camp-chip.is-over strong,
+    .camp-warning-list li.is-bad {
+      color: var(--camp-bad);
+    }
+
+    .camp-detail-grid {
+      display: grid;
+      gap: .62rem;
+      margin-top: .68rem;
+    }
+
+    .camp-point-grid {
+      display: grid;
+      gap: .42rem;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .camp-point-grid--tendency {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .camp-mini-note {
+      color: var(--camp-muted);
+      font-size: .74rem;
+      line-height: 1.35;
+      margin: 0;
+    }
+
+    .camp-entry-list {
+      display: grid;
+      gap: .48rem;
+    }
+
+    .camp-entry {
+      background: var(--camp-soft);
+      border: 1px solid var(--camp-line);
+      display: grid;
+      gap: .36rem;
+      padding: .58rem;
+    }
+
+    .camp-entry-head {
+      align-items: start;
+      display: grid;
+      gap: .5rem;
+      grid-template-columns: minmax(0, 1fr) auto;
+    }
+
+    .camp-entry-name {
+      font-family: var(--font-serif);
+      font-size: 1rem;
+      line-height: 1.15;
+    }
+
+    .camp-entry-meta {
+      color: var(--camp-muted);
+      font-size: .58rem;
+      margin-top: .12rem;
+    }
+
+    .camp-entry-lines {
+      color: var(--camp-ink);
+      font-family: Consolas, "Courier New", monospace;
+      font-size: .82rem;
+      white-space: pre-wrap;
+    }
+
+    .camp-empty {
+      border: 1px dashed var(--camp-line);
+      color: var(--camp-muted);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .camp-warning-list {
+      display: grid;
+      gap: .4rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .camp-warning-list li {
+      background: #fff7e8;
+      border: 1px solid #efd19c;
+      color: var(--camp-warn);
+      font-size: .78rem;
+      line-height: 1.35;
+      padding: .42rem .5rem;
+    }
+
+    .camp-warning-list li.is-good {
+      background: #edf7ef;
+      border-color: #b9d8c0;
+      color: var(--camp-good);
+    }
+
+    .camp-output {
+      background: #fff;
+      font-family: Consolas, "Courier New", monospace;
+      min-height: 500px;
+      padding: .68rem;
+      resize: vertical;
+      white-space: pre;
+      width: 100%;
+    }
+
+    .camp-template-actions {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: .45rem;
+      justify-content: space-between;
+      margin-top: .5rem;
+    }
+
+    .camp-template-label {
+      color: var(--camp-muted);
+      font-size: .62rem;
+    }
+
+    @media (max-width: 1100px) {
+      .camp-layout { grid-template-columns: 1fr; }
+      .camp-summary { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+      .camp-output { min-height: 330px; }
+    }
+
+    @media (max-width: 720px) {
+      body { padding: .6rem; }
+      .camp-header { grid-template-columns: 1fr; padding: .72rem; }
+      .camp-actions { justify-content: stretch; }
+      .camp-actions .camp-button,
+      .camp-actions .camp-control { width: 100%; }
+      .camp-grid,
+      .camp-grid--three,
+      .camp-summary,
+      .camp-point-grid,
+      .camp-point-grid--tendency { grid-template-columns: 1fr; }
+      .camp-control--player { min-width: 0; }
+      .camp-select-row { grid-template-columns: 1fr; }
+      .camp-panel { padding: .68rem; }
+      .camp-panel-head { align-items: start; flex-direction: column; }
+      .camp-status { text-align: left; }
+      .camp-entry-head { grid-template-columns: 1fr; }
+      .camp-entry-head .camp-button { width: 100%; }
+    }
+  </style>
+</head>
+<body>
+  <main class="camp-shell">
+    <header class="camp-header">
+      <div>
+        <p class="camp-kicker">League Tools</p>
+        <h1 class="camp-title">Camps Submission Planner</h1>
+        <p class="camp-subtitle">Build a camp plan, check the obvious rule traps, then copy a compact Discord template for the commish.</p>
+      </div>
+      <div class="camp-actions">
+        <label class="camp-control">
+          <span class="camp-label">Team</span>
+          <select class="camp-select" id="teamSelect"></select>
+        </label>
+        <a class="camp-button" id="teamLink" href="./league%20dashboard.htm">Team Page</a>
+        <a class="camp-button" href="./league%20dashboard.htm">Dashboard</a>
+      </div>
+    </header>
+
+    <section class="camp-panel">
+      <div class="camp-panel-head">
+        <h2 class="camp-panel-title">Allocation Snapshot</h2>
+        <span class="camp-status" id="trackerStatus">Loading league data</span>
+      </div>
+      <div class="camp-summary" id="allocationSummary"></div>
+    </section>
+
+    <div class="camp-layout">
+      <div class="camp-stack">
+        <section class="camp-panel">
+          <div class="camp-panel-head">
+            <h2 class="camp-panel-title">Add Camp</h2>
+            <span class="camp-status" id="formStatus">Choose a team</span>
+          </div>
+          <div class="camp-grid camp-grid--three">
+            <label class="camp-control">
+              <span class="camp-label">Camp Type</span>
+              <select class="camp-select" id="campType"></select>
+            </label>
+            <label class="camp-control camp-control--player">
+              <span class="camp-label">Player</span>
+              <span class="camp-select-row">
+                <select class="camp-select" id="playerSelect"></select>
+                <a class="camp-button" id="playerLink" href="#" target="_blank" rel="noopener">Open</a>
+              </span>
+            </label>
+            <label class="camp-control">
+              <span class="camp-label">Injury Option</span>
+              <select class="camp-select" id="injuryMode">
+                <option value="rehab">Rehab</option>
+                <option value="painkillers">Painkillers</option>
+              </select>
+            </label>
+          </div>
+          <div class="camp-detail-grid" id="campDetails"></div>
+          <div class="camp-template-actions">
+            <p class="camp-mini-note" id="campHelp">Camp details will update when the camp type changes.</p>
+            <button class="camp-button camp-button--primary" id="addCampButton" type="button">Add Camp</button>
+          </div>
+        </section>
+
+        <section class="camp-panel">
+          <div class="camp-panel-head">
+            <h2 class="camp-panel-title">Current Plan</h2>
+            <span class="camp-status" id="entryStatus">No camps added</span>
+          </div>
+          <div class="camp-entry-list" id="entryList"></div>
+        </section>
+      </div>
+
+      <div class="camp-stack">
+        <section class="camp-panel">
+          <div class="camp-panel-head">
+            <h2 class="camp-panel-title">Warnings</h2>
+            <span class="camp-status" id="warningStatus">Ready</span>
+          </div>
+          <ul class="camp-warning-list" id="warningList"></ul>
+        </section>
+
+        <section class="camp-panel">
+          <div class="camp-panel-head">
+            <h2 class="camp-panel-title">Discord Template</h2>
+            <span class="camp-status" id="copyStatus">Ready to copy</span>
+          </div>
+          <textarea class="camp-output" id="templateOutput" spellcheck="false"></textarea>
+          <div class="camp-template-actions">
+            <span class="camp-template-label">Player grouped output</span>
+            <span class="camp-actions">
+              <button class="camp-button camp-button--danger" id="clearTemplateButton" type="button">Clear Text</button>
+              <button class="camp-button camp-button--primary" id="copyButton" type="button">Copy Template</button>
+            </span>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

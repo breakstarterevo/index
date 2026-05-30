@@ -850,6 +850,7 @@
       </div>
       <nav class="nav-actions" aria-label="Player navigation">
         <a class="btn-link" id="teamLink" href="./league%20dashboard.htm">Team Page</a>
+        <a class="btn-link" id="compareLink" href="./player-compare.htm">Compare</a>
         <a class="btn-link" id="classicLink" href="#">Classic Page</a>
         <a class="btn-link" href="./league%20dashboard.htm">Dashboard</a>
       </nav>
@@ -1346,6 +1347,11 @@
       ].map(([label, value]) => `<div class="head-stat"><span class="head-stat-value">${fmt(value)}</span><span class="head-stat-label">${label}</span></div>`).join("");
       document.getElementById("snapshotNote").textContent = row.season ? `${row.season} season row` : "No season averages found";
       document.getElementById("classicLink").href = classicHref(p.url);
+      const compareLink = document.getElementById("compareLink");
+      if (compareLink) {
+        const compareId = playerIdFromUrl(p.url);
+        compareLink.href = compareId ? `./player-compare.htm?p1=${encodeURIComponent(compareId)}` : "./player-compare.htm";
+      }
       const teamLink = document.getElementById("teamLink");
       teamLink.href = team ? `./unified-roster.htm?file=${encodeURIComponent(team.rosterFile)}` : "./league%20dashboard.htm";
       teamLink.textContent = team ? "Team Page" : "Dashboard";

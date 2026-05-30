@@ -401,6 +401,8 @@
         title: "Tools",
         links: [
           { label: "Depth Charts", href: core.paths.depthCharts },
+          { label: "Camps", href: core.paths.camps },
+          { label: "Player Compare", href: core.paths.playerCompare },
           { label: "Trade Tool", href: core.paths.tradeTool },
           { label: "Training Camp", href: core.paths.trainingCamp }
         ]
