@@ -2,10 +2,14 @@
   "name": "esl-media-discord-bot",
   "version": "1.0.0",
   "private": true,
-  "description": "Discord notifier for newly published ESL Media articles",
+  "description": "Discord bot for ESL Media announcements and league lookup slash commands",
   "type": "module",
   "scripts": {
     "start": "node bot.js --watch",
-    "once": "node bot.js --once"
+    "once": "node bot.js --once",
+    "register": "node register-commands.js"
+  },
+  "dependencies": {
+    "discord.js": "^14.19.3"
   }
 }

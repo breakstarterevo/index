@@ -1,0 +1,8 @@
+name = "esl-discord-league-worker"
+main = "src/index.js"
+compatibility_date = "2026-05-31"
+
+[vars]
+DATA_BASE_URL = "https://eurosuperleague.github.io/index/00-build/database/discord/"
+SITE_BASE_URL = "https://eurosuperleague.github.io/index/"
+DATA_CACHE_SECONDS = "300"

@@ -14,6 +14,7 @@ DRY_RUN = "--dry-run" in sys.argv
 
 SCRIPTS = [
     (os.path.join(BUILD_DIR, "build_players_json.py"), "Building database JSON files"),
+    (os.path.join(BUILD_DIR, "build_discord_json.py"), "Building compact Discord lookup JSON files"),
     (os.path.join(BUILD_DIR, "build_youth_intake_json.py"), "Building youth intake JSON from spreadsheet"),
     (os.path.join(BUILD_DIR, "build_monthly_jsons.py"), "Building monthly media JSON files"),
     (os.path.join(BUILD_DIR, "build_media_package_prompts.py"), "Building monthly editorial prompt package"),

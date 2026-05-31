@@ -1,6 +1,6 @@
-# ESL Media Discord Bot
+# ESL Discord Bot
 
-This bot watches the ESL Media article manifest and posts in Discord whenever a new article appears.
+This bot watches the ESL Media article manifest and also serves live league lookup slash commands.
 
 ## What it does
 
@@ -8,6 +8,8 @@ This bot watches the ESL Media article manifest and posts in Discord whenever a 
 - remembers which articles it has already announced
 - posts only new articles to a Discord channel
 - can optionally ping a role each time
+- registers guild slash commands for `/player`, `/team`, and `/league`
+- fetches live JSON from `https://eurosuperleague.github.io/index/00-build/database/`
 
 ## Setup
 
@@ -16,11 +18,33 @@ This bot watches the ESL Media article manifest and posts in Discord whenever a 
    - `View Channels`
    - `Send Messages`
    - `Embed Links`
+   - `Use Application Commands`
 3. Copy `.env.example` to `.env`.
 4. Fill in:
    - `DISCORD_BOT_TOKEN`
+   - `DISCORD_CLIENT_ID`
+   - `DISCORD_GUILD_ID`
    - `DISCORD_CHANNEL_ID`
    - optional `DISCORD_ROLE_ID`
+5. Install dependencies:
+
+```powershell
+npm install
+```
+
+## Register slash commands
+
+From `00-eslmedia/discord-media-bot`:
+
+```powershell
+npm run register
+```
+
+This registers these guild commands:
+
+- `/player name:<player name>`
+- `/team name:<team name>`
+- `/league`
 
 ## Run it
 
@@ -38,11 +62,11 @@ For continuous polling:
 npm start
 ```
 
-By default it checks every 5 minutes.
+By default it checks for new articles every 5 minutes and caches league JSON for 5 minutes.
 
 ## GitHub Actions
 
-If you want this to run automatically without keeping your PC on, use the GitHub Actions workflow in:
+The existing GitHub Actions workflow can still run the one-shot article notifier:
 
 - `.github/workflows/esl-media-discord.yml`
 
@@ -79,3 +103,21 @@ The bot stores its announced state locally in:
 - `00-eslmedia/discord-media-bot/data/announced-articles.json`
 
 If you delete that file, it will treat all current articles as unannounced again.
+
+## League data
+
+Slash commands use `DATA_BASE_URL`, which defaults to:
+
+- `https://eurosuperleague.github.io/index/00-build/database/`
+
+The bot fetches and caches:
+
+- `players.json`
+- `player_stats.json`
+- `teams.json`
+- `standings.json`
+- `team_stats.json`
+- `capreport.json`
+- `injuries.json`
+- `schedule.json`
+- `leaders.json`

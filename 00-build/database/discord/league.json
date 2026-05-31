@@ -1,0 +1,107 @@
+{
+  "name": "European Super League",
+  "url": "https://eurosuperleague.github.io/index/index.htm",
+  "sections": [
+    {
+      "title": "CLB Standings",
+      "teams": [
+        {
+          "name": "Real Madrid",
+          "wins": 6,
+          "losses": 1,
+          "streak": "W3"
+        },
+        {
+          "name": "AFC Richmond",
+          "wins": 5,
+          "losses": 3,
+          "streak": "L2"
+        },
+        {
+          "name": "Sheffield United",
+          "wins": 4,
+          "losses": 3,
+          "streak": "W1"
+        }
+      ]
+    },
+    {
+      "title": "ELB Standings",
+      "teams": [
+        {
+          "name": "Chelsea",
+          "wins": 7,
+          "losses": 1,
+          "streak": "W6"
+        },
+        {
+          "name": "Brighton",
+          "wins": 5,
+          "losses": 2,
+          "streak": "W1"
+        },
+        {
+          "name": "Ajax",
+          "wins": 3,
+          "losses": 3,
+          "streak": "L1"
+        }
+      ]
+    },
+    {
+      "title": "ECL Standings",
+      "teams": [
+        {
+          "name": "Aston Villa",
+          "wins": 5,
+          "losses": 1,
+          "streak": "W3"
+        },
+        {
+          "name": "Sporting CP",
+          "wins": 5,
+          "losses": 2,
+          "streak": "W2"
+        },
+        {
+          "name": "Paris Saint-Germain",
+          "wins": 4,
+          "losses": 2,
+          "streak": "W1"
+        }
+      ]
+    }
+  ],
+  "leaders": [
+    {
+      "category": "Minutes",
+      "player": "Artis Gilmore",
+      "team": "Crystal Palace",
+      "value": "40.4"
+    },
+    {
+      "category": "Points",
+      "player": "Moses Malone",
+      "team": "Benfica",
+      "value": "35.0"
+    },
+    {
+      "category": "Rebounds",
+      "player": "Moses Malone",
+      "team": "Benfica",
+      "value": "13.1"
+    },
+    {
+      "category": "Assists",
+      "player": "Rickey Green",
+      "team": "Sheffield United",
+      "value": "10.4"
+    },
+    {
+      "category": "Steals",
+      "player": "Micheal Ray Richardson",
+      "team": "Bayern Munich",
+      "value": "3.5"
+    }
+  ]
+}
