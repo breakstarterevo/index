@@ -96,28 +96,41 @@ def compact_player_stats(entry):
 
 
 def compact_player_ratings(player):
+    potential_grades = player.get("potentials", {})
+
+    def rating(key, label):
+        payload = {"value": player.get(key, "")}
+        grade = potential_grades.get(key, "")
+        if grade:
+            payload["potential"] = grade
+        return label, payload
+
+    offense = dict([
+        rating("Ins", "INS"),
+        rating("Jps", "JPS"),
+        rating("3ps", "3PS"),
+        rating("Hnd", "HND"),
+        rating("Pas", "PAS"),
+    ])
+    defense = dict([
+        rating("Orb", "ORB"),
+        rating("Drb", "DRB"),
+        rating("Psd", "PSD"),
+        rating("Prd", "PRD"),
+        rating("Stl", "STL"),
+        rating("Blk", "BLK"),
+    ])
+    physical = {
+        "QKN": {"value": player.get("Qkn", "")},
+        "JMP": {"value": player.get("Jmp", "")},
+        "STR": {"value": player.get("Str", "")},
+        "STA": {"value": player.get("Sta", "")},
+    }
+
     return {
-        "offense": {
-            "INS": player.get("Ins", ""),
-            "JPS": player.get("Jps", ""),
-            "3PS": player.get("3ps", ""),
-            "HND": player.get("Hnd", ""),
-            "PAS": player.get("Pas", ""),
-        },
-        "defense": {
-            "ORB": player.get("Orb", ""),
-            "DRB": player.get("Drb", ""),
-            "PSD": player.get("Psd", ""),
-            "PRD": player.get("Prd", ""),
-            "STL": player.get("Stl", ""),
-            "BLK": player.get("Blk", ""),
-        },
-        "physical": {
-            "QKN": player.get("Qkn", ""),
-            "JMP": player.get("Jmp", ""),
-            "STR": player.get("Str", ""),
-            "STA": player.get("Sta", ""),
-        },
+        "offense": offense,
+        "defense": defense,
+        "physical": physical,
     }
 
 

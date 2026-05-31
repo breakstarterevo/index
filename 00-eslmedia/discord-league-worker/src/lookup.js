@@ -154,15 +154,21 @@ export function findBestMatch(query, items, labelFor) {
 }
 
 export function findAutocompleteChoices(query, items, labelFor, valueFor = labelFor) {
+  const seen = new Set();
   return items
     .map((item) => ({ item, name: labelFor(item), value: valueFor(item), score: scoreMatch(query, labelFor(item)) }))
-    .filter((entry) => entry.score > 0)
+    .filter((entry) => entry.score >= 35)
     .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name))
+    .filter((entry) => {
+      const key = normalize(entry.name);
+      if (seen.has(key)) {
+        return false;
+      }
+      seen.add(key);
+      return true;
+    })
     .slice(0, 25)
-    .map((entry) => ({
-      name: entry.name.slice(0, 100),
-      value: String(entry.value || entry.name).slice(0, 100),
-    }));
+    .map((entry) => ({ name: entry.name.slice(0, 100), value: String(entry.value || entry.name).slice(0, 100) }));
 }
 
 function scoreMatch(query, candidate) {
@@ -324,7 +330,18 @@ function formatRatings(group) {
   }
 
   return Object.entries(group)
-    .filter(([, value]) => value !== "" && value != null)
-    .map(([label, value]) => `${label.padEnd(3, " ")} **${value}**`)
+    .filter(([, rating]) => getRatingValue(rating) !== "")
+    .map(([label, rating]) => {
+      const value = getRatingValue(rating);
+      const potential = typeof rating === "object" ? rating.potential : "";
+      return `${label.padEnd(3, " ")} **${value}**${potential ? ` (${potential})` : ""}`;
+    })
     .join("\n") || "-";
+}
+
+function getRatingValue(rating) {
+  if (rating && typeof rating === "object") {
+    return rating.value ?? "";
+  }
+  return rating ?? "";
 }
