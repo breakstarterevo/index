@@ -26,6 +26,12 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: 22
+          cache: npm
+          cache-dependency-path: 00-eslmedia/discord-media-bot/package-lock.json
+
+      - name: Install Discord bot dependencies
+        working-directory: 00-eslmedia/discord-media-bot
+        run: npm ci
 
       - name: Run Discord article notifier
         working-directory: 00-eslmedia/discord-media-bot
