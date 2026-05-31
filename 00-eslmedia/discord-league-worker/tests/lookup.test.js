@@ -1,7 +1,7 @@
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
-import { handleLeague, handlePlayer, handleTeam } from "../src/lookup.js";
+import { findAutocompleteChoices, handleLeague, handlePlayer, handleTeam } from "../src/lookup.js";
 
 const root = path.resolve("..", "..");
 const discordDir = path.join(root, "00-build", "database", "discord");
@@ -12,10 +12,15 @@ const league = JSON.parse(fs.readFileSync(path.join(discordDir, "league.json"), 
 
 const playerResponse = handlePlayer("Larry Bird", players);
 assert.equal(playerResponse.type, 4);
-assert.equal(playerResponse.data.embeds[0].title, "Larry Bird");
+assert.match(playerResponse.data.embeds[0].title, /^Larry Bird/);
+assert.ok(playerResponse.data.embeds[0].fields.some((field) => field.name === "PTS | REB | AST | STL | BLK"));
 
 const playerMiss = handlePlayer("zzzz-no-player", players);
 assert.match(playerMiss.data.content, /could not find a player/);
+
+const autocompleteChoices = findAutocompleteChoices("lar", players, (player) => player.name);
+assert.ok(autocompleteChoices.some((choice) => choice.name === "Larry Bird"));
+assert.ok(autocompleteChoices.length <= 25);
 
 const teamResponse = handleTeam("AFC Richmond", teams);
 assert.equal(teamResponse.type, 4);

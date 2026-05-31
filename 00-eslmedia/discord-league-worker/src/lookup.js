@@ -23,17 +23,15 @@ export function handlePlayer(query, players, env = {}) {
   }
 
   const player = match.item;
+  const praLine = player.stats?.season ? formatPraDefense(player.stats.season) : "";
   const fields = [
-    field("Team", player.team || "Free Agent", true),
-    field("Pos", player.pos || "-", true),
-    field("Age", player.age || "-", true),
-    field("Size", [player.height, player.weight ? `${player.weight} lbs` : ""].filter(Boolean).join(", ") || "-", true),
-    field("OVR/POT", [player.overall, player.potential].filter(Boolean).join(" / ") || "-", true),
-    field("Salary", player.salary || "-", true),
+    field("OFFENSE", formatRatings(player.ratings?.offense), true),
+    field("DEFENSE", formatRatings(player.ratings?.defense), true),
+    field("PHYSICAL", formatRatings(player.ratings?.physical), true),
   ];
 
-  if (player.statLine) {
-    fields.push(field("Season", player.statLine, false));
+  if (praLine) {
+    fields.push(field("PTS | REB | AST | STL | BLK", praLine, false));
   }
 
   if (player.stats?.shooting) {
@@ -45,9 +43,13 @@ export function handlePlayer(query, players, env = {}) {
   }
 
   return embedResponse({
-    title: player.name,
-    url: player.url || siteUrl(env, `players/${player.id}.htm`),
-    description: `${player.pos || "Player"} for ${player.team || "Free Agent"}`,
+    title: `${player.name}    ${player.overall || "-"} OVR`,
+    url: player.url || siteUrl(env, `00-assets/html/unified-player.htm?id=${player.id}`),
+    description: [
+      `**${String(player.team || "Free Agent").toUpperCase()} | ${player.pos || "-"} | AGE ${player.age || "-"}**`,
+      `POT ${player.potential || "-"} | ${[player.height, player.weight ? `${player.weight} lbs` : ""].filter(Boolean).join(" | ") || "Size -"}`,
+      player.salary ? `Salary ${player.salary}` : "",
+    ].filter(Boolean).join("\n"),
     fields,
   });
 }
@@ -97,7 +99,7 @@ export function handleTeam(query, teams, env = {}) {
 
   return embedResponse({
     title: team.name,
-    url: team.url || siteUrl(env, `rosters/${team.id}.htm`),
+    url: team.url || siteUrl(env, `00-assets/html/unified-roster.htm?id=${team.id}`),
     description: "ESL team snapshot",
     fields: fields.slice(0, 10),
   });
@@ -149,6 +151,18 @@ export function findBestMatch(query, items, labelFor) {
     isAmbiguous: Boolean(second && top.score < 95 && second.score >= top.score - 4),
     suggestions,
   };
+}
+
+export function findAutocompleteChoices(query, items, labelFor, valueFor = labelFor) {
+  return items
+    .map((item) => ({ item, name: labelFor(item), value: valueFor(item), score: scoreMatch(query, labelFor(item)) }))
+    .filter((entry) => entry.score > 0)
+    .sort((a, b) => b.score - a.score || a.name.localeCompare(b.name))
+    .slice(0, 25)
+    .map((entry) => ({
+      name: entry.name.slice(0, 100),
+      value: String(entry.value || entry.name).slice(0, 100),
+    }));
 }
 
 function scoreMatch(query, candidate) {
@@ -286,4 +300,31 @@ function formatMadeAttempt(made, attempt) {
 
 function formatPercent(value) {
   return typeof value === "number" ? value.toFixed(3) : "-";
+}
+
+function formatPraDefense(season) {
+  const rebounds = Number(season.orb || 0) + Number(season.drb || 0);
+  return [
+    `**${formatOneDecimal(season.pts)}** PTS`,
+    `**${formatOneDecimal(rebounds)}** REB`,
+    `**${formatOneDecimal(season.ast)}** AST`,
+    `**${formatOneDecimal(season.stl)}** STL`,
+    `**${formatOneDecimal(season.blk)}** BLK`,
+  ].join(" | ");
+}
+
+function formatOneDecimal(value) {
+  const numeric = Number(value);
+  return Number.isFinite(numeric) ? numeric.toFixed(1) : "-";
+}
+
+function formatRatings(group) {
+  if (!group) {
+    return "-";
+  }
+
+  return Object.entries(group)
+    .filter(([, value]) => value !== "" && value != null)
+    .map(([label, value]) => `${label.padEnd(3, " ")} **${value}**`)
+    .join("\n") || "-";
 }

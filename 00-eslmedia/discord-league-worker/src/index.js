@@ -1,7 +1,7 @@
 import nacl from "tweetnacl";
 import { InteractionResponseType, InteractionType } from "discord-interactions";
 import { loadCommandData } from "./data.js";
-import { handleCommand } from "./lookup.js";
+import { findAutocompleteChoices, handleCommand } from "./lookup.js";
 
 export default {
   async fetch(request, env) {
@@ -41,6 +41,10 @@ export default {
     }
 
     if (interaction.type !== InteractionType.APPLICATION_COMMAND) {
+      if (interaction.type === InteractionType.APPLICATION_COMMAND_AUTOCOMPLETE) {
+        return json(await handleAutocomplete(interaction, env));
+      }
+
       return json({
         type: InteractionResponseType.CHANNEL_MESSAGE_WITH_SOURCE,
         data: { content: "Unsupported interaction.", flags: 64 },
@@ -62,6 +66,41 @@ export default {
     }
   },
 };
+
+async function handleAutocomplete(interaction, env) {
+  const command = interaction.data;
+  const focused = command.options?.find((option) => option.focused);
+  const query = focused?.value || "";
+
+  try {
+    if (command.name === "player") {
+      const data = await loadCommandData("player", env);
+      return {
+        type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+        data: {
+          choices: findAutocompleteChoices(query, data.players || [], (player) => player.name),
+        },
+      };
+    }
+
+    if (command.name === "team") {
+      const data = await loadCommandData("team", env);
+      return {
+        type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+        data: {
+          choices: findAutocompleteChoices(query, data.teams || [], (team) => team.name),
+        },
+      };
+    }
+  } catch (error) {
+    console.error("Autocomplete failed:", error);
+  }
+
+  return {
+    type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,
+    data: { choices: [] },
+  };
+}
 
 function json(payload, init = {}) {
   return new Response(JSON.stringify(payload), {

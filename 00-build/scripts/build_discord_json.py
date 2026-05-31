@@ -31,6 +31,14 @@ def public_url(path):
     return SITE_BASE_URL + path.lstrip("/")
 
 
+def public_player_url(player_id):
+    return public_url(f"00-assets/html/unified-player.htm?id={player_id}")
+
+
+def public_team_url(team_id):
+    return public_url(f"00-assets/html/unified-roster.htm?id={team_id}")
+
+
 def roster_id_from_file(value):
     return str(value or "").replace(".htm", "").replace(".html", "")
 
@@ -84,6 +92,32 @@ def compact_player_stats(entry):
             "usg_pct",
         ]),
         "careerHighs": pick(highs, ["pts", "reb", "ast", "stl", "blk", "fgm", "3pm"]),
+    }
+
+
+def compact_player_ratings(player):
+    return {
+        "offense": {
+            "INS": player.get("Ins", ""),
+            "JPS": player.get("Jps", ""),
+            "3PS": player.get("3ps", ""),
+            "HND": player.get("Hnd", ""),
+            "PAS": player.get("Pas", ""),
+        },
+        "defense": {
+            "ORB": player.get("Orb", ""),
+            "DRB": player.get("Drb", ""),
+            "PSD": player.get("Psd", ""),
+            "PRD": player.get("Prd", ""),
+            "STL": player.get("Stl", ""),
+            "BLK": player.get("Blk", ""),
+        },
+        "physical": {
+            "QKN": player.get("Qkn", ""),
+            "JMP": player.get("Jmp", ""),
+            "STR": player.get("Str", ""),
+            "STA": player.get("Sta", ""),
+        },
     }
 
 
@@ -215,7 +249,8 @@ def build_players():
             "salary": player.get("currentSalaryText", ""),
             "statLine": format_player_stat_line(season_row),
             "stats": compact_stats,
-            "url": public_url(f"players/{player_id}.htm") if player_id else "",
+            "ratings": compact_player_ratings(player),
+            "url": public_player_url(player_id) if player_id else "",
         })
 
     return compact_players
@@ -236,7 +271,7 @@ def build_player_stats():
             "pos": entry.get("pos", ""),
             "statLine": format_player_stat_line(stats.get("season")),
             **stats,
-            "url": public_url(f"players/{player_id}.htm") if player_id else "",
+            "url": public_player_url(player_id) if player_id else "",
         })
 
     return compact_stats
@@ -287,7 +322,7 @@ def build_teams():
             "injuries": find_injuries(injuries, team_id, team.get("name", "")),
             "recentGame": find_recent_game(games, team_id, team.get("name", "")),
             "nextGame": find_next_game(games, team_id, team.get("name", "")),
-            "url": public_url(f"rosters/{roster_file}") if roster_file else "",
+            "url": public_team_url(team_id) if team_id else "",
         })
 
     return compact_teams
