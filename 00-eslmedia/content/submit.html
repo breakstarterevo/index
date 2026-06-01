@@ -652,8 +652,8 @@ The strange part is not that Chelsea have flaws. Everyone outside the top line h
 
         <div class="submission-actions">
           <button type="button" id="copySubmission">Copy Submission</button>
-          <button type="button" class="secondary" id="copyCmsJson">Copy CMS JSON</button>
-          <button type="button" class="secondary" id="downloadCmsJson">Download JSON</button>
+          <button type="button" class="secondary" id="copyArticleHtml">Copy Article HTML</button>
+          <button type="button" class="secondary" id="downloadArticleHtml">Download HTML</button>
           <button type="button" class="secondary" id="resetExample">Reset Example</button>
           <button type="button" class="secondary" id="focusPreview">Focus Preview</button>
           <button type="button" class="secondary" id="hidePreview">Hide Preview</button>
@@ -845,30 +845,89 @@ The strange part is not that Chelsea have flaws. Everyone outside the top line h
         .map((item) => item.trim())
         .filter(Boolean);
 
-      const buildCmsJson = () => {
+      const buildArticleHtml = () => {
         const data = values();
-        const today = new Date().toISOString().slice(0, 10);
-        return JSON.stringify({
-          title: data.title,
-          slug: slugify(data.title),
-          author: data.author,
-          publish_date: today,
-          status: "draft",
-          category: data.category,
-          desk: data.desk,
-          season: data.season,
-          sort_order: 1,
-          summary: data.summary,
-          body: data.body,
-          tags: data.category ? [data.category] : [],
-          related_teams: splitList(data.teams),
-          related_players: splitList(data.players),
-          related_competitions: [],
-          hero_image: "../article%20images/ESLM.png",
-          thumbnail: "../article%20images/ESLM.png",
-          image_alt: "ESL Media",
-          image_credit: "ESL Media"
-        }, null, 2);
+        const title = data.title || "Article headline here";
+        const summary = data.summary || "One-sentence deck here.";
+        const author = data.author || "Community Writer";
+        const category = data.category || "Analysis";
+        const desk = data.desk || category;
+        const season = data.season || "Season 8";
+        const slug = slugify(title) || "esl_media_article";
+        return `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(title)} - ESL Media</title>
+  <meta name="description" content="${escapeHtml(summary)}">
+  <meta property="og:title" content="${escapeHtml(title)} - ESL Media">
+  <meta property="og:description" content="${escapeHtml(summary)}">
+  <meta property="og:type" content="article">
+  <meta property="og:image" content="../article%20images/ESLM.png">
+  <link rel="canonical" href="https://eurosuperleague.github.io/index/00-eslmedia/content/articles/${slug}.html">
+  <style>
+    @import url("../media-shared.css");
+  </style>
+</head>
+<body class="media-article">
+  <header class="site-topbar">
+    <div class="site-topbar-inner">
+      <div class="site-topbar-brand">
+        <div class="site-edition-pill">Front Page</div>
+        <div>European Super League Sports Desk</div>
+      </div>
+      <ul class="site-topbar-nav">
+        <li><a href="../../homepage.html" class="active">Home</a></li>
+        <li><a href="../all-articles.html">All Articles</a></li>
+        <li><a href="../articles/ecl_awards_predictions.html">Latest</a></li>
+        <li><a href="../analysis.html">Analysis</a></li>
+        <li><a href="../scouting.html">Scouting</a></li>
+        <li><a href="../interviews.html">Interviews</a></li>
+        <li><a href="../../../index.htm">League Site</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="site-ticker">
+    <div class="site-ticker-inner">
+      <span class="site-ticker-label">${escapeHtml(category)}</span>
+      <div class="site-ticker-track">
+        <div class="site-ticker-item">${escapeHtml(title)}</div>
+        <div class="site-ticker-item">${escapeHtml(summary)}</div>
+        <div class="site-ticker-item">${escapeHtml(title)}</div>
+        <div class="site-ticker-item">${escapeHtml(summary)}</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="paper">
+    <div class="masthead">
+      <div class="league-name">European Super League - ${escapeHtml(desk)}</div>
+      <div class="section-label">${escapeHtml(category)} - ${escapeHtml(season)}</div>
+    </div>
+
+    <h1 class="headline">${escapeHtml(title)}</h1>
+    <p class="dek">${escapeHtml(summary)}</p>
+
+    <div class="byline-bar">
+      <span class="byline">${escapeHtml(author)}</span>
+      <span class="dateline">${escapeHtml(season)}</span>
+    </div>
+
+    <div class="body-text">
+      ${markdownToHtml(data.body)}
+    </div>
+
+    <hr class="footer-rule">
+    <div class="footer-text">European Super League - ${escapeHtml(desk)} - ${escapeHtml(season)}</div>
+  </div>
+
+  <script src="../media-articles.js"></script>
+  <script src="../media-ads.js"></script>
+  <script src="../article-rail.js"></script>
+</body>
+</html>`;
       };
 
       const setStatus = (message) => {
@@ -889,27 +948,28 @@ The strange part is not that Chelsea have flaws. Everyone outside the top line h
         }
       });
 
-      document.getElementById("copyCmsJson").addEventListener("click", async () => {
+      document.getElementById("copyArticleHtml").addEventListener("click", async () => {
         try {
-          await navigator.clipboard.writeText(buildCmsJson());
-          setStatus("CMS JSON copied");
+          await navigator.clipboard.writeText(buildArticleHtml());
+          setStatus("Article HTML copied");
         } catch {
           setStatus("Copy failed");
         }
       });
 
-      document.getElementById("downloadCmsJson").addEventListener("click", () => {
-        const data = JSON.parse(buildCmsJson());
-        const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
+      document.getElementById("downloadArticleHtml").addEventListener("click", () => {
+        const data = values();
+        const slug = slugify(data.title) || "esl_media_article";
+        const blob = new Blob([buildArticleHtml()], { type: "text/html" });
         const url = URL.createObjectURL(blob);
         const link = document.createElement("a");
         link.href = url;
-        link.download = `${data.slug || "esl_media_submission"}.json`;
+        link.download = `${slug}.html`;
         document.body.appendChild(link);
         link.click();
         link.remove();
         URL.revokeObjectURL(url);
-        setStatus("JSON downloaded");
+        setStatus("HTML downloaded");
       });
 
       document.getElementById("resetExample").addEventListener("click", () => {

@@ -1811,7 +1811,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PF",
-        "age": "31",
+        "age": "32",
         "ht": "6-8",
         "wt": "239",
         "experience": "Rookie",
@@ -1916,11 +1916,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 18",
+                "award": "Player of the Game: 20",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 18
+                "count": 20
             },
             {
                 "season": "Total",
@@ -1976,11 +1976,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 18",
+                "award": "Player of the Game: 20",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 18
+                "count": 20
             },
             {
                 "season": "Total",
@@ -3076,7 +3076,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "22",
+        "age": "23",
         "ht": "6-11",
         "wt": "242",
         "experience": "Rookie",
@@ -3658,7 +3658,7 @@
         "team": "roster13",
         "teamLabel": "Benfica",
         "pos": "SF",
-        "age": "19",
+        "age": "20",
         "ht": "6-6",
         "wt": "216",
         "experience": "1 year",
@@ -4477,7 +4477,7 @@
         "team": "roster6",
         "teamLabel": "Crystal Palace",
         "pos": "SF",
-        "age": "26",
+        "age": "27",
         "ht": "6-7",
         "wt": "205",
         "experience": "1 year",
@@ -4487,11 +4487,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 11",
+                "award": "Player of the Game: 13",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 11
+                "count": 13
             },
             {
                 "season": "Total",
@@ -4541,11 +4541,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 11",
+                "award": "Player of the Game: 13",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 11
+                "count": 13
             },
             {
                 "season": "Total",
@@ -4786,7 +4786,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "PG",
-        "age": "21",
+        "age": "22",
         "ht": "6-6",
         "wt": "182",
         "experience": "Rookie",
@@ -5995,7 +5995,7 @@
         "url": "../players/player1097.htm",
         "team": "roster26",
         "teamLabel": "Inter Milan",
-        "pos": "SF",
+        "pos": "PF",
         "age": "25",
         "ht": "6-7",
         "wt": "194",
@@ -7688,7 +7688,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PF",
-        "age": "25",
+        "age": "26",
         "ht": "6-9",
         "wt": "237",
         "experience": "Rookie",
@@ -15067,16 +15067,24 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 13",
+                "award": "Player of the Game: 14",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 13
+                "count": 14
+            },
+            {
+                "season": "Total",
+                "award": "Player of the Week: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Player of the Week",
+                "count": 1
             },
             {
                 "season": "Total",
                 "award": "All-Star Appearances: 1",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": true,
                 "label": "All-Star Appearances",
                 "count": 1
@@ -15084,29 +15092,37 @@
             {
                 "season": "1981",
                 "award": "CLB Slam-Dunk Contest Champion",
-                "rowClass": "row1",
+                "rowClass": "row2",
                 "isTotal": false
             },
             {
                 "season": "1981",
                 "award": "CLB All-Star",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": false
             }
         ],
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 13",
+                "award": "Player of the Game: 14",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 13
+                "count": 14
+            },
+            {
+                "season": "Total",
+                "award": "Player of the Week: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Player of the Week",
+                "count": 1
             },
             {
                 "season": "Total",
                 "award": "All-Star Appearances: 1",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": true,
                 "label": "All-Star Appearances",
                 "count": 1
@@ -15116,13 +15132,13 @@
             {
                 "season": "1981",
                 "award": "CLB Slam-Dunk Contest Champion",
-                "rowClass": "row1",
+                "rowClass": "row2",
                 "isTotal": false
             },
             {
                 "season": "1981",
                 "award": "CLB All-Star",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": false
             }
         ],
@@ -15772,11 +15788,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 5",
+                "award": "Player of the Game: 6",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 5
+                "count": 6
             },
             {
                 "season": "Total",
@@ -15804,11 +15820,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 5",
+                "award": "Player of the Game: 6",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 5
+                "count": 6
             },
             {
                 "season": "Total",
@@ -16042,6 +16058,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Juventus with pick #1 of round 8 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "12/2/1982",
+                "action": "Signed a contract extension for $7,534,407 over 3 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "44",
@@ -16086,18 +16107,18 @@
             },
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 2391875.0,
+                "salaryText": "$2,391,875"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 2511469.0,
+                "salaryText": "$2,511,469"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 2631063.0,
+                "salaryText": "$2,631,063"
             },
             {
                 "year": "1986",
@@ -16138,11 +16159,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 2",
+                "award": "Player of the Game: 3",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 2
+                "count": 3
             },
             {
                 "season": "Total",
@@ -16176,11 +16197,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 2",
+                "award": "Player of the Game: 3",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 2
+                "count": 3
             },
             {
                 "season": "Total",
@@ -17231,7 +17252,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "SG",
-        "age": "20",
+        "age": "21",
         "ht": "6-6",
         "wt": "179",
         "experience": "Rookie",
@@ -17527,7 +17548,7 @@
         "url": "../players/player1089.htm",
         "team": "roster24",
         "teamLabel": "Barcelona",
-        "pos": "SG",
+        "pos": "SF",
         "age": "26",
         "ht": "6-6",
         "wt": "207",
@@ -17761,7 +17782,7 @@
         "team": "roster16",
         "teamLabel": "Sheffield United",
         "pos": "PF",
-        "age": "27",
+        "age": "28",
         "ht": "6-9",
         "wt": "212",
         "experience": "1 year",
@@ -18004,7 +18025,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "C",
-        "age": "15",
+        "age": "18",
         "ht": "7-2",
         "wt": "220",
         "experience": "Rookie",
@@ -18098,7 +18119,7 @@
         "url": "../players/player383.htm",
         "team": "roster15",
         "teamLabel": "Marseille",
-        "pos": "SG",
+        "pos": "SF",
         "age": "22",
         "ht": "6-5",
         "wt": "211",
@@ -18491,7 +18512,7 @@
         "team": "roster12",
         "teamLabel": "AFC Richmond",
         "pos": "PG",
-        "age": "23",
+        "age": "24",
         "ht": "6-3",
         "wt": "181",
         "experience": "1 year",
@@ -18998,7 +19019,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "PG",
-        "age": "21",
+        "age": "22",
         "ht": "6-1",
         "wt": "175",
         "experience": "Rookie",
@@ -21115,11 +21136,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 15",
+                "award": "Player of the Game: 16",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 15
+                "count": 16
             },
             {
                 "season": "Total",
@@ -21133,11 +21154,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 15",
+                "award": "Player of the Game: 16",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 15
+                "count": 16
             },
             {
                 "season": "Total",
@@ -21805,27 +21826,27 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 24",
+                "award": "Player of the Game: 31",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 24
+                "count": 31
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 4",
+                "award": "Player of the Week: 6",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 4
+                "count": 6
             },
             {
                 "season": "Total",
-                "award": "Player of the Month: 4",
+                "award": "Player of the Month: 5",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Month",
-                "count": 4
+                "count": 5
             },
             {
                 "season": "Total",
@@ -21891,27 +21912,27 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 24",
+                "award": "Player of the Game: 31",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 24
+                "count": 31
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 4",
+                "award": "Player of the Week: 6",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 4
+                "count": 6
             },
             {
                 "season": "Total",
-                "award": "Player of the Month: 4",
+                "award": "Player of the Month: 5",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Month",
-                "count": 4
+                "count": 5
             },
             {
                 "season": "Total",
@@ -22470,7 +22491,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "SF",
-        "age": "17",
+        "age": "18",
         "ht": "6-7",
         "wt": "184",
         "experience": "Rookie",
@@ -22957,7 +22978,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "21",
+        "age": "22",
         "ht": "6-11",
         "wt": "256",
         "experience": "Rookie",
@@ -25475,8 +25496,26 @@
         "source": "player_page",
         "currentSalary": 10000000.0,
         "currentSalaryText": "$10,000,000",
-        "awards": [],
-        "achievementTotals": [],
+        "awards": [
+            {
+                "season": "Total",
+                "award": "Player of the Game: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Player of the Game",
+                "count": 1
+            }
+        ],
+        "achievementTotals": [
+            {
+                "season": "Total",
+                "award": "Player of the Game: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Player of the Game",
+                "count": 1
+            }
+        ],
         "seasonAwards": [],
         "transactions": [],
         "Ins": "53",
@@ -26234,7 +26273,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "SG",
-        "age": "20",
+        "age": "21",
         "ht": "6-6",
         "wt": "212",
         "experience": "Rookie",
@@ -26424,7 +26463,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "PF",
-        "age": "20",
+        "age": "21",
         "ht": "6-6",
         "wt": "227",
         "experience": "Rookie",
@@ -27459,11 +27498,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 6",
+                "award": "Player of the Game: 7",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 6
+                "count": 7
             },
             {
                 "season": "Total",
@@ -27489,11 +27528,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 6",
+                "award": "Player of the Game: 7",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 6
+                "count": 7
             },
             {
                 "season": "Total",
@@ -28226,7 +28265,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "32",
+        "age": "33",
         "ht": "7-0",
         "wt": "242",
         "experience": "Rookie",
@@ -30776,11 +30815,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 8",
+                "award": "Player of the Game: 9",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 8
+                "count": 9
             },
             {
                 "season": "Total",
@@ -30800,11 +30839,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 8",
+                "award": "Player of the Game: 9",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 8
+                "count": 9
             },
             {
                 "season": "Total",
@@ -31114,16 +31153,24 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 11",
+                "award": "Player of the Game: 15",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 11
+                "count": 15
+            },
+            {
+                "season": "Total",
+                "award": "Player of the Week: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Player of the Week",
+                "count": 1
             },
             {
                 "season": "Total",
                 "award": "All-Star Appearances: 1",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": true,
                 "label": "All-Star Appearances",
                 "count": 1
@@ -31131,7 +31178,7 @@
             {
                 "season": "Total",
                 "award": "All-League First Team: 1",
-                "rowClass": "row1",
+                "rowClass": "row2",
                 "isTotal": true,
                 "label": "All-League First Team",
                 "count": 1
@@ -31139,41 +31186,49 @@
             {
                 "season": "1981",
                 "award": "ELB 3-Point Shootout Champion",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": false
             },
             {
                 "season": "1981",
                 "award": "ELB All-Star",
-                "rowClass": "row1",
-                "isTotal": false
-            },
-            {
-                "season": "1981",
-                "award": "ELB All-League First Team",
                 "rowClass": "row2",
                 "isTotal": false
             },
             {
                 "season": "1981",
-                "award": "ELB All-Rookie First Team",
+                "award": "ELB All-League First Team",
                 "rowClass": "row1",
+                "isTotal": false
+            },
+            {
+                "season": "1981",
+                "award": "ELB All-Rookie First Team",
+                "rowClass": "row2",
                 "isTotal": false
             }
         ],
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 11",
+                "award": "Player of the Game: 15",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 11
+                "count": 15
+            },
+            {
+                "season": "Total",
+                "award": "Player of the Week: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Player of the Week",
+                "count": 1
             },
             {
                 "season": "Total",
                 "award": "All-Star Appearances: 1",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": true,
                 "label": "All-Star Appearances",
                 "count": 1
@@ -31181,7 +31236,7 @@
             {
                 "season": "Total",
                 "award": "All-League First Team: 1",
-                "rowClass": "row1",
+                "rowClass": "row2",
                 "isTotal": true,
                 "label": "All-League First Team",
                 "count": 1
@@ -31191,25 +31246,25 @@
             {
                 "season": "1981",
                 "award": "ELB 3-Point Shootout Champion",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": false
             },
             {
                 "season": "1981",
                 "award": "ELB All-Star",
-                "rowClass": "row1",
-                "isTotal": false
-            },
-            {
-                "season": "1981",
-                "award": "ELB All-League First Team",
                 "rowClass": "row2",
                 "isTotal": false
             },
             {
                 "season": "1981",
-                "award": "ELB All-Rookie First Team",
+                "award": "ELB All-League First Team",
                 "rowClass": "row1",
+                "isTotal": false
+            },
+            {
+                "season": "1981",
+                "award": "ELB All-Rookie First Team",
+                "rowClass": "row2",
                 "isTotal": false
             }
         ],
@@ -31304,7 +31359,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "28",
+        "age": "29",
         "ht": "6-1",
         "wt": "186",
         "experience": "Rookie",
@@ -31859,11 +31914,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 6",
+                "award": "Player of the Game: 7",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 6
+                "count": 7
             },
             {
                 "season": "Total",
@@ -31897,11 +31952,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 6",
+                "award": "Player of the Game: 7",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 6
+                "count": 7
             },
             {
                 "season": "Total",
@@ -32417,7 +32472,7 @@
                 "rowClass": "row1"
             }
         ],
-        "Ins": "63",
+        "Ins": "68",
         "Jps": "47",
         "Fts": "61",
         "3ps": "0",
@@ -32430,11 +32485,11 @@
         "Stl": "32",
         "Blk": "75",
         "Qkn": "25",
-        "Str": "90",
+        "Str": "95",
         "Jmp": "97",
         "Sta": "79",
-        "overall": "113",
-        "potential": "114",
+        "overall": "115",
+        "potential": "116",
         "potentials": {
             "Ins": "B",
             "Jps": "C",
@@ -32449,8 +32504,8 @@
             "Stl": "D",
             "Blk": "B"
         },
-        "potentialCurrentColor": "#307B1A",
-        "potentialFutureColor": "#307B1A",
+        "potentialCurrentColor": "#0052C3",
+        "potentialFutureColor": "#0052C3",
         "contracts": [
             {
                 "year": "1982",
@@ -32790,7 +32845,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PF",
-        "age": "29",
+        "age": "30",
         "ht": "6-10",
         "wt": "249",
         "experience": "Rookie",
@@ -33197,21 +33252,21 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 1",
+                "award": "Player of the Game: 2",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 1
+                "count": 2
             }
         ],
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 1",
+                "award": "Player of the Game: 2",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 1
+                "count": 2
             }
         ],
         "seasonAwards": [],
@@ -33897,11 +33952,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 18",
+                "award": "Player of the Game: 20",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 18
+                "count": 20
             },
             {
                 "season": "Total",
@@ -33963,11 +34018,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 18",
+                "award": "Player of the Game: 20",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 18
+                "count": 20
             },
             {
                 "season": "Total",
@@ -34035,7 +34090,7 @@
                 "rowClass": "row1"
             }
         ],
-        "Ins": "86",
+        "Ins": "91",
         "Jps": "68",
         "Fts": "76",
         "3ps": "7",
@@ -34044,15 +34099,15 @@
         "Orb": "36",
         "Drb": "27",
         "Psd": "34",
-        "Prd": "50",
+        "Prd": "55",
         "Stl": "33",
         "Blk": "47",
         "Qkn": "84",
         "Str": "57",
         "Jmp": "96",
         "Sta": "85",
-        "overall": "105",
-        "potential": "106",
+        "overall": "108",
+        "potential": "108",
         "potentials": {
             "Ins": "A",
             "Jps": "B",
@@ -34129,11 +34184,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 2",
+                "award": "Player of the Game: 3",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 2
+                "count": 3
             },
             {
                 "season": "Total",
@@ -34147,11 +34202,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 2",
+                "award": "Player of the Game: 3",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 2
+                "count": 3
             },
             {
                 "season": "Total",
@@ -35520,7 +35575,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "20",
+        "age": "21",
         "ht": "6-8",
         "wt": "220",
         "experience": "1 year",
@@ -36367,7 +36422,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "26",
+        "age": "27",
         "ht": "6-8",
         "wt": "224",
         "experience": "1 year",
@@ -36581,8 +36636,8 @@
         "Hnd": "33",
         "Pas": "39",
         "Orb": "31",
-        "Drb": "31",
-        "Psd": "27",
+        "Drb": "36",
+        "Psd": "32",
         "Prd": "56",
         "Stl": "66",
         "Blk": "30",
@@ -36590,8 +36645,8 @@
         "Str": "52",
         "Jmp": "67",
         "Sta": "76",
-        "overall": "110",
-        "potential": "134",
+        "overall": "111",
+        "potential": "135",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
@@ -36600,8 +36655,8 @@
             "Hnd": "B",
             "Pas": "C",
             "Orb": "D",
-            "Drb": "D",
-            "Psd": "D",
+            "Drb": "C",
+            "Psd": "C",
             "Prd": "B",
             "Stl": "A",
             "Blk": "D"
@@ -37409,7 +37464,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "22",
+        "age": "23",
         "ht": "6-7",
         "wt": "196",
         "experience": "1 year",
@@ -37646,39 +37701,39 @@
                 "rowClass": "row1"
             }
         ],
-        "Ins": "79",
-        "Jps": "68",
+        "Ins": "69",
+        "Jps": "59",
         "Fts": "74",
-        "3ps": "42",
+        "3ps": "34",
         "Hnd": "59",
-        "Pas": "65",
-        "Orb": "16",
+        "Pas": "58",
+        "Orb": "13",
         "Drb": "16",
-        "Psd": "19",
-        "Prd": "64",
-        "Stl": "60",
-        "Blk": "10",
+        "Psd": "17",
+        "Prd": "55",
+        "Stl": "48",
+        "Blk": "8",
         "Qkn": "94",
         "Str": "46",
         "Jmp": "76",
         "Sta": "89",
-        "overall": "110",
-        "potential": "112",
+        "overall": "99",
+        "potential": "100",
         "potentials": {
             "Ins": "B",
-            "Jps": "B",
+            "Jps": "C",
             "Fts": "B",
-            "3ps": "C",
+            "3ps": "D",
             "Hnd": "B",
-            "Pas": "B",
+            "Pas": "C",
             "Orb": "F",
-            "Drb": "D",
+            "Drb": "F",
             "Psd": "F",
-            "Prd": "B",
+            "Prd": "C",
             "Stl": "C",
             "Blk": "F"
         },
-        "potentialCurrentColor": "#307B1A",
+        "potentialCurrentColor": "#EDBE30",
         "potentialFutureColor": "#307B1A",
         "contracts": [
             {
@@ -37930,7 +37985,7 @@
         "url": "../players/player752.htm",
         "team": "roster6",
         "teamLabel": "Crystal Palace",
-        "pos": "PF",
+        "pos": "C",
         "age": "24",
         "ht": "6-10",
         "wt": "239",
@@ -39036,7 +39091,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "SG",
-        "age": "17",
+        "age": "19",
         "ht": "6-3",
         "wt": "215",
         "experience": "Rookie",
@@ -39131,7 +39186,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "19",
+        "age": "20",
         "ht": "6-8",
         "wt": "209",
         "experience": "Rookie",
@@ -41562,7 +41617,7 @@
         "url": "../players/player946.htm",
         "team": "roster16",
         "teamLabel": "Sheffield United",
-        "pos": "SG",
+        "pos": "PG",
         "age": "21",
         "ht": "6-1",
         "wt": "190",
@@ -42781,7 +42836,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "21",
+        "age": "22",
         "ht": "6-11",
         "wt": "250",
         "experience": "Rookie",
@@ -43759,11 +43814,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 9",
+                "award": "Player of the Game: 12",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 9
+                "count": 12
             },
             {
                 "season": "Total",
@@ -43811,11 +43866,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 9",
+                "award": "Player of the Game: 12",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 9
+                "count": 12
             },
             {
                 "season": "Total",
@@ -43953,7 +44008,7 @@
         "team": "roster11",
         "teamLabel": "Atletico Madrid",
         "pos": "PF",
-        "age": "30",
+        "age": "31",
         "ht": "6-11",
         "wt": "220",
         "experience": "1 year",
@@ -44100,8 +44155,8 @@
         "url": "../players/player764.htm",
         "team": "roster10",
         "teamLabel": "Brighton",
-        "pos": "C",
-        "age": "22",
+        "pos": "PF",
+        "age": "23",
         "ht": "6-7",
         "wt": "222",
         "experience": "1 year",
@@ -44520,21 +44575,21 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 1",
+                "award": "Player of the Game: 3",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 1
+                "count": 3
             }
         ],
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 1",
+                "award": "Player of the Game: 3",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 1
+                "count": 3
             }
         ],
         "seasonAwards": [],
@@ -44819,7 +44874,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "PG",
-        "age": "18",
+        "age": "19",
         "ht": "6-4",
         "wt": "210",
         "experience": "Rookie",
@@ -45634,6 +45689,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Brighton with pick #4 of round 7 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "12/2/1982",
+                "action": "Signed a contract extension for $14,045,850 over 3 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "57",
@@ -45678,18 +45738,18 @@
             },
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 4459000.0,
+                "salaryText": "$4,459,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 4681950.0,
+                "salaryText": "$4,681,950"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 4904900.0,
+                "salaryText": "$4,904,900"
             },
             {
                 "year": "1986",
@@ -46328,7 +46388,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "27",
+        "age": "28",
         "ht": "7-1",
         "wt": "235",
         "experience": "Rookie",
@@ -46713,7 +46773,7 @@
         "url": "../players/player1086.htm",
         "team": "roster28",
         "teamLabel": "Manchester City",
-        "pos": "C",
+        "pos": "PF",
         "age": "29",
         "ht": "6-10",
         "wt": "228",
@@ -47561,7 +47621,7 @@
         "team": "roster26",
         "teamLabel": "Inter Milan",
         "pos": "PF",
-        "age": "23",
+        "age": "24",
         "ht": "6-6",
         "wt": "190",
         "experience": "1 year",
@@ -49399,16 +49459,24 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 16",
+                "award": "Player of the Game: 21",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 16
+                "count": 21
+            },
+            {
+                "season": "Total",
+                "award": "Player of the Week: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Player of the Week",
+                "count": 1
             },
             {
                 "season": "Total",
                 "award": "All-Star Appearances: 1",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": true,
                 "label": "All-Star Appearances",
                 "count": 1
@@ -49416,7 +49484,7 @@
             {
                 "season": "Total",
                 "award": "All-League Second Team: 1",
-                "rowClass": "row1",
+                "rowClass": "row2",
                 "isTotal": true,
                 "label": "All-League Second Team",
                 "count": 1
@@ -49424,35 +49492,43 @@
             {
                 "season": "1981",
                 "award": "ECL All-Star",
-                "rowClass": "row2",
-                "isTotal": false
-            },
-            {
-                "season": "1981",
-                "award": "ECL All-League Second Team",
                 "rowClass": "row1",
                 "isTotal": false
             },
             {
                 "season": "1981",
-                "award": "ECL All-Rookie Second Team",
+                "award": "ECL All-League Second Team",
                 "rowClass": "row2",
+                "isTotal": false
+            },
+            {
+                "season": "1981",
+                "award": "ECL All-Rookie Second Team",
+                "rowClass": "row1",
                 "isTotal": false
             }
         ],
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 16",
+                "award": "Player of the Game: 21",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 16
+                "count": 21
+            },
+            {
+                "season": "Total",
+                "award": "Player of the Week: 1",
+                "rowClass": "row2",
+                "isTotal": true,
+                "label": "Player of the Week",
+                "count": 1
             },
             {
                 "season": "Total",
                 "award": "All-Star Appearances: 1",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": true,
                 "label": "All-Star Appearances",
                 "count": 1
@@ -49460,7 +49536,7 @@
             {
                 "season": "Total",
                 "award": "All-League Second Team: 1",
-                "rowClass": "row1",
+                "rowClass": "row2",
                 "isTotal": true,
                 "label": "All-League Second Team",
                 "count": 1
@@ -49470,19 +49546,19 @@
             {
                 "season": "1981",
                 "award": "ECL All-Star",
-                "rowClass": "row2",
-                "isTotal": false
-            },
-            {
-                "season": "1981",
-                "award": "ECL All-League Second Team",
                 "rowClass": "row1",
                 "isTotal": false
             },
             {
                 "season": "1981",
-                "award": "ECL All-Rookie Second Team",
+                "award": "ECL All-League Second Team",
                 "rowClass": "row2",
+                "isTotal": false
+            },
+            {
+                "season": "1981",
+                "award": "ECL All-Rookie Second Team",
+                "rowClass": "row1",
                 "isTotal": false
             }
         ],
@@ -49981,11 +50057,11 @@
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 1",
+                "award": "Player of the Week: 2",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 1
+                "count": 2
             },
             {
                 "season": "Total",
@@ -50013,11 +50089,11 @@
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 1",
+                "award": "Player of the Week: 2",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 1
+                "count": 2
             },
             {
                 "season": "Total",
@@ -50523,21 +50599,21 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 1",
+                "award": "Player of the Game: 2",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 1
+                "count": 2
             }
         ],
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 1",
+                "award": "Player of the Game: 2",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 1
+                "count": 2
             }
         ],
         "seasonAwards": [],
@@ -50832,11 +50908,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 3",
+                "award": "Player of the Game: 6",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 3
+                "count": 6
             },
             {
                 "season": "Total",
@@ -50856,11 +50932,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 3",
+                "award": "Player of the Game: 6",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 3
+                "count": 6
             },
             {
                 "season": "Total",
@@ -51507,21 +51583,21 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 2",
+                "award": "Player of the Game: 3",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 2
+                "count": 3
             }
         ],
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 2",
+                "award": "Player of the Game: 3",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 2
+                "count": 3
             }
         ],
         "seasonAwards": [],
@@ -51907,7 +51983,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "19",
+        "age": "20",
         "ht": "7-0",
         "wt": "221",
         "experience": "Rookie",
@@ -52513,7 +52589,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "27",
+        "age": "28",
         "ht": "6-7",
         "wt": "202",
         "experience": "1 year",
@@ -52804,7 +52880,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "31",
+        "age": "32",
         "ht": "6-5",
         "wt": "224",
         "experience": "Rookie",
@@ -53190,7 +53266,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "27",
+        "age": "28",
         "ht": "6-11",
         "wt": "244",
         "experience": "Rookie",
@@ -53716,8 +53792,8 @@
         "url": "../players/player376.htm",
         "team": "roster10",
         "teamLabel": "Brighton",
-        "pos": "SG",
-        "age": "20",
+        "pos": "SF",
+        "age": "21",
         "ht": "6-5",
         "wt": "210",
         "experience": "Rookie",
@@ -54133,7 +54209,7 @@
         "team": "roster5",
         "teamLabel": "Manchester United",
         "pos": "C",
-        "age": "20",
+        "age": "21",
         "ht": "6-10",
         "wt": "277",
         "experience": "1 year",
@@ -54143,11 +54219,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 4",
+                "award": "Player of the Game: 7",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 4
+                "count": 7
             },
             {
                 "season": "Total",
@@ -54195,11 +54271,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 4",
+                "award": "Player of the Game: 7",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 4
+                "count": 7
             },
             {
                 "season": "Total",
@@ -56176,11 +56252,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 17",
+                "award": "Player of the Game: 19",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 17
+                "count": 19
             },
             {
                 "season": "Total",
@@ -56228,11 +56304,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 17",
+                "award": "Player of the Game: 19",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 17
+                "count": 19
             },
             {
                 "season": "Total",
@@ -56592,11 +56668,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 22",
+                "award": "Player of the Game: 25",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 22
+                "count": 25
             },
             {
                 "season": "Total",
@@ -56652,11 +56728,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 22",
+                "award": "Player of the Game: 25",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 22
+                "count": 25
             },
             {
                 "season": "Total",
@@ -57819,7 +57895,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "20",
+        "age": "21",
         "ht": "6-6",
         "wt": "192",
         "experience": "Rookie",
@@ -58140,7 +58216,7 @@
         "url": "../players/player901.htm",
         "team": "roster16",
         "teamLabel": "Sheffield United",
-        "pos": "SG",
+        "pos": "SF",
         "age": "26",
         "ht": "6-6",
         "wt": "208",
@@ -58631,7 +58707,7 @@
         "url": "../players/player1131.htm",
         "team": "roster28",
         "teamLabel": "Manchester City",
-        "pos": "PF",
+        "pos": "C",
         "age": "27",
         "ht": "6-10",
         "wt": "233",
@@ -59707,7 +59783,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "SF",
-        "age": "20",
+        "age": "21",
         "ht": "6-7",
         "wt": "210",
         "experience": "Rookie",
@@ -59897,7 +59973,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PG",
-        "age": "22",
+        "age": "23",
         "ht": "5-8",
         "wt": "217",
         "experience": "Rookie",
@@ -60946,7 +61022,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "C",
-        "age": "18",
+        "age": "19",
         "ht": "7-0",
         "wt": "208",
         "experience": "Rookie",
@@ -63246,11 +63322,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 19",
+                "award": "Player of the Game: 22",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 19
+                "count": 22
             },
             {
                 "season": "Total",
@@ -63298,11 +63374,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 19",
+                "award": "Player of the Game: 22",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 19
+                "count": 22
             },
             {
                 "season": "Total",
@@ -63541,7 +63617,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "PF",
-        "age": "20",
+        "age": "21",
         "ht": "6-10",
         "wt": "220",
         "experience": "Rookie",
@@ -63741,11 +63817,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 24",
+                "award": "Player of the Game: 25",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 24
+                "count": 25
             },
             {
                 "season": "Total",
@@ -63815,11 +63891,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 24",
+                "award": "Player of the Game: 25",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 24
+                "count": 25
             },
             {
                 "season": "Total",
@@ -64916,7 +64992,7 @@
         "team": "roster27",
         "teamLabel": "FL Fart",
         "pos": "C",
-        "age": "24",
+        "age": "25",
         "ht": "6-11",
         "wt": "253",
         "experience": "1 year",
@@ -65017,7 +65093,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "PF",
-        "age": "20",
+        "age": "21",
         "ht": "6-9",
         "wt": "240",
         "experience": "Rookie",
@@ -65409,7 +65485,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "26",
+        "age": "27",
         "ht": "7-2",
         "wt": "242",
         "experience": "Rookie",
@@ -66009,7 +66085,7 @@
         "team": "roster7",
         "teamLabel": "Bayern Munich",
         "pos": "PF",
-        "age": "21",
+        "age": "22",
         "ht": "6-10",
         "wt": "225",
         "experience": "1 year",
@@ -66019,11 +66095,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 14",
+                "award": "Player of the Game: 17",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 14
+                "count": 17
             },
             {
                 "season": "Total",
@@ -66071,11 +66147,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 14",
+                "award": "Player of the Game: 17",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 14
+                "count": 17
             },
             {
                 "season": "Total",
@@ -66217,7 +66293,7 @@
         "url": "../players/player1085.htm",
         "team": "roster25",
         "teamLabel": "Valencia",
-        "pos": "SG",
+        "pos": "SF",
         "age": "21",
         "ht": "6-5",
         "wt": "203",
@@ -66319,7 +66395,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PF",
-        "age": "27",
+        "age": "28",
         "ht": "6-9",
         "wt": "227",
         "experience": "Rookie",
@@ -66525,7 +66601,7 @@
         "url": "../players/player701.htm",
         "team": "roster10",
         "teamLabel": "Brighton",
-        "pos": "SF",
+        "pos": "SG",
         "age": "22",
         "ht": "6-8",
         "wt": "222",
@@ -66536,24 +66612,32 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 8",
+                "award": "Player of the Game: 10",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 8
+                "count": 10
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 3",
+                "award": "Player of the Week: 4",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 3
+                "count": 4
+            },
+            {
+                "season": "Total",
+                "award": "Player of the Month: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Player of the Month",
+                "count": 1
             },
             {
                 "season": "Total",
                 "award": "All-Star Appearances: 1",
-                "rowClass": "row1",
+                "rowClass": "row2",
                 "isTotal": true,
                 "label": "All-Star Appearances",
                 "count": 1
@@ -66561,7 +66645,7 @@
             {
                 "season": "Total",
                 "award": "All-League Third Team: 1",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": true,
                 "label": "All-League Third Team",
                 "count": 1
@@ -66569,37 +66653,45 @@
             {
                 "season": "1981",
                 "award": "CLB All-Star",
-                "rowClass": "row1",
+                "rowClass": "row2",
                 "isTotal": false
             },
             {
                 "season": "1981",
                 "award": "CLB All-League Third Team",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": false
             }
         ],
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 8",
+                "award": "Player of the Game: 10",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 8
+                "count": 10
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 3",
+                "award": "Player of the Week: 4",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 3
+                "count": 4
+            },
+            {
+                "season": "Total",
+                "award": "Player of the Month: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Player of the Month",
+                "count": 1
             },
             {
                 "season": "Total",
                 "award": "All-Star Appearances: 1",
-                "rowClass": "row1",
+                "rowClass": "row2",
                 "isTotal": true,
                 "label": "All-Star Appearances",
                 "count": 1
@@ -66607,7 +66699,7 @@
             {
                 "season": "Total",
                 "award": "All-League Third Team: 1",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": true,
                 "label": "All-League Third Team",
                 "count": 1
@@ -66617,13 +66709,13 @@
             {
                 "season": "1981",
                 "award": "CLB All-Star",
-                "rowClass": "row1",
+                "rowClass": "row2",
                 "isTotal": false
             },
             {
                 "season": "1981",
                 "award": "CLB All-League Third Team",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": false
             }
         ],
@@ -67009,7 +67101,7 @@
         "team": "roster9",
         "teamLabel": "AC Milan",
         "pos": "PG",
-        "age": "21",
+        "age": "22",
         "ht": "6-3",
         "wt": "192",
         "experience": "Rookie",
@@ -67110,7 +67202,7 @@
         "team": "roster8",
         "teamLabel": "Real Madrid",
         "pos": "PF",
-        "age": "21",
+        "age": "22",
         "ht": "6-10",
         "wt": "254",
         "experience": "Rookie",
@@ -67651,6 +67743,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by AFC Richmond with pick #1 of round 5 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "12/2/1982",
+                "action": "Signed a contract extension for $24,025,680 over 3 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "40",
@@ -67695,18 +67792,18 @@
             },
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7627200.0,
+                "salaryText": "$7,627,200"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 8008560.0,
+                "salaryText": "$8,008,560"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 8389920.0,
+                "salaryText": "$8,389,920"
             },
             {
                 "year": "1986",
@@ -68080,7 +68177,7 @@
         "url": "../players/player385.htm",
         "team": "roster14",
         "teamLabel": "Juventus",
-        "pos": "PF",
+        "pos": "C",
         "age": "21",
         "ht": "6-10",
         "wt": "252",
@@ -68544,11 +68641,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 11",
+                "award": "Player of the Game: 12",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 11
+                "count": 12
             },
             {
                 "season": "Total",
@@ -68618,11 +68715,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 11",
+                "award": "Player of the Game: 12",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 11
+                "count": 12
             },
             {
                 "season": "Total",
@@ -68782,7 +68879,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PF",
-        "age": "26",
+        "age": "27",
         "ht": "6-9",
         "wt": "225",
         "experience": "1 year",
@@ -68903,11 +69000,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 10",
+                "award": "Player of the Game: 13",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 10
+                "count": 13
             },
             {
                 "season": "Total",
@@ -68969,11 +69066,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 10",
+                "award": "Player of the Game: 13",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 10
+                "count": 13
             },
             {
                 "season": "Total",
@@ -70145,7 +70242,7 @@
         "url": "../players/player902.htm",
         "team": "roster13",
         "teamLabel": "Benfica",
-        "pos": "SG",
+        "pos": "PG",
         "age": "21",
         "ht": "6-6",
         "wt": "206",
@@ -70277,7 +70374,7 @@
         "url": "../players/player1091.htm",
         "team": "roster26",
         "teamLabel": "Inter Milan",
-        "pos": "SG",
+        "pos": "PG",
         "age": "28",
         "ht": "6-3",
         "wt": "188",
@@ -70789,7 +70886,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PF",
-        "age": "28",
+        "age": "29",
         "ht": "6-9",
         "wt": "235",
         "experience": "Rookie",
@@ -71418,19 +71515,19 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 27",
+                "award": "Player of the Game: 32",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 27
+                "count": 32
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 6",
+                "award": "Player of the Week: 7",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 6
+                "count": 7
             },
             {
                 "season": "Total",
@@ -71512,19 +71609,19 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 27",
+                "award": "Player of the Game: 32",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 27
+                "count": 32
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 6",
+                "award": "Player of the Week: 7",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 6
+                "count": 7
             },
             {
                 "season": "Total",
@@ -74177,7 +74274,7 @@
         "team": "roster10",
         "teamLabel": "Brighton",
         "pos": "PF",
-        "age": "19",
+        "age": "20",
         "ht": "6-6",
         "wt": "235",
         "experience": "1 year",
@@ -74187,11 +74284,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 13",
+                "award": "Player of the Game: 15",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 13
+                "count": 15
             },
             {
                 "season": "Total",
@@ -74233,11 +74330,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 13",
+                "award": "Player of the Game: 15",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 13
+                "count": 15
             },
             {
                 "season": "Total",
@@ -74575,7 +74672,7 @@
         "url": "../players/player1116.htm",
         "team": "roster25",
         "teamLabel": "Valencia",
-        "pos": "PG",
+        "pos": "SG",
         "age": "21",
         "ht": "6-4",
         "wt": "192",
@@ -76031,7 +76128,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "18",
+        "age": "19",
         "ht": "6-4",
         "wt": "183",
         "experience": "Rookie",
@@ -76178,6 +76275,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by AFC Richmond with pick #1 of round 7 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "12/2/1982",
+                "action": "Signed a contract extension for $15,479,100 over 3 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "37",
@@ -76222,18 +76324,18 @@
             },
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 4914000.0,
+                "salaryText": "$4,914,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 5159700.0,
+                "salaryText": "$5,159,700"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 5405400.0,
+                "salaryText": "$5,405,400"
             },
             {
                 "year": "1986",
@@ -77863,7 +77965,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "25",
+        "age": "26",
         "ht": "6-7",
         "wt": "223",
         "experience": "Rookie",
@@ -78169,11 +78271,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 3",
+                "award": "Player of the Game: 4",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 3
+                "count": 4
             },
             {
                 "season": "Total",
@@ -78235,11 +78337,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 3",
+                "award": "Player of the Game: 4",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 3
+                "count": 4
             },
             {
                 "season": "Total",
@@ -78307,7 +78409,7 @@
                 "rowClass": "row1"
             }
         ],
-        "Ins": "63",
+        "Ins": "71",
         "Jps": "45",
         "Fts": "64",
         "3ps": "4",
@@ -78323,8 +78425,8 @@
         "Str": "55",
         "Jmp": "59",
         "Sta": "89",
-        "overall": "97",
-        "potential": "97",
+        "overall": "99",
+        "potential": "99",
         "potentials": {
             "Ins": "B",
             "Jps": "C",
@@ -78776,6 +78878,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Bayern Munich with pick #2 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "12/2/1982",
+                "action": "Signed a contract extension for $34,728,750 over 3 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "72",
@@ -78820,18 +78927,18 @@
             },
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 11025000.0,
+                "salaryText": "$11,025,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 11576250.0,
+                "salaryText": "$11,576,250"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 12127500.0,
+                "salaryText": "$12,127,500"
             },
             {
                 "year": "1986",
@@ -79881,21 +79988,21 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 4",
+                "award": "Player of the Game: 5",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 4
+                "count": 5
             }
         ],
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 4",
+                "award": "Player of the Game: 5",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 4
+                "count": 5
             }
         ],
         "seasonAwards": [],
@@ -79990,7 +80097,7 @@
         "team": "roster15",
         "teamLabel": "Marseille",
         "pos": "PF",
-        "age": "21",
+        "age": "22",
         "ht": "6-10",
         "wt": "200",
         "experience": "1 year",
@@ -80192,7 +80299,7 @@
         "team": "roster15",
         "teamLabel": "Marseille",
         "pos": "SF",
-        "age": "24",
+        "age": "25",
         "ht": "6-7",
         "wt": "222",
         "experience": "1 year",
@@ -80340,7 +80447,7 @@
         "team": "roster25",
         "teamLabel": "Valencia",
         "pos": "SF",
-        "age": "31",
+        "age": "32",
         "ht": "6-4",
         "wt": "201",
         "experience": "1 year",
@@ -80350,11 +80457,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 5",
+                "award": "Player of the Game: 6",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 5
+                "count": 6
             },
             {
                 "season": "Total",
@@ -80396,11 +80503,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 5",
+                "award": "Player of the Game: 6",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 5
+                "count": 6
             },
             {
                 "season": "Total",
@@ -80542,11 +80649,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 3",
+                "award": "Player of the Game: 4",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 3
+                "count": 4
             },
             {
                 "season": "Total",
@@ -80586,11 +80693,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 3",
+                "award": "Player of the Game: 4",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 3
+                "count": 4
             },
             {
                 "season": "Total",
@@ -80848,6 +80955,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Bayern Munich with pick #7 of round 5 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "12/2/1982",
+                "action": "Signed a contract extension for $37,458,269 over 3 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "64",
@@ -80892,18 +81004,18 @@
             },
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 11891514.0,
+                "salaryText": "$11,891,514"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 12486090.0,
+                "salaryText": "$12,486,090"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 13080665.0,
+                "salaryText": "$13,080,665"
             },
             {
                 "year": "1986",
@@ -81130,7 +81242,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "23",
+        "age": "24",
         "ht": "6-11",
         "wt": "267",
         "experience": "Rookie",
@@ -82582,27 +82694,27 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 38",
+                "award": "Player of the Game: 41",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 38
+                "count": 41
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 14",
+                "award": "Player of the Week: 16",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 14
+                "count": 16
             },
             {
                 "season": "Total",
-                "award": "Player of the Month: 6",
+                "award": "Player of the Month: 7",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Month",
-                "count": 6
+                "count": 7
             },
             {
                 "season": "Total",
@@ -82740,27 +82852,27 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 38",
+                "award": "Player of the Game: 41",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 38
+                "count": 41
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 14",
+                "award": "Player of the Week: 16",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 14
+                "count": 16
             },
             {
                 "season": "Total",
-                "award": "Player of the Month: 6",
+                "award": "Player of the Month: 7",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Month",
-                "count": 6
+                "count": 7
             },
             {
                 "season": "Total",
@@ -83742,7 +83854,7 @@
         "url": "../players/player635.htm",
         "team": "roster20",
         "teamLabel": "Monaco",
-        "pos": "C",
+        "pos": "PF",
         "age": "20",
         "ht": "6-9",
         "wt": "266",
@@ -84838,7 +84950,7 @@
         "url": "../players/player237.htm",
         "team": "roster19",
         "teamLabel": "Aston Villa",
-        "pos": "C",
+        "pos": "PF",
         "age": "21",
         "ht": "6-9",
         "wt": "281",
@@ -85438,7 +85550,7 @@
         "team": "roster11",
         "teamLabel": "Atletico Madrid",
         "pos": "PF",
-        "age": "19",
+        "age": "20",
         "ht": "6-9",
         "wt": "226",
         "experience": "1 year",
@@ -85634,7 +85746,7 @@
         "team": "roster24",
         "teamLabel": "Barcelona",
         "pos": "SG",
-        "age": "23",
+        "age": "24",
         "ht": "6-4",
         "wt": "197",
         "experience": "1 year",
@@ -85644,11 +85756,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 8",
+                "award": "Player of the Game: 9",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 8
+                "count": 9
             },
             {
                 "season": "Total",
@@ -85676,11 +85788,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 8",
+                "award": "Player of the Game: 9",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 8
+                "count": 9
             },
             {
                 "season": "Total",
@@ -87241,8 +87353,26 @@
         "source": "player_page",
         "currentSalary": 555000.0,
         "currentSalaryText": "$555,000",
-        "awards": [],
-        "achievementTotals": [],
+        "awards": [
+            {
+                "season": "Total",
+                "award": "Player of the Game: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Player of the Game",
+                "count": 1
+            }
+        ],
+        "achievementTotals": [
+            {
+                "season": "Total",
+                "award": "Player of the Game: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Player of the Game",
+                "count": 1
+            }
+        ],
         "seasonAwards": [],
         "transactions": [
             {
@@ -87947,7 +88077,7 @@
         "team": "roster18",
         "teamLabel": "Ajax",
         "pos": "C",
-        "age": "23",
+        "age": "24",
         "ht": "7-0",
         "wt": "256",
         "experience": "1 year",
@@ -88879,7 +89009,7 @@
         "team": "roster18",
         "teamLabel": "Ajax",
         "pos": "PF",
-        "age": "22",
+        "age": "23",
         "ht": "6-8",
         "wt": "218",
         "experience": "1 year",
@@ -89376,11 +89506,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 5",
+                "award": "Player of the Game: 6",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 5
+                "count": 6
             },
             {
                 "season": "Total",
@@ -89400,11 +89530,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 5",
+                "award": "Player of the Game: 6",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 5
+                "count": 6
             },
             {
                 "season": "Total",
@@ -89931,7 +90061,7 @@
         "team": "roster9",
         "teamLabel": "AC Milan",
         "pos": "SG",
-        "age": "30",
+        "age": "31",
         "ht": "6-3",
         "wt": "182",
         "experience": "1 year",
@@ -90482,7 +90612,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PG",
-        "age": "23",
+        "age": "24",
         "ht": "6-3",
         "wt": "186",
         "experience": "Rookie",
@@ -92131,11 +92261,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 3",
+                "award": "Player of the Game: 5",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 3
+                "count": 5
             },
             {
                 "season": "Total",
@@ -92155,11 +92285,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 3",
+                "award": "Player of the Game: 5",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 3
+                "count": 5
             },
             {
                 "season": "Total",
@@ -93301,11 +93431,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 1",
+                "award": "Player of the Game: 2",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 1
+                "count": 2
             },
             {
                 "season": "Total",
@@ -93339,11 +93469,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 1",
+                "award": "Player of the Game: 2",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 1
+                "count": 2
             },
             {
                 "season": "Total",
@@ -94092,7 +94222,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "28",
+        "age": "29",
         "ht": "6-11",
         "wt": "193",
         "experience": "Rookie",
@@ -94577,19 +94707,19 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 10",
+                "award": "Player of the Game: 11",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 10
+                "count": 11
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 2",
+                "award": "Player of the Week: 3",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 2
+                "count": 3
             },
             {
                 "season": "Total",
@@ -94645,19 +94775,19 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 10",
+                "award": "Player of the Game: 11",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 10
+                "count": 11
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 2",
+                "award": "Player of the Week: 3",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 2
+                "count": 3
             },
             {
                 "season": "Total",
@@ -96562,7 +96692,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PG",
-        "age": "21",
+        "age": "22",
         "ht": "6-2",
         "wt": "179",
         "experience": "1 year",
@@ -98537,7 +98667,7 @@
         "team": "roster28",
         "teamLabel": "Manchester City",
         "pos": "PF",
-        "age": "26",
+        "age": "27",
         "ht": "6-10",
         "wt": "243",
         "experience": "1 year",
@@ -99295,7 +99425,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "SG",
-        "age": "18",
+        "age": "19",
         "ht": "6-7",
         "wt": "192",
         "experience": "Rookie",
@@ -99495,11 +99625,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 15",
+                "award": "Player of the Game: 16",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 15
+                "count": 16
             },
             {
                 "season": "Total",
@@ -99555,11 +99685,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 15",
+                "award": "Player of the Game: 16",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 15
+                "count": 16
             },
             {
                 "season": "Total",
@@ -102035,11 +102165,11 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 16",
+                "award": "Player of the Game: 17",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 16
+                "count": 17
             },
             {
                 "season": "Total",
@@ -102087,11 +102217,11 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 16",
+                "award": "Player of the Game: 17",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 16
+                "count": 17
             },
             {
                 "season": "Total",
@@ -102228,7 +102358,7 @@
         "url": "../players/player628.htm",
         "team": "roster6",
         "teamLabel": "Crystal Palace",
-        "pos": "SG",
+        "pos": "PG",
         "age": "23",
         "ht": "6-3",
         "wt": "182",
@@ -102330,7 +102460,7 @@
         "team": "roster14",
         "teamLabel": "Juventus",
         "pos": "SF",
-        "age": "31",
+        "age": "32",
         "ht": "6-7",
         "wt": "219",
         "experience": "1 year",
@@ -102345,6 +102475,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Aston Villa with pick #4 of round 8 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "12/2/1982",
+                "action": "Signed a contract extension for $7,254,160 over 3 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "45",
@@ -102389,18 +102524,18 @@
             },
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 2302908.0,
+                "salaryText": "$2,302,908"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 2418053.0,
+                "salaryText": "$2,418,053"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 2533199.0,
+                "salaryText": "$2,533,199"
             },
             {
                 "year": "1986",
@@ -102438,8 +102573,26 @@
         "source": "player_page",
         "currentSalary": 10000000.0,
         "currentSalaryText": "$10,000,000",
-        "awards": [],
-        "achievementTotals": [],
+        "awards": [
+            {
+                "season": "Total",
+                "award": "Player of the Game: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Player of the Game",
+                "count": 1
+            }
+        ],
+        "achievementTotals": [
+            {
+                "season": "Total",
+                "award": "Player of the Game: 1",
+                "rowClass": "row1",
+                "isTotal": true,
+                "label": "Player of the Game",
+                "count": 1
+            }
+        ],
         "seasonAwards": [],
         "transactions": [],
         "Ins": "28",
@@ -103232,7 +103385,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PG",
-        "age": "26",
+        "age": "27",
         "ht": "6-2",
         "wt": "195",
         "experience": "Rookie",
@@ -104136,7 +104289,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "25",
+        "age": "26",
         "ht": "6-4",
         "wt": "199",
         "experience": "Rookie",
@@ -105394,6 +105547,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by AFC Richmond with pick #8 of round 5 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "12/2/1982",
+                "action": "Signed a contract extension for $40,975,200 over 3 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "88",
@@ -105438,18 +105596,18 @@
             },
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 13008000.0,
+                "salaryText": "$13,008,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 13658400.0,
+                "salaryText": "$13,658,400"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 14308800.0,
+                "salaryText": "$14,308,800"
             },
             {
                 "year": "1986",
@@ -107501,7 +107659,7 @@
         "url": "../players/player629.htm",
         "team": "roster7",
         "teamLabel": "Bayern Munich",
-        "pos": "PG",
+        "pos": "SG",
         "age": "20",
         "ht": "6-3",
         "wt": "191",
@@ -107986,7 +108144,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "C",
-        "age": "19",
+        "age": "20",
         "ht": "7-0",
         "wt": "225",
         "experience": "Rookie",
@@ -108668,7 +108826,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PF",
-        "age": "17",
+        "age": "18",
         "ht": "6-9",
         "wt": "239",
         "experience": "Rookie",
@@ -110401,7 +110559,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "32",
+        "age": "33",
         "ht": "6-10",
         "wt": "230",
         "experience": "Rookie",
@@ -110601,8 +110759,16 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Championships: 1",
+                "award": "Player of the Game: 1",
                 "rowClass": "row1",
+                "isTotal": true,
+                "label": "Player of the Game",
+                "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row2",
                 "isTotal": true,
                 "label": "Championships",
                 "count": 1
@@ -110610,15 +110776,23 @@
             {
                 "season": "1981",
                 "award": "Champions League Basketball Champion",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": false
             }
         ],
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Championships: 1",
+                "award": "Player of the Game: 1",
                 "rowClass": "row1",
+                "isTotal": true,
+                "label": "Player of the Game",
+                "count": 1
+            },
+            {
+                "season": "Total",
+                "award": "Championships: 1",
+                "rowClass": "row2",
                 "isTotal": true,
                 "label": "Championships",
                 "count": 1
@@ -110628,7 +110802,7 @@
             {
                 "season": "1981",
                 "award": "Champions League Basketball Champion",
-                "rowClass": "row2",
+                "rowClass": "row1",
                 "isTotal": false
             }
         ],
@@ -110817,7 +110991,7 @@
         "url": "../players/player634.htm",
         "team": "roster12",
         "teamLabel": "AFC Richmond",
-        "pos": "C",
+        "pos": "PF",
         "age": "21",
         "ht": "7-1",
         "wt": "268",
@@ -111066,21 +111240,21 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 4",
+                "award": "Player of the Game: 5",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 4
+                "count": 5
             }
         ],
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 4",
+                "award": "Player of the Game: 5",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 4
+                "count": 5
             }
         ],
         "seasonAwards": [],
@@ -112140,7 +112314,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "26",
+        "age": "27",
         "ht": "6-9",
         "wt": "199",
         "experience": "Rookie",
@@ -112330,7 +112504,7 @@
         "team": "roster26",
         "teamLabel": "Inter Milan",
         "pos": "SG",
-        "age": "25",
+        "age": "26",
         "ht": "6-3",
         "wt": "187",
         "experience": "1 year",
@@ -112340,19 +112514,19 @@
         "awards": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 17",
+                "award": "Player of the Game: 19",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 17
+                "count": 19
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 1",
+                "award": "Player of the Week: 2",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 1
+                "count": 2
             },
             {
                 "season": "Total",
@@ -112420,19 +112594,19 @@
         "achievementTotals": [
             {
                 "season": "Total",
-                "award": "Player of the Game: 17",
+                "award": "Player of the Game: 19",
                 "rowClass": "row1",
                 "isTotal": true,
                 "label": "Player of the Game",
-                "count": 17
+                "count": 19
             },
             {
                 "season": "Total",
-                "award": "Player of the Week: 1",
+                "award": "Player of the Week: 2",
                 "rowClass": "row2",
                 "isTotal": true,
                 "label": "Player of the Week",
-                "count": 1
+                "count": 2
             },
             {
                 "season": "Total",

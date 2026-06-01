@@ -293,6 +293,8 @@ Keep the tone consistent with the current site:
 
 ## If making a brand-new article
 
+The normal publishing flow is manual HTML. Do not create a CMS JSON entry for new work.
+
 Follow this checklist:
 1. Copy an existing article file as the base.
 2. Replace title, headline, dek, byline, dateline, masthead labels, ticker items, and body copy.
@@ -300,6 +302,9 @@ Follow this checklist:
 4. Keep the `.paper` wrapper unchanged.
 5. Keep the `<script src="../article-rail.js"></script>` line in place.
 6. Add only the minimum extra CSS needed for that specific article.
+7. Add or update the matching object in `00-eslmedia/content/media-articles.js`.
+8. Add the story to the homepage power board in `00-eslmedia/homepage.html`.
+9. Run the media validator before publishing.
 
 ## If updating recommendations
 
@@ -414,4 +419,3 @@ When adding future articles:
 3. check that the article appears on the relevant team pages after updating the manifest
 
 Do not hardcode which tier a team belongs to in the media site. The Teams dropdown, Teams directory, and individual team pages should read the current standings JSON so promotion/relegation changes automatically move teams into the correct column after a build.
-

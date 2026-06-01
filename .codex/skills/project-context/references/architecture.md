@@ -32,8 +32,7 @@ This repo mixes generated league-export pages with custom assets and build outpu
   - Homepage: `00-eslmedia/homepage.html`
   - Article files: `00-eslmedia/content/articles/`
   - Manifest: `00-eslmedia/content/media-articles.js`
-  - CMS drafts: `00-eslmedia/content/cms/articles/`
-  - CMS exporter: `00-build/scripts/build_esl_media_static_cms.py`
+  - Publishing flow: hand-authored article HTML following `00-eslmedia/content/articles/README.md`, plus manual manifest and homepage updates
   - Monthly data/prompt builders: `build_monthly_jsons.py` and `build_media_package_prompts.py`
   - Validator: `00-build/scripts/validate_media_site.py`
 

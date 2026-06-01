@@ -30,9 +30,7 @@ Read only the reference file that matches the task:
 - `00-build/scripts/build_players_json.py` is the main league-data extraction pipeline.
 - `00-build/scripts/inject_css_js.py` injects shared assets into generated HTML.
 - `00-build/scripts/archive_season_jsons.py` snapshots generated feeds into `00-build/history/`.
-- `00-build/scripts/build_esl_media_static_cms.py` exports Decap/static-CMS article JSON into published media HTML and manifest entries.
 - `00-eslmedia/content/articles/README.md` defines the article shell and required shared scripts.
-- `00-eslmedia/content/cms/README.md` defines the no-backend CMS flow.
 - `00-assets/FEATURES_README_DRAFT.md` is the quickest human-readable summary of the main site feature flow.
 
 ## Fast routing
@@ -42,4 +40,4 @@ Read only the reference file that matches the task:
 - If the task mentions shared JS/CSS, index page behavior, or league-page UI: read `references/architecture.md`
 - If the task names a site branch such as index, history, media, or Super Cup: read `references/architecture.md`
 - If the task asks where a number, field, team record, salary, rating, or monthly narrative input comes from: read `references/data-sources.md`
-- If the task mentions youth intake, history, archived seasons, CMS/admin, or published media drafts: read the matching reference first, then the named producer script above.
+- If the task mentions youth intake, history, archived seasons, or published media drafts: read the matching reference first, then the named producer script above.

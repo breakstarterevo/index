@@ -26,7 +26,7 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
-  // ESL_MEDIA_CMS_START
+  // Recent manually maintained articles
   {
     file: "articles/november_1982_month_in_review.html",
     title: "November Review: Chelsea Changed The Temperature First",
@@ -166,7 +166,7 @@ window.ESL_MEDIA_ARTICLES = [
     blurb: "Aston Villa crushed the opening examination, Richmond and Ajax looked ready immediately, and two winless starts made the preseason harder to dismiss.",
     teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Juventus", "Manchester City", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sporting CP", "Tottenham Hotspur"]
   },
-  // ESL_MEDIA_CMS_END
+  // Older manually maintained articles
   {
     file: "articles/supercup_group_stage_wrap_up.html",
     title: "Super Cup Group Stage Wrap-Up: Bayern Took The Tiebreak",

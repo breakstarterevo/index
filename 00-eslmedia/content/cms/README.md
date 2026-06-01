@@ -1,28 +1,11 @@
-# ESL Media Static CMS
+# ESL Media Static CMS Archive
 
-This is the no-backend CMS flow for ESL Media.
+This CMS flow is archived. The normal ESL Media publishing workflow is now the manual HTML workflow:
 
-Editors use `00-eslmedia/admin/index.html`, powered by Decap CMS, to create JSON article entries in `00-eslmedia/content/cms/articles/`. The public site does not read those draft files directly.
+1. Create or edit the standalone article in `00-eslmedia/content/articles/`.
+2. Follow `00-eslmedia/content/articles/README.md` for the required shell, metadata, shared scripts, and writer voice.
+3. Add the article object manually to `00-eslmedia/content/media-articles.js`.
+4. Add the story to the homepage power board in `00-eslmedia/homepage.html`.
+5. Run the normal media validation before publishing.
 
-When content is ready, run:
-
-```powershell
-py -3 00-build/scripts/build_esl_media_static_cms.py
-```
-
-The build exports entries with `status: "published"` and scheduled entries whose publish date has arrived. It writes article HTML into `00-eslmedia/content/articles/` and injects generated manifest entries into `00-eslmedia/content/media-articles.js` between the CMS markers.
-
-No local SQLite database or private app server is required. The only hosted piece needed for the online editor is Decap CMS GitHub authentication, which lets the admin page commit CMS JSON files back to this repository.
-
-## Community Submission Import
-
-The public submission preview page at `00-eslmedia/content/submit.html` has **Copy CMS JSON** and **Download JSON** buttons.
-
-To import one of those submissions:
-
-1. Open `00-eslmedia/admin/import.html`.
-2. Choose the downloaded JSON file.
-3. Copy the normalized JSON and create a matching file in `00-eslmedia/content/cms/articles/`.
-4. Open Decap Admin and edit/review the new article entry.
-4. Change `status` to `published` when ready.
-5. Run `py -3 00-build/scripts/build_esl_media_static_cms.py`.
+The old Decap/static-CMS files remain here only so older drafts and generated examples are not lost. Do not add new CMS JSON files or run `00-build/scripts/build_esl_media_static_cms.py` unless the CMS workflow is explicitly revived.

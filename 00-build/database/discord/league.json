@@ -6,22 +6,22 @@
       "title": "CLB Standings",
       "teams": [
         {
-          "name": "Real Madrid",
-          "wins": 6,
-          "losses": 1,
-          "streak": "W3"
-        },
-        {
           "name": "AFC Richmond",
-          "wins": 5,
+          "wins": 11,
           "losses": 3,
-          "streak": "L2"
+          "streak": "W6"
         },
         {
-          "name": "Sheffield United",
-          "wins": 4,
-          "losses": 3,
-          "streak": "W1"
+          "name": "Real Madrid",
+          "wins": 9,
+          "losses": 4,
+          "streak": "L1"
+        },
+        {
+          "name": "Bayern Munich",
+          "wins": 7,
+          "losses": 6,
+          "streak": "L1"
         }
       ]
     },
@@ -30,21 +30,21 @@
       "teams": [
         {
           "name": "Chelsea",
-          "wins": 7,
-          "losses": 1,
-          "streak": "W6"
+          "wins": 11,
+          "losses": 4,
+          "streak": "L1"
         },
         {
           "name": "Brighton",
-          "wins": 5,
-          "losses": 2,
-          "streak": "W1"
+          "wins": 8,
+          "losses": 6,
+          "streak": "L1"
         },
         {
-          "name": "Ajax",
-          "wins": 3,
-          "losses": 3,
-          "streak": "L1"
+          "name": "FL Fart",
+          "wins": 8,
+          "losses": 6,
+          "streak": "W3"
         }
       ]
     },
@@ -53,21 +53,21 @@
       "teams": [
         {
           "name": "Aston Villa",
-          "wins": 5,
-          "losses": 1,
-          "streak": "W3"
-        },
-        {
-          "name": "Sporting CP",
-          "wins": 5,
-          "losses": 2,
-          "streak": "W2"
+          "wins": 12,
+          "losses": 3,
+          "streak": "W5"
         },
         {
           "name": "Paris Saint-Germain",
-          "wins": 4,
-          "losses": 2,
+          "wins": 10,
+          "losses": 5,
           "streak": "W1"
+        },
+        {
+          "name": "Inter Milan",
+          "wins": 8,
+          "losses": 6,
+          "streak": "W3"
         }
       ]
     }
@@ -77,31 +77,31 @@
       "category": "Minutes",
       "player": "Artis Gilmore",
       "team": "Crystal Palace",
-      "value": "40.4"
+      "value": "38.2"
     },
     {
       "category": "Points",
       "player": "Moses Malone",
       "team": "Benfica",
-      "value": "35.0"
+      "value": "35.6"
     },
     {
       "category": "Rebounds",
       "player": "Moses Malone",
       "team": "Benfica",
-      "value": "13.1"
+      "value": "11.5"
     },
     {
       "category": "Assists",
       "player": "Rickey Green",
       "team": "Sheffield United",
-      "value": "10.4"
+      "value": "10.2"
     },
     {
       "category": "Steals",
       "player": "Micheal Ray Richardson",
       "team": "Bayern Munich",
-      "value": "3.5"
+      "value": "3.2"
     }
   ]
 }

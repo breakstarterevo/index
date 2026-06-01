@@ -16,12 +16,6 @@ Use this file when the task involves refreshing data, tracing generated output, 
     6. `inject_css_js.py`
     7. `validate_media_site.py`
 
-- `00-build/scripts/build_esl_media_static_cms.py`
-  - Not part of the default main build
-  - Exports publishable JSON entries from `00-eslmedia/content/cms/articles/`
-  - Writes article HTML into `00-eslmedia/content/articles/`
-  - Injects generated manifest entries into `00-eslmedia/content/media-articles.js`
-
 - `00-build/scripts/build_supercup.py`
   - Runs the Super Cup build
   - Supports `--dry-run`
@@ -44,7 +38,7 @@ Use this file when the task involves refreshing data, tracing generated output, 
 - If a task affects youth intake, start with `build_youth_intake_json.py` and the workbook at `00-assets/spreadsheet/Youth Intake.xlsx`.
 - If a task affects shared league-page UI availability, start with `inject_css_js.py`.
 - If a task affects ESL Media publishing integrity, check `validate_media_site.py`.
-- If a task affects CMS-authored articles, check `build_esl_media_static_cms.py` and `00-eslmedia/content/cms/README.md`.
+- ESL Media articles are normally hand-authored HTML files under `00-eslmedia/content/articles/`; follow the article README, update `media-articles.js`, then update the homepage power board.
 - If a task affects historical seasons or cross-season player identity, check `archive_season_jsons.py`.
 
 ## High-value source files

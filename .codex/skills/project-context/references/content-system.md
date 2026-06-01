@@ -8,8 +8,6 @@ Use this file for ESL Media pages, article creation, homepage feeds, and editori
   - Standalone article HTML files
 - `00-eslmedia/content/prompts/`
   - Generated editorial prompt packages
-- `00-eslmedia/content/cms/articles/`
-  - Decap/static-CMS article JSON entries
 - `00-eslmedia/content/media-articles.js`
   - Article manifest consumed by media surfaces
 - `00-eslmedia/homepage.html`
@@ -51,22 +49,23 @@ When editing or generating articles, prefer following that README instead of cop
   - Confirms homepage hooks exist
   - Confirms article files and links resolve
 
-- `00-build/scripts/build_esl_media_static_cms.py`
-  - Exports entries with `status: "published"` plus due scheduled entries
-  - Writes `00-eslmedia/content/articles/<slug>.html`
-  - Injects generated manifest objects between the CMS markers in `media-articles.js`
+## Manual article flow
 
-## Static CMS flow
+- Create or edit standalone article HTML in `00-eslmedia/content/articles/`.
+- Follow `00-eslmedia/content/articles/README.md` for the required article shell, shared scripts, metadata, and writer voice rules.
+- Add or update the article object manually in `00-eslmedia/content/media-articles.js`.
+- Add the article to the homepage power board in `00-eslmedia/homepage.html`.
+- Use `00-eslmedia/content/submit.html` only as a preview/export helper; it exports article HTML, not CMS JSON.
 
-- Editor/admin shell: `00-eslmedia/admin/index.html`
-- Import helper: `00-eslmedia/admin/import.html`
-- Flow guide: `00-eslmedia/content/cms/README.md`
-- Public submissions from `00-eslmedia/content/submit.html` can be normalized into CMS JSON before review.
+## Archived CMS flow
+
+- `00-build/scripts/build_esl_media_static_cms.py`, `00-eslmedia/admin/`, and `00-eslmedia/content/cms/` are retained for historical reference only.
+- Do not use the CMS exporter for normal publishing unless the workflow is explicitly revived.
 
 ## When tracing a media bug
 
 - Broken article shell/layout: inspect the article file and the article README
 - Missing article from feed: inspect `media-articles.js` and validation rules
-- CMS article not publishing: inspect the entry status/date, `build_esl_media_static_cms.py`, and CMS marker block in `media-articles.js`
+- Article missing from homepage: inspect `00-eslmedia/homepage.html` power board entries
 - Bad monthly editorial input: inspect `build_monthly_jsons.py` and generated monthly JSON
 - Bad generated prompt package: inspect `build_media_package_prompts.py`
