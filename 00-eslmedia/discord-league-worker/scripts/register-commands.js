@@ -6,15 +6,14 @@ loadLocalEnv(".dev.vars");
 
 const token = process.env.DISCORD_BOT_TOKEN;
 const applicationId = process.env.DISCORD_APPLICATION_ID || process.env.DISCORD_CLIENT_ID;
-const guildId = process.env.DISCORD_GUILD_ID;
 
-if (!token || !applicationId || !guildId) {
-  console.error("Missing DISCORD_BOT_TOKEN, DISCORD_APPLICATION_ID/DISCORD_CLIENT_ID, or DISCORD_GUILD_ID.");
+if (!token || !applicationId) {
+  console.error("Missing DISCORD_BOT_TOKEN or DISCORD_APPLICATION_ID/DISCORD_CLIENT_ID.");
   process.exit(1);
 }
 
 const response = await fetch(
-  `https://discord.com/api/v10/applications/${applicationId}/guilds/${guildId}/commands`,
+  `https://discord.com/api/v10/applications/${applicationId}/commands`,
   {
     method: "PUT",
     headers: {
@@ -31,7 +30,7 @@ if (!response.ok) {
 }
 
 const commands = await response.json();
-console.log(`Registered ${commands.length} guild commands: ${commands.map((command) => command.name).join(", ")}`);
+console.log(`Registered ${commands.length} global commands: ${commands.map((command) => command.name).join(", ")}`);
 
 function loadLocalEnv(path) {
   if (!fs.existsSync(path)) {

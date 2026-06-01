@@ -1,13 +1,20 @@
+const INSTALL_CONTEXTS = {
+  integration_types: [0, 1],
+  contexts: [0, 1, 2],
+};
+
 export const COMMANDS = [
   {
     name: "help",
     description: "Show ESL bot commands",
     type: 1,
+    ...INSTALL_CONTEXTS,
   },
   {
     name: "player",
     description: "Look up an ESL player",
     type: 1,
+    ...INSTALL_CONTEXTS,
     options: [
       {
         name: "name",
@@ -22,6 +29,7 @@ export const COMMANDS = [
     name: "team",
     description: "Look up an ESL team",
     type: 1,
+    ...INSTALL_CONTEXTS,
     options: [
       {
         name: "name",
@@ -36,11 +44,13 @@ export const COMMANDS = [
     name: "league",
     description: "Show the current ESL league overview",
     type: 1,
+    ...INSTALL_CONTEXTS,
   },
   {
     name: "youth",
     description: "Show youth rights/intake players for an ESL team",
     type: 1,
+    ...INSTALL_CONTEXTS,
     options: [
       {
         name: "team",
@@ -55,6 +65,7 @@ export const COMMANDS = [
     name: "standings",
     description: "Show standings by tier",
     type: 1,
+    ...INSTALL_CONTEXTS,
     options: [
       {
         name: "tier",
@@ -68,6 +79,7 @@ export const COMMANDS = [
     name: "schedule",
     description: "Show recent results and next calendar month for a team",
     type: 1,
+    ...INSTALL_CONTEXTS,
     options: [
       {
         name: "team",
@@ -82,6 +94,7 @@ export const COMMANDS = [
     name: "simrecap",
     description: "Show a team's latest monthly sim recap",
     type: 1,
+    ...INSTALL_CONTEXTS,
     options: [
       {
         name: "team",
