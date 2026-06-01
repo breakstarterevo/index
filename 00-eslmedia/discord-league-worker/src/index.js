@@ -83,7 +83,7 @@ async function handleAutocomplete(interaction, env) {
       };
     }
 
-    if (command.name === "team") {
+    if (["team", "youth", "schedule", "simrecap"].includes(command.name)) {
       const data = await loadCommandData("team", env);
       return {
         type: InteractionResponseType.APPLICATION_COMMAND_AUTOCOMPLETE_RESULT,

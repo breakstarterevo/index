@@ -61,7 +61,7 @@ async function main() {
       return;
     }
 
-    if (!["player", "team", "league"].includes(interaction.commandName)) {
+    if (!["help", "player", "team", "league", "youth", "standings", "schedule", "simrecap"].includes(interaction.commandName)) {
       return;
     }
 

@@ -1,6 +1,10 @@
 const COLOR = 0x111b36;
 
 export function handleCommand(command, data, env) {
+  if (command.name === "help") {
+    return handleHelp();
+  }
+
   if (command.name === "player") {
     return handlePlayer(getOption(command, "name"), data.players || [], env);
   }
@@ -13,7 +17,46 @@ export function handleCommand(command, data, env) {
     return handleLeague(data.league, env);
   }
 
+  if (command.name === "youth") {
+    return handleYouth(getOption(command, "team"), data.teams || [], data.youthIntake, env);
+  }
+
+  if (command.name === "standings") {
+    return handleStandings(getOption(command, "tier"), data.standings, env);
+  }
+
+  if (command.name === "schedule") {
+    return handleSchedule(getOption(command, "team"), data.teams || [], data.schedule, env);
+  }
+
+  if (command.name === "simrecap") {
+    return handleSimRecap(getOption(command, "team"), data.teams || [], data.monthlyTeamForm, env);
+  }
+
   return message(`Unknown command: ${command.name}`, true);
+}
+
+export function handleHelp() {
+  return embedResponse({
+    title: "ESL Bot Help",
+    description: "Compact league lookups from the live ESL site feeds.",
+    footer: "Data from live ESL site feeds",
+    fields: [
+      field("League", [
+        "`/league` - current league overview",
+        "`/standings tier:3` - standings with promotion and danger markers",
+      ].join("\n"), false),
+      field("Teams", [
+        "`/team name:Valencia` - team snapshot",
+        "`/schedule team:Valencia` - recent results and next calendar month",
+        "`/simrecap team:Benfica` - latest monthly sim recap",
+      ].join("\n"), false),
+      field("Players and Youth", [
+        "`/player name:Isiah Thomas` - player snapshot",
+        "`/youth team:Valencia` - youth rights/intake players",
+      ].join("\n"), false),
+    ],
+  });
 }
 
 export function handlePlayer(query, players, env = {}) {
@@ -132,6 +175,121 @@ export function handleLeague(league, env = {}) {
   });
 }
 
+export function handleYouth(query, teams, youthIntake, env = {}) {
+  const match = findBestMatch(query, teams, (team) => team.name);
+  if (!match.item || match.isAmbiguous) {
+    return lookupMiss("team", query, match.suggestions);
+  }
+
+  const team = match.item;
+  const youthTeam = (youthIntake?.teams || []).find((entry) => normalize(entry.team) === normalize(team.name));
+  if (!youthTeam) {
+    return message(`I could not find youth intake data for ${team.name}.`, true);
+  }
+
+  const players = Array.isArray(youthTeam.intakePlayers) ? youthTeam.intakePlayers : [];
+  const lines = players.slice(0, 6).map(formatYouthPlayer);
+  if (players.length > 6) {
+    lines.push(`+${players.length - 6} more`);
+  }
+
+  const meta = [
+    youthTeam.gm ? `GM: ${youthTeam.gm}` : "",
+    youthTeam.tier ? `Tier: ${youthTeam.tier}` : "",
+    youthTeam.positionFocus ? `Focus: ${youthTeam.positionFocus}` : "",
+  ].filter(Boolean).join(" | ") || "Youth intake";
+
+  return embedResponse({
+    title: `${team.name} Youth`,
+    url: team.url || siteUrl(env, `00-assets/html/unified-roster.htm?id=${team.id}`),
+    description: meta,
+    fields: [field("Intake Players", lines.join("\n") || "No youth players listed.", false)],
+  });
+}
+
+export function handleStandings(query, standings, env = {}) {
+  const tier = normalizeTier(query);
+  if (!tier) {
+    return message(`I could not understand tier "${query}". Try 1, 2, 3, CLB, ELB, or ECL.`, true);
+  }
+
+  const section = findStandingsSection(standings, tier);
+  if (!section) {
+    return message(`I could not find ${tier.label} standings.`, true);
+  }
+
+  return embedResponse({
+    title: section.title || `${tier.label} Standings`,
+    url: siteUrl(env, "standings.htm"),
+    description: (section.teams || []).map((team, index, teams) => formatStandingRow(team, index, teams.length)).join("\n") || "No standings rows found.",
+    footer: "PROMO = top 2 | DANGER = bottom 2",
+    fields: [],
+  });
+}
+
+export function handleSchedule(query, teams, schedule, env = {}) {
+  const match = findBestMatch(query, teams, (team) => team.name);
+  if (!match.item || match.isAmbiguous) {
+    return lookupMiss("team", query, match.suggestions);
+  }
+
+  const team = match.item;
+  const games = flattenGames(schedule)
+    .filter((game) => gameIncludesTeam(game, team))
+    .sort(compareGamesByDate);
+  const recent = games
+    .filter((game) => game.status === "completed")
+    .slice(-5)
+    .map((game) => formatResultLine(game, team));
+  const upcoming = nextCalendarMonthGames(games).map(formatScheduledLine);
+
+  return embedResponse({
+    title: `${team.name} Schedule`,
+    url: team.url || siteUrl(env, `00-assets/html/unified-roster.htm?id=${team.id}`),
+    description: "Recent results and the next league-calendar month.",
+    fields: [
+      field("Recent Results", recent.join("\n") || "No completed games found.", false),
+      field("Next Calendar Month", upcoming.join("\n") || "No upcoming scheduled games found.", false),
+    ],
+  });
+}
+
+export function handleSimRecap(query, teams, monthlyTeamForm, env = {}) {
+  const match = findBestMatch(query, teams, (team) => team.name);
+  if (!match.item || match.isAmbiguous) {
+    return lookupMiss("team", query, match.suggestions);
+  }
+
+  const team = match.item;
+  const form = findMonthlyTeamForm(monthlyTeamForm, team);
+  if (!form) {
+    return message(`I could not find a monthly sim recap for ${team.name}.`, true);
+  }
+
+  const summary = [
+    `Record: ${form.record || `${form.wins ?? "-"}-${form.losses ?? "-"}`}`,
+    `Diff: ${formatSignedNumber(form.pointDiff)}`,
+    `Avg: ${formatSignedNumber(form.avgMargin)}`,
+    `Streak: ${form.streak || "-"}`,
+    `Last3: ${form.last3 || "-"}`,
+  ].join(" | ");
+  const notes = [
+    form.bestWin ? `Best win: ${form.bestWin.score}` : "",
+    form.worstLoss ? `Worst loss: ${form.worstLoss.score}` : "",
+    `Close games: ${form.closeGameCount ?? (Array.isArray(form.closeGames) ? form.closeGames.length : 0)}`,
+  ].filter(Boolean).join("\n");
+
+  return embedResponse({
+    title: `${team.name} Sim Recap`,
+    url: team.url || siteUrl(env, `00-assets/html/unified-roster.htm?id=${team.id}`),
+    description: summary,
+    fields: [
+      field("Scores", (form.recentResults || []).map(formatMonthlyResultLine).join("\n") || "No monthly results found.", false),
+      field("Notes", notes || "-", false),
+    ],
+  });
+}
+
 export function findBestMatch(query, items, labelFor) {
   const ranked = items
     .map((item) => ({ item, name: labelFor(item), score: scoreMatch(query, labelFor(item)) }))
@@ -229,7 +387,7 @@ function lookupMiss(type, query, suggestions) {
   return message(`I could not find a ${type} for "${query}". ${hint}`, true);
 }
 
-function embedResponse({ title, url, description, fields }) {
+function embedResponse({ title, url, description, fields, footer = "European Super League live data" }) {
   return {
     type: 4,
     data: {
@@ -239,7 +397,7 @@ function embedResponse({ title, url, description, fields }) {
         description,
         color: COLOR,
         fields,
-        footer: { text: "European Super League live data" },
+        footer: { text: footer },
       }],
     },
   };
@@ -280,6 +438,149 @@ function formatSigned(value) {
     return "-";
   }
   return value > 0 ? `+${value}` : String(value);
+}
+
+function formatYouthPlayer(player) {
+  const position = player.Position || player.pos || "-";
+  const age = player.Age ?? player.age ?? "-";
+  const overall = player.overall ?? "";
+  const potential = player.potential ?? player.POT ?? "";
+  const tier = player.tier || player.Tier || player.tierRaw || "-";
+  const rating = [overall, potential].filter((value) => value !== "").join("/");
+  return `${player.name || "Player"} - ${position}, Age ${age}, OVR/POT ${rating || "-"}, Tier ${tier}`;
+}
+
+function normalizeTier(value) {
+  const key = normalize(value).replace(/\s+/g, "");
+  const tiers = {
+    "1": { label: "CLB", sectionSlug: "clb-standings", titleToken: "clb" },
+    clb: { label: "CLB", sectionSlug: "clb-standings", titleToken: "clb" },
+    tier1: { label: "CLB", sectionSlug: "clb-standings", titleToken: "clb" },
+    t1: { label: "CLB", sectionSlug: "clb-standings", titleToken: "clb" },
+    "2": { label: "ELB", sectionSlug: "elb-standings", titleToken: "elb" },
+    elb: { label: "ELB", sectionSlug: "elb-standings", titleToken: "elb" },
+    tier2: { label: "ELB", sectionSlug: "elb-standings", titleToken: "elb" },
+    t2: { label: "ELB", sectionSlug: "elb-standings", titleToken: "elb" },
+    "3": { label: "ECL", sectionSlug: "ecl-standings", titleToken: "ecl" },
+    ecl: { label: "ECL", sectionSlug: "ecl-standings", titleToken: "ecl" },
+    tier3: { label: "ECL", sectionSlug: "ecl-standings", titleToken: "ecl" },
+    t3: { label: "ECL", sectionSlug: "ecl-standings", titleToken: "ecl" },
+  };
+  return tiers[key] || null;
+}
+
+function findStandingsSection(standings, tier) {
+  return (standings?.sections || []).find((section) =>
+    normalize(section.slug) === normalize(tier.sectionSlug)
+    || normalize(section.title).startsWith(tier.titleToken)
+  );
+}
+
+function formatStandingRow(team, index, total) {
+  const zone = index < 2 ? " PROMO" : index >= Math.max(0, total - 2) ? " DANGER" : "";
+  return `${index + 1}. ${team.team} ${team.wins}-${team.losses} | ${formatSignedNumber(team.diff)} | ${team.streak || "-"} | Last10 ${team.last10 || "-"}${zone}`;
+}
+
+function flattenGames(schedule) {
+  return (schedule?.sections || []).flatMap((section) =>
+    (section.days || []).flatMap((day) =>
+      (day.games || []).map((game) => ({ ...game, date: day.date, sectionTitle: section.title })),
+    ),
+  );
+}
+
+function gameIncludesTeam(game, team) {
+  return game.homeTeam === team.id
+    || game.awayTeam === team.id
+    || normalize(game.homeTeamName) === normalize(team.name)
+    || normalize(game.awayTeamName) === normalize(team.name);
+}
+
+function compareGamesByDate(a, b) {
+  return parseLeagueDate(a.date) - parseLeagueDate(b.date);
+}
+
+function nextCalendarMonthGames(games) {
+  const completed = games.filter((game) => game.status === "completed").sort(compareGamesByDate);
+  const latestCompletedDate = completed.length ? parseLeagueDate(completed.at(-1).date) : null;
+  const scheduled = games
+    .filter((game) => game.status !== "completed")
+    .filter((game) => latestCompletedDate == null || parseLeagueDate(game.date) > latestCompletedDate)
+    .sort(compareGamesByDate);
+  const first = scheduled[0];
+  if (!first) {
+    return [];
+  }
+
+  const firstDate = parseLeagueDate(first.date);
+  return scheduled.filter((game) => {
+    const date = parseLeagueDate(game.date);
+    return date.getFullYear() === firstDate.getFullYear() && date.getMonth() === firstDate.getMonth();
+  });
+}
+
+function formatResultLine(game, team) {
+  const result = teamResultFromGame(game, team);
+  return `${result ? `${result} ` : ""}${game.date || "-"} - ${game.matchupText || formatGame(game)}`.trim();
+}
+
+function formatScheduledLine(game) {
+  return `${game.date || "-"} - ${game.matchupText || formatGame(game)}`;
+}
+
+function teamResultFromGame(game, team) {
+  if (game.winnerName && normalize(game.winnerName) === normalize(team.name)) {
+    return "W";
+  }
+  if (game.loserName && normalize(game.loserName) === normalize(team.name)) {
+    return "L";
+  }
+  if (game.homeScore == null || game.awayScore == null) {
+    return "";
+  }
+  if (normalize(game.homeTeamName) === normalize(team.name)) {
+    return Number(game.homeScore) > Number(game.awayScore) ? "W" : "L";
+  }
+  if (normalize(game.awayTeamName) === normalize(team.name)) {
+    return Number(game.awayScore) > Number(game.homeScore) ? "W" : "L";
+  }
+  return "";
+}
+
+function formatGame(game) {
+  const away = game.awayTeamName || "Away";
+  const home = game.homeTeamName || "Home";
+  if (game.awayScore != null && game.homeScore != null) {
+    return `${away} ${game.awayScore}, @${home} ${game.homeScore}`;
+  }
+  return `${game.date || ""} ${away} @ ${home}`.trim();
+}
+
+function findMonthlyTeamForm(monthlyTeamForm, team) {
+  return Object.values(monthlyTeamForm?.tiers || {})
+    .flatMap((entries) => Array.isArray(entries) ? entries : [])
+    .find((entry) => normalize(entry.team) === normalize(team.name) || entry.rosterFile === `${team.id}.htm`) || null;
+}
+
+function formatMonthlyResultLine(result) {
+  return `${result.result || "-"} ${result.date || "-"} - ${result.score || "-"}`;
+}
+
+function parseLeagueDate(value) {
+  const [month, day, year] = String(value || "").split("/").map((part) => Number(part));
+  if (!month || !day || !year) {
+    return new Date(0);
+  }
+  return new Date(year, month - 1, day);
+}
+
+function formatSignedNumber(value) {
+  const number = Number(value);
+  if (!Number.isFinite(number)) {
+    return "-";
+  }
+  const rounded = Math.round(number * 10) / 10;
+  return rounded > 0 ? `+${rounded}` : String(rounded);
 }
 
 function formatShooting(shooting) {

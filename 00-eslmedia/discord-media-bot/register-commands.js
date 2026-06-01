@@ -14,4 +14,4 @@ await registerLeagueCommands({
   guildId: process.env.DISCORD_GUILD_ID
 });
 
-console.log("Registered /player, /team, and /league guild commands.");
+console.log("Registered ESL Media Discord guild commands.");

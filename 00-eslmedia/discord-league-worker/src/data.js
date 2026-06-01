@@ -2,6 +2,9 @@ const DEFAULT_BASE_URL = "https://eurosuperleague.github.io/index/00-build/datab
 const DEFAULT_CACHE_SECONDS = 300;
 
 export async function loadCommandData(commandName, env) {
+  if (commandName === "help") {
+    return {};
+  }
   if (commandName === "player") {
     return { players: await fetchJson("players.json", env) };
   }
@@ -11,11 +14,35 @@ export async function loadCommandData(commandName, env) {
   if (commandName === "league") {
     return { league: await fetchJson("league.json", env) };
   }
+  if (commandName === "youth") {
+    const [teams, youthIntake] = await Promise.all([
+      fetchJson("teams.json", env),
+      fetchFullJson("youth_intake.json", env),
+    ]);
+    return { teams, youthIntake };
+  }
+  if (commandName === "standings") {
+    return { standings: await fetchFullJson("standings.json", env) };
+  }
+  if (commandName === "schedule") {
+    const [teams, schedule] = await Promise.all([
+      fetchJson("teams.json", env),
+      fetchFullJson("schedule.json", env),
+    ]);
+    return { teams, schedule };
+  }
+  if (commandName === "simrecap") {
+    const [teams, monthlyTeamForm] = await Promise.all([
+      fetchJson("teams.json", env),
+      fetchFullJson("monthly/monthly_team_form.json", env),
+    ]);
+    return { teams, monthlyTeamForm };
+  }
   return {};
 }
 
-async function fetchJson(filename, env) {
-  const url = new URL(filename, ensureTrailingSlash(env.DATA_BASE_URL || DEFAULT_BASE_URL)).toString();
+async function fetchJson(filename, env, baseUrl = env.DATA_BASE_URL || DEFAULT_BASE_URL) {
+  const url = new URL(filename, ensureTrailingSlash(baseUrl)).toString();
   const cacheSeconds = Number(env.DATA_CACHE_SECONDS || DEFAULT_CACHE_SECONDS);
   const response = await fetch(url, {
     headers: { Accept: "application/json" },
@@ -27,6 +54,18 @@ async function fetchJson(filename, env) {
   }
 
   return response.json();
+}
+
+async function fetchFullJson(filename, env) {
+  return fetchJson(filename, env, getFullDataBaseUrl(env));
+}
+
+function getFullDataBaseUrl(env) {
+  if (env.FULL_DATA_BASE_URL) {
+    return env.FULL_DATA_BASE_URL;
+  }
+
+  return new URL("../", ensureTrailingSlash(env.DATA_BASE_URL || DEFAULT_BASE_URL)).toString();
 }
 
 function ensureTrailingSlash(value) {

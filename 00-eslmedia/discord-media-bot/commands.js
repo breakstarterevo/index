@@ -2,6 +2,9 @@ import { REST, Routes, SlashCommandBuilder } from "discord.js";
 
 export const leagueCommands = [
   new SlashCommandBuilder()
+    .setName("help")
+    .setDescription("Show ESL bot commands"),
+  new SlashCommandBuilder()
     .setName("player")
     .setDescription("Look up an ESL player")
     .addStringOption((option) =>
@@ -21,7 +24,43 @@ export const leagueCommands = [
     ),
   new SlashCommandBuilder()
     .setName("league")
-    .setDescription("Show the current ESL league overview")
+    .setDescription("Show the current ESL league overview"),
+  new SlashCommandBuilder()
+    .setName("youth")
+    .setDescription("Show youth rights/intake players for an ESL team")
+    .addStringOption((option) =>
+      option
+        .setName("team")
+        .setDescription("Team name, for example Valencia")
+        .setRequired(true)
+    ),
+  new SlashCommandBuilder()
+    .setName("standings")
+    .setDescription("Show standings by tier")
+    .addStringOption((option) =>
+      option
+        .setName("tier")
+        .setDescription("Tier, for example 3, ECL, or tier3")
+        .setRequired(true)
+    ),
+  new SlashCommandBuilder()
+    .setName("schedule")
+    .setDescription("Show recent results and next calendar month for a team")
+    .addStringOption((option) =>
+      option
+        .setName("team")
+        .setDescription("Team name, for example Valencia")
+        .setRequired(true)
+    ),
+  new SlashCommandBuilder()
+    .setName("simrecap")
+    .setDescription("Show a team's latest monthly sim recap")
+    .addStringOption((option) =>
+      option
+        .setName("team")
+        .setDescription("Team name, for example Benfica")
+        .setRequired(true)
+    )
 ].map((command) => command.toJSON());
 
 export async function registerLeagueCommands({ botToken, clientId, guildId }) {

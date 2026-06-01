@@ -67,6 +67,65 @@ export class LeagueDataClient {
 
     return { standings, leaders };
   }
+
+  async getTeamIndexContext() {
+    const [teams, standings] = await Promise.all([
+      this.getFeed("teams"),
+      this.getFeed("standings")
+    ]);
+
+    return {
+      teams: Array.isArray(teams) ? teams : [],
+      standings
+    };
+  }
+
+  async getYouthContext() {
+    const [teams, standings, youthIntake] = await Promise.all([
+      this.getFeed("teams"),
+      this.getFeed("standings"),
+      this.getFeed("youth_intake")
+    ]);
+
+    return {
+      teams: Array.isArray(teams) ? teams : [],
+      standings,
+      youthIntake
+    };
+  }
+
+  async getStandingsContext() {
+    const standings = await this.getFeed("standings");
+    return { standings };
+  }
+
+  async getScheduleContext() {
+    const [teams, standings, schedule] = await Promise.all([
+      this.getFeed("teams"),
+      this.getFeed("standings"),
+      this.getFeed("schedule")
+    ]);
+
+    return {
+      teams: Array.isArray(teams) ? teams : [],
+      standings,
+      schedule
+    };
+  }
+
+  async getMonthlyTeamFormContext() {
+    const [teams, standings, monthlyTeamForm] = await Promise.all([
+      this.getFeed("teams"),
+      this.getFeed("standings"),
+      this.getFeed("monthly/monthly_team_form")
+    ]);
+
+    return {
+      teams: Array.isArray(teams) ? teams : [],
+      standings,
+      monthlyTeamForm
+    };
+  }
 }
 
 function ensureTrailingSlash(value) {
