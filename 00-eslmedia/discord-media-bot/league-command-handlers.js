@@ -63,7 +63,7 @@ async function handleHelp(interaction) {
     .addFields([
       field("League", [
         "`/league` - current league overview",
-        "`/standings tier:3` - standings with promotion and danger markers"
+        "`/standings tier:3` - standings with tier movement markers"
       ].join("\n"), false),
       field("Teams", [
         "`/team name:Valencia` - team snapshot",
@@ -277,13 +277,13 @@ async function handleStandings(interaction, dataClient) {
     return;
   }
 
-  const lines = (section.teams || []).map((team, index, teams) => formatStandingRow(team, index, teams.length));
+  const lines = (section.teams || []).map((team, index, teams) => formatStandingRow(team, index, teams.length, tier.label));
   const embed = new EmbedBuilder()
     .setColor(COLOR)
     .setTitle(section.title || `${tier.label} Standings`)
     .setURL(new URL("standings.htm", SITE_BASE_URL).toString())
     .setDescription(lines.join("\n") || "No standings rows found.")
-    .setFooter({ text: "PROMO = top 2 | DANGER = bottom 2" });
+    .setFooter({ text: standingsFooter(tier.label) });
 
   await interaction.editReply({ embeds: [embed] });
 }
@@ -654,10 +654,42 @@ function findStandingsSection(standings, tier) {
   );
 }
 
-function formatStandingRow(team, index, total) {
-  const zone = index < 2 ? " PROMO" : index >= Math.max(0, total - 2) ? " DANGER" : "";
+function formatStandingRow(team, index, total, tierLabel) {
+  const zone = standingsMarker(index, total, tierLabel);
   const diff = typeof team.diff === "number" ? formatSignedNumber(team.diff) : "-";
   return `${index + 1}. ${team.team} ${team.wins}-${team.losses} | ${diff} | ${team.streak || "-"} | Last10 ${team.last10 || "-"}${zone}`;
+}
+
+function standingsMarker(index, total, tierLabel) {
+  if (tierLabel === "CLB") {
+    if (index === 0) {
+      return " CHAMP";
+    }
+    return index >= Math.max(0, total - 2) ? " RELEG" : "";
+  }
+  if (tierLabel === "ELB") {
+    if (index < 2) {
+      return " PROMO";
+    }
+    return index === total - 1 ? " RELEG" : "";
+  }
+  if (tierLabel === "ECL") {
+    return index === 0 ? " PROMO" : "";
+  }
+  return "";
+}
+
+function standingsFooter(tierLabel) {
+  if (tierLabel === "CLB") {
+    return "CHAMP = tier champion | RELEG = bottom 2 relegated";
+  }
+  if (tierLabel === "ELB") {
+    return "PROMO = top 2 promoted | RELEG = bottom 1 relegated";
+  }
+  if (tierLabel === "ECL") {
+    return "PROMO = top 1 promoted";
+  }
+  return "European Super League live data";
 }
 
 function compareGamesByDate(a, b) {

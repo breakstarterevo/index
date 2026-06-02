@@ -58,6 +58,15 @@ const standingsResponse = handleStandings("3", standings);
 assert.equal(standingsResponse.type, 4);
 assert.equal(standingsResponse.data.embeds[0].title, "ECL Standings");
 assert.match(standingsResponse.data.embeds[0].description, /PROMO/);
+assert.doesNotMatch(standingsResponse.data.embeds[0].description, /RELEG/);
+
+const clbStandingsResponse = handleStandings("clb", standings);
+assert.match(clbStandingsResponse.data.embeds[0].description, /CHAMP/);
+assert.match(clbStandingsResponse.data.embeds[0].description, /RELEG/);
+
+const elbStandingsResponse = handleStandings("2", standings);
+assert.match(elbStandingsResponse.data.embeds[0].description, /PROMO/);
+assert.match(elbStandingsResponse.data.embeds[0].description, /RELEG/);
 
 const scheduleResponse = handleSchedule("Valencia", teams, schedule);
 assert.equal(scheduleResponse.type, 4);
