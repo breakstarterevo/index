@@ -53,6 +53,7 @@ const youthResponse = handleYouth("Valencia", teams, youthIntake);
 assert.equal(youthResponse.type, 4);
 assert.equal(youthResponse.data.embeds[0].title, "Valencia Youth");
 assert.match(youthResponse.data.embeds[0].fields[0].value, /OVR\/POT/);
+assert.match(youthResponse.data.embeds[0].fields[0].value, /\[[^\]]+\]\(https:\/\/eurosuperleague\.github\.io\/index\/players\/player\d+\.htm\)/);
 
 const standingsResponse = handleStandings("3", standings);
 assert.equal(standingsResponse.type, 4);

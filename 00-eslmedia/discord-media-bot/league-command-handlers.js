@@ -621,7 +621,15 @@ function formatYouthPlayer(player) {
   const potential = player.potential ?? player.POT ?? "";
   const tier = player.tier || player.Tier || player.tierRaw || "-";
   const rating = [overall, potential].filter((value) => value !== "").join("/");
-  return `${player.name || "Player"} - ${position}, Age ${age}, OVR/POT ${rating || "-"}, Tier ${tier}`;
+  return `${formatYouthPlayerName(player)} - ${position}, Age ${age}, OVR/POT ${rating || "-"}, Tier ${tier}`;
+}
+
+function formatYouthPlayerName(player) {
+  const name = player.name || "Player";
+  if (!player.playerId) {
+    return name;
+  }
+  return `[${name}](${new URL(`players/${player.playerId}.htm`, SITE_BASE_URL).toString()})`;
 }
 
 function normalizeTier(value) {

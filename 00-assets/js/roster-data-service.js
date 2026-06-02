@@ -203,7 +203,7 @@
   function findTeamFromQuery(teamDirectory, search) {
     const params = new URLSearchParams(search || "");
     const file = normalizeRosterFile(params.get("file"));
-    const teamId = params.get("team");
+    const teamId = params.get("team") || params.get("id");
     if (file) {
       return (teamDirectory || []).find((t) => t.rosterFile.toLowerCase() === file.toLowerCase()) || null;
     }

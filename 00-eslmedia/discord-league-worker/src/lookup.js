@@ -188,7 +188,7 @@ export function handleYouth(query, teams, youthIntake, env = {}) {
   }
 
   const players = Array.isArray(youthTeam.intakePlayers) ? youthTeam.intakePlayers : [];
-  const lines = players.slice(0, 6).map(formatYouthPlayer);
+  const lines = players.slice(0, 6).map((player) => formatYouthPlayer(player, env));
   if (players.length > 6) {
     lines.push(`+${players.length - 6} more`);
   }
@@ -440,14 +440,22 @@ function formatSigned(value) {
   return value > 0 ? `+${value}` : String(value);
 }
 
-function formatYouthPlayer(player) {
+function formatYouthPlayer(player, env = {}) {
   const position = player.Position || player.pos || "-";
   const age = player.Age ?? player.age ?? "-";
   const overall = player.overall ?? "";
   const potential = player.potential ?? player.POT ?? "";
   const tier = player.tier || player.Tier || player.tierRaw || "-";
   const rating = [overall, potential].filter((value) => value !== "").join("/");
-  return `${player.name || "Player"} - ${position}, Age ${age}, OVR/POT ${rating || "-"}, Tier ${tier}`;
+  return `${formatYouthPlayerName(player, env)} - ${position}, Age ${age}, OVR/POT ${rating || "-"}, Tier ${tier}`;
+}
+
+function formatYouthPlayerName(player, env = {}) {
+  const name = player.name || "Player";
+  if (!player.playerId) {
+    return name;
+  }
+  return `[${name}](${siteUrl(env, `players/${player.playerId}.htm`)})`;
 }
 
 function normalizeTier(value) {
