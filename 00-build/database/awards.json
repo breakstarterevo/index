@@ -10,6 +10,91 @@
                     "slug": "player-of-the-week",
                     "awards": [
                         {
+                            "date": "01/30/1983",
+                            "pos": "SG",
+                            "player": "Sidney Moncrief",
+                            "playerUrl": "./players/player699.htm",
+                            "playerFile": "player699.htm",
+                            "team": "roster8",
+                            "teamName": "Real Madrid",
+                            "teamUrl": "./rosters/roster8.htm",
+                            "teamFile": "roster8.htm",
+                            "ppg": 30.0,
+                            "rpg": 9.0,
+                            "apg": 9.0,
+                            "spg": 2.5,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "01/23/1983",
+                            "pos": "C",
+                            "player": "Moses Malone",
+                            "playerUrl": "./players/player872.htm",
+                            "playerFile": "player872.htm",
+                            "team": "roster13",
+                            "teamName": "Benfica",
+                            "teamUrl": "./rosters/roster13.htm",
+                            "teamFile": "roster13.htm",
+                            "ppg": 35.0,
+                            "rpg": 13.0,
+                            "apg": 1.5,
+                            "spg": 1.0,
+                            "bpg": 4.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "01/16/1983",
+                            "pos": "C",
+                            "player": "Tom Chambers",
+                            "playerUrl": "./players/player724.htm",
+                            "playerFile": "player724.htm",
+                            "team": "roster12",
+                            "teamName": "AFC Richmond",
+                            "teamUrl": "./rosters/roster12.htm",
+                            "teamFile": "roster12.htm",
+                            "ppg": 29.3,
+                            "rpg": 7.3,
+                            "apg": 2.3,
+                            "spg": 0.7,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "01/09/1983",
+                            "pos": "C",
+                            "player": "Moses Malone",
+                            "playerUrl": "./players/player872.htm",
+                            "playerFile": "player872.htm",
+                            "team": "roster13",
+                            "teamName": "Benfica",
+                            "teamUrl": "./rosters/roster13.htm",
+                            "teamFile": "roster13.htm",
+                            "ppg": 34.0,
+                            "rpg": 14.0,
+                            "apg": 4.0,
+                            "spg": 2.0,
+                            "bpg": 0.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "01/02/1983",
+                            "pos": "SF",
+                            "player": "Alex English",
+                            "playerUrl": "./players/player711.htm",
+                            "playerFile": "player711.htm",
+                            "team": "roster6",
+                            "teamName": "Crystal Palace",
+                            "teamUrl": "./rosters/roster6.htm",
+                            "teamFile": "roster6.htm",
+                            "ppg": 6.0,
+                            "rpg": 6.0,
+                            "apg": 8.0,
+                            "spg": 1.0,
+                            "bpg": 1.0,
+                            "rowClass": "row1"
+                        },
+                        {
                             "date": "12/26/1982",
                             "pos": "SF",
                             "player": "Magic Johnson",
@@ -24,7 +109,7 @@
                             "apg": 7.0,
                             "spg": 0.5,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/19/1982",
@@ -41,7 +126,7 @@
                             "apg": 2.0,
                             "spg": 0.0,
                             "bpg": 2.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/12/1982",
@@ -58,7 +143,7 @@
                             "apg": 6.0,
                             "spg": 1.0,
                             "bpg": 1.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/05/1982",
@@ -75,7 +160,7 @@
                             "apg": 3.5,
                             "spg": 2.0,
                             "bpg": 4.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/28/1982",
@@ -92,7 +177,7 @@
                             "apg": 7.0,
                             "spg": 1.7,
                             "bpg": 0.3,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/21/1982",
@@ -109,7 +194,7 @@
                             "apg": 2.5,
                             "spg": 0.5,
                             "bpg": 3.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/14/1982",
@@ -126,7 +211,7 @@
                             "apg": 13.0,
                             "spg": 1.0,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/07/1982",
@@ -143,7 +228,7 @@
                             "apg": 2.7,
                             "spg": 0.7,
                             "bpg": 3.7,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         }
                     ]
                 },
@@ -151,6 +236,23 @@
                     "title": "Player of the Month",
                     "slug": "player-of-the-month",
                     "awards": [
+                        {
+                            "date": "January",
+                            "pos": "SF",
+                            "player": "Magic Johnson",
+                            "playerUrl": "./players/player698.htm",
+                            "playerFile": "player698.htm",
+                            "team": "roster12",
+                            "teamName": "AFC Richmond",
+                            "teamUrl": "./rosters/roster12.htm",
+                            "teamFile": "roster12.htm",
+                            "ppg": 24.5,
+                            "rpg": 6.8,
+                            "apg": 10.3,
+                            "spg": 1.9,
+                            "bpg": 0.4,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "December",
                             "pos": "C",
@@ -166,7 +268,7 @@
                             "apg": 2.5,
                             "spg": 0.9,
                             "bpg": 2.8,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "November",
@@ -183,7 +285,7 @@
                             "apg": 3.0,
                             "spg": 0.9,
                             "bpg": 3.3,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         }
                     ]
                 },
@@ -191,6 +293,23 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "January",
+                            "pos": "SF",
+                            "player": "Marques Johnson",
+                            "playerUrl": "./players/player725.htm",
+                            "playerFile": "player725.htm",
+                            "team": "roster13",
+                            "teamName": "Benfica",
+                            "teamUrl": "./rosters/roster13.htm",
+                            "teamFile": "roster13.htm",
+                            "ppg": 14.4,
+                            "rpg": 4.4,
+                            "apg": 4.7,
+                            "spg": 1.3,
+                            "bpg": 0.1,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "December",
                             "pos": "SG",
@@ -206,7 +325,7 @@
                             "apg": 6.1,
                             "spg": 2.5,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "November",
@@ -223,7 +342,7 @@
                             "apg": 4.8,
                             "spg": 2.1,
                             "bpg": 0.3,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         }
                     ]
                 }
@@ -237,6 +356,91 @@
                     "title": "Player of the Week",
                     "slug": "player-of-the-week",
                     "awards": [
+                        {
+                            "date": "01/30/1983",
+                            "pos": "SG",
+                            "player": "Jim Paxson",
+                            "playerUrl": "./players/player875.htm",
+                            "playerFile": "player875.htm",
+                            "team": "roster17",
+                            "teamName": "Chelsea",
+                            "teamUrl": "./rosters/roster17.htm",
+                            "teamFile": "roster17.htm",
+                            "ppg": 24.5,
+                            "rpg": 1.0,
+                            "apg": 2.0,
+                            "spg": 2.5,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "01/23/1983",
+                            "pos": "C",
+                            "player": "Robert Parish",
+                            "playerUrl": "./players/player873.htm",
+                            "playerFile": "player873.htm",
+                            "team": "roster15",
+                            "teamName": "Marseille",
+                            "teamUrl": "./rosters/roster15.htm",
+                            "teamFile": "roster15.htm",
+                            "ppg": 18.0,
+                            "rpg": 12.0,
+                            "apg": 3.0,
+                            "spg": 1.5,
+                            "bpg": 0.5,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "01/16/1983",
+                            "pos": "PF",
+                            "player": "Kareem Abdul-Jabbar",
+                            "playerUrl": "./players/player877.htm",
+                            "playerFile": "player877.htm",
+                            "team": "roster14",
+                            "teamName": "Juventus",
+                            "teamUrl": "./rosters/roster14.htm",
+                            "teamFile": "roster14.htm",
+                            "ppg": 40.0,
+                            "rpg": 10.5,
+                            "apg": 2.0,
+                            "spg": 0.5,
+                            "bpg": 2.5,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "01/09/1983",
+                            "pos": "SG",
+                            "player": "Kiki Vandeweghe",
+                            "playerUrl": "./players/player701.htm",
+                            "playerFile": "player701.htm",
+                            "team": "roster10",
+                            "teamName": "Brighton",
+                            "teamUrl": "./rosters/roster10.htm",
+                            "teamFile": "roster10.htm",
+                            "ppg": 35.0,
+                            "rpg": 3.5,
+                            "apg": 3.0,
+                            "spg": 1.0,
+                            "bpg": 0.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "01/02/1983",
+                            "pos": "SG",
+                            "player": "Kiki Vandeweghe",
+                            "playerUrl": "./players/player701.htm",
+                            "playerFile": "player701.htm",
+                            "team": "roster10",
+                            "teamName": "Brighton",
+                            "teamUrl": "./rosters/roster10.htm",
+                            "teamFile": "roster10.htm",
+                            "ppg": 35.5,
+                            "rpg": 3.0,
+                            "apg": 4.0,
+                            "spg": 2.0,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "12/26/1982",
                             "pos": "SG",
@@ -252,7 +456,7 @@
                             "apg": 5.0,
                             "spg": 1.5,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/19/1982",
@@ -269,7 +473,7 @@
                             "apg": 5.0,
                             "spg": 1.5,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/12/1982",
@@ -286,7 +490,7 @@
                             "apg": 2.5,
                             "spg": 1.5,
                             "bpg": 1.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/05/1982",
@@ -303,7 +507,7 @@
                             "apg": 6.0,
                             "spg": 1.0,
                             "bpg": 3.5,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/28/1982",
@@ -320,7 +524,7 @@
                             "apg": 5.0,
                             "spg": 4.0,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/21/1982",
@@ -337,7 +541,7 @@
                             "apg": 3.5,
                             "spg": 1.0,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/14/1982",
@@ -354,7 +558,7 @@
                             "apg": 6.5,
                             "spg": 1.0,
                             "bpg": 2.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/07/1982",
@@ -371,7 +575,7 @@
                             "apg": 3.3,
                             "spg": 1.3,
                             "bpg": 3.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         }
                     ]
                 },
@@ -379,6 +583,23 @@
                     "title": "Player of the Month",
                     "slug": "player-of-the-month",
                     "awards": [
+                        {
+                            "date": "January",
+                            "pos": "PF",
+                            "player": "Kareem Abdul-Jabbar",
+                            "playerUrl": "./players/player877.htm",
+                            "playerFile": "player877.htm",
+                            "team": "roster14",
+                            "teamName": "Juventus",
+                            "teamUrl": "./rosters/roster14.htm",
+                            "teamFile": "roster14.htm",
+                            "ppg": 31.7,
+                            "rpg": 7.7,
+                            "apg": 2.0,
+                            "spg": 0.9,
+                            "bpg": 2.1,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "December",
                             "pos": "SG",
@@ -394,7 +615,7 @@
                             "apg": 4.4,
                             "spg": 1.9,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "November",
@@ -411,7 +632,7 @@
                             "apg": 3.5,
                             "spg": 1.1,
                             "bpg": 2.6,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         }
                     ]
                 },
@@ -419,6 +640,23 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "January",
+                            "pos": "PF",
+                            "player": "Kenny Carr",
+                            "playerUrl": "./players/player741.htm",
+                            "playerFile": "player741.htm",
+                            "team": "roster20",
+                            "teamName": "Monaco",
+                            "teamUrl": "./rosters/roster20.htm",
+                            "teamFile": "roster20.htm",
+                            "ppg": 13.9,
+                            "rpg": 5.9,
+                            "apg": 2.6,
+                            "spg": 0.7,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "December",
                             "pos": "C",
@@ -434,7 +672,7 @@
                             "apg": 1.4,
                             "spg": 0.7,
                             "bpg": 4.1,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "November",
@@ -451,7 +689,7 @@
                             "apg": 6.0,
                             "spg": 2.4,
                             "bpg": 0.1,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         }
                     ]
                 }
@@ -465,6 +703,91 @@
                     "title": "Player of the Week",
                     "slug": "player-of-the-week",
                     "awards": [
+                        {
+                            "date": "01/30/1983",
+                            "pos": "SF",
+                            "player": "Calvin Natt",
+                            "playerUrl": "./players/player1055.htm",
+                            "playerFile": "player1055.htm",
+                            "team": "roster28",
+                            "teamName": "Manchester City",
+                            "teamUrl": "./rosters/roster28.htm",
+                            "teamFile": "roster28.htm",
+                            "ppg": 45.5,
+                            "rpg": 11.0,
+                            "apg": 2.0,
+                            "spg": 0.0,
+                            "bpg": 0.5,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "01/23/1983",
+                            "pos": "SG",
+                            "player": "Otis Birdsong",
+                            "playerUrl": "./players/player730.htm",
+                            "playerFile": "player730.htm",
+                            "team": "roster24",
+                            "teamName": "Barcelona",
+                            "teamUrl": "./rosters/roster24.htm",
+                            "teamFile": "roster24.htm",
+                            "ppg": 36.0,
+                            "rpg": 9.0,
+                            "apg": 3.0,
+                            "spg": 2.0,
+                            "bpg": 0.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "01/16/1983",
+                            "pos": "C",
+                            "player": "Joe Barry Carroll",
+                            "playerUrl": "./players/player710.htm",
+                            "playerFile": "player710.htm",
+                            "team": "roster21",
+                            "teamName": "Paris Saint-Germain",
+                            "teamUrl": "./rosters/roster21.htm",
+                            "teamFile": "roster21.htm",
+                            "ppg": 36.7,
+                            "rpg": 11.0,
+                            "apg": 1.3,
+                            "spg": 0.7,
+                            "bpg": 1.7,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "01/09/1983",
+                            "pos": "SF",
+                            "player": "Calvin Natt",
+                            "playerUrl": "./players/player1055.htm",
+                            "playerFile": "player1055.htm",
+                            "team": "roster28",
+                            "teamName": "Manchester City",
+                            "teamUrl": "./rosters/roster28.htm",
+                            "teamFile": "roster28.htm",
+                            "ppg": 35.5,
+                            "rpg": 7.5,
+                            "apg": 5.0,
+                            "spg": 1.5,
+                            "bpg": 1.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "01/02/1983",
+                            "pos": "SF",
+                            "player": "Calvin Natt",
+                            "playerUrl": "./players/player1055.htm",
+                            "playerFile": "player1055.htm",
+                            "team": "roster28",
+                            "teamName": "Manchester City",
+                            "teamUrl": "./rosters/roster28.htm",
+                            "teamFile": "roster28.htm",
+                            "ppg": 47.0,
+                            "rpg": 8.0,
+                            "apg": 6.0,
+                            "spg": 0.0,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "12/26/1982",
                             "pos": "SF",
@@ -480,7 +803,7 @@
                             "apg": 3.0,
                             "spg": 1.0,
                             "bpg": 0.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/19/1982",
@@ -497,7 +820,7 @@
                             "apg": 3.0,
                             "spg": 0.5,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/12/1982",
@@ -514,7 +837,7 @@
                             "apg": 10.0,
                             "spg": 4.5,
                             "bpg": 0.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/05/1982",
@@ -531,7 +854,7 @@
                             "apg": 4.0,
                             "spg": 2.0,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/28/1982",
@@ -548,7 +871,7 @@
                             "apg": 2.5,
                             "spg": 0.0,
                             "bpg": 0.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/21/1982",
@@ -565,7 +888,7 @@
                             "apg": 0.5,
                             "spg": 1.5,
                             "bpg": 1.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/14/1982",
@@ -582,7 +905,7 @@
                             "apg": 2.0,
                             "spg": 1.0,
                             "bpg": 2.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/07/1982",
@@ -599,7 +922,7 @@
                             "apg": 2.3,
                             "spg": 0.7,
                             "bpg": 1.7,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         }
                     ]
                 },
@@ -607,6 +930,23 @@
                     "title": "Player of the Month",
                     "slug": "player-of-the-month",
                     "awards": [
+                        {
+                            "date": "January",
+                            "pos": "SF",
+                            "player": "Calvin Natt",
+                            "playerUrl": "./players/player1055.htm",
+                            "playerFile": "player1055.htm",
+                            "team": "roster28",
+                            "teamName": "Manchester City",
+                            "teamUrl": "./rosters/roster28.htm",
+                            "teamFile": "roster28.htm",
+                            "ppg": 43.8,
+                            "rpg": 10.0,
+                            "apg": 3.6,
+                            "spg": 1.0,
+                            "bpg": 0.4,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "December",
                             "pos": "SF",
@@ -622,7 +962,7 @@
                             "apg": 3.9,
                             "spg": 0.4,
                             "bpg": 0.2,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "November",
@@ -639,7 +979,7 @@
                             "apg": 2.8,
                             "spg": 0.5,
                             "bpg": 0.3,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         }
                     ]
                 },
@@ -647,6 +987,23 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "January",
+                            "pos": "PG",
+                            "player": "Frank Johnson",
+                            "playerUrl": "./players/player747.htm",
+                            "playerFile": "player747.htm",
+                            "team": "roster21",
+                            "teamName": "Paris Saint-Germain",
+                            "teamUrl": "./rosters/roster21.htm",
+                            "teamFile": "roster21.htm",
+                            "ppg": 12.2,
+                            "rpg": 3.2,
+                            "apg": 8.8,
+                            "spg": 2.0,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "December",
                             "pos": "SF",
@@ -662,7 +1019,7 @@
                             "apg": 2.3,
                             "spg": 1.0,
                             "bpg": 0.3,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "November",
@@ -679,7 +1036,7 @@
                             "apg": 1.9,
                             "spg": 0.3,
                             "bpg": 0.7,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         }
                     ]
                 }
