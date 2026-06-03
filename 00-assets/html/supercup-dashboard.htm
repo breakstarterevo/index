@@ -319,7 +319,7 @@
     function renderStandings(activeSection) {
       const standingsBody = document.getElementById("standingsBody");
       const standingsCards = document.getElementById("standingsCards");
-      const teams = [...(activeSection.teams || [])].sort((a, b) => num(b.wins) - num(a.wins) || num(a.losses) - num(b.losses));
+      const teams = [...(activeSection.teams || [])];
       standingsBody.innerHTML = teams.map((team, index) => {
         const diffClass = num(team.diff) >= 0 ? "diff-pos" : "diff-neg";
         const race = getRaceMeta(activeSection, index, teams.length);

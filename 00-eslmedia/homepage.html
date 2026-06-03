@@ -1220,12 +1220,7 @@
     }
 
     function sortTeamsForSnapshot(teams) {
-      return [...teams].sort((a, b) => {
-        if (b.wins !== a.wins) return b.wins - a.wins;
-        if (a.losses !== b.losses) return a.losses - b.losses;
-        if (b.pct !== a.pct) return b.pct - a.pct;
-        return a.team.localeCompare(b.team);
-      });
+      return [...teams];
     }
 
     function renderStandingsTabs() {

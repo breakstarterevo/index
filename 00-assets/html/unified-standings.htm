@@ -179,7 +179,7 @@
       const rows = [];
       state.sections.forEach((section) => {
         if (section.slug !== state.tier) return;
-        const teams = [...(section.teams || [])].sort((a, b) => num(b.wins) - num(a.wins) || num(a.losses) - num(b.losses));
+        const teams = [...(section.teams || [])];
         teams.forEach((team, index) => rows.push({ ...team, sectionTitle: section.title, sectionTeams: teams, tierSlug: section.slug, tier: tierTitle(section.title), standing: index + 1 }));
       });
       return rows;
