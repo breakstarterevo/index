@@ -724,6 +724,34 @@
     .history-wrap .history-table td:nth-child(2) {
       white-space: normal;
     }
+    .timeline {
+      display: grid;
+      gap: 0;
+      padding: 0.1rem 0;
+    }
+    .timeline-item {
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      gap: 0.5rem;
+      grid-template-columns: 84px minmax(0, 1fr);
+      padding: 0.48rem 0.6rem;
+    }
+    .timeline-item:last-child { border-bottom: 0; }
+    .timeline-season {
+      color: var(--team-color);
+      font-size: 0.76rem;
+      font-weight: 950;
+      white-space: nowrap;
+    }
+    .timeline-title {
+      font-weight: 850;
+      line-height: 1.25;
+    }
+    .timeline-meta {
+      color: var(--muted);
+      font-size: 0.72rem;
+      margin-top: 0.12rem;
+    }
     @media (max-width: 1050px) {
       .player-header {
         grid-template-columns: 1fr;
@@ -934,6 +962,13 @@
           <div class="table-wrap history-wrap">
             <table class="data-table history-table" id="transactionsTable"></table>
           </div>
+        </div>
+        <div class="history-panel" id="timelinePanel">
+          <div class="panel-head">
+            <h2 class="panel-title">Career Timeline</h2>
+            <div class="note" id="timelineNote">Season path</div>
+          </div>
+          <div class="timeline" id="careerTimeline"></div>
         </div>
       </section>
     </main>
@@ -1487,6 +1522,82 @@
       );
     }
 
+    function renderCareerTimeline() {
+      const root = document.getElementById("careerTimeline");
+      const note = document.getElementById("timelineNote");
+      const stats = state.currentStats && state.currentStats.stats;
+      const awardPriority = (label) => {
+        const text = clean(label).toLowerCase();
+        if (text.includes("most valuable player") || text.includes("mvp")) return 0;
+        if (text.includes("all-league first team")) return 1;
+        if (text.includes("all-defensive first team")) return 2;
+        if (text.includes("rookie of the year")) return 3;
+        if (text.includes("all-rookie first team")) return 4;
+        if (text.includes("all-star")) return 5;
+        if (text.includes("champion")) return 6;
+        return 9;
+      };
+      const roleLabel = (row) => {
+        const pts = num(row.pts) || 0;
+        const reb = totalRebounds(row) || 0;
+        const ast = num(row.ast) || 0;
+        const stl = num(row.stl) || 0;
+        const blk = num(row.blk) || 0;
+        const min = num(row.min) || 0;
+        const games = num(row.g) || 0;
+        const starts = num(row.gs) || 0;
+        const pra = pts + reb + ast;
+        const stocks = stl + blk;
+        if (pts >= 25 || pra >= 38) return "Superstar Season";
+        if (pts >= 20 || pra >= 32) return "All-Star Level";
+        if (ast >= 7) return "Lead Playmaker";
+        if (pts >= 18 && ast < 6) return "Primary Scorer";
+        if (pts >= 10 && stocks >= 2) return "Two-Way Starter";
+        if (blk >= 1.5) return "Rim Protector";
+        if (reb >= 8) return "Glass Cleaner";
+        if (stl >= 1.5) return "Defensive Specialist";
+        if (min >= 24 || (games > 0 && starts / games >= 0.5)) return "Starter";
+        if (min >= 14) return "Rotation Player";
+        return "Bench Depth";
+      };
+      const rows = stats && stats.season_averages && Array.isArray(stats.season_averages.rows)
+        ? stats.season_averages.rows
+        : [];
+      const seasons = rows
+        .filter((row) => Number.isFinite(Number(row.season)))
+        .sort((a, b) => Number(a.season) - Number(b.season));
+      const awardsBySeason = new Map();
+      (Array.isArray(state.current && state.current.awards) ? state.current.awards : []).forEach((award) => {
+        const season = clean(award && award.season);
+        const label = clean(award && (award.award || award.name || award.label || award));
+        if (!season || !label || season === "Total") return;
+        if (!awardsBySeason.has(season)) awardsBySeason.set(season, []);
+        awardsBySeason.get(season).push(label);
+      });
+      if (note) {
+        note.textContent = seasons.length ? `${seasons.length} season${seasons.length === 1 ? "" : "s"}` : "No season path";
+      }
+      if (!root) return;
+      if (!seasons.length) {
+        root.innerHTML = `<div class="empty">No season timeline data</div>`;
+        return;
+      }
+      root.innerHTML = seasons.map((row) => {
+        const season = clean(row.season);
+        const awards = [...new Set(awardsBySeason.get(season) || [])]
+          .sort((a, b) => awardPriority(a) - awardPriority(b) || clean(a).localeCompare(clean(b)));
+        const title = awards.length ? awards.join(", ") : roleLabel(row);
+        const meta = [
+          row.lge,
+          row.team || state.current.teamLabel || state.current.team,
+          `${fmt(row.pts)} PTS`,
+          `${fmt(totalRebounds(row))} REB`,
+          `${fmt(row.ast)} AST`
+        ].filter(Boolean).join(" | ");
+        return `<div class="timeline-item"><div class="timeline-season">${escapeHtml(season)}</div><div><div class="timeline-title">${escapeHtml(title)}</div><div class="timeline-meta">${escapeHtml(meta)}</div></div></div>`;
+      }).join("");
+    }
+
     function getPlayerMediaMatchSlugs(player) {
       const set = new Set();
       if (!player) return set;
@@ -1735,6 +1846,7 @@
         renderTable();
         renderGameLogs();
         renderAwardsAndTransactions();
+        renderCareerTimeline();
         await renderPlayerArticles();
       } catch (error) {
         document.getElementById("playerName").textContent = "Unified player unavailable";
