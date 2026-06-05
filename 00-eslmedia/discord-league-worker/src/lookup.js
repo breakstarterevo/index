@@ -455,7 +455,7 @@ function formatYouthPlayerName(player, env = {}) {
   if (!player.playerId) {
     return name;
   }
-  return `[${name}](${siteUrl(env, `players/${player.playerId}.htm`)})`;
+  return `[${name}](${siteUrl(env, `00-assets/html/unified-player.htm?id=${player.playerId}`)})`;
 }
 
 function normalizeTier(value) {

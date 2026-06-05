@@ -629,7 +629,7 @@ function formatYouthPlayerName(player) {
   if (!player.playerId) {
     return name;
   }
-  return `[${name}](${new URL(`players/${player.playerId}.htm`, SITE_BASE_URL).toString()})`;
+  return `[${name}](${new URL(`00-assets/html/unified-player.htm?id=${player.playerId}`, SITE_BASE_URL).toString()})`;
 }
 
 function normalizeTier(value) {
