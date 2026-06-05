@@ -7,21 +7,21 @@
       "teams": [
         {
           "name": "AFC Richmond",
-          "wins": 17,
-          "losses": 5,
+          "wins": 20,
+          "losses": 7,
           "streak": "W1"
         },
         {
-          "name": "Bayern Munich",
-          "wins": 14,
-          "losses": 8,
-          "streak": "W6"
+          "name": "Real Madrid",
+          "wins": 15,
+          "losses": 12,
+          "streak": "L2"
         },
         {
-          "name": "Real Madrid",
-          "wins": 12,
-          "losses": 9,
-          "streak": "L1"
+          "name": "Bayern Munich",
+          "wins": 16,
+          "losses": 13,
+          "streak": "W1"
         }
       ]
     },
@@ -30,21 +30,21 @@
       "teams": [
         {
           "name": "Chelsea",
-          "wins": 16,
-          "losses": 7,
+          "wins": 22,
+          "losses": 8,
           "streak": "W3"
         },
         {
-          "name": "Marseille",
-          "wins": 12,
-          "losses": 10,
-          "streak": "W1"
+          "name": "Juventus",
+          "wins": 15,
+          "losses": 12,
+          "streak": "W5"
         },
         {
           "name": "FL Fart",
-          "wins": 11,
-          "losses": 10,
-          "streak": "L2"
+          "wins": 15,
+          "losses": 13,
+          "streak": "L1"
         }
       ]
     },
@@ -53,21 +53,21 @@
       "teams": [
         {
           "name": "Aston Villa",
-          "wins": 17,
-          "losses": 4,
+          "wins": 20,
+          "losses": 8,
           "streak": "W1"
-        },
-        {
-          "name": "Paris Saint-Germain",
-          "wins": 15,
-          "losses": 9,
-          "streak": "L1"
         },
         {
           "name": "Manchester City",
-          "wins": 14,
-          "losses": 11,
-          "streak": "W1"
+          "wins": 19,
+          "losses": 12,
+          "streak": "W4"
+        },
+        {
+          "name": "Paris Saint-Germain",
+          "wins": 17,
+          "losses": 13,
+          "streak": "L1"
         }
       ]
     }
@@ -75,15 +75,15 @@
   "leaders": [
     {
       "category": "Minutes",
-      "player": "Rickey Green",
-      "team": "Sheffield United",
-      "value": "38.1"
+      "player": "Moses Malone",
+      "team": "Benfica",
+      "value": "37.8"
     },
     {
       "category": "Points",
       "player": "Moses Malone",
       "team": "Benfica",
-      "value": "33.9"
+      "value": "32.7"
     },
     {
       "category": "Rebounds",
@@ -95,7 +95,7 @@
       "category": "Assists",
       "player": "Rickey Green",
       "team": "Sheffield United",
-      "value": "10.2"
+      "value": "10.4"
     },
     {
       "category": "Steals",
