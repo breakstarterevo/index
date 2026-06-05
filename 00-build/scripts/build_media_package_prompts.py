@@ -402,10 +402,15 @@ def build_power_rankings(overall_team_form, monthly_team_form, period_label, tea
                     "are sustainable, misleading, or changing."
                 ),
                 "writerNotes": [
+                    "Treat power rankings as a trust board, not a standings table: who would you trust most if the league kept playing like this right now?",
+                    "Open the article with the ranking lens: full-season profile first, latest sim/month form second, and tier stakes third.",
                     "Use the team pool as context, not as a locked final order.",
                     "Base the ranking on overall form, not just one sim.",
                     "Use the latest sim to justify movement, momentum, and skepticism.",
                     "Reference rank movement from the previous published board for every team, with an explicit up/down/no-change note and the number of places moved.",
+                    "Each team capsule should include a reason, concern, and next trigger instead of a plain stat recap.",
+                    "Include a board notes block after the rankings with labels such as Control Team, Biggest Riser, Trust Problem, Danger Team, and Panic Team.",
+                    "Use tier-specific stakes: Tier 1 credibility/survival, Tier 2 promotion/relegation pressure, and Tier 3 one-promotion urgency.",
                     "Work in star-player mentions for the biggest teams, risers, fallers, or arguments where roster quality matters.",
                     "Add player context only when it sharpens the team argument: who drives the offense, who covers a weakness, who is missing, or whose form changes the outlook.",
                     "Call out at least one riser, one faller, and one team you are still unsure about.",

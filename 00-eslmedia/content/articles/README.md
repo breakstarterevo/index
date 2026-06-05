@@ -161,6 +161,29 @@ Use these conventions:
 - do not mention JSON files, templates, prompts, databases, repo structure, source extraction, or any behind-the-scenes workflow in the visible article
 - writer persona guidance is internal only and should shape the prose without being named inside the article body
 
+## Power rankings rules
+
+Power rankings should read as a trust board, not a standings table. They should
+answer: who would the writer trust most if the league kept playing like this
+right now?
+
+For every power rankings article:
+- open with the ranking lens before the board, for example full-season profile first, latest month second, and tier stakes third
+- make the order meaningfully different from standings when form, margin, injury context, schedule context, or tier pressure justify it
+- include visible movement for every team, such as `STAYED NO. 1`, `UP 2 FROM NO. 5`, or `DOWN 1 FROM NO. 3`
+- include a compact meta line with record, latest-month form, point differential or streak, and the main player/context hook
+- write each team capsule as reason, concern, and next trigger, not a stat recap
+- use tier-specific stakes: Tier 1 credibility/survival, Tier 2 promotion/relegation pressure, Tier 3 one-promotion urgency
+- include a short board notes block after the rankings with labels like `Control Team`, `Biggest Riser`, `Trust Problem`, and `Panic Team`
+- end by looking forward to what would change the next board
+
+Avoid:
+- sorting only by record
+- repeating the same sentence structure in every capsule
+- using generic phrases like "player anchor," "the board respects the floor," or "the case is built on..."
+- presenting a hot month as proof without explaining whether it changes trust
+- burying movement only in the intro
+
 ## Visual identity rules
 
 ESL Media articles should keep the older print sports-page feel. They should read
