@@ -161,6 +161,32 @@ Use these conventions:
 - do not mention JSON files, templates, prompts, databases, repo structure, source extraction, or any behind-the-scenes workflow in the visible article
 - writer persona guidance is internal only and should shape the prose without being named inside the article body
 
+## Visual identity rules
+
+ESL Media articles should keep the older print sports-page feel. They should read
+more like a newspaper column or power-board page than a modern app dashboard.
+
+Preserve these traits:
+- big serif headline with real editorial weight
+- compact dek that states the article's point of view
+- byline/dateline row with thin rules
+- first paragraph using `class="drop-cap"`
+- narrow, readable article measure inside the `.paper` wrapper
+- strong board/table contrast, especially black or near-black section headers
+- pale board bodies with thin separators for rankings or lists
+- clear type hierarchy for headline, dek, byline, intro, section title, rank, team/player name, and metadata
+- restrained palette: mostly black, white, pale gray/off-white, and blue-led accents
+
+Avoid these when making article pages:
+- generic rounded dashboard cards for main article content
+- heavy gradients, bright colors, or decorative app-style chrome
+- soft card stacks that make rankings feel like UI panels instead of editorial boards
+- oversized spacing that weakens the newspaper density
+- hiding the article voice behind neutral web-template layout
+
+Dashboard and league tools can look modern, but articles should keep the
+print/editorial identity unless the user explicitly asks for a different style.
+
 ## Headline guidance
 
 Use these rules when naming articles:

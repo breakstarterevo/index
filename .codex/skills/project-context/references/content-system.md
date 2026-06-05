@@ -27,8 +27,12 @@ That file defines:
 - required article shell/container
 - required shared scripts before `</body>`
 - metadata/canonical expectations
+- ESL Media's preferred old-style newspaper/editorial visual identity
 
 When editing or generating articles, prefer following that README instead of copying arbitrary older files.
+For article visuals, preserve the older print-sports-page feel: big serif headlines,
+compact dek, byline rules, drop-cap openings, narrow readable article measure,
+high-contrast board headers, restrained colors, and minimal app-like card styling.
 
 ## Build integration
 
