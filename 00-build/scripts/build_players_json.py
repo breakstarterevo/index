@@ -299,7 +299,7 @@ $connStr = "Provider=Microsoft.ACE.OLEDB.12.0;Data Source=$path;Persist Security
 $conn = New-Object System.Data.OleDb.OleDbConnection($connStr)
 $conn.Open()
 $cmd = $conn.CreateCommand()
-$cmd.CommandText = "SELECT ID, Name, OverallRating, OverallPotential FROM Player"
+$cmd.CommandText = "SELECT ID, Name, OverallRating, OverallPotential, Greed, Winner, Loyalty, Happiness FROM Player"
 $adapter = New-Object System.Data.OleDb.OleDbDataAdapter($cmd)
 $table = New-Object System.Data.DataTable
 [void]$adapter.Fill($table)
@@ -310,6 +310,10 @@ $rows = foreach ($row in $table.Rows) {{
         name = [string]$row.Name
         overall = if ($null -eq $row.OverallRating -or [string]::IsNullOrWhiteSpace([string]$row.OverallRating)) {{ "" }} else {{ [string]$row.OverallRating }}
         potential = if ($null -eq $row.OverallPotential -or [string]::IsNullOrWhiteSpace([string]$row.OverallPotential)) {{ "" }} else {{ [string]$row.OverallPotential }}
+        greed = if ($null -eq $row.Greed -or [string]::IsNullOrWhiteSpace([string]$row.Greed)) {{ "" }} else {{ [string]$row.Greed }}
+        playForWinner = if ($null -eq $row.Winner -or [string]::IsNullOrWhiteSpace([string]$row.Winner)) {{ "" }} else {{ [string]$row.Winner }}
+        loyalty = if ($null -eq $row.Loyalty -or [string]::IsNullOrWhiteSpace([string]$row.Loyalty)) {{ "" }} else {{ [string]$row.Loyalty }}
+        happiness = if ($null -eq $row.Happiness -or [string]::IsNullOrWhiteSpace([string]$row.Happiness)) {{ "" }} else {{ [string]$row.Happiness }}
     }}
 }}
 $rows | ConvertTo-Json -Compress
@@ -348,6 +352,10 @@ $rows | ConvertTo-Json -Compress
         rating = {
             "overall": row.get("overall", "") or "",
             "potential": row.get("potential", "") or "",
+            "greed": row.get("greed", "") or "",
+            "playForWinner": row.get("playForWinner", "") or "",
+            "loyalty": row.get("loyalty", "") or "",
+            "happiness": row.get("happiness", "") or "",
         }
         player_id = str(row.get("id", "") or "").strip()
         if player_id:
@@ -575,6 +583,10 @@ def parse_player_page(html, filename, team_lookup, ratings):
     rating_data = find_rating(ratings, name, filename)
     player["overall"] = rating_data.get("overall", "")
     player["potential"] = rating_data.get("potential", "")
+    player["greed"] = rating_data.get("greed", "")
+    player["playForWinner"] = rating_data.get("playForWinner", "")
+    player["loyalty"] = rating_data.get("loyalty", "")
+    player["happiness"] = rating_data.get("happiness", "")
     return player
 
 
@@ -1156,7 +1168,128 @@ def attach_contracts(players, contract_entries, contract_years):
     return attached
 
 
-def parse_free_agents(html, ratings):
+def latest_stat_team(stats_entry):
+    rows = stats_entry.get("stats", {}).get("season_averages", {}).get("rows", [])
+    candidates = []
+
+    for row in rows:
+        team = clean(row.get("team", ""))
+        season = row.get("season", "")
+        if not team or normalize_name(team) in {"fa", "career", "draft"}:
+            continue
+        try:
+            season_number = int(season)
+        except (TypeError, ValueError):
+            season_number = -1
+        candidates.append((season_number, team))
+
+    if not candidates:
+        return ""
+
+    candidates.sort(key=lambda entry: entry[0], reverse=True)
+    return candidates[0][1]
+
+
+def build_stat_team_lookup(players, player_stats):
+    players_by_file = {
+        normalize_player_file(player.get("url", "")): player
+        for player in players
+        if normalize_player_file(player.get("url", ""))
+    }
+    players_by_name = {
+        normalize_name(player.get("name", "")): player
+        for player in players
+        if normalize_name(player.get("name", ""))
+    }
+    lookup = {}
+
+    for stats_entry in player_stats:
+        file_key = normalize_player_file(stats_entry.get("url", ""))
+        name_key = normalize_name(stats_entry.get("name", ""))
+        player = players_by_file.get(file_key) or players_by_name.get(name_key)
+        stat_team = latest_stat_team(stats_entry)
+
+        if not player or not stat_team:
+            continue
+        if normalize_name(player.get("team")) in {"fa", "draft"} or normalize_name(player.get("teamLabel")) in {"fa", "freeagent", "freeagents", "draft"}:
+            continue
+
+        lookup.setdefault(normalize_name(stat_team), {
+            "lastTeamId": player.get("team", "") or "",
+            "lastTeam": player.get("teamLabel", "") or player.get("team", "") or "",
+        })
+
+    return lookup
+
+
+def build_last_team_lookup(players, player_stats=None, stat_team_lookup=None):
+    player_stats = player_stats or []
+    stat_team_lookup = stat_team_lookup or {}
+    stats_by_file = {
+        normalize_player_file(entry.get("url", "")): entry
+        for entry in player_stats
+        if normalize_player_file(entry.get("url", ""))
+    }
+    stats_by_name = {
+        normalize_name(entry.get("name", "")): entry
+        for entry in player_stats
+        if normalize_name(entry.get("name", ""))
+    }
+    lookup = {}
+
+    for player in players:
+        file_key = normalize_player_file(player.get("url", ""))
+        name_key = normalize_name(player.get("name", ""))
+        team = player.get("team", "")
+        team_label = player.get("teamLabel", "")
+        stats_entry = stats_by_file.get(file_key) or stats_by_name.get(name_key)
+        stat_team = latest_stat_team(stats_entry) if stats_entry else ""
+
+        if normalize_name(team) in {"fa", "draft"} or normalize_name(team_label) in {"fa", "freeagent", "freeagents", "draft"}:
+            team = ""
+            team_label = ""
+
+        if (not team and not team_label) and stat_team:
+            stat_team_entry = stat_team_lookup.get(normalize_name(stat_team), {})
+            team = stat_team_entry.get("lastTeamId", "")
+            team_label = stat_team_entry.get("lastTeam", "") or stat_team
+
+        if not team and not team_label:
+            continue
+
+        value = {
+            "lastTeamId": team or "",
+            "lastTeam": team_label or team or "",
+        }
+        if file_key:
+            lookup[file_key] = value
+        if name_key:
+            lookup.setdefault(name_key, value)
+
+    return lookup
+
+
+def attach_last_team(players, last_team_lookup):
+    attached = 0
+
+    for player in players:
+        file_key = normalize_player_file(player.get("url", ""))
+        name_key = normalize_name(player.get("name", ""))
+        entry = last_team_lookup.get(file_key) or last_team_lookup.get(name_key)
+
+        if entry:
+            player["lastTeamId"] = entry.get("lastTeamId", "")
+            player["lastTeam"] = entry.get("lastTeam", "")
+            attached += 1
+        else:
+            player.setdefault("lastTeamId", "")
+            player.setdefault("lastTeam", "")
+
+    return attached
+
+
+def parse_free_agents(html, ratings, last_team_lookup=None):
+    last_team_lookup = last_team_lookup or {}
     normalized_html = re.sub(
         r"<table border=1 cellpadding=0 cellspacing=0><td bgcolor=([#A-Za-z0-9]+) width=10 height=10></td></tr></table>",
         lambda match: f"__COLOR__{match.group(1)}__",
@@ -1187,6 +1320,7 @@ def parse_free_agents(html, ratings):
         player_url = normalize_schedule_url(player_link.group(2))
         player_file = player_url.split("/")[-1]
         rating_data = find_rating(ratings, name, player_file)
+        last_team = last_team_lookup.get(normalize_player_file(player_file)) or last_team_lookup.get(normalize_name(name)) or {}
         player_number = parse_numeric_value(cells[0])
         cur_color_match = re.search(r"__COLOR__([#A-Za-z0-9]+)__", cells[6], re.IGNORECASE)
         fut_color_match = re.search(r"__COLOR__([#A-Za-z0-9]+)__", cells[7], re.IGNORECASE)
@@ -1206,6 +1340,12 @@ def parse_free_agents(html, ratings):
             "futureRatingColor": fut_color,
             "currentRating": rating_data.get("overall", "") or "",
             "futureRating": rating_data.get("potential", "") or "",
+            "lastTeam": last_team.get("lastTeam", "") or "",
+            "lastTeamId": last_team.get("lastTeamId", "") or "",
+            "greed": rating_data.get("greed", "") or "",
+            "playForWinner": rating_data.get("playForWinner", "") or "",
+            "loyalty": rating_data.get("loyalty", "") or "",
+            "happiness": rating_data.get("happiness", "") or "",
             "Ins": parse_numeric_value(cells[8]),
             "Jps": parse_numeric_value(cells[9]),
             "Fts": parse_numeric_value(cells[10]),
@@ -1807,6 +1947,9 @@ def main():
     else:
         print(f"Warning: {DRAFT_PATH} not found. Skipping draft potential grades.")
 
+    stat_team_lookup = build_stat_team_lookup(all_players, all_player_stats)
+    last_team_lookup = build_last_team_lookup(all_players, all_player_stats, stat_team_lookup)
+    attached_last_team_count = attach_last_team(all_players, last_team_lookup)
     attached_potential_count = attach_potential_grades(all_players, potential_grade_entries)
     attached_contract_count = attach_contracts(all_players, contract_entries, contract_years)
     all_players.sort(key=lambda player: player["name"])
@@ -1890,7 +2033,7 @@ def main():
 
     free_agents_data = {
         "source": os.path.basename(FREE_AGENTS_PATH),
-        "players": parse_free_agents(free_agents_html, ratings),
+        "players": parse_free_agents(free_agents_html, ratings, last_team_lookup),
     }
 
     atomic_dump_json(FREE_AGENTS_OUT, free_agents_data, indent=4)
@@ -1943,6 +2086,7 @@ def main():
         )
         
     print(f"\nFinal count: {len(all_players)} players saved to {PLAYERS_OUT}")
+    print(f"Final count: {attached_last_team_count} players enriched with last-team data")
     print(f"Final count: {attached_potential_count} players enriched with potential letter grades")
     print(f"Final count: {attached_contract_count} players enriched with roster contract tables")
     print(f"Final count: {len(all_player_stats)} player stat records saved to {PLAYER_STATS_OUT}")

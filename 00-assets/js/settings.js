@@ -215,6 +215,7 @@
         { value: "teamleaders.htm", label: "Team Leaders" },
         { value: "transactions.htm", label: "Transactions" },
         { value: "freeagents.htm", label: "Free Agents" },
+        { value: "00-assets/html/fa-war-room.htm", label: "FA War Room" },
         { value: "awards.htm", label: "Awards" }
       ]
     });

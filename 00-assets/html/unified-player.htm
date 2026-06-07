@@ -389,6 +389,43 @@
       letter-spacing: 0.12em;
       text-transform: uppercase;
     }
+    .rating-category-summary {
+      align-items: center;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      list-style: none;
+      user-select: none;
+    }
+    .rating-category-summary::-webkit-details-marker {
+      display: none;
+    }
+    .rating-category-summary::after {
+      color: var(--team-color);
+      content: "+";
+      font-size: 0.9rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-left: 0.5rem;
+    }
+    .rating-category[open] .rating-category-summary::after {
+      content: "-";
+    }
+    .rating-personality-drawer {
+      border-top: 1px solid var(--line);
+      grid-column: 1 / -1;
+      min-width: 0;
+    }
+    .rating-personality-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .rating-personality-grid .rating-row {
+      border-right: 1px solid var(--line);
+    }
+    .rating-personality-grid .rating-row:last-child {
+      border-right: 0;
+    }
     .rating-row {
       display: grid;
       grid-template-columns: 40px minmax(0, 1fr) minmax(2rem, auto) minmax(2rem, auto);
@@ -426,6 +463,9 @@
     .potential-grade.no-grade {
       color: var(--muted);
       background: #f8fafc;
+    }
+    .rating-row-profile .potential-grade {
+      visibility: hidden;
     }
     .rating-bar {
       height: 8px;
@@ -792,6 +832,7 @@
       .layout-stats { order: 3; }
       .layout-player-articles { order: 4; }
       .ratings-board { grid-template-columns: 1fr; }
+      .rating-personality-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .rating-category { border-right: 0; border-bottom: 1px solid var(--line); }
       .rating-category:last-child { border-bottom: 0; }
       .header-statline {
@@ -809,6 +850,9 @@
       .ratings-board {
         grid-template-columns: repeat(3, minmax(0, 1fr));
       }
+      .rating-personality-grid {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+      }
       .rating-category {
         border-bottom: 0;
         border-right: 1px solid var(--line);
@@ -820,6 +864,7 @@
     @media (max-width: 620px) {
       body { padding: 0.5rem 0.55rem; }
       .shell { gap: 0.55rem; }
+      .rating-personality-grid { grid-template-columns: 1fr; }
       .topbar {
         align-items: stretch;
         flex-direction: column;
@@ -1027,7 +1072,21 @@
       },
       {
         title: "Physicals",
-        ratings: [["Qkn", "Quick"], ["Jmp", "Jump"], ["Str", "Strength"], ["Sta", "Stamina"]]
+        ratings: [
+          ["Qkn", "Quick"],
+          ["Jmp", "Jump"],
+          ["Str", "Strength"],
+          ["Sta", "Stamina"]
+        ]
+      },
+      {
+        title: "Personality",
+        ratings: [
+          ["greed", "Greed", "GRD"],
+          ["playForWinner", "Play for Winner", "WIN"],
+          ["loyalty", "Loyalty", "LOY"],
+          ["happiness", "Happiness", "HAP"]
+        ]
       }
     ];
 
@@ -1181,9 +1240,11 @@
     function findInjury(player) {
       const nameKey = normalizeName(player && player.name);
       const teamKey = normalizeName(player && player.teamLabel);
-      return state.injuries.find((item) => normalizeName(item.name) === nameKey && (!teamKey || normalizeName(item.teamName) === teamKey)) ||
-        state.injuries.find((item) => normalizeName(item.name) === nameKey) ||
-        null;
+      if (!nameKey) return null;
+      if (teamKey) {
+        return state.injuries.find((item) => normalizeName(item.name) === nameKey && normalizeName(item.teamName) === teamKey) || null;
+      }
+      return state.injuries.find((item) => normalizeName(item.name) === nameKey) || null;
     }
 
     function bestCurrentRow() {
@@ -1412,15 +1473,25 @@
         : `<tbody><tr><th>Contract</th><td>$0</td></tr></tbody>`;
 
       const potentials = p.potentials || {};
-      document.getElementById("ratingsBoard").innerHTML = RATING_GROUPS.map((group) => {
-        const rows = group.ratings.map(([key, label]) => {
+      let personalityRows = "";
+      const ratingSections = RATING_GROUPS.map((group) => {
+        const isPersonalityGroup = group.title === "Personality";
+        const rows = group.ratings.map(([key, label, shortLabel]) => {
           const value = fmt(p[key]);
           const potential = fmt(potentials[key]);
           const potentialClass = potential === "--" ? "potential-grade no-grade" : "potential-grade";
-          return `<div class="rating-row" title="${label}"><span class="rating-key">${key}</span><span class="rating-bar"><span class="rating-fill" style="width:${ratingWidth(value)}%"></span></span><span class="rating-value">${value}</span><span class="${potentialClass}">${potential}</span></div>`;
+          const isProfileRow = key === "greed" || key === "playForWinner" || key === "loyalty" || key === "happiness";
+          return `<div class="rating-row${isProfileRow ? " rating-row-profile" : ""}" title="${label}"><span class="rating-key">${shortLabel || key}</span><span class="rating-bar"><span class="rating-fill" style="width:${ratingWidth(value)}%"></span></span><span class="rating-value">${value}</span><span class="${potentialClass}">${isProfileRow ? "" : potential}</span></div>`;
         }).join("");
+        if (isPersonalityGroup) {
+          personalityRows = rows;
+          return "";
+        }
         return `<section class="rating-category"><h3 class="rating-category-title">${group.title}</h3>${rows}</section>`;
       }).join("");
+      document.getElementById("ratingsBoard").innerHTML = ratingSections + (personalityRows
+        ? `<details class="rating-personality-drawer"><summary class="rating-category-title rating-category-summary">Personality</summary><div class="rating-personality-grid">${personalityRows}</div></details>`
+        : "");
     }
 
     function keyFromHeader(header, used) {
