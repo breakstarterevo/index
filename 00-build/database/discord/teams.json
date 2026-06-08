@@ -3,16 +3,16 @@
     "id": "roster9",
     "name": "AC Milan",
     "record": {
-      "wins": 13,
-      "losses": 15,
-      "pct": 0.464
+      "wins": 16,
+      "losses": 20,
+      "pct": 0.444
     },
     "section": "CLB Standings",
-    "pf": 112.5,
-    "pa": 112.5,
+    "pf": 113.4,
+    "pa": 113.4,
     "diff": 0.0,
     "streak": "W1",
-    "last10": "5-5",
+    "last10": "4-6",
     "starPlayer": {
       "name": "Larry Bird",
       "url": "../players/player697.htm",
@@ -22,40 +22,40 @@
       "potential": "182"
     },
     "cap": {
-      "salary": "$89,459,104",
-      "room": "$10,540,896"
+      "salary": "$91,413,749",
+      "room": "$8,586,251"
     },
     "strengths": [
       {
-        "label": "FT%",
-        "value": 0.796,
+        "label": "Steals",
+        "value": 10.8,
         "rank": 1
       },
       {
-        "label": "O.Rebounds",
-        "value": 13.0,
-        "rank": 2
-      },
-      {
-        "label": "Steals",
-        "value": 10.5,
-        "rank": 2
+        "label": "FT%",
+        "value": 0.798,
+        "rank": 1
       },
       {
         "label": "Blocks",
-        "value": 8.9,
+        "value": 8.4,
+        "rank": 2
+      },
+      {
+        "label": "Turnovers",
+        "value": 17.4,
         "rank": 2
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "2/27/1983",
-      "text": "@AC Milan 115, Benfica 98",
-      "boxscoreFile": "box132-1.htm"
+      "date": "3/26/1983",
+      "text": "AC Milan 109, @Bayern Munich 108",
+      "boxscoreFile": "box159-1.htm"
     },
     "nextGame": {
-      "date": "3/3/1983",
-      "text": "Sheffield United @ AC Milan",
+      "date": "4/1/1983",
+      "text": "Real Madrid @ AC Milan",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster9"
@@ -64,14 +64,14 @@
     "id": "roster12",
     "name": "AFC Richmond",
     "record": {
-      "wins": 20,
-      "losses": 7,
-      "pct": 0.741
+      "wins": 25,
+      "losses": 10,
+      "pct": 0.714
     },
     "section": "CLB Standings",
-    "pf": 114.5,
-    "pa": 110.7,
-    "diff": 3.8,
+    "pf": 114.6,
+    "pa": 111.4,
+    "diff": 3.2,
     "streak": "W1",
     "last10": "6-4",
     "starPlayer": {
@@ -89,7 +89,7 @@
     "strengths": [
       {
         "label": "Assists",
-        "value": 30.2,
+        "value": 29.4,
         "rank": 1
       },
       {
@@ -99,12 +99,12 @@
       },
       {
         "label": "Points",
-        "value": 114.5,
+        "value": 114.6,
         "rank": 2
       },
       {
         "label": "FG%",
-        "value": 0.502,
+        "value": 0.501,
         "rank": 2
       }
     ],
@@ -113,17 +113,17 @@
         "name": "Magic Johnson",
         "pos": "SF",
         "injury": "Stress Fracture",
-        "length": "32"
+        "length": "1"
       }
     ],
     "recentGame": {
-      "date": "2/21/1983",
-      "text": "@AFC Richmond 106, Real Madrid 98",
-      "boxscoreFile": "box126-2.htm"
+      "date": "3/28/1983",
+      "text": "@AFC Richmond 135, Sheffield United 103",
+      "boxscoreFile": "box161-1.htm"
     },
     "nextGame": {
-      "date": "3/1/1983",
-      "text": "Real Madrid @ AFC Richmond",
+      "date": "4/1/1983",
+      "text": "AFC Richmond @ Sheffield United",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster12"
@@ -132,21 +132,21 @@
     "id": "roster18",
     "name": "Ajax",
     "record": {
-      "wins": 9,
-      "losses": 19,
-      "pct": 0.321
+      "wins": 15,
+      "losses": 21,
+      "pct": 0.417
     },
     "section": "ELB Standings",
-    "pf": 103.4,
-    "pa": 111.7,
-    "diff": -8.3,
-    "streak": "L7",
-    "last10": "2-8",
+    "pf": 106.1,
+    "pa": 111.2,
+    "diff": -5.1,
+    "streak": "W2",
+    "last10": "6-4",
     "starPlayer": {
       "name": "Cliff Robinson",
       "url": "../players/player881.htm",
       "pos": "PF",
-      "age": "20",
+      "age": "21",
       "overall": "121",
       "potential": "124"
     },
@@ -156,37 +156,35 @@
     },
     "strengths": [
       {
-        "label": "O.Rebounds",
-        "value": 11.8,
-        "rank": 5
-      },
-      {
         "label": "3PT%",
-        "value": 0.293,
-        "rank": 5
+        "value": 0.316,
+        "rank": 2
       },
       {
         "label": "Points Per Shot",
-        "value": 1.3,
+        "value": 1.32,
+        "rank": 4
+      },
+      {
+        "label": "Adjusted FG%",
+        "value": 0.502,
+        "rank": 4
+      },
+      {
+        "label": "FG%",
+        "value": 0.49,
         "rank": 5
       }
     ],
-    "injuries": [
-      {
-        "name": "Cliff Robinson",
-        "pos": "PF",
-        "injury": "Broken Foot",
-        "length": "24"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
-      "date": "2/27/1983",
-      "text": "@Chelsea 122, Ajax 85",
-      "boxscoreFile": "box132-2.htm"
+      "date": "3/30/1983",
+      "text": "Ajax 128, @Marseille 113",
+      "boxscoreFile": "box163-1.htm"
     },
     "nextGame": {
-      "date": "3/3/1983",
-      "text": "FL Fart @ Ajax",
+      "date": "4/3/1983",
+      "text": "Ajax @ Manchester United",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster18"
@@ -195,16 +193,16 @@
     "id": "roster19",
     "name": "Aston Villa",
     "record": {
-      "wins": 20,
-      "losses": 8,
+      "wins": 25,
+      "losses": 10,
       "pct": 0.714
     },
     "section": "ECL Standings",
-    "pf": 106.1,
-    "pa": 97.8,
-    "diff": 8.4,
-    "streak": "W1",
-    "last10": "5-5",
+    "pf": 106.8,
+    "pa": 98.0,
+    "diff": 8.8,
+    "streak": "W3",
+    "last10": "6-4",
     "starPlayer": {
       "name": "Bill Laimbeer",
       "url": "../players/player874.htm",
@@ -220,12 +218,12 @@
     "strengths": [
       {
         "label": "O.Rebounds",
-        "value": 15.6,
+        "value": 15.3,
         "rank": 1
       },
       {
         "label": "Rebounds",
-        "value": 44.1,
+        "value": 44.3,
         "rank": 1
       },
       {
@@ -235,19 +233,26 @@
       },
       {
         "label": "Points",
-        "value": 106.1,
+        "value": 106.8,
         "rank": 2
       }
     ],
-    "injuries": [],
+    "injuries": [
+      {
+        "name": "Xavier McDaniel",
+        "pos": "SF",
+        "injury": "Broken Foot",
+        "length": "50"
+      }
+    ],
     "recentGame": {
-      "date": "2/25/1983",
-      "text": "Aston Villa 110, @Tottenham Hotspur 108",
-      "boxscoreFile": "box130-5.htm"
+      "date": "3/27/1983",
+      "text": "Aston Villa 92, @Barcelona 83",
+      "boxscoreFile": "box160-2.htm"
     },
     "nextGame": {
-      "date": "3/5/1983",
-      "text": "Sporting CP @ Aston Villa",
+      "date": "4/1/1983",
+      "text": "Aston Villa @ Inter Milan",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster19"
@@ -256,16 +261,16 @@
     "id": "roster11",
     "name": "Atletico Madrid",
     "record": {
-      "wins": 13,
-      "losses": 16,
-      "pct": 0.448
+      "wins": 14,
+      "losses": 22,
+      "pct": 0.389
     },
     "section": "CLB Standings",
-    "pf": 111.1,
-    "pa": 113.4,
-    "diff": -2.3,
-    "streak": "W4",
-    "last10": "7-3",
+    "pf": 110.2,
+    "pa": 113.3,
+    "diff": -3.1,
+    "streak": "W1",
+    "last10": "4-6",
     "starPlayer": {
       "name": "James Donaldson",
       "url": "../players/player712.htm",
@@ -281,34 +286,41 @@
     "strengths": [
       {
         "label": "Points Per Shot",
-        "value": 1.37,
+        "value": 1.34,
         "rank": 2
       },
       {
         "label": "Assists",
-        "value": 25.9,
+        "value": 26.2,
         "rank": 3
       },
       {
         "label": "Blocks",
-        "value": 7.7,
+        "value": 7.6,
         "rank": 3
       },
       {
-        "label": "D.Rebounds",
-        "value": 28.8,
-        "rank": 4
+        "label": "FG%",
+        "value": 0.495,
+        "rank": 3
       }
     ],
-    "injuries": [],
+    "injuries": [
+      {
+        "name": "Adrian Dantley",
+        "pos": "SF",
+        "injury": "Concussion",
+        "length": "27"
+      }
+    ],
     "recentGame": {
-      "date": "2/25/1983",
-      "text": "Atletico Madrid 113, @Real Madrid 102",
-      "boxscoreFile": "box130-1.htm"
+      "date": "3/28/1983",
+      "text": "@Atletico Madrid 97, Crystal Palace 90",
+      "boxscoreFile": "box161-3.htm"
     },
     "nextGame": {
-      "date": "3/1/1983",
-      "text": "Atletico Madrid @ Sheffield United",
+      "date": "4/1/1983",
+      "text": "Crystal Palace @ Atletico Madrid",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster11"
@@ -317,16 +329,16 @@
     "id": "roster24",
     "name": "Barcelona",
     "record": {
-      "wins": 11,
-      "losses": 18,
-      "pct": 0.379
+      "wins": 13,
+      "losses": 24,
+      "pct": 0.351
     },
     "section": "ECL Standings",
-    "pf": 99.9,
-    "pa": 104.4,
-    "diff": -4.5,
+    "pf": 99.2,
+    "pa": 104.3,
+    "diff": -5.1,
     "streak": "L3",
-    "last10": "4-6",
+    "last10": "2-8",
     "starPlayer": {
       "name": "Otis Birdsong",
       "url": "../players/player730.htm",
@@ -342,34 +354,34 @@
     "strengths": [
       {
         "label": "Steals",
-        "value": 9.0,
-        "rank": 1
-      },
-      {
-        "label": "O.Rebounds",
-        "value": 12.3,
-        "rank": 3
+        "value": 8.8,
+        "rank": 2
       },
       {
         "label": "FG%",
-        "value": 0.48,
+        "value": 0.479,
         "rank": 3
       },
       {
-        "label": "Assists",
-        "value": 22.4,
+        "label": "Blocks",
+        "value": 4.9,
         "rank": 4
+      },
+      {
+        "label": "Points",
+        "value": 99.2,
+        "rank": 5
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "2/26/1983",
-      "text": "Valencia 114, @Barcelona 108",
-      "boxscoreFile": "box131-1.htm"
+      "date": "3/27/1983",
+      "text": "Aston Villa 92, @Barcelona 83",
+      "boxscoreFile": "box160-2.htm"
     },
     "nextGame": {
-      "date": "3/3/1983",
-      "text": "Barcelona @ Paris Saint-Germain",
+      "date": "4/2/1983",
+      "text": "Manchester City @ Barcelona",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster24"
@@ -378,15 +390,15 @@
     "id": "roster7",
     "name": "Bayern Munich",
     "record": {
-      "wins": 16,
-      "losses": 13,
-      "pct": 0.552
+      "wins": 20,
+      "losses": 16,
+      "pct": 0.556
     },
     "section": "CLB Standings",
-    "pf": 110.4,
-    "pa": 108.2,
-    "diff": 2.2,
-    "streak": "W1",
+    "pf": 109.1,
+    "pa": 106.7,
+    "diff": 2.4,
+    "streak": "L1",
     "last10": "5-5",
     "starPlayer": {
       "name": "Bernard King",
@@ -402,35 +414,42 @@
     },
     "strengths": [
       {
+        "label": "D.Rebounds",
+        "value": 30.7,
+        "rank": 1
+      },
+      {
         "label": "Blocks",
         "value": 10.7,
         "rank": 1
       },
       {
-        "label": "D.Rebounds",
-        "value": 29.8,
-        "rank": 2
-      },
-      {
         "label": "Rebounds",
-        "value": 41.7,
+        "value": 42.5,
         "rank": 2
       },
       {
-        "label": "Steals",
-        "value": 10.4,
-        "rank": 3
+        "label": "Fouls",
+        "value": 26.1,
+        "rank": 2
       }
     ],
-    "injuries": [],
+    "injuries": [
+      {
+        "name": "Mike Woodson",
+        "pos": "SG",
+        "injury": "Dislocated Shoulder",
+        "length": "7"
+      }
+    ],
     "recentGame": {
-      "date": "2/28/1983",
-      "text": "Bayern Munich 116, @Crystal Palace 114",
-      "boxscoreFile": "box133-1.htm"
+      "date": "3/26/1983",
+      "text": "AC Milan 109, @Bayern Munich 108",
+      "boxscoreFile": "box159-1.htm"
     },
     "nextGame": {
-      "date": "3/4/1983",
-      "text": "Bayern Munich @ AC Milan",
+      "date": "4/1/1983",
+      "text": "Benfica @ Bayern Munich",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster7"
@@ -439,59 +458,59 @@
     "id": "roster13",
     "name": "Benfica",
     "record": {
-      "wins": 11,
-      "losses": 18,
-      "pct": 0.379
+      "wins": 15,
+      "losses": 21,
+      "pct": 0.417
     },
     "section": "CLB Standings",
-    "pf": 111.2,
-    "pa": 113.1,
-    "diff": -1.9,
+    "pf": 112.8,
+    "pa": 113.8,
+    "diff": -1.0,
     "streak": "L1",
-    "last10": "4-6",
+    "last10": "6-4",
     "starPlayer": {
       "name": "Moses Malone",
       "url": "../players/player872.htm",
       "pos": "C",
-      "age": "25",
+      "age": "26",
       "overall": "154",
       "potential": "154"
     },
     "cap": {
-      "salary": "$90,323,387",
-      "room": "$9,676,613"
+      "salary": "$88,448,387",
+      "room": "$11,551,613"
     },
     "strengths": [
       {
-        "label": "O.Rebounds",
-        "value": 13.3,
-        "rank": 1
-      },
-      {
-        "label": "D.Rebounds",
-        "value": 30.0,
-        "rank": 1
-      },
-      {
         "label": "Rebounds",
-        "value": 43.3,
+        "value": 42.7,
         "rank": 1
       },
       {
         "label": "Turnovers",
-        "value": 17.5,
+        "value": 17.2,
         "rank": 1
+      },
+      {
+        "label": "O.Rebounds",
+        "value": 13.3,
+        "rank": 2
+      },
+      {
+        "label": "D.Rebounds",
+        "value": 29.4,
+        "rank": 2
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "2/27/1983",
-      "text": "@AC Milan 115, Benfica 98",
-      "boxscoreFile": "box132-1.htm"
+      "date": "3/28/1983",
+      "text": "Real Madrid 120, @Benfica 113",
+      "boxscoreFile": "box161-2.htm"
     },
     "nextGame": {
-      "date": "3/5/1983",
-      "text": "Benfica @ Real Madrid",
+      "date": "4/1/1983",
+      "text": "Benfica @ Bayern Munich",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster13"
@@ -500,16 +519,16 @@
     "id": "roster10",
     "name": "Brighton",
     "record": {
-      "wins": 13,
-      "losses": 14,
-      "pct": 0.481
+      "wins": 19,
+      "losses": 16,
+      "pct": 0.543
     },
     "section": "ELB Standings",
-    "pf": 112.3,
+    "pf": 113.0,
     "pa": 108.6,
-    "diff": 3.8,
+    "diff": 4.4,
     "streak": "W1",
-    "last10": "4-6",
+    "last10": "7-3",
     "starPlayer": {
       "name": "Kiki Vandeweghe",
       "url": "../players/player701.htm",
@@ -525,34 +544,47 @@
     "strengths": [
       {
         "label": "Points",
-        "value": 112.3,
+        "value": 113.0,
         "rank": 1
       },
       {
         "label": "Fouls",
-        "value": 22.5,
+        "value": 22.6,
         "rank": 1
       },
       {
         "label": "FG%",
-        "value": 0.501,
+        "value": 0.504,
         "rank": 1
       },
       {
         "label": "3PT%",
-        "value": 0.335,
+        "value": 0.321,
         "rank": 1
       }
     ],
-    "injuries": [],
+    "injuries": [
+      {
+        "name": "Ronnie Lester",
+        "pos": "PG",
+        "injury": "Broken Finger",
+        "length": "20"
+      },
+      {
+        "name": "Herb Williams",
+        "pos": "C",
+        "injury": "Broken Foot",
+        "length": "18"
+      }
+    ],
     "recentGame": {
-      "date": "2/25/1983",
-      "text": "@Brighton 108, FL Fart 87",
-      "boxscoreFile": "box130-4.htm"
+      "date": "3/28/1983",
+      "text": "@Brighton 121, Chelsea 111",
+      "boxscoreFile": "box161-4.htm"
     },
     "nextGame": {
-      "date": "3/1/1983",
-      "text": "Manchester United @ Brighton",
+      "date": "4/2/1983",
+      "text": "Brighton @ Monaco",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster10"
@@ -561,16 +593,16 @@
     "id": "roster17",
     "name": "Chelsea",
     "record": {
-      "wins": 22,
-      "losses": 8,
-      "pct": 0.733
+      "wins": 26,
+      "losses": 11,
+      "pct": 0.703
     },
     "section": "ELB Standings",
-    "pf": 107.7,
-    "pa": 96.6,
-    "diff": 11.1,
-    "streak": "W3",
-    "last10": "9-1",
+    "pf": 107.2,
+    "pa": 98.3,
+    "diff": 8.9,
+    "streak": "L1",
+    "last10": "7-3",
     "starPlayer": {
       "name": "Jack Sikma",
       "url": "../players/player870.htm",
@@ -586,33 +618,40 @@
     "strengths": [
       {
         "label": "D.Rebounds",
-        "value": 31.9,
+        "value": 31.5,
         "rank": 1
       },
       {
         "label": "Rebounds",
-        "value": 44.0,
+        "value": 43.6,
         "rank": 1
       },
       {
         "label": "Blocks",
-        "value": 7.1,
+        "value": 6.9,
         "rank": 1
       },
       {
-        "label": "FT%",
-        "value": 0.808,
+        "label": "Turnovers",
+        "value": 14.8,
         "rank": 1
       }
     ],
-    "injuries": [],
+    "injuries": [
+      {
+        "name": "Jim Paxson",
+        "pos": "SG",
+        "injury": "Broken Finger",
+        "length": "3"
+      }
+    ],
     "recentGame": {
-      "date": "2/28/1983",
-      "text": "@Chelsea 115, Marseille 99",
-      "boxscoreFile": "box133-2.htm"
+      "date": "3/28/1983",
+      "text": "@Brighton 121, Chelsea 111",
+      "boxscoreFile": "box161-4.htm"
     },
     "nextGame": {
-      "date": "3/6/1983",
+      "date": "4/2/1983",
       "text": "Juventus @ Chelsea",
       "boxscoreFile": ""
     },
@@ -622,16 +661,16 @@
     "id": "roster6",
     "name": "Crystal Palace",
     "record": {
-      "wins": 11,
-      "losses": 20,
-      "pct": 0.355
+      "wins": 13,
+      "losses": 25,
+      "pct": 0.342
     },
     "section": "CLB Standings",
-    "pf": 111.3,
-    "pa": 117.2,
-    "diff": -5.9,
-    "streak": "L1",
-    "last10": "4-6",
+    "pf": 110.7,
+    "pa": 116.1,
+    "diff": -5.4,
+    "streak": "L5",
+    "last10": "3-7",
     "starPlayer": {
       "name": "Darrell Griffith",
       "url": "../players/player703.htm",
@@ -646,42 +685,42 @@
     },
     "strengths": [
       {
-        "label": "3PT%",
-        "value": 0.344,
+        "label": "O.Rebounds",
+        "value": 13.3,
         "rank": 1
       },
       {
-        "label": "O.Rebounds",
-        "value": 12.9,
-        "rank": 3
+        "label": "3PT%",
+        "value": 0.333,
+        "rank": 1
       },
       {
         "label": "Fouls",
         "value": 26.5,
-        "rank": 3
+        "rank": 4
       },
       {
         "label": "FT%",
-        "value": 0.784,
-        "rank": 3
+        "value": 0.78,
+        "rank": 4
       }
     ],
     "injuries": [
       {
-        "name": "Artis Gilmore",
-        "pos": "C",
-        "injury": "Stress Fracture",
-        "length": "6"
+        "name": "Alex English",
+        "pos": "SF",
+        "injury": "Dislocated Knee",
+        "length": "18"
       }
     ],
     "recentGame": {
-      "date": "2/28/1983",
-      "text": "Bayern Munich 116, @Crystal Palace 114",
-      "boxscoreFile": "box133-1.htm"
+      "date": "3/28/1983",
+      "text": "@Atletico Madrid 97, Crystal Palace 90",
+      "boxscoreFile": "box161-3.htm"
     },
     "nextGame": {
-      "date": "3/5/1983",
-      "text": "Atletico Madrid @ Crystal Palace",
+      "date": "4/1/1983",
+      "text": "Crystal Palace @ Atletico Madrid",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster6"
@@ -690,27 +729,27 @@
     "id": "roster27",
     "name": "FL Fart",
     "record": {
-      "wins": 15,
-      "losses": 13,
-      "pct": 0.536
+      "wins": 20,
+      "losses": 16,
+      "pct": 0.556
     },
     "section": "ELB Standings",
-    "pf": 105.4,
-    "pa": 105.1,
-    "diff": 0.3,
-    "streak": "L1",
-    "last10": "5-5",
+    "pf": 108.2,
+    "pa": 105.8,
+    "diff": 2.5,
+    "streak": "W2",
+    "last10": "6-4",
     "starPlayer": {
       "name": "Larry Drew",
       "url": "../players/player1053.htm",
       "pos": "PG",
-      "age": "22",
-      "overall": "127",
+      "age": "23",
+      "overall": "128",
       "potential": "137"
     },
     "cap": {
-      "salary": "$60,462,114",
-      "room": "$9,537,886"
+      "salary": "$67,857,578",
+      "room": "$2,142,422"
     },
     "strengths": [
       {
@@ -720,29 +759,29 @@
       },
       {
         "label": "Assists",
-        "value": 24.6,
-        "rank": 3
+        "value": 25.4,
+        "rank": 2
+      },
+      {
+        "label": "Points Per Shot",
+        "value": 1.34,
+        "rank": 2
       },
       {
         "label": "Blocks",
-        "value": 5.8,
-        "rank": 3
-      },
-      {
-        "label": "FT%",
-        "value": 0.765,
+        "value": 6.1,
         "rank": 3
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "2/25/1983",
-      "text": "@Brighton 108, FL Fart 87",
-      "boxscoreFile": "box130-4.htm"
+      "date": "3/29/1983",
+      "text": "@FL Fart 125, Juventus 110",
+      "boxscoreFile": "box162-1.htm"
     },
     "nextGame": {
-      "date": "3/3/1983",
-      "text": "FL Fart @ Ajax",
+      "date": "4/3/1983",
+      "text": "Juventus @ FL Fart",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster27"
@@ -751,16 +790,16 @@
     "id": "roster26",
     "name": "Inter Milan",
     "record": {
-      "wins": 14,
-      "losses": 14,
-      "pct": 0.5
+      "wins": 16,
+      "losses": 20,
+      "pct": 0.444
     },
     "section": "ECL Standings",
-    "pf": 98.1,
-    "pa": 96.3,
-    "diff": 1.8,
-    "streak": "L2",
-    "last10": "5-5",
+    "pf": 97.1,
+    "pa": 97.3,
+    "diff": -0.3,
+    "streak": "W1",
+    "last10": "2-8",
     "starPlayer": {
       "name": "World B. Free",
       "url": "../players/player1048.htm",
@@ -775,35 +814,35 @@
     },
     "strengths": [
       {
-        "label": "Assists",
-        "value": 22.7,
-        "rank": 1
-      },
-      {
-        "label": "D.Rebounds",
-        "value": 28.7,
-        "rank": 2
-      },
-      {
-        "label": "Rebounds",
-        "value": 41.0,
+        "label": "O.Rebounds",
+        "value": 12.7,
         "rank": 2
       },
       {
         "label": "Blocks",
-        "value": 6.3,
+        "value": 6.2,
+        "rank": 2
+      },
+      {
+        "label": "Fouls",
+        "value": 23.6,
+        "rank": 2
+      },
+      {
+        "label": "3PT%",
+        "value": 0.311,
         "rank": 2
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "2/27/1983",
-      "text": "@Sporting CP 102, Inter Milan 99",
-      "boxscoreFile": "box132-3.htm"
+      "date": "3/26/1983",
+      "text": "Inter Milan 110, @Manchester City 100",
+      "boxscoreFile": "box159-3.htm"
     },
     "nextGame": {
-      "date": "3/4/1983",
-      "text": "Manchester City @ Inter Milan",
+      "date": "4/1/1983",
+      "text": "Aston Villa @ Inter Milan",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster26"
@@ -812,16 +851,16 @@
     "id": "roster14",
     "name": "Juventus",
     "record": {
-      "wins": 15,
-      "losses": 12,
-      "pct": 0.556
+      "wins": 18,
+      "losses": 16,
+      "pct": 0.529
     },
     "section": "ELB Standings",
-    "pf": 109.6,
-    "pa": 107.9,
-    "diff": 1.7,
-    "streak": "W5",
-    "last10": "9-1",
+    "pf": 109.7,
+    "pa": 108.3,
+    "diff": 1.4,
+    "streak": "L2",
+    "last10": "6-4",
     "starPlayer": {
       "name": "Kareem Abdul-Jabbar",
       "url": "../players/player877.htm",
@@ -837,34 +876,34 @@
     "strengths": [
       {
         "label": "D.Rebounds",
-        "value": 30.3,
+        "value": 30.4,
+        "rank": 2
+      },
+      {
+        "label": "Rebounds",
+        "value": 42.6,
         "rank": 2
       },
       {
         "label": "Blocks",
-        "value": 6.5,
+        "value": 6.1,
         "rank": 2
       },
       {
-        "label": "Points Per Shot",
-        "value": 1.32,
-        "rank": 2
-      },
-      {
-        "label": "Adjusted FG%",
-        "value": 0.512,
+        "label": "FG%",
+        "value": 0.5,
         "rank": 2
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "2/24/1983",
-      "text": "@Juventus 114, Marseille 101",
-      "boxscoreFile": "box129-2.htm"
+      "date": "3/29/1983",
+      "text": "@FL Fart 125, Juventus 110",
+      "boxscoreFile": "box162-1.htm"
     },
     "nextGame": {
-      "date": "3/2/1983",
-      "text": "Juventus @ Monaco",
+      "date": "4/2/1983",
+      "text": "Juventus @ Chelsea",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster14"
@@ -873,16 +912,16 @@
     "id": "roster28",
     "name": "Manchester City",
     "record": {
-      "wins": 19,
-      "losses": 12,
-      "pct": 0.613
+      "wins": 22,
+      "losses": 15,
+      "pct": 0.595
     },
     "section": "ECL Standings",
-    "pf": 103.9,
-    "pa": 102.1,
-    "diff": 1.9,
-    "streak": "W4",
-    "last10": "8-2",
+    "pf": 104.0,
+    "pa": 100.7,
+    "diff": 3.4,
+    "streak": "L1",
+    "last10": "7-3",
     "starPlayer": {
       "name": "Allen Leavell",
       "url": "../players/player1054.htm",
@@ -903,7 +942,7 @@
       },
       {
         "label": "FG%",
-        "value": 0.496,
+        "value": 0.497,
         "rank": 1
       },
       {
@@ -913,19 +952,26 @@
       },
       {
         "label": "Adjusted FG%",
-        "value": 0.502,
+        "value": 0.503,
         "rank": 1
       }
     ],
-    "injuries": [],
+    "injuries": [
+      {
+        "name": "Theo Ratliff",
+        "pos": "C",
+        "injury": "Sprained Ankle",
+        "length": "1"
+      }
+    ],
     "recentGame": {
-      "date": "2/27/1983",
-      "text": "@Manchester City 109, Paris Saint-Germain 101",
-      "boxscoreFile": "box132-4.htm"
+      "date": "3/26/1983",
+      "text": "Inter Milan 110, @Manchester City 100",
+      "boxscoreFile": "box159-3.htm"
     },
     "nextGame": {
-      "date": "3/4/1983",
-      "text": "Manchester City @ Inter Milan",
+      "date": "4/2/1983",
+      "text": "Manchester City @ Barcelona",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster28"
@@ -934,15 +980,15 @@
     "id": "roster5",
     "name": "Manchester United",
     "record": {
-      "wins": 12,
-      "losses": 15,
-      "pct": 0.444
+      "wins": 15,
+      "losses": 20,
+      "pct": 0.429
     },
     "section": "ELB Standings",
-    "pf": 108.9,
-    "pa": 111.7,
-    "diff": -2.8,
-    "streak": "W1",
+    "pf": 108.5,
+    "pa": 112.0,
+    "diff": -3.5,
+    "streak": "W3",
     "last10": "4-6",
     "starPlayer": {
       "name": "Walter Davis",
@@ -959,22 +1005,22 @@
     "strengths": [
       {
         "label": "Assists",
-        "value": 29.2,
+        "value": 28.9,
         "rank": 1
+      },
+      {
+        "label": "FT%",
+        "value": 0.785,
+        "rank": 2
       },
       {
         "label": "FG%",
         "value": 0.499,
-        "rank": 2
+        "rank": 3
       },
       {
-        "label": "FT%",
-        "value": 0.773,
-        "rank": 2
-      },
-      {
-        "label": "Turnovers",
-        "value": 16.4,
+        "label": "Adjusted FG%",
+        "value": 0.506,
         "rank": 3
       }
     ],
@@ -983,17 +1029,17 @@
         "name": "Eddie Johnson",
         "pos": "SG",
         "injury": "Torn MCL",
-        "length": "180"
+        "length": "149"
       }
     ],
     "recentGame": {
-      "date": "2/25/1983",
-      "text": "@Manchester United 106, Monaco 98",
-      "boxscoreFile": "box130-3.htm"
+      "date": "3/27/1983",
+      "text": "@Manchester United 109, Monaco 95",
+      "boxscoreFile": "box160-1.htm"
     },
     "nextGame": {
-      "date": "3/1/1983",
-      "text": "Manchester United @ Brighton",
+      "date": "4/3/1983",
+      "text": "Ajax @ Manchester United",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster5"
@@ -1002,16 +1048,16 @@
     "id": "roster15",
     "name": "Marseille",
     "record": {
-      "wins": 13,
-      "losses": 15,
-      "pct": 0.464
+      "wins": 14,
+      "losses": 21,
+      "pct": 0.4
     },
     "section": "ELB Standings",
-    "pf": 111.0,
-    "pa": 113.8,
-    "diff": -2.8,
-    "streak": "L5",
-    "last10": "3-7",
+    "pf": 111.2,
+    "pa": 115.2,
+    "diff": -4.0,
+    "streak": "L6",
+    "last10": "1-9",
     "starPlayer": {
       "name": "Robert Parish",
       "url": "../players/player873.htm",
@@ -1027,41 +1073,34 @@
     "strengths": [
       {
         "label": "Points",
-        "value": 111.0,
+        "value": 111.2,
         "rank": 2
       },
       {
         "label": "O.Rebounds",
-        "value": 13.3,
-        "rank": 2
-      },
-      {
-        "label": "Rebounds",
-        "value": 43.6,
+        "value": 13.2,
         "rank": 2
       },
       {
         "label": "D.Rebounds",
-        "value": 30.3,
+        "value": 29.3,
+        "rank": 3
+      },
+      {
+        "label": "Rebounds",
+        "value": 42.5,
         "rank": 3
       }
     ],
-    "injuries": [
-      {
-        "name": "James Silas",
-        "pos": "PG",
-        "injury": "Plantar Fasciitis",
-        "length": "12"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
-      "date": "2/28/1983",
-      "text": "@Chelsea 115, Marseille 99",
-      "boxscoreFile": "box133-2.htm"
+      "date": "3/30/1983",
+      "text": "Ajax 128, @Marseille 113",
+      "boxscoreFile": "box163-1.htm"
     },
     "nextGame": {
-      "date": "3/6/1983",
-      "text": "Monaco @ Marseille",
+      "date": "4/3/1983",
+      "text": "Marseille @ Brighton",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster15"
@@ -1070,21 +1109,21 @@
     "id": "roster20",
     "name": "Monaco",
     "record": {
-      "wins": 13,
-      "losses": 16,
-      "pct": 0.448
+      "wins": 15,
+      "losses": 21,
+      "pct": 0.417
     },
     "section": "ELB Standings",
-    "pf": 103.2,
-    "pa": 106.8,
-    "diff": -3.6,
-    "streak": "L1",
+    "pf": 102.5,
+    "pa": 107.4,
+    "diff": -4.9,
+    "streak": "L2",
     "last10": "4-6",
     "starPlayer": {
       "name": "Danny Ainge",
       "url": "../players/player876.htm",
       "pos": "SG",
-      "age": "21",
+      "age": "22",
       "overall": "131",
       "potential": "141"
     },
@@ -1095,34 +1134,47 @@
     "strengths": [
       {
         "label": "O.Rebounds",
-        "value": 14.0,
-        "rank": 1
-      },
-      {
-        "label": "Turnovers",
-        "value": 14.6,
+        "value": 13.7,
         "rank": 1
       },
       {
         "label": "Steals",
-        "value": 9.4,
+        "value": 9.5,
+        "rank": 2
+      },
+      {
+        "label": "Turnovers",
+        "value": 15.0,
         "rank": 2
       },
       {
         "label": "3PT%",
-        "value": 0.306,
-        "rank": 4
+        "value": 0.314,
+        "rank": 3
       }
     ],
-    "injuries": [],
+    "injuries": [
+      {
+        "name": "Naz Reid",
+        "pos": "PF",
+        "injury": "Severe Concussion",
+        "length": "92"
+      },
+      {
+        "name": "Mike Glenn",
+        "pos": "PG",
+        "injury": "Dislocated Shoulder",
+        "length": "35"
+      }
+    ],
     "recentGame": {
-      "date": "2/25/1983",
-      "text": "@Manchester United 106, Monaco 98",
-      "boxscoreFile": "box130-3.htm"
+      "date": "3/27/1983",
+      "text": "@Manchester United 109, Monaco 95",
+      "boxscoreFile": "box160-1.htm"
     },
     "nextGame": {
-      "date": "3/2/1983",
-      "text": "Juventus @ Monaco",
+      "date": "4/2/1983",
+      "text": "Brighton @ Monaco",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster20"
@@ -1131,37 +1183,37 @@
     "id": "roster21",
     "name": "Paris Saint-Germain",
     "record": {
-      "wins": 17,
-      "losses": 13,
-      "pct": 0.567
+      "wins": 24,
+      "losses": 14,
+      "pct": 0.632
     },
     "section": "ECL Standings",
-    "pf": 106.5,
-    "pa": 103.2,
-    "diff": 3.3,
-    "streak": "L1",
-    "last10": "4-6",
+    "pf": 108.3,
+    "pa": 103.1,
+    "diff": 5.2,
+    "streak": "W1",
+    "last10": "8-2",
     "starPlayer": {
-      "name": "Kelly Tripucka",
-      "url": "../players/player1049.htm",
+      "name": "Julius Erving",
+      "url": "../players/player700.htm",
       "pos": "SF",
-      "age": "22",
-      "overall": "131",
-      "potential": "139"
+      "age": "31",
+      "overall": "137",
+      "potential": "137"
     },
     "cap": {
-      "salary": "$49,778,148",
-      "room": "$221,852"
+      "salary": "$47,823,503",
+      "room": "$2,176,497"
     },
     "strengths": [
       {
         "label": "Points",
-        "value": 106.5,
+        "value": 108.3,
         "rank": 1
       },
       {
         "label": "Fouls",
-        "value": 22.6,
+        "value": 22.5,
         "rank": 1
       },
       {
@@ -1171,32 +1223,19 @@
       },
       {
         "label": "3PT%",
-        "value": 0.338,
+        "value": 0.323,
         "rank": 1
       }
     ],
-    "injuries": [
-      {
-        "name": "Kelly Tripucka",
-        "pos": "SF",
-        "injury": "Torn Ligament",
-        "length": "34"
-      },
-      {
-        "name": "Naji Marshall",
-        "pos": "PF",
-        "injury": "Stress Fracture",
-        "length": "29"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
-      "date": "2/27/1983",
-      "text": "@Manchester City 109, Paris Saint-Germain 101",
-      "boxscoreFile": "box132-4.htm"
+      "date": "3/31/1983",
+      "text": "Paris Saint-Germain 100, @Valencia 90",
+      "boxscoreFile": "box164-1.htm"
     },
     "nextGame": {
-      "date": "3/3/1983",
-      "text": "Barcelona @ Paris Saint-Germain",
+      "date": "4/4/1983",
+      "text": "Sporting CP @ Paris Saint-Germain",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster21"
@@ -1205,15 +1244,15 @@
     "id": "roster8",
     "name": "Real Madrid",
     "record": {
-      "wins": 15,
-      "losses": 12,
-      "pct": 0.556
+      "wins": 19,
+      "losses": 16,
+      "pct": 0.543
     },
     "section": "CLB Standings",
-    "pf": 111.4,
-    "pa": 110.4,
-    "diff": 1.0,
-    "streak": "L2",
+    "pf": 112.6,
+    "pa": 112.3,
+    "diff": 0.3,
+    "streak": "W2",
     "last10": "4-6",
     "starPlayer": {
       "name": "Sidney Moncrief",
@@ -1229,48 +1268,35 @@
     },
     "strengths": [
       {
-        "label": "Turnovers",
-        "value": 17.5,
-        "rank": 2
-      },
-      {
         "label": "Fouls",
-        "value": 26.1,
-        "rank": 2
+        "value": 26.3,
+        "rank": 3
       },
       {
-        "label": "Points",
-        "value": 111.4,
-        "rank": 4
+        "label": "FT%",
+        "value": 0.789,
+        "rank": 3
+      },
+      {
+        "label": "Points Per Shot",
+        "value": 1.34,
+        "rank": 3
       },
       {
         "label": "Assists",
-        "value": 25.7,
+        "value": 25.9,
         "rank": 4
       }
     ],
-    "injuries": [
-      {
-        "name": "Mike Gminski",
-        "pos": "C",
-        "injury": "Ruptured Disc",
-        "length": "29"
-      },
-      {
-        "name": "Andrew Toney",
-        "pos": "PG",
-        "injury": "Concussion",
-        "length": "8"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
-      "date": "2/25/1983",
-      "text": "Atletico Madrid 113, @Real Madrid 102",
-      "boxscoreFile": "box130-1.htm"
+      "date": "3/28/1983",
+      "text": "Real Madrid 120, @Benfica 113",
+      "boxscoreFile": "box161-2.htm"
     },
     "nextGame": {
-      "date": "3/1/1983",
-      "text": "Real Madrid @ AFC Richmond",
+      "date": "4/1/1983",
+      "text": "Real Madrid @ AC Milan",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster8"
@@ -1279,16 +1305,16 @@
     "id": "roster16",
     "name": "Sheffield United",
     "record": {
-      "wins": 14,
-      "losses": 12,
-      "pct": 0.538
+      "wins": 22,
+      "losses": 14,
+      "pct": 0.611
     },
     "section": "CLB Standings",
-    "pf": 118.0,
-    "pa": 113.8,
-    "diff": 4.3,
+    "pf": 118.1,
+    "pa": 114.1,
+    "diff": 3.9,
     "streak": "L1",
-    "last10": "5-5",
+    "last10": "8-2",
     "starPlayer": {
       "name": "Rickey Green",
       "url": "../players/player882.htm",
@@ -1304,34 +1330,34 @@
     "strengths": [
       {
         "label": "Points",
-        "value": 118.0,
-        "rank": 1
-      },
-      {
-        "label": "Steals",
-        "value": 10.6,
+        "value": 118.1,
         "rank": 1
       },
       {
         "label": "Fouls",
-        "value": 24.8,
+        "value": 25.1,
         "rank": 1
       },
       {
         "label": "FG%",
-        "value": 0.521,
+        "value": 0.52,
+        "rank": 1
+      },
+      {
+        "label": "Points Per Shot",
+        "value": 1.39,
         "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "2/25/1983",
-      "text": "Crystal Palace 121, @Sheffield United 120",
-      "boxscoreFile": "box130-2.htm"
+      "date": "3/28/1983",
+      "text": "@AFC Richmond 135, Sheffield United 103",
+      "boxscoreFile": "box161-1.htm"
     },
     "nextGame": {
-      "date": "3/1/1983",
-      "text": "Atletico Madrid @ Sheffield United",
+      "date": "4/1/1983",
+      "text": "AFC Richmond @ Sheffield United",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster16"
@@ -1340,59 +1366,59 @@
     "id": "roster23",
     "name": "Sporting CP",
     "record": {
-      "wins": 13,
-      "losses": 16,
-      "pct": 0.448
+      "wins": 18,
+      "losses": 18,
+      "pct": 0.5
     },
     "section": "ECL Standings",
-    "pf": 100.3,
-    "pa": 101.6,
-    "diff": -1.3,
+    "pf": 100.4,
+    "pa": 100.8,
+    "diff": -0.4,
     "streak": "W2",
-    "last10": "5-5",
+    "last10": "7-3",
     "starPlayer": {
-      "name": "Buck Williams",
-      "url": "../players/player1051.htm",
-      "pos": "PF",
-      "age": "20",
-      "overall": "124",
-      "potential": "127"
+      "name": "Lewis Lloyd",
+      "url": "../players/player902.htm",
+      "pos": "PG",
+      "age": "22",
+      "overall": "112",
+      "potential": "124"
     },
     "cap": {
-      "salary": "$47,137,712",
-      "room": "$2,862,288"
+      "salary": "$49,012,712",
+      "room": "$987,288"
     },
     "strengths": [
       {
         "label": "Turnovers",
-        "value": 14.7,
-        "rank": 2
+        "value": 14.4,
+        "rank": 1
       },
       {
         "label": "Points Per Shot",
-        "value": 1.33,
-        "rank": 2
+        "value": 1.31,
+        "rank": 3
       },
       {
         "label": "Points",
-        "value": 100.3,
+        "value": 100.4,
         "rank": 4
       },
       {
         "label": "FG%",
-        "value": 0.48,
+        "value": 0.476,
         "rank": 4
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "2/27/1983",
-      "text": "@Sporting CP 102, Inter Milan 99",
-      "boxscoreFile": "box132-3.htm"
+      "date": "3/30/1983",
+      "text": "Sporting CP 97, @Valencia 89",
+      "boxscoreFile": "box163-2.htm"
     },
     "nextGame": {
-      "date": "3/5/1983",
-      "text": "Sporting CP @ Aston Villa",
+      "date": "4/4/1983",
+      "text": "Sporting CP @ Paris Saint-Germain",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster23"
@@ -1401,16 +1427,16 @@
     "id": "roster22",
     "name": "Tottenham Hotspur",
     "record": {
-      "wins": 9,
-      "losses": 19,
-      "pct": 0.321
+      "wins": 12,
+      "losses": 22,
+      "pct": 0.353
     },
     "section": "ECL Standings",
-    "pf": 99.8,
-    "pa": 106.5,
-    "diff": -6.6,
-    "streak": "L1",
-    "last10": "4-6",
+    "pf": 98.9,
+    "pa": 105.4,
+    "diff": -6.5,
+    "streak": "W2",
+    "last10": "5-5",
     "starPlayer": {
       "name": "Darryl Dawkins",
       "url": "../players/player1058.htm",
@@ -1420,40 +1446,40 @@
       "potential": "116"
     },
     "cap": {
-      "salary": "$55,729,210",
-      "room": "($5,729,210)"
+      "salary": "$48,888,746",
+      "room": "$1,111,254"
     },
     "strengths": [
       {
         "label": "Turnovers",
-        "value": 14.6,
-        "rank": 1
-      },
-      {
-        "label": "3PT%",
-        "value": 0.298,
-        "rank": 3
-      },
-      {
-        "label": "FT%",
-        "value": 0.76,
+        "value": 15.2,
         "rank": 4
       },
       {
-        "label": "Steals",
-        "value": 7.3,
+        "label": "FT%",
+        "value": 0.754,
+        "rank": 4
+      },
+      {
+        "label": "3PT%",
+        "value": 0.301,
+        "rank": 4
+      },
+      {
+        "label": "Blocks",
+        "value": 4.0,
         "rank": 5
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "2/25/1983",
-      "text": "Aston Villa 110, @Tottenham Hotspur 108",
-      "boxscoreFile": "box130-5.htm"
+      "date": "3/29/1983",
+      "text": "@Tottenham Hotspur 106, Paris Saint-Germain 96",
+      "boxscoreFile": "box162-2.htm"
     },
     "nextGame": {
-      "date": "3/3/1983",
-      "text": "Tottenham Hotspur @ Valencia",
+      "date": "4/5/1983",
+      "text": "Valencia @ Tottenham Hotspur",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster22"
@@ -1462,16 +1488,16 @@
     "id": "roster25",
     "name": "Valencia",
     "record": {
-      "wins": 12,
-      "losses": 15,
-      "pct": 0.444
+      "wins": 15,
+      "losses": 22,
+      "pct": 0.405
     },
     "section": "ECL Standings",
-    "pf": 98.0,
-    "pa": 101.2,
-    "diff": -3.2,
-    "streak": "W1",
-    "last10": "5-5",
+    "pf": 98.4,
+    "pa": 103.6,
+    "diff": -5.2,
+    "streak": "L4",
+    "last10": "3-7",
     "starPlayer": {
       "name": "Isiah Thomas",
       "url": "../players/player1047.htm",
@@ -1486,35 +1512,35 @@
     },
     "strengths": [
       {
-        "label": "Steals",
-        "value": 9.0,
+        "label": "Assists",
+        "value": 23.2,
         "rank": 1
       },
       {
-        "label": "Assists",
-        "value": 22.5,
-        "rank": 3
+        "label": "Steals",
+        "value": 8.9,
+        "rank": 1
       },
       {
         "label": "Turnovers",
-        "value": 15.1,
-        "rank": 4
+        "value": 15.6,
+        "rank": 5
       },
       {
-        "label": "Fouls",
-        "value": 25.1,
-        "rank": 4
+        "label": "Adjusted FG%",
+        "value": 0.491,
+        "rank": 5
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "2/26/1983",
-      "text": "Valencia 114, @Barcelona 108",
-      "boxscoreFile": "box131-1.htm"
+      "date": "3/31/1983",
+      "text": "Paris Saint-Germain 100, @Valencia 90",
+      "boxscoreFile": "box164-1.htm"
     },
     "nextGame": {
-      "date": "3/3/1983",
-      "text": "Tottenham Hotspur @ Valencia",
+      "date": "4/5/1983",
+      "text": "Valencia @ Tottenham Hotspur",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster25"
