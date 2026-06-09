@@ -8,7 +8,7 @@
             "team": "roster20",
             "teamName": "Manchester United",
             "rosterUrl": "./rosters/roster20.htm",
-            "length": "149",
+            "length": "135",
             "injury": "Torn MCL",
             "rowClass": "row1"
         },
@@ -19,7 +19,7 @@
             "team": "roster22",
             "teamName": "Monaco",
             "rosterUrl": "./rosters/roster22.htm",
-            "length": "92",
+            "length": "78",
             "injury": "Severe Concussion",
             "rowClass": "row2"
         },
@@ -30,7 +30,7 @@
             "team": "roster8",
             "teamName": "Aston Villa",
             "rosterUrl": "./rosters/roster8.htm",
-            "length": "50",
+            "length": "36",
             "injury": "Broken Foot",
             "rowClass": "row1"
         },
@@ -41,7 +41,7 @@
             "team": "roster22",
             "teamName": "Monaco",
             "rosterUrl": "./rosters/roster22.htm",
-            "length": "35",
+            "length": "21",
             "injury": "Dislocated Shoulder",
             "rowClass": "row2"
         },
@@ -52,7 +52,7 @@
             "team": "roster9",
             "teamName": "Atletico Madrid",
             "rosterUrl": "./rosters/roster9.htm",
-            "length": "27",
+            "length": "13",
             "injury": "Concussion",
             "rowClass": "row1"
         },
@@ -63,7 +63,7 @@
             "team": "roster13",
             "teamName": "Brighton",
             "rosterUrl": "./rosters/roster13.htm",
-            "length": "20",
+            "length": "6",
             "injury": "Broken Finger",
             "rowClass": "row2"
         },
@@ -74,7 +74,7 @@
             "team": "roster15",
             "teamName": "Crystal Palace",
             "rosterUrl": "./rosters/roster15.htm",
-            "length": "18",
+            "length": "4",
             "injury": "Dislocated Knee",
             "rowClass": "row1"
         },
@@ -85,53 +85,20 @@
             "team": "roster13",
             "teamName": "Brighton",
             "rosterUrl": "./rosters/roster13.htm",
-            "length": "18",
+            "length": "4",
             "injury": "Broken Foot",
             "rowClass": "row2"
         },
         {
-            "pos": "SG",
-            "name": "Mike Woodson",
+            "pos": "PF",
+            "name": "Kareem Abdul-Jabbar",
             "url": "",
-            "team": "roster11",
-            "teamName": "Bayern Munich",
-            "rosterUrl": "./rosters/roster11.htm",
-            "length": "7",
-            "injury": "Dislocated Shoulder",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "SG",
-            "name": "Jim Paxson",
-            "url": "",
-            "team": "roster14",
-            "teamName": "Chelsea",
-            "rosterUrl": "./rosters/roster14.htm",
+            "team": "roster19",
+            "teamName": "Juventus",
+            "rosterUrl": "./rosters/roster19.htm",
             "length": "3",
-            "injury": "Broken Finger",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SF",
-            "name": "Magic Johnson",
-            "url": "",
-            "team": "roster6",
-            "teamName": "AFC Richmond",
-            "rosterUrl": "./rosters/roster6.htm",
-            "length": "1",
-            "injury": "Stress Fracture",
+            "injury": "Hyperextended Knee",
             "rowClass": "row1"
-        },
-        {
-            "pos": "C",
-            "name": "Theo Ratliff",
-            "url": "",
-            "team": "roster16",
-            "teamName": "Manchester City",
-            "rosterUrl": "./rosters/roster16.htm",
-            "length": "1",
-            "injury": "Sprained Ankle",
-            "rowClass": "row2"
         }
     ]
 }
