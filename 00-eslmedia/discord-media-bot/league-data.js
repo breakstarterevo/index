@@ -126,6 +126,20 @@ export class LeagueDataClient {
       monthlyTeamForm
     };
   }
+
+  async getResigningsContext() {
+    const [players, playerStats, teams] = await Promise.all([
+      this.getFeed("players"),
+      this.getFeed("player_stats"),
+      this.getFeed("teams")
+    ]);
+
+    return {
+      players: Array.isArray(players) ? players : [],
+      playerStats: Array.isArray(playerStats?.players) ? playerStats.players : [],
+      teams: Array.isArray(teams) ? teams : []
+    };
+  }
 }
 
 function ensureTrailingSlash(value) {

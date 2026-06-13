@@ -60,6 +60,15 @@ export const leagueCommands = [
         .setName("team")
         .setDescription("Team name, for example Benfica")
         .setRequired(true)
+    ),
+  new SlashCommandBuilder()
+    .setName("resignings")
+    .setDescription("Show FA re-signing rights by last recorded team")
+    .addStringOption((option) =>
+      option
+        .setName("team")
+        .setDescription("Optional team name, for example Valencia")
+        .setRequired(false)
     )
 ].map((command) => command.toJSON());
 

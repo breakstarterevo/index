@@ -16,6 +16,8 @@
   var MAX_SALARY_ONE_YEAR_NO_BIRD = 15000000;
   var MAX_SALARY_ONE_YEAR_BIRD = 20000000;
   var MAX_SALARY_MULTI_YEAR = 25000000;
+  var MAX_SALARY_TIER_2 = 17500000;
+  var MAX_SALARY_TIER_3 = 12500000;
   var teamColorCache = {};
   var TABLE_RATINGS = [
     ["INS", "Ins"],
@@ -462,6 +464,17 @@
     return isBird ? MAX_SALARY_ONE_YEAR_BIRD : MAX_SALARY_ONE_YEAR_NO_BIRD;
   }
 
+  function tierSalaryLimitFromEntry(entry) {
+    var title = normalizeName(entry && entry.tierTitle);
+    if (title.indexOf("europaleague") >= 0) {
+      return { label: "T2", maxSalary: MAX_SALARY_TIER_2 };
+    }
+    if (title.indexOf("conferenceleague") >= 0) {
+      return { label: "T3", maxSalary: MAX_SALARY_TIER_3 };
+    }
+    return null;
+  }
+
   function populateRaiseOptions(maxRaise, selected) {
     var select = byId("fa-raise");
     var selectedValue = parseRaise(selected);
@@ -504,6 +517,7 @@
     var round = ROUNDS[state.selectedRound] || ROUNDS.round1;
     var capEntry = selectedTeamCapEntry();
     var hardCap = hardCapFromEntry(capEntry);
+    var tierSalaryLimit = tierSalaryLimitFromEntry(capEntry);
     var seen = {};
     var names = state.bids.map(function (bid) {
       return clean(bid.name);
@@ -547,6 +561,13 @@
       }
       if (salary != null && salary > maxSalary) {
         warnings.push({ type: "bad", title: "Starting salary", text: bid.name + " exceeds the " + formatSalaryForCopy(maxSalary) + " starting salary maximum." });
+      }
+      if (salary != null && tierSalaryLimit && salary > tierSalaryLimit.maxSalary) {
+        warnings.push({
+          type: "bad",
+          title: tierSalaryLimit.label + " salary max",
+          text: bid.name + " exceeds the " + tierSalaryLimit.label + " maximum salary of " + formatSalaryForCopy(tierSalaryLimit.maxSalary) + "."
+        });
       }
       if (capEntry && salary != null && hardCap != null && projectedSalary > hardCap) {
         warnings.push({

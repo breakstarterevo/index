@@ -6,6 +6,7 @@ import {
   handleHelp,
   handleLeague,
   handlePlayer,
+  handleResignings,
   handleSchedule,
   handleSimRecap,
   handleStandings,
@@ -24,6 +25,9 @@ const youthIntake = JSON.parse(fs.readFileSync(path.join(databaseDir, "youth_int
 const standings = JSON.parse(fs.readFileSync(path.join(databaseDir, "standings.json"), "utf8"));
 const schedule = JSON.parse(fs.readFileSync(path.join(databaseDir, "schedule.json"), "utf8"));
 const monthlyTeamForm = JSON.parse(fs.readFileSync(path.join(databaseDir, "monthly", "monthly_team_form.json"), "utf8"));
+const fullPlayers = JSON.parse(fs.readFileSync(path.join(databaseDir, "players.json"), "utf8"));
+const playerStatsFeed = JSON.parse(fs.readFileSync(path.join(databaseDir, "player_stats.json"), "utf8"));
+const fullPlayerStats = Array.isArray(playerStatsFeed?.players) ? playerStatsFeed.players : [];
 
 const helpResponse = handleHelp();
 assert.equal(helpResponse.type, 4);
@@ -78,5 +82,14 @@ const simRecapResponse = handleSimRecap("Benfica", teams, monthlyTeamForm);
 assert.equal(simRecapResponse.type, 4);
 assert.equal(simRecapResponse.data.embeds[0].title, "Benfica Sim Recap");
 assert.match(simRecapResponse.data.embeds[0].description, /Record:/);
+
+const resigningsResponse = handleResignings("", fullPlayers, fullPlayerStats, teams);
+assert.equal(resigningsResponse.type, 4);
+assert.equal(resigningsResponse.data.embeds[0].title, "FA Re-signing Rights");
+assert.match(resigningsResponse.data.embeds[0].description, /FA players grouped/);
+
+const teamResigningsResponse = handleResignings("Valencia", fullPlayers, fullPlayerStats, teams);
+assert.equal(teamResigningsResponse.type, 4);
+assert.match(teamResigningsResponse.data.embeds[0].title, /Re-signing Rights/);
 
 console.log("lookup tests passed");

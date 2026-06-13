@@ -105,4 +105,19 @@ export const COMMANDS = [
       },
     ],
   },
+  {
+    name: "resignings",
+    description: "Show FA re-signing rights by last recorded team",
+    type: 1,
+    ...INSTALL_CONTEXTS,
+    options: [
+      {
+        name: "team",
+        description: "Optional team name, for example Valencia",
+        type: 3,
+        required: false,
+        autocomplete: true,
+      },
+    ],
+  },
 ];

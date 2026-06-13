@@ -38,6 +38,18 @@ export async function loadCommandData(commandName, env) {
     ]);
     return { teams, monthlyTeamForm };
   }
+  if (commandName === "resignings") {
+    const [players, playerStats, teams] = await Promise.all([
+      fetchFullJson("players.json", env),
+      fetchFullJson("player_stats.json", env),
+      fetchJson("teams.json", env),
+    ]);
+    return {
+      players: Array.isArray(players) ? players : [],
+      playerStats: Array.isArray(playerStats?.players) ? playerStats.players : [],
+      teams: Array.isArray(teams) ? teams : [],
+    };
+  }
   return {};
 }
 

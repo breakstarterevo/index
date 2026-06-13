@@ -33,6 +33,10 @@ export function handleCommand(command, data, env) {
     return handleSimRecap(getOption(command, "team"), data.teams || [], data.monthlyTeamForm, env);
   }
 
+  if (command.name === "resignings") {
+    return handleResignings(getOption(command, "team"), data.players || [], data.playerStats || [], data.teams || [], env);
+  }
+
   return message(`Unknown command: ${command.name}`, true);
 }
 
@@ -54,6 +58,7 @@ export function handleHelp() {
       field("Players and Youth", [
         "`/player name:Isiah Thomas` - player snapshot",
         "`/youth team:Valencia` - youth rights/intake players",
+        "`/resignings team:Valencia` - FA re-signing rights by last stats team",
       ].join("\n"), false),
     ],
   });
@@ -287,6 +292,58 @@ export function handleSimRecap(query, teams, monthlyTeamForm, env = {}) {
       field("Scores", (form.recentResults || []).map(formatMonthlyResultLine).join("\n") || "No monthly results found.", false),
       field("Notes", notes || "-", false),
     ],
+  });
+}
+
+export function handleResignings(query, players, playerStats, teams = [], env = {}) {
+  const candidates = buildResigningCandidates(players, playerStats);
+  if (!candidates.length) {
+    return message("I could not find any FA players with a previous stats team.", true);
+  }
+
+  const teamNameMap = buildStatTeamNameMap(players, playerStats, teams);
+  for (const candidate of candidates) {
+    candidate.teamName = teamNameMap.get(normalize(candidate.statTeam)) || candidate.lastTeam || candidate.statTeam;
+  }
+
+  if (query) {
+    const teamOptions = buildResigningTeamOptions(candidates, teams);
+    const match = findBestMatch(query, teamOptions, (team) => team.name);
+    if (!match.item || match.isAmbiguous) {
+      return lookupMiss("team", query, match.suggestions);
+    }
+
+    const teamPlayers = candidates
+      .filter((candidate) => sameResigningTeam(candidate, match.item))
+      .sort(compareResigningPlayers);
+    const lines = teamPlayers.slice(0, 18).map((candidate) => formatResigningPlayer(candidate, env));
+    if (teamPlayers.length > 18) {
+      lines.push(`+${teamPlayers.length - 18} more`);
+    }
+
+    return embedResponse({
+      title: `${match.item.name} Re-signing Rights`,
+      url: match.item.url || (match.item.id ? siteUrl(env, `00-assets/html/unified-roster.htm?id=${match.item.id}`) : undefined),
+      description: `${teamPlayers.length} FA player${teamPlayers.length === 1 ? "" : "s"} last recorded stats for this team.`,
+      fields: [field("Players", lines.join("\n") || "No matching FA players found.", false)],
+      footer: "Players are grouped by latest non-career season row in player_stats.json",
+    });
+  }
+
+  const grouped = groupResigningCandidates(candidates);
+  const lines = grouped.slice(0, 24).map((entry) => {
+    const names = entry.players.slice(0, 3).map((candidate) => candidate.player.name).join(", ");
+    return `**${entry.teamName}**: ${entry.players.length}${names ? ` - ${names}` : ""}`;
+  });
+  if (grouped.length > 24) {
+    lines.push(`+${grouped.length - 24} more teams`);
+  }
+
+  return embedResponse({
+    title: "FA Re-signing Rights",
+    description: `${candidates.length} FA players grouped by the team they last recorded stats for.`,
+    fields: [field("Teams", lines.join("\n"), false)],
+    footer: "Use /resignings team:<team> for a specific list",
   });
 }
 
@@ -685,4 +742,117 @@ function getRatingValue(rating) {
     return rating.value ?? "";
   }
   return rating ?? "";
+}
+
+function buildResigningCandidates(players, playerStats) {
+  const statsById = new Map((playerStats || []).map((entry) => [entry.playerId, entry]));
+  return (players || [])
+    .filter(isFreeAgent)
+    .map((player) => {
+      const stats = statsById.get(player.playerId || player.id);
+      const latest = latestSeasonAverageRow(stats);
+      if (!latest?.team) {
+        return null;
+      }
+      return {
+        player,
+        statTeam: String(latest.team),
+        lastTeam: player.lastTeam || player.lastTeamName || player.lastTeamLabel || "",
+        season: latest.season,
+      };
+    })
+    .filter(Boolean);
+}
+
+function isFreeAgent(player) {
+  return ["fa", "free agent", "free agents"].includes(normalize(player.team || player.teamLabel));
+}
+
+function latestSeasonAverageRow(stats) {
+  const rows = stats?.stats?.season_averages?.rows;
+  if (!Array.isArray(rows)) {
+    return null;
+  }
+
+  return rows
+    .map((row, index) => ({ row, index, season: Number(row.season) }))
+    .filter((entry) => Number.isFinite(entry.season) && entry.row.team)
+    .sort((a, b) => b.season - a.season || b.index - a.index)[0]?.row || null;
+}
+
+function buildStatTeamNameMap(players, playerStats, teams) {
+  const statsById = new Map((playerStats || []).map((entry) => [entry.playerId, entry]));
+  const map = new Map();
+
+  for (const player of players || []) {
+    if (isFreeAgent(player) || !player.teamLabel) {
+      continue;
+    }
+    const latest = latestSeasonAverageRow(statsById.get(player.playerId || player.id));
+    if (latest?.team && !map.has(normalize(latest.team))) {
+      map.set(normalize(latest.team), player.teamLabel);
+    }
+  }
+
+  for (const team of teams || []) {
+    if (team.abbr || team.code) {
+      map.set(normalize(team.abbr || team.code), team.name);
+    }
+  }
+
+  return map;
+}
+
+function buildResigningTeamOptions(candidates, teams) {
+  const byName = new Map();
+  for (const team of teams || []) {
+    byName.set(normalize(team.name), { ...team, name: team.name, id: team.id, url: team.url });
+  }
+  for (const candidate of candidates) {
+    const key = normalize(candidate.teamName);
+    if (!byName.has(key)) {
+      byName.set(key, { name: candidate.teamName, code: candidate.statTeam });
+    }
+  }
+  return Array.from(byName.values());
+}
+
+function sameResigningTeam(candidate, team) {
+  return normalize(candidate.teamName) === normalize(team.name)
+    || normalize(candidate.statTeam) === normalize(team.code || team.abbr || team.id);
+}
+
+function groupResigningCandidates(candidates) {
+  const byTeam = new Map();
+  for (const candidate of candidates) {
+    const key = normalize(candidate.teamName);
+    const entry = byTeam.get(key) || { teamName: candidate.teamName, players: [] };
+    entry.players.push(candidate);
+    byTeam.set(key, entry);
+  }
+  return Array.from(byTeam.values())
+    .map((entry) => ({ ...entry, players: entry.players.sort(compareResigningPlayers) }))
+    .sort((a, b) => b.players.length - a.players.length || a.teamName.localeCompare(b.teamName));
+}
+
+function compareResigningPlayers(a, b) {
+  return Number(b.player.overall || 0) - Number(a.player.overall || 0)
+    || Number(b.player.potential || 0) - Number(a.player.potential || 0)
+    || String(a.player.name).localeCompare(String(b.player.name));
+}
+
+function formatResigningPlayer(candidate, env = {}) {
+  const player = candidate.player;
+  const playerId = player.playerId || player.id;
+  const name = playerId
+    ? `[${player.name}](${siteUrl(env, `00-assets/html/unified-player.htm?id=${playerId}`)})`
+    : player.name;
+  const rating = [player.overall, player.potential].filter((value) => value != null && value !== "").join("/");
+  const meta = [
+    player.pos || "-",
+    player.age ? `Age ${player.age}` : "",
+    rating ? `OVR/POT ${rating}` : "",
+    candidate.season ? `Last ${candidate.season} ${candidate.statTeam}` : `Last ${candidate.statTeam}`,
+  ].filter(Boolean).join(" | ");
+  return `${name} - ${meta}`;
 }
