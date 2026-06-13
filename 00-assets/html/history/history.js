@@ -729,7 +729,7 @@
       const data = await loadSeason(appearance.season);
       const player = (data.players || []).find((p) => String(p.url || "").endsWith(appearance.playerFile)) || {};
       snapshots.push({ season: appearance.season, player });
-      const stat = (data.playerStats.players || []).find((p) => String(p.url || "").endsWith(appearance.playerFile) || p.name === identity.name);
+      const stat = (data.playerStats.players || []).find((p) => String(p.url || "").endsWith(appearance.playerFile));
       if (stat) statSnapshots.push({ season: appearance.season, stat });
       (player.awards || []).forEach((award) => accoladeRows.push(`<tr><td>${esc(seasonLabel(appearance.season))}</td><td>${esc(award.season)}</td><td>${esc(award.award)}</td></tr>`));
       (data.seasonAwards.sections || []).forEach((section) => (section.awards || []).filter((award) => award.personFile === appearance.playerFile).forEach((award) => {
