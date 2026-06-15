@@ -322,6 +322,29 @@
       .slice(0, limit);
   }
 
+  async function rankedLatestSeasonPlayers({ limit = 12 } = {}) {
+    const season = latestSeason();
+    const data = await loadSeason(season);
+    return (data.players || []).map((player) => {
+      const playerFile = String(player.url || "").split("/").pop() || `${player.playerId || ""}.htm`;
+      const identity = identityForSeasonPlayer(season, playerFile);
+      return {
+        key: identity?.key || "",
+        name: player.name,
+        pos: player.pos,
+        team: player.teamLabel || player.team,
+        season,
+        overall: num(player.overall) || 0,
+        potential: player.potential,
+        playerFile,
+        identity
+      };
+    })
+      .filter((row) => row.overall > 0)
+      .sort((a, b) => b.overall - a.overall || String(a.name || "").localeCompare(String(b.name || "")))
+      .slice(0, limit);
+  }
+
   function renderTopbar() {
     const host = $("#history-topbar");
     if (!host) return;
@@ -356,10 +379,10 @@
 
   async function renderMegaMenus() {
     const allTime = await rankedPlayers({ limit: 10 });
-    const active = await rankedPlayers({ activeOnly: true, limit: 10 });
+    const current = await rankedLatestSeasonPlayers({ limit: 10 });
     $("#megaPlayers").innerHTML = `
       <div class="mega-line"><strong>All-Time Greats:</strong> ${allTime.map((p) => `<a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a>`).join(" | ") || "No archived players"}</div>
-      <div class="mega-line"><strong>Active Greats:</strong> ${active.map((p) => `<a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a>`).join(" | ") || "No active matches"}</div>`;
+      <div class="mega-line"><strong>Current Greats:</strong> ${current.map((p) => p.key ? `<a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a>` : esc(p.name)).join(" | ") || "No current players"}</div>`;
 
     const season = await loadSeason(latestSeason());
     $("#megaTeams").innerHTML = `<div class="mega-grid">${(season.standings.sections || []).map((section) => `
@@ -521,8 +544,8 @@
     const promoted = teams.filter((row) => movementMarker(row.tier, row.position, row.teamCount) === "P");
     const relegated = teams.filter((row) => movementMarker(row.tier, row.position, row.teamCount) === "R");
     const allTime = await rankedPlayers({ limit: 1 });
-    const active = await rankedPlayers({ activeOnly: true, limit: 1 });
-    return { teams, champion, promoted, relegated, allTime: allTime[0], active: active[0] };
+    const current = await rankedLatestSeasonPlayers({ limit: 1 });
+    return { teams, champion, promoted, relegated, allTime: allTime[0], current: current[0] };
   }
 
   function dashboardCard(label, title, body, href = "") {
@@ -545,12 +568,12 @@
     const season = await loadSeason(latestSeason());
     const facts = await dashboardFacts(season);
     const allTimeGreats = await rankedPlayers({ limit: 8 });
-    const activeGreats = await rankedPlayers({ activeOnly: true, limit: 8 });
+    const currentGreats = await rankedLatestSeasonPlayers({ limit: 8 });
     $("#history-app").innerHTML = `
       <section class="dashboard-grid">
         ${dashboardCard("Top Club", teamMini(facts.champion.team, facts.champion.rosterFile), `${esc(facts.champion.wins)}-${esc(facts.champion.losses)} in ${esc(facts.champion.tier)} with a ${esc(facts.champion.diff)} point diff.`)}
         ${dashboardCard("All-Time Peak", `<a href="player.htm?key=${encodeURIComponent(facts.allTime?.key || "")}">${esc(facts.allTime?.name || "No player")}</a>`, `${ratingChip("OVR", facts.allTime?.overall)} ${esc(facts.allTime?.team || "")} | ${esc(seasonLabel(facts.allTime?.season))}`)}
-        ${dashboardCard("Active Legend", `<a href="player.htm?key=${encodeURIComponent(facts.active?.key || "")}">${esc(facts.active?.name || "No active player")}</a>`, `${facts.active ? `${ratingChip("OVR", facts.active.overall)} ${esc(facts.active.team || "")}` : "No active historical match yet."}`)}
+        ${dashboardCard("Current Legend", facts.current?.key ? `<a href="player.htm?key=${encodeURIComponent(facts.current.key)}">${esc(facts.current.name || "No current player")}</a>` : esc(facts.current?.name || "No current player"), `${facts.current ? `${ratingChip("OVR", facts.current.overall)} ${esc(facts.current.team || "")} | ${esc(seasonLabel(facts.current.season))}` : "No current season players yet."}`)}
         ${dashboardCard("Movement Watch", "Promotion / Relegation", `${facts.promoted.map((team) => esc(team.team)).join(", ") || "No promotion spots"}${facts.relegated.length ? ` | Down: ${facts.relegated.map((team) => esc(team.team)).join(", ")}` : ""}`, "season.htm#standings")}
       </section>
       ${renderQuickLinks()}
@@ -561,7 +584,7 @@
         <div>
           <section class="reference-section"><h2>Season Index</h2>${table(["Season", "Summary", "Leaders", "Super Cup", "Youth"], (state.index.seasons || []).map((s) => `<tr><td>${esc(s.label || s.season)}</td><td><a href="season.htm?season=${s.season}">Summary</a></td><td><a href="leaders.htm?season=${s.season}">Leaders</a></td><td><a href="supercup.htm?season=${s.season}">Cup</a></td><td><a href="youth-intake.htm?season=${s.season}">Youth Intake</a></td></tr>`))}</section>
           <section class="reference-section"><h2>All-Time Greats</h2>${table(["Player", "Peak", "Season"], allTimeGreats.map((p) => `<tr><td><a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a></td><td>${ratingChip("OVR", p.overall)}</td><td>${esc(seasonLabel(p.season))}</td></tr>`), "No archived players")}</section>
-          <section class="reference-section"><h2>Current Greats</h2>${table(["Player", "Peak", "Season"], activeGreats.map((p) => `<tr><td><a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a></td><td>${ratingChip("OVR", p.overall)}</td><td>${esc(seasonLabel(p.season))}</td></tr>`), "No active historical matches")}</section>
+          <section class="reference-section"><h2>Current Greats</h2>${table(["Player", "Peak", "Season"], currentGreats.map((p) => `<tr><td>${p.key ? `<a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a>` : esc(p.name)}</td><td>${ratingChip("OVR", p.overall)}</td><td>${esc(seasonLabel(p.season))}</td></tr>`), "No current season players")}</section>
           <section class="reference-section"><h2>Team Directory</h2><div class="mega-grid">${(season.standings.sections || []).map((section) => `<div><h3>${esc(tierFromTitle(section.title))}</h3>${(section.teams || []).map((team) => `<div>${teamMini(team.team, team.rosterFile)}</div>`).join("")}</div>`).join("")}</div></section>
         </div>
       </div>

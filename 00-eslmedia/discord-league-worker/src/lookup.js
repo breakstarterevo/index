@@ -324,9 +324,9 @@ export function handleResignings(query, players, playerStats, teams = [], env = 
     return embedResponse({
       title: `${match.item.name} Re-signing Rights`,
       url: match.item.url || (match.item.id ? siteUrl(env, `00-assets/html/unified-roster.htm?id=${match.item.id}`) : undefined),
-      description: `${teamPlayers.length} FA player${teamPlayers.length === 1 ? "" : "s"} last recorded stats for this team.`,
+      description: `${teamPlayers.length} FA player${teamPlayers.length === 1 ? "" : "s"} recorded stats for this team in the previous season.`,
       fields: [field("Players", lines.join("\n") || "No matching FA players found.", false)],
-      footer: "Players are grouped by latest non-career season row in player_stats.json",
+      footer: "Only FAs whose latest player_stats season matches the previous season are included",
     });
   }
 
@@ -341,7 +341,7 @@ export function handleResignings(query, players, playerStats, teams = [], env = 
 
   return embedResponse({
     title: "FA Re-signing Rights",
-    description: `${candidates.length} FA players grouped by the team they last recorded stats for.`,
+    description: `${candidates.length} FA players grouped by the team they recorded stats for in the previous season.`,
     fields: [field("Teams", lines.join("\n"), false)],
     footer: "Use /resignings team:<team> for a specific list",
   });
@@ -746,12 +746,13 @@ function getRatingValue(rating) {
 
 function buildResigningCandidates(players, playerStats) {
   const statsById = new Map((playerStats || []).map((entry) => [entry.playerId, entry]));
+  const previousSeason = latestLeagueSeason(playerStats);
   return (players || [])
     .filter(isFreeAgent)
     .map((player) => {
       const stats = statsById.get(player.playerId || player.id);
       const latest = latestSeasonAverageRow(stats);
-      if (!latest?.team) {
+      if (!latest?.team || Number(latest.season) !== previousSeason) {
         return null;
       }
       return {
@@ -764,20 +765,29 @@ function buildResigningCandidates(players, playerStats) {
     .filter(Boolean);
 }
 
+function latestLeagueSeason(playerStats) {
+  return Math.max(
+    0,
+    ...(playerStats || []).flatMap((entry) =>
+      seasonAverageRows(entry).map((row) => Number(row.season)).filter(Number.isFinite),
+    ),
+  );
+}
+
 function isFreeAgent(player) {
   return ["fa", "free agent", "free agents"].includes(normalize(player.team || player.teamLabel));
 }
 
 function latestSeasonAverageRow(stats) {
-  const rows = stats?.stats?.season_averages?.rows;
-  if (!Array.isArray(rows)) {
-    return null;
-  }
-
-  return rows
+  return seasonAverageRows(stats)
     .map((row, index) => ({ row, index, season: Number(row.season) }))
     .filter((entry) => Number.isFinite(entry.season) && entry.row.team)
     .sort((a, b) => b.season - a.season || b.index - a.index)[0]?.row || null;
+}
+
+function seasonAverageRows(stats) {
+  const rows = stats?.stats?.season_averages?.rows;
+  return Array.isArray(rows) ? rows.filter((row) => row.season !== "Career") : [];
 }
 
 function buildStatTeamNameMap(players, playerStats, teams) {

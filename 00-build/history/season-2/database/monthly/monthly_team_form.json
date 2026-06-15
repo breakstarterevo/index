@@ -1,0 +1,3162 @@
+{
+    "source": [
+        "standings.json",
+        "monthly/latest_sim_results.json"
+    ],
+    "tiers": {
+        "Tier 1": [
+            {
+                "team": "AFC Richmond",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 1,
+                "rosterUrl": "./rosters/roster12.htm",
+                "rosterFile": "roster12.htm",
+                "standingsLast10": "7-3",
+                "wins": 5,
+                "losses": 2,
+                "games": 7,
+                "pointsFor": 832,
+                "pointsAgainst": 794,
+                "pointDiff": 38,
+                "avgMargin": 5.43,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Sheffield United",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Sheffield United 121, AFC Richmond 118",
+                        "boxscoreUrl": "./boxes/box165-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1983",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 8,
+                        "score": "AFC Richmond 121, @Bayern Munich 113",
+                        "boxscoreUrl": "./boxes/box169-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "AFC Richmond 105, @Atletico Madrid 102",
+                        "boxscoreUrl": "./boxes/box171-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 22,
+                        "score": "@AFC Richmond 123, Real Madrid 101",
+                        "boxscoreUrl": "./boxes/box175-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "@AFC Richmond 134, Sheffield United 119",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 21,
+                        "score": "@Real Madrid 133, AFC Richmond 112",
+                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "AC Milan",
+                        "result": "W",
+                        "margin": 14,
+                        "score": "AFC Richmond 119, @AC Milan 105",
+                        "boxscoreUrl": "./boxes/box185-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/11/1983",
+                    "opponent": "Real Madrid",
+                    "result": "W",
+                    "margin": 22,
+                    "score": "@AFC Richmond 123, Real Madrid 101",
+                    "boxscoreUrl": "./boxes/box175-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/19/1983",
+                    "opponent": "Real Madrid",
+                    "result": "L",
+                    "margin": 21,
+                    "score": "@Real Madrid 133, AFC Richmond 112",
+                    "boxscoreUrl": "./boxes/box183-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Sheffield United",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Sheffield United 121, AFC Richmond 118",
+                        "boxscoreUrl": "./boxes/box165-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "AFC Richmond 105, @Atletico Madrid 102",
+                        "boxscoreUrl": "./boxes/box171-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 22,
+                        "score": "@AFC Richmond 123, Real Madrid 101",
+                        "boxscoreUrl": "./boxes/box175-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "@AFC Richmond 134, Sheffield United 119",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 21,
+                        "score": "@Real Madrid 133, AFC Richmond 112",
+                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "5-2",
+                "closeGameCount": 2,
+                "last3": "WLW"
+            },
+            {
+                "team": "Benfica",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 5,
+                "rosterUrl": "./rosters/roster13.htm",
+                "rosterFile": "roster13.htm",
+                "standingsLast10": "7-3",
+                "wins": 4,
+                "losses": 2,
+                "games": 6,
+                "pointsFor": 667,
+                "pointsAgainst": 638,
+                "pointDiff": 29,
+                "avgMargin": 4.83,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "Benfica 119, @Bayern Munich 98",
+                        "boxscoreUrl": "./boxes/box165-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1983",
+                        "opponent": "AC Milan",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "@Benfica 112, AC Milan 107",
+                        "boxscoreUrl": "./boxes/box169-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1983",
+                        "opponent": "Crystal Palace",
+                        "result": "W",
+                        "margin": 11,
+                        "score": "@Benfica 119, Crystal Palace 108",
+                        "boxscoreUrl": "./boxes/box172-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 18,
+                        "score": "@AC Milan 117, Benfica 99",
+                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 16,
+                        "score": "@Benfica 118, Atletico Madrid 102",
+                        "boxscoreUrl": "./boxes/box183-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 6,
+                        "score": "@Bayern Munich 106, Benfica 100",
+                        "boxscoreUrl": "./boxes/box185-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/1/1983",
+                    "opponent": "Bayern Munich",
+                    "result": "W",
+                    "margin": 21,
+                    "score": "Benfica 119, @Bayern Munich 98",
+                    "boxscoreUrl": "./boxes/box165-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/14/1983",
+                    "opponent": "AC Milan",
+                    "result": "L",
+                    "margin": 18,
+                    "score": "@AC Milan 117, Benfica 99",
+                    "boxscoreUrl": "./boxes/box178-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/5/1983",
+                        "opponent": "AC Milan",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "@Benfica 112, AC Milan 107",
+                        "boxscoreUrl": "./boxes/box169-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "Benfica 119, @Bayern Munich 98",
+                        "boxscoreUrl": "./boxes/box165-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 16,
+                        "score": "@Benfica 118, Atletico Madrid 102",
+                        "boxscoreUrl": "./boxes/box183-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 18,
+                        "score": "@AC Milan 117, Benfica 99",
+                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "4-2",
+                "closeGameCount": 1,
+                "last3": "LWL"
+            },
+            {
+                "team": "Bayern Munich",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 3,
+                "rosterUrl": "./rosters/roster7.htm",
+                "rosterFile": "roster7.htm",
+                "standingsLast10": "5-5",
+                "wins": 3,
+                "losses": 3,
+                "games": 6,
+                "pointsFor": 626,
+                "pointsAgainst": 625,
+                "pointDiff": 1,
+                "avgMargin": 0.17,
+                "streak": "W3",
+                "recentResults": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 21,
+                        "score": "Benfica 119, @Bayern Munich 98",
+                        "boxscoreUrl": "./boxes/box165-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "AFC Richmond 121, @Bayern Munich 113",
+                        "boxscoreUrl": "./boxes/box169-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1983",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "AC Milan 100, @Bayern Munich 98",
+                        "boxscoreUrl": "./boxes/box173-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1983",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "Bayern Munich 98, @Atletico Madrid 83",
+                        "boxscoreUrl": "./boxes/box177-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/20/1983",
+                        "opponent": "AC Milan",
+                        "result": "W",
+                        "margin": 11,
+                        "score": "@Bayern Munich 113, AC Milan 102",
+                        "boxscoreUrl": "./boxes/box184-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Benfica",
+                        "result": "W",
+                        "margin": 6,
+                        "score": "@Bayern Munich 106, Benfica 100",
+                        "boxscoreUrl": "./boxes/box185-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/13/1983",
+                    "opponent": "Atletico Madrid",
+                    "result": "W",
+                    "margin": 15,
+                    "score": "Bayern Munich 98, @Atletico Madrid 83",
+                    "boxscoreUrl": "./boxes/box177-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/1/1983",
+                    "opponent": "Benfica",
+                    "result": "L",
+                    "margin": 21,
+                    "score": "Benfica 119, @Bayern Munich 98",
+                    "boxscoreUrl": "./boxes/box165-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/9/1983",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "AC Milan 100, @Bayern Munich 98",
+                        "boxscoreUrl": "./boxes/box173-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/13/1983",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "Bayern Munich 98, @Atletico Madrid 83",
+                        "boxscoreUrl": "./boxes/box177-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 21,
+                        "score": "Benfica 119, @Bayern Munich 98",
+                        "boxscoreUrl": "./boxes/box165-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "3-3",
+                "closeGameCount": 1,
+                "last3": "WWW"
+            },
+            {
+                "team": "Real Madrid",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 4,
+                "rosterUrl": "./rosters/roster8.htm",
+                "rosterFile": "roster8.htm",
+                "standingsLast10": "5-5",
+                "wins": 3,
+                "losses": 4,
+                "games": 7,
+                "pointsFor": 803,
+                "pointsAgainst": 802,
+                "pointDiff": 1,
+                "avgMargin": 0.14,
+                "streak": "W2",
+                "recentResults": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "@AC Milan 110, Real Madrid 106",
+                        "boxscoreUrl": "./boxes/box165-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "@Real Madrid 118, Sheffield United 113",
+                        "boxscoreUrl": "./boxes/box166-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Sheffield United",
+                        "result": "L",
+                        "margin": 6,
+                        "score": "@Sheffield United 118, Real Madrid 112",
+                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 22,
+                        "score": "@AFC Richmond 123, Real Madrid 101",
+                        "boxscoreUrl": "./boxes/box175-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Crystal Palace",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "Crystal Palace 124, @Real Madrid 122",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "@Real Madrid 133, AFC Richmond 112",
+                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Crystal Palace",
+                        "result": "W",
+                        "margin": 9,
+                        "score": "Real Madrid 111, @Crystal Palace 102",
+                        "boxscoreUrl": "./boxes/box185-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/19/1983",
+                    "opponent": "AFC Richmond",
+                    "result": "W",
+                    "margin": 21,
+                    "score": "@Real Madrid 133, AFC Richmond 112",
+                    "boxscoreUrl": "./boxes/box183-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/11/1983",
+                    "opponent": "AFC Richmond",
+                    "result": "L",
+                    "margin": 22,
+                    "score": "@AFC Richmond 123, Real Madrid 101",
+                    "boxscoreUrl": "./boxes/box175-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "@AC Milan 110, Real Madrid 106",
+                        "boxscoreUrl": "./boxes/box165-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "@Real Madrid 118, Sheffield United 113",
+                        "boxscoreUrl": "./boxes/box166-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Crystal Palace",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "Crystal Palace 124, @Real Madrid 122",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "@Real Madrid 133, AFC Richmond 112",
+                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 22,
+                        "score": "@AFC Richmond 123, Real Madrid 101",
+                        "boxscoreUrl": "./boxes/box175-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "3-4",
+                "closeGameCount": 3,
+                "last3": "LWW"
+            },
+            {
+                "team": "AC Milan",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 6,
+                "rosterUrl": "./rosters/roster9.htm",
+                "rosterFile": "roster9.htm",
+                "standingsLast10": "4-6",
+                "wins": 3,
+                "losses": 3,
+                "games": 6,
+                "pointsFor": 641,
+                "pointsAgainst": 647,
+                "pointDiff": -6,
+                "avgMargin": -1.0,
+                "streak": "L2",
+                "recentResults": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "@AC Milan 110, Real Madrid 106",
+                        "boxscoreUrl": "./boxes/box165-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1983",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "@Benfica 112, AC Milan 107",
+                        "boxscoreUrl": "./boxes/box169-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1983",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 2,
+                        "score": "AC Milan 100, @Bayern Munich 98",
+                        "boxscoreUrl": "./boxes/box173-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "Benfica",
+                        "result": "W",
+                        "margin": 18,
+                        "score": "@AC Milan 117, Benfica 99",
+                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/20/1983",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 11,
+                        "score": "@Bayern Munich 113, AC Milan 102",
+                        "boxscoreUrl": "./boxes/box184-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 14,
+                        "score": "AFC Richmond 119, @AC Milan 105",
+                        "boxscoreUrl": "./boxes/box185-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/14/1983",
+                    "opponent": "Benfica",
+                    "result": "W",
+                    "margin": 18,
+                    "score": "@AC Milan 117, Benfica 99",
+                    "boxscoreUrl": "./boxes/box178-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/21/1983",
+                    "opponent": "AFC Richmond",
+                    "result": "L",
+                    "margin": 14,
+                    "score": "AFC Richmond 119, @AC Milan 105",
+                    "boxscoreUrl": "./boxes/box185-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "@AC Milan 110, Real Madrid 106",
+                        "boxscoreUrl": "./boxes/box165-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1983",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "@Benfica 112, AC Milan 107",
+                        "boxscoreUrl": "./boxes/box169-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1983",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 2,
+                        "score": "AC Milan 100, @Bayern Munich 98",
+                        "boxscoreUrl": "./boxes/box173-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "Benfica",
+                        "result": "W",
+                        "margin": 18,
+                        "score": "@AC Milan 117, Benfica 99",
+                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "3-3",
+                "closeGameCount": 3,
+                "last3": "WLL"
+            },
+            {
+                "team": "Sheffield United",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 2,
+                "rosterUrl": "./rosters/roster16.htm",
+                "rosterFile": "roster16.htm",
+                "standingsLast10": "6-4",
+                "wins": 3,
+                "losses": 3,
+                "games": 6,
+                "pointsFor": 709,
+                "pointsAgainst": 716,
+                "pointDiff": -7,
+                "avgMargin": -1.17,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "@Sheffield United 121, AFC Richmond 118",
+                        "boxscoreUrl": "./boxes/box165-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "@Real Madrid 118, Sheffield United 113",
+                        "boxscoreUrl": "./boxes/box166-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 6,
+                        "score": "@Sheffield United 118, Real Madrid 112",
+                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Atletico Madrid",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "@Atletico Madrid 103, Sheffield United 99",
+                        "boxscoreUrl": "./boxes/box175-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 15,
+                        "score": "@AFC Richmond 134, Sheffield United 119",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 8,
+                        "score": "Sheffield United 139, @Atletico Madrid 131",
+                        "boxscoreUrl": "./boxes/box185-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/21/1983",
+                    "opponent": "Atletico Madrid",
+                    "result": "W",
+                    "margin": 8,
+                    "score": "Sheffield United 139, @Atletico Madrid 131",
+                    "boxscoreUrl": "./boxes/box185-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/15/1983",
+                    "opponent": "AFC Richmond",
+                    "result": "L",
+                    "margin": 15,
+                    "score": "@AFC Richmond 134, Sheffield United 119",
+                    "boxscoreUrl": "./boxes/box179-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "@Sheffield United 121, AFC Richmond 118",
+                        "boxscoreUrl": "./boxes/box165-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "@Real Madrid 118, Sheffield United 113",
+                        "boxscoreUrl": "./boxes/box166-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Atletico Madrid",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "@Atletico Madrid 103, Sheffield United 99",
+                        "boxscoreUrl": "./boxes/box175-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 15,
+                        "score": "@AFC Richmond 134, Sheffield United 119",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "3-3",
+                "closeGameCount": 3,
+                "last3": "LLW"
+            },
+            {
+                "team": "Atletico Madrid",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 7,
+                "rosterUrl": "./rosters/roster11.htm",
+                "rosterFile": "roster11.htm",
+                "standingsLast10": "3-7",
+                "wins": 2,
+                "losses": 4,
+                "games": 6,
+                "pointsFor": 644,
+                "pointsAgainst": 650,
+                "pointDiff": -6,
+                "avgMargin": -1.0,
+                "streak": "L3",
+                "recentResults": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Crystal Palace",
+                        "result": "W",
+                        "margin": 32,
+                        "score": "@Atletico Madrid 123, Crystal Palace 91",
+                        "boxscoreUrl": "./boxes/box165-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "AFC Richmond 105, @Atletico Madrid 102",
+                        "boxscoreUrl": "./boxes/box171-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "@Atletico Madrid 103, Sheffield United 99",
+                        "boxscoreUrl": "./boxes/box175-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1983",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 15,
+                        "score": "Bayern Munich 98, @Atletico Madrid 83",
+                        "boxscoreUrl": "./boxes/box177-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 16,
+                        "score": "@Benfica 118, Atletico Madrid 102",
+                        "boxscoreUrl": "./boxes/box183-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Sheffield United",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "Sheffield United 139, @Atletico Madrid 131",
+                        "boxscoreUrl": "./boxes/box185-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/1/1983",
+                    "opponent": "Crystal Palace",
+                    "result": "W",
+                    "margin": 32,
+                    "score": "@Atletico Madrid 123, Crystal Palace 91",
+                    "boxscoreUrl": "./boxes/box165-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/19/1983",
+                    "opponent": "Benfica",
+                    "result": "L",
+                    "margin": 16,
+                    "score": "@Benfica 118, Atletico Madrid 102",
+                    "boxscoreUrl": "./boxes/box183-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "AFC Richmond 105, @Atletico Madrid 102",
+                        "boxscoreUrl": "./boxes/box171-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "@Atletico Madrid 103, Sheffield United 99",
+                        "boxscoreUrl": "./boxes/box175-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Crystal Palace",
+                        "result": "W",
+                        "margin": 32,
+                        "score": "@Atletico Madrid 123, Crystal Palace 91",
+                        "boxscoreUrl": "./boxes/box165-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/13/1983",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 15,
+                        "score": "Bayern Munich 98, @Atletico Madrid 83",
+                        "boxscoreUrl": "./boxes/box177-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 16,
+                        "score": "@Benfica 118, Atletico Madrid 102",
+                        "boxscoreUrl": "./boxes/box183-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "2-4",
+                "closeGameCount": 2,
+                "last3": "LLL"
+            },
+            {
+                "team": "Crystal Palace",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 8,
+                "rosterUrl": "./rosters/roster6.htm",
+                "rosterFile": "roster6.htm",
+                "standingsLast10": "2-8",
+                "wins": 1,
+                "losses": 3,
+                "games": 4,
+                "pointsFor": 425,
+                "pointsAgainst": 475,
+                "pointDiff": -50,
+                "avgMargin": -12.5,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Atletico Madrid",
+                        "result": "L",
+                        "margin": 32,
+                        "score": "@Atletico Madrid 123, Crystal Palace 91",
+                        "boxscoreUrl": "./boxes/box165-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1983",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 11,
+                        "score": "@Benfica 119, Crystal Palace 108",
+                        "boxscoreUrl": "./boxes/box172-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 2,
+                        "score": "Crystal Palace 124, @Real Madrid 122",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 9,
+                        "score": "Real Madrid 111, @Crystal Palace 102",
+                        "boxscoreUrl": "./boxes/box185-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/15/1983",
+                    "opponent": "Real Madrid",
+                    "result": "W",
+                    "margin": 2,
+                    "score": "Crystal Palace 124, @Real Madrid 122",
+                    "boxscoreUrl": "./boxes/box179-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/1/1983",
+                    "opponent": "Atletico Madrid",
+                    "result": "L",
+                    "margin": 32,
+                    "score": "@Atletico Madrid 123, Crystal Palace 91",
+                    "boxscoreUrl": "./boxes/box165-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 2,
+                        "score": "Crystal Palace 124, @Real Madrid 122",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Atletico Madrid",
+                        "result": "L",
+                        "margin": 32,
+                        "score": "@Atletico Madrid 123, Crystal Palace 91",
+                        "boxscoreUrl": "./boxes/box165-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "1-3",
+                "closeGameCount": 1,
+                "last3": "LWL"
+            }
+        ],
+        "Tier 2": [
+            {
+                "team": "FL Fart",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 2,
+                "rosterUrl": "./rosters/roster27.htm",
+                "rosterFile": "roster27.htm",
+                "standingsLast10": "7-3",
+                "wins": 5,
+                "losses": 1,
+                "games": 6,
+                "pointsFor": 700,
+                "pointsAgainst": 658,
+                "pointDiff": 42,
+                "avgMargin": 7.0,
+                "streak": "W2",
+                "recentResults": [
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@FL Fart 102, Juventus 101",
+                        "boxscoreUrl": "./boxes/box167-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/4/1983",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 7,
+                        "score": "@FL Fart 122, Marseille 115",
+                        "boxscoreUrl": "./boxes/box168-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1983",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 10,
+                        "score": "FL Fart 129, @Manchester United 119",
+                        "boxscoreUrl": "./boxes/box172-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "Chelsea",
+                        "result": "L",
+                        "margin": 9,
+                        "score": "Chelsea 123, @FL Fart 114",
+                        "boxscoreUrl": "./boxes/box178-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/20/1983",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 7,
+                        "score": "@FL Fart 107, Marseille 100",
+                        "boxscoreUrl": "./boxes/box184-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 26,
+                        "score": "@FL Fart 126, Monaco 100",
+                        "boxscoreUrl": "./boxes/box185-7.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/21/1983",
+                    "opponent": "Monaco",
+                    "result": "W",
+                    "margin": 26,
+                    "score": "@FL Fart 126, Monaco 100",
+                    "boxscoreUrl": "./boxes/box185-7.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/14/1983",
+                    "opponent": "Chelsea",
+                    "result": "L",
+                    "margin": 9,
+                    "score": "Chelsea 123, @FL Fart 114",
+                    "boxscoreUrl": "./boxes/box178-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@FL Fart 102, Juventus 101",
+                        "boxscoreUrl": "./boxes/box167-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 26,
+                        "score": "@FL Fart 126, Monaco 100",
+                        "boxscoreUrl": "./boxes/box185-7.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "5-1",
+                "closeGameCount": 1,
+                "last3": "LWW"
+            },
+            {
+                "team": "Brighton",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 3,
+                "rosterUrl": "./rosters/roster10.htm",
+                "rosterFile": "roster10.htm",
+                "standingsLast10": "6-4",
+                "wins": 4,
+                "losses": 3,
+                "games": 7,
+                "pointsFor": 838,
+                "pointsAgainst": 801,
+                "pointDiff": 37,
+                "avgMargin": 5.29,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Monaco",
+                        "result": "L",
+                        "margin": 12,
+                        "score": "@Monaco 115, Brighton 103",
+                        "boxscoreUrl": "./boxes/box166-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 37,
+                        "score": "@Brighton 141, Marseille 104",
+                        "boxscoreUrl": "./boxes/box167-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Ajax",
+                        "result": "W",
+                        "margin": 11,
+                        "score": "@Brighton 130, Ajax 119",
+                        "boxscoreUrl": "./boxes/box171-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 19,
+                        "score": "@Brighton 125, Monaco 106",
+                        "boxscoreUrl": "./boxes/box175-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1983",
+                        "opponent": "Juventus",
+                        "result": "L",
+                        "margin": 6,
+                        "score": "Juventus 105, @Brighton 99",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 19,
+                        "score": "@Brighton 133, Manchester United 114",
+                        "boxscoreUrl": "./boxes/box183-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Juventus",
+                        "result": "L",
+                        "margin": 31,
+                        "score": "@Juventus 138, Brighton 107",
+                        "boxscoreUrl": "./boxes/box185-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/3/1983",
+                    "opponent": "Marseille",
+                    "result": "W",
+                    "margin": 37,
+                    "score": "@Brighton 141, Marseille 104",
+                    "boxscoreUrl": "./boxes/box167-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/21/1983",
+                    "opponent": "Juventus",
+                    "result": "L",
+                    "margin": 31,
+                    "score": "@Juventus 138, Brighton 107",
+                    "boxscoreUrl": "./boxes/box185-5.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 37,
+                        "score": "@Brighton 141, Marseille 104",
+                        "boxscoreUrl": "./boxes/box167-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 19,
+                        "score": "@Brighton 125, Monaco 106",
+                        "boxscoreUrl": "./boxes/box175-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 19,
+                        "score": "@Brighton 133, Manchester United 114",
+                        "boxscoreUrl": "./boxes/box183-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Juventus",
+                        "result": "L",
+                        "margin": 31,
+                        "score": "@Juventus 138, Brighton 107",
+                        "boxscoreUrl": "./boxes/box185-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "4-3",
+                "closeGameCount": 0,
+                "last3": "LWL"
+            },
+            {
+                "team": "Manchester United",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 5,
+                "rosterUrl": "./rosters/roster5.htm",
+                "rosterFile": "roster5.htm",
+                "standingsLast10": "7-3",
+                "wins": 4,
+                "losses": 3,
+                "games": 7,
+                "pointsFor": 814,
+                "pointsAgainst": 816,
+                "pointDiff": -2,
+                "avgMargin": -0.29,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "Ajax",
+                        "result": "W",
+                        "margin": 35,
+                        "score": "@Manchester United 138, Ajax 103",
+                        "boxscoreUrl": "./boxes/box167-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Juventus",
+                        "result": "L",
+                        "margin": 14,
+                        "score": "@Juventus 112, Manchester United 98",
+                        "boxscoreUrl": "./boxes/box171-5.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1983",
+                        "opponent": "FL Fart",
+                        "result": "L",
+                        "margin": 10,
+                        "score": "FL Fart 129, @Manchester United 119",
+                        "boxscoreUrl": "./boxes/box172-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1983",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 2,
+                        "score": "Manchester United 109, @Monaco 107",
+                        "boxscoreUrl": "./boxes/box176-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1983",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Manchester United 111, Monaco 110",
+                        "boxscoreUrl": "./boxes/box181-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 19,
+                        "score": "@Brighton 133, Manchester United 114",
+                        "boxscoreUrl": "./boxes/box183-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "Manchester United 125, @Marseille 122",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/3/1983",
+                    "opponent": "Ajax",
+                    "result": "W",
+                    "margin": 35,
+                    "score": "@Manchester United 138, Ajax 103",
+                    "boxscoreUrl": "./boxes/box167-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/19/1983",
+                    "opponent": "Brighton",
+                    "result": "L",
+                    "margin": 19,
+                    "score": "@Brighton 133, Manchester United 114",
+                    "boxscoreUrl": "./boxes/box183-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/12/1983",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 2,
+                        "score": "Manchester United 109, @Monaco 107",
+                        "boxscoreUrl": "./boxes/box176-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1983",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Manchester United 111, Monaco 110",
+                        "boxscoreUrl": "./boxes/box181-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "Manchester United 125, @Marseille 122",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "Ajax",
+                        "result": "W",
+                        "margin": 35,
+                        "score": "@Manchester United 138, Ajax 103",
+                        "boxscoreUrl": "./boxes/box167-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 19,
+                        "score": "@Brighton 133, Manchester United 114",
+                        "boxscoreUrl": "./boxes/box183-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "4-3",
+                "closeGameCount": 3,
+                "last3": "WLW"
+            },
+            {
+                "team": "Chelsea",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 1,
+                "rosterUrl": "./rosters/roster17.htm",
+                "rosterFile": "roster17.htm",
+                "standingsLast10": "6-4",
+                "wins": 3,
+                "losses": 2,
+                "games": 5,
+                "pointsFor": 556,
+                "pointsAgainst": 510,
+                "pointDiff": 46,
+                "avgMargin": 9.2,
+                "streak": "L2",
+                "recentResults": [
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 36,
+                        "score": "@Chelsea 102, Juventus 66",
+                        "boxscoreUrl": "./boxes/box166-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "Chelsea 111, @Monaco 94",
+                        "boxscoreUrl": "./boxes/box171-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "FL Fart",
+                        "result": "W",
+                        "margin": 9,
+                        "score": "Chelsea 123, @FL Fart 114",
+                        "boxscoreUrl": "./boxes/box178-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1983",
+                        "opponent": "Marseille",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "Marseille 117, @Chelsea 112",
+                        "boxscoreUrl": "./boxes/box180-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 11,
+                        "score": "@Ajax 119, Chelsea 108",
+                        "boxscoreUrl": "./boxes/box185-6.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/2/1983",
+                    "opponent": "Juventus",
+                    "result": "W",
+                    "margin": 36,
+                    "score": "@Chelsea 102, Juventus 66",
+                    "boxscoreUrl": "./boxes/box166-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/21/1983",
+                    "opponent": "Ajax",
+                    "result": "L",
+                    "margin": 11,
+                    "score": "@Ajax 119, Chelsea 108",
+                    "boxscoreUrl": "./boxes/box185-6.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/16/1983",
+                        "opponent": "Marseille",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "Marseille 117, @Chelsea 112",
+                        "boxscoreUrl": "./boxes/box180-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 36,
+                        "score": "@Chelsea 102, Juventus 66",
+                        "boxscoreUrl": "./boxes/box166-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "Chelsea 111, @Monaco 94",
+                        "boxscoreUrl": "./boxes/box171-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "3-2",
+                "closeGameCount": 1,
+                "last3": "WLL"
+            },
+            {
+                "team": "Ajax",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 6,
+                "rosterUrl": "./rosters/roster18.htm",
+                "rosterFile": "roster18.htm",
+                "standingsLast10": "6-4",
+                "wins": 3,
+                "losses": 3,
+                "games": 6,
+                "pointsFor": 716,
+                "pointsAgainst": 724,
+                "pointDiff": -8,
+                "avgMargin": -1.33,
+                "streak": "W3",
+                "recentResults": [
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 35,
+                        "score": "@Manchester United 138, Ajax 103",
+                        "boxscoreUrl": "./boxes/box167-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 11,
+                        "score": "@Brighton 130, Ajax 119",
+                        "boxscoreUrl": "./boxes/box171-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1983",
+                        "opponent": "Marseille",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "Marseille 138, @Ajax 130",
+                        "boxscoreUrl": "./boxes/box177-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 27,
+                        "score": "@Ajax 125, Juventus 98",
+                        "boxscoreUrl": "./boxes/box178-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 8,
+                        "score": "Ajax 120, @Juventus 112",
+                        "boxscoreUrl": "./boxes/box183-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 11,
+                        "score": "@Ajax 119, Chelsea 108",
+                        "boxscoreUrl": "./boxes/box185-6.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/14/1983",
+                    "opponent": "Juventus",
+                    "result": "W",
+                    "margin": 27,
+                    "score": "@Ajax 125, Juventus 98",
+                    "boxscoreUrl": "./boxes/box178-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/3/1983",
+                    "opponent": "Manchester United",
+                    "result": "L",
+                    "margin": 35,
+                    "score": "@Manchester United 138, Ajax 103",
+                    "boxscoreUrl": "./boxes/box167-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 27,
+                        "score": "@Ajax 125, Juventus 98",
+                        "boxscoreUrl": "./boxes/box178-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 35,
+                        "score": "@Manchester United 138, Ajax 103",
+                        "boxscoreUrl": "./boxes/box167-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "3-3",
+                "closeGameCount": 0,
+                "last3": "WWW"
+            },
+            {
+                "team": "Marseille",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 7,
+                "rosterUrl": "./rosters/roster15.htm",
+                "rosterFile": "roster15.htm",
+                "standingsLast10": "3-7",
+                "wins": 3,
+                "losses": 4,
+                "games": 7,
+                "pointsFor": 822,
+                "pointsAgainst": 848,
+                "pointDiff": -26,
+                "avgMargin": -3.71,
+                "streak": "L2",
+                "recentResults": [
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 37,
+                        "score": "@Brighton 141, Marseille 104",
+                        "boxscoreUrl": "./boxes/box167-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/4/1983",
+                        "opponent": "FL Fart",
+                        "result": "L",
+                        "margin": 7,
+                        "score": "@FL Fart 122, Marseille 115",
+                        "boxscoreUrl": "./boxes/box168-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1983",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "@Marseille 126, Juventus 111",
+                        "boxscoreUrl": "./boxes/box173-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1983",
+                        "opponent": "Ajax",
+                        "result": "W",
+                        "margin": 8,
+                        "score": "Marseille 138, @Ajax 130",
+                        "boxscoreUrl": "./boxes/box177-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1983",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "Marseille 117, @Chelsea 112",
+                        "boxscoreUrl": "./boxes/box180-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/20/1983",
+                        "opponent": "FL Fart",
+                        "result": "L",
+                        "margin": 7,
+                        "score": "@FL Fart 107, Marseille 100",
+                        "boxscoreUrl": "./boxes/box184-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "Manchester United 125, @Marseille 122",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/9/1983",
+                    "opponent": "Juventus",
+                    "result": "W",
+                    "margin": 15,
+                    "score": "@Marseille 126, Juventus 111",
+                    "boxscoreUrl": "./boxes/box173-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/3/1983",
+                    "opponent": "Brighton",
+                    "result": "L",
+                    "margin": 37,
+                    "score": "@Brighton 141, Marseille 104",
+                    "boxscoreUrl": "./boxes/box167-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/16/1983",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "Marseille 117, @Chelsea 112",
+                        "boxscoreUrl": "./boxes/box180-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "Manchester United 125, @Marseille 122",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/9/1983",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "@Marseille 126, Juventus 111",
+                        "boxscoreUrl": "./boxes/box173-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 37,
+                        "score": "@Brighton 141, Marseille 104",
+                        "boxscoreUrl": "./boxes/box167-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "3-4",
+                "closeGameCount": 2,
+                "last3": "WLL"
+            },
+            {
+                "team": "Juventus",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 4,
+                "rosterUrl": "./rosters/roster14.htm",
+                "rosterFile": "roster14.htm",
+                "standingsLast10": "3-7",
+                "wins": 3,
+                "losses": 5,
+                "games": 8,
+                "pointsFor": 843,
+                "pointsAgainst": 879,
+                "pointDiff": -36,
+                "avgMargin": -4.5,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Chelsea",
+                        "result": "L",
+                        "margin": 36,
+                        "score": "@Chelsea 102, Juventus 66",
+                        "boxscoreUrl": "./boxes/box166-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "FL Fart",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@FL Fart 102, Juventus 101",
+                        "boxscoreUrl": "./boxes/box167-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 14,
+                        "score": "@Juventus 112, Manchester United 98",
+                        "boxscoreUrl": "./boxes/box171-5.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1983",
+                        "opponent": "Marseille",
+                        "result": "L",
+                        "margin": 15,
+                        "score": "@Marseille 126, Juventus 111",
+                        "boxscoreUrl": "./boxes/box173-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1983",
+                        "opponent": "Brighton",
+                        "result": "W",
+                        "margin": 6,
+                        "score": "Juventus 105, @Brighton 99",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 27,
+                        "score": "@Ajax 125, Juventus 98",
+                        "boxscoreUrl": "./boxes/box178-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1983",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "Ajax 120, @Juventus 112",
+                        "boxscoreUrl": "./boxes/box183-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Brighton",
+                        "result": "W",
+                        "margin": 31,
+                        "score": "@Juventus 138, Brighton 107",
+                        "boxscoreUrl": "./boxes/box185-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/21/1983",
+                    "opponent": "Brighton",
+                    "result": "W",
+                    "margin": 31,
+                    "score": "@Juventus 138, Brighton 107",
+                    "boxscoreUrl": "./boxes/box185-5.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/2/1983",
+                    "opponent": "Chelsea",
+                    "result": "L",
+                    "margin": 36,
+                    "score": "@Chelsea 102, Juventus 66",
+                    "boxscoreUrl": "./boxes/box166-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/3/1983",
+                        "opponent": "FL Fart",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@FL Fart 102, Juventus 101",
+                        "boxscoreUrl": "./boxes/box167-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Brighton",
+                        "result": "W",
+                        "margin": 31,
+                        "score": "@Juventus 138, Brighton 107",
+                        "boxscoreUrl": "./boxes/box185-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Chelsea",
+                        "result": "L",
+                        "margin": 36,
+                        "score": "@Chelsea 102, Juventus 66",
+                        "boxscoreUrl": "./boxes/box166-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1983",
+                        "opponent": "Marseille",
+                        "result": "L",
+                        "margin": 15,
+                        "score": "@Marseille 126, Juventus 111",
+                        "boxscoreUrl": "./boxes/box173-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 27,
+                        "score": "@Ajax 125, Juventus 98",
+                        "boxscoreUrl": "./boxes/box178-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "3-5",
+                "closeGameCount": 1,
+                "last3": "LLW"
+            },
+            {
+                "team": "Monaco",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 8,
+                "rosterUrl": "./rosters/roster20.htm",
+                "rosterFile": "roster20.htm",
+                "standingsLast10": "2-8",
+                "wins": 1,
+                "losses": 5,
+                "games": 6,
+                "pointsFor": 632,
+                "pointsAgainst": 685,
+                "pointDiff": -53,
+                "avgMargin": -8.83,
+                "streak": "L5",
+                "recentResults": [
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Brighton",
+                        "result": "W",
+                        "margin": 12,
+                        "score": "@Monaco 115, Brighton 103",
+                        "boxscoreUrl": "./boxes/box166-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Chelsea",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "Chelsea 111, @Monaco 94",
+                        "boxscoreUrl": "./boxes/box171-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 19,
+                        "score": "@Brighton 125, Monaco 106",
+                        "boxscoreUrl": "./boxes/box175-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1983",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "Manchester United 109, @Monaco 107",
+                        "boxscoreUrl": "./boxes/box176-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1983",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Manchester United 111, Monaco 110",
+                        "boxscoreUrl": "./boxes/box181-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "FL Fart",
+                        "result": "L",
+                        "margin": 26,
+                        "score": "@FL Fart 126, Monaco 100",
+                        "boxscoreUrl": "./boxes/box185-7.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/2/1983",
+                    "opponent": "Brighton",
+                    "result": "W",
+                    "margin": 12,
+                    "score": "@Monaco 115, Brighton 103",
+                    "boxscoreUrl": "./boxes/box166-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/21/1983",
+                    "opponent": "FL Fart",
+                    "result": "L",
+                    "margin": 26,
+                    "score": "@FL Fart 126, Monaco 100",
+                    "boxscoreUrl": "./boxes/box185-7.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/12/1983",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "Manchester United 109, @Monaco 107",
+                        "boxscoreUrl": "./boxes/box176-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1983",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Manchester United 111, Monaco 110",
+                        "boxscoreUrl": "./boxes/box181-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/7/1983",
+                        "opponent": "Chelsea",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "Chelsea 111, @Monaco 94",
+                        "boxscoreUrl": "./boxes/box171-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 19,
+                        "score": "@Brighton 125, Monaco 106",
+                        "boxscoreUrl": "./boxes/box175-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "FL Fart",
+                        "result": "L",
+                        "margin": 26,
+                        "score": "@FL Fart 126, Monaco 100",
+                        "boxscoreUrl": "./boxes/box185-7.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "1-5",
+                "closeGameCount": 2,
+                "last3": "LLL"
+            }
+        ],
+        "Tier 3": [
+            {
+                "team": "Inter Milan",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 4,
+                "rosterUrl": "./rosters/roster26.htm",
+                "rosterFile": "roster26.htm",
+                "standingsLast10": "6-4",
+                "wins": 5,
+                "losses": 1,
+                "games": 6,
+                "pointsFor": 577,
+                "pointsAgainst": 557,
+                "pointDiff": 20,
+                "avgMargin": 3.33,
+                "streak": "W4",
+                "recentResults": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Aston Villa",
+                        "result": "W",
+                        "margin": 18,
+                        "score": "@Inter Milan 111, Aston Villa 93",
+                        "boxscoreUrl": "./boxes/box165-5.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1983",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 32,
+                        "score": "@Manchester City 116, Inter Milan 84",
+                        "boxscoreUrl": "./boxes/box170-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1983",
+                        "opponent": "Valencia",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "@Inter Milan 98, Valencia 94",
+                        "boxscoreUrl": "./boxes/box176-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1983",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "Inter Milan 85, @Tottenham Hotspur 80",
+                        "boxscoreUrl": "./boxes/box180-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/20/1983",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 16,
+                        "score": "@Inter Milan 99, Sporting CP 83",
+                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 9,
+                        "score": "@Inter Milan 100, Sporting CP 91",
+                        "boxscoreUrl": "./boxes/box185-9.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/1/1983",
+                    "opponent": "Aston Villa",
+                    "result": "W",
+                    "margin": 18,
+                    "score": "@Inter Milan 111, Aston Villa 93",
+                    "boxscoreUrl": "./boxes/box165-5.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/6/1983",
+                    "opponent": "Manchester City",
+                    "result": "L",
+                    "margin": 32,
+                    "score": "@Manchester City 116, Inter Milan 84",
+                    "boxscoreUrl": "./boxes/box170-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/12/1983",
+                        "opponent": "Valencia",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "@Inter Milan 98, Valencia 94",
+                        "boxscoreUrl": "./boxes/box176-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1983",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "Inter Milan 85, @Tottenham Hotspur 80",
+                        "boxscoreUrl": "./boxes/box180-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Aston Villa",
+                        "result": "W",
+                        "margin": 18,
+                        "score": "@Inter Milan 111, Aston Villa 93",
+                        "boxscoreUrl": "./boxes/box165-5.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/20/1983",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 16,
+                        "score": "@Inter Milan 99, Sporting CP 83",
+                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/6/1983",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 32,
+                        "score": "@Manchester City 116, Inter Milan 84",
+                        "boxscoreUrl": "./boxes/box170-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "5-1",
+                "closeGameCount": 2,
+                "last3": "WWW"
+            },
+            {
+                "team": "Aston Villa",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 1,
+                "rosterUrl": "./rosters/roster19.htm",
+                "rosterFile": "roster19.htm",
+                "standingsLast10": "8-2",
+                "wins": 5,
+                "losses": 2,
+                "games": 7,
+                "pointsFor": 689,
+                "pointsAgainst": 684,
+                "pointDiff": 5,
+                "avgMargin": 0.71,
+                "streak": "W4",
+                "recentResults": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 18,
+                        "score": "@Inter Milan 111, Aston Villa 93",
+                        "boxscoreUrl": "./boxes/box165-5.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1983",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 11,
+                        "score": "@Aston Villa 112, Sporting CP 101",
+                        "boxscoreUrl": "./boxes/box169-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "L",
+                        "margin": 12,
+                        "score": "@Tottenham Hotspur 95, Aston Villa 83",
+                        "boxscoreUrl": "./boxes/box175-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "Aston Villa 90, @Sporting CP 89",
+                        "boxscoreUrl": "./boxes/box179-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1983",
+                        "opponent": "Valencia",
+                        "result": "W",
+                        "margin": 12,
+                        "score": "@Aston Villa 117, Valencia 105",
+                        "boxscoreUrl": "./boxes/box180-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/20/1983",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 8,
+                        "score": "@Aston Villa 80, Tottenham Hotspur 72",
+                        "boxscoreUrl": "./boxes/box184-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Valencia",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "Aston Villa 114, @Valencia 111",
+                        "boxscoreUrl": "./boxes/box185-10.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/16/1983",
+                    "opponent": "Valencia",
+                    "result": "W",
+                    "margin": 12,
+                    "score": "@Aston Villa 117, Valencia 105",
+                    "boxscoreUrl": "./boxes/box180-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/1/1983",
+                    "opponent": "Inter Milan",
+                    "result": "L",
+                    "margin": 18,
+                    "score": "@Inter Milan 111, Aston Villa 93",
+                    "boxscoreUrl": "./boxes/box165-5.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "Aston Villa 90, @Sporting CP 89",
+                        "boxscoreUrl": "./boxes/box179-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Valencia",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "Aston Villa 114, @Valencia 111",
+                        "boxscoreUrl": "./boxes/box185-10.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/1/1983",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 18,
+                        "score": "@Inter Milan 111, Aston Villa 93",
+                        "boxscoreUrl": "./boxes/box165-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "5-2",
+                "closeGameCount": 2,
+                "last3": "WWW"
+            },
+            {
+                "team": "Manchester City",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 2,
+                "rosterUrl": "./rosters/roster28.htm",
+                "rosterFile": "roster28.htm",
+                "standingsLast10": "7-3",
+                "wins": 4,
+                "losses": 1,
+                "games": 5,
+                "pointsFor": 514,
+                "pointsAgainst": 414,
+                "pointDiff": 100,
+                "avgMargin": 20.0,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Barcelona",
+                        "result": "W",
+                        "margin": 8,
+                        "score": "Manchester City 100, @Barcelona 92",
+                        "boxscoreUrl": "./boxes/box166-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1983",
+                        "opponent": "Inter Milan",
+                        "result": "W",
+                        "margin": 32,
+                        "score": "@Manchester City 116, Inter Milan 84",
+                        "boxscoreUrl": "./boxes/box170-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1983",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 29,
+                        "score": "@Manchester City 103, Tottenham Hotspur 74",
+                        "boxscoreUrl": "./boxes/box174-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 42,
+                        "score": "@Manchester City 107, Tottenham Hotspur 65",
+                        "boxscoreUrl": "./boxes/box179-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 11,
+                        "score": "@Barcelona 99, Manchester City 88",
+                        "boxscoreUrl": "./boxes/box185-12.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/15/1983",
+                    "opponent": "Tottenham Hotspur",
+                    "result": "W",
+                    "margin": 42,
+                    "score": "@Manchester City 107, Tottenham Hotspur 65",
+                    "boxscoreUrl": "./boxes/box179-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/21/1983",
+                    "opponent": "Barcelona",
+                    "result": "L",
+                    "margin": 11,
+                    "score": "@Barcelona 99, Manchester City 88",
+                    "boxscoreUrl": "./boxes/box185-12.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/6/1983",
+                        "opponent": "Inter Milan",
+                        "result": "W",
+                        "margin": 32,
+                        "score": "@Manchester City 116, Inter Milan 84",
+                        "boxscoreUrl": "./boxes/box170-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1983",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 29,
+                        "score": "@Manchester City 103, Tottenham Hotspur 74",
+                        "boxscoreUrl": "./boxes/box174-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 42,
+                        "score": "@Manchester City 107, Tottenham Hotspur 65",
+                        "boxscoreUrl": "./boxes/box179-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "4-1",
+                "closeGameCount": 0,
+                "last3": "WWL"
+            },
+            {
+                "team": "Barcelona",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 6,
+                "rosterUrl": "./rosters/roster24.htm",
+                "rosterFile": "roster24.htm",
+                "standingsLast10": "6-4",
+                "wins": 4,
+                "losses": 1,
+                "games": 5,
+                "pointsFor": 532,
+                "pointsAgainst": 508,
+                "pointDiff": 24,
+                "avgMargin": 4.8,
+                "streak": "W4",
+                "recentResults": [
+                    {
+                        "date": "4/2/1983",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "Manchester City 100, @Barcelona 92",
+                        "boxscoreUrl": "./boxes/box166-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1983",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 10,
+                        "score": "@Barcelona 100, Tottenham Hotspur 90",
+                        "boxscoreUrl": "./boxes/box170-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1983",
+                        "opponent": "Valencia",
+                        "result": "W",
+                        "margin": 7,
+                        "score": "Barcelona 126, @Valencia 119",
+                        "boxscoreUrl": "./boxes/box172-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "Barcelona 115, @Paris Saint-Germain 111",
+                        "boxscoreUrl": "./boxes/box178-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Manchester City",
+                        "result": "W",
+                        "margin": 11,
+                        "score": "@Barcelona 99, Manchester City 88",
+                        "boxscoreUrl": "./boxes/box185-12.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/21/1983",
+                    "opponent": "Manchester City",
+                    "result": "W",
+                    "margin": 11,
+                    "score": "@Barcelona 99, Manchester City 88",
+                    "boxscoreUrl": "./boxes/box185-12.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/2/1983",
+                    "opponent": "Manchester City",
+                    "result": "L",
+                    "margin": 8,
+                    "score": "Manchester City 100, @Barcelona 92",
+                    "boxscoreUrl": "./boxes/box166-4.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "Barcelona 115, @Paris Saint-Germain 111",
+                        "boxscoreUrl": "./boxes/box178-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [],
+                "record": "4-1",
+                "closeGameCount": 1,
+                "last3": "WWW"
+            },
+            {
+                "team": "Paris Saint-Germain",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 3,
+                "rosterUrl": "./rosters/roster21.htm",
+                "rosterFile": "roster21.htm",
+                "standingsLast10": "7-3",
+                "wins": 2,
+                "losses": 2,
+                "games": 4,
+                "pointsFor": 449,
+                "pointsAgainst": 424,
+                "pointDiff": 25,
+                "avgMargin": 6.25,
+                "streak": "L2",
+                "recentResults": [
+                    {
+                        "date": "4/4/1983",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 30,
+                        "score": "@Paris Saint-Germain 113, Sporting CP 83",
+                        "boxscoreUrl": "./boxes/box168-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1983",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 9,
+                        "score": "@Paris Saint-Germain 126, Sporting CP 117",
+                        "boxscoreUrl": "./boxes/box174-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "Barcelona 115, @Paris Saint-Germain 111",
+                        "boxscoreUrl": "./boxes/box178-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "L",
+                        "margin": 10,
+                        "score": "@Tottenham Hotspur 109, Paris Saint-Germain 99",
+                        "boxscoreUrl": "./boxes/box185-11.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/4/1983",
+                    "opponent": "Sporting CP",
+                    "result": "W",
+                    "margin": 30,
+                    "score": "@Paris Saint-Germain 113, Sporting CP 83",
+                    "boxscoreUrl": "./boxes/box168-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/21/1983",
+                    "opponent": "Tottenham Hotspur",
+                    "result": "L",
+                    "margin": 10,
+                    "score": "@Tottenham Hotspur 109, Paris Saint-Germain 99",
+                    "boxscoreUrl": "./boxes/box185-11.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/14/1983",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "Barcelona 115, @Paris Saint-Germain 111",
+                        "boxscoreUrl": "./boxes/box178-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/4/1983",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 30,
+                        "score": "@Paris Saint-Germain 113, Sporting CP 83",
+                        "boxscoreUrl": "./boxes/box168-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "2-2",
+                "closeGameCount": 1,
+                "last3": "WLL"
+            },
+            {
+                "team": "Tottenham Hotspur",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 8,
+                "rosterUrl": "./rosters/roster22.htm",
+                "rosterFile": "roster22.htm",
+                "standingsLast10": "4-6",
+                "wins": 2,
+                "losses": 6,
+                "games": 8,
+                "pointsFor": 691,
+                "pointsAgainst": 775,
+                "pointDiff": -84,
+                "avgMargin": -10.5,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/5/1983",
+                        "opponent": "Valencia",
+                        "result": "L",
+                        "margin": 12,
+                        "score": "Valencia 118, @Tottenham Hotspur 106",
+                        "boxscoreUrl": "./boxes/box169-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1983",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 10,
+                        "score": "@Barcelona 100, Tottenham Hotspur 90",
+                        "boxscoreUrl": "./boxes/box170-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1983",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 29,
+                        "score": "@Manchester City 103, Tottenham Hotspur 74",
+                        "boxscoreUrl": "./boxes/box174-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1983",
+                        "opponent": "Aston Villa",
+                        "result": "W",
+                        "margin": 12,
+                        "score": "@Tottenham Hotspur 95, Aston Villa 83",
+                        "boxscoreUrl": "./boxes/box175-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 42,
+                        "score": "@Manchester City 107, Tottenham Hotspur 65",
+                        "boxscoreUrl": "./boxes/box179-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1983",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "Inter Milan 85, @Tottenham Hotspur 80",
+                        "boxscoreUrl": "./boxes/box180-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/20/1983",
+                        "opponent": "Aston Villa",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "@Aston Villa 80, Tottenham Hotspur 72",
+                        "boxscoreUrl": "./boxes/box184-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "W",
+                        "margin": 10,
+                        "score": "@Tottenham Hotspur 109, Paris Saint-Germain 99",
+                        "boxscoreUrl": "./boxes/box185-11.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/11/1983",
+                    "opponent": "Aston Villa",
+                    "result": "W",
+                    "margin": 12,
+                    "score": "@Tottenham Hotspur 95, Aston Villa 83",
+                    "boxscoreUrl": "./boxes/box175-4.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/15/1983",
+                    "opponent": "Manchester City",
+                    "result": "L",
+                    "margin": 42,
+                    "score": "@Manchester City 107, Tottenham Hotspur 65",
+                    "boxscoreUrl": "./boxes/box179-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/16/1983",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "Inter Milan 85, @Tottenham Hotspur 80",
+                        "boxscoreUrl": "./boxes/box180-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/10/1983",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 29,
+                        "score": "@Manchester City 103, Tottenham Hotspur 74",
+                        "boxscoreUrl": "./boxes/box174-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 42,
+                        "score": "@Manchester City 107, Tottenham Hotspur 65",
+                        "boxscoreUrl": "./boxes/box179-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "2-6",
+                "closeGameCount": 1,
+                "last3": "LLW"
+            },
+            {
+                "team": "Valencia",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 7,
+                "rosterUrl": "./rosters/roster25.htm",
+                "rosterFile": "roster25.htm",
+                "standingsLast10": "2-8",
+                "wins": 1,
+                "losses": 4,
+                "games": 5,
+                "pointsFor": 547,
+                "pointsAgainst": 561,
+                "pointDiff": -14,
+                "avgMargin": -2.8,
+                "streak": "L4",
+                "recentResults": [
+                    {
+                        "date": "4/5/1983",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 12,
+                        "score": "Valencia 118, @Tottenham Hotspur 106",
+                        "boxscoreUrl": "./boxes/box169-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1983",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 7,
+                        "score": "Barcelona 126, @Valencia 119",
+                        "boxscoreUrl": "./boxes/box172-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1983",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "@Inter Milan 98, Valencia 94",
+                        "boxscoreUrl": "./boxes/box176-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1983",
+                        "opponent": "Aston Villa",
+                        "result": "L",
+                        "margin": 12,
+                        "score": "@Aston Villa 117, Valencia 105",
+                        "boxscoreUrl": "./boxes/box180-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Aston Villa",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "Aston Villa 114, @Valencia 111",
+                        "boxscoreUrl": "./boxes/box185-10.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/5/1983",
+                    "opponent": "Tottenham Hotspur",
+                    "result": "W",
+                    "margin": 12,
+                    "score": "Valencia 118, @Tottenham Hotspur 106",
+                    "boxscoreUrl": "./boxes/box169-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/16/1983",
+                    "opponent": "Aston Villa",
+                    "result": "L",
+                    "margin": 12,
+                    "score": "@Aston Villa 117, Valencia 105",
+                    "boxscoreUrl": "./boxes/box180-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/12/1983",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "@Inter Milan 98, Valencia 94",
+                        "boxscoreUrl": "./boxes/box176-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Aston Villa",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "Aston Villa 114, @Valencia 111",
+                        "boxscoreUrl": "./boxes/box185-10.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [],
+                "record": "1-4",
+                "closeGameCount": 2,
+                "last3": "LLL"
+            },
+            {
+                "team": "Sporting CP",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 5,
+                "rosterUrl": "./rosters/roster23.htm",
+                "rosterFile": "roster23.htm",
+                "standingsLast10": "3-7",
+                "wins": 0,
+                "losses": 6,
+                "games": 6,
+                "pointsFor": 564,
+                "pointsAgainst": 640,
+                "pointDiff": -76,
+                "avgMargin": -12.67,
+                "streak": "L6",
+                "recentResults": [
+                    {
+                        "date": "4/4/1983",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 30,
+                        "score": "@Paris Saint-Germain 113, Sporting CP 83",
+                        "boxscoreUrl": "./boxes/box168-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1983",
+                        "opponent": "Aston Villa",
+                        "result": "L",
+                        "margin": 11,
+                        "score": "@Aston Villa 112, Sporting CP 101",
+                        "boxscoreUrl": "./boxes/box169-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1983",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 9,
+                        "score": "@Paris Saint-Germain 126, Sporting CP 117",
+                        "boxscoreUrl": "./boxes/box174-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Aston Villa",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "Aston Villa 90, @Sporting CP 89",
+                        "boxscoreUrl": "./boxes/box179-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/20/1983",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 16,
+                        "score": "@Inter Milan 99, Sporting CP 83",
+                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/21/1983",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 9,
+                        "score": "@Inter Milan 100, Sporting CP 91",
+                        "boxscoreUrl": "./boxes/box185-9.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": null,
+                "worstLoss": {
+                    "date": "4/4/1983",
+                    "opponent": "Paris Saint-Germain",
+                    "result": "L",
+                    "margin": 30,
+                    "score": "@Paris Saint-Germain 113, Sporting CP 83",
+                    "boxscoreUrl": "./boxes/box168-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/15/1983",
+                        "opponent": "Aston Villa",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "Aston Villa 90, @Sporting CP 89",
+                        "boxscoreUrl": "./boxes/box179-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/4/1983",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 30,
+                        "score": "@Paris Saint-Germain 113, Sporting CP 83",
+                        "boxscoreUrl": "./boxes/box168-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/20/1983",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 16,
+                        "score": "@Inter Milan 99, Sporting CP 83",
+                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "0-6",
+                "closeGameCount": 1,
+                "last3": "LLL"
+            }
+        ]
+    }
+}

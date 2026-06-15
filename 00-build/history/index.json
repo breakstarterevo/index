@@ -1,7 +1,7 @@
 {
   "source": "00-build/history",
-  "updatedAtUtc": "2026-05-25T03:34:56.499863+00:00",
-  "seasonCount": 1,
+  "updatedAtUtc": "2026-06-15T01:22:38.097747+00:00",
+  "seasonCount": 2,
   "seasons": [
     {
       "season": "season-1",
@@ -10,6 +10,28 @@
       "jsonCount": 34,
       "manifest": "season-1/manifest.json",
       "database": "season-1/database",
+      "feeds": {
+        "players.json": true,
+        "player_stats.json": true,
+        "standings.json": true,
+        "leaders.json": true,
+        "teams.json": true,
+        "team_stats.json": true,
+        "awards.json": true,
+        "season_awards.json": true,
+        "youth_intake.json": true,
+        "youth_intake_players.json": true,
+        "supercup/standings.json": true,
+        "supercup/leaders.json": true
+      }
+    },
+    {
+      "season": "season-2",
+      "label": "1982-1983",
+      "archivedAtUtc": "2026-06-15T01:22:38.073085+00:00",
+      "jsonCount": 39,
+      "manifest": "season-2/manifest.json",
+      "database": "season-2/database",
       "feeds": {
         "players.json": true,
         "player_stats.json": true,

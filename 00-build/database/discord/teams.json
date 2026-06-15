@@ -3,15 +3,15 @@
     "id": "roster9",
     "name": "AC Milan",
     "record": {
-      "wins": 19,
-      "losses": 23,
-      "pct": 0.452
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 112.5,
-    "pa": 112.6,
-    "diff": -0.1,
-    "streak": "L2",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "4-6",
     "starPlayer": {
       "name": "Larry Bird",
@@ -22,45 +22,32 @@
       "potential": "182"
     },
     "cap": {
-      "salary": "$91,413,749",
-      "room": "$8,586,251"
+      "salary": "$89,267,313",
+      "room": "$10,732,687"
     },
     "strengths": [
       {
-        "label": "Steals",
-        "value": 10.7,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
-      },
-      {
-        "label": "FT%",
-        "value": 0.793,
-        "rank": 1
-      },
-      {
-        "label": "Blocks",
-        "value": 8.3,
-        "rank": 2
       },
       {
         "label": "O.Rebounds",
-        "value": 12.2,
-        "rank": 3
-      }
-    ],
-    "injuries": [
-      {
-        "name": "Wayne Cooper",
-        "pos": "C",
-        "injury": "Dislocated Shoulder",
-        "length": "41"
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "name": "Larry Bird",
-        "pos": "PF",
-        "injury": "Patellar Tendanitis",
-        "length": "11"
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
+    "injuries": [],
     "recentGame": {
       "date": "4/21/1983",
       "text": "AFC Richmond 119, @AC Milan 105",
@@ -73,15 +60,15 @@
     "id": "roster12",
     "name": "AFC Richmond",
     "record": {
-      "wins": 30,
-      "losses": 12,
-      "pct": 0.714
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 115.3,
-    "pa": 111.7,
-    "diff": 3.6,
-    "streak": "W1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "7-3",
     "starPlayer": {
       "name": "Magic Johnson",
@@ -92,29 +79,29 @@
       "potential": "157"
     },
     "cap": {
-      "salary": "$79,830,247",
-      "room": "$20,169,753"
+      "salary": "$85,237,863",
+      "room": "$14,762,137"
     },
     "strengths": [
       {
-        "label": "Assists",
-        "value": 29.5,
-        "rank": 1
-      },
-      {
-        "label": "3PT%",
-        "value": 0.339,
-        "rank": 1
-      },
-      {
-        "label": "Adjusted FG%",
-        "value": 0.533,
-        "rank": 1
-      },
-      {
         "label": "Points",
-        "value": 115.3,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
@@ -130,15 +117,15 @@
     "id": "roster18",
     "name": "Ajax",
     "record": {
-      "wins": 18,
-      "losses": 24,
-      "pct": 0.429
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ELB Standings",
-    "pf": 108.0,
-    "pa": 112.5,
-    "diff": -4.5,
-    "streak": "W3",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "6-4",
     "starPlayer": {
       "name": "Cliff Robinson",
@@ -149,29 +136,29 @@
       "potential": "124"
     },
     "cap": {
-      "salary": "$69,522,941",
-      "room": "$477,059"
+      "salary": "$64,435,268",
+      "room": "$5,564,732"
     },
     "strengths": [
       {
-        "label": "Turnovers",
-        "value": 16.7,
-        "rank": 3
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "3PT%",
-        "value": 0.317,
-        "rank": 3
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Points Per Shot",
-        "value": 1.34,
-        "rank": 3
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Adjusted FG%",
-        "value": 0.508,
-        "rank": 3
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
@@ -187,64 +174,51 @@
     "id": "roster19",
     "name": "Aston Villa",
     "record": {
-      "wins": 30,
-      "losses": 12,
-      "pct": 0.714
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "ECL Standings",
-    "pf": 105.4,
-    "pa": 98.0,
-    "diff": 7.4,
-    "streak": "W4",
+    "section": "ELB Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "8-2",
     "starPlayer": {
       "name": "Bill Laimbeer",
       "url": "../players/player874.htm",
       "pos": "C",
-      "age": "23",
+      "age": "24",
       "overall": "137",
       "potential": "149"
     },
     "cap": {
-      "salary": "$50,538,232",
-      "room": "($538,232)"
+      "salary": "$56,739,014",
+      "room": "$13,260,986"
     },
     "strengths": [
       {
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
         "label": "O.Rebounds",
-        "value": 15.1,
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "D.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "Rebounds",
-        "value": 44.0,
-        "rank": 1
-      },
-      {
-        "label": "Steals",
-        "value": 8.8,
-        "rank": 1
-      },
-      {
-        "label": "Blocks",
-        "value": 6.6,
+        "value": 0.0,
         "rank": 1
       }
     ],
-    "injuries": [
-      {
-        "name": "Xavier McDaniel",
-        "pos": "SF",
-        "injury": "Broken Foot",
-        "length": "28"
-      },
-      {
-        "name": "Ron Davis",
-        "pos": "SG",
-        "injury": "Patellar Tendanitis",
-        "length": "18"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
       "date": "4/21/1983",
       "text": "Aston Villa 114, @Valencia 111",
@@ -257,15 +231,15 @@
     "id": "roster11",
     "name": "Atletico Madrid",
     "record": {
-      "wins": 16,
-      "losses": 26,
-      "pct": 0.381
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "CLB Standings",
-    "pf": 109.8,
-    "pa": 112.6,
-    "diff": -2.8,
-    "streak": "L3",
+    "section": "ELB Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "3-7",
     "starPlayer": {
       "name": "James Donaldson",
@@ -276,39 +250,32 @@
       "potential": "127"
     },
     "cap": {
-      "salary": "$93,939,805",
-      "room": "$6,060,195"
+      "salary": "$62,932,234",
+      "room": "$7,067,766"
     },
     "strengths": [
       {
-        "label": "Assists",
-        "value": 26.4,
-        "rank": 3
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "FG%",
-        "value": 0.493,
-        "rank": 3
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "D.Rebounds",
-        "value": 28.7,
-        "rank": 4
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Blocks",
-        "value": 7.5,
-        "rank": 4
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
-    "injuries": [
-      {
-        "name": "Adrian Dantley",
-        "pos": "SF",
-        "injury": "Concussion",
-        "length": "5"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
       "date": "4/21/1983",
       "text": "Sheffield United 139, @Atletico Madrid 131",
@@ -321,15 +288,15 @@
     "id": "roster24",
     "name": "Barcelona",
     "record": {
-      "wins": 17,
-      "losses": 25,
-      "pct": 0.405
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 100.0,
-    "pa": 104.0,
-    "diff": -3.9,
-    "streak": "W4",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "6-4",
     "starPlayer": {
       "name": "Otis Birdsong",
@@ -340,29 +307,29 @@
       "potential": "130"
     },
     "cap": {
-      "salary": "$49,581,392",
-      "room": "$418,608"
+      "salary": "$63,546,574",
+      "room": "($13,546,574)"
     },
     "strengths": [
       {
-        "label": "FG%",
-        "value": 0.479,
-        "rank": 2
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "O.Rebounds",
-        "value": 12.0,
-        "rank": 3
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Points",
-        "value": 100.0,
-        "rank": 4
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Steals",
-        "value": 8.6,
-        "rank": 4
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
@@ -378,15 +345,15 @@
     "id": "roster7",
     "name": "Bayern Munich",
     "record": {
-      "wins": 23,
-      "losses": 19,
-      "pct": 0.548
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 108.4,
-    "pa": 106.3,
-    "diff": 2.1,
-    "streak": "W3",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "5-5",
     "starPlayer": {
       "name": "Bernard King",
@@ -397,29 +364,29 @@
       "potential": "127"
     },
     "cap": {
-      "salary": "$98,607,439",
-      "room": "$1,392,561"
+      "salary": "$98,731,501",
+      "room": "$1,268,499"
     },
     "strengths": [
       {
-        "label": "D.Rebounds",
-        "value": 30.9,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Blocks",
-        "value": 10.6,
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "D.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "Rebounds",
-        "value": 43.0,
-        "rank": 2
-      },
-      {
-        "label": "Turnovers",
-        "value": 17.7,
-        "rank": 3
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
@@ -435,15 +402,15 @@
     "id": "roster13",
     "name": "Benfica",
     "record": {
-      "wins": 19,
-      "losses": 23,
-      "pct": 0.452
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 112.6,
-    "pa": 112.8,
-    "diff": -0.2,
-    "streak": "L1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "7-3",
     "starPlayer": {
       "name": "Moses Malone",
@@ -454,29 +421,29 @@
       "potential": "154"
     },
     "cap": {
-      "salary": "$88,448,387",
-      "room": "$11,551,613"
+      "salary": "$57,738,932",
+      "room": "$42,261,068"
     },
     "strengths": [
       {
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
         "label": "O.Rebounds",
-        "value": 13.4,
-        "rank": 1
-      },
-      {
-        "label": "Rebounds",
-        "value": 43.3,
-        "rank": 1
-      },
-      {
-        "label": "Turnovers",
-        "value": 17.0,
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "D.Rebounds",
-        "value": 29.9,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
@@ -492,15 +459,15 @@
     "id": "roster10",
     "name": "Brighton",
     "record": {
-      "wins": 23,
-      "losses": 19,
-      "pct": 0.548
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ELB Standings",
-    "pf": 114.1,
-    "pa": 109.6,
-    "diff": 4.5,
-    "streak": "L1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "6-4",
     "starPlayer": {
       "name": "Kiki Vandeweghe",
@@ -511,28 +478,28 @@
       "potential": "153"
     },
     "cap": {
-      "salary": "$70,508,096",
-      "room": "($508,096)"
+      "salary": "$74,114,659",
+      "room": "($4,114,659)"
     },
     "strengths": [
       {
         "label": "Points",
-        "value": 114.1,
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "FG%",
-        "value": 0.508,
+        "label": "O.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "3PT%",
-        "value": 0.333,
+        "label": "D.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Points Per Shot",
-        "value": 1.46,
+        "label": "Rebounds",
+        "value": 0.0,
         "rank": 1
       }
     ],
@@ -549,15 +516,15 @@
     "id": "roster17",
     "name": "Chelsea",
     "record": {
-      "wins": 29,
-      "losses": 13,
-      "pct": 0.69
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "ELB Standings",
-    "pf": 107.6,
-    "pa": 98.7,
-    "diff": 8.9,
-    "streak": "L2",
+    "section": "CLB Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "6-4",
     "starPlayer": {
       "name": "Jack Sikma",
@@ -568,39 +535,32 @@
       "potential": "143"
     },
     "cap": {
-      "salary": "$69,980,522",
-      "room": "$19,478"
+      "salary": "$82,107,412",
+      "room": "$17,892,588"
     },
     "strengths": [
       {
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
         "label": "D.Rebounds",
-        "value": 31.1,
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "Rebounds",
-        "value": 43.7,
-        "rank": 1
-      },
-      {
-        "label": "Blocks",
-        "value": 6.8,
-        "rank": 1
-      },
-      {
-        "label": "Turnovers",
-        "value": 15.2,
+        "value": 0.0,
         "rank": 1
       }
     ],
-    "injuries": [
-      {
-        "name": "Chet Holmgren",
-        "pos": "C",
-        "injury": "Stress Fracture",
-        "length": "22"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
       "date": "4/21/1983",
       "text": "@Ajax 119, Chelsea 108",
@@ -613,48 +573,48 @@
     "id": "roster6",
     "name": "Crystal Palace",
     "record": {
-      "wins": 14,
-      "losses": 28,
-      "pct": 0.333
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "CLB Standings",
-    "pf": 110.3,
-    "pa": 116.3,
-    "diff": -6.1,
-    "streak": "L1",
+    "section": "ELB Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "2-8",
     "starPlayer": {
       "name": "Darrell Griffith",
       "url": "../players/player703.htm",
       "pos": "SG",
-      "age": "22",
+      "age": "23",
       "overall": "145",
       "potential": "146"
     },
     "cap": {
-      "salary": "$99,610,587",
-      "room": "$389,413"
+      "salary": "$57,046,435",
+      "room": "$12,953,565"
     },
     "strengths": [
       {
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
         "label": "O.Rebounds",
-        "value": 13.3,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "3PT%",
-        "value": 0.331,
-        "rank": 2
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Adjusted FG%",
-        "value": 0.504,
-        "rank": 3
-      },
-      {
-        "label": "FT%",
-        "value": 0.777,
-        "rank": 4
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
@@ -670,15 +630,15 @@
     "id": "roster27",
     "name": "FL Fart",
     "record": {
-      "wins": 25,
-      "losses": 17,
-      "pct": 0.595
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "ELB Standings",
-    "pf": 109.4,
-    "pa": 106.3,
-    "diff": 3.1,
-    "streak": "W2",
+    "section": "CLB Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "7-3",
     "starPlayer": {
       "name": "Larry Drew",
@@ -689,29 +649,29 @@
       "potential": "137"
     },
     "cap": {
-      "salary": "$67,857,578",
-      "room": "$2,142,422"
+      "salary": "$66,724,120",
+      "room": "$33,275,880"
     },
     "strengths": [
       {
-        "label": "Steals",
-        "value": 11.0,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Assists",
-        "value": 25.5,
-        "rank": 2
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Blocks",
-        "value": 6.3,
-        "rank": 2
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Points Per Shot",
-        "value": 1.36,
-        "rank": 2
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
@@ -727,15 +687,15 @@
     "id": "roster26",
     "name": "Inter Milan",
     "record": {
-      "wins": 21,
-      "losses": 21,
-      "pct": 0.5
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 96.9,
-    "pa": 96.7,
-    "diff": 0.3,
-    "streak": "W4",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "6-4",
     "starPlayer": {
       "name": "World B. Free",
@@ -746,29 +706,29 @@
       "potential": "137"
     },
     "cap": {
-      "salary": "$45,154,672",
-      "room": "$4,845,328"
+      "salary": "$37,569,961",
+      "room": "$12,430,039"
     },
     "strengths": [
       {
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
         "label": "O.Rebounds",
-        "value": 12.5,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Blocks",
-        "value": 6.2,
-        "rank": 2
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Fouls",
-        "value": 23.2,
-        "rank": 2
-      },
-      {
-        "label": "3PT%",
-        "value": 0.302,
-        "rank": 2
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
@@ -784,58 +744,51 @@
     "id": "roster14",
     "name": "Juventus",
     "record": {
-      "wins": 21,
-      "losses": 21,
-      "pct": 0.5
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ELB Standings",
-    "pf": 108.9,
-    "pa": 108.6,
-    "diff": 0.3,
-    "streak": "W1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "3-7",
     "starPlayer": {
-      "name": "Kareem Abdul-Jabbar",
-      "url": "../players/player877.htm",
-      "pos": "PF",
-      "age": "34",
+      "name": "Rolando Blackman",
+      "url": "../players/player871.htm",
+      "pos": "SG",
+      "age": "22",
       "overall": "125",
-      "potential": "125"
+      "potential": "126"
     },
     "cap": {
-      "salary": "$64,494,331",
-      "room": "$5,505,669"
+      "salary": "$60,223,273",
+      "room": "$9,776,727"
     },
     "strengths": [
       {
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
         "label": "D.Rebounds",
-        "value": 29.6,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "Rebounds",
-        "value": 42.1,
-        "rank": 3
-      },
-      {
-        "label": "Blocks",
-        "value": 6.3,
-        "rank": 3
-      },
-      {
-        "label": "Fouls",
-        "value": 25.8,
-        "rank": 3
+        "value": 0.0,
+        "rank": 1
       }
     ],
-    "injuries": [
-      {
-        "name": "Kyle O'Quinn",
-        "pos": "C",
-        "injury": "Stress Fracture",
-        "length": "16"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
       "date": "4/21/1983",
       "text": "@Juventus 138, Brighton 107",
@@ -848,47 +801,47 @@
     "id": "roster28",
     "name": "Manchester City",
     "record": {
-      "wins": 26,
-      "losses": 16,
-      "pct": 0.619
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 103.9,
-    "pa": 98.5,
-    "diff": 5.3,
-    "streak": "L1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "7-3",
     "starPlayer": {
       "name": "Allen Leavell",
       "url": "../players/player1054.htm",
       "pos": "PG",
-      "age": "23",
+      "age": "24",
       "overall": "122",
       "potential": "122"
     },
     "cap": {
-      "salary": "$44,584,029",
-      "room": "$5,415,971"
+      "salary": "$34,225,887",
+      "room": "$15,774,113"
     },
     "strengths": [
       {
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
         "label": "D.Rebounds",
-        "value": 29.7,
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "FG%",
-        "value": 0.501,
-        "rank": 1
-      },
-      {
-        "label": "Points Per Shot",
-        "value": 1.37,
-        "rank": 1
-      },
-      {
-        "label": "Adjusted FG%",
-        "value": 0.506,
+        "label": "Rebounds",
+        "value": 0.0,
         "rank": 1
       }
     ],
@@ -905,58 +858,51 @@
     "id": "roster5",
     "name": "Manchester United",
     "record": {
-      "wins": 19,
-      "losses": 23,
-      "pct": 0.452
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ELB Standings",
-    "pf": 109.8,
-    "pa": 112.8,
-    "diff": -3.0,
-    "streak": "W1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "7-3",
     "starPlayer": {
-      "name": "Walter Davis",
-      "url": "../players/player706.htm",
-      "pos": "SF",
-      "age": "26",
-      "overall": "134",
-      "potential": "137"
+      "name": "Jeff Ruland",
+      "url": "../players/player718.htm",
+      "pos": "C",
+      "age": "21",
+      "overall": "124",
+      "potential": "124"
     },
     "cap": {
-      "salary": "$66,694,250",
-      "room": "$3,305,750"
+      "salary": "$50,320,815",
+      "room": "$19,679,185"
     },
     "strengths": [
       {
-        "label": "Assists",
-        "value": 29.1,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "FG%",
-        "value": 0.502,
-        "rank": 2
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "FT%",
-        "value": 0.781,
-        "rank": 2
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Adjusted FG%",
-        "value": 0.51,
-        "rank": 2
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
-    "injuries": [
-      {
-        "name": "Eddie Johnson",
-        "pos": "SG",
-        "injury": "Torn MCL",
-        "length": "127"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
       "date": "4/21/1983",
       "text": "Manchester United 125, @Marseille 122",
@@ -969,15 +915,15 @@
     "id": "roster15",
     "name": "Marseille",
     "record": {
-      "wins": 17,
-      "losses": 25,
-      "pct": 0.405
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ELB Standings",
-    "pf": 112.3,
-    "pa": 116.2,
-    "diff": -4.0,
-    "streak": "L2",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "3-7",
     "starPlayer": {
       "name": "Robert Parish",
@@ -988,39 +934,32 @@
       "potential": "140"
     },
     "cap": {
-      "salary": "$63,826,936",
-      "room": "$6,173,064"
+      "salary": "$49,114,181",
+      "room": "$20,885,819"
     },
     "strengths": [
       {
         "label": "Points",
-        "value": 112.3,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "O.Rebounds",
-        "value": 13.3,
-        "rank": 2
-      },
-      {
-        "label": "Rebounds",
-        "value": 42.3,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "D.Rebounds",
-        "value": 29.0,
-        "rank": 3
-      }
-    ],
-    "injuries": [
+        "value": 0.0,
+        "rank": 1
+      },
       {
-        "name": "Rich Kelley",
-        "pos": "PF",
-        "injury": "Broken Foot",
-        "length": "9"
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
+    "injuries": [],
     "recentGame": {
       "date": "4/21/1983",
       "text": "Manchester United 125, @Marseille 122",
@@ -1033,15 +972,15 @@
     "id": "roster20",
     "name": "Monaco",
     "record": {
-      "wins": 16,
-      "losses": 26,
-      "pct": 0.381
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "ELB Standings",
-    "pf": 102.9,
-    "pa": 108.3,
-    "diff": -5.4,
-    "streak": "L5",
+    "section": "ECL Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "2-8",
     "starPlayer": {
       "name": "Danny Ainge",
@@ -1052,51 +991,32 @@
       "potential": "141"
     },
     "cap": {
-      "salary": "$69,881,803",
-      "room": "$118,197"
+      "salary": "$45,871,054",
+      "room": "$4,128,946"
     },
     "strengths": [
       {
-        "label": "O.Rebounds",
-        "value": 13.7,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Turnovers",
-        "value": 15.8,
-        "rank": 2
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "3PT%",
-        "value": 0.32,
-        "rank": 2
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Steals",
-        "value": 9.3,
-        "rank": 3
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
-    "injuries": [
-      {
-        "name": "Naz Reid",
-        "pos": "PF",
-        "injury": "Severe Concussion",
-        "length": "70"
-      },
-      {
-        "name": "Mike Glenn",
-        "pos": "PG",
-        "injury": "Dislocated Shoulder",
-        "length": "13"
-      },
-      {
-        "name": "Danny Ainge",
-        "pos": "SG",
-        "injury": "Fractured Nose",
-        "length": "4"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
       "date": "4/21/1983",
       "text": "@FL Fart 126, Monaco 100",
@@ -1109,15 +1029,15 @@
     "id": "roster21",
     "name": "Paris Saint-Germain",
     "record": {
-      "wins": 26,
-      "losses": 16,
-      "pct": 0.619
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 108.7,
-    "pa": 103.4,
-    "diff": 5.3,
-    "streak": "L2",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "7-3",
     "starPlayer": {
       "name": "Julius Erving",
@@ -1128,28 +1048,28 @@
       "potential": "137"
     },
     "cap": {
-      "salary": "$47,823,503",
-      "room": "$2,176,497"
+      "salary": "$51,345,910",
+      "room": "($1,345,910)"
     },
     "strengths": [
       {
         "label": "Points",
-        "value": 108.7,
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Fouls",
-        "value": 22.8,
+        "label": "O.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "FT%",
-        "value": 0.794,
+        "label": "D.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "3PT%",
-        "value": 0.325,
+        "label": "Rebounds",
+        "value": 0.0,
         "rank": 1
       }
     ],
@@ -1166,15 +1086,15 @@
     "id": "roster8",
     "name": "Real Madrid",
     "record": {
-      "wins": 22,
-      "losses": 20,
-      "pct": 0.524
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 113.0,
-    "pa": 112.7,
-    "diff": 0.3,
-    "streak": "W2",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "5-5",
     "starPlayer": {
       "name": "Sidney Moncrief",
@@ -1185,29 +1105,29 @@
       "potential": "153"
     },
     "cap": {
-      "salary": "$96,047,563",
-      "room": "$3,952,437"
+      "salary": "$70,402,764",
+      "room": "$29,597,236"
     },
     "strengths": [
       {
-        "label": "Fouls",
-        "value": 25.5,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Points",
-        "value": 113.0,
-        "rank": 3
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "FT%",
-        "value": 0.784,
-        "rank": 3
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Points Per Shot",
-        "value": 1.34,
-        "rank": 3
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
@@ -1223,15 +1143,15 @@
     "id": "roster16",
     "name": "Sheffield United",
     "record": {
-      "wins": 25,
-      "losses": 17,
-      "pct": 0.595
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 118.1,
-    "pa": 114.9,
-    "diff": 3.2,
-    "streak": "W1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "6-4",
     "starPlayer": {
       "name": "Rickey Green",
@@ -1242,29 +1162,29 @@
       "potential": "124"
     },
     "cap": {
-      "salary": "$79,324,331",
-      "room": "$20,675,669"
+      "salary": "$56,779,555",
+      "room": "$43,220,445"
     },
     "strengths": [
       {
         "label": "Points",
-        "value": 118.1,
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "FG%",
-        "value": 0.523,
+        "label": "O.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Points Per Shot",
-        "value": 1.4,
+        "label": "D.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Assists",
-        "value": 27.0,
-        "rank": 2
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
@@ -1280,58 +1200,51 @@
     "id": "roster23",
     "name": "Sporting CP",
     "record": {
-      "wins": 18,
-      "losses": 24,
-      "pct": 0.429
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 99.5,
-    "pa": 101.6,
-    "diff": -2.2,
-    "streak": "L6",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "3-7",
     "starPlayer": {
-      "name": "Lewis Lloyd",
-      "url": "../players/player902.htm",
-      "pos": "PG",
-      "age": "22",
-      "overall": "112",
-      "potential": "124"
+      "name": "Mike O'Koren",
+      "url": "../players/player1060.htm",
+      "pos": "SF",
+      "age": "23",
+      "overall": "109",
+      "potential": "110"
     },
     "cap": {
-      "salary": "$49,012,712",
-      "room": "$987,288"
+      "salary": "$40,786,193",
+      "room": "$9,213,807"
     },
     "strengths": [
       {
-        "label": "Turnovers",
-        "value": 14.5,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Points Per Shot",
-        "value": 1.28,
-        "rank": 3
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "FG%",
-        "value": 0.473,
-        "rank": 4
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "FT%",
-        "value": 0.753,
-        "rank": 4
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
-    "injuries": [
-      {
-        "name": "Mike O'Koren",
-        "pos": "SF",
-        "injury": "Sprained Ankle",
-        "length": "13"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
       "date": "4/21/1983",
       "text": "@Inter Milan 100, Sporting CP 91",
@@ -1344,15 +1257,15 @@
     "id": "roster22",
     "name": "Tottenham Hotspur",
     "record": {
-      "wins": 14,
-      "losses": 28,
-      "pct": 0.333
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 96.5,
-    "pa": 103.8,
-    "diff": -7.3,
-    "streak": "W1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "4-6",
     "starPlayer": {
       "name": "Darryl Dawkins",
@@ -1363,39 +1276,32 @@
       "potential": "116"
     },
     "cap": {
-      "salary": "$48,888,746",
-      "room": "$1,111,254"
+      "salary": "$43,834,966",
+      "room": "$6,165,034"
     },
     "strengths": [
       {
-        "label": "3PT%",
-        "value": 0.295,
-        "rank": 3
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Turnovers",
-        "value": 15.6,
-        "rank": 4
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Steals",
-        "value": 7.7,
-        "rank": 5
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Blocks",
-        "value": 4.2,
-        "rank": 5
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
-    "injuries": [
-      {
-        "name": "Dudley Bradley",
-        "pos": "SF",
-        "injury": "Broken Foot",
-        "length": "51"
-      }
-    ],
+    "injuries": [],
     "recentGame": {
       "date": "4/21/1983",
       "text": "@Tottenham Hotspur 109, Paris Saint-Germain 99",
@@ -1408,48 +1314,48 @@
     "id": "roster25",
     "name": "Valencia",
     "record": {
-      "wins": 16,
-      "losses": 26,
-      "pct": 0.381
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 99.7,
-    "pa": 104.6,
-    "diff": -4.9,
-    "streak": "L4",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "2-8",
     "starPlayer": {
       "name": "Isiah Thomas",
       "url": "../players/player1047.htm",
       "pos": "PG",
-      "age": "19",
+      "age": "20",
       "overall": "121",
       "potential": "123"
     },
     "cap": {
-      "salary": "$46,459,346",
-      "room": "$3,540,654"
+      "salary": "$41,425,028",
+      "room": "$8,574,972"
     },
     "strengths": [
       {
-        "label": "Assists",
-        "value": 24.0,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Steals",
-        "value": 8.8,
-        "rank": 2
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Adjusted FG%",
-        "value": 0.497,
-        "rank": 3
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Points",
-        "value": 99.7,
-        "rank": 5
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],

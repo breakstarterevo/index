@@ -74,7 +74,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1388",
+          "playerId": "player329",
           "overall": 92,
           "potential": 108
         },
@@ -127,7 +127,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player1387",
+          "playerId": "player331",
           "overall": 78,
           "potential": 88
         },
@@ -180,7 +180,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1376",
+          "playerId": "player342",
           "overall": 88,
           "potential": 122
         }
@@ -242,7 +242,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1386",
+          "playerId": "player332",
           "overall": 102,
           "potential": 117
         },
@@ -295,7 +295,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1385",
+          "playerId": "player333",
           "overall": 79,
           "potential": 93
         }
@@ -357,7 +357,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1265",
+          "playerId": "player1312",
           "overall": 76,
           "potential": 102
         },
@@ -410,7 +410,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player1264",
+          "playerId": "player1313",
           "overall": 85,
           "potential": 89
         },
@@ -463,7 +463,7 @@
           "Tier": "A",
           "tierRaw": "A",
           "tier": "A",
-          "playerId": "player1263",
+          "playerId": "player1314",
           "overall": 113,
           "potential": 147
         }
@@ -525,7 +525,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player463",
+          "playerId": "player1338",
           "overall": 70,
           "potential": 89
         },
@@ -578,7 +578,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player462",
+          "playerId": "player1339",
           "overall": 93,
           "potential": 115
         },
@@ -631,7 +631,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player461",
+          "playerId": "player1340",
           "overall": 68,
           "potential": 81
         }
@@ -693,7 +693,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1384",
+          "playerId": "player1334",
           "overall": 92,
           "potential": 112
         },
@@ -744,7 +744,7 @@
           "InjuryAvoidance": 21,
           "tierRaw": "",
           "tier": "",
-          "playerId": "player1383",
+          "playerId": "player1335",
           "overall": 78,
           "potential": 90
         }
@@ -806,7 +806,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player460",
+          "playerId": "player696",
           "overall": 92,
           "potential": 106
         },
@@ -859,7 +859,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player459",
+          "playerId": "player695",
           "overall": 69,
           "potential": 91
         },
@@ -912,7 +912,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player458",
+          "playerId": "player694",
           "overall": 77,
           "potential": 106
         },
@@ -965,7 +965,7 @@
           "Tier": "A",
           "tierRaw": "A",
           "tier": "A",
-          "playerId": "player457",
+          "playerId": "player693",
           "overall": 122,
           "potential": 152
         }
@@ -1027,7 +1027,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1380",
+          "playerId": "player336",
           "overall": 97,
           "potential": 114
         },
@@ -1080,7 +1080,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1379",
+          "playerId": "player337",
           "overall": 74,
           "potential": 91
         }
@@ -1093,6 +1093,59 @@
       "tier": "CLB",
       "positionFocus": "SG",
       "intakePlayers": [
+        {
+          "name": "Shandon Anderson",
+          "FirstName": "Shandon",
+          "LastName": "Anderson",
+          "Height": 78,
+          "Weight": 208,
+          "Position": "SG",
+          "DOB": 27029,
+          "Age": 21,
+          "Uniform": 0,
+          "City": 0,
+          "State": 0,
+          "College": "Georgia",
+          "InsideScoring": 35,
+          "PotInside": 44,
+          "JumpShot": 78,
+          "PotJumpShot": 78,
+          "FtShot": 67,
+          "PotFtShot": 67,
+          "3pShot": 51,
+          "Pot3pShot": 59,
+          "3pUsage": 11,
+          "Handling": 38,
+          "PotHandling": 44,
+          "Passing": 17,
+          "PotPassing": 32,
+          "PostDefense": 32,
+          "PotPostDefense": 37,
+          "PerimeterDefense": 57,
+          "PotPerimeterDefense": 57,
+          "Stealing": 40,
+          "PotStealing": 55,
+          "Blocking": 20,
+          "PotBlocking": 25,
+          "OReb": 30,
+          "PotOReb": 31,
+          "DReb": 32,
+          "PotDReb": 42,
+          "Fouling": 53,
+          "Strength": 57,
+          "Quickness": 66,
+          "Jumping": 58,
+          "Stamina": 72,
+          "Picname": 0,
+          "InjuryAvoidance": 75,
+          "POT": 114,
+          "Tier": "B",
+          "tierRaw": "B",
+          "tier": "B",
+          "playerId": "player1345",
+          "overall": 104,
+          "potential": 114
+        },
         {
           "name": "Emanual Davis",
           "FirstName": "Emanual",
@@ -1142,7 +1195,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1377",
+          "playerId": "player341",
           "overall": 88,
           "potential": 98
         }
@@ -1204,7 +1257,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1262",
+          "playerId": "player1315",
           "overall": 113,
           "potential": 117
         },
@@ -1257,7 +1310,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1261",
+          "playerId": "player1316",
           "overall": 81,
           "potential": 98
         },
@@ -1310,7 +1363,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player1260",
+          "playerId": "player1317",
           "overall": 77,
           "potential": 84
         },
@@ -1363,7 +1416,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1378",
+          "playerId": "player339",
           "overall": 92,
           "potential": 121
         }
@@ -1425,7 +1478,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1256",
+          "playerId": "player352",
           "overall": 84,
           "potential": 103
         },
@@ -1478,7 +1531,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1255",
+          "playerId": "player353",
           "overall": 73,
           "potential": 94
         },
@@ -1531,7 +1584,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1254",
+          "playerId": "player354",
           "overall": 90,
           "potential": 111
         }
@@ -1593,7 +1646,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1375",
+          "playerId": "player1336",
           "overall": 77,
           "potential": 91
         }
@@ -1655,7 +1708,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1250",
+          "playerId": "player347",
           "overall": 95,
           "potential": 108
         },
@@ -1708,7 +1761,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1249",
+          "playerId": "player348",
           "overall": 79,
           "potential": 90
         },
@@ -1761,7 +1814,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1248",
+          "playerId": "player350",
           "overall": 83,
           "potential": 102
         }
@@ -1823,7 +1876,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player456",
+          "playerId": "player692",
           "overall": 61,
           "potential": 101
         },
@@ -1876,7 +1929,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player455",
+          "playerId": "player691",
           "overall": 67,
           "potential": 91
         },
@@ -1929,7 +1982,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player454",
+          "playerId": "player690",
           "overall": 87,
           "potential": 99
         },
@@ -1982,7 +2035,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player453",
+          "playerId": "player689",
           "overall": 71,
           "potential": 82
         }
@@ -2044,7 +2097,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1253",
+          "playerId": "player1321",
           "overall": 79,
           "potential": 110
         },
@@ -2097,7 +2150,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1252",
+          "playerId": "player1322",
           "overall": 71,
           "potential": 87
         },
@@ -2150,7 +2203,7 @@
           "Tier": "A",
           "tierRaw": "A",
           "tier": "A",
-          "playerId": "player1251",
+          "playerId": "player1325",
           "overall": 89,
           "potential": 136
         },
@@ -2265,7 +2318,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player452",
+          "playerId": "player688",
           "overall": 89,
           "potential": 110
         },
@@ -2318,7 +2371,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player451",
+          "playerId": "player687",
           "overall": 84,
           "potential": 93
         },
@@ -2371,7 +2424,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player450",
+          "playerId": "player686",
           "overall": 91,
           "potential": 101
         },
@@ -2424,7 +2477,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player449",
+          "playerId": "player685",
           "overall": 70,
           "potential": 80
         }
@@ -2486,7 +2539,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1247",
+          "playerId": "player1327",
           "overall": 85,
           "potential": 124
         },
@@ -2539,7 +2592,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1246",
+          "playerId": "player1328",
           "overall": 82,
           "potential": 94
         },
@@ -2592,7 +2645,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player1245",
+          "playerId": "player1329",
           "overall": 75,
           "potential": 81
         }
@@ -2654,7 +2707,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1244",
+          "playerId": "player1330",
           "overall": 84,
           "potential": 116
         },
@@ -2707,7 +2760,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1243",
+          "playerId": "player1331",
           "overall": 83,
           "potential": 95
         },
@@ -2760,7 +2813,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player1242",
+          "playerId": "player1332",
           "overall": 78,
           "potential": 85
         }
@@ -2822,7 +2875,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player1241",
+          "playerId": "player848",
           "overall": 91,
           "potential": 112
         },
@@ -2875,7 +2928,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1240",
+          "playerId": "player833",
           "overall": 81,
           "potential": 89
         },
@@ -2928,7 +2981,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player1239",
+          "playerId": "player832",
           "overall": 79,
           "potential": 87
         }
@@ -2990,7 +3043,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player447",
+          "playerId": "player683",
           "overall": 72,
           "potential": 98
         },
@@ -3043,7 +3096,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player446",
+          "playerId": "player682",
           "overall": 74,
           "potential": 80
         },
@@ -3096,7 +3149,7 @@
           "Tier": "A",
           "tierRaw": "A",
           "tier": "A",
-          "playerId": "player445",
+          "playerId": "player681",
           "overall": 95,
           "potential": 132
         }
@@ -3158,7 +3211,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1374",
+          "playerId": "player343",
           "overall": 93,
           "potential": 101
         },
@@ -3211,7 +3264,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1373",
+          "playerId": "player346",
           "overall": 72,
           "potential": 95
         }
@@ -3273,7 +3326,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1382",
+          "playerId": "player334",
           "overall": 93,
           "potential": 104
         },
@@ -3326,7 +3379,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player1381",
+          "playerId": "player335",
           "overall": 83,
           "potential": 88
         }
@@ -3388,7 +3441,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player444",
+          "playerId": "player680",
           "overall": 91,
           "potential": 103
         },
@@ -3441,7 +3494,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player443",
+          "playerId": "player679",
           "overall": 74,
           "potential": 92
         },
@@ -3494,7 +3547,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player442",
+          "playerId": "player678",
           "overall": 75,
           "potential": 83
         },
@@ -3547,7 +3600,7 @@
           "Tier": "A",
           "tierRaw": "A",
           "tier": "A",
-          "playerId": "player441",
+          "playerId": "player677",
           "overall": 96,
           "potential": 143
         }
@@ -3662,7 +3715,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player439",
+          "playerId": "player675",
           "overall": 82,
           "potential": 93
         },
@@ -3715,7 +3768,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player438",
+          "playerId": "player674",
           "overall": 87,
           "potential": 115
         },
@@ -3768,7 +3821,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player448",
+          "playerId": "player684",
           "overall": 91,
           "potential": 101
         }
@@ -3883,7 +3936,7 @@
           "Tier": "C",
           "tierRaw": "C",
           "tier": "C",
-          "playerId": "player435",
+          "playerId": "player671",
           "overall": 82,
           "potential": 94
         },
@@ -3936,7 +3989,7 @@
           "Tier": "B",
           "tierRaw": "B",
           "tier": "B",
-          "playerId": "player434",
+          "playerId": "player670",
           "overall": 86,
           "potential": 107
         },
@@ -3989,7 +4042,7 @@
           "Tier": "D",
           "tierRaw": "D",
           "tier": "D",
-          "playerId": "player433",
+          "playerId": "player669",
           "overall": 69,
           "potential": 83
         }

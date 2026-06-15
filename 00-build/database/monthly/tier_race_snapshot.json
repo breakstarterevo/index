@@ -8,56 +8,56 @@
             "tier": "Tier 1",
             "type": "relegation",
             "slots": 2,
-            "lineTeam": "Atletico Madrid",
-            "lineRecord": "2-4",
+            "lineTeam": "AC Milan",
+            "lineRecord": "3-3",
             "entries": [
-                {
-                    "team": "Crystal Palace",
-                    "record": "1-3",
-                    "standingRank": 8,
-                    "streak": "L1",
-                    "last3": "LWL",
-                    "avgMargin": -12.5,
-                    "pointDiff": -50,
-                    "gapToLine": -1,
-                    "status": "on_or_below_line",
-                    "rosterUrl": "./rosters/roster6.htm"
-                },
-                {
-                    "team": "Atletico Madrid",
-                    "record": "2-4",
-                    "standingRank": 7,
-                    "streak": "L3",
-                    "last3": "LLL",
-                    "avgMargin": -1.0,
-                    "pointDiff": -6,
-                    "gapToLine": 0,
-                    "status": "on_or_below_line",
-                    "rosterUrl": "./rosters/roster11.htm"
-                },
                 {
                     "team": "Sheffield United",
                     "record": "3-3",
-                    "standingRank": 2,
+                    "standingRank": 6,
                     "streak": "W1",
                     "last3": "LLW",
                     "avgMargin": -1.17,
                     "pointDiff": -7,
-                    "gapToLine": 1,
-                    "status": "above_safety",
+                    "gapToLine": 0,
+                    "status": "on_or_below_line",
                     "rosterUrl": "./rosters/roster16.htm"
                 },
                 {
                     "team": "AC Milan",
                     "record": "3-3",
-                    "standingRank": 6,
+                    "standingRank": 3,
                     "streak": "L2",
                     "last3": "WLL",
                     "avgMargin": -1.0,
                     "pointDiff": -6,
-                    "gapToLine": 1,
-                    "status": "above_safety",
+                    "gapToLine": 0,
+                    "status": "on_or_below_line",
                     "rosterUrl": "./rosters/roster9.htm"
+                },
+                {
+                    "team": "Real Madrid",
+                    "record": "3-4",
+                    "standingRank": 2,
+                    "streak": "W2",
+                    "last3": "LWW",
+                    "avgMargin": 0.14,
+                    "pointDiff": 1,
+                    "gapToLine": 0,
+                    "status": "on_or_below_line",
+                    "rosterUrl": "./rosters/roster8.htm"
+                },
+                {
+                    "team": "Bayern Munich",
+                    "record": "3-3",
+                    "standingRank": 1,
+                    "streak": "W3",
+                    "last3": "WWW",
+                    "avgMargin": 0.17,
+                    "pointDiff": 1,
+                    "gapToLine": 0,
+                    "status": "on_or_below_line",
+                    "rosterUrl": "./rosters/roster7.htm"
                 }
             ]
         },
@@ -70,16 +70,16 @@
             "lineRecord": "4-3",
             "entries": [
                 {
-                    "team": "FL Fart",
-                    "record": "5-1",
-                    "standingRank": 2,
-                    "streak": "W2",
-                    "last3": "LWW",
-                    "avgMargin": 7.0,
-                    "pointDiff": 42,
+                    "team": "Aston Villa",
+                    "record": "5-2",
+                    "standingRank": 8,
+                    "streak": "W4",
+                    "last3": "WWW",
+                    "avgMargin": 0.71,
+                    "pointDiff": 5,
                     "gapToLine": -1,
                     "status": "on_or_above_line",
-                    "rosterUrl": "./rosters/roster27.htm"
+                    "rosterUrl": "./rosters/roster19.htm"
                 },
                 {
                     "team": "Brighton",
@@ -96,7 +96,7 @@
                 {
                     "team": "Manchester United",
                     "record": "4-3",
-                    "standingRank": 5,
+                    "standingRank": 1,
                     "streak": "W1",
                     "last3": "WLW",
                     "avgMargin": -0.29,
@@ -106,16 +106,16 @@
                     "rosterUrl": "./rosters/roster5.htm"
                 },
                 {
-                    "team": "Chelsea",
-                    "record": "3-2",
-                    "standingRank": 1,
-                    "streak": "L2",
-                    "last3": "WLL",
-                    "avgMargin": 9.2,
-                    "pointDiff": 46,
+                    "team": "Ajax",
+                    "record": "3-3",
+                    "standingRank": 7,
+                    "streak": "W3",
+                    "last3": "WWW",
+                    "avgMargin": -1.33,
+                    "pointDiff": -8,
                     "gapToLine": 1,
                     "status": "chasing",
-                    "rosterUrl": "./rosters/roster17.htm"
+                    "rosterUrl": "./rosters/roster18.htm"
                 }
             ]
         },
@@ -124,25 +124,37 @@
             "tier": "Tier 2",
             "type": "relegation",
             "slots": 1,
-            "lineTeam": "Monaco",
-            "lineRecord": "1-5",
+            "lineTeam": "Crystal Palace",
+            "lineRecord": "1-3",
             "entries": [
                 {
-                    "team": "Monaco",
-                    "record": "1-5",
-                    "standingRank": 8,
-                    "streak": "L5",
-                    "last3": "LLL",
-                    "avgMargin": -8.83,
-                    "pointDiff": -53,
+                    "team": "Crystal Palace",
+                    "record": "1-3",
+                    "standingRank": 2,
+                    "streak": "L1",
+                    "last3": "LWL",
+                    "avgMargin": -12.5,
+                    "pointDiff": -50,
                     "gapToLine": 0,
                     "status": "on_or_below_line",
-                    "rosterUrl": "./rosters/roster20.htm"
+                    "rosterUrl": "./rosters/roster6.htm"
+                },
+                {
+                    "team": "Atletico Madrid",
+                    "record": "2-4",
+                    "standingRank": 4,
+                    "streak": "L3",
+                    "last3": "LLL",
+                    "avgMargin": -1.0,
+                    "pointDiff": -6,
+                    "gapToLine": 1,
+                    "status": "above_safety",
+                    "rosterUrl": "./rosters/roster11.htm"
                 },
                 {
                     "team": "Juventus",
                     "record": "3-5",
-                    "standingRank": 4,
+                    "standingRank": 5,
                     "streak": "W1",
                     "last3": "LLW",
                     "avgMargin": -4.5,
@@ -150,18 +162,6 @@
                     "gapToLine": 2,
                     "status": "above_safety",
                     "rosterUrl": "./rosters/roster14.htm"
-                },
-                {
-                    "team": "Marseille",
-                    "record": "3-4",
-                    "standingRank": 7,
-                    "streak": "L2",
-                    "last3": "WLL",
-                    "avgMargin": -3.71,
-                    "pointDiff": -26,
-                    "gapToLine": 2,
-                    "status": "above_safety",
-                    "rosterUrl": "./rosters/roster15.htm"
                 }
             ]
         },
@@ -176,7 +176,7 @@
                 {
                     "team": "Inter Milan",
                     "record": "5-1",
-                    "standingRank": 4,
+                    "standingRank": 7,
                     "streak": "W4",
                     "last3": "WWW",
                     "avgMargin": 3.33,
@@ -186,21 +186,9 @@
                     "rosterUrl": "./rosters/roster26.htm"
                 },
                 {
-                    "team": "Aston Villa",
-                    "record": "5-2",
-                    "standingRank": 1,
-                    "streak": "W4",
-                    "last3": "WWW",
-                    "avgMargin": 0.71,
-                    "pointDiff": 5,
-                    "gapToLine": 0,
-                    "status": "on_or_above_line",
-                    "rosterUrl": "./rosters/roster19.htm"
-                },
-                {
                     "team": "Manchester City",
                     "record": "4-1",
-                    "standingRank": 2,
+                    "standingRank": 8,
                     "streak": "L1",
                     "last3": "WWL",
                     "avgMargin": 20.0,
@@ -208,6 +196,18 @@
                     "gapToLine": 1,
                     "status": "chasing",
                     "rosterUrl": "./rosters/roster28.htm"
+                },
+                {
+                    "team": "Barcelona",
+                    "record": "4-1",
+                    "standingRank": 5,
+                    "streak": "W4",
+                    "last3": "WWW",
+                    "avgMargin": 4.8,
+                    "pointDiff": 24,
+                    "gapToLine": 1,
+                    "status": "chasing",
+                    "rosterUrl": "./rosters/roster24.htm"
                 }
             ]
         }

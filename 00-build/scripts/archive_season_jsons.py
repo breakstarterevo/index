@@ -55,6 +55,14 @@ def season_sort_key(slug: str) -> tuple[int, object]:
     return (1, slug)
 
 
+def default_season_label(slug: str) -> str:
+    match = re.fullmatch(r"season-(\d+)", slug)
+    if not match:
+        return slug
+    start_year = 1980 + int(match.group(1))
+    return f"{start_year}-{start_year + 1}"
+
+
 def clean(value: object) -> str:
     text = unescape(str(value or "")).replace("\xa0", " ")
     return re.sub(r"\s+", " ", text).strip()
@@ -248,10 +256,16 @@ def update_history_index(history_root: Path) -> list[dict[str, object]]:
         key=lambda path: season_sort_key(path.name),
     ):
         manifest = load_manifest(season_dir)
+        label = manifest.get("label") or ""
+        display_label = (
+            default_season_label(season_dir.name)
+            if label == season_dir.name
+            else label or default_season_label(season_dir.name)
+        )
         seasons.append(
             {
                 "season": season_dir.name,
-                "label": manifest.get("label") or season_dir.name,
+                "label": display_label,
                 "archivedAtUtc": manifest.get("archived_at_utc", ""),
                 "jsonCount": manifest.get("json_count", 0),
                 "manifest": f"{season_dir.name}/manifest.json",
@@ -464,7 +478,7 @@ def main() -> int:
     copied = copy_json_tree(source, database_archive)
     manifest = {
         "season": season_dir.name,
-        "label": args.label or season_dir.name,
+        "label": args.label or default_season_label(season_dir.name),
         "source": "00-build/database",
         "archived_at_utc": datetime.now(timezone.utc).isoformat(),
         "json_count": len(copied),

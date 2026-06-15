@@ -6,22 +6,22 @@
       "title": "CLB Standings",
       "teams": [
         {
-          "name": "AFC Richmond",
-          "wins": 30,
-          "losses": 12,
-          "streak": "W1"
-        },
-        {
-          "name": "Sheffield United",
-          "wins": 25,
-          "losses": 17,
-          "streak": "W1"
-        },
-        {
           "name": "Bayern Munich",
-          "wins": 23,
-          "losses": 19,
-          "streak": "W3"
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
+        },
+        {
+          "name": "Real Madrid",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
+        },
+        {
+          "name": "AC Milan",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         }
       ]
     },
@@ -29,22 +29,22 @@
       "title": "ELB Standings",
       "teams": [
         {
-          "name": "Chelsea",
-          "wins": 29,
-          "losses": 13,
-          "streak": "L2"
+          "name": "Manchester United",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         },
         {
-          "name": "FL Fart",
-          "wins": 25,
-          "losses": 17,
-          "streak": "W2"
+          "name": "Crystal Palace",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         },
         {
           "name": "Brighton",
-          "wins": 23,
-          "losses": 19,
-          "streak": "L1"
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         }
       ]
     },
@@ -52,56 +52,25 @@
       "title": "ECL Standings",
       "teams": [
         {
-          "name": "Aston Villa",
-          "wins": 30,
-          "losses": 12,
-          "streak": "W4"
-        },
-        {
-          "name": "Manchester City",
-          "wins": 26,
-          "losses": 16,
-          "streak": "L1"
+          "name": "Monaco",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         },
         {
           "name": "Paris Saint-Germain",
-          "wins": 26,
-          "losses": 16,
-          "streak": "L2"
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
+        },
+        {
+          "name": "Tottenham Hotspur",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         }
       ]
     }
   ],
-  "leaders": [
-    {
-      "category": "Minutes",
-      "player": "Bill Cartwright",
-      "team": "Sheffield United",
-      "value": "38.0"
-    },
-    {
-      "category": "Points",
-      "player": "Moses Malone",
-      "team": "Benfica",
-      "value": "32.4"
-    },
-    {
-      "category": "Rebounds",
-      "player": "Moses Malone",
-      "team": "Benfica",
-      "value": "11.0"
-    },
-    {
-      "category": "Assists",
-      "player": "Rickey Green",
-      "team": "Sheffield United",
-      "value": "10.4"
-    },
-    {
-      "category": "Steals",
-      "player": "Rickey Green",
-      "team": "Sheffield United",
-      "value": "3.0"
-    }
-  ]
+  "leaders": []
 }
