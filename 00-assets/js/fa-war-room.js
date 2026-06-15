@@ -83,6 +83,19 @@
     return clean(value).toLowerCase().replace(/[^a-z0-9]/g, "");
   }
 
+  function lastNameSortKey(value) {
+    var suffixes = { jr: true, sr: true, ii: true, iii: true, iv: true, v: true };
+    var parts = clean(value).split(" ").filter(Boolean);
+    while (parts.length > 1 && suffixes[parts[parts.length - 1].toLowerCase().replace(/\./g, "")]) {
+      parts.pop();
+    }
+    return [parts[parts.length - 1] || "", clean(value)].join(" ");
+  }
+
+  function compareByLastName(left, right) {
+    return lastNameSortKey(left).localeCompare(lastNameSortKey(right), undefined, { sensitivity: "base" });
+  }
+
   function numberValue(value) {
     var parsed = Number(value);
     return Number.isFinite(parsed) ? parsed : 0;
@@ -502,7 +515,7 @@
 
   function sortedBids() {
     return state.bids.slice().sort(function (left, right) {
-      return clean(left.name).localeCompare(clean(right.name));
+      return compareByLastName(left.name, right.name);
     });
   }
 
@@ -523,7 +536,7 @@
       return clean(bid.name);
     });
     var sortedNames = names.slice().sort(function (left, right) {
-      return left.localeCompare(right);
+      return compareByLastName(left, right);
     });
 
     state.bids.forEach(function (bid) {
@@ -587,7 +600,7 @@
     }
 
     if (names.join("|") !== sortedNames.join("|")) {
-      warnings.push({ type: "warn", title: "Alphabetical", text: "Copy output will be sorted alphabetically for submission." });
+      warnings.push({ type: "warn", title: "Alphabetical", text: "Copy output will be sorted alphabetically by last name for submission." });
     }
 
     return warnings;

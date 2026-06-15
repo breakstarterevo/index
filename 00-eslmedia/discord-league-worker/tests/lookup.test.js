@@ -92,4 +92,32 @@ const teamResigningsResponse = handleResignings("Valencia", fullPlayers, fullPla
 assert.equal(teamResigningsResponse.type, 4);
 assert.match(teamResigningsResponse.data.embeds[0].title, /Re-signing Rights/);
 
+const psgResigningsResponse = handleResignings("Paris Saint-Germain", fullPlayers, fullPlayerStats, teams);
+assert.match(psgResigningsResponse.data.embeds[0].description, /^8 FA players/);
+assert.match(psgResigningsResponse.data.embeds[0].fields.map((field) => field.value).join("\n"), /Dave Corzine/);
+assert.ok(psgResigningsResponse.data.embeds[0].fields.every((field) => field.value.length <= 1024));
+
+const resigningSortPlayers = [
+  { playerId: "player9001", name: "Lower Overall Higher Potential", team: "FA", pos: "PG", age: 22, overall: 72, potential: 105 },
+  { playerId: "player9002", name: "Higher Overall Lower Potential", team: "FA", pos: "SG", age: 24, overall: 95, potential: 91 },
+  ...Array.from({ length: 12 }, (_, index) => ({
+    playerId: `player91${index}`,
+    name: `Depth Re-signing Candidate With Long Name ${index + 1}`,
+    team: "FA",
+    pos: "SF",
+    age: 20 + index,
+    overall: 60 + index,
+    potential: 80 + index,
+  })),
+];
+const resigningSortStats = resigningSortPlayers.map((player) => ({
+  playerId: player.playerId,
+  stats: { season_averages: { rows: [{ season: "1982", team: "TST" }] } },
+}));
+const resigningSortResponse = handleResignings("Test Club", resigningSortPlayers, resigningSortStats, [{ name: "Test Club", abbr: "TST" }]);
+const resigningLines = resigningSortResponse.data.embeds[0].fields[0].value.split("\n");
+assert.match(resigningLines[0], /Lower Overall Higher Potential/);
+assert.doesNotMatch(resigningSortResponse.data.embeds[0].fields[0].value, /OVR\/PO$/);
+assert.ok(resigningSortResponse.data.embeds[0].fields[0].value.length <= 1024);
+
 console.log("lookup tests passed");

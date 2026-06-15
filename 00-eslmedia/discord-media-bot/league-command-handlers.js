@@ -406,16 +406,16 @@ async function handleResignings(interaction, dataClient) {
     const teamPlayers = candidates
       .filter((candidate) => sameResigningTeam(candidate, match.item))
       .sort(compareResigningPlayers);
-    const lines = teamPlayers.slice(0, 18).map(formatResigningPlayer);
-    if (teamPlayers.length > 18) {
-      lines.push(`+${teamPlayers.length - 18} more`);
-    }
+    const lineGroups = fitFieldLineGroups(teamPlayers.map(formatResigningPlayer));
+    const fields = lineGroups.length
+      ? lineGroups.map((lines, index) => field(index ? `Players ${index + 1}` : "Players", lines.join("\n"), false))
+      : [field("Players", "No matching FA players found.", false)];
 
     const embed = new EmbedBuilder()
       .setColor(COLOR)
       .setTitle(`${match.item.name} Re-signing Rights`)
       .setDescription(`${teamPlayers.length} FA player${teamPlayers.length === 1 ? "" : "s"} recorded stats for this team in the previous season.`)
-      .addFields([field("Players", lines.join("\n") || "No matching FA players found.", false)])
+      .addFields(fields)
       .setFooter({ text: "Only FAs whose latest player_stats season matches the previous season are included" });
 
     if (match.item.id || match.item.file) {
@@ -882,9 +882,63 @@ function listTransactions(items, limit) {
 function field(name, value, inline) {
   return {
     name,
-    value: String(value || "-").slice(0, 1024),
+    value: trimFieldValue(value),
     inline
   };
+}
+
+function trimFieldValue(value, maxLength = 1024) {
+  const text = String(value || "-");
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  const lines = text.split("\n");
+  const kept = [];
+  let used = 0;
+  for (const line of lines) {
+    const nextLength = used + line.length + (kept.length ? 1 : 0);
+    if (nextLength > maxLength) {
+      break;
+    }
+    kept.push(line);
+    used = nextLength;
+  }
+
+  return kept.length ? kept.join("\n") : text.slice(0, maxLength);
+}
+
+function fitFieldLineGroups(lines, maxLength = 1024, maxGroups = 8) {
+  const groups = [];
+  let current = [];
+  let currentLength = 0;
+  for (const line of lines) {
+    const safeLine = trimFieldValue(line, maxLength);
+    const nextLength = currentLength + safeLine.length + (current.length ? 1 : 0);
+    if (current.length && nextLength > maxLength) {
+      groups.push(current);
+      current = [];
+      currentLength = 0;
+      if (groups.length >= maxGroups) {
+        break;
+      }
+    }
+    current.push(safeLine);
+    currentLength += safeLine.length + (current.length > 1 ? 1 : 0);
+  }
+  if (current.length && groups.length < maxGroups) {
+    groups.push(current);
+  }
+  if (groups.length === maxGroups && groups.flat().length < lines.length) {
+    const shown = groups.flat().length;
+    const suffix = `+${lines.length - shown} more`;
+    const last = groups[groups.length - 1];
+    while (last.length && [...last, suffix].join("\n").length > maxLength) {
+      last.pop();
+    }
+    last.push(suffix);
+  }
+  return groups;
 }
 
 function formatPct(value) {
@@ -913,18 +967,25 @@ function buildResigningCandidates(players, playerStats) {
   const previousSeason = latestLeagueSeason(playerStats);
   return (players || [])
     .filter(isFreeAgent)
-    .map((player) => {
+    .flatMap((player) => {
       const stats = statsById.get(player.playerId || player.id);
-      const latest = latestSeasonAverageRow(stats);
-      if (!latest?.team || Number(latest.season) !== previousSeason) {
-        return null;
-      }
-      return {
-        player,
-        statTeam: String(latest.team),
-        lastTeam: player.lastTeam || player.lastTeamName || player.lastTeamLabel || "",
-        season: latest.season
-      };
+      const seenTeams = new Set();
+      return seasonAverageRows(stats)
+        .filter((row) => Number(row.season) === previousSeason && row.team)
+        .filter((row) => {
+          const key = normalize(row.team);
+          if (seenTeams.has(key)) {
+            return false;
+          }
+          seenTeams.add(key);
+          return true;
+        })
+        .map((row) => ({
+          player,
+          statTeam: String(row.team),
+          lastTeam: player.lastTeam || player.lastTeamName || player.lastTeamLabel || "",
+          season: row.season
+        }));
     })
     .filter(Boolean);
 }
@@ -946,7 +1007,7 @@ function latestSeasonAverageRow(stats) {
   return seasonAverageRows(stats)
     .map((row, index) => ({ row, index, season: Number(row.season) }))
     .filter((entry) => Number.isFinite(entry.season) && entry.row.team)
-    .sort((a, b) => b.season - a.season || b.index - a.index)[0]?.row || null;
+    .sort((a, b) => b.season - a.season || a.index - b.index)[0]?.row || null;
 }
 
 function seasonAverageRows(stats) {
@@ -1010,8 +1071,8 @@ function groupResigningCandidates(candidates) {
 }
 
 function compareResigningPlayers(a, b) {
-  return Number(b.player.overall || 0) - Number(a.player.overall || 0)
-    || Number(b.player.potential || 0) - Number(a.player.potential || 0)
+  return Number(b.player.potential || 0) - Number(a.player.potential || 0)
+    || Number(b.player.overall || 0) - Number(a.player.overall || 0)
     || String(a.player.name).localeCompare(String(b.player.name));
 }
 
