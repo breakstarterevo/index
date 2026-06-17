@@ -57,9 +57,17 @@ PLAYER_STAT_TABLES = {
 }
 
 PLAYER_GAMELOG_TITLE = "Game Logs"
+TAG_RE = re.compile(r"<[^>]+>")
+WHITESPACE_RE = re.compile(r"\s+")
 
 def clean(txt):
-    return re.sub(r"\s+", " ", unescape(txt).replace("\xa0", " ")).strip()
+    text = unescape(txt).replace("\xa0", " ") if "&" in txt or "\xa0" in txt else txt
+    stripped = text.strip()
+    if not stripped:
+        return ""
+    if not any(character.isspace() for character in stripped):
+        return stripped
+    return WHITESPACE_RE.sub(" ", stripped)
 
 
 def normalize_name(name):
@@ -81,7 +89,9 @@ def find_rating(ratings, name, player_file=""):
 
 
 def strip_tags(value):
-    return clean(re.sub(r"<[^>]+>", " ", value))
+    if "<" not in value:
+        return clean(value)
+    return clean(TAG_RE.sub(" ", value))
 
 
 def parse_money_value(value):
@@ -141,6 +151,13 @@ def parse_current_salary(html):
         "currentSalary": parse_money_value(current_salary_cell),
         "currentSalaryText": strip_tags(current_salary_cell),
     }
+
+
+def parse_bird_years(html):
+    match = re.search(r"Bird\s+Years:\s*&nbsp;\s*(\d+)", html, re.IGNORECASE)
+    if not match:
+        match = re.search(r"Bird\s+Years:\s*(\d+)", strip_tags(html), re.IGNORECASE)
+    return int(match.group(1)) if match else 0
 
 
 def slugify(value):
@@ -571,6 +588,7 @@ def parse_player_page(html, filename, team_lookup, ratings):
         "ht": ht,
         "wt": wt,
         "experience": experience,
+        "birdYears": parse_bird_years(html),
         "source": "player_page",
     }
     player.update(parse_current_salary(html))
@@ -640,8 +658,9 @@ def parse_stat_table(table_html):
     }
 
 
-def parse_player_stats_page(html, filename, player):
+def parse_player_data_tables(html):
     tables = {}
+    logs = {"title": PLAYER_GAMELOG_TITLE, "headers": [], "rows": []}
     table_matches = re.finditer(
         r"<table[^>]*>(?P<table>.*?)</table>",
         html,
@@ -659,15 +678,22 @@ def parse_player_stats_page(html, filename, player):
             continue
 
         title = strip_tags(title_match.group(1))
-        if title not in PLAYER_STAT_TABLES:
-            continue
+        if title in PLAYER_STAT_TABLES:
+            table_key = slugify(title)
+            tables[table_key] = {
+                "title": title,
+                **parse_stat_table(table_html[title_match.end():]),
+            }
+        elif title == PLAYER_GAMELOG_TITLE:
+            logs = {
+                "title": title,
+                **parse_stat_table(table_html[title_match.end():]),
+            }
 
-        table_key = slugify(title)
-        tables[table_key] = {
-            "title": title,
-            **parse_stat_table(table_html[title_match.end():]),
-        }
+    return tables, logs
 
+
+def player_page_record_base(filename, player):
     return {
         "playerId": player.get("playerId", f"player{player_id_from_file(filename)}"),
         "name": player.get("name", ""),
@@ -675,48 +701,31 @@ def parse_player_stats_page(html, filename, player):
         "team": player.get("team", ""),
         "teamLabel": player.get("teamLabel", ""),
         "pos": player.get("pos", ""),
-        "stats": tables,
     }
+
+
+def parse_player_stats_and_gamelogs_page(html, filename, player):
+    tables, logs = parse_player_data_tables(html)
+    base = player_page_record_base(filename, player)
+
+    return (
+        {
+            **base,
+            "stats": tables,
+        },
+        {
+            **base,
+            "gameLogs": logs,
+        },
+    )
+
+
+def parse_player_stats_page(html, filename, player):
+    return parse_player_stats_and_gamelogs_page(html, filename, player)[0]
 
 
 def parse_player_gamelogs_page(html, filename, player):
-    table_matches = re.finditer(
-        r"<table[^>]*>(?P<table>.*?)</table>",
-        html,
-        re.IGNORECASE | re.DOTALL,
-    )
-
-    logs = {"title": PLAYER_GAMELOG_TITLE, "headers": [], "rows": []}
-
-    for table_match in table_matches:
-        table_html = table_match.group("table")
-        title_match = re.search(
-            r"<td[^>]*class=tableheader[^>]*>(.*?)</td>",
-            table_html,
-            re.IGNORECASE | re.DOTALL,
-        )
-        if not title_match:
-            continue
-
-        title = strip_tags(title_match.group(1))
-        if title != PLAYER_GAMELOG_TITLE:
-            continue
-
-        logs = {
-            "title": title,
-            **parse_stat_table(table_html[title_match.end():]),
-        }
-        break
-
-    return {
-        "playerId": player.get("playerId", f"player{player_id_from_file(filename)}"),
-        "name": player.get("name", ""),
-        "url": player.get("url", f"../players/{filename}"),
-        "team": player.get("team", ""),
-        "teamLabel": player.get("teamLabel", ""),
-        "pos": player.get("pos", ""),
-        "gameLogs": logs,
-    }
+    return parse_player_stats_and_gamelogs_page(html, filename, player)[1]
 
 
 def parse_standings_sections(html):
@@ -1170,24 +1179,14 @@ def attach_contracts(players, contract_entries, contract_years):
 
 def latest_stat_team(stats_entry):
     rows = stats_entry.get("stats", {}).get("season_averages", {}).get("rows", [])
-    candidates = []
 
     for row in rows:
         team = clean(row.get("team", ""))
-        season = row.get("season", "")
         if not team or normalize_name(team) in {"fa", "career", "draft"}:
             continue
-        try:
-            season_number = int(season)
-        except (TypeError, ValueError):
-            season_number = -1
-        candidates.append((season_number, team))
+        return team
 
-    if not candidates:
-        return ""
-
-    candidates.sort(key=lambda entry: entry[0], reverse=True)
-    return candidates[0][1]
+    return ""
 
 
 def build_stat_team_lookup(players, player_stats):
@@ -1260,6 +1259,7 @@ def build_last_team_lookup(players, player_stats=None, stat_team_lookup=None):
         value = {
             "lastTeamId": team or "",
             "lastTeam": team_label or team or "",
+            "birdYears": player.get("birdYears", 0) or 0,
         }
         if file_key:
             lookup[file_key] = value
@@ -1280,10 +1280,12 @@ def attach_last_team(players, last_team_lookup):
         if entry:
             player["lastTeamId"] = entry.get("lastTeamId", "")
             player["lastTeam"] = entry.get("lastTeam", "")
+            player["birdYears"] = entry.get("birdYears", player.get("birdYears", 0) or 0)
             attached += 1
         else:
             player.setdefault("lastTeamId", "")
             player.setdefault("lastTeam", "")
+            player.setdefault("birdYears", player.get("birdYears", 0) or 0)
 
     return attached
 
@@ -1342,6 +1344,7 @@ def parse_free_agents(html, ratings, last_team_lookup=None):
             "futureRating": rating_data.get("potential", "") or "",
             "lastTeam": last_team.get("lastTeam", "") or "",
             "lastTeamId": last_team.get("lastTeamId", "") or "",
+            "birdYears": last_team.get("birdYears", 0) or 0,
             "greed": rating_data.get("greed", "") or "",
             "playForWinner": rating_data.get("playForWinner", "") or "",
             "loyalty": rating_data.get("loyalty", "") or "",
@@ -1931,9 +1934,10 @@ def main():
 
         player = parse_player_page(html, file, team_lookup, ratings)
         if player:
+            player_stats, player_gamelogs = parse_player_stats_and_gamelogs_page(html, file, player)
             all_players.append(player)
-            all_player_stats.append(parse_player_stats_page(html, file, player))
-            all_player_gamelogs.append(parse_player_gamelogs_page(html, file, player))
+            all_player_stats.append(player_stats)
+            all_player_gamelogs.append(player_gamelogs)
 
     with open(FREE_AGENTS_PATH, "r", encoding="latin-1") as f:
         free_agents_html = f.read()

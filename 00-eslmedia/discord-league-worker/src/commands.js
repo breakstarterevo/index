@@ -107,7 +107,7 @@ export const COMMANDS = [
   },
   {
     name: "resignings",
-    description: "Show FA re-signing rights by last recorded team",
+    description: "Show former players currently in FA by last recorded team",
     type: 1,
     ...INSTALL_CONTEXTS,
     options: [

@@ -403,8 +403,22 @@
     }) || null;
   }
 
-  function isBirdEligible(player) {
+  function isReSigningPlayer(player) {
     return !!player && !!state.selectedTeam && clean(player.lastTeamId) === state.selectedTeam;
+  }
+
+  function birdYears(player) {
+    return numberValue(player && player.birdYears);
+  }
+
+  function isBirdEligible(player) {
+    return isReSigningPlayer(player) && birdYears(player) >= 3;
+  }
+
+  function birdYearsBracket(player) {
+    var years = birdYears(player);
+    if (years < 3) return "";
+    return " (" + years + " Bird years)";
   }
 
   function playerIdFromUrl(url) {
@@ -561,7 +575,7 @@
         warnings.push({ type: "bad", title: "Salary format", text: bid.name + " has an unreadable salary. Use values like 15000000, $15M, 15m, or 15mil." });
       }
       if (bid.bird && player && !isBirdEligible(player)) {
-        warnings.push({ type: "warn", title: "Bird check", text: bid.name + " is marked as Bird Rights but is not flagged as eligible for the selected team." });
+        warnings.push({ type: "warn", title: "Bird check", text: bid.name + " is marked as Bird Rights but does not show 3+ Bird years for the selected team's re-signing rights." });
       }
       if (years > maxYears) {
         warnings.push({ type: "bad", title: "Contract length", text: bid.name + " exceeds the " + maxYears + "-year maximum" + (bid.bird ? " for Bird Rights." : " without Bird Rights.") });
@@ -644,7 +658,7 @@
       if (personality === "loyalty" && numberValue(player.loyalty) < 70) return false;
       if (personality === "greed" && numberValue(player.greed) < 70) return false;
       if (personality === "happy" && numberValue(player.happiness) < 70) return false;
-      if (birdFilter === "eligible" && !isBirdEligible(player)) return false;
+      if (birdFilter === "eligible" && !isReSigningPlayer(player)) return false;
       if (birdFilter === "known" && !clean(player.lastTeam)) return false;
       if (birdFilter === "unknown" && clean(player.lastTeam)) return false;
       return true;
@@ -857,13 +871,14 @@
     body.innerHTML = players.map(function (player) {
       var file = playerKey(player);
       var selected = state.selectedPlayerFile === file ? " is-selected" : "";
-      var bird = isBirdEligible(player) ? ' <span class="fa-chip"><strong>Bird</strong></span>' : "";
+      var reSigning = isReSigningPlayer(player) ? ' <span class="fa-chip"><strong>Re-sign</strong></span>' : "";
+      var bird = birdYearsBracket(player);
       var ratingCells = state.showRatings ? TABLE_RATINGS.map(function (rating) {
         return '<td class="fa-col-skill">' + esc(player[rating[1]] == null || player[rating[1]] === "" ? "-" : player[rating[1]]) + "</td>";
       }).join("") : "";
       return [
         '<tr class="' + selected + '" data-player-file="' + esc(file) + '">',
-        '<td><a class="fa-player-link" href="' + esc(normalizePlayerHref(player.url)) + '">' + esc(player.name) + "</a>" + bird + "</td>",
+        '<td><a class="fa-player-link" href="' + esc(normalizePlayerHref(player.url)) + '">' + esc(player.name) + "</a>" + esc(bird) + reSigning + "</td>",
         '<td class="fa-col-pos">' + esc(player.pos || "-") + "</td>",
         '<td class="fa-col-age">' + esc(player.age || "-") + "</td>",
         '<td class="fa-col-rating"><span class="fa-rating ' + esc(ratingTierClass(player.currentRating)) + '">' + esc(player.currentRating || "-") + "</span></td>",
@@ -971,7 +986,8 @@
     byId("fa-drawer-meta").textContent = [player.pos, player.age ? "Age " + player.age : "", player.ht].filter(Boolean).join(" | ");
     cards = [
       ["OVR/POT", (player.currentRating || "-") + " / " + (player.futureRating || "-")],
-      ["Last Team", player.lastTeam || "Unknown"],
+      ["Re-signing Team", player.lastTeam || "Unknown"],
+      ["Bird Years", birdYears(player) || "-"],
       ["Winner", player.playForWinner || "-"],
       ["Loyalty", player.loyalty || "-"],
       ["Greed", player.greed || "-"],

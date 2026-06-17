@@ -517,8 +517,8 @@ def _build_intake_map(rows, known_team_names=None):
     return intake_by_team
 
 
-def build_youth_intake_payload(xlsx_path: str, rating_lookup=None):
-    sheets = _xlsx_sheet_rows(xlsx_path)
+def build_youth_intake_payload(xlsx_path: str, rating_lookup=None, sheets=None):
+    sheets = sheets if sheets is not None else _xlsx_sheet_rows(xlsx_path)
     intake_sheet_name, intake_rows = _find_sheet(sheets, "INTAKE list")
     focus_sheet_name, focus_rows = _find_sheet(sheets, "Position focus")
     if not focus_sheet_name:
@@ -589,6 +589,7 @@ def build_youth_intake_payload(xlsx_path: str, rating_lookup=None):
 
 
 def main():
+    dry_run = "--dry-run" in sys.argv[1:]
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
     if not os.path.exists(XLSX_PATH):
@@ -596,15 +597,17 @@ def main():
         return 1
 
     ratings = _load_player_ratings(PLAYERS_PATH)
-    payload = build_youth_intake_payload(XLSX_PATH, ratings)
     sheets = _xlsx_sheet_rows(XLSX_PATH)
+    payload = build_youth_intake_payload(XLSX_PATH, ratings, sheets=sheets)
     players_payload = _build_combined_current_intake_players(sheets)
 
-    atomic_dump_json(OUTPUT_PATH, payload, indent=2, ensure_ascii=False)
-    atomic_dump_json(OUTPUT_PLAYERS_PATH, players_payload, indent=4, ensure_ascii=False)
+    if not dry_run:
+        atomic_dump_json(OUTPUT_PATH, payload, indent=2, ensure_ascii=False)
+        atomic_dump_json(OUTPUT_PLAYERS_PATH, players_payload, indent=4, ensure_ascii=False)
 
-    print(f"Wrote {OUTPUT_PATH} ({payload.get('counts', {}).get('teams', 0)} teams)")
-    print(f"Wrote {OUTPUT_PLAYERS_PATH} ({len(players_payload)} players)")
+    prefix = "[dry-run] Would write" if dry_run else "Wrote"
+    print(f"{prefix} {OUTPUT_PATH} ({payload.get('counts', {}).get('teams', 0)} teams)")
+    print(f"{prefix} {OUTPUT_PLAYERS_PATH} ({len(players_payload)} players)")
     return 0
 
 

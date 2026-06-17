@@ -5,12 +5,14 @@ Master build script - run this one file to update everything.
 Usage:
   python 00-build/scripts/build.py           # full build
   python 00-build/scripts/build.py --dry-run # preview only, no files written
+  python 00-build/scripts/build.py --verbose # include verbose child-script output where supported
 """
 
 import subprocess, sys, os, time
 
 BUILD_DIR = os.path.dirname(os.path.abspath(__file__))
 DRY_RUN = "--dry-run" in sys.argv
+VERBOSE = "--verbose" in sys.argv
 
 SCRIPTS = [
     (os.path.join(BUILD_DIR, "build_players_json.py"), "Building database JSON files"),
@@ -37,6 +39,8 @@ def run(path, label, index, total):
     args = [sys.executable, path]
     if DRY_RUN:
         args.append("--dry-run")
+    if VERBOSE and os.path.basename(path) == "inject_css_js.py":
+        args.append("--verbose")
     result = subprocess.run(args, cwd=BUILD_DIR)
     elapsed = time.perf_counter() - started
     if result.returncode != 0:

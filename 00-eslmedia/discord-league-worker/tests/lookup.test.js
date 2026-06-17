@@ -85,17 +85,23 @@ assert.match(simRecapResponse.data.embeds[0].description, /Record:/);
 
 const resigningsResponse = handleResignings("", fullPlayers, fullPlayerStats, teams);
 assert.equal(resigningsResponse.type, 4);
-assert.equal(resigningsResponse.data.embeds[0].title, "FA Re-signing Rights");
-assert.match(resigningsResponse.data.embeds[0].description, /FA players grouped/);
+assert.equal(resigningsResponse.data.embeds[0].title, "Former Players in FA");
+assert.match(resigningsResponse.data.embeds[0].description, /FA players grouped by their top previous-season stats team/);
 
 const teamResigningsResponse = handleResignings("Valencia", fullPlayers, fullPlayerStats, teams);
 assert.equal(teamResigningsResponse.type, 4);
-assert.match(teamResigningsResponse.data.embeds[0].title, /Re-signing Rights/);
+assert.match(teamResigningsResponse.data.embeds[0].title, /Former Players in FA/);
 
 const psgResigningsResponse = handleResignings("Paris Saint-Germain", fullPlayers, fullPlayerStats, teams);
-assert.match(psgResigningsResponse.data.embeds[0].description, /^8 FA players/);
+assert.match(psgResigningsResponse.data.embeds[0].description, /^\d+ former players? currently in FA/);
 assert.match(psgResigningsResponse.data.embeds[0].fields.map((field) => field.value).join("\n"), /Dave Corzine/);
 assert.ok(psgResigningsResponse.data.embeds[0].fields.every((field) => field.value.length <= 1024));
+
+const spursResigningsResponse = handleResignings("Tottenham Hotspur", fullPlayers, fullPlayerStats, teams);
+assert.match(spursResigningsResponse.data.embeds[0].fields.map((field) => field.value).join("\n"), /Dudley Bradley/);
+
+const flFartResigningsResponse = handleResignings("FL Fart", fullPlayers, fullPlayerStats, teams);
+assert.doesNotMatch(flFartResigningsResponse.data.embeds[0].fields.map((field) => field.value).join("\n"), /Dudley Bradley/);
 
 const resigningSortPlayers = [
   { playerId: "player9001", name: "Lower Overall Higher Potential", team: "FA", pos: "PG", age: 22, overall: 72, potential: 105 },

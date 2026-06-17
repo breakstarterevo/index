@@ -5,6 +5,7 @@ Walk every .htm/.html file in a target tree and inject shared league CSS/JS.
 Usage:
     python inject_css_js.py
     python inject_css_js.py --dry-run
+    python inject_css_js.py --verbose
     python inject_css_js.py --target-root 00-SuperCup
 """
 
@@ -37,6 +38,7 @@ SKIP_DIRS = {"00-build", "00-assets", "00-eslmedia"}
 
 def parse_args(argv):
     dry_run = "--dry-run" in argv
+    verbose = "--verbose" in argv
     target_root = PROJECT_ROOT
 
     if "--target-root" in argv:
@@ -48,6 +50,7 @@ def parse_args(argv):
 
     return {
         "dry_run": dry_run,
+        "verbose": verbose,
         "target_root": os.path.normpath(os.path.abspath(target_root)),
     }
 
@@ -163,6 +166,7 @@ def should_skip_dir(target_root, dirpath):
 def main():
     options = parse_args(sys.argv[1:])
     dry_run = options["dry_run"]
+    verbose = options["verbose"]
     target_root = options["target_root"]
 
     if not os.path.isdir(target_root):
@@ -184,7 +188,8 @@ def main():
             if result == "updated":
                 files_updated += 1
             else:
-                print(f"SKIPPED (all present): {filepath}")
+                if verbose:
+                    print(f"SKIPPED (all present): {filepath}")
                 files_skipped += 1
 
     prefix = "[DRY RUN] " if dry_run else ""

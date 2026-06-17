@@ -58,7 +58,7 @@ export function handleHelp() {
       field("Players and Youth", [
         "`/player name:Isiah Thomas` - player snapshot",
         "`/youth team:Valencia` - youth rights/intake players",
-        "`/resignings team:Valencia` - FA re-signing rights by last stats team",
+        "`/resignings team:Valencia` - former players currently in FA",
       ].join("\n"), false),
     ],
   });
@@ -322,11 +322,11 @@ export function handleResignings(query, players, playerStats, teams = [], env = 
       : [field("Players", "No matching FA players found.", false)];
 
     return embedResponse({
-      title: `${match.item.name} Re-signing Rights`,
+      title: `${match.item.name} Former Players in FA`,
       url: match.item.url || (match.item.id ? siteUrl(env, `00-assets/html/unified-roster.htm?id=${match.item.id}`) : undefined),
-      description: `${teamPlayers.length} FA player${teamPlayers.length === 1 ? "" : "s"} recorded stats for this team in the previous season.`,
+      description: `${teamPlayers.length} former player${teamPlayers.length === 1 ? "" : "s"} currently in FA. Players are assigned by their top previous-season stats row.`,
       fields,
-      footer: "Only FAs whose latest player_stats season matches the previous season are included",
+      footer: "Only FAs whose top previous-season player_stats row matches this team are included",
     });
   }
 
@@ -340,8 +340,8 @@ export function handleResignings(query, players, playerStats, teams = [], env = 
   }
 
   return embedResponse({
-    title: "FA Re-signing Rights",
-    description: `${candidates.length} FA players grouped by the team they recorded stats for in the previous season.`,
+    title: "Former Players in FA",
+    description: `${candidates.length} FA players grouped by their top previous-season stats team.`,
     fields: [field("Teams", lines.join("\n"), false)],
     footer: "Use /resignings team:<team> for a specific list",
   });
@@ -803,25 +803,19 @@ function buildResigningCandidates(players, playerStats) {
   const previousSeason = latestLeagueSeason(playerStats);
   return (players || [])
     .filter(isFreeAgent)
-    .flatMap((player) => {
+    .map((player) => {
       const stats = statsById.get(player.playerId || player.id);
-      const seenTeams = new Set();
-      return seasonAverageRows(stats)
-        .filter((row) => Number(row.season) === previousSeason && row.team)
-        .filter((row) => {
-          const key = normalize(row.team);
-          if (seenTeams.has(key)) {
-            return false;
-          }
-          seenTeams.add(key);
-          return true;
-        })
-        .map((row) => ({
-          player,
-          statTeam: String(row.team),
-          lastTeam: player.lastTeam || player.lastTeamName || player.lastTeamLabel || "",
-          season: row.season,
-        }));
+      const row = seasonAverageRows(stats)
+        .find((entry) => Number(entry.season) === previousSeason && entry.team);
+      if (!row) {
+        return null;
+      }
+      return {
+        player,
+        statTeam: String(row.team),
+        lastTeam: player.lastTeam || player.lastTeamName || player.lastTeamLabel || "",
+        season: row.season,
+      };
     })
     .filter(Boolean);
 }

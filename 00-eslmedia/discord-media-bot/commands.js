@@ -63,7 +63,7 @@ export const leagueCommands = [
     ),
   new SlashCommandBuilder()
     .setName("resignings")
-    .setDescription("Show FA re-signing rights by last recorded team")
+    .setDescription("Show former players currently in FA by last recorded team")
     .addStringOption((option) =>
       option
         .setName("team")
