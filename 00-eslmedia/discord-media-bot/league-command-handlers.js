@@ -431,18 +431,14 @@ async function handleResignings(interaction, dataClient) {
     return;
   }
 
-  const grouped = groupResigningCandidates(candidates, context.teams);
-  const lines = grouped.map((entry) => {
-    const names = entry.players.slice(0, 3).map((candidate) => candidate.player.name).join(", ");
-    return `**${entry.teamName}**: ${entry.players.length}${names ? ` - ${names}` : ""}`;
-  });
-  const overviewGroups = fitFieldLineGroups(lines);
+  const grouped = groupResigningCandidates(candidates, context.teams, context.capReport);
+  const overviewFields = buildResigningOverviewFields(grouped);
 
   const embed = new EmbedBuilder()
     .setColor(COLOR)
     .setTitle("Former Players in FA")
     .setDescription(`${candidates.length} FA players grouped by their top previous-season stats team.`)
-    .addFields(overviewGroups.map((group, index) => field(index ? `Teams ${index + 1}` : "Teams", group.join("\n"), false)))
+    .addFields(overviewFields)
     .setFooter({ text: "Use /resignings team:<team> for a specific list" });
 
   await interaction.editReply({ embeds: [embed] });
@@ -1064,22 +1060,78 @@ function sameResigningTeam(candidate, team) {
     || normalize(candidate.statTeam) === normalize(team.code || team.abbr || team.id);
 }
 
-function groupResigningCandidates(candidates, teams = []) {
+function groupResigningCandidates(candidates, teams = [], capReport = null) {
   const byTeam = new Map();
+  const sectionByTeam = buildCapSectionMap(capReport);
   for (const team of teams || []) {
     if (team.name) {
-      byTeam.set(normalize(team.name), { teamName: team.name, players: [] });
+      byTeam.set(normalize(team.name), { teamName: team.name, section: sectionByTeam.get(normalize(team.name)) || "Other", players: [] });
     }
   }
   for (const candidate of candidates) {
     const key = normalize(candidate.teamName);
-    const entry = byTeam.get(key) || { teamName: candidate.teamName, players: [] };
+    const entry = byTeam.get(key) || { teamName: candidate.teamName, section: sectionByTeam.get(key) || "Other", players: [] };
     entry.players.push(candidate);
     byTeam.set(key, entry);
   }
   return Array.from(byTeam.values())
     .map((entry) => ({ ...entry, players: entry.players.sort(compareResigningPlayers) }))
     .sort((a, b) => b.players.length - a.players.length || a.teamName.localeCompare(b.teamName));
+}
+
+function buildResigningOverviewFields(grouped) {
+  const sections = ["CLB", "ELB", "ECL"];
+  const fields = [];
+  for (const section of sections) {
+    const lines = grouped
+      .filter((entry) => entry.section === section)
+      .map(formatResigningOverviewLine);
+    if (!lines.length) {
+      continue;
+    }
+    fields.push(...fitFieldLineGroups(lines).map((group, index) =>
+      field(index ? `${section} ${index + 1}` : section, group.join("\n"), false)
+    ));
+  }
+
+  const otherLines = grouped
+    .filter((entry) => !sections.includes(entry.section))
+    .map(formatResigningOverviewLine);
+  if (otherLines.length) {
+    fields.push(...fitFieldLineGroups(otherLines).map((group, index) =>
+      field(index ? `Other ${index + 1}` : "Other", group.join("\n"), false)
+    ));
+  }
+  return fields;
+}
+
+function formatResigningOverviewLine(entry) {
+  const names = entry.players.slice(0, 3).map((candidate) => candidate.player.name).join(", ");
+  return `**${entry.teamName}**: ${entry.players.length}${names ? ` - ${names}` : ""}`;
+}
+
+function buildCapSectionMap(capReport) {
+  const map = new Map();
+  if (!Array.isArray(capReport?.sections)) {
+    return map;
+  }
+  for (const section of capReport.sections) {
+    const label = sectionLabel(section.title || section.slug);
+    for (const entry of section.entries || []) {
+      if (entry.team) {
+        map.set(normalize(entry.team), label);
+      }
+    }
+  }
+  return map;
+}
+
+function sectionLabel(value) {
+  const text = String(value || "").toUpperCase();
+  if (text.includes("CHAMPIONS") || text.includes("CLB")) return "CLB";
+  if (text.includes("EUROPA") || text.includes("ELB")) return "ELB";
+  if (text.includes("CONFERENCE") || text.includes("ECL")) return "ECL";
+  return "Other";
 }
 
 function compareResigningPlayers(a, b) {
