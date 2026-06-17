@@ -915,7 +915,7 @@ function groupResigningCandidates(candidates, teams = []) {
   }
   return Array.from(byTeam.values())
     .map((entry) => ({ ...entry, players: entry.players.sort(compareResigningPlayers) }))
-    .sort((a, b) => a.teamName.localeCompare(b.teamName));
+    .sort((a, b) => b.players.length - a.players.length || a.teamName.localeCompare(b.teamName));
 }
 
 function compareResigningPlayers(a, b) {

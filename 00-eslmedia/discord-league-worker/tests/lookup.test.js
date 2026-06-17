@@ -90,6 +90,8 @@ assert.match(resigningsResponse.data.embeds[0].description, /FA players grouped 
 const resigningsOverviewLines = resigningsResponse.data.embeds[0].fields.flatMap((field) => field.value.split("\n"));
 assert.equal(resigningsOverviewLines.length, 24);
 assert.doesNotMatch(resigningsResponse.data.embeds[0].fields.map((field) => field.value).join("\n"), /\+\d+ more teams/);
+const resigningsOverviewCounts = resigningsOverviewLines.map((line) => Number(line.match(/\*\*: (\d+)/)?.[1] || 0));
+assert.deepEqual(resigningsOverviewCounts, [...resigningsOverviewCounts].sort((a, b) => b - a));
 
 const teamResigningsResponse = handleResignings("Valencia", fullPlayers, fullPlayerStats, teams);
 assert.equal(teamResigningsResponse.type, 4);
