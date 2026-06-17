@@ -128,16 +128,18 @@ export class LeagueDataClient {
   }
 
   async getResigningsContext() {
-    const [players, playerStats, teams] = await Promise.all([
+    const [players, playerStats, teams, capReport] = await Promise.all([
       this.getFeed("players"),
       this.getFeed("player_stats"),
-      this.getFeed("teams")
+      this.getFeed("teams"),
+      this.getFeed("capreport")
     ]);
 
     return {
       players: Array.isArray(players) ? players : [],
       playerStats: Array.isArray(playerStats?.players) ? playerStats.players : [],
-      teams: Array.isArray(teams) ? teams : []
+      teams: Array.isArray(teams) ? teams : [],
+      capReport
     };
   }
 }

@@ -410,11 +410,16 @@ async function handleResignings(interaction, dataClient) {
     const fields = lineGroups.length
       ? lineGroups.map((lines, index) => field(index ? `Players ${index + 1}` : "Players", lines.join("\n"), false))
       : [field("Players", "No matching FA players found.", false)];
+    const capLine = formatCapLine(findCapEntry(context.capReport, match.item));
+    const descriptionLines = [
+      capLine,
+      `${teamPlayers.length} former player${teamPlayers.length === 1 ? "" : "s"} currently in FA. Players are assigned by their top previous-season stats row.`
+    ].filter(Boolean);
 
     const embed = new EmbedBuilder()
       .setColor(COLOR)
       .setTitle(`${match.item.name} Former Players in FA`)
-      .setDescription(`${teamPlayers.length} former player${teamPlayers.length === 1 ? "" : "s"} currently in FA. Players are assigned by their top previous-season stats row.`)
+      .setDescription(descriptionLines.join("\n"))
       .addFields(fields)
       .setFooter({ text: "Only FAs whose top previous-season player_stats row matches this team are included" });
 
@@ -590,6 +595,16 @@ function findCapEntry(capReport, team) {
   return capReport.sections
     .flatMap((section) => section.entries || [])
     .find((entry) => normalize(entry.team) === normalize(team.name) || entry.rosterFile === team.file);
+}
+
+function formatCapLine(cap) {
+  if (!cap?.capRoomText && !cap?.salaryText) {
+    return "";
+  }
+  return [
+    cap.capRoomText ? `Cap room ${cap.capRoomText}` : "",
+    cap.salaryText ? `Payroll ${cap.salaryText}` : "",
+  ].filter(Boolean).join(" | ");
 }
 
 function findInjuries(injuries, team) {

@@ -320,11 +320,16 @@ export function handleResignings(query, players, playerStats, teams = [], env = 
     const fields = lineGroups.length
       ? lineGroups.map((lines, index) => field(index ? `Players ${index + 1}` : "Players", lines.join("\n"), false))
       : [field("Players", "No matching FA players found.", false)];
+    const capLine = formatTeamCapLine(match.item);
+    const descriptionLines = [
+      capLine,
+      `${teamPlayers.length} former player${teamPlayers.length === 1 ? "" : "s"} currently in FA. Players are assigned by their top previous-season stats row.`,
+    ].filter(Boolean);
 
     return embedResponse({
       title: `${match.item.name} Former Players in FA`,
       url: match.item.url || (match.item.id ? siteUrl(env, `00-assets/html/unified-roster.htm?id=${match.item.id}`) : undefined),
-      description: `${teamPlayers.length} former player${teamPlayers.length === 1 ? "" : "s"} currently in FA. Players are assigned by their top previous-season stats row.`,
+      description: descriptionLines.join("\n"),
       fields,
       footer: "Only FAs whose top previous-season player_stats row matches this team are included",
     });
@@ -880,6 +885,16 @@ function buildResigningTeamOptions(candidates, teams) {
     }
   }
   return Array.from(byName.values());
+}
+
+function formatTeamCapLine(team) {
+  if (!team?.cap?.room && !team?.cap?.salary) {
+    return "";
+  }
+  return [
+    team.cap.room ? `Cap room ${team.cap.room}` : "",
+    team.cap.salary ? `Payroll ${team.cap.salary}` : "",
+  ].filter(Boolean).join(" | ");
 }
 
 function sameResigningTeam(candidate, team) {

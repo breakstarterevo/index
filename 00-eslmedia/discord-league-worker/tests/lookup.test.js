@@ -93,7 +93,8 @@ assert.equal(teamResigningsResponse.type, 4);
 assert.match(teamResigningsResponse.data.embeds[0].title, /Former Players in FA/);
 
 const psgResigningsResponse = handleResignings("Paris Saint-Germain", fullPlayers, fullPlayerStats, teams);
-assert.match(psgResigningsResponse.data.embeds[0].description, /^\d+ former players? currently in FA/);
+assert.match(psgResigningsResponse.data.embeds[0].description, /Cap room/);
+assert.match(psgResigningsResponse.data.embeds[0].description, /\d+ former players? currently in FA/);
 assert.match(psgResigningsResponse.data.embeds[0].fields.map((field) => field.value).join("\n"), /Dave Corzine/);
 assert.ok(psgResigningsResponse.data.embeds[0].fields.every((field) => field.value.length <= 1024));
 
