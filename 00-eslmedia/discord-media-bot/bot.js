@@ -57,6 +57,11 @@ async function main() {
   });
 
   client.on(Events.InteractionCreate, async (interaction) => {
+    if (interaction.isAutocomplete()) {
+      await handleAutocomplete(interaction, dataClient);
+      return;
+    }
+
     if (!interaction.isChatInputCommand()) {
       return;
     }
@@ -69,6 +74,80 @@ async function main() {
   });
 
   await client.login(BOT_TOKEN);
+}
+
+async function handleAutocomplete(interaction, dataClient) {
+  try {
+    if (interaction.commandName === "player") {
+      const { players } = await dataClient.getPlayerContext();
+      await interaction.respond(findAutocompleteChoices(interaction.options.getFocused(), players, (player) => player.name));
+      return;
+    }
+
+    if (["team", "youth", "schedule", "simrecap", "resignings"].includes(interaction.commandName)) {
+      const { teams } = await dataClient.getTeamIndexContext();
+      await interaction.respond(findAutocompleteChoices(interaction.options.getFocused(), teams, (team) => team.name));
+      return;
+    }
+  } catch (error) {
+    console.error(`/${interaction.commandName} autocomplete failed:`, error);
+  }
+
+  await interaction.respond([]);
+}
+
+function findAutocompleteChoices(query, items, labelFor, valueFor = labelFor) {
+  return (items || [])
+    .map((item) => ({
+      item,
+      name: labelFor(item),
+      score: scoreMatch(query, labelFor(item))
+    }))
+    .filter((entry) => entry.score > 0 && entry.name)
+    .sort((a, b) => b.score - a.score || entrySort(a.name, b.name))
+    .slice(0, 25)
+    .map((entry) => ({
+      name: String(entry.name).slice(0, 100),
+      value: String(valueFor(entry.item)).slice(0, 100)
+    }));
+}
+
+function scoreMatch(query, candidate) {
+  const q = normalize(query);
+  const c = normalize(candidate);
+  if (!q) return 1;
+  if (!c) return 0;
+  if (c === q) return 100;
+  if (c.startsWith(q)) return 90 - Math.min(20, c.length - q.length);
+  if (c.includes(q)) return 70 - Math.min(30, c.indexOf(q));
+
+  const tokens = c.split(/\s+/);
+  if (tokens.some((token) => token.startsWith(q))) return 65;
+  return fuzzyScore(q, c);
+}
+
+function fuzzyScore(query, candidate) {
+  let queryIndex = 0;
+  let score = 0;
+  for (let index = 0; index < candidate.length && queryIndex < query.length; index += 1) {
+    if (candidate[index] === query[queryIndex]) {
+      score += 3;
+      queryIndex += 1;
+    }
+  }
+  return queryIndex === query.length ? Math.min(50, score) : 0;
+}
+
+function normalize(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
+}
+
+function entrySort(a, b) {
+  return String(a).localeCompare(String(b));
 }
 
 main().catch((error) => {

@@ -12,6 +12,7 @@ export const leagueCommands = [
         .setName("name")
         .setDescription("Player name, for example Larry Bird")
         .setRequired(true)
+        .setAutocomplete(true)
     ),
   new SlashCommandBuilder()
     .setName("team")
@@ -21,6 +22,7 @@ export const leagueCommands = [
         .setName("name")
         .setDescription("Team name, for example AFC Richmond")
         .setRequired(true)
+        .setAutocomplete(true)
     ),
   new SlashCommandBuilder()
     .setName("league")
@@ -33,6 +35,7 @@ export const leagueCommands = [
         .setName("team")
         .setDescription("Team name, for example Valencia")
         .setRequired(true)
+        .setAutocomplete(true)
     ),
   new SlashCommandBuilder()
     .setName("standings")
@@ -51,6 +54,7 @@ export const leagueCommands = [
         .setName("team")
         .setDescription("Team name, for example Valencia")
         .setRequired(true)
+        .setAutocomplete(true)
     ),
   new SlashCommandBuilder()
     .setName("simrecap")
@@ -60,6 +64,7 @@ export const leagueCommands = [
         .setName("team")
         .setDescription("Team name, for example Benfica")
         .setRequired(true)
+        .setAutocomplete(true)
     ),
   new SlashCommandBuilder()
     .setName("resignings")
@@ -69,6 +74,7 @@ export const leagueCommands = [
         .setName("team")
         .setDescription("Optional team name, for example Valencia")
         .setRequired(false)
+        .setAutocomplete(true)
     )
 ].map((command) => command.toJSON());
 
