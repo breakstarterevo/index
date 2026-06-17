@@ -431,20 +431,18 @@ async function handleResignings(interaction, dataClient) {
     return;
   }
 
-  const grouped = groupResigningCandidates(candidates);
-  const lines = grouped.slice(0, 24).map((entry) => {
+  const grouped = groupResigningCandidates(candidates, context.teams);
+  const lines = grouped.map((entry) => {
     const names = entry.players.slice(0, 3).map((candidate) => candidate.player.name).join(", ");
     return `**${entry.teamName}**: ${entry.players.length}${names ? ` - ${names}` : ""}`;
   });
-  if (grouped.length > 24) {
-    lines.push(`+${grouped.length - 24} more teams`);
-  }
+  const overviewGroups = fitFieldLineGroups(lines);
 
   const embed = new EmbedBuilder()
     .setColor(COLOR)
     .setTitle("Former Players in FA")
     .setDescription(`${candidates.length} FA players grouped by their top previous-season stats team.`)
-    .addFields([field("Teams", lines.join("\n"), false)])
+    .addFields(overviewGroups.map((group, index) => field(index ? `Teams ${index + 1}` : "Teams", group.join("\n"), false)))
     .setFooter({ text: "Use /resignings team:<team> for a specific list" });
 
   await interaction.editReply({ embeds: [embed] });
@@ -1066,8 +1064,13 @@ function sameResigningTeam(candidate, team) {
     || normalize(candidate.statTeam) === normalize(team.code || team.abbr || team.id);
 }
 
-function groupResigningCandidates(candidates) {
+function groupResigningCandidates(candidates, teams = []) {
   const byTeam = new Map();
+  for (const team of teams || []) {
+    if (team.name) {
+      byTeam.set(normalize(team.name), { teamName: team.name, players: [] });
+    }
+  }
   for (const candidate of candidates) {
     const key = normalize(candidate.teamName);
     const entry = byTeam.get(key) || { teamName: candidate.teamName, players: [] };
@@ -1076,7 +1079,7 @@ function groupResigningCandidates(candidates) {
   }
   return Array.from(byTeam.values())
     .map((entry) => ({ ...entry, players: entry.players.sort(compareResigningPlayers) }))
-    .sort((a, b) => b.players.length - a.players.length || a.teamName.localeCompare(b.teamName));
+    .sort((a, b) => a.teamName.localeCompare(b.teamName));
 }
 
 function compareResigningPlayers(a, b) {

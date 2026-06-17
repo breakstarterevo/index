@@ -87,6 +87,9 @@ const resigningsResponse = handleResignings("", fullPlayers, fullPlayerStats, te
 assert.equal(resigningsResponse.type, 4);
 assert.equal(resigningsResponse.data.embeds[0].title, "Former Players in FA");
 assert.match(resigningsResponse.data.embeds[0].description, /FA players grouped by their top previous-season stats team/);
+const resigningsOverviewLines = resigningsResponse.data.embeds[0].fields.flatMap((field) => field.value.split("\n"));
+assert.equal(resigningsOverviewLines.length, 24);
+assert.doesNotMatch(resigningsResponse.data.embeds[0].fields.map((field) => field.value).join("\n"), /\+\d+ more teams/);
 
 const teamResigningsResponse = handleResignings("Valencia", fullPlayers, fullPlayerStats, teams);
 assert.equal(teamResigningsResponse.type, 4);
