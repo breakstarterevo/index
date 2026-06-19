@@ -2176,17 +2176,17 @@
         "playerId": "player734",
         "name": "Adrian Dantley",
         "url": "../players/player734.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster13",
+        "teamLabel": "Benfica",
         "pos": "SF",
         "age": "25",
         "ht": "6-5",
         "wt": "212",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 15000000.0,
+        "currentSalaryText": "$15,000,000",
         "awards": [
             {
                 "season": "Total",
@@ -2338,6 +2338,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Atletico Madrid with pick #3 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with Benfica for $15,000,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "100",
@@ -2361,9 +2366,9 @@
         "greed": "44",
         "playForWinner": "10",
         "loyalty": "78",
-        "happiness": "50",
-        "lastTeamId": "roster11",
-        "lastTeam": "Atletico Madrid",
+        "happiness": "65",
+        "lastTeamId": "roster13",
+        "lastTeam": "Benfica",
         "potentials": {
             "Ins": "A",
             "Jps": "C",
@@ -2383,8 +2388,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 15000000.0,
+                "salaryText": "$15,000,000"
             },
             {
                 "year": "1984",
@@ -3867,8 +3872,8 @@
         "playerId": "player353",
         "name": "Alan Henderson",
         "url": "../players/player353.htm",
-        "team": "roster17",
-        "teamLabel": "Chelsea",
+        "team": "FA",
+        "teamLabel": "FA",
         "pos": "PF",
         "age": "20",
         "ht": "6-9",
@@ -3876,8 +3881,8 @@
         "experience": "Rookie",
         "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 760000.0,
-        "currentSalaryText": "$760,000",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -3886,6 +3891,11 @@
                 "date": "6/29/1983",
                 "action": "Drafted by Chelsea with pick #7 of round 2.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/20/1983",
+                "action": "Released by Chelsea",
+                "rowClass": "row2"
             }
         ],
         "Ins": "32",
@@ -3910,8 +3920,8 @@
         "playForWinner": "23",
         "loyalty": "97",
         "happiness": "65",
-        "lastTeamId": "roster17",
-        "lastTeam": "Chelsea",
+        "lastTeamId": "",
+        "lastTeam": "",
         "potentials": {
             "Ins": "C",
             "Jps": "D",
@@ -3931,13 +3941,13 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 760000.0,
-                "salaryText": "$760,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1984",
-                "salary": 1110000.0,
-                "salaryText": "$1,110,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1985",
@@ -6437,17 +6447,17 @@
         "playerId": "player892",
         "name": "Alvan Adams",
         "url": "../players/player892.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster17",
+        "teamLabel": "Chelsea",
         "pos": "PG",
         "age": "27",
         "ht": "6-9",
         "wt": "221",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 7300000.0,
+        "currentSalaryText": "$7,300,000",
         "awards": [
             {
                 "season": "Total",
@@ -6583,6 +6593,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Chelsea with pick #7 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with Chelsea for $30,733,000 over 4 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "65",
@@ -6606,7 +6621,7 @@
         "greed": "2",
         "playForWinner": "92",
         "loyalty": "88",
-        "happiness": "67",
+        "happiness": "65",
         "lastTeamId": "roster17",
         "lastTeam": "Chelsea",
         "potentials": {
@@ -6628,23 +6643,23 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7300000.0,
+                "salaryText": "$7,300,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7555500.0,
+                "salaryText": "$7,555,500"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7811000.0,
+                "salaryText": "$7,811,000"
             },
             {
                 "year": "1986",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 8066500.0,
+                "salaryText": "$8,066,500"
             },
             {
                 "year": "1987",
@@ -7753,8 +7768,8 @@
         "playerId": "player709",
         "name": "Andrew Toney",
         "url": "../players/player709.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster8",
+        "teamLabel": "Real Madrid",
         "pos": "PG",
         "age": "22",
         "ht": "6-3",
@@ -7762,8 +7777,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 18000000.0,
+        "currentSalaryText": "$18,000,000",
         "awards": [
             {
                 "season": "Total",
@@ -7915,6 +7930,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Real Madrid with pick #6 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Re-signed with Real Madrid for $80,100,000 over 4 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "78",
@@ -7938,7 +7958,7 @@
         "greed": "53",
         "playForWinner": "42",
         "loyalty": "42",
-        "happiness": "58",
+        "happiness": "65",
         "lastTeamId": "roster8",
         "lastTeam": "Real Madrid",
         "potentials": {
@@ -7960,23 +7980,23 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 18000000.0,
+                "salaryText": "$18,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 19350000.0,
+                "salaryText": "$19,350,000"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 20700000.0,
+                "salaryText": "$20,700,000"
             },
             {
                 "year": "1986",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 22050000.0,
+                "salaryText": "$22,050,000"
             },
             {
                 "year": "1987",
@@ -8109,7 +8129,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "22",
+        "age": "23",
         "ht": "6-9",
         "wt": "223",
         "experience": "Rookie",
@@ -9948,17 +9968,17 @@
         "playerId": "player707",
         "name": "Artis Gilmore",
         "url": "../players/player707.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster13",
+        "teamLabel": "Benfica",
         "pos": "C",
         "age": "31",
         "ht": "7-2",
         "wt": "240",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 1290000.0,
+        "currentSalaryText": "$1,290,000",
         "awards": [
             {
                 "season": "Total",
@@ -10098,6 +10118,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Crystal Palace with pick #4 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/30/1983",
+                "action": "Signed with Benfica for $1,290,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "65",
@@ -10121,9 +10146,9 @@
         "greed": "95",
         "playForWinner": "52",
         "loyalty": "53",
-        "happiness": "38",
-        "lastTeamId": "roster17",
-        "lastTeam": "Chelsea",
+        "happiness": "65",
+        "lastTeamId": "roster13",
+        "lastTeam": "Benfica",
         "potentials": {
             "Ins": "B",
             "Jps": "D",
@@ -10143,8 +10168,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 1290000.0,
+                "salaryText": "$1,290,000"
             },
             {
                 "year": "1984",
@@ -12236,7 +12261,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "21",
+        "age": "22",
         "ht": "6-9",
         "wt": "187",
         "experience": "Rookie",
@@ -16160,7 +16185,7 @@
         "team": "roster16",
         "teamLabel": "Sheffield United",
         "pos": "C",
-        "age": "23",
+        "age": "24",
         "ht": "7-1",
         "wt": "245",
         "experience": "2 years",
@@ -17213,17 +17238,17 @@
         "playerId": "player1096",
         "name": "Billy McKinney",
         "url": "../players/player1096.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster24",
+        "teamLabel": "Barcelona",
         "pos": "PG",
         "age": "26",
         "ht": "6-0",
         "wt": "165",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 1100000.0,
+        "currentSalaryText": "$1,100,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -17232,6 +17257,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Manchester City with pick #1 of round 6 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with Barcelona for $1,100,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "48",
@@ -17255,9 +17285,9 @@
         "greed": "33",
         "playForWinner": "91",
         "loyalty": "95",
-        "happiness": "2",
-        "lastTeamId": "roster28",
-        "lastTeam": "Manchester City",
+        "happiness": "65",
+        "lastTeamId": "roster24",
+        "lastTeam": "Barcelona",
         "potentials": {
             "Ins": "C",
             "Jps": "A",
@@ -17277,8 +17307,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 1100000.0,
+                "salaryText": "$1,100,000"
             },
             {
                 "year": "1984",
@@ -17324,7 +17354,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "32",
+        "age": "33",
         "ht": "6-11",
         "wt": "259",
         "experience": "2 years",
@@ -17984,7 +18014,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PG",
-        "age": "27",
+        "age": "28",
         "ht": "6-6",
         "wt": "203",
         "experience": "2 years",
@@ -18323,8 +18353,8 @@
         "playerId": "player1089",
         "name": "Bob Wilkerson",
         "url": "../players/player1089.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster24",
+        "teamLabel": "Barcelona",
         "pos": "SF",
         "age": "26",
         "ht": "6-6",
@@ -18332,8 +18362,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 645000.0,
+        "currentSalaryText": "$645,000",
         "awards": [
             {
                 "season": "Total",
@@ -18373,6 +18403,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Barcelona with pick #4 of round 7 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/26/1983",
+                "action": "Re-signed with Barcelona for $645,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "49",
@@ -18396,7 +18431,7 @@
         "greed": "65",
         "playForWinner": "10",
         "loyalty": "36",
-        "happiness": "50",
+        "happiness": "65",
         "lastTeamId": "roster24",
         "lastTeam": "Barcelona",
         "potentials": {
@@ -18418,8 +18453,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 645000.0,
+                "salaryText": "$645,000"
             },
             {
                 "year": "1984",
@@ -18570,17 +18605,17 @@
         "playerId": "player755",
         "name": "Bobby Jones",
         "url": "../players/player755.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster10",
+        "teamLabel": "Brighton",
         "pos": "PF",
         "age": "28",
         "ht": "6-9",
         "wt": "212",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [
             {
                 "season": "Total",
@@ -18648,6 +18683,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Manchester United with pick #8 of round 6 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/26/1983",
+                "action": "Signed with Brighton for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "54",
@@ -18671,9 +18711,9 @@
         "greed": "56",
         "playForWinner": "6",
         "loyalty": "54",
-        "happiness": "2",
-        "lastTeamId": "roster16",
-        "lastTeam": "Sheffield United",
+        "happiness": "65",
+        "lastTeamId": "roster10",
+        "lastTeam": "Brighton",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -18693,8 +18733,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -19433,8 +19473,8 @@
         "playerId": "player714",
         "name": "Brad Davis",
         "url": "../players/player714.htm",
-        "team": "roster12",
-        "teamLabel": "AFC Richmond",
+        "team": "roster21",
+        "teamLabel": "Paris Saint-Germain",
         "pos": "PG",
         "age": "24",
         "ht": "6-3",
@@ -19615,8 +19655,8 @@
         "playForWinner": "64",
         "loyalty": "35",
         "happiness": "67",
-        "lastTeamId": "roster12",
-        "lastTeam": "AFC Richmond",
+        "lastTeamId": "roster21",
+        "lastTeam": "Paris Saint-Germain",
         "potentials": {
             "Ins": "C",
             "Jps": "A",
@@ -20307,7 +20347,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PF",
-        "age": "21",
+        "age": "22",
         "ht": "7-0",
         "wt": "234",
         "experience": "Rookie",
@@ -23106,10 +23146,10 @@
         "playerId": "player1059",
         "name": "Caldwell Jones",
         "url": "../players/player1059.htm",
-        "team": "roster24",
-        "teamLabel": "Barcelona",
+        "team": "roster16",
+        "teamLabel": "Sheffield United",
         "pos": "PF",
-        "age": "30",
+        "age": "31",
         "ht": "6-11",
         "wt": "239",
         "experience": "2 years",
@@ -23196,8 +23236,8 @@
         "playForWinner": "28",
         "loyalty": "32",
         "happiness": "46",
-        "lastTeamId": "roster24",
-        "lastTeam": "Barcelona",
+        "lastTeamId": "roster16",
+        "lastTeam": "Sheffield United",
         "potentials": {
             "Ins": "C",
             "Jps": "D",
@@ -24451,7 +24491,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "17",
+        "age": "18",
         "ht": "6-2",
         "wt": "183",
         "experience": "Rookie",
@@ -25072,8 +25112,8 @@
         "playerId": "player335",
         "name": "Casey Jacobsen",
         "url": "../players/player335.htm",
-        "team": "roster16",
-        "teamLabel": "Sheffield United",
+        "team": "roster24",
+        "teamLabel": "Barcelona",
         "pos": "SG",
         "age": "20",
         "ht": "6-6",
@@ -25115,8 +25155,8 @@
         "playForWinner": "18",
         "loyalty": "87",
         "happiness": "65",
-        "lastTeamId": "roster16",
-        "lastTeam": "Sheffield United",
+        "lastTeamId": "roster24",
+        "lastTeam": "Barcelona",
         "potentials": {
             "Ins": "D",
             "Jps": "C",
@@ -30599,7 +30639,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "24",
+        "age": "25",
         "ht": "6-3",
         "wt": "196",
         "experience": "1 year",
@@ -33938,8 +33978,8 @@
         "playerId": "player896",
         "name": "Dan Issel",
         "url": "../players/player896.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster15",
+        "teamLabel": "Marseille",
         "pos": "PF",
         "age": "33",
         "ht": "6-9",
@@ -33947,8 +33987,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 4500000.0,
+        "currentSalaryText": "$4,500,000",
         "awards": [
             {
                 "season": "Total",
@@ -34048,6 +34088,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Marseille with pick #4 of round 5 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Re-signed with Marseille for $9,000,000 over 2 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "92",
@@ -34071,7 +34116,7 @@
         "greed": "14",
         "playForWinner": "24",
         "loyalty": "78",
-        "happiness": "12",
+        "happiness": "65",
         "lastTeamId": "roster15",
         "lastTeam": "Marseille",
         "potentials": {
@@ -34093,13 +34138,13 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 4500000.0,
+                "salaryText": "$4,500,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 4500000.0,
+                "salaryText": "$4,500,000"
             },
             {
                 "year": "1985",
@@ -34137,8 +34182,8 @@
         "playerId": "player332",
         "name": "Dan Majerle",
         "url": "../players/player332.htm",
-        "team": "roster12",
-        "teamLabel": "AFC Richmond",
+        "team": "roster21",
+        "teamLabel": "Paris Saint-Germain",
         "pos": "SF",
         "age": "22",
         "ht": "6-6",
@@ -34180,8 +34225,8 @@
         "playForWinner": "28",
         "loyalty": "77",
         "happiness": "65",
-        "lastTeamId": "roster12",
-        "lastTeam": "AFC Richmond",
+        "lastTeamId": "roster21",
+        "lastTeam": "Paris Saint-Germain",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
@@ -36378,7 +36423,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "22",
+        "age": "23",
         "ht": "6-3",
         "wt": "195",
         "experience": "2 years",
@@ -36582,17 +36627,17 @@
         "playerId": "player733",
         "name": "Dave Corzine",
         "url": "../players/player733.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster6",
+        "teamLabel": "Crystal Palace",
         "pos": "C",
         "age": "25",
         "ht": "6-11",
         "wt": "260",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -36601,6 +36646,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by AC Milan with pick #7 of round 6 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/27/1983",
+                "action": "Signed with Crystal Palace for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "55",
@@ -36624,9 +36674,9 @@
         "greed": "40",
         "playForWinner": "18",
         "loyalty": "90",
-        "happiness": "45",
-        "lastTeamId": "roster21",
-        "lastTeam": "Paris Saint-Germain",
+        "happiness": "65",
+        "lastTeamId": "roster6",
+        "lastTeam": "Crystal Palace",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -36646,8 +36696,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -36914,7 +36964,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "18",
+        "age": "19",
         "ht": "6-11",
         "wt": "238",
         "experience": "Rookie",
@@ -37375,7 +37425,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "31",
+        "age": "32",
         "ht": "7-0",
         "wt": "219",
         "experience": "Rookie",
@@ -38821,17 +38871,17 @@
         "playerId": "player245",
         "name": "DeMarre Carroll",
         "url": "../players/player245.htm",
-        "team": "roster21",
-        "teamLabel": "Paris Saint-Germain",
+        "team": "FA",
+        "teamLabel": "FA",
         "pos": "SF",
-        "age": "23",
+        "age": "24",
         "ht": "6-8",
         "wt": "226",
         "experience": "1 year",
-        "birdYears": 1,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 555000.0,
-        "currentSalaryText": "$555,000",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -38845,6 +38895,11 @@
                 "date": "12/1/1982",
                 "action": "Traded to Paris Saint-Germain",
                 "rowClass": "row2"
+            },
+            {
+                "date": "7/20/1983",
+                "action": "Released by Paris Saint-Germain",
+                "rowClass": "row1"
             }
         ],
         "Ins": "34",
@@ -38890,8 +38945,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 555000.0,
-                "salaryText": "$555,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1984",
@@ -40935,17 +40990,17 @@
         "playerId": "player761",
         "name": "Don Buse",
         "url": "../players/player761.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster10",
+        "teamLabel": "Brighton",
         "pos": "PG",
-        "age": "30",
+        "age": "31",
         "ht": "6-4",
         "wt": "196",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -40954,6 +41009,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by AC Milan with pick #7 of round 8 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with Brighton for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "42",
@@ -40977,9 +41037,9 @@
         "greed": "73",
         "playForWinner": "36",
         "loyalty": "8",
-        "happiness": "16",
-        "lastTeamId": "roster9",
-        "lastTeam": "AC Milan",
+        "happiness": "65",
+        "lastTeamId": "roster10",
+        "lastTeam": "Brighton",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -40999,8 +41059,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -42083,8 +42143,8 @@
         "playerId": "player898",
         "name": "Dudley Bradley",
         "url": "../players/player898.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster22",
+        "teamLabel": "Tottenham Hotspur",
         "pos": "SF",
         "age": "24",
         "ht": "6-6",
@@ -42092,8 +42152,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 8000000.0,
+        "currentSalaryText": "$8,000,000",
         "awards": [
             {
                 "season": "Total",
@@ -42133,6 +42193,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Aston Villa with pick #4 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Re-signed with Tottenham Hotspur for $24,000,000 over 3 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "44",
@@ -42156,7 +42221,7 @@
         "greed": "25",
         "playForWinner": "42",
         "loyalty": "23",
-        "happiness": "35",
+        "happiness": "65",
         "lastTeamId": "roster22",
         "lastTeam": "Tottenham Hotspur",
         "potentials": {
@@ -42178,18 +42243,18 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 8000000.0,
+                "salaryText": "$8,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 8000000.0,
+                "salaryText": "$8,000,000"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 8000000.0,
+                "salaryText": "$8,000,000"
             },
             {
                 "year": "1986",
@@ -42809,17 +42874,17 @@
         "playerId": "player704",
         "name": "Eddie Johnson",
         "url": "../players/player704.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster6",
+        "teamLabel": "Crystal Palace",
         "pos": "SF",
         "age": "22",
         "ht": "6-9",
         "wt": "222",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [
             {
                 "season": "Total",
@@ -42846,6 +42911,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Crystal Palace with pick #5 of round 5 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/27/1983",
+                "action": "Signed with Crystal Palace for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "75",
@@ -42869,9 +42939,9 @@
         "greed": "25",
         "playForWinner": "2",
         "loyalty": "56",
-        "happiness": "39",
-        "lastTeamId": "roster17",
-        "lastTeam": "Chelsea",
+        "happiness": "65",
+        "lastTeamId": "roster6",
+        "lastTeam": "Crystal Palace",
         "potentials": {
             "Ins": "A",
             "Jps": "B",
@@ -42891,8 +42961,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -43017,8 +43087,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -43396,17 +43466,17 @@
         "playerId": "player752",
         "name": "Edgar Jones",
         "url": "../players/player752.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster6",
+        "teamLabel": "Crystal Palace",
         "pos": "C",
         "age": "25",
         "ht": "6-10",
         "wt": "239",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -43415,6 +43485,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Crystal Palace with pick #4 of round 6 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with Crystal Palace for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "50",
@@ -43438,9 +43513,9 @@
         "greed": "42",
         "playForWinner": "77",
         "loyalty": "52",
-        "happiness": "7",
-        "lastTeamId": "roster17",
-        "lastTeam": "Chelsea",
+        "happiness": "65",
+        "lastTeamId": "roster6",
+        "lastTeam": "Crystal Palace",
         "potentials": {
             "Ins": "C",
             "Jps": "D",
@@ -43460,8 +43535,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -44344,8 +44419,8 @@
         "playerId": "player735",
         "name": "Elvin Hayes",
         "url": "../players/player735.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster8",
+        "teamLabel": "Real Madrid",
         "pos": "C",
         "age": "34",
         "ht": "6-9",
@@ -44353,8 +44428,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 1290000.0,
+        "currentSalaryText": "$1,290,000",
         "awards": [
             {
                 "season": "Total",
@@ -44394,6 +44469,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Real Madrid with pick #3 of round 7 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/28/1983",
+                "action": "Re-signed with Real Madrid for $1,290,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "75",
@@ -44417,7 +44497,7 @@
         "greed": "3",
         "playForWinner": "26",
         "loyalty": "35",
-        "happiness": "64",
+        "happiness": "65",
         "lastTeamId": "roster8",
         "lastTeam": "Real Madrid",
         "potentials": {
@@ -44439,8 +44519,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 1290000.0,
+                "salaryText": "$1,290,000"
             },
             {
                 "year": "1984",
@@ -47704,7 +47784,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "20",
+        "age": "21",
         "ht": "6-7",
         "wt": "223",
         "experience": "Rookie",
@@ -47803,8 +47883,8 @@
         "playerId": "player266",
         "name": "Festus Ezeli",
         "url": "../players/player266.htm",
-        "team": "roster24",
-        "teamLabel": "Barcelona",
+        "team": "roster16",
+        "teamLabel": "Sheffield United",
         "pos": "PF",
         "age": "22",
         "ht": "6-11",
@@ -47846,8 +47926,8 @@
         "playForWinner": "69",
         "loyalty": "43",
         "happiness": "2",
-        "lastTeamId": "roster24",
-        "lastTeam": "Barcelona",
+        "lastTeamId": "roster16",
+        "lastTeam": "Sheffield United",
         "potentials": {
             "Ins": "C",
             "Jps": "D",
@@ -48395,17 +48475,17 @@
         "playerId": "player946",
         "name": "Franklin Edwards",
         "url": "../players/player946.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster10",
+        "teamLabel": "Brighton",
         "pos": "PG",
         "age": "22",
         "ht": "6-1",
         "wt": "190",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -48414,6 +48494,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Sheffield United with pick #6 of round 8 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/27/1983",
+                "action": "Signed with Brighton for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "51",
@@ -48437,9 +48522,9 @@
         "greed": "45",
         "playForWinner": "22",
         "loyalty": "29",
-        "happiness": "2",
-        "lastTeamId": "roster16",
-        "lastTeam": "Sheffield United",
+        "happiness": "65",
+        "lastTeamId": "roster10",
+        "lastTeam": "Brighton",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
@@ -48459,8 +48544,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -48506,7 +48591,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "32",
+        "age": "33",
         "ht": "6-3",
         "wt": "187",
         "experience": "2 years",
@@ -48654,8 +48739,8 @@
         "playerId": "player372",
         "name": "Fred Roberts",
         "url": "../players/player372.htm",
-        "team": "roster27",
-        "teamLabel": "FL Fart",
+        "team": "roster21",
+        "teamLabel": "Paris Saint-Germain",
         "pos": "PF",
         "age": "23",
         "ht": "6-10",
@@ -48723,8 +48808,8 @@
         "playForWinner": "34",
         "loyalty": "10",
         "happiness": "41",
-        "lastTeamId": "roster27",
-        "lastTeam": "FL Fart",
+        "lastTeamId": "roster21",
+        "lastTeam": "Paris Saint-Germain",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -49021,7 +49106,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "21",
+        "age": "22",
         "ht": "6-11",
         "wt": "261",
         "experience": "Rookie",
@@ -51299,17 +51384,17 @@
         "playerId": "player762",
         "name": "George Johnson",
         "url": "../players/player762.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster24",
+        "teamLabel": "Barcelona",
         "pos": "PF",
         "age": "31",
         "ht": "6-11",
         "wt": "220",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 645000.0,
+        "currentSalaryText": "$645,000",
         "awards": [
             {
                 "season": "Total",
@@ -51393,6 +51478,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Atletico Madrid with pick #3 of round 6 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/27/1983",
+                "action": "Signed with Barcelona for $645,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "36",
@@ -51416,9 +51506,9 @@
         "greed": "7",
         "playForWinner": "11",
         "loyalty": "21",
-        "happiness": "47",
-        "lastTeamId": "roster11",
-        "lastTeam": "Atletico Madrid",
+        "happiness": "65",
+        "lastTeamId": "roster24",
+        "lastTeam": "Barcelona",
         "potentials": {
             "Ins": "D",
             "Jps": "D",
@@ -51438,8 +51528,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 645000.0,
+                "salaryText": "$645,000"
             },
             {
                 "year": "1984",
@@ -51546,8 +51636,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 645000.0,
+                "salaryText": "$645,000"
             },
             {
                 "year": "1984",
@@ -52229,7 +52319,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "23",
+        "age": "24",
         "ht": "6-5",
         "wt": "191",
         "experience": "Rookie",
@@ -55130,17 +55220,17 @@
         "playerId": "player1086",
         "name": "Harvey Catchings",
         "url": "../players/player1086.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster20",
+        "teamLabel": "Monaco",
         "pos": "PF",
         "age": "29",
         "ht": "6-10",
         "wt": "228",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 1000000.0,
+        "currentSalaryText": "$1,000,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -55149,6 +55239,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Manchester City with pick #1 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with Monaco for $2,005,000 over 2 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "36",
@@ -55172,9 +55267,9 @@
         "greed": "93",
         "playForWinner": "10",
         "loyalty": "37",
-        "happiness": "9",
-        "lastTeamId": "roster28",
-        "lastTeam": "Manchester City",
+        "happiness": "65",
+        "lastTeamId": "roster20",
+        "lastTeam": "Monaco",
         "potentials": {
             "Ins": "D",
             "Jps": "F",
@@ -55194,13 +55289,13 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 1000000.0,
+                "salaryText": "$1,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 1005000.0,
+                "salaryText": "$1,005,000"
             },
             {
                 "year": "1985",
@@ -58116,7 +58211,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "20",
+        "age": "21",
         "ht": "6-5",
         "wt": "227",
         "experience": "Rookie",
@@ -60233,8 +60328,8 @@
         "playerId": "player891",
         "name": "Jamaal Wilkes",
         "url": "../players/player891.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster15",
+        "teamLabel": "Marseille",
         "pos": "SG",
         "age": "28",
         "ht": "6-6",
@@ -60242,8 +60337,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 15000000.0,
+        "currentSalaryText": "$15,000,000",
         "awards": [
             {
                 "season": "Total",
@@ -60339,6 +60434,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Marseille with pick #5 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/22/1983",
+                "action": "Re-signed with Marseille for $60,000,000 over 4 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "83",
@@ -60362,7 +60462,7 @@
         "greed": "58",
         "playForWinner": "53",
         "loyalty": "10",
-        "happiness": "48",
+        "happiness": "65",
         "lastTeamId": "roster15",
         "lastTeam": "Marseille",
         "potentials": {
@@ -60384,23 +60484,23 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 15000000.0,
+                "salaryText": "$15,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 15000000.0,
+                "salaryText": "$15,000,000"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 15000000.0,
+                "salaryText": "$15,000,000"
             },
             {
                 "year": "1986",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 15000000.0,
+                "salaryText": "$15,000,000"
             },
             {
                 "year": "1987",
@@ -60541,17 +60641,17 @@
         "playerId": "player759",
         "name": "James Bailey",
         "url": "../players/player759.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster6",
+        "teamLabel": "Crystal Palace",
         "pos": "SF",
         "age": "24",
         "ht": "6-9",
         "wt": "222",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -60560,6 +60660,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Bayern Munich with pick #7 of round 7 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/26/1983",
+                "action": "Signed with Crystal Palace for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "57",
@@ -60583,9 +60688,9 @@
         "greed": "95",
         "playForWinner": "23",
         "loyalty": "37",
-        "happiness": "2",
-        "lastTeamId": "roster7",
-        "lastTeam": "Bayern Munich",
+        "happiness": "65",
+        "lastTeamId": "roster6",
+        "lastTeam": "Crystal Palace",
         "potentials": {
             "Ins": "B",
             "Jps": "C",
@@ -60605,8 +60710,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -60937,7 +61042,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "23",
+        "age": "24",
         "ht": "6-8",
         "wt": "220",
         "experience": "Rookie",
@@ -61740,8 +61845,8 @@
         "playerId": "player929",
         "name": "James Silas",
         "url": "../players/player929.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster15",
+        "teamLabel": "Marseille",
         "pos": "PG",
         "age": "32",
         "ht": "6-2",
@@ -61749,8 +61854,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 1800000.0,
+        "currentSalaryText": "$1,800,000",
         "awards": [
             {
                 "season": "Total",
@@ -61777,6 +61882,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Marseille with pick #4 of round 9 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Re-signed with Marseille for $3,600,000 over 2 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "68",
@@ -61800,7 +61910,7 @@
         "greed": "59",
         "playForWinner": "80",
         "loyalty": "22",
-        "happiness": "26",
+        "happiness": "65",
         "lastTeamId": "roster15",
         "lastTeam": "Marseille",
         "potentials": {
@@ -61822,13 +61932,13 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 1800000.0,
+                "salaryText": "$1,800,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 1800000.0,
+                "salaryText": "$1,800,000"
             },
             {
                 "year": "1985",
@@ -62808,8 +62918,8 @@
         "playerId": "player683",
         "name": "Jason Hart",
         "url": "../players/player683.htm",
-        "team": "roster21",
-        "teamLabel": "Paris Saint-Germain",
+        "team": "FA",
+        "teamLabel": "FA",
         "pos": "PG",
         "age": "21",
         "ht": "6-3",
@@ -62817,8 +62927,8 @@
         "experience": "Rookie",
         "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 1873498.0,
-        "currentSalaryText": "$1,873,498",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -62827,6 +62937,11 @@
                 "date": "6/29/1983",
                 "action": "Drafted by Paris Saint-Germain with pick #8 of round 1.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/20/1983",
+                "action": "Released by Paris Saint-Germain",
+                "rowClass": "row2"
             }
         ],
         "Ins": "36",
@@ -62851,8 +62966,8 @@
         "playForWinner": "44",
         "loyalty": "13",
         "happiness": "65",
-        "lastTeamId": "roster21",
-        "lastTeam": "Paris Saint-Germain",
+        "lastTeamId": "",
+        "lastTeam": "",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -62872,23 +62987,23 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 1873498.0,
-                "salaryText": "$1,873,498"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1984",
-                "salary": 2079583.0,
-                "salaryText": "$2,079,583"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1985",
-                "salary": 2323138.0,
-                "salaryText": "$2,323,138"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1986",
-                "salary": 2585428.0,
-                "salaryText": "$2,585,428"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1987",
@@ -65766,8 +65881,8 @@
         "playerId": "player949",
         "name": "Jim Brewer",
         "url": "../players/player949.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster8",
+        "teamLabel": "Real Madrid",
         "pos": "SF",
         "age": "28",
         "ht": "6-9",
@@ -65775,8 +65890,8 @@
         "experience": "2 years",
         "birdYears": 1,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 1290000.0,
+        "currentSalaryText": "$1,290,000",
         "awards": [
             {
                 "season": "Total",
@@ -65826,6 +65941,11 @@
                 "date": "7/26/1982",
                 "action": "Signed with Real Madrid for $1,110,000 over one year.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Re-signed with Real Madrid for $1,290,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "34",
@@ -65849,7 +65969,7 @@
         "greed": "83",
         "playForWinner": "30",
         "loyalty": "91",
-        "happiness": "17",
+        "happiness": "65",
         "lastTeamId": "roster8",
         "lastTeam": "Real Madrid",
         "potentials": {
@@ -65871,8 +65991,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 1290000.0,
+                "salaryText": "$1,290,000"
             },
             {
                 "year": "1984",
@@ -67458,7 +67578,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "22",
+        "age": "23",
         "ht": "7-0",
         "wt": "248",
         "experience": "Rookie",
@@ -68538,7 +68658,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "20",
+        "age": "21",
         "ht": "6-6",
         "wt": "197",
         "experience": "Rookie",
@@ -68878,17 +68998,17 @@
         "playerId": "player901",
         "name": "John Drew",
         "url": "../players/player901.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster9",
+        "teamLabel": "AC Milan",
         "pos": "SF",
         "age": "26",
         "ht": "6-6",
         "wt": "208",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 10000000.0,
+        "currentSalaryText": "$10,000,000",
         "awards": [
             {
                 "season": "Total",
@@ -68944,6 +69064,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Sheffield United with pick #6 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with AC Milan for $43,000,000 over 4 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "94",
@@ -68967,9 +69092,9 @@
         "greed": "15",
         "playForWinner": "61",
         "loyalty": "87",
-        "happiness": "50",
-        "lastTeamId": "roster16",
-        "lastTeam": "Sheffield United",
+        "happiness": "65",
+        "lastTeamId": "roster9",
+        "lastTeam": "AC Milan",
         "potentials": {
             "Ins": "A",
             "Jps": "D",
@@ -68989,23 +69114,23 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 10000000.0,
+                "salaryText": "$10,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 10500000.0,
+                "salaryText": "$10,500,000"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 11000000.0,
+                "salaryText": "$11,000,000"
             },
             {
                 "year": "1986",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 11500000.0,
+                "salaryText": "$11,500,000"
             },
             {
                 "year": "1987",
@@ -69251,7 +69376,7 @@
         "team": "Draft",
         "teamLabel": "Draft",
         "pos": "SG",
-        "age": "19",
+        "age": "20",
         "ht": "6-4",
         "wt": "178",
         "experience": "Rookie",
@@ -72695,8 +72820,8 @@
         "playerId": "player700",
         "name": "Julius Erving",
         "url": "../players/player700.htm",
-        "team": "roster21",
-        "teamLabel": "Paris Saint-Germain",
+        "team": "roster12",
+        "teamLabel": "AFC Richmond",
         "pos": "SF",
         "age": "31",
         "ht": "6-6",
@@ -72845,8 +72970,8 @@
         "playForWinner": "46",
         "loyalty": "45",
         "happiness": "78",
-        "lastTeamId": "roster21",
-        "lastTeam": "Paris Saint-Germain",
+        "lastTeamId": "roster12",
+        "lastTeam": "AFC Richmond",
         "potentials": {
             "Ins": "A",
             "Jps": "C",
@@ -74679,17 +74804,17 @@
         "playerId": "player877",
         "name": "Kareem Abdul-Jabbar",
         "url": "../players/player877.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster6",
+        "teamLabel": "Crystal Palace",
         "pos": "PF",
         "age": "34",
         "ht": "7-2",
         "wt": "237",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [
             {
                 "season": "Total",
@@ -74885,6 +75010,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Juventus with pick #8 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with Crystal Palace for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "97",
@@ -74909,8 +75039,8 @@
         "playForWinner": "16",
         "loyalty": "28",
         "happiness": "65",
-        "lastTeamId": "roster14",
-        "lastTeam": "Juventus",
+        "lastTeamId": "roster6",
+        "lastTeam": "Crystal Palace",
         "potentials": {
             "Ins": "A",
             "Jps": "C",
@@ -74930,8 +75060,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -76179,17 +76309,17 @@
         "playerId": "player741",
         "name": "Kenny Carr",
         "url": "../players/player741.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster6",
+        "teamLabel": "Crystal Palace",
         "pos": "PF",
         "age": "25",
         "ht": "6-7",
         "wt": "220",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [
             {
                 "season": "Total",
@@ -76229,6 +76359,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by AC Milan with pick #2 of round 9 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/30/1983",
+                "action": "Signed with Crystal Palace for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "55",
@@ -76252,9 +76387,9 @@
         "greed": "77",
         "playForWinner": "82",
         "loyalty": "82",
-        "happiness": "30",
-        "lastTeamId": "roster20",
-        "lastTeam": "Monaco",
+        "happiness": "65",
+        "lastTeamId": "roster6",
+        "lastTeam": "Crystal Palace",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -76274,8 +76409,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -76581,17 +76716,17 @@
         "playerId": "player910",
         "name": "Kent Benson",
         "url": "../players/player910.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster6",
+        "teamLabel": "Crystal Palace",
         "pos": "C",
         "age": "25",
         "ht": "6-11",
         "wt": "253",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -76600,6 +76735,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Aston Villa with pick #5 of round 5 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with Crystal Palace for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "52",
@@ -76623,9 +76763,9 @@
         "greed": "13",
         "playForWinner": "37",
         "loyalty": "62",
-        "happiness": "8",
-        "lastTeamId": "roster27",
-        "lastTeam": "FL Fart",
+        "happiness": "65",
+        "lastTeamId": "roster6",
+        "lastTeam": "Crystal Palace",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -76645,8 +76785,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -78357,7 +78497,7 @@
         "team": "roster10",
         "teamLabel": "Brighton",
         "pos": "SG",
-        "age": "22",
+        "age": "23",
         "ht": "6-8",
         "wt": "222",
         "experience": "2 years",
@@ -78704,7 +78844,7 @@
         "team": "roster23",
         "teamLabel": "Sporting CP",
         "pos": "SG",
-        "age": "20",
+        "age": "21",
         "ht": "6-5",
         "wt": "196",
         "experience": "1 year",
@@ -79465,17 +79605,17 @@
         "playerId": "player914",
         "name": "Kurt Nimphius",
         "url": "../players/player914.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster10",
+        "teamLabel": "Brighton",
         "pos": "C",
         "age": "23",
         "ht": "6-11",
         "wt": "232",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [
             {
                 "season": "Total",
@@ -79515,6 +79655,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Benfica with pick #8 of round 7 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/26/1983",
+                "action": "Signed with Brighton for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "44",
@@ -79538,9 +79683,9 @@
         "greed": "13",
         "playForWinner": "40",
         "loyalty": "57",
-        "happiness": "2",
-        "lastTeamId": "roster13",
-        "lastTeam": "Benfica",
+        "happiness": "65",
+        "lastTeamId": "roster10",
+        "lastTeam": "Brighton",
         "potentials": {
             "Ins": "C",
             "Jps": "D",
@@ -79560,8 +79705,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -83047,17 +83192,17 @@
         "playerId": "player1083",
         "name": "Lorenzo Romar",
         "url": "../players/player1083.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster10",
+        "teamLabel": "Brighton",
         "pos": "PG",
         "age": "21",
         "ht": "6-1",
         "wt": "176",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -83066,6 +83211,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Tottenham Hotspur with pick #7 of round 5 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "8/1/1983",
+                "action": "Signed with Brighton for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "45",
@@ -83089,9 +83239,9 @@
         "greed": "5",
         "playForWinner": "42",
         "loyalty": "77",
-        "happiness": "13",
-        "lastTeamId": "roster22",
-        "lastTeam": "Tottenham Hotspur",
+        "happiness": "65",
+        "lastTeamId": "roster10",
+        "lastTeam": "Brighton",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
@@ -83111,8 +83261,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -83257,8 +83407,8 @@
         "playerId": "player742",
         "name": "Louis Orr",
         "url": "../players/player742.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster7",
+        "teamLabel": "Bayern Munich",
         "pos": "PF",
         "age": "23",
         "ht": "6-8",
@@ -83266,8 +83416,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 3000000.0,
+        "currentSalaryText": "$3,000,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -83276,6 +83426,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Bayern Munich with pick #7 of round 9 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Re-signed with Bayern Munich for $6,000,000 over 2 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "51",
@@ -83299,7 +83454,7 @@
         "greed": "42",
         "playForWinner": "53",
         "loyalty": "16",
-        "happiness": "2",
+        "happiness": "65",
         "lastTeamId": "roster7",
         "lastTeam": "Bayern Munich",
         "potentials": {
@@ -83321,13 +83476,13 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 3000000.0,
+                "salaryText": "$3,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 3000000.0,
+                "salaryText": "$3,000,000"
             },
             {
                 "year": "1985",
@@ -87949,17 +88104,17 @@
         "playerId": "player725",
         "name": "Marques Johnson",
         "url": "../players/player725.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster27",
+        "teamLabel": "FL Fart",
         "pos": "SF",
         "age": "25",
         "ht": "6-7",
         "wt": "218",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 20000000.0,
+        "currentSalaryText": "$20,000,000",
         "awards": [
             {
                 "season": "Total",
@@ -87999,6 +88154,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Manchester United with pick #1 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/22/1983",
+                "action": "Signed with FL Fart for $86,000,000 over 4 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "96",
@@ -88022,9 +88182,9 @@
         "greed": "89",
         "playForWinner": "20",
         "loyalty": "25",
-        "happiness": "47",
-        "lastTeamId": "roster13",
-        "lastTeam": "Benfica",
+        "happiness": "65",
+        "lastTeamId": "roster27",
+        "lastTeam": "FL Fart",
         "potentials": {
             "Ins": "A",
             "Jps": "B",
@@ -88044,23 +88204,23 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 20000000.0,
+                "salaryText": "$20,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 21000000.0,
+                "salaryText": "$21,000,000"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 22000000.0,
+                "salaryText": "$22,000,000"
             },
             {
                 "year": "1986",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 23000000.0,
+                "salaryText": "$23,000,000"
             },
             {
                 "year": "1987",
@@ -89312,8 +89472,8 @@
         "playerId": "player682",
         "name": "Martin Nessley",
         "url": "../players/player682.htm",
-        "team": "roster21",
-        "teamLabel": "Paris Saint-Germain",
+        "team": "FA",
+        "teamLabel": "FA",
         "pos": "C",
         "age": "21",
         "ht": "7-2",
@@ -89321,8 +89481,8 @@
         "experience": "Rookie",
         "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 380000.0,
-        "currentSalaryText": "$380,000",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -89331,6 +89491,11 @@
                 "date": "6/29/1983",
                 "action": "Drafted by Paris Saint-Germain with pick #7 of round 2.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/20/1983",
+                "action": "Released by Paris Saint-Germain",
+                "rowClass": "row2"
             }
         ],
         "Ins": "35",
@@ -89355,8 +89520,8 @@
         "playForWinner": "24",
         "loyalty": "100",
         "happiness": "65",
-        "lastTeamId": "roster21",
-        "lastTeam": "Paris Saint-Germain",
+        "lastTeamId": "",
+        "lastTeam": "",
         "potentials": {
             "Ins": "D",
             "Jps": "F",
@@ -89376,13 +89541,13 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 380000.0,
-                "salaryText": "$380,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1984",
-                "salary": 555000.0,
-                "salaryText": "$555,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1985",
@@ -89420,8 +89585,8 @@
         "playerId": "player337",
         "name": "Marty Conlon",
         "url": "../players/player337.htm",
-        "team": "roster7",
-        "teamLabel": "Bayern Munich",
+        "team": "FA",
+        "teamLabel": "FA",
         "pos": "C",
         "age": "22",
         "ht": "6-11",
@@ -89429,8 +89594,8 @@
         "experience": "Rookie",
         "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 760000.0,
-        "currentSalaryText": "$760,000",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -89439,6 +89604,11 @@
                 "date": "6/29/1983",
                 "action": "Drafted by Bayern Munich with pick #4 of round 2.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/20/1983",
+                "action": "Released by Bayern Munich",
+                "rowClass": "row2"
             }
         ],
         "Ins": "32",
@@ -89463,8 +89633,8 @@
         "playForWinner": "71",
         "loyalty": "78",
         "happiness": "65",
-        "lastTeamId": "roster7",
-        "lastTeam": "Bayern Munich",
+        "lastTeamId": "",
+        "lastTeam": "",
         "potentials": {
             "Ins": "D",
             "Jps": "C",
@@ -89484,13 +89654,13 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 760000.0,
-                "salaryText": "$760,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1984",
-                "salary": 1110000.0,
-                "salaryText": "$1,110,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1985",
@@ -90685,8 +90855,8 @@
         "playerId": "player732",
         "name": "Maurice Lucas",
         "url": "../players/player732.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster9",
+        "teamLabel": "AC Milan",
         "pos": "PF",
         "age": "29",
         "ht": "6-9",
@@ -90694,8 +90864,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 5000000.0,
+        "currentSalaryText": "$5,000,000",
         "awards": [
             {
                 "season": "Total",
@@ -90722,6 +90892,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by AC Milan with pick #2 of round 7 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Re-signed with AC Milan for $10,375,000 over 2 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "75",
@@ -90745,7 +90920,7 @@
         "greed": "60",
         "playForWinner": "40",
         "loyalty": "34",
-        "happiness": "2",
+        "happiness": "65",
         "lastTeamId": "roster9",
         "lastTeam": "AC Milan",
         "potentials": {
@@ -90767,13 +90942,13 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 5000000.0,
+                "salaryText": "$5,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 5375000.0,
+                "salaryText": "$5,375,000"
             },
             {
                 "year": "1985",
@@ -91369,8 +91544,8 @@
         "playerId": "player681",
         "name": "Michael Adams",
         "url": "../players/player681.htm",
-        "team": "roster21",
-        "teamLabel": "Paris Saint-Germain",
+        "team": "roster12",
+        "teamLabel": "AFC Richmond",
         "pos": "PG",
         "age": "21",
         "ht": "5-11",
@@ -91406,8 +91581,8 @@
         "playForWinner": "22",
         "loyalty": "91",
         "happiness": "36",
-        "lastTeamId": "roster21",
-        "lastTeam": "Paris Saint-Germain",
+        "lastTeamId": "roster12",
+        "lastTeam": "AFC Richmond",
         "potentials": {
             "Ins": "A",
             "Jps": "B",
@@ -91604,17 +91779,17 @@
         "playerId": "player1081",
         "name": "Michael Brooks",
         "url": "../players/player1081.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster27",
+        "teamLabel": "FL Fart",
         "pos": "SF",
         "age": "22",
         "ht": "6-7",
         "wt": "223",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 1290000.0,
+        "currentSalaryText": "$1,290,000",
         "awards": [
             {
                 "season": "Total",
@@ -91834,6 +92009,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by FL Fart with pick #3 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with FL Fart for $1,290,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "71",
@@ -91857,7 +92037,7 @@
         "greed": "54",
         "playForWinner": "56",
         "loyalty": "87",
-        "happiness": "40",
+        "happiness": "65",
         "lastTeamId": "roster27",
         "lastTeam": "FL Fart",
         "potentials": {
@@ -91879,8 +92059,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 1290000.0,
+                "salaryText": "$1,290,000"
             },
             {
                 "year": "1984",
@@ -93183,8 +93363,8 @@
         "playerId": "player738",
         "name": "Mike Dunleavy",
         "url": "../players/player738.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster8",
+        "teamLabel": "Real Madrid",
         "pos": "SG",
         "age": "27",
         "ht": "6-3",
@@ -93192,8 +93372,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 1290000.0,
+        "currentSalaryText": "$1,290,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -93202,6 +93382,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Real Madrid with pick #3 of round 9 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/30/1983",
+                "action": "Re-signed with Real Madrid for $1,290,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "49",
@@ -93225,7 +93410,7 @@
         "greed": "62",
         "playForWinner": "79",
         "loyalty": "19",
-        "happiness": "2",
+        "happiness": "65",
         "lastTeamId": "roster8",
         "lastTeam": "Real Madrid",
         "potentials": {
@@ -93247,8 +93432,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 1290000.0,
+                "salaryText": "$1,290,000"
             },
             {
                 "year": "1984",
@@ -93548,17 +93733,17 @@
         "playerId": "player918",
         "name": "Mike Glenn",
         "url": "../players/player918.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster20",
+        "teamLabel": "Monaco",
         "pos": "PG",
         "age": "25",
         "ht": "6-3",
         "wt": "178",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 645000.0,
+        "currentSalaryText": "$645,000",
         "awards": [
             {
                 "season": "Total",
@@ -93585,6 +93770,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Monaco with pick #7 of round 7 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with Monaco for $645,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "49",
@@ -93608,7 +93798,7 @@
         "greed": "19",
         "playForWinner": "19",
         "loyalty": "15",
-        "happiness": "15",
+        "happiness": "65",
         "lastTeamId": "roster20",
         "lastTeam": "Monaco",
         "potentials": {
@@ -93630,8 +93820,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 645000.0,
+                "salaryText": "$645,000"
             },
             {
                 "year": "1984",
@@ -93677,7 +93867,7 @@
         "team": "roster8",
         "teamLabel": "Real Madrid",
         "pos": "C",
-        "age": "21",
+        "age": "22",
         "ht": "6-11",
         "wt": "264",
         "experience": "2 years",
@@ -93800,17 +93990,17 @@
         "playerId": "player945",
         "name": "Mike Harper",
         "url": "../players/player945.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster10",
+        "teamLabel": "Brighton",
         "pos": "PF",
         "age": "22",
         "ht": "6-10",
         "wt": "200",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -93819,6 +94009,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Marseille with pick #5 of round 10 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/26/1983",
+                "action": "Signed with Brighton for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "42",
@@ -93842,9 +94037,9 @@
         "greed": "24",
         "playForWinner": "37",
         "loyalty": "81",
-        "happiness": "10",
-        "lastTeamId": "roster15",
-        "lastTeam": "Marseille",
+        "happiness": "65",
+        "lastTeamId": "roster10",
+        "lastTeam": "Brighton",
         "potentials": {
             "Ins": "C",
             "Jps": "F",
@@ -93864,8 +94059,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -93908,17 +94103,17 @@
         "playerId": "player736",
         "name": "Mike McGee",
         "url": "../players/player736.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster6",
+        "teamLabel": "Crystal Palace",
         "pos": "SG",
-        "age": "21",
+        "age": "22",
         "ht": "6-5",
         "wt": "208",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -93927,6 +94122,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Crystal Palace with pick #5 of round 7 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/26/1983",
+                "action": "Signed with Crystal Palace for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "45",
@@ -93950,9 +94150,9 @@
         "greed": "73",
         "playForWinner": "88",
         "loyalty": "3",
-        "happiness": "2",
-        "lastTeamId": "roster17",
-        "lastTeam": "Chelsea",
+        "happiness": "65",
+        "lastTeamId": "roster6",
+        "lastTeam": "Crystal Palace",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
@@ -93972,8 +94172,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -96842,7 +97042,7 @@
         "team": "roster5",
         "teamLabel": "Manchester United",
         "pos": "PG",
-        "age": "22",
+        "age": "23",
         "ht": "6-1",
         "wt": "178",
         "experience": "Rookie",
@@ -97819,8 +98019,8 @@
         "playerId": "player263",
         "name": "Myles Turner",
         "url": "../players/player263.htm",
-        "team": "roster24",
-        "teamLabel": "Barcelona",
+        "team": "roster27",
+        "teamLabel": "FL Fart",
         "pos": "C",
         "age": "19",
         "ht": "6-11",
@@ -97856,8 +98056,8 @@
         "playForWinner": "67",
         "loyalty": "30",
         "happiness": "36",
-        "lastTeamId": "roster24",
-        "lastTeam": "Barcelona",
+        "lastTeamId": "roster27",
+        "lastTeam": "FL Fart",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -98194,8 +98394,8 @@
         "playerId": "player694",
         "name": "Nate Robinson",
         "url": "../players/player694.htm",
-        "team": "roster24",
-        "teamLabel": "Barcelona",
+        "team": "roster16",
+        "teamLabel": "Sheffield United",
         "pos": "PG",
         "age": "20",
         "ht": "5-9",
@@ -98231,8 +98431,8 @@
         "playForWinner": "36",
         "loyalty": "76",
         "happiness": "58",
-        "lastTeamId": "roster24",
-        "lastTeam": "Barcelona",
+        "lastTeamId": "roster16",
+        "lastTeam": "Sheffield United",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
@@ -98625,7 +98825,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PF",
-        "age": "22",
+        "age": "23",
         "ht": "6-6",
         "wt": "234",
         "experience": "Rookie",
@@ -98931,7 +99131,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "22",
+        "age": "23",
         "ht": "6-7",
         "wt": "201",
         "experience": "Rookie",
@@ -100432,17 +100632,17 @@
         "playerId": "player749",
         "name": "Orlando Woolridge",
         "url": "../players/player749.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster12",
+        "teamLabel": "AFC Richmond",
         "pos": "PF",
         "age": "20",
         "ht": "6-9",
         "wt": "226",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 7000000.0,
+        "currentSalaryText": "$7,000,000",
         "awards": [
             {
                 "season": "Total",
@@ -100469,6 +100669,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Atletico Madrid with pick #6 of round 5 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with AFC Richmond for $28,000,000 over 4 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "68",
@@ -100492,9 +100697,9 @@
         "greed": "27",
         "playForWinner": "71",
         "loyalty": "68",
-        "happiness": "29",
-        "lastTeamId": "roster11",
-        "lastTeam": "Atletico Madrid",
+        "happiness": "65",
+        "lastTeamId": "roster12",
+        "lastTeam": "AFC Richmond",
         "potentials": {
             "Ins": "A",
             "Jps": "D",
@@ -100514,23 +100719,23 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7000000.0,
+                "salaryText": "$7,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7000000.0,
+                "salaryText": "$7,000,000"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7000000.0,
+                "salaryText": "$7,000,000"
             },
             {
                 "year": "1986",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7000000.0,
+                "salaryText": "$7,000,000"
             },
             {
                 "year": "1987",
@@ -100663,7 +100868,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "21",
+        "age": "22",
         "ht": "6-5",
         "wt": "210",
         "experience": "Rookie",
@@ -108072,17 +108277,17 @@
         "playerId": "player630",
         "name": "Rex Walters",
         "url": "../players/player630.htm",
-        "team": "roster7",
-        "teamLabel": "Bayern Munich",
-        "pos": "SG",
+        "team": "FA",
+        "teamLabel": "FA",
+        "pos": "PG",
         "age": "23",
         "ht": "6-4",
         "wt": "191",
         "experience": "1 year",
-        "birdYears": 1,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 6725198.0,
-        "currentSalaryText": "$6,725,198",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -108091,6 +108296,11 @@
                 "date": "6/30/1982",
                 "action": "Drafted by Bayern Munich with pick #3 of round 1.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/20/1983",
+                "action": "Released by Bayern Munich",
+                "rowClass": "row2"
             }
         ],
         "Ins": "27",
@@ -108136,18 +108346,18 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 6725198.0,
-                "salaryText": "$6,725,198"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1984",
-                "salary": 7512833.0,
-                "salaryText": "$7,512,833"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1985",
-                "salary": 8361057.0,
-                "salaryText": "$8,361,057"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1986",
@@ -108432,8 +108642,8 @@
         "playerId": "player620",
         "name": "Richard Anderson",
         "url": "../players/player620.htm",
-        "team": "roster16",
-        "teamLabel": "Sheffield United",
+        "team": "roster24",
+        "teamLabel": "Barcelona",
         "pos": "PF",
         "age": "20",
         "ht": "6-10",
@@ -108475,8 +108685,8 @@
         "playForWinner": "12",
         "loyalty": "15",
         "happiness": "3",
-        "lastTeamId": "roster16",
-        "lastTeam": "Sheffield United",
+        "lastTeamId": "roster24",
+        "lastTeam": "Barcelona",
         "potentials": {
             "Ins": "D",
             "Jps": "D",
@@ -108965,17 +109175,17 @@
         "playerId": "player746",
         "name": "Rick Mahorn",
         "url": "../players/player746.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster12",
+        "teamLabel": "AFC Richmond",
         "pos": "C",
         "age": "22",
         "ht": "6-10",
         "wt": "266",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 7000000.0,
+        "currentSalaryText": "$7,000,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -108984,6 +109194,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Bayern Munich with pick #2 of round 6 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with AFC Richmond for $28,000,000 over 4 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "50",
@@ -109007,9 +109222,9 @@
         "greed": "19",
         "playForWinner": "49",
         "loyalty": "30",
-        "happiness": "2",
-        "lastTeamId": "roster7",
-        "lastTeam": "Bayern Munich",
+        "happiness": "65",
+        "lastTeamId": "roster12",
+        "lastTeam": "AFC Richmond",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -109029,23 +109244,23 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7000000.0,
+                "salaryText": "$7,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7000000.0,
+                "salaryText": "$7,000,000"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7000000.0,
+                "salaryText": "$7,000,000"
             },
             {
                 "year": "1986",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 7000000.0,
+                "salaryText": "$7,000,000"
             },
             {
                 "year": "1987",
@@ -109707,8 +109922,8 @@
         "playerId": "player696",
         "name": "Ricky Berry",
         "url": "../players/player696.htm",
-        "team": "roster24",
-        "teamLabel": "Barcelona",
+        "team": "roster16",
+        "teamLabel": "Sheffield United",
         "pos": "SF",
         "age": "22",
         "ht": "6-8",
@@ -109750,8 +109965,8 @@
         "playForWinner": "63",
         "loyalty": "79",
         "happiness": "65",
-        "lastTeamId": "roster24",
-        "lastTeam": "Barcelona",
+        "lastTeamId": "roster16",
+        "lastTeam": "Sheffield United",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -111705,7 +111920,7 @@
         "team": "roster14",
         "teamLabel": "Juventus",
         "pos": "SG",
-        "age": "23",
+        "age": "24",
         "ht": "6-4",
         "wt": "205",
         "experience": "Rookie",
@@ -112904,8 +113119,8 @@
         "playerId": "player789",
         "name": "Ronnie Lester",
         "url": "../players/player789.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster10",
+        "teamLabel": "Brighton",
         "pos": "PG",
         "age": "22",
         "ht": "6-2",
@@ -112913,8 +113128,8 @@
         "experience": "2 years",
         "birdYears": 1,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -112928,6 +113143,11 @@
                 "date": "12/1/1982",
                 "action": "Released by Paris Saint-Germain",
                 "rowClass": "row2"
+            },
+            {
+                "date": "7/26/1983",
+                "action": "Re-signed with Brighton for $903,000 over one year.",
+                "rowClass": "row1"
             }
         ],
         "Ins": "52",
@@ -112951,7 +113171,7 @@
         "greed": "45",
         "playForWinner": "81",
         "loyalty": "30",
-        "happiness": "53",
+        "happiness": "65",
         "lastTeamId": "roster10",
         "lastTeam": "Brighton",
         "potentials": {
@@ -112973,8 +113193,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -113119,8 +113339,8 @@
         "playerId": "player744",
         "name": "Rory Sparrow",
         "url": "../players/player744.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster8",
+        "teamLabel": "Real Madrid",
         "pos": "PG",
         "age": "23",
         "ht": "6-2",
@@ -113128,8 +113348,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 5000000.0,
+        "currentSalaryText": "$5,000,000",
         "awards": [
             {
                 "season": "Total",
@@ -113156,6 +113376,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Real Madrid with pick #6 of round 6 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/26/1983",
+                "action": "Re-signed with Real Madrid for $16,125,000 over 3 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "44",
@@ -113179,7 +113404,7 @@
         "greed": "53",
         "playForWinner": "77",
         "loyalty": "26",
-        "happiness": "23",
+        "happiness": "65",
         "lastTeamId": "roster8",
         "lastTeam": "Real Madrid",
         "potentials": {
@@ -113201,18 +113426,18 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 5000000.0,
+                "salaryText": "$5,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 5375000.0,
+                "salaryText": "$5,375,000"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 5750000.0,
+                "salaryText": "$5,750,000"
             },
             {
                 "year": "1986",
@@ -113656,7 +113881,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PG",
-        "age": "32",
+        "age": "33",
         "ht": "6-3",
         "wt": "171",
         "experience": "Rookie",
@@ -115302,7 +115527,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "28",
+        "age": "29",
         "ht": "6-7",
         "wt": "221",
         "experience": "2 years",
@@ -115625,7 +115850,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "24",
+        "age": "25",
         "ht": "6-11",
         "wt": "240",
         "experience": "Rookie",
@@ -116092,7 +116317,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "20",
+        "age": "21",
         "ht": "6-5",
         "wt": "211",
         "experience": "Rookie",
@@ -118567,7 +118792,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "25",
+        "age": "26",
         "ht": "7-0",
         "wt": "211",
         "experience": "2 years",
@@ -118672,8 +118897,8 @@
         "playerId": "player897",
         "name": "Steve Johnson",
         "url": "../players/player897.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster16",
+        "teamLabel": "Sheffield United",
         "pos": "PF",
         "age": "22",
         "ht": "6-10",
@@ -118681,8 +118906,8 @@
         "experience": "2 years",
         "birdYears": 2,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 20000000.0,
+        "currentSalaryText": "$20,000,000",
         "awards": [
             {
                 "season": "Total",
@@ -118834,6 +119059,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Sheffield United with pick #3 of round 5 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/22/1983",
+                "action": "Re-signed with Sheffield United for $86,000,000 over 4 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "83",
@@ -118857,7 +119087,7 @@
         "greed": "31",
         "playForWinner": "18",
         "loyalty": "91",
-        "happiness": "75",
+        "happiness": "65",
         "lastTeamId": "roster16",
         "lastTeam": "Sheffield United",
         "potentials": {
@@ -118879,23 +119109,23 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 20000000.0,
+                "salaryText": "$20,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 21000000.0,
+                "salaryText": "$21,000,000"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 22000000.0,
+                "salaryText": "$22,000,000"
             },
             {
                 "year": "1986",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 23000000.0,
+                "salaryText": "$23,000,000"
             },
             {
                 "year": "1987",
@@ -119577,17 +119807,17 @@
         "playerId": "player787",
         "name": "T.R. Dunn",
         "url": "../players/player787.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster20",
+        "teamLabel": "Monaco",
         "pos": "SG",
         "age": "26",
         "ht": "6-4",
         "wt": "196",
         "experience": "1 year",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 2000000.0,
+        "currentSalaryText": "$2,000,000",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -119601,6 +119831,11 @@
                 "date": "7/26/1982",
                 "action": "Re-signed with AC Milan for $1,110,000 over one year.",
                 "rowClass": "row2"
+            },
+            {
+                "date": "7/25/1983",
+                "action": "Signed with Monaco for $4,010,000 over 2 years.",
+                "rowClass": "row1"
             }
         ],
         "Ins": "43",
@@ -119624,9 +119859,9 @@
         "greed": "70",
         "playForWinner": "67",
         "loyalty": "73",
-        "happiness": "47",
-        "lastTeamId": "roster9",
-        "lastTeam": "AC Milan",
+        "happiness": "65",
+        "lastTeamId": "roster20",
+        "lastTeam": "Monaco",
         "potentials": {
             "Ins": "C",
             "Jps": "B",
@@ -119646,13 +119881,13 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 2000000.0,
+                "salaryText": "$2,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 2010000.0,
+                "salaryText": "$2,010,000"
             },
             {
                 "year": "1985",
@@ -120305,7 +120540,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PG",
-        "age": "24",
+        "age": "25",
         "ht": "6-2",
         "wt": "182",
         "experience": "Rookie",
@@ -121468,7 +121703,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "PF",
-        "age": "20",
+        "age": "21",
         "ht": "7-0",
         "wt": "246",
         "experience": "Rookie",
@@ -125747,7 +125982,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SG",
-        "age": "20",
+        "age": "21",
         "ht": "6-2",
         "wt": "218",
         "experience": "Rookie",
@@ -127492,7 +127727,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "C",
-        "age": "22",
+        "age": "23",
         "ht": "6-8",
         "wt": "248",
         "experience": "Rookie",
@@ -127699,8 +127934,8 @@
         "playerId": "player244",
         "name": "Vincent Askew",
         "url": "../players/player244.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster24",
+        "teamLabel": "Barcelona",
         "pos": "SF",
         "age": "21",
         "ht": "6-6",
@@ -127708,8 +127943,8 @@
         "experience": "1 year",
         "birdYears": 1,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 555000.0,
+        "currentSalaryText": "$555,000",
         "awards": [
             {
                 "season": "1982",
@@ -127727,7 +127962,13 @@
                 "isTotal": false
             }
         ],
-        "transactions": [],
+        "transactions": [
+            {
+                "date": "7/25/1983",
+                "action": "Re-signed with Barcelona for $555,000 over one year.",
+                "rowClass": "row1"
+            }
+        ],
         "Ins": "31",
         "Jps": "25",
         "Fts": "67",
@@ -127749,7 +127990,7 @@
         "greed": "94",
         "playForWinner": "58",
         "loyalty": "46",
-        "happiness": "38",
+        "happiness": "65",
         "lastTeamId": "roster24",
         "lastTeam": "Barcelona",
         "potentials": {
@@ -127771,8 +128012,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 555000.0,
+                "salaryText": "$555,000"
             },
             {
                 "year": "1984",
@@ -127879,8 +128120,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 555000.0,
+                "salaryText": "$555,000"
             },
             {
                 "year": "1984",
@@ -128025,8 +128266,8 @@
         "playerId": "player1336",
         "name": "Vincent Yarbrough",
         "url": "../players/player1336.htm",
-        "team": "roster6",
-        "teamLabel": "Crystal Palace",
+        "team": "FA",
+        "teamLabel": "FA",
         "pos": "SG",
         "age": "20",
         "ht": "6-7",
@@ -128034,8 +128275,8 @@
         "experience": "Rookie",
         "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 532000.0,
-        "currentSalaryText": "$532,000",
+        "currentSalary": 0.0,
+        "currentSalaryText": "$0",
         "awards": [],
         "achievementTotals": [],
         "seasonAwards": [],
@@ -128044,6 +128285,11 @@
                 "date": "6/29/1983",
                 "action": "Drafted by Crystal Palace with pick #1 of round 2.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/20/1983",
+                "action": "Released by Crystal Palace",
+                "rowClass": "row2"
             }
         ],
         "Ins": "31",
@@ -128068,8 +128314,8 @@
         "playForWinner": "80",
         "loyalty": "46",
         "happiness": "65",
-        "lastTeamId": "roster6",
-        "lastTeam": "Crystal Palace",
+        "lastTeamId": "",
+        "lastTeam": "",
         "potentials": {
             "Ins": "C",
             "Jps": "C",
@@ -128089,13 +128335,13 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 532000.0,
-                "salaryText": "$532,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1984",
-                "salary": 777000.0,
-                "salaryText": "$777,000"
+                "salary": 0.0,
+                "salaryText": "$0"
             },
             {
                 "year": "1985",
@@ -128402,10 +128648,10 @@
         "playerId": "player634",
         "name": "Walker Kessler",
         "url": "../players/player634.htm",
-        "team": "roster12",
-        "teamLabel": "AFC Richmond",
+        "team": "roster21",
+        "teamLabel": "Paris Saint-Germain",
         "pos": "C",
-        "age": "21",
+        "age": "22",
         "ht": "7-1",
         "wt": "268",
         "experience": "1 year",
@@ -128488,8 +128734,8 @@
         "playForWinner": "66",
         "loyalty": "53",
         "happiness": "13",
-        "lastTeamId": "roster12",
-        "lastTeam": "AFC Richmond",
+        "lastTeamId": "roster21",
+        "lastTeam": "Paris Saint-Germain",
         "potentials": {
             "Ins": "D",
             "Jps": "F",
@@ -128697,17 +128943,17 @@
         "playerId": "player706",
         "name": "Walter Davis",
         "url": "../players/player706.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster13",
+        "teamLabel": "Benfica",
         "pos": "SF",
         "age": "26",
         "ht": "6-6",
         "wt": "200",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 20000000.0,
+        "currentSalaryText": "$20,000,000",
         "awards": [
             {
                 "season": "Total",
@@ -128831,6 +129077,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Manchester United with pick #8 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/22/1983",
+                "action": "Signed with Benfica for $86,000,000 over 4 years.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "83",
@@ -128854,9 +129105,9 @@
         "greed": "42",
         "playForWinner": "13",
         "loyalty": "94",
-        "happiness": "51",
-        "lastTeamId": "roster5",
-        "lastTeam": "Manchester United",
+        "happiness": "65",
+        "lastTeamId": "roster13",
+        "lastTeam": "Benfica",
         "potentials": {
             "Ins": "A",
             "Jps": "A",
@@ -128876,23 +129127,23 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 20000000.0,
+                "salaryText": "$20,000,000"
             },
             {
                 "year": "1984",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 21000000.0,
+                "salaryText": "$21,000,000"
             },
             {
                 "year": "1985",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 22000000.0,
+                "salaryText": "$22,000,000"
             },
             {
                 "year": "1986",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 23000000.0,
+                "salaryText": "$23,000,000"
             },
             {
                 "year": "1987",
@@ -129374,17 +129625,17 @@
         "playerId": "player912",
         "name": "Wes Matthews",
         "url": "../players/player912.htm",
-        "team": "FA",
-        "teamLabel": "FA",
+        "team": "roster10",
+        "teamLabel": "Brighton",
         "pos": "PG",
         "age": "21",
         "ht": "6-1",
         "wt": "171",
         "experience": "2 years",
-        "birdYears": 2,
+        "birdYears": 0,
         "source": "player_page",
-        "currentSalary": 0.0,
-        "currentSalaryText": "$0",
+        "currentSalary": 903000.0,
+        "currentSalaryText": "$903,000",
         "awards": [
             {
                 "season": "Total",
@@ -129496,6 +129747,11 @@
                 "date": "10/8/1982",
                 "action": "Drafted by Monaco with pick #2 of round 4 of the creation draft.",
                 "rowClass": "row1"
+            },
+            {
+                "date": "7/26/1983",
+                "action": "Signed with Brighton for $903,000 over one year.",
+                "rowClass": "row2"
             }
         ],
         "Ins": "53",
@@ -129519,9 +129775,9 @@
         "greed": "51",
         "playForWinner": "53",
         "loyalty": "16",
-        "happiness": "42",
-        "lastTeamId": "roster20",
-        "lastTeam": "Monaco",
+        "happiness": "65",
+        "lastTeamId": "roster10",
+        "lastTeam": "Brighton",
         "potentials": {
             "Ins": "C",
             "Jps": "A",
@@ -129541,8 +129797,8 @@
         "contracts": [
             {
                 "year": "1983",
-                "salary": 0.0,
-                "salaryText": "$0"
+                "salary": 903000.0,
+                "salaryText": "$903,000"
             },
             {
                 "year": "1984",
@@ -131287,7 +131543,7 @@
         "team": "FA",
         "teamLabel": "FA",
         "pos": "SF",
-        "age": "20",
+        "age": "21",
         "ht": "6-9",
         "wt": "207",
         "experience": "Rookie",

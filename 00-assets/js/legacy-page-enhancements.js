@@ -13,6 +13,15 @@
     }
   }
 
+  function markTransactionsPage() {
+    var path = (window.location && window.location.pathname ? window.location.pathname : "").toLowerCase();
+    var title = document.title ? document.title.trim().toLowerCase() : "";
+
+    if (/\/transactions\.htm$/.test(path) || /\\transactions\.htm$/.test(path) || title === "transactions") {
+      document.body.classList.add("page-transactions");
+    }
+  }
+
   function getRosterPhotoPath(filename) {
     if (!filename) {
       return "";
@@ -82,6 +91,7 @@
     }
 
     markStandingsPage();
+    markTransactionsPage();
     applyRosterHeaderPhoto();
   });
 })();

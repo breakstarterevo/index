@@ -167,6 +167,14 @@ td.main:nth-child(2) {
   max-width: 160px;
 }
 
+/* Transactions: the action text is the primary content, so let it breathe. */
+body.page-transactions td.header:nth-child(3),
+body.page-transactions td.main:nth-child(3) {
+  min-width: 360px;
+  width: 520px !important;
+  max-width: none;
+}
+
 /* â”€â”€ Alternating rows â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 tr.row1 { background: #f1f5f9; }
 tr.row1:hover { background: #e8f0fe; }
