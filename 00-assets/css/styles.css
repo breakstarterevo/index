@@ -9,11 +9,55 @@
 
 html { -webkit-text-size-adjust: 100%; }
 
+:root {
+  --esl-classic-navy: #0f172a;
+  --esl-classic-navy-2: #111b36;
+  --esl-classic-accent: #8ec5ff;
+  --esl-classic-bg: #eef2f7;
+  --esl-classic-surface: #ffffff;
+  --esl-classic-row: #ffffff;
+  --esl-classic-row-alt: #edf2f8;
+  --esl-classic-border: #cbd5e1;
+  --esl-classic-text: #172033;
+  --esl-classic-muted: #5f6f86;
+  --esl-classic-link: #1f6fbe;
+  --esl-row-pad-v: 5px;
+  --esl-row-pad-h: 8px;
+  --esl-header-font: 11px;
+  --esl-row-font: 12px;
+}
+
+html.league-pref-density-compact {
+  --esl-row-pad-v: 3px;
+  --esl-row-pad-h: 6px;
+  --esl-header-font: 10px;
+  --esl-row-font: 11px;
+}
+
+html.league-pref-density-spacious {
+  --esl-row-pad-v: 8px;
+  --esl-row-pad-h: 10px;
+  --esl-header-font: 12px;
+  --esl-row-font: 13px;
+}
+
+html.league-theme-dark {
+  color-scheme: dark;
+  --esl-classic-bg: #0d1118;
+  --esl-classic-surface: #151b25;
+  --esl-classic-row: #141b26;
+  --esl-classic-row-alt: #1a2331;
+  --esl-classic-border: rgba(148, 163, 184, 0.22);
+  --esl-classic-text: #edf3fb;
+  --esl-classic-muted: #a9b6c8;
+  --esl-classic-link: #8ec5ff;
+}
+
 body {
   font-family: 'Inter', Tahoma, Arial, sans-serif;
-  background-color: #f0f2f5;
+  background-color: var(--esl-classic-bg);
   background-image: none !important;
-  color: #1a1a2e;
+  color: var(--esl-classic-text);
   font-size: 13px;
   line-height: 1.5;
   padding: 12px;
@@ -80,7 +124,6 @@ td.header {
 }
 
 td.plainheader {
-  background: #1e293b !important;
   font-family: 'Inter', Tahoma, sans-serif;
   font-size: 16pt;
   font-weight: 700;
@@ -90,7 +133,6 @@ td.plainheader {
 }
 
 td.headerbg {
-  background: #1e293b !important;
   font-family: 'Inter', Tahoma, sans-serif;
   font-size: 7.5pt;
   font-weight: 600;
@@ -136,8 +178,8 @@ td.teamheader2 {
 /* Top roster/team banner: keep it as a normal table so the header doesn't collapse */
 body > table:first-of-type:has(td.teamheader) {
   display: table !important;
-  width: 100% !important;
-  max-width: none !important;
+  width: auto !important;
+  max-width: min(1600px, calc(100vw - 44px)) !important;
   overflow: visible !important;
   table-layout: auto !important;
 }
@@ -181,28 +223,6 @@ tr.row1:hover { background: #e8f0fe; }
 
 tr.row2 { background: #e2e8f0; }
 tr.row2:hover { background: #dbeafe; }
-
-/* Standings page promotion/relegation bands */
-body.page-standings > table:nth-of-type(1):has(td.newheader) + table[width="800"] tr:nth-child(3) {
-  background: #f4d35e !important;
-}
-
-body.page-standings > table:nth-of-type(1):has(td.newheader) + table[width="800"] tr:nth-last-child(-n+2) {
-  background: #efb6b6 !important;
-}
-
-body.page-standings > table:nth-of-type(3):has(td.newheader) + table[width="800"] tr:nth-child(3),
-body.page-standings > table:nth-of-type(3):has(td.newheader) + table[width="800"] tr:nth-child(4) {
-  background: #b7e3be !important;
-}
-
-body.page-standings > table:nth-of-type(3):has(td.newheader) + table[width="800"] tr:last-child {
-  background: #efb6b6 !important;
-}
-
-body.page-standings > table:nth-of-type(5):has(td.newheader) + table[width="800"] tr:nth-child(3) {
-  background: #b7e3be !important;
-}
 
 /* â”€â”€ Team colour row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
 tr.teamcolor { color: #ffffff; }
@@ -269,6 +289,225 @@ table[width="800"]:has(table[width="320"]) {
 table[width]::-webkit-scrollbar { height: 8px; }
 table[width]::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 2px; }
 table[width]::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 2px; }
+
+/* Classic generated pages: ESL-branded without fighting exported team colors. */
+body.page-classic {
+  background: var(--esl-classic-bg) !important;
+  color: var(--esl-classic-text);
+  padding: 22px;
+}
+
+body.page-classic table {
+  border-radius: 0;
+  box-shadow: none;
+}
+
+body.page-classic > table {
+  width: auto !important;
+  max-width: min(1600px, calc(100vw - 44px)) !important;
+  margin: 0 0 10px;
+  background: transparent;
+}
+
+body.page-classic table[width] {
+  table-layout: auto;
+  width: auto !important;
+  max-width: min(1600px, calc(100vw - 44px)) !important;
+}
+
+body.page-classic td.main {
+  background: var(--esl-classic-row);
+  border-bottom: 1px solid var(--esl-classic-border);
+  color: var(--esl-classic-text);
+  font-size: var(--esl-row-font);
+  max-width: none;
+  overflow: visible;
+  padding: var(--esl-row-pad-v) var(--esl-row-pad-h);
+  text-overflow: clip;
+}
+
+body.page-classic tr.row1,
+body.page-classic tr.row1 > td.main {
+  background: var(--esl-classic-row) !important;
+}
+
+body.page-classic tr.row2,
+body.page-classic tr.row2 > td.main {
+  background: var(--esl-classic-row-alt) !important;
+}
+
+body.page-classic tr.row1:hover > td.main,
+body.page-classic tr.row2:hover > td.main {
+  background: #e4f1ff !important;
+}
+
+html.league-theme-dark body.page-classic tr.row1:hover > td.main,
+html.league-theme-dark body.page-classic tr.row2:hover > td.main {
+  background: #20324c !important;
+}
+
+body.page-classic:not(.page-roster):not(.page-player) td.header,
+body.page-classic:not(.page-roster):not(.page-player) td.plainheader,
+body.page-classic:not(.page-roster):not(.page-player) td.headerbg {
+  background: var(--esl-classic-navy) !important;
+  color: #ffffff !important;
+}
+
+html.league-theme-dark.league-has-classic-team-color body.page-roster td.header,
+html.league-theme-dark.league-has-classic-team-color body.page-roster td.plainheader,
+html.league-theme-dark.league-has-classic-team-color body.page-roster td.headerbg,
+html.league-theme-dark.league-has-classic-team-color body.page-roster td.teamheader,
+html.league-theme-dark.league-has-classic-team-color body.page-roster td.teamheader2,
+html.league-theme-dark.league-has-classic-team-color body.page-player td.header,
+html.league-theme-dark.league-has-classic-team-color body.page-player td.plainheader,
+html.league-theme-dark.league-has-classic-team-color body.page-player td.headerbg,
+html.league-theme-dark.league-has-classic-team-color body.page-player td.teamheader,
+html.league-theme-dark.league-has-classic-team-color body.page-player td.teamheader2 {
+  background: var(--classic-team-color) !important;
+  color: var(--classic-team-text) !important;
+}
+
+body.page-classic td.header {
+  border: 0;
+  font-size: var(--esl-header-font);
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  overflow: visible;
+  padding: 6px var(--esl-row-pad-h);
+  text-overflow: clip;
+}
+
+body.page-classic td.tableheader,
+body.page-classic td.newheader,
+body.page-classic td.plainheader,
+body.page-classic td.headerbg,
+body.page-classic td.teamheader,
+body.page-classic td.teamheader2 {
+  text-align: left !important;
+}
+
+body.page-classic td.newheader,
+body.page-classic td.tableheader {
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body.page-classic td.newheader {
+  color: var(--esl-classic-text);
+  font-size: 21pt;
+  padding: 16px 0 10px;
+}
+
+body.page-classic td.tableheader {
+  color: #2b75bd;
+  font-size: 12pt;
+  padding: 14px 0 7px;
+}
+
+html.league-theme-dark body.page-classic td.newheader {
+  color: #eef5ff !important;
+}
+
+html.league-theme-dark body.page-classic td.tableheader {
+  color: var(--esl-classic-accent) !important;
+}
+
+body.page-classic a.linkmain,
+body.page-classic a.linkhuman {
+  color: var(--esl-classic-link) !important;
+  font-weight: 800;
+}
+
+body.page-classic hr {
+  border-top: 1px solid var(--esl-classic-border);
+  margin: 8px 0 24px;
+}
+
+html.league-theme-dark body {
+  background-color: var(--esl-classic-bg) !important;
+}
+
+html.league-theme-dark body.page-classic > table,
+html.league-theme-dark body.page-classic table[width] {
+  background: transparent !important;
+  box-shadow: none !important;
+}
+
+html.league-theme-dark body.page-classic td.main {
+  background: var(--esl-classic-row) !important;
+  border-color: var(--esl-classic-border);
+  color: var(--esl-classic-text) !important;
+}
+
+body.page-standings tr.race-champion > td.main {
+  background: #fff1b8 !important;
+  color: #241f08 !important;
+}
+
+body.page-standings tr.race-promoted > td.main {
+  background: #dcf7e4 !important;
+  color: #0f3a24 !important;
+}
+
+body.page-standings tr.race-relegated > td.main {
+  background: #ffe1e7 !important;
+  color: #5f1724 !important;
+}
+
+body.page-standings tr.race-champion > td.main a,
+body.page-standings tr.race-promoted > td.main a,
+body.page-standings tr.race-relegated > td.main a {
+  color: inherit !important;
+}
+
+html.league-theme-dark body.page-standings tr.race-champion > td.main {
+  background: #423915 !important;
+  color: #fff2ba !important;
+}
+
+html.league-theme-dark body.page-standings tr.race-promoted > td.main {
+  background: #123d28 !important;
+  color: #c7f7d8 !important;
+}
+
+html.league-theme-dark body.page-standings tr.race-relegated > td.main {
+  background: #451923 !important;
+  color: #ffd2dc !important;
+}
+
+html.league-theme-dark .roster-rating-pill,
+html.league-theme-dark .player-rating-pill {
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.22);
+  color: #ffffff !important;
+  text-shadow: 0 1px 1px rgba(15, 23, 42, 0.35);
+}
+
+html.league-theme-dark .roster-rating-pill--na,
+html.league-theme-dark .player-rating-pill--na {
+  background: rgba(148, 163, 184, 0.35) !important;
+  border-color: rgba(226, 232, 240, 0.28) !important;
+  color: #e2e8f0 !important;
+  text-shadow: none;
+}
+
+html.league-theme-dark td > table[border="1"][cellpadding="0"][cellspacing="0"] {
+  background: transparent !important;
+}
+
+@media (max-width: 760px) {
+  body.page-classic {
+    padding: 14px;
+  }
+
+  body.page-classic > table,
+  body.page-classic table[width] {
+    width: auto !important;
+    max-width: none !important;
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 /* Colour rating box â€” fixed width */
 td > table[border="1"][cellpadding="0"][cellspacing="0"] {
   width: 24px !important;

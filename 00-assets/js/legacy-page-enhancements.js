@@ -13,6 +13,20 @@
     }
   }
 
+  function markClassicPage() {
+    if (core.isMenuPage && core.isMenuPage()) {
+      return;
+    }
+
+    if (core.isAssetHtmlPage && core.isAssetHtmlPage()) {
+      return;
+    }
+
+    if (document.querySelector("td.header, td.main, td.teamheader, td.newheader")) {
+      document.body.classList.add("page-classic");
+    }
+  }
+
   function markTransactionsPage() {
     var path = (window.location && window.location.pathname ? window.location.pathname : "").toLowerCase();
     var title = document.title ? document.title.trim().toLowerCase() : "";
@@ -82,16 +96,65 @@
     headerImage.setAttribute("src", getRosterPhotoPath(photoFilename));
   }
 
+  function enhanceStandingsRaceRows() {
+    var tiers;
+    var tables;
+
+    if (!document.body.classList.contains("page-standings")) {
+      return;
+    }
+
+    tiers = [
+      { champion: 1, promoted: 0, relegated: 2 },
+      { champion: 0, promoted: 1, relegated: 2 },
+      { champion: 0, promoted: 2, relegated: 0 }
+    ];
+
+    tables = Array.prototype.slice.call(document.querySelectorAll("table[width]")).filter(function (table) {
+      return table.querySelector("td.header") && table.querySelector("td.main a.linkmain, td.main a.linkhuman");
+    });
+
+    tables.slice(0, tiers.length).forEach(function (table, tableIndex) {
+      var rows = Array.prototype.slice.call(table.querySelectorAll("tr")).filter(function (row) {
+        return row.querySelector("td.main a.linkmain, td.main a.linkhuman");
+      });
+      var tier = tiers[tableIndex];
+
+      rows.forEach(function (row) {
+        row.classList.remove("race-champion", "race-promoted", "race-relegated");
+      });
+
+      rows.slice(0, tier.champion).forEach(function (row) {
+        row.classList.add("race-champion");
+      });
+
+      rows.slice(tier.champion, tier.champion + tier.promoted).forEach(function (row) {
+        row.classList.add("race-promoted");
+      });
+
+      if (tier.relegated > 0) {
+        rows.slice(-tier.relegated).forEach(function (row) {
+          row.classList.add("race-relegated");
+        });
+      }
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
+    markClassicPage();
+
     if (core.isRosterPage()) {
       core.ensureViewport(core.ROSTER_VIEWPORT);
       document.body.classList.add("page-roster");
+    } else if (core.isPlayerPage()) {
+      document.body.classList.add("page-player");
     } else if (core.shouldUseLegacyViewport()) {
       core.ensureViewport(core.DEFAULT_VIEWPORT);
     }
 
     markStandingsPage();
     markTransactionsPage();
+    enhanceStandingsRaceRows();
     applyRosterHeaderPhoto();
   });
 })();

@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>League Dashboard</title>
+  <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/core.js" defer></script>
+  <script src="../js/settings.js" defer></script>
   <style>
     :root { --ink:#0f0f0f; --blue:#111b36; --paper:#f4f2ec; --card:#fff; --mid:#524633; --line:#ddd5c6; --green:#1f6d3d; --red:#9d1f1f; --font-sans:"Graphik","Helvetica Neue",Helvetica,Arial,sans-serif; --font-serif:"Tiempos Headline","Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif; }
     body.dashboard-page { margin:0; padding:1.1rem; background:var(--paper); color:var(--ink); font-family:var(--font-sans); overflow-x:hidden; }
@@ -564,7 +567,7 @@
 
     function buildSearchIndex() {
       const teamEntries = state.standings.flatMap((section) => (section.teams || []).map((team) => ({ type: "Team", name: team.team, meta: shortLeagueLabel(section.title), href: normalizeHref(team.rosterUrl || "") })));
-      const playerEntries = (state.players || []).filter((player) => player && player.name && player.url).map((player) => ({ type: "Player", name: player.name, meta: `${player.teamLabel || player.team || "Team"}${player.pos ? ` · ${player.pos}` : ""}`, href: normalizePlayerHref(player.url, player.name) }));
+      const playerEntries = (state.players || []).filter((player) => player && player.name && player.url).map((player) => ({ type: "Player", name: player.name, meta: `${player.teamLabel || player.team || "Team"}${player.pos ? ` Â· ${player.pos}` : ""}`, href: normalizePlayerHref(player.url, player.name) }));
       const dedup = new Map();
       [...teamEntries, ...playerEntries].forEach((entry) => { const key = `${entry.type}|${entry.name}|${entry.href}`; if (!dedup.has(key)) dedup.set(key, entry); });
       return [...dedup.values()];
@@ -579,11 +582,11 @@
         const q = String(query || "").trim().toLowerCase();
         if (!q) {
           if (!showHints) { resultsRoot.innerHTML = ""; return; }
-          resultsRoot.innerHTML = index.slice(0, 6).map((entry) => `<a class="search-result" href="${entry.href}"><div class="search-result-name">${entry.name}</div><div class="search-result-meta">${entry.type} · ${entry.meta}</div></a>`).join("");
+          resultsRoot.innerHTML = index.slice(0, 6).map((entry) => `<a class="search-result" href="${entry.href}"><div class="search-result-name">${entry.name}</div><div class="search-result-meta">${entry.type} Â· ${entry.meta}</div></a>`).join("");
           return;
         }
         const hits = index.filter((entry) => entry.name.toLowerCase().includes(q) || entry.meta.toLowerCase().includes(q)).slice(0, 10);
-        resultsRoot.innerHTML = hits.length ? hits.map((entry) => `<a class="search-result" href="${entry.href}"><div class="search-result-name">${entry.name}</div><div class="search-result-meta">${entry.type} · ${entry.meta}</div></a>`).join("") : `<div class="search-result"><div class="search-result-name">No matches</div><div class="search-result-meta">Try another player or team</div></div>`;
+        resultsRoot.innerHTML = hits.length ? hits.map((entry) => `<a class="search-result" href="${entry.href}"><div class="search-result-name">${entry.name}</div><div class="search-result-meta">${entry.type} Â· ${entry.meta}</div></a>`).join("") : `<div class="search-result"><div class="search-result-name">No matches</div><div class="search-result-meta">Try another player or team</div></div>`;
       }
       const openSearch = () => wrap.classList.add("is-open");
       const closeSearch = () => wrap.classList.remove("is-open");

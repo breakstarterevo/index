@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.25, maximum-scale=5.0, user-scalable=yes">
   <title>Youth Intake</title>
+  <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/core.js" defer></script>
+  <script src="../js/settings.js" defer></script>
   <style>
     :root { --ink:#0f0f0f; --blue:#111b36; --paper:#f4f2ec; --card:#fff; --line:#ddd5c6; --muted:#6a5f4d; --font-sans:"Graphik","Helvetica Neue",Helvetica,Arial,sans-serif; --font-serif:"Tiempos Headline","Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif; }
     body { margin:0; padding:1rem; background:var(--paper); color:var(--ink); font-family:var(--font-sans); overflow-x:auto; }
@@ -28,8 +31,8 @@
     .table th,.table td { border-bottom:1px solid var(--line); padding:.44rem .34rem; white-space:nowrap; text-align:right; }
     .table th,.table td { min-width:58px; }
     .table th { font-size:.62rem; letter-spacing:.11em; text-transform:uppercase; color:var(--muted); cursor:pointer; user-select:none; }
-    .table th.sort-asc::after { content:" ▲"; font-size:.58rem; color:var(--blue); }
-    .table th.sort-desc::after { content:" ▼"; font-size:.58rem; color:var(--blue); }
+    .table th.sort-asc::after { content:" â–²"; font-size:.58rem; color:var(--blue); }
+    .table th.sort-desc::after { content:" â–¼"; font-size:.58rem; color:var(--blue); }
     .table th:first-child,.table td:first-child { text-align:left; padding-left:0; min-width:150px; width:150px; }
     .table th:nth-child(2),.table td:nth-child(2) { text-align:left; min-width:96px; width:96px; }
     .table td:first-child { font-family:var(--font-serif); font-size:.98rem; }
@@ -225,7 +228,7 @@
       document.getElementById("teamTitle").textContent = team.team === "__ALL__" ? "All Teams Youth Intake" : `${team.team} Youth Intake`;
       document.getElementById("teamSub").textContent = team.team === "__ALL__"
         ? "League-wide intake class"
-        : `${team.tier || "Unassigned Tier"}${team.positionFocus ? ` · Focus ${team.positionFocus}` : ""}`;
+        : `${team.tier || "Unassigned Tier"}${team.positionFocus ? ` Â· Focus ${team.positionFocus}` : ""}`;
       document.getElementById("statusText").textContent = `${rows.length} prospects`;
 
       const tabsHtml = `<div class="tabs">
@@ -312,4 +315,3 @@
   </script>
 </body>
 </html>
-

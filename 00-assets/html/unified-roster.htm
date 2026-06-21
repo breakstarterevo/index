@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unified Roster</title>
+  <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/core.js" defer></script>
+  <script src="../js/settings.js" defer></script>
   <style>
     :root {
       --team-color: #111b36;
@@ -278,8 +281,8 @@
       width: 240px;
     }
     .data-table th:first-child { background: var(--team-color); z-index: 3; }
-    .data-table th.sort-asc::after { content: " ▲"; font-size: 0.58rem; }
-    .data-table th.sort-desc::after { content: " ▼"; font-size: 0.58rem; }
+    .data-table th.sort-asc::after { content: " â–²"; font-size: 0.58rem; }
+    .data-table th.sort-desc::after { content: " â–¼"; font-size: 0.58rem; }
     .player-name-link {
       color: inherit;
       text-decoration: none;
@@ -1040,9 +1043,9 @@
           <div class="status" id="scheduleStatus"></div>
         </div>
         <div class="schedule-head">
-          <button class="month-nav" id="prevMonth" type="button">◀</button>
+          <button class="month-nav" id="prevMonth" type="button">â—€</button>
           <div class="month-title" id="monthTitle">Month</div>
-          <button class="month-nav" id="nextMonth" type="button">▶</button>
+          <button class="month-nav" id="nextMonth" type="button">â–¶</button>
         </div>
         <div class="schedule-view-toggle" aria-label="Schedule view">
           <button class="schedule-view-btn active" type="button" data-schedule-view="calendar">Calendar</button>

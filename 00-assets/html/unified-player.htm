@@ -4,7 +4,10 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Unified Player</title>
+  <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/core.js" defer></script>
+  <script src="../js/settings.js" defer></script>
   <style>
     :root {
       --team-color: #111b36;
@@ -1745,7 +1748,7 @@
       const root = document.getElementById("playerArticlesList");
       const note = document.getElementById("playerArticlesNote");
       if (!root) return;
-      root.innerHTML = `<div class="empty">Loading ESL Media…</div>`;
+      root.innerHTML = `<div class="empty">Loading ESL Mediaâ€¦</div>`;
       if (note) note.textContent = "Loading catalog";
       const articles = await loadEslMediaArticles();
       const player = state.current;
@@ -1762,13 +1765,13 @@
       }
       if (!matches.length) {
         root.innerHTML =
-          `<div class="empty">No ESL Media pieces match this player’s media tags or name in this catalog yet.</div>${browse}`;
+          `<div class="empty">No ESL Media pieces match this playerâ€™s media tags or name in this catalog yet.</div>${browse}`;
         return;
       }
       root.innerHTML =
         matches.map((article) => {
           const href = mediaArticleHref(article.file);
-          const metaBits = [article.category, article.meta].filter(Boolean).join(" · ");
+          const metaBits = [article.category, article.meta].filter(Boolean).join(" Â· ");
           const deskOrMeta = metaBits || article.desk || "";
           const blurb = article.blurb ? escapeHtml(article.blurb) : "";
           return (

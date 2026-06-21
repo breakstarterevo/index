@@ -20,6 +20,7 @@ BUILD_DIR = os.path.dirname(SCRIPT_ROOT)
 PROJECT_ROOT = os.path.dirname(BUILD_DIR)
 
 CSS_FILENAME = "00-assets/css/styles.css"
+THEME_PRELOAD_FILENAME = "00-assets/js/theme-preload.js"
 JS_FILENAME = "00-assets/js/sort.js"
 FEATURE_JS_FILENAMES = [
     "00-assets/js/core.js",
@@ -34,6 +35,7 @@ INDEX_JS_FILENAME = "00-assets/js/index.js"
 FAVICON_FILE = "00-build/database/favicon.png"
 MOBILE_INDEX_VIEWPORT_TAG = '<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">'
 SKIP_DIRS = {"00-build", "00-assets", "00-eslmedia"}
+SKIP_FILENAMES = {"menu.htm"}
 
 
 def parse_args(argv):
@@ -64,6 +66,7 @@ def make_rel(from_dir, project_relative_path):
 def inject_file(filepath, dry_run, target_root):
     dirpath = os.path.dirname(filepath)
     css_rel = make_rel(dirpath, CSS_FILENAME)
+    theme_preload_rel = make_rel(dirpath, THEME_PRELOAD_FILENAME)
     js_rel = make_rel(dirpath, JS_FILENAME)
     index_js_rel = make_rel(dirpath, INDEX_JS_FILENAME)
     favicon_rel = make_rel(dirpath, FAVICON_FILE)
@@ -71,6 +74,7 @@ def inject_file(filepath, dry_run, target_root):
     is_target_root_index = os.path.abspath(filepath) == os.path.join(target_root, "index.htm")
 
     css_tag = f'<link rel="stylesheet" href="{css_rel}">'
+    theme_preload_tag = f'<script src="{theme_preload_rel}"></script>'
     js_tag = f'<script src="{js_rel}" defer></script>'
     feature_js_tags = [
         f'<script src="{feature_rel}?v={ROSTER_ENHANCEMENTS_VERSION}" defer></script>'
@@ -93,6 +97,7 @@ def inject_file(filepath, dry_run, target_root):
         html = html.replace(old_roster_tag, versioned_roster_tag, 1)
 
     already_css = CSS_FILENAME in html or css_rel in html
+    already_theme_preload = THEME_PRELOAD_FILENAME in html or theme_preload_rel in html
     already_js = JS_FILENAME in html or js_rel in html
     already_feature_js = all(
         filename in html or rel in html
@@ -106,7 +111,7 @@ def inject_file(filepath, dry_run, target_root):
     should_replace_viewport = is_target_root_index and viewport_tag not in html and already_viewport
 
     needs_index_js = is_target_root_index
-    if already_css and already_js and already_feature_js and already_favicon and already_viewport and not should_replace_viewport and not replaced_roster_tag and (not needs_index_js or already_index_js):
+    if already_css and already_theme_preload and already_js and already_feature_js and already_favicon and already_viewport and not should_replace_viewport and not replaced_roster_tag and (not needs_index_js or already_index_js):
         return "skipped"
 
     inject = ""
@@ -114,6 +119,11 @@ def inject_file(filepath, dry_run, target_root):
         inject += f"  {viewport_tag}\n"
     if not already_favicon:
         inject += f"  {favicon_tag}\n"
+    if not already_theme_preload:
+        if css_tag in html:
+            html = html.replace(css_tag, f"{theme_preload_tag}\n  {css_tag}", 1)
+        else:
+            inject += f"  {theme_preload_tag}\n"
     if not already_css:
         inject += f"  {css_tag}\n"
     if not already_js:
@@ -181,6 +191,11 @@ def main():
 
         for filename in filenames:
             if not filename.lower().endswith((".html", ".htm")):
+                continue
+            if filename.lower() in SKIP_FILENAMES:
+                files_skipped += 1
+                if verbose:
+                    print(f"SKIPPED (excluded file): {os.path.join(dirpath, filename)}")
                 continue
 
             filepath = os.path.join(dirpath, filename)
