@@ -155,8 +155,8 @@
 
     tiers = [
       { champion: 1, promoted: 0, relegated: 2 },
-      { champion: 0, promoted: 1, relegated: 2 },
-      { champion: 0, promoted: 2, relegated: 0 }
+      { champion: 0, promoted: 2, relegated: 1 },
+      { champion: 0, promoted: 1, relegated: 0 }
     ];
 
     tables = Array.prototype.slice.call(document.querySelectorAll("table[width]")).filter(function (table) {
