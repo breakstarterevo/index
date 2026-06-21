@@ -31,8 +31,8 @@
     .table th,.table td { border-bottom:1px solid var(--line); padding:.44rem .34rem; white-space:nowrap; text-align:right; }
     .table th,.table td { min-width:58px; }
     .table th { font-size:.62rem; letter-spacing:.11em; text-transform:uppercase; color:var(--muted); cursor:pointer; user-select:none; }
-    .table th.sort-asc::after { content:" â–²"; font-size:.58rem; color:var(--blue); }
-    .table th.sort-desc::after { content:" â–¼"; font-size:.58rem; color:var(--blue); }
+    .table th.sort-asc::after { content:" ^"; font-size:.58rem; color:var(--blue); }
+    .table th.sort-desc::after { content:" v"; font-size:.58rem; color:var(--blue); }
     .table th:first-child,.table td:first-child { text-align:left; padding-left:0; min-width:150px; width:150px; }
     .table th:nth-child(2),.table td:nth-child(2) { text-align:left; min-width:96px; width:96px; }
     .table td:first-child { font-family:var(--font-serif); font-size:.98rem; }
@@ -228,7 +228,7 @@
       document.getElementById("teamTitle").textContent = team.team === "__ALL__" ? "All Teams Youth Intake" : `${team.team} Youth Intake`;
       document.getElementById("teamSub").textContent = team.team === "__ALL__"
         ? "League-wide intake class"
-        : `${team.tier || "Unassigned Tier"}${team.positionFocus ? ` Â· Focus ${team.positionFocus}` : ""}`;
+        : `${team.tier || "Unassigned Tier"}${team.positionFocus ? `  -  Focus ${team.positionFocus}` : ""}`;
       document.getElementById("statusText").textContent = `${rows.length} prospects`;
 
       const tabsHtml = `<div class="tabs">

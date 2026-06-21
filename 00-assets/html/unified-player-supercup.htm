@@ -848,6 +848,7 @@
           <section class="panel">
             <div class="panel-head">
               <h2 class="panel-title">Contract</h2>
+              <div class="note" id="contractNote"></div>
             </div>
             <table class="contract-table" id="contractTable"></table>
           </section>
@@ -1305,6 +1306,11 @@
     function renderPlayerDetails() {
       const p = state.current;
       const contracts = Array.isArray(p.contracts) ? p.contracts : [];
+      const birdYears = Number.isFinite(Number(p.birdYears)) ? Number(p.birdYears) : 0;
+      const contractNote = document.getElementById("contractNote");
+      if (contractNote) {
+        contractNote.textContent = `Bird Years: ${birdYears}`;
+      }
       document.getElementById("contractTable").innerHTML = contracts.length
         ? `<tbody>${contracts.map((contract) => `<tr><th>${fmt(contract.year)}</th><td>${fmt(contract.salaryText)}</td></tr>`).join("")}</tbody>`
         : `<tbody><tr><th>Contract</th><td>$0</td></tr></tbody>`;
@@ -1467,7 +1473,7 @@
       const root = document.getElementById("playerArticlesList");
       const note = document.getElementById("playerArticlesNote");
       if (!root) return;
-      root.innerHTML = `<div class="empty">Loading ESL Mediaâ€¦</div>`;
+      root.innerHTML = `<div class="empty">Loading ESL Media...</div>`;
       if (note) note.textContent = "Loading catalog";
       const articles = await loadEslMediaArticles();
       const player = state.current;
@@ -1484,13 +1490,13 @@
       }
       if (!matches.length) {
         root.innerHTML =
-          `<div class="empty">No ESL Media pieces match this playerâ€™s media tags or name in this catalog yet.</div>${browse}`;
+          `<div class="empty">No ESL Media pieces match this player's media tags or name in this catalog yet.</div>${browse}`;
         return;
       }
       root.innerHTML =
         matches.map((article) => {
           const href = mediaArticleHref(article.file);
-          const metaBits = [article.category, article.meta].filter(Boolean).join(" Â· ");
+          const metaBits = [article.category, article.meta].filter(Boolean).join("  -  ");
           const deskOrMeta = metaBits || article.desk || "";
           const blurb = article.blurb ? escapeHtml(article.blurb) : "";
           return (

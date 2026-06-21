@@ -567,7 +567,7 @@
 
     function buildSearchIndex() {
       const teamEntries = state.standings.flatMap((section) => (section.teams || []).map((team) => ({ type: "Team", name: team.team, meta: shortLeagueLabel(section.title), href: normalizeHref(team.rosterUrl || "") })));
-      const playerEntries = (state.players || []).filter((player) => player && player.name && player.url).map((player) => ({ type: "Player", name: player.name, meta: `${player.teamLabel || player.team || "Team"}${player.pos ? ` Â· ${player.pos}` : ""}`, href: normalizePlayerHref(player.url, player.name) }));
+      const playerEntries = (state.players || []).filter((player) => player && player.name && player.url).map((player) => ({ type: "Player", name: player.name, meta: `${player.teamLabel || player.team || "Team"}${player.pos ? `  -  ${player.pos}` : ""}`, href: normalizePlayerHref(player.url, player.name) }));
       const dedup = new Map();
       [...teamEntries, ...playerEntries].forEach((entry) => { const key = `${entry.type}|${entry.name}|${entry.href}`; if (!dedup.has(key)) dedup.set(key, entry); });
       return [...dedup.values()];
@@ -582,11 +582,11 @@
         const q = String(query || "").trim().toLowerCase();
         if (!q) {
           if (!showHints) { resultsRoot.innerHTML = ""; return; }
-          resultsRoot.innerHTML = index.slice(0, 6).map((entry) => `<a class="search-result" href="${entry.href}"><div class="search-result-name">${entry.name}</div><div class="search-result-meta">${entry.type} Â· ${entry.meta}</div></a>`).join("");
+          resultsRoot.innerHTML = index.slice(0, 6).map((entry) => `<a class="search-result" href="${entry.href}"><div class="search-result-name">${entry.name}</div><div class="search-result-meta">${entry.type}  -  ${entry.meta}</div></a>`).join("");
           return;
         }
         const hits = index.filter((entry) => entry.name.toLowerCase().includes(q) || entry.meta.toLowerCase().includes(q)).slice(0, 10);
-        resultsRoot.innerHTML = hits.length ? hits.map((entry) => `<a class="search-result" href="${entry.href}"><div class="search-result-name">${entry.name}</div><div class="search-result-meta">${entry.type} Â· ${entry.meta}</div></a>`).join("") : `<div class="search-result"><div class="search-result-name">No matches</div><div class="search-result-meta">Try another player or team</div></div>`;
+        resultsRoot.innerHTML = hits.length ? hits.map((entry) => `<a class="search-result" href="${entry.href}"><div class="search-result-name">${entry.name}</div><div class="search-result-meta">${entry.type}  -  ${entry.meta}</div></a>`).join("") : `<div class="search-result"><div class="search-result-name">No matches</div><div class="search-result-meta">Try another player or team</div></div>`;
       }
       const openSearch = () => wrap.classList.add("is-open");
       const closeSearch = () => wrap.classList.remove("is-open");

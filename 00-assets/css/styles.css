@@ -1,10 +1,10 @@
-﻿/* ============================================================
-   BSL Index â€” Global Stylesheet
+/* ============================================================
+   BSL Index - Global Stylesheet
    ============================================================ */
 
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
-/* â”€â”€ Reset & Base â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Reset & Base ------------------------------------------- */
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html { -webkit-text-size-adjust: 100%; }
@@ -68,7 +68,7 @@ body {
 
 @keyframes fadein { from { opacity: 0; } to { opacity: 1; } }
 
-/* â”€â”€ Links â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Links -------------------------------------------------- */
 a { text-decoration: none; transition: color 0.15s; }
 a:hover { text-decoration: underline; }
 
@@ -86,7 +86,7 @@ a.linkhuman {
 }
 a.linkhuman:hover { color: #1d4ed8; }
 
-/* â”€â”€ Tables â€” fit to screen â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Tables - fit to screen --------------------------------- */
 table {
   border-collapse: collapse;
   border-spacing: 0;
@@ -110,7 +110,7 @@ table[width] {
   max-width: none !important;
 }
 
-/* â”€â”€ Header cells â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Header cells ------------------------------------------- */
 td.header {
   font-size: 7.5pt;
   font-weight: 600;
@@ -140,7 +140,7 @@ td.headerbg {
   padding: 5px 8px;
 }
 
-/* â”€â”€ Page title header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Page title header -------------------------------------- */
 td.newheader {
   font-family: 'Inter', Tahoma, sans-serif;
   font-size: 17pt;
@@ -150,7 +150,7 @@ td.newheader {
   letter-spacing: -0.02em;
 }
 
-/* â”€â”€ Section / table title â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Section / table title ---------------------------------- */
 td.tableheader {
   font-size: 11pt;
   font-weight: 700;
@@ -158,7 +158,7 @@ td.tableheader {
   padding: 10px 8px 5px;
 }
 
-/* â”€â”€ Team header â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Team header -------------------------------------------- */
 td.teamheader {
   font-family: 'Inter', Tahoma, sans-serif;
   font-size: 16pt;
@@ -178,8 +178,8 @@ td.teamheader2 {
 /* Top roster/team banner: keep it as a normal table so the header doesn't collapse */
 body > table:first-of-type:has(td.teamheader) {
   display: table !important;
-  width: auto !important;
-  max-width: min(1600px, calc(100vw - 44px)) !important;
+  width: min(800px, calc(100vw - 44px)) !important;
+  max-width: min(800px, calc(100vw - 44px)) !important;
   overflow: visible !important;
   table-layout: auto !important;
 }
@@ -192,7 +192,93 @@ body > table:first-of-type:has(td.teamheader) td.teamheader2 {
   min-width: 0;
 }
 
-/* â”€â”€ Data cells â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+body.page-classic > table.classic-team-banner {
+  border-radius: 0;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+  margin: 0 0 12px;
+  overflow: hidden !important;
+  width: min(800px, calc(100vw - 44px)) !important;
+}
+
+body.page-roster > table.classic-team-banner + table td.tableheader {
+  padding-top: 6px;
+}
+
+body.page-classic > table.classic-team-banner td.header,
+body.page-classic > table.classic-team-banner td.teamheader,
+body.page-classic > table.classic-team-banner td.teamheader2 {
+  border: 0;
+}
+
+body.page-classic > table.classic-team-banner td.header:first-child {
+  padding: 14px 12px 14px 20px;
+  width: 92px !important;
+}
+
+body.page-classic > table.classic-team-banner td.header:nth-child(2) {
+  padding: 0;
+  width: 12px !important;
+}
+
+body.page-classic > table.classic-team-banner img {
+  display: block;
+  height: 74px !important;
+  object-fit: contain;
+  width: 74px !important;
+}
+
+body.page-classic > table.classic-team-banner td.teamheader {
+  font-size: 20px;
+  letter-spacing: 0;
+  line-height: 1.15;
+  padding: 16px 22px 4px 0;
+  text-transform: none;
+}
+
+body.page-classic > table.classic-team-banner td.teamheader2 {
+  font-size: 12px;
+  letter-spacing: 0;
+  line-height: 1.35;
+  padding: 2px 22px 0 0;
+}
+
+body.page-classic > table.classic-team-banner td.teamheader2:last-child {
+  padding-bottom: 14px;
+}
+
+.classic-team-banner__title-cell {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.classic-team-banner__name {
+  font-weight: 900;
+}
+
+.classic-team-banner__record {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.36);
+  border-radius: 999px;
+  color: inherit;
+  display: inline-flex;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1;
+  padding: 5px 9px;
+}
+
+.classic-team-banner__meta,
+.classic-team-banner__location {
+  opacity: 0.92;
+}
+
+html.league-theme-dark body.page-classic > table.classic-team-banner {
+  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.28);
+}
+
+/* -- Data cells --------------------------------------------- */
 td.main {
   font-size: 9pt;
   font-weight: 400;
@@ -204,7 +290,7 @@ td.main {
   max-width: 120px;
 }
 
-/* Name columns â€” allow more space */
+/* Name columns - allow more space */
 td.main:nth-child(2) {
   max-width: 160px;
 }
@@ -217,30 +303,30 @@ body.page-transactions td.main:nth-child(3) {
   max-width: none;
 }
 
-/* â”€â”€ Alternating rows â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Alternating rows --------------------------------------- */
 tr.row1 { background: #f1f5f9; }
 tr.row1:hover { background: #e8f0fe; }
 
 tr.row2 { background: #e2e8f0; }
 tr.row2:hover { background: #dbeafe; }
 
-/* â”€â”€ Team colour row â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Team colour row ---------------------------------------- */
 tr.teamcolor { color: #ffffff; }
 
-/* â”€â”€ HR divider â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- HR divider --------------------------------------------- */
 hr {
   border: none;
   border-top: 1px solid #cbd5e1;
   margin: 10px 0;
 }
 
-/* â”€â”€ Footer font â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Footer font -------------------------------------------- */
 font[size="2"] {
   font-size: 8.5pt;
   color: #64748b;
 }
 
-/* â”€â”€ Menu sidebar â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Menu sidebar ------------------------------------------- */
 body[bgcolor="#990000"],
 body[style*="990000"] {
   background: #0f172a !important;
@@ -268,7 +354,7 @@ a.menulink:hover {
   text-decoration: none;
 }
 
-/* â”€â”€ Utility â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Utility ------------------------------------------------ */
 br { display: block; margin: 4px 0; content: ""; }
 
 /* Colour rating boxes */
@@ -285,7 +371,7 @@ table[width="800"]:has(table[width="320"]) {
   display: none !important;
 }
 
-/* â”€â”€ Scrollbar styling â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */
+/* -- Scrollbar styling -------------------------------------- */
 table[width]::-webkit-scrollbar { height: 8px; }
 table[width]::-webkit-scrollbar-track { background: #e2e8f0; border-radius: 2px; }
 table[width]::-webkit-scrollbar-thumb { background: #94a3b8; border-radius: 2px; }
@@ -405,6 +491,30 @@ body.page-classic td.tableheader {
   padding: 14px 0 7px;
 }
 
+body.page-standings td.newheader {
+  padding-bottom: 2px;
+}
+
+body.page-standings table:has(td.newheader) {
+  margin-bottom: 0;
+}
+
+body.page-standings table:has(td.newheader) hr {
+  margin: 4px 0 8px;
+}
+
+body.page-standings tr:has(> td.tableheader[colspan]) {
+  display: none;
+}
+
+body.page-standings br {
+  margin: 0;
+}
+
+body.page-standings > table + br + hr {
+  margin: 10px 0 18px;
+}
+
 html.league-theme-dark body.page-classic td.newheader {
   color: #eef5ff !important;
 }
@@ -508,7 +618,7 @@ html.league-theme-dark td > table[border="1"][cellpadding="0"][cellspacing="0"] 
     margin-right: 0;
   }
 }
-/* Colour rating box â€” fixed width */
+/* Colour rating box - fixed width */
 td > table[border="1"][cellpadding="0"][cellspacing="0"] {
   width: 24px !important;
   min-width: 24px !important;

@@ -1105,6 +1105,8 @@ def parse_contract_table(html, team=None, team_label=None):
         re.IGNORECASE | re.DOTALL,
     )
     contracts = []
+    bird_years_by_file = {}
+    bird_years_by_name = {}
 
     for row_class, row_html in row_matches:
         cells = re.findall(r"<td[^>]*class=main[^>]*>(.*?)</td>", row_html, re.IGNORECASE | re.DOTALL)
@@ -1120,6 +1122,15 @@ def parse_contract_table(html, team=None, team_label=None):
         player_url = normalize_schedule_url(player_link.group(2)) if player_link else ""
         if not name:
             continue
+
+        bird_years = parse_bird_years(row_html)
+        file_key = normalize_player_file(player_url)
+        name_key = normalize_name(name)
+        if bird_years:
+            if file_key:
+                bird_years_by_file[file_key] = bird_years
+            if name_key:
+                bird_years_by_name[name_key] = bird_years
 
         year_entries = []
         for index, year in enumerate(years, start=1):
@@ -1138,13 +1149,21 @@ def parse_contract_table(html, team=None, team_label=None):
             {
                 "name": name,
                 "url": player_url,
-                "file": normalize_player_file(player_url),
+                "file": file_key,
                 "team": team or "",
                 "teamLabel": team_label or "",
                 "contracts": year_entries,
+                "birdYears": bird_years,
                 "rowClass": row_class.lower(),
             }
         )
+
+    for entry in contracts:
+        if entry.get("birdYears"):
+            continue
+        file_key = entry.get("file", "")
+        name_key = normalize_name(entry.get("name", ""))
+        entry["birdYears"] = bird_years_by_file.get(file_key) or bird_years_by_name.get(name_key) or 0
 
     return contracts, years
 
@@ -1170,9 +1189,12 @@ def attach_contracts(players, contract_entries, contract_years):
         entry = by_file.get(file_key) or by_name.get(name_key)
         if entry:
             player["contracts"] = entry.get("contracts", zero_contracts(contract_years))
+            if entry.get("birdYears"):
+                player["birdYears"] = int(entry.get("birdYears") or 0)
             attached += 1
         else:
             player["contracts"] = [contract.copy() for contract in default_contracts]
+            player.setdefault("birdYears", 0)
 
     return attached
 

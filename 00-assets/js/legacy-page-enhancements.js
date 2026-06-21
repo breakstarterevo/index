@@ -96,6 +96,55 @@
     headerImage.setAttribute("src", getRosterPhotoPath(photoFilename));
   }
 
+  function cleanDivisionText(value) {
+    return String(value || "")
+      .replace(/\b(Champions League Basketball)\s+\1\s+Division:/i, "$1 Division:")
+      .replace(/\b(Europa League Basketball)\s+\1\s+Division:/i, "$1 Division:")
+      .replace(/\b(Conference League Basketball)\s+\1\s+Division:/i, "$1 Division:")
+      .trim();
+  }
+
+  function enhanceClassicTeamHeader() {
+    var banner = document.querySelector("body > table:first-of-type");
+    var titleCell;
+    var detailCells;
+    var titleText;
+    var titleMatch;
+    var titleSpan;
+    var recordSpan;
+
+    if (!banner || !banner.querySelector("td.teamheader")) {
+      return;
+    }
+
+    banner.classList.add("classic-team-banner");
+    titleCell = banner.querySelector("td.teamheader");
+    detailCells = Array.prototype.slice.call(banner.querySelectorAll("td.teamheader2"));
+    titleText = titleCell.textContent.replace(/\s+/g, " ").trim();
+    titleMatch = titleText.match(/^(.*?)\s+(\d+\s*-\s*\d+)$/);
+
+    if (titleMatch) {
+      titleCell.textContent = "";
+      titleCell.classList.add("classic-team-banner__title-cell");
+
+      titleSpan = document.createElement("span");
+      titleSpan.className = "classic-team-banner__name";
+      titleSpan.textContent = titleMatch[1].trim();
+
+      recordSpan = document.createElement("span");
+      recordSpan.className = "classic-team-banner__record";
+      recordSpan.textContent = titleMatch[2].replace(/\s*-\s*/, "-");
+
+      titleCell.appendChild(titleSpan);
+      titleCell.appendChild(recordSpan);
+    }
+
+    detailCells.forEach(function (cell, index) {
+      cell.classList.add(index === 0 ? "classic-team-banner__meta" : "classic-team-banner__location");
+      cell.textContent = index === 0 ? cleanDivisionText(cell.textContent) : cell.textContent.replace(/\s+/g, " ").trim();
+    });
+  }
+
   function enhanceStandingsRaceRows() {
     var tiers;
     var tables;
@@ -155,6 +204,7 @@
     markStandingsPage();
     markTransactionsPage();
     enhanceStandingsRaceRows();
+    enhanceClassicTeamHeader();
     applyRosterHeaderPhoto();
   });
 })();
