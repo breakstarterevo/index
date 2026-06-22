@@ -2,15 +2,92 @@
     "source": "injuries.htm",
     "injuries": [
         {
-            "pos": "SG",
-            "name": "Eddie Johnson",
+            "pos": "C",
+            "name": "Elvin Hayes",
             "url": "",
-            "team": "",
-            "teamName": "",
-            "rosterUrl": "",
-            "length": "22",
-            "injury": "Torn MCL",
+            "team": "roster8",
+            "teamName": "Real Madrid",
+            "rosterUrl": "./rosters/roster8.htm",
+            "length": "44",
+            "injury": "Broken Ankle",
             "rowClass": "row1"
+        },
+        {
+            "pos": "C",
+            "name": "Bill Laimbeer",
+            "url": "",
+            "team": "roster19",
+            "teamName": "Aston Villa",
+            "rosterUrl": "./rosters/roster19.htm",
+            "length": "34",
+            "injury": "Broken Foot",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "C",
+            "name": "Tree Rollins",
+            "url": "",
+            "team": "roster7",
+            "teamName": "Bayern Munich",
+            "rosterUrl": "./rosters/roster7.htm",
+            "length": "22",
+            "injury": "Concussion",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "SF",
+            "name": "Bill Hanzlik",
+            "url": "",
+            "team": "roster6",
+            "teamName": "Crystal Palace",
+            "rosterUrl": "./rosters/roster6.htm",
+            "length": "18",
+            "injury": "Fractured Hip",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "PG",
+            "name": "Geoff Huston",
+            "url": "",
+            "team": "roster25",
+            "teamName": "Valencia",
+            "rosterUrl": "./rosters/roster25.htm",
+            "length": "14",
+            "injury": "Strained Back",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PF",
+            "name": "Larry Nance",
+            "url": "",
+            "team": "roster19",
+            "teamName": "Aston Villa",
+            "rosterUrl": "./rosters/roster19.htm",
+            "length": "5",
+            "injury": "Bruised Jaw",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "PG",
+            "name": "Larry Drew",
+            "url": "",
+            "team": "roster27",
+            "teamName": "FL Fart",
+            "rosterUrl": "./rosters/roster27.htm",
+            "length": "4",
+            "injury": "Sprained Knee",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PF",
+            "name": "Chris Bosh",
+            "url": "",
+            "team": "roster23",
+            "teamName": "Sporting CP",
+            "rosterUrl": "./rosters/roster23.htm",
+            "length": "2",
+            "injury": "Sprained Knee",
+            "rowClass": "row2"
         }
     ]
 }
