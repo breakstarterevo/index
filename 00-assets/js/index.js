@@ -181,210 +181,60 @@
     }, 0);
   }
 
-  function getCorePath(key, fallback) {
-    if (window.LeagueSiteCore && window.LeagueSiteCore.paths && window.LeagueSiteCore.paths[key]) {
-      return window.LeagueSiteCore.paths[key];
-    }
+  function ensureMenuStylesheet(menuDocument) {
+    var link;
 
-    return fallback;
-  }
-
-  function applyRawMenuFallback(menuDocument) {
-    var style;
-
-    if (!menuDocument || menuDocument.getElementById("league-raw-menu-fallback")) {
+    if (!menuDocument || menuDocument.querySelector('link[href*="00-assets/css/styles.css"]')) {
       return;
     }
 
-    style = menuDocument.createElement("style");
-    style.id = "league-raw-menu-fallback";
-    style.textContent = [
-      "html, body { background: #111b36 !important; color: #fff !important; font-family: Inter, Tahoma, Arial, sans-serif !important; margin: 0 !important; overflow-x: hidden !important; }",
-      "body[bgcolor] { background: #111b36 !important; }",
-      "table { border-collapse: collapse !important; width: 100% !important; }",
-      "td { padding: 0 !important; }",
-      "a.menulink { color: #fff !important; display: block !important; font: 700 9.5pt/1.1 Inter, Tahoma, Arial, sans-serif !important; padding: 6px 8px !important; text-decoration: none !important; }",
-      "a.menulink:hover { background: rgba(255,255,255,.09) !important; color: #fff !important; }",
-      ".league-menu-shell { display: flex; flex-direction: column; gap: 0; }",
-      ".league-menu-feature-row { align-items: center; border-bottom: 1px solid rgba(148, 163, 184, 0.45); display: flex; justify-content: center; min-height: 50px; padding: 5px 7px; }",
-      ".league-menu-logo { display: block; filter: brightness(0) invert(1); max-height: 38px; max-width: 84px; object-fit: contain; width: 100%; }",
-      ".league-menu-eslm-logo { display: block; filter: brightness(0) invert(1); max-height: 22px; max-width: 94px; object-fit: contain; object-position: left center; width: 100%; }",
-      ".league-menu-group { border-bottom: 1px solid rgba(148, 163, 184, 0.24); overflow: hidden; }",
-      ".league-menu-toggle { align-items: center; background: #111b36; border: 0; color: #94a3b8; cursor: pointer; display: flex; font: 800 8.7pt/1.1 Inter, Tahoma, Arial, sans-serif; justify-content: space-between; letter-spacing: 0.09em; padding: 7px 7px 3px 9px; text-align: left; text-transform: uppercase; width: 100%; }",
-      ".league-menu-toggle:hover { background: rgba(255,255,255,.08); }",
-      ".league-menu-toggle::after { content: '-'; font-weight: 800; }",
-      ".league-menu-group.is-collapsed .league-menu-toggle::after { content: '+'; }",
-      ".league-menu-links { display: flex; flex-direction: column; gap: 0; padding-top: 0; }",
-      ".league-menu-group.is-collapsed .league-menu-links { display: none; }",
-      ".league-menu-link { color: #fff !important; display: block; font: 700 9.5pt/1.08 Inter, Tahoma, Arial, sans-serif; padding: 5px 7px 5px 9px; text-decoration: none !important; }",
-      ".league-menu-link:hover { background: rgba(255,255,255,.08); color: #fff !important; }",
-      ".league-menu-link--accent { color: #d4af5a !important; }",
-      ".league-menu-link--accent:hover { color: #e3c777 !important; }",
-      ".league-menu-eslm { color: #fff !important; font: 900 italic 9.5pt/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: 0.04em; }"
-    ].join("");
-
-    (menuDocument.head || menuDocument.documentElement).appendChild(style);
-    if (menuDocument.body) {
-      menuDocument.body.setAttribute("bgcolor", "#111b36");
-    }
+    link = menuDocument.createElement("link");
+    link.rel = "stylesheet";
+    link.href = "00-assets/css/styles.css";
+    (menuDocument.head || menuDocument.documentElement).appendChild(link);
   }
 
-  function makeFallbackMenuLink(menuDocument, link) {
-    var anchor = menuDocument.createElement("a");
-    var logo;
-    var fallback;
+  function loadMenuScript(menuDocument, src) {
+    return new Promise(function (resolve, reject) {
+      var script;
 
-    anchor.className = "league-menu-link" + (link.className ? " " + link.className : "");
-    anchor.href = link.href;
-    anchor.target = link.target || "data";
-
-    if (link.logo === "eslm") {
-      logo = menuDocument.createElement("img");
-      fallback = menuDocument.createElement("span");
-      logo.className = "league-menu-eslm-logo";
-      logo.src = getCorePath("eslMediaLogo", "00-eslmedia/content/article images/ESLM.png");
-      logo.alt = "ESL Media";
-      fallback.textContent = link.label;
-      logo.addEventListener("error", function () {
-        logo.remove();
-        if (!anchor.contains(fallback)) {
-          anchor.appendChild(fallback);
-        }
-      });
-      anchor.appendChild(logo);
-      return anchor;
-    }
-
-    anchor.textContent = link.label;
-    return anchor;
-  }
-
-  function makeFallbackMenuGroup(menuDocument, title, links, collapsed) {
-    var group = menuDocument.createElement("section");
-    var toggle = menuDocument.createElement("button");
-    var linkWrap = menuDocument.createElement("div");
-
-    group.className = "league-menu-group" + (collapsed ? " is-collapsed" : "");
-    toggle.className = "league-menu-toggle";
-    toggle.type = "button";
-    toggle.textContent = title;
-    toggle.setAttribute("aria-expanded", String(!collapsed));
-    linkWrap.className = "league-menu-links";
-
-    links.forEach(function (link) {
-      linkWrap.appendChild(makeFallbackMenuLink(menuDocument, link));
-    });
-
-    toggle.addEventListener("click", function () {
-      var isCollapsed = group.classList.toggle("is-collapsed");
-      toggle.setAttribute("aria-expanded", String(!isCollapsed));
-    });
-
-    group.appendChild(toggle);
-    group.appendChild(linkWrap);
-    return group;
-  }
-
-  function buildGroupedMenuFallback(menuDocument) {
-    var shell;
-    var featureRow;
-    var logo;
-    var groups;
-
-    if (!menuDocument || menuDocument.querySelector(".league-menu-shell")) {
-      return;
-    }
-
-    groups = [
-      {
-        title: "Media",
-        links: [
-          { label: "ESL Media", href: getCorePath("eslMedia", "00-eslmedia/homepage.html"), target: "_top", logo: "eslm" },
-          { label: "ESL Reference", href: getCorePath("eslReference", "00-assets/html/reference.htm"), target: "_top", className: "league-menu-link--accent" }
-        ]
-      },
-      {
-        title: "League",
-        links: [
-          { label: "Standings", href: "standings.htm" },
-          { label: "Schedule", href: "schedule.htm" },
-          { label: "League Leaders", href: "leaders.htm" },
-          { label: "Team Leaders", href: "teamleaders.htm" },
-          { label: "Supercup Index", href: getCorePath("supercupIndex", "00-SuperCup/index.htm"), target: "_top", className: "league-menu-link--accent" },
-          { label: "Supercup KO", href: getCorePath("supercupKnockout", "00-assets/html/supercup-knockout.htm"), className: "league-menu-link--accent" },
-          { label: "Transactions", href: "transactions.htm" }
-        ]
-      },
-      {
-        title: "Teams",
-        links: [
-          { label: "Injuries", href: "injuries.htm" },
-          { label: "Cap Report", href: "capreport.htm" },
-          { label: "Free Agents", href: "freeagents.htm" },
-          { label: "Potential FAs", href: "potentialfreeagents.htm" }
-        ]
-      },
-      {
-        title: "Tools",
-        links: [
-          { label: "Depth Charts", href: getCorePath("depthCharts", "00-assets/html/depthcharts.htm") },
-          { label: "Camps", href: getCorePath("camps", "00-assets/html/camps.htm") },
-          { label: "FA War Room", href: getCorePath("faWarRoom", "00-assets/html/fa-war-room.htm") },
-          { label: "Player Compare", href: getCorePath("playerCompare", "00-assets/html/player-compare.htm") },
-          { label: "Trade Tool", href: getCorePath("tradeTool", "00-assets/html/trade-tool.htm") },
-          { label: "Training Camp", href: getCorePath("trainingCamp", "00-assets/html/training-camp.htm") }
-        ]
-      },
-      {
-        title: "Season",
-        links: [
-          { label: "Youth Intake", href: getCorePath("youthIntake", "00-assets/html/youth-intake.htm") },
-          { label: "Awards", href: "awards.htm" },
-          { label: "Season Awards", href: "seasonawards.htm" },
-          { label: "Past Champs", href: "champs.htm" }
-        ]
-      },
-      {
-        title: "Admin",
-        links: [
-          { label: "Settings", href: getCorePath("settings", "00-assets/html/settings.htm") },
-          { label: "Human Coaches", href: "humancoaches.htm" }
-        ]
-      },
-      {
-        title: "Legacy",
-        collapsed: true,
-        links: [
-          { label: "Draft Preview", href: "draft.htm" },
-          { label: "Available Staff", href: "staff.htm" },
-          { label: "Waiver Wire", href: "waiverwire.htm" },
-          { label: "Playoff Standings", href: "playoffstandings.htm" },
-          { label: "Playoffs", href: "playoffs.htm" },
-          { label: "Playoff Leaders", href: "playoffleaders.htm" }
-        ]
+      if (!menuDocument || menuDocument.querySelector('script[src*="' + src + '"]')) {
+        resolve();
+        return;
       }
-    ];
 
-    shell = menuDocument.createElement("nav");
-    featureRow = menuDocument.createElement("div");
-    logo = menuDocument.createElement("img");
-
-    shell.className = "league-menu-shell";
-    shell.setAttribute("aria-label", "League navigation");
-    featureRow.className = "league-menu-feature-row";
-    logo.className = "league-menu-logo";
-    logo.src = getCorePath("leagueLogo", "00-assets/images/ESLcropped-removebg-preview.png");
-    logo.alt = "ESL";
-    featureRow.appendChild(logo);
-    shell.appendChild(featureRow);
-
-    groups.forEach(function (group) {
-      shell.appendChild(makeFallbackMenuGroup(menuDocument, group.title, group.links, !!group.collapsed));
+      script = menuDocument.createElement("script");
+      script.src = src;
+      script.onload = resolve;
+      script.onerror = reject;
+      (menuDocument.head || menuDocument.documentElement).appendChild(script);
     });
+  }
 
-    menuDocument.body.innerHTML = "";
-    menuDocument.body.className = "menu-body";
-    menuDocument.body.appendChild(shell);
+  function ensureRealMenuEnhancements(menuFrame, menuDocument) {
+    if (!menuFrame || !menuDocument || menuFrame.dataset.realMenuLoading === "true") {
+      return;
+    }
+
+    if (menuDocument.querySelector(".league-menu-shell")) {
+      return;
+    }
+
+    menuFrame.dataset.realMenuLoading = "true";
+    ensureMenuStylesheet(menuDocument);
+    loadMenuScript(menuDocument, "00-assets/js/core.js")
+      .then(function () {
+        return loadMenuScript(menuDocument, "00-assets/js/settings.js");
+      })
+      .then(function () {
+        return loadMenuScript(menuDocument, "00-assets/js/menu.js");
+      })
+      .then(function () {
+        menuFrame.dataset.realMenuLoading = "false";
+      })
+      .catch(function () {
+        menuFrame.dataset.realMenuLoading = "false";
+      });
   }
 
   function bindSidebarAutoClose() {
@@ -404,14 +254,12 @@
       }
 
       if (!menuDocument || menuDocument.documentElement.dataset.autoCloseBound === "true") {
-        applyRawMenuFallback(menuDocument);
-        buildGroupedMenuFallback(menuDocument);
+        ensureRealMenuEnhancements(menuFrame, menuDocument);
         return;
       }
 
       menuDocument.documentElement.dataset.autoCloseBound = "true";
-      applyRawMenuFallback(menuDocument);
-      buildGroupedMenuFallback(menuDocument);
+      ensureRealMenuEnhancements(menuFrame, menuDocument);
       menuDocument.addEventListener("click", function (event) {
         if (event.target && event.target.closest && event.target.closest("a")) {
           closeAfterSidebarNavigation();

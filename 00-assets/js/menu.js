@@ -521,7 +521,7 @@
     document.body.appendChild(shell);
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
+  function initMenuEnhancements() {
     core.enableMenuFrameScroll();
     initResponsiveFrameMenu();
     ensureCapReportMenuLink();
@@ -531,5 +531,16 @@
     if (LeagueSettings.applySavedPreferences) {
       LeagueSettings.applySavedPreferences();
     }
-  });
+  }
+
+  window.LeagueMenuEnhancements = {
+    init: initMenuEnhancements,
+    enhanceLeagueMenu: enhanceLeagueMenu
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initMenuEnhancements);
+  } else {
+    initMenuEnhancements();
+  }
 })();

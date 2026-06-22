@@ -35,7 +35,7 @@ INDEX_JS_FILENAME = "00-assets/js/index.js"
 FAVICON_FILE = "00-build/database/favicon.png"
 MOBILE_INDEX_VIEWPORT_TAG = '<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">'
 SKIP_DIRS = {"00-build", "00-assets", "00-eslmedia"}
-SKIP_FILENAMES = {"menu.htm"}
+SKIP_FILENAMES = set()
 
 
 def parse_args(argv):
