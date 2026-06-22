@@ -10,7 +10,8 @@ export function createArticleNotifier(options) {
     source,
     articleBaseUrl,
     checkIntervalMs,
-    stateDir
+    stateDir,
+    maxAnnouncementsPerRun = 3
   } = options;
   const statePath = path.join(stateDir, "announced-articles.json");
 
@@ -32,13 +33,22 @@ export function createArticleNotifier(options) {
       return;
     }
 
-    for (const article of freshArticles) {
-      await sendArticleAnnouncement(article);
+    let announcedCount = 0;
+
+    for (const article of freshArticles.slice(0, maxAnnouncementsPerRun)) {
+      const result = await sendArticleAnnouncement(article);
+
+      if (result.rateLimited) {
+        console.log(`Discord rate limited article notifier. Stopping this run; retry after ${result.retryAfterMs}ms.`);
+        break;
+      }
+
       announced.push(article.file);
       saveState(announced);
+      announcedCount += 1;
     }
 
-    console.log(`Announced ${freshArticles.length} new article(s).`);
+    console.log(`Announced ${announcedCount} of ${freshArticles.length} new article(s).`);
   }
 
   function startWatching() {
@@ -129,12 +139,46 @@ export function createArticleNotifier(options) {
 
     if (!response.ok) {
       const body = await response.text();
+
+      if (response.status === 429) {
+        return {
+          rateLimited: true,
+          retryAfterMs: getRetryAfterMs(response, body)
+        };
+      }
+
       throw new Error(`Discord API error ${response.status}: ${body}`);
     }
+
+    return {
+      rateLimited: false,
+      retryAfterMs: 0
+    };
   }
 
   return {
     checkForNewArticles,
     startWatching
   };
+}
+
+function getRetryAfterMs(response, body) {
+  const retryAfterHeader = Number(response.headers.get("retry-after"));
+
+  if (Number.isFinite(retryAfterHeader) && retryAfterHeader > 0) {
+    return Math.ceil(retryAfterHeader * 1000);
+  }
+
+  try {
+    const parsed = JSON.parse(body);
+    const retryAfter = Number(parsed.retry_after);
+
+    if (Number.isFinite(retryAfter) && retryAfter > 0) {
+      return Math.ceil(retryAfter * 1000);
+    }
+  } catch {
+    // Fall through to the conservative default.
+  }
+
+  return 60000;
 }
