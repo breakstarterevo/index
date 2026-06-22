@@ -56,113 +56,11 @@
       min-width: 0;
       width: 100%;
     }
-    .topbar {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 0.65rem;
-      flex-wrap: wrap;
-      border: 1px solid var(--line);
-      background: var(--card);
-      padding: 0.5rem 0.6rem;
-    }
-    .breadcrumbs {
-      border: 1px solid var(--line);
-      background: var(--card);
-    }
-    .breadcrumbs {
-      align-items: center;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.32rem;
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.12em;
-      padding: 0.42rem 0.55rem;
-      text-transform: uppercase;
-    }
-    .breadcrumbs a {
-      color: var(--team-color);
-      text-decoration: none;
-    }
-    .breadcrumbs a:hover { text-decoration: underline; }
-    .breadcrumbs-current {
-      color: var(--ink);
-      min-width: 0;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-    .player-search {
-      flex: 1 1 360px;
-      max-width: 520px;
-      min-width: min(360px, 100%);
-      position: relative;
-    }
-    .player-search-input {
-      width: 100%;
-      min-width: min(380px, 100%);
-      border: 1px solid var(--line);
-      background: #fff;
-      color: var(--ink);
-      font: inherit;
-      padding: 0.38rem 0.45rem;
-    }
-    .player-search-input:focus {
-      border-color: var(--team-color);
-      outline: 2px solid color-mix(in srgb, var(--team-color) 22%, transparent);
-      outline-offset: 1px;
-    }
-    .player-search-results {
-      background: #fff;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
-      left: 0;
-      max-height: min(320px, 62vh);
-      overflow: auto;
-      position: absolute;
-      right: 0;
-      top: calc(100% + 4px);
-      z-index: 20;
-    }
-    .player-search-results[hidden] { display: none; }
-    .player-search-option {
-      align-items: center;
-      background: #fff;
-      border: 0;
-      border-bottom: 1px solid var(--line);
-      color: var(--ink);
-      cursor: pointer;
-      display: flex;
-      gap: 0.5rem;
-      justify-content: space-between;
-      min-height: 34px;
-      padding: 0.42rem 0.5rem;
-      text-align: left;
-      width: 100%;
-    }
-    .player-search-option:last-child { border-bottom: 0; }
-    .player-search-option:hover,
-    .player-search-option.active {
-      background: #f1f5f9;
-    }
-    .player-search-option strong {
-      font-size: 0.82rem;
-      font-weight: 850;
-    }
-    .player-search-option span {
-      color: var(--muted);
-      flex: 0 0 auto;
-      font-size: 0.68rem;
-      font-weight: 800;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
     .nav-actions {
       display: flex;
       gap: 0.35rem;
       flex-wrap: wrap;
+      justify-content: flex-end;
     }
     .btn-link {
       border: 1px solid var(--line);
@@ -187,6 +85,17 @@
       border-left: 6px solid var(--team-color);
       background: var(--card);
       padding: 0.7rem;
+    }
+    .header-side {
+      display: grid;
+      gap: 0.55rem;
+      justify-items: end;
+      min-width: 0;
+    }
+    .player-header-actions .btn-link {
+      min-height: 26px;
+      padding: 0.24rem 0.42rem;
+      font-size: 0.7rem;
     }
     .logo,
     .logo-fallback {
@@ -802,7 +711,6 @@
       .shell {
         max-width: 100%;
       }
-      .topbar,
       .player-header {
         max-width: 100%;
         min-width: 0;
@@ -848,6 +756,12 @@
         padding: 0.45rem 0 0;
         text-align: left;
       }
+      .header-side {
+        justify-items: stretch;
+      }
+      .nav-actions {
+        justify-content: flex-start;
+      }
     }
     @media (max-width: 1050px) and (min-width: 640px) {
       .ratings-board {
@@ -868,33 +782,10 @@
       body { padding: 0.5rem 0.55rem; }
       .shell { gap: 0.55rem; }
       .rating-personality-grid { grid-template-columns: 1fr; }
-      .topbar {
-        align-items: stretch;
-        flex-direction: column;
-        gap: 0.38rem;
-        padding: 0.36rem 0.45rem;
-      }
-      .breadcrumbs {
-        font-size: 0.58rem;
-        letter-spacing: 0.08em;
-        padding: 0.34rem 0.42rem;
-      }
-      .player-search {
-        flex: 1 1 auto;
-        max-width: none;
-        min-width: 0;
-        width: 100%;
-      }
-      .player-search-input {
-        font-size: 0.82rem;
-        min-width: 0;
-        padding: 0.26rem 0.4rem;
-        width: 100%;
-      }
       .nav-actions {
         display: grid;
         gap: 0.28rem;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         width: 100%;
       }
       .btn-link {
@@ -910,28 +801,6 @@
 </head>
 <body>
   <div class="shell">
-    <nav class="breadcrumbs" aria-label="Breadcrumb">
-      <a href="../../index.htm" target="_top">League</a>
-      <span>/</span>
-      <a href="./league%20dashboard.htm">Dashboard</a>
-      <span>/</span>
-      <a id="crumbTeamLink" href="./league%20dashboard.htm">Team</a>
-      <span>/</span>
-      <span class="breadcrumbs-current" id="crumbPlayerName">Player</span>
-    </nav>
-    <div class="topbar">
-      <div class="player-search" id="playerSearchWrap">
-        <input class="player-search-input" id="playerSearchInput" type="search" autocomplete="off" spellcheck="false" aria-label="Search players" aria-controls="playerSearchResults" aria-expanded="false">
-        <div class="player-search-results" id="playerSearchResults" role="listbox" hidden></div>
-      </div>
-      <nav class="nav-actions" aria-label="Player navigation">
-        <a class="btn-link" id="teamLink" href="./league%20dashboard.htm">Team Page</a>
-        <a class="btn-link" id="compareLink" href="./player-compare.htm">Compare</a>
-        <a class="btn-link" id="classicLink" href="#">Classic Page</a>
-        <a class="btn-link" href="./league%20dashboard.htm">Dashboard</a>
-      </nav>
-    </div>
-
     <header class="player-header">
       <div id="teamLogoSlot"></div>
       <div>
@@ -943,7 +812,15 @@
         <div class="tag-row" id="heroPills"></div>
         <div class="player-media-tags" id="heroMediaTags"></div>
       </div>
-      <div class="header-statline" id="headerStatline"></div>
+      <div class="header-side">
+        <nav class="nav-actions player-header-actions" aria-label="Player navigation">
+          <a class="btn-link" id="teamLink" href="./league%20dashboard.htm">Team Page</a>
+          <a class="btn-link" id="compareLink" href="./player-compare.htm">Compare</a>
+          <a class="btn-link" id="classicLink" href="#">Classic Page</a>
+          <a class="btn-link" href="./league%20dashboard.htm">Dashboard</a>
+        </nav>
+        <div class="header-statline" id="headerStatline"></div>
+      </div>
     </header>
 
     <main class="layout">
@@ -1310,6 +1187,7 @@
       const wrap = document.getElementById("playerSearchWrap");
       const input = document.getElementById("playerSearchInput");
       const results = document.getElementById("playerSearchResults");
+      if (!wrap || !input || !results) return;
       const sorted = [...state.players]
         .filter((p) => p.name && p.url && playerIdFromUrl(p.url))
         .sort((a, b) => a.name.localeCompare(b.name, undefined, { sensitivity: "base" }))
