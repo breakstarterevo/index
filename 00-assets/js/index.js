@@ -5,6 +5,11 @@
   var BREAKPOINT = 760;
   var SETTINGS_KEY = "leagueSiteSettings";
   var HEADER_SEARCH_LIMIT = 8;
+  var tickerAutoFrame = 0;
+  var tickerAutoPaused = false;
+  var tickerSuppressClick = false;
+  var tickerFavoriteOnly = false;
+  var tickerCompletedGames = [];
 
   function isSuperCupIndexPage() {
     return /(?:\/|\\)00-supercup(?:\/|\\)index\.htm$/i.test(window.location.pathname);
@@ -75,11 +80,13 @@
       ".site-topbar-brand { align-items: center; background: var(--site-navy); border-right: 0; display: flex; height: 100%; justify-content: center; padding: 0 8px; position: relative; }",
       ".site-topbar-logo-link { align-items: center; display: flex; justify-content: center; min-width: 0; position: absolute; left: 50%; text-decoration: none; top: 50%; transform: translate(-50%, -50%); }",
       ".site-topbar-logo { display: block; filter: brightness(0) invert(1); height: 38px; object-fit: contain; width: 38px; }",
-      ".site-ticker { align-items: stretch; box-shadow: inset 0 -1px 0 rgba(17, 27, 54, 0.18); display: flex; min-width: 0; overflow: hidden; position: relative; }",
+      ".site-ticker { align-items: stretch; box-shadow: inset 0 -1px 0 rgba(17, 27, 54, 0.18); cursor: grab; display: flex; min-width: 0; overflow-x: auto; overflow-y: hidden; position: relative; scrollbar-width: none; }",
+      ".site-ticker::-webkit-scrollbar { display: none; }",
+      ".site-ticker.is-dragging { cursor: grabbing; user-select: none; }",
       ".site-ticker-track { align-items: stretch; display: flex; min-width: max-content; }",
-      ".site-ticker-track.is-scrolling { animation: siteTickerScroll var(--ticker-duration, 60s) linear infinite; }",
-      ".site-ticker:hover .site-ticker-track.is-scrolling { animation-play-state: paused; }",
-      "@keyframes siteTickerScroll { from { transform: translateX(0); } to { transform: translateX(-50%); } }",
+      ".site-ticker-filter { align-items: center; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .24); border-radius: 7px; color: #ffffff; cursor: pointer; display: flex; font: 900 9px/1 Inter, Tahoma, Arial, sans-serif; height: 28px; justify-content: center; padding: 0 7px; position: absolute; right: 7px; text-transform: uppercase; top: 50%; transform: translateY(-50%); z-index: 31; }",
+      ".site-ticker-filter:hover { background: rgba(142, 197, 255, .18); border-color: rgba(142, 197, 255, .54); color: #8ec5ff; }",
+      ".site-ticker-filter.is-active { background: #1d5ea8; border-color: #8ec5ff; color: #ffffff; }",
       ".site-ticker-label { align-items: center; border-right: 1px solid #d8e1ee; color: #1d4f91; display: flex; flex: 0 0 auto; font: 900 10px/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: .12em; padding: 0 12px; text-transform: uppercase; }",
       ".site-score-card { align-items: center; background: #f7f9fc; border-right: 1px solid #d8e1ee; color: #111827; display: grid; flex: 0 0 auto; gap: 5px; grid-template-columns: 39px 10px 39px; height: 100%; justify-content: center; min-width: 100px; padding: 3px 8px 2px; text-decoration: none; }",
       ".site-score-card:hover { background: #edf5ff; }",
@@ -106,6 +113,9 @@
       "html.league-theme-dark .site-score-abbr, html.league-theme-dark .site-score-sep, html.league-theme-dark .site-ticker-empty { color: #a9b6c8; }",
       "html.league-theme-dark .site-score-pts { color: #edf4ff; }",
       "html.league-theme-dark .site-score-team.is-winner .site-score-pts, html.league-theme-dark .site-ticker-label { color: #8ec5ff; }",
+      "html.league-theme-dark .site-ticker-filter { background: rgba(255, 255, 255, .08); border-color: rgba(148, 163, 184, .34); color: #ffffff; }",
+      "html.league-theme-dark .site-ticker-filter:hover { background: rgba(142, 197, 255, .18); color: #8ec5ff; }",
+      "html.league-theme-dark .site-ticker-filter.is-active { background: #1d5ea8; border-color: #8ec5ff; color: #ffffff; }",
       "html.league-theme-dark .site-shell-search { background: #0d1118; box-shadow: inset 0 -1px 0 rgba(148, 163, 184, .24); }",
       "html.league-theme-dark .site-shell-search-input { background: #151b25; border-color: rgba(148, 163, 184, .34); color: #f3f7ff; }",
       "html.league-theme-dark .site-shell-search-results { background: #151b25; border-color: rgba(148, 163, 184, .28); box-shadow: 0 16px 32px rgba(0, 0, 0, .36); }",
@@ -136,6 +146,7 @@
       "  .site-topbar { grid-template-columns: 108px minmax(0, 1fr); }",
       "  .site-topbar-brand { grid-column: 1; grid-row: 1; }",
       "  .site-ticker { display: none; }",
+      "  .site-ticker-filter { display: none; }",
       "  .site-shell-search { display: flex; grid-column: 2; grid-row: 1; padding: 0 10px; }",
       "  body.league-menu-compact .site-shell-search { display: flex; }",
       "  .site-shell-search-results { left: 10px; right: 10px; top: calc(100% + 4px); width: auto; }",
@@ -207,6 +218,7 @@
     var logoLink = document.createElement("a");
     var logo = document.createElement("img");
     var ticker = document.createElement("section");
+    var tickerFilter = document.createElement("button");
     var tickerTrack = document.createElement("div");
     var search = document.createElement("section");
     var searchInput = document.createElement("input");
@@ -226,6 +238,12 @@
     logo.alt = "ESL";
     ticker.className = "site-ticker";
     ticker.setAttribute("aria-label", "Latest scores");
+    tickerFilter.className = "site-ticker-filter";
+    tickerFilter.id = "siteTickerFilter";
+    tickerFilter.type = "button";
+    tickerFilter.textContent = "Fav";
+    tickerFilter.setAttribute("aria-label", "Show only favorite team scores");
+    tickerFilter.setAttribute("aria-pressed", "false");
     tickerTrack.className = "site-ticker-track";
     tickerTrack.id = "siteTickerTrack";
     tickerTrack.innerHTML = '<span class="site-ticker-empty">Scores loading</span>';
@@ -244,6 +262,7 @@
 
     logoLink.appendChild(logo);
     brand.appendChild(logoLink);
+    brand.appendChild(tickerFilter);
     ticker.appendChild(tickerTrack);
     search.appendChild(searchInput);
     search.appendChild(searchResults);
@@ -543,30 +562,241 @@
     ].join("");
   }
 
+  function normalizeTeamName(value) {
+    if (window.LeagueSiteCore && window.LeagueSiteCore.normalizeName) {
+      return window.LeagueSiteCore.normalizeName(value);
+    }
+
+    return String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, "");
+  }
+
+  function getFavoriteTeamName() {
+    return getSettings().favoriteTeam || "";
+  }
+
+  function isFavoriteGame(game) {
+    var favorite = normalizeTeamName(getFavoriteTeamName());
+
+    return favorite && (
+      normalizeTeamName(game.awayTeamName) === favorite ||
+      normalizeTeamName(game.homeTeamName) === favorite
+    );
+  }
+
+  function getTickerGamesToRender() {
+    var games;
+
+    if (!tickerFavoriteOnly) {
+      return tickerCompletedGames.slice(-20);
+    }
+
+    games = tickerCompletedGames.filter(isFavoriteGame);
+    return games.slice(-20);
+  }
+
+  function updateTickerFilterButton() {
+    var button = document.getElementById("siteTickerFilter");
+    var favoriteTeam = getFavoriteTeamName();
+
+    if (!button) {
+      return;
+    }
+
+    button.classList.toggle("is-active", tickerFavoriteOnly);
+    button.setAttribute("aria-pressed", String(tickerFavoriteOnly));
+    button.title = favoriteTeam
+      ? "Show only " + favoriteTeam + " scores"
+      : "Set a favorite team in settings";
+  }
+
+  function renderCurrentTickerGames() {
+    renderScoreTicker(getTickerGamesToRender());
+  }
+
+  function bindTickerFilterButton() {
+    var button = document.getElementById("siteTickerFilter");
+
+    if (!button || button.dataset.bound === "true") {
+      return;
+    }
+
+    button.dataset.bound = "true";
+    button.addEventListener("pointerdown", function (event) {
+      event.stopPropagation();
+    });
+    button.addEventListener("click", function (event) {
+      event.preventDefault();
+      event.stopPropagation();
+      tickerFavoriteOnly = !tickerFavoriteOnly;
+      updateTickerFilterButton();
+      renderCurrentTickerGames();
+    });
+  }
+
+  function stopScoreTickerAuto() {
+    if (tickerAutoFrame) {
+      window.cancelAnimationFrame(tickerAutoFrame);
+      tickerAutoFrame = 0;
+    }
+  }
+
+  function startScoreTickerAuto(ticker, loopWidth) {
+    var lastTime = 0;
+
+    stopScoreTickerAuto();
+
+    function tick(time) {
+      var elapsed = lastTime ? time - lastTime : 16;
+
+      lastTime = time;
+      if (!tickerAutoPaused && loopWidth > 0) {
+        ticker.scrollLeft += elapsed * 0.035;
+        if (ticker.scrollLeft >= loopWidth) {
+          ticker.scrollLeft -= loopWidth;
+        }
+      }
+
+      tickerAutoFrame = window.requestAnimationFrame(tick);
+    }
+
+    tickerAutoFrame = window.requestAnimationFrame(tick);
+  }
+
+  function bindScoreTickerScrub(ticker) {
+    var dragState = null;
+
+    if (!ticker || ticker.dataset.scrubBound === "true") {
+      return;
+    }
+
+    ticker.dataset.scrubBound = "true";
+
+    ticker.addEventListener("pointerdown", function (event) {
+      if (event.button !== undefined && event.button !== 0) {
+        return;
+      }
+
+      dragState = {
+        pointerId: event.pointerId,
+        startX: event.clientX,
+        startScrollLeft: ticker.scrollLeft,
+        didDrag: false
+      };
+      tickerAutoPaused = true;
+      ticker.setPointerCapture(event.pointerId);
+    });
+
+    ticker.addEventListener("pointermove", function (event) {
+      var deltaX;
+
+      if (!dragState || event.pointerId !== dragState.pointerId) {
+        return;
+      }
+
+      deltaX = event.clientX - dragState.startX;
+      if (Math.abs(deltaX) > 3) {
+        dragState.didDrag = true;
+        ticker.classList.add("is-dragging");
+      }
+
+      if (dragState.didDrag) {
+        event.preventDefault();
+        ticker.scrollLeft = dragState.startScrollLeft - deltaX;
+      }
+    });
+
+    function finishDrag(event) {
+      var didDrag = dragState && dragState.didDrag;
+
+      if (dragState && (!event || event.pointerId === dragState.pointerId)) {
+        if (event && ticker.hasPointerCapture && ticker.hasPointerCapture(dragState.pointerId)) {
+          ticker.releasePointerCapture(dragState.pointerId);
+        }
+        dragState = null;
+      }
+
+      ticker.classList.remove("is-dragging");
+      tickerAutoPaused = false;
+
+      if (didDrag) {
+        tickerSuppressClick = true;
+        window.setTimeout(function () {
+          tickerSuppressClick = false;
+        }, 0);
+      }
+    }
+
+    ticker.addEventListener("pointerup", finishDrag);
+    ticker.addEventListener("pointercancel", finishDrag);
+    ticker.addEventListener("pointerleave", function (event) {
+      if (dragState && dragState.didDrag) {
+        finishDrag(event);
+      }
+    });
+    ticker.addEventListener("mouseenter", function () {
+      tickerAutoPaused = true;
+    });
+    ticker.addEventListener("mouseleave", function () {
+      tickerAutoPaused = false;
+    });
+    ticker.addEventListener("click", function (event) {
+      if (tickerSuppressClick) {
+        event.preventDefault();
+        event.stopPropagation();
+      }
+    }, true);
+  }
+
   function renderScoreTicker(games) {
     var track = document.getElementById("siteTickerTrack");
     var cards;
+    var segment;
+    var attempts = 0;
 
     if (!track) {
       return;
     }
 
+    updateTickerFilterButton();
+    bindTickerFilterButton();
+
     if (!games.length) {
-      track.innerHTML = '<span class="site-ticker-empty">Scores unavailable</span>';
+      stopScoreTickerAuto();
+      track.innerHTML = '<span class="site-ticker-empty">' + escapeHtml(
+        tickerFavoriteOnly
+          ? (getFavoriteTeamName() ? "No favorite team scores yet" : "Set a favorite team in settings")
+          : "Scores unavailable"
+      ) + "</span>";
       return;
     }
 
     cards = games.map(makeScoreCard).join("");
+    segment = '<span class="site-ticker-label">Final</span>' + cards;
     track.className = "site-ticker-track";
     track.style.removeProperty("--ticker-duration");
-    track.innerHTML = '<span class="site-ticker-label">Final</span>' + cards;
+    track.innerHTML = segment;
+    track.parentNode.scrollLeft = 0;
+    bindScoreTickerScrub(track.parentNode);
+    stopScoreTickerAuto();
+
+    function maybeScrollTicker() {
+      var parentWidth = track.parentNode ? track.parentNode.clientWidth : 0;
+
+      if (!parentWidth && attempts < 4) {
+        attempts += 1;
+        window.setTimeout(maybeScrollTicker, 100);
+        return;
+      }
+
+      if (parentWidth && track.scrollWidth > parentWidth) {
+        track.innerHTML = segment + segment;
+        track.classList.add("is-scrolling");
+        startScoreTickerAuto(track.parentNode, track.scrollWidth / 2);
+      }
+    }
 
     window.requestAnimationFrame(function () {
-      if (track.scrollWidth > track.parentNode.clientWidth) {
-        track.innerHTML = '<span class="site-ticker-label">Final</span>' + cards + cards;
-        track.classList.add("is-scrolling");
-        track.style.setProperty("--ticker-duration", Math.max(28, games.length * 5) + "s");
-      }
+      window.requestAnimationFrame(maybeScrollTicker);
     });
   }
 
@@ -599,11 +829,13 @@
           return a.time - b.time || a.order - b.order;
         });
 
-        renderScoreTicker(completedGames.slice(-20).map(function (entry) {
+        tickerCompletedGames = completedGames.map(function (entry) {
           return entry.game;
-        }));
+        });
+        renderCurrentTickerGames();
       })
       .catch(function () {
+        tickerCompletedGames = [];
         renderScoreTicker([]);
       });
   }
