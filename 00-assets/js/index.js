@@ -6,8 +6,7 @@
   var SETTINGS_KEY = "leagueSiteSettings";
   var HEADER_SEARCH_LIMIT = 8;
   var tickerAutoFrame = 0;
-  var tickerAutoPaused = false;
-  var tickerSuppressClick = false;
+  var tickerAutoPosition = 0;
   var tickerFavoriteOnly = false;
   var tickerCompletedGames = [];
 
@@ -88,7 +87,7 @@
       ".site-ticker-filter:hover { background: rgba(142, 197, 255, .18); border-color: rgba(142, 197, 255, .54); color: #8ec5ff; }",
       ".site-ticker-filter.is-active { background: #1d5ea8; border-color: #8ec5ff; color: #ffffff; }",
       ".site-ticker-label { align-items: center; border-right: 1px solid #d8e1ee; color: #1d4f91; display: flex; flex: 0 0 auto; font: 900 10px/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: .12em; padding: 0 12px; text-transform: uppercase; }",
-      ".site-score-card { align-items: center; background: #f7f9fc; border-right: 1px solid #d8e1ee; color: #111827; display: grid; flex: 0 0 auto; gap: 5px; grid-template-columns: 39px 10px 39px; height: 100%; justify-content: center; min-width: 100px; padding: 3px 8px 2px; text-decoration: none; }",
+      ".site-score-card { align-items: center; background: #f7f9fc; border-right: 1px solid #d8e1ee; color: #111827; cursor: pointer; display: grid; flex: 0 0 auto; gap: 5px; grid-template-columns: 39px 10px 39px; height: 100%; justify-content: center; min-width: 100px; padding: 3px 8px 2px; text-decoration: none; }",
       ".site-score-card:hover { background: #edf5ff; }",
       ".site-score-team { align-items: center; display: grid; gap: 1px; grid-template-rows: 20px 11px 18px; justify-items: center; min-width: 0; }",
       ".site-score-logo { border-radius: 50%; display: block; height: 19px; object-fit: cover; width: 19px; }",
@@ -583,15 +582,46 @@
     );
   }
 
+  function gameMonthKey(game) {
+    var date = new Date(Number(game && game._tickerTime) || 0);
+
+    if (!Number.isFinite(date.getTime()) || !date.getTime()) {
+      return "";
+    }
+
+    return date.getFullYear() + "-" + String(date.getMonth() + 1).padStart(2, "0");
+  }
+
+  function latestMonthGames(games) {
+    var latestKey = "";
+
+    (games || []).forEach(function (game) {
+      var key = gameMonthKey(game);
+
+      if (key && key > latestKey) {
+        latestKey = key;
+      }
+    });
+
+    if (!latestKey) {
+      return games || [];
+    }
+
+    return (games || []).filter(function (game) {
+      return gameMonthKey(game) === latestKey;
+    });
+  }
+
   function getTickerGamesToRender() {
     var games;
 
+    games = latestMonthGames(tickerCompletedGames);
+
     if (!tickerFavoriteOnly) {
-      return tickerCompletedGames.slice(-20);
+      return games;
     }
 
-    games = tickerCompletedGames.filter(isFavoriteGame);
-    return games.slice(-20);
+    return games.filter(isFavoriteGame);
   }
 
   function updateTickerFilterButton() {
@@ -642,18 +672,26 @@
 
   function startScoreTickerAuto(ticker, loopWidth) {
     var lastTime = 0;
+    var lastAutoAt = 0;
 
     stopScoreTickerAuto();
+    tickerAutoPosition = ticker.scrollLeft || 0;
 
     function tick(time) {
       var elapsed = lastTime ? time - lastTime : 16;
 
       lastTime = time;
-      if (!tickerAutoPaused && loopWidth > 0) {
-        ticker.scrollLeft += elapsed * 0.035;
-        if (ticker.scrollLeft >= loopWidth) {
-          ticker.scrollLeft -= loopWidth;
+      if (ticker.dataset.userDragging !== "true" && loopWidth > 0) {
+        tickerAutoPosition += elapsed * 0.035;
+        if (tickerAutoPosition >= loopWidth) {
+          tickerAutoPosition -= loopWidth;
         }
+        ticker.scrollLeft = tickerAutoPosition;
+        lastAutoAt = time;
+      } else if (time - lastAutoAt > 1800) {
+        ticker.dataset.userDragging = "false";
+        ticker.classList.remove("is-dragging");
+        tickerAutoPosition = ticker.scrollLeft || 0;
       }
 
       tickerAutoFrame = window.requestAnimationFrame(tick);
@@ -680,10 +718,9 @@
         pointerId: event.pointerId,
         startX: event.clientX,
         startScrollLeft: ticker.scrollLeft,
-        didDrag: false
+        didDrag: false,
+        captured: false
       };
-      tickerAutoPaused = true;
-      ticker.setPointerCapture(event.pointerId);
     });
 
     ticker.addEventListener("pointermove", function (event) {
@@ -696,12 +733,18 @@
       deltaX = event.clientX - dragState.startX;
       if (Math.abs(deltaX) > 3) {
         dragState.didDrag = true;
+        ticker.dataset.userDragging = "true";
         ticker.classList.add("is-dragging");
+        if (!dragState.captured && ticker.setPointerCapture) {
+          ticker.setPointerCapture(event.pointerId);
+          dragState.captured = true;
+        }
       }
 
       if (dragState.didDrag) {
         event.preventDefault();
         ticker.scrollLeft = dragState.startScrollLeft - deltaX;
+        tickerAutoPosition = ticker.scrollLeft || 0;
       }
     });
 
@@ -716,35 +759,62 @@
       }
 
       ticker.classList.remove("is-dragging");
-      tickerAutoPaused = false;
+      ticker.dataset.userDragging = "false";
+      tickerAutoPosition = ticker.scrollLeft || 0;
 
       if (didDrag) {
-        tickerSuppressClick = true;
+        ticker.dataset.suppressNextClick = "true";
         window.setTimeout(function () {
-          tickerSuppressClick = false;
-        }, 0);
+          ticker.dataset.suppressNextClick = "false";
+        }, 120);
       }
     }
 
     ticker.addEventListener("pointerup", finishDrag);
     ticker.addEventListener("pointercancel", finishDrag);
+    window.addEventListener("pointerup", finishDrag);
+    window.addEventListener("pointercancel", finishDrag);
+    window.addEventListener("blur", function () {
+      dragState = null;
+      ticker.classList.remove("is-dragging");
+      ticker.dataset.userDragging = "false";
+      tickerAutoPosition = ticker.scrollLeft || 0;
+    });
     ticker.addEventListener("pointerleave", function (event) {
       if (dragState && dragState.didDrag) {
         finishDrag(event);
       }
     });
-    ticker.addEventListener("mouseenter", function () {
-      tickerAutoPaused = true;
-    });
-    ticker.addEventListener("mouseleave", function () {
-      tickerAutoPaused = false;
-    });
     ticker.addEventListener("click", function (event) {
-      if (tickerSuppressClick) {
+      var scoreLink = event.target && event.target.closest ? event.target.closest(".site-score-card") : null;
+      var dataFrame;
+
+      if (ticker.dataset.suppressNextClick === "true") {
         event.preventDefault();
         event.stopPropagation();
+        ticker.dataset.suppressNextClick = "false";
+        return;
+      }
+
+      if (scoreLink) {
+        dataFrame = window.frames && window.frames.data;
+        if (dataFrame) {
+          event.preventDefault();
+          dataFrame.location.href = scoreLink.getAttribute("href");
+        }
       }
     }, true);
+    ticker.addEventListener("wheel", function (event) {
+      var delta = Math.abs(event.deltaX) > Math.abs(event.deltaY) ? event.deltaX : event.deltaY;
+
+      if (!delta) {
+        return;
+      }
+
+      event.preventDefault();
+      ticker.scrollLeft += delta;
+      tickerAutoPosition = ticker.scrollLeft || 0;
+    }, { passive: false });
   }
 
   function renderScoreTicker(games) {
@@ -826,11 +896,14 @@
         });
 
         completedGames.sort(function (a, b) {
-          return a.time - b.time || a.order - b.order;
+          return b.time - a.time || b.order - a.order;
         });
 
         tickerCompletedGames = completedGames.map(function (entry) {
-          return entry.game;
+          return Object.assign({}, entry.game, {
+            _tickerTime: entry.time,
+            _tickerOrder: entry.order
+          });
         });
         renderCurrentTickerGames();
       })

@@ -10,6 +10,7 @@ Usage:
 """
 
 import os
+import re
 import sys
 
 from atomic_write import atomic_write_text
@@ -32,6 +33,7 @@ FEATURE_JS_FILENAMES = [
 ]
 ROSTER_ENHANCEMENTS_VERSION = "id-player-ratings-1"
 INDEX_JS_FILENAME = "00-assets/js/index.js"
+INDEX_JS_VERSION = "ticker-latest-month-1"
 FAVICON_FILE = "00-build/database/favicon.png"
 MOBILE_INDEX_VIEWPORT_TAG = '<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">'
 SKIP_DIRS = {"00-build", "00-assets", "00-eslmedia"}
@@ -82,7 +84,7 @@ def inject_file(filepath, dry_run, target_root):
         else f'<script src="{feature_rel}" defer></script>'
         for filename, feature_rel in zip(FEATURE_JS_FILENAMES, feature_js_rels)
     ]
-    index_js_tag = f'<script src="{index_js_rel}" defer></script>'
+    index_js_tag = f'<script src="{index_js_rel}?v={INDEX_JS_VERSION}" defer></script>'
     favicon_tag = f'<link rel="icon" type="image/png" href="{favicon_rel}">'
 
     with open(filepath, "r", encoding="latin-1") as f:
@@ -110,8 +112,16 @@ def inject_file(filepath, dry_run, target_root):
     viewport_tag = MOBILE_INDEX_VIEWPORT_TAG if is_target_root_index else MOBILE_INDEX_VIEWPORT_TAG
     should_replace_viewport = is_target_root_index and viewport_tag not in html and already_viewport
 
+    index_tag_pattern = re.compile(rf'<script src="{re.escape(index_js_rel)}(?:\?v=[^"]+)?" defer></script>')
+    current_index_tag = index_tag_pattern.search(html)
+    versioned_index_tag = index_js_tag
+    replaced_index_tag = False
+    if is_target_root_index and current_index_tag and current_index_tag.group(0) != versioned_index_tag:
+        html = html[:current_index_tag.start()] + versioned_index_tag + html[current_index_tag.end():]
+        replaced_index_tag = True
+
     needs_index_js = is_target_root_index
-    if already_css and already_theme_preload and already_js and already_feature_js and already_favicon and already_viewport and not should_replace_viewport and not replaced_roster_tag and (not needs_index_js or already_index_js):
+    if already_css and already_theme_preload and already_js and already_feature_js and already_favicon and already_viewport and not should_replace_viewport and not replaced_roster_tag and not replaced_index_tag and (not needs_index_js or already_index_js):
         return "skipped"
 
     inject = ""
