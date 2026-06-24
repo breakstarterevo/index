@@ -87,14 +87,16 @@
       ".site-ticker-filter:hover { background: rgba(142, 197, 255, .18); border-color: rgba(142, 197, 255, .54); color: #8ec5ff; }",
       ".site-ticker-filter.is-active { background: #1d5ea8; border-color: #8ec5ff; color: #ffffff; }",
       ".site-ticker-label { align-items: center; border-right: 1px solid #d8e1ee; color: #1d4f91; display: flex; flex: 0 0 auto; font: 900 10px/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: .12em; padding: 0 12px; text-transform: uppercase; }",
-      ".site-score-card { align-items: center; background: #f7f9fc; border-right: 1px solid #d8e1ee; color: #111827; cursor: pointer; display: grid; flex: 0 0 auto; gap: 5px; grid-template-columns: 39px 10px 39px; height: 100%; justify-content: center; min-width: 100px; padding: 3px 8px 2px; text-decoration: none; }",
+      ".site-score-card { align-items: center; background: #f7f9fc; border-right: 1px solid #d8e1ee; color: #111827; cursor: pointer; display: grid; flex: 0 0 auto; gap: 4px; grid-template-columns: 39px 20px 39px; height: 100%; justify-content: center; min-width: 108px; padding: 3px 7px 2px; text-decoration: none; }",
       ".site-score-card:hover { background: #edf5ff; }",
       ".site-score-team { align-items: center; display: grid; gap: 1px; grid-template-rows: 20px 11px 18px; justify-items: center; min-width: 0; }",
       ".site-score-logo { border-radius: 50%; display: block; height: 19px; object-fit: cover; width: 19px; }",
       ".site-score-abbr { color: #5b6472; font: 900 10px/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: .04em; text-align: center; text-transform: uppercase; }",
       ".site-score-pts { color: #111827; font: 950 18px/1 Inter, Tahoma, Arial, sans-serif; text-align: center; }",
       ".site-score-team.is-winner .site-score-pts { color: #1d5ea8; }",
-      ".site-score-sep { color: #7b8492; font: 900 15px/1 Inter, Tahoma, Arial, sans-serif; text-align: center; }",
+      ".site-score-mid { align-items: center; color: #7b8492; display: grid; gap: 2px; grid-template-rows: 9px 12px; justify-items: center; min-width: 0; }",
+      ".site-score-date { font: 950 8px/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: .02em; text-align: center; }",
+      ".site-score-sep { font: 900 14px/1 Inter, Tahoma, Arial, sans-serif; text-align: center; }",
       ".site-ticker-empty { align-items: center; color: #5b6472; display: flex; font: 800 12px/1 Inter, Tahoma, Arial, sans-serif; padding: 0 14px; }",
       ".site-shell-search { align-items: center; background: #f7f9fc; box-shadow: inset 0 -1px 0 rgba(17, 27, 54, 0.18); display: flex; min-width: 0; padding: 0 12px; position: relative; }",
       ".site-shell-search-input { background: #ffffff; border: 1px solid #c9d3e1; border-radius: 7px; box-sizing: border-box; color: #0f172a; font: 700 12px/1.2 Inter, Tahoma, Arial, sans-serif; height: 34px; outline: none; padding: 0 10px; width: 100%; }",
@@ -109,7 +111,7 @@
       "html.league-theme-dark .site-topbar, html.league-theme-dark .site-ticker, html.league-theme-dark .site-score-card { background: #0d1118; }",
       "html.league-theme-dark .site-score-card, html.league-theme-dark .site-ticker-label { border-color: rgba(148, 163, 184, .24); }",
       "html.league-theme-dark .site-score-card:hover { background: #151b25; }",
-      "html.league-theme-dark .site-score-abbr, html.league-theme-dark .site-score-sep, html.league-theme-dark .site-ticker-empty { color: #a9b6c8; }",
+      "html.league-theme-dark .site-score-abbr, html.league-theme-dark .site-score-mid, html.league-theme-dark .site-ticker-empty { color: #a9b6c8; }",
       "html.league-theme-dark .site-score-pts { color: #edf4ff; }",
       "html.league-theme-dark .site-score-team.is-winner .site-score-pts, html.league-theme-dark .site-ticker-label { color: #8ec5ff; }",
       "html.league-theme-dark .site-ticker-filter { background: rgba(255, 255, 255, .08); border-color: rgba(148, 163, 184, .34); color: #ffffff; }",
@@ -152,7 +154,7 @@
       "  .site-topbar-brand { padding: 0 6px; }",
       "  .site-menu-toggle { left: 6px; }",
       "  .site-topbar-logo { height: 36px; width: 36px; }",
-      "  .site-score-card { grid-template-columns: 36px 9px 36px; min-width: 92px; padding-left: 7px; padding-right: 7px; }",
+      "  .site-score-card { grid-template-columns: 36px 20px 36px; min-width: 104px; padding-left: 7px; padding-right: 7px; }",
       "  .site-score-pts { font-size: 17px; }",
       "  .site-ticker-label { display: none; }",
       "  .site-content { min-width: 0; overflow: hidden; }",
@@ -541,6 +543,7 @@
     var home = getTeamTickerData(game.homeTeamName);
     var awayWins = Number(game.awayScore) > Number(game.homeScore);
     var href = String(game.boxscoreUrl || ("./boxes/" + game.boxscoreFile)).replace(/^\.\//, "");
+    var dateText = formatTickerGameDate(game.date);
 
     function teamHtml(team, score, isWinner) {
       return [
@@ -555,10 +558,24 @@
     return [
       '<a class="site-score-card" href="' + escapeHtml(href) + '" target="data" title="' + escapeHtml(game.matchupText || "") + '">',
       teamHtml(away, game.awayScore, awayWins),
-      '<span class="site-score-sep">-</span>',
+      '<span class="site-score-mid"><span class="site-score-date">' + escapeHtml(dateText) + '</span><span class="site-score-sep">-</span></span>',
       teamHtml(home, game.homeScore, !awayWins),
       "</a>"
     ].join("");
+  }
+
+  function formatTickerGameDate(value) {
+    var match = String(value || "").match(/^(\d{1,2})\/(\d{1,2})\/\d{2,4}$/);
+    var month;
+    var day;
+
+    if (!match) {
+      return "";
+    }
+
+    month = match[1].padStart(2, "0");
+    day = match[2].padStart(2, "0");
+    return day + "/" + month;
   }
 
   function normalizeTeamName(value) {
@@ -887,6 +904,7 @@
 
               completedGames.push({
                 game: game,
+                date: day.date,
                 time: time,
                 order: order
               });
@@ -901,6 +919,7 @@
 
         tickerCompletedGames = completedGames.map(function (entry) {
           return Object.assign({}, entry.game, {
+            date: entry.date,
             _tickerTime: entry.time,
             _tickerOrder: entry.order
           });

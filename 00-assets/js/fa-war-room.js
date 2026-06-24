@@ -33,8 +33,8 @@
     ["STL", "Stl"],
     ["BLK", "Blk"],
     ["QKN", "Qkn"],
-    ["STR", "Str"],
     ["JMP", "Jmp"],
+    ["STR", "Str"],
     ["STA", "Sta"]
   ];
 

@@ -1384,8 +1384,8 @@ def parse_free_agents(html, ratings, last_team_lookup=None):
             "Stl": parse_numeric_value(cells[18]),
             "Blk": parse_numeric_value(cells[19]),
             "Qkn": parse_numeric_value(cells[20]),
-            "Str": parse_numeric_value(cells[21]),
-            "Jmp": parse_numeric_value(cells[22]),
+            "Jmp": parse_numeric_value(cells[21]),
+            "Str": parse_numeric_value(cells[22]),
             "Sta": parse_numeric_value(cells[23]),
             "rowClass": row_class.lower(),
         }
