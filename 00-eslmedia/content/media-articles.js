@@ -26,6 +26,98 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
+  // Season 3 Sim 1 November package
+  {
+    file: "articles/season_3_sim_1_month_in_review.html",
+    title: "November 1983 Review: Palace Run Hot And Richmond Stay Perfect",
+    category: "Recap",
+    desk: "Analysis",
+    sortKey: "2026-06-24-07",
+    tag: "Month in Review",
+    author: "Graham Trent",
+    meta: "Season 3 - Sim 1",
+    blurb: "Crystal Palace owned the loudest month, AFC Richmond stayed unbeaten, and the lower-tier race tightened around Barcelona and Monaco.",
+    teams: ["AC Milan", "Ajax", "Bayern Munich", "Brighton", "Crystal Palace", "Manchester City", "Manchester United"],
+    playerTags: []
+  },
+  {
+    file: "articles/season_3_sim_1_mvp_race.html",
+    title: "November 1983 MVP Race: Carroll, Kiki And Purvis Open The Ballot",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-06-24-06",
+    tag: "MVP Race",
+    author: "Damon Cross",
+    meta: "Season 3 - Sim 1",
+    blurb: "Joe Barry Carroll, Kiki Vandeweghe and Purvis Short headline the first November MVP ladders across the three ESL tiers.",
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "Inter Milan", "Juventus", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sporting CP", "Tottenham Hotspur"],
+    playerTags: ["Adrian Dantley", "Bernard King", "Jim Paxson", "Joe Barry Carroll", "Kelly Tripucka", "Kiki Vandeweghe", "Larry Nance", "Lewis Lloyd", "Purvis Short", "Reggie Theus", "Robert Parish", "Rolando Blackman", "T.R. Dunn", "Tom Chambers", "World B. Free"]
+  },
+  {
+    file: "articles/season_3_sim_1_tier_1_power_rankings.html",
+    title: "November 1983 Tier 1 Power Rankings: Richmond Take The Room",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-06-24-05",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 1",
+    blurb: "AFC Richmond own the first full-season trust board at 7-0, while Benfica chase and Bayern fall into early danger.",
+    teams: ["AFC Richmond", "Benfica", "AC Milan", "Real Madrid", "Chelsea", "FL Fart", "Sheffield United", "Bayern Munich"],
+    playerTags: ["Bernard King", "Jack Sikma", "Larry Bird", "Larry Drew", "Michael Cooper", "Moses Malone", "Rickey Green", "Sidney Moncrief"]
+  },
+  {
+    file: "articles/season_3_sim_1_tier_2_power_rankings.html",
+    title: "November 1983 Tier 2 Power Rankings: Palace Make Promotion Feel Real",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-06-24-04",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 1",
+    blurb: "Crystal Palace turn a 9-1 November and plus-157 margin into the clearest promotion case on the board.",
+    teams: ["Crystal Palace", "Brighton", "Juventus", "Aston Villa", "Atletico Madrid", "Marseille", "Manchester United", "Ajax"],
+    playerTags: ["Bill Laimbeer", "Cliff Robinson", "Darrell Griffith", "James Donaldson", "Kiki Vandeweghe", "Robert Parish", "Robert Reid", "Rolando Blackman"]
+  },
+  {
+    file: "articles/season_3_sim_1_tier_3_power_rankings.html",
+    title: "November 1983 Tier 3 Power Rankings: Barcelona Hold A Crowded Line",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-06-24-03",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 1",
+    blurb: "Barcelona lead a tight Tier 3 trust board, but Monaco, PSG and Inter are close enough to make one bad week costly.",
+    teams: ["Barcelona", "Monaco", "Paris Saint-Germain", "Inter Milan", "Sporting CP", "Valencia", "Tottenham Hotspur", "Manchester City"],
+    playerTags: ["Doug Christie", "Isiah Thomas", "Kelly Tripucka", "Kirk Hinrich", "Lewis Lloyd", "Paul Pierce", "Purvis Short", "World B. Free"]
+  },
+  {
+    file: "articles/season_3_sim_1_promotion_relegation_watch.html",
+    title: "November 1983 Race Watch: Palace Control, Tier 3 Crowds The Door",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-06-24-02",
+    tag: "Promotion/Relegation",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 1",
+    blurb: "Palace and Brighton hold the Tier 2 promotion line, Barcelona lead a packed Tier 3 chase, and Tier 1 already has Bayern sweating.",
+    teams: ["Ajax", "Aston Villa", "Barcelona", "Bayern Munich", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Juventus", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Sheffield United"],
+    playerTags: []
+  },
+  {
+    file: "articles/season_3_sim_1_stock_up_stock_down.html",
+    title: "November 1983 Stock Report: Palace, Richmond And Benfica Buy The Room",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-06-24-01",
+    tag: "Stock Report",
+    author: "Damon Cross",
+    meta: "Season 3 - Sim 1",
+    blurb: "Crystal Palace, AFC Richmond and Benfica gained the most trust from November, while Manchester City, Ajax and Bayern lost the room.",
+    teams: ["Crystal Palace", "AFC Richmond", "Benfica", "Manchester City", "Ajax", "Bayern Munich"],
+    playerTags: []
+  },
   // Recent manually maintained articles
   {
     file: "articles/season_3_preseason_sim_1_month_in_review.html",

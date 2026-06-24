@@ -11,7 +11,7 @@ export function createArticleNotifier(options) {
     articleBaseUrl,
     checkIntervalMs,
     stateDir,
-    maxAnnouncementsPerRun = 3
+    maxAnnouncementsPerRun = 10
   } = options;
   const statePath = path.join(stateDir, "announced-articles.json");
 
@@ -33,22 +33,20 @@ export function createArticleNotifier(options) {
       return;
     }
 
-    let announcedCount = 0;
+    const articlesToAnnounce = freshArticles.slice(0, Math.min(maxAnnouncementsPerRun, 10));
+    const result = await sendArticleAnnouncementBatch(articlesToAnnounce);
 
-    for (const article of freshArticles.slice(0, maxAnnouncementsPerRun)) {
-      const result = await sendArticleAnnouncement(article);
-
-      if (result.rateLimited) {
-        console.log(`Discord rate limited article notifier. Stopping this run; retry after ${result.retryAfterMs}ms.`);
-        break;
-      }
-
-      announced.push(article.file);
-      saveState(announced);
-      announcedCount += 1;
+    if (result.rateLimited) {
+      console.log(`Discord rate limited article notifier. Stopping this run; retry after ${result.retryAfterMs}ms.`);
+      return;
     }
 
-    console.log(`Announced ${announcedCount} of ${freshArticles.length} new article(s).`);
+    for (const article of articlesToAnnounce) {
+      announced.push(article.file);
+    }
+
+    saveState(announced);
+    console.log(`Announced ${articlesToAnnounce.length} of ${freshArticles.length} new article(s) in one Discord message.`);
   }
 
   function startWatching() {
@@ -104,17 +102,19 @@ export function createArticleNotifier(options) {
     }
   }
 
-  async function sendArticleAnnouncement(article) {
-    const url = new URL(article.file, articleBaseUrl).toString();
+  async function sendArticleAnnouncementBatch(articles) {
     const roleMention = roleId ? `<@&${roleId}> ` : "";
+    const plural = articles.length === 1 ? "article" : "articles";
 
     const payload = {
-      content: `${roleMention}New ESL Media article just dropped.`,
-      embeds: [
-        {
+      content: `${roleMention}New ESL Media ${plural} just dropped: ${articles.length} ${plural}.`,
+      embeds: articles.map((article) => {
+        const url = new URL(article.file, articleBaseUrl).toString();
+
+        return {
           title: article.title,
           url,
-          description: article.blurb,
+          description: truncateText(article.blurb || "Latest ESL Media coverage.", 240),
           color: 0x111b36,
           fields: [
             { name: "Desk", value: article.desk || article.category || "Media", inline: true },
@@ -124,8 +124,8 @@ export function createArticleNotifier(options) {
           footer: {
             text: "European Super League Media"
           }
-        }
-      ]
+        };
+      })
     };
 
     const response = await fetch(`https://discord.com/api/v10/channels/${channelId}/messages`, {
@@ -181,4 +181,14 @@ function getRetryAfterMs(response, body) {
   }
 
   return 60000;
+}
+
+function truncateText(value, maxLength) {
+  const text = String(value || "");
+
+  if (text.length <= maxLength) {
+    return text;
+  }
+
+  return `${text.slice(0, Math.max(0, maxLength - 3)).trimEnd()}...`;
 }

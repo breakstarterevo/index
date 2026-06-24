@@ -18,7 +18,7 @@ const ROLE_ID = process.env.DISCORD_ROLE_ID || "";
 const SOURCE = process.env.MEDIA_ARTICLES_SOURCE || "../content/media-articles.js";
 const ARTICLE_BASE_URL = process.env.ARTICLE_BASE_URL || "https://eurosuperleague.github.io/index/00-eslmedia/content/";
 const CHECK_INTERVAL_MS = Number(process.env.CHECK_INTERVAL_MS || 300000);
-const MAX_ANNOUNCEMENTS_PER_RUN = Number(process.env.MAX_ANNOUNCEMENTS_PER_RUN || 3);
+const MAX_ANNOUNCEMENTS_PER_RUN = Number(process.env.MAX_ANNOUNCEMENTS_PER_RUN || 10);
 const DATA_BASE_URL = process.env.DATA_BASE_URL || "https://eurosuperleague.github.io/index/00-build/database/";
 const DATA_CACHE_TTL_MS = Number(process.env.DATA_CACHE_TTL_MS || 300000);
 
