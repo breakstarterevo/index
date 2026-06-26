@@ -3,47 +3,80 @@
     "injuries": [
         {
             "pos": "SG",
-            "name": "O.J. Mayo",
+            "name": "Bimbo Coles",
+            "url": "",
+            "team": "roster16",
+            "teamName": "Sheffield United",
+            "rosterUrl": "./rosters/roster16.htm",
+            "length": "42",
+            "injury": "Broken Foot",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PF",
+            "name": "Joe Meriweather",
+            "url": "",
+            "team": "roster22",
+            "teamName": "Tottenham Hotspur",
+            "rosterUrl": "./rosters/roster22.htm",
+            "length": "26",
+            "injury": "Hernia",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "C",
+            "name": "Jawann Oldham",
+            "url": "",
+            "team": "roster26",
+            "teamName": "Inter Milan",
+            "rosterUrl": "./rosters/roster26.htm",
+            "length": "16",
+            "injury": "Sprained Ankle",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PF",
+            "name": "Dirk Nowitzki",
             "url": "",
             "team": "roster14",
             "teamName": "Juventus",
             "rosterUrl": "./rosters/roster14.htm",
-            "length": "29",
-            "injury": "Patellar Tendanitis",
-            "rowClass": "row1"
+            "length": "15",
+            "injury": "Stress Fracture",
+            "rowClass": "row2"
         },
         {
-            "pos": "SG",
+            "pos": "SF",
             "name": "Jamaal Wilkes",
             "url": "",
             "team": "roster15",
             "teamName": "Marseille",
             "rosterUrl": "./rosters/roster15.htm",
-            "length": "18",
-            "injury": "Broken Arm",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SG",
-            "name": "Ricky Davis",
-            "url": "",
-            "team": "roster17",
-            "teamName": "Chelsea",
-            "rosterUrl": "./rosters/roster17.htm",
-            "length": "11",
-            "injury": "Concussion",
+            "length": "7",
+            "injury": "Sprained Ankle",
             "rowClass": "row1"
         },
         {
             "pos": "C",
-            "name": "Mike Gminski",
+            "name": "James Edwards",
             "url": "",
-            "team": "roster8",
-            "teamName": "Real Madrid",
-            "rosterUrl": "./rosters/roster8.htm",
-            "length": "10",
+            "team": "roster18",
+            "teamName": "Ajax",
+            "rosterUrl": "./rosters/roster18.htm",
+            "length": "7",
             "injury": "Concussion",
             "rowClass": "row2"
+        },
+        {
+            "pos": "PG",
+            "name": "Rickey Green",
+            "url": "",
+            "team": "roster16",
+            "teamName": "Sheffield United",
+            "rosterUrl": "./rosters/roster16.htm",
+            "length": "4",
+            "injury": "Scratched Cornea",
+            "rowClass": "row1"
         },
         {
             "pos": "SG",
@@ -52,64 +85,20 @@
             "team": "roster22",
             "teamName": "Tottenham Hotspur",
             "rosterUrl": "./rosters/roster22.htm",
-            "length": "6",
-            "injury": "Strained Back",
-            "rowClass": "row1"
+            "length": "3",
+            "injury": "Sprained Ankle",
+            "rowClass": "row2"
         },
         {
             "pos": "SG",
-            "name": "George Gervin",
+            "name": "Darrell Griffith",
             "url": "",
-            "team": "roster9",
-            "teamName": "AC Milan",
-            "rosterUrl": "./rosters/roster9.htm",
-            "length": "5",
-            "injury": "Fractured Jaw",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "PF",
-            "name": "Dan Issel",
-            "url": "",
-            "team": "roster15",
-            "teamName": "Marseille",
-            "rosterUrl": "./rosters/roster15.htm",
-            "length": "5",
-            "injury": "Stiff Neck",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "PF",
-            "name": "Larry Bird",
-            "url": "",
-            "team": "roster9",
-            "teamName": "AC Milan",
-            "rosterUrl": "./rosters/roster9.htm",
-            "length": "5",
-            "injury": "Scratched Cornea",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SF",
-            "name": "John Long",
-            "url": "",
-            "team": "roster27",
-            "teamName": "FL Fart",
-            "rosterUrl": "./rosters/roster27.htm",
-            "length": "4",
+            "team": "roster6",
+            "teamName": "Crystal Palace",
+            "rosterUrl": "./rosters/roster6.htm",
+            "length": "3",
             "injury": "Strained Back",
             "rowClass": "row1"
-        },
-        {
-            "pos": "SG",
-            "name": "Coby White",
-            "url": "",
-            "team": "roster16",
-            "teamName": "Sheffield United",
-            "rosterUrl": "./rosters/roster16.htm",
-            "length": "2",
-            "injury": "Severe Migraines",
-            "rowClass": "row2"
         }
     ]
 }
