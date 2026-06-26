@@ -75,7 +75,7 @@
       ":root { --site-sidebar-width: 150px; --site-topbar-height: 58px; --site-navy: #111b36; --site-blue: #5ca8ff; --site-line: rgba(148, 163, 184, 0.36); }",
       ".site-shell { display: grid; grid-template-columns: var(--site-sidebar-width) minmax(0, 1fr); grid-template-rows: var(--site-topbar-height) minmax(0, 1fr); height: 100vh; left: 0; position: fixed; right: 0; top: 0; transition: grid-template-columns 0.24s ease; width: 100%; }",
       "body.league-menu-closed .site-shell { grid-template-columns: 0 minmax(0, 1fr); }",
-      ".site-topbar { background: #f7f9fc; border-bottom: 0; display: grid; grid-column: 1 / -1; grid-row: 1; grid-template-columns: var(--site-sidebar-width) minmax(0, 1fr) minmax(250px, 340px); min-width: 0; overflow: visible; position: relative; z-index: 25; }",
+      ".site-topbar { background: #f7f9fc; border-bottom: 0; display: grid; grid-column: 1 / -1; grid-row: 1; grid-template-columns: var(--site-sidebar-width) minmax(0, 1fr) minmax(310px, 430px); min-width: 0; overflow: visible; position: relative; z-index: 25; }",
       ".site-topbar-brand { align-items: center; background: var(--site-navy); border-right: 0; display: flex; height: 100%; justify-content: center; padding: 0 8px; position: relative; }",
       ".site-topbar-logo-link { align-items: center; display: flex; justify-content: center; min-width: 0; position: absolute; left: 50%; text-decoration: none; top: 50%; transform: translate(-50%, -50%); }",
       ".site-topbar-logo { display: block; filter: brightness(0) invert(1); height: 38px; object-fit: contain; width: 38px; }",
@@ -98,8 +98,9 @@
       ".site-score-date { font: 950 8px/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: .02em; text-align: center; }",
       ".site-score-sep { font: 900 14px/1 Inter, Tahoma, Arial, sans-serif; text-align: center; }",
       ".site-ticker-empty { align-items: center; color: #5b6472; display: flex; font: 800 12px/1 Inter, Tahoma, Arial, sans-serif; padding: 0 14px; }",
-      ".site-shell-search { align-items: center; background: #f7f9fc; box-shadow: inset 0 -1px 0 rgba(17, 27, 54, 0.18); display: flex; min-width: 0; padding: 0 12px; position: relative; }",
-      ".site-shell-search-input { background: #ffffff; border: 1px solid #c9d3e1; border-radius: 7px; box-sizing: border-box; color: #0f172a; font: 700 12px/1.2 Inter, Tahoma, Arial, sans-serif; height: 34px; outline: none; padding: 0 10px; width: 100%; }",
+      ".site-shell-search { align-items: center; background: #f7f9fc; box-shadow: inset 0 -1px 0 rgba(17, 27, 54, 0.18); display: flex; gap: 8px; min-width: 0; padding: 0 12px; position: relative; }",
+      ".site-shell-search-status { align-items: center; background: #edf5ff; border: 1px solid #c9d3e1; border-radius: 7px; color: #1d4f91; display: flex; flex: 0 0 auto; font: 950 10px/1 Inter, Tahoma, Arial, sans-serif; height: 34px; letter-spacing: .08em; padding: 0 9px; text-transform: uppercase; white-space: nowrap; }",
+      ".site-shell-search-input { background: #ffffff; border: 1px solid #c9d3e1; border-radius: 7px; box-sizing: border-box; color: #0f172a; flex: 1 1 auto; font: 700 12px/1.2 Inter, Tahoma, Arial, sans-serif; height: 34px; min-width: 0; outline: none; padding: 0 10px; width: 100%; }",
       ".site-shell-search-input:focus { border-color: #1d5ea8; box-shadow: 0 0 0 3px rgba(29, 94, 168, .14); }",
       ".site-shell-search-results { background: #ffffff; border: 1px solid #c9d3e1; border-radius: 9px; box-shadow: 0 16px 32px rgba(15, 23, 42, .18); display: none; max-height: min(70vh, 420px); overflow: auto; padding: 6px; position: absolute; right: 12px; top: calc(100% + 6px); width: min(420px, calc(100vw - 24px)); z-index: 80; }",
       ".site-shell-search.is-open .site-shell-search-results { display: block; }",
@@ -118,6 +119,7 @@
       "html.league-theme-dark .site-ticker-filter:hover { background: rgba(142, 197, 255, .18); color: #8ec5ff; }",
       "html.league-theme-dark .site-ticker-filter.is-active { background: #1d5ea8; border-color: #8ec5ff; color: #ffffff; }",
       "html.league-theme-dark .site-shell-search { background: #0d1118; box-shadow: inset 0 -1px 0 rgba(148, 163, 184, .24); }",
+      "html.league-theme-dark .site-shell-search-status { background: #151b25; border-color: rgba(148, 163, 184, .34); color: #8ec5ff; }",
       "html.league-theme-dark .site-shell-search-input { background: #151b25; border-color: rgba(148, 163, 184, .34); color: #f3f7ff; }",
       "html.league-theme-dark .site-shell-search-results { background: #151b25; border-color: rgba(148, 163, 184, .28); box-shadow: 0 16px 32px rgba(0, 0, 0, .36); }",
       "html.league-theme-dark .site-shell-search-result { color: #edf4ff; }",
@@ -149,6 +151,7 @@
       "  .site-ticker { display: none; }",
       "  .site-ticker-filter { display: none; }",
       "  .site-shell-search { display: flex; grid-column: 2; grid-row: 1; padding: 0 10px; }",
+      "  .site-shell-search-status { display: none; }",
       "  body.league-menu-compact .site-shell-search { display: flex; }",
       "  .site-shell-search-results { left: 10px; right: 10px; top: calc(100% + 4px); width: auto; }",
       "  .site-topbar-brand { padding: 0 6px; }",
@@ -222,6 +225,7 @@
     var tickerFilter = document.createElement("button");
     var tickerTrack = document.createElement("div");
     var search = document.createElement("section");
+    var searchStatus = document.createElement("div");
     var searchInput = document.createElement("input");
     var searchResults = document.createElement("div");
     var sidebar = document.createElement("aside");
@@ -250,11 +254,14 @@
     tickerTrack.innerHTML = '<span class="site-ticker-empty">Scores loading</span>';
     search.className = "site-shell-search";
     search.id = "siteShellSearch";
+    searchStatus.className = "site-shell-search-status";
+    searchStatus.textContent = "Sim 2 · Dec 1983";
+    searchStatus.title = "Latest sim: updated through 31/12/1983";
     searchInput.className = "site-shell-search-input";
     searchInput.type = "search";
     searchInput.autocomplete = "off";
-    searchInput.placeholder = "Search players or teams";
-    searchInput.setAttribute("aria-label", "Search players or teams");
+    searchInput.placeholder = "Search pages, players or teams";
+    searchInput.setAttribute("aria-label", "Search pages, players or teams");
     searchResults.className = "site-shell-search-results";
     searchResults.setAttribute("role", "listbox");
     sidebar.className = "site-sidebar";
@@ -265,6 +272,7 @@
     brand.appendChild(logoLink);
     brand.appendChild(tickerFilter);
     ticker.appendChild(tickerTrack);
+    search.appendChild(searchStatus);
     search.appendChild(searchInput);
     search.appendChild(searchResults);
     topbar.appendChild(brand);
@@ -946,6 +954,21 @@
   }
 
   function buildShellSearchIndex() {
+    var pages = [
+      { type: "Page", name: "Standings", meta: "Classic standings", href: "standings.htm", aliases: "table records clb elb ecl" },
+      { type: "Page", name: "Unified Standings", meta: "Modern league table", href: getCorePath("unifiedStandings", "00-assets/html/unified-standings.htm"), aliases: "table records promotion relegation" },
+      { type: "Page", name: "Schedule", meta: "Games and box scores", href: "schedule.htm", aliases: "fixtures games scores boxes results" },
+      { type: "Page", name: "League Leaders", meta: "Classic stat leaders", href: "leaders.htm", aliases: "stats points rebounds assists blocks steals" },
+      { type: "Page", name: "Unified Leaders", meta: "Modern stat leaders", href: getCorePath("unifiedLeaders", "00-assets/html/unified-leaders.htm"), aliases: "stats player rankings points rebounds assists" },
+      { type: "Page", name: "League Dashboard", meta: "League overview", href: getCorePath("leagueDashboard", "00-assets/html/league%20dashboard.htm"), aliases: "home overview dashboard hub" },
+      { type: "Page", name: "Free Agents", meta: "Classic free agent list", href: "freeagents.htm", aliases: "fa waiver unsigned players" },
+      { type: "Page", name: "Waiver Database", meta: "Filterable player market", href: "waiverwire.htm", aliases: "waiver free agents fa database" },
+      { type: "Page", name: "Trade Tool", meta: "Roster and salary tool", href: getCorePath("tradeTool", "00-assets/html/trade-tool.htm"), aliases: "trades assets salaries cap" },
+      { type: "Page", name: "FA War Room", meta: "Free agency ratings", href: getCorePath("faWarRoom", "00-assets/html/fa-war-room.htm"), aliases: "free agency war room ratings" },
+      { type: "Page", name: "Youth Intake", meta: "Youth intake database", href: getCorePath("youthIntake", "00-assets/html/youth-intake.htm"), aliases: "youth prospects intake juniors" },
+      { type: "Page", name: "ESL Media", meta: "Latest articles", href: getCorePath("eslMedia", "00-eslmedia/homepage.html"), aliases: "articles news media recaps rankings" }
+    ];
+
     return Promise.all([
       loadJson("players.json").catch(function () { return []; }),
       loadJson("teams.json").catch(function () { return []; })
@@ -955,7 +978,8 @@
           type: "Player",
           name: player.name,
           meta: [player.teamLabel, player.pos, player.age ? player.age + " yrs" : ""].filter(Boolean).join(" | "),
-          href: getPlayerHref(player)
+          href: getPlayerHref(player),
+          aliases: [player.teamLabel, player.pos].filter(Boolean).join(" ")
         };
       });
       var teams = (results[1] || []).map(function (team) {
@@ -963,11 +987,12 @@
           type: "Team",
           name: team.name,
           meta: team.starPlayer && team.starPlayer.name ? "Star: " + team.starPlayer.name : "Roster",
-          href: getTeamHref(team)
+          href: getTeamHref(team),
+          aliases: [team.abbrev, team.starPlayer && team.starPlayer.name].filter(Boolean).join(" ")
         };
       });
 
-      return players.concat(teams).filter(function (item) {
+      return pages.concat(players, teams).filter(function (item) {
         return item.name && item.href;
       });
     });
@@ -976,18 +1001,20 @@
   function scoreSearchResult(item, query) {
     var name = String(item.name || "").toLowerCase();
     var meta = String(item.meta || "").toLowerCase();
+    var aliases = String(item.aliases || "").toLowerCase();
+    var typeBias = item.type === "Page" ? -0.25 : 0;
 
     if (name === query) {
-      return 0;
+      return 0 + typeBias;
     }
     if (name.indexOf(query) === 0) {
-      return 1;
+      return 1 + typeBias;
     }
     if (name.indexOf(query) !== -1) {
-      return 2;
+      return 2 + typeBias;
     }
-    if (meta.indexOf(query) !== -1) {
-      return 3;
+    if (meta.indexOf(query) !== -1 || aliases.indexOf(query) !== -1) {
+      return 3 + typeBias;
     }
     return 99;
   }
@@ -1016,7 +1043,7 @@
     }).slice(0, HEADER_SEARCH_LIMIT);
 
     if (!matches.length) {
-      resultsNode.innerHTML = '<div class="site-shell-search-empty">No players or teams found.</div>';
+      resultsNode.innerHTML = '<div class="site-shell-search-empty">No pages, players or teams found.</div>';
       root.classList.add("is-open");
       return;
     }
