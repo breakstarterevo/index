@@ -26,6 +26,98 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
+  // Season 3 Sim 2 December package
+  {
+    file: "articles/season_3_sim_2_month_in_review.html",
+    title: "December 1983 Review: PSG Catch Fire And Richmond Bend Without Breaking",
+    category: "Recap",
+    desk: "Analysis",
+    sortKey: "2026-06-26-07",
+    tag: "Month in Review",
+    author: "Graham Trent",
+    meta: "Season 3 - Sim 2",
+    blurb: "Paris Saint-Germain went unbeaten in December, AFC Richmond took their first loss, Crystal Palace stayed clear, and the race lines sharpened.",
+    teams: ["AFC Richmond", "AC Milan", "Benfica", "Crystal Palace", "FL Fart", "Manchester City", "Manchester United", "Monaco", "Paris Saint-Germain", "Real Madrid"],
+    playerTags: ["Brad Davis", "Kelly Tripucka", "Tom Chambers"]
+  },
+  {
+    file: "articles/season_3_sim_2_mvp_race.html",
+    title: "December 1983 MVP Race: Chambers, Kiki And Tripucka Take The Ladders",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-06-26-06",
+    tag: "MVP Race",
+    author: "Damon Cross",
+    meta: "Season 3 - Sim 2",
+    blurb: "Tom Chambers, Kiki Vandeweghe and Kelly Tripucka lead the December MVP race as team context starts to matter more.",
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Crystal Palace", "Inter Milan", "Juventus", "Monaco", "Paris Saint-Germain"],
+    playerTags: ["Adrian Dantley", "Bernard King", "Brad Davis", "Joe Barry Carroll", "Kareem Abdul-Jabbar", "Kelly Tripucka", "Kiki Vandeweghe", "Magic Johnson", "Otis Birdsong", "Purvis Short", "Reggie Theus", "Rolando Blackman", "Tom Chambers", "World B. Free"]
+  },
+  {
+    file: "articles/season_3_sim_2_tier_1_power_rankings.html",
+    title: "December 1983 Tier 1 Power Rankings: Richmond Stay Clear, Milan Move Second",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-06-26-05",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 2",
+    blurb: "AFC Richmond remain alone at the top of Tier 1, AC Milan move into the clearest chase slot, and Benfica lose ground after a 3-5 December.",
+    teams: ["AFC Richmond", "AC Milan", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "Sheffield United", "Bayern Munich"],
+    playerTags: ["Adrian Dantley", "Bernard King", "Joe Barry Carroll", "Larry Drew", "Magic Johnson", "Sidney Moncrief", "Tom Chambers"]
+  },
+  {
+    file: "articles/season_3_sim_2_tier_2_power_rankings.html",
+    title: "December 1983 Tier 2 Power Rankings: Palace Still Own The Race",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-06-26-04",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 2",
+    blurb: "Crystal Palace stay first at 16-2, Brighton hold the second promotion slot, and Juventus keep pressure on the line.",
+    teams: ["Crystal Palace", "Brighton", "Juventus", "Marseille", "Aston Villa", "Atletico Madrid", "Manchester United", "Ajax"],
+    playerTags: ["Cliff Robinson", "Kiki Vandeweghe", "Larry Nance", "Reggie Theus", "Robert Parish", "Rolando Blackman"]
+  },
+  {
+    file: "articles/season_3_sim_2_tier_3_power_rankings.html",
+    title: "December 1983 Tier 3 Power Rankings: PSG Take The Seat",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-06-26-03",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 2",
+    blurb: "Paris Saint-Germain go 7-0 in December and jump to the top of Tier 3, while Inter, Barcelona and Monaco chase the single promotion spot.",
+    teams: ["Paris Saint-Germain", "Inter Milan", "Barcelona", "Monaco", "Sporting CP", "Tottenham Hotspur", "Valencia", "Manchester City"],
+    playerTags: ["Brad Davis", "Kelly Tripucka", "Kirk Hinrich", "Otis Birdsong", "Purvis Short", "World B. Free"]
+  },
+  {
+    file: "articles/season_3_sim_2_promotion_relegation_watch.html",
+    title: "December 1983 Race Watch: Palace Create Distance And PSG Take The Door",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-06-26-02",
+    tag: "Promotion/Relegation",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 2",
+    blurb: "Crystal Palace and Brighton hold the Tier 2 promotion spots, PSG lead the Tier 3 race, and Bayern, Sheffield, Ajax and City remain under pressure.",
+    teams: ["Ajax", "Bayern Munich", "Brighton", "Crystal Palace", "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Paris Saint-Germain", "Sheffield United"],
+    playerTags: []
+  },
+  {
+    file: "articles/season_3_sim_2_stock_up_stock_down.html",
+    title: "December 1983 Stock Report: PSG, FL Fart And United Rise",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-06-26-01",
+    tag: "Stock Report",
+    author: "Damon Cross",
+    meta: "Season 3 - Sim 2",
+    blurb: "Paris Saint-Germain, FL Fart and Manchester United improved their December standing, while Benfica, Monaco and Atletico Madrid lost ground.",
+    teams: ["Atletico Madrid", "Benfica", "FL Fart", "Manchester United", "Monaco", "Paris Saint-Germain"],
+    playerTags: []
+  },
   // Season 3 Sim 1 November package
   {
     file: "articles/season_3_sim_1_month_in_review.html",
