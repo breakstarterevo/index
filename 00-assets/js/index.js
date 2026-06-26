@@ -506,6 +506,90 @@
     return new Date(Number(match[3]), Number(match[1]) - 1, Number(match[2])).getTime();
   }
 
+  function inferRegularSeasonSimNumber(period) {
+    var month = Number(period && period.month);
+
+    if (!month) {
+      return "";
+    }
+
+    if (month >= 11) {
+      return String(month - 10);
+    }
+
+    if (month <= 6) {
+      return String(month + 2);
+    }
+
+    return "";
+  }
+
+  function formatDayMonthYear(value) {
+    var match = String(value || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+
+    if (!match) {
+      return "";
+    }
+
+    return [
+      String(match[2]).padStart(2, "0"),
+      String(match[1]).padStart(2, "0"),
+      match[3]
+    ].join("/");
+  }
+
+  function getLatestSimEndDate(results) {
+    var latest = (results || []).reduce(function (best, game) {
+      var time = parseScheduleDate(game && game.date);
+
+      if (!time || (best && time <= best.time)) {
+        return best;
+      }
+
+      return {
+        date: game.date,
+        time: time
+      };
+    }, null);
+
+    return latest ? formatDayMonthYear(latest.date) : "";
+  }
+
+  function updateLatestSimStatus() {
+    var node = document.querySelector(".site-shell-search-status");
+
+    if (!node) {
+      return;
+    }
+
+    loadJson("monthly/latest_sim_results.json")
+      .then(function (data) {
+        var period = data && data.period ? data.period : {};
+        var simNumber = inferRegularSeasonSimNumber(period);
+        var periodLabel = period.label || "";
+        var updatedThrough = getLatestSimEndDate(data && data.results);
+        var labelParts = [];
+
+        if (simNumber) {
+          labelParts.push("Sim " + simNumber);
+        }
+        if (periodLabel) {
+          labelParts.push(periodLabel.replace(/^([A-Za-z]{3})[a-z]+/, "$1"));
+        }
+
+        if (labelParts.length) {
+          node.textContent = labelParts.join(" · ");
+        }
+        if (updatedThrough) {
+          node.title = "Latest sim: updated through " + updatedThrough;
+        }
+      })
+      .catch(function () {
+        node.textContent = "Sim 2 · Dec 1983";
+        node.title = "Latest sim: updated through 31/12/1983";
+      });
+  }
+
   function getTeamTickerData(name) {
     var clean = String(name || "").trim();
     var aliases = {
@@ -1116,6 +1200,7 @@
     ensureMenuControls();
     bindSidebarAutoClose();
     initScoreTicker();
+    updateLatestSimStatus();
     initShellSearch();
   }
 
