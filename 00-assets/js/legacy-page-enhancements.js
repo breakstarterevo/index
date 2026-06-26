@@ -36,6 +36,15 @@
     }
   }
 
+  function markSchedulePage() {
+    var path = (window.location && window.location.pathname ? window.location.pathname : "").toLowerCase();
+    var title = document.title ? document.title.trim().toLowerCase() : "";
+
+    if (/\/schedule\.htm$/.test(path) || /\\schedule\.htm$/.test(path) || title === "league schedule") {
+      document.body.classList.add("page-schedule");
+    }
+  }
+
   function getRosterPhotoPath(filename) {
     if (!filename) {
       return "";
@@ -148,6 +157,32 @@
   function enhanceStandingsRaceRows() {
     var tiers;
     var tables;
+    var teamColors = {
+      "AC Milan": "#B50909",
+      "AFC Richmond": "#021E73",
+      "Ajax": "#D2122E",
+      "Aston Villa": "#670E36",
+      "Atletico Madrid": "#CB3524",
+      "Barcelona": "#A60042",
+      "Bayern Munich": "#DC052D",
+      "Benfica": "#E41E26",
+      "Brighton": "#0057B8",
+      "Chelsea": "#034694",
+      "Crystal Palace": "#1B458F",
+      "FL Fart": "#D72B2B",
+      "Inter Milan": "#0055A0",
+      "Juventus": "#000000",
+      "Manchester City": "#6CABDD",
+      "Manchester United": "#D9020D",
+      "Marseille": "#099FFF",
+      "Monaco": "#CE1126",
+      "Paris Saint-Germain": "#00093F",
+      "Real Madrid": "#004996",
+      "Sheffield United": "#000000",
+      "Sporting CP": "#008056",
+      "Tottenham Hotspur": "#132257",
+      "Valencia": "#F57710"
+    };
 
     if (!document.body.classList.contains("page-standings")) {
       return;
@@ -170,7 +205,16 @@
       var tier = tiers[tableIndex];
 
       rows.forEach(function (row) {
+        var teamLink = row.querySelector("td.main a.linkmain, td.main a.linkhuman");
+        var teamName = teamLink ? teamLink.textContent.replace(/\s+/g, " ").trim() : "";
+        var color = teamColors[teamName];
+
         row.classList.remove("race-champion", "race-promoted", "race-relegated");
+
+        if (color) {
+          row.classList.add("standings-team-color-row");
+          row.style.setProperty("--standings-team-color", color);
+        }
       });
 
       rows.slice(0, tier.champion).forEach(function (row) {
@@ -203,6 +247,7 @@
 
     markStandingsPage();
     markTransactionsPage();
+    markSchedulePage();
     enhanceStandingsRaceRows();
     enhanceClassicTeamHeader();
     applyRosterHeaderPhoto();

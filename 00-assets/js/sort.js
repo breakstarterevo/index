@@ -77,7 +77,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
         // Re-append sorted rows and restore zebra striping
         rows.forEach(function (row, i) {
-          row.className = i % 2 === 0 ? 'row1' : 'row2';
+          row.classList.remove('row1', 'row2');
+          row.classList.add(i % 2 === 0 ? 'row1' : 'row2');
           tbody.appendChild(row);
         });
 

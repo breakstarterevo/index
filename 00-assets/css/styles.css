@@ -204,6 +204,19 @@ body.page-roster > table.classic-team-banner + table td.tableheader {
   padding-top: 6px;
 }
 
+body.page-roster > br {
+  display: none;
+}
+
+body.page-roster > table[width] {
+  margin-bottom: 6px;
+}
+
+body.page-roster > table[width] td.tableheader {
+  padding-bottom: 3px;
+  padding-top: 6px;
+}
+
 body.page-classic > table.classic-team-banner td.header,
 body.page-classic > table.classic-team-banner td.teamheader,
 body.page-classic > table.classic-team-banner td.teamheader2 {
@@ -482,16 +495,29 @@ body.page-classic td.tableheader {
 body.page-classic td.newheader {
   color: var(--esl-classic-text);
   font-size: 21pt;
-  padding: 16px 0 10px;
+  padding: 12px 0 4px;
 }
 
 body.page-classic td.tableheader {
   color: #2b75bd;
   font-size: 12pt;
-  padding: 14px 0 7px;
+  padding: 8px 0 5px;
+}
+
+body.page-classic table:has(td.newheader) {
+  margin-bottom: 0;
+}
+
+body.page-classic table:has(td.newheader) hr {
+  margin: 4px 0 8px;
+}
+
+body.page-schedule td.tableheader {
+  padding-top: 6px;
 }
 
 body.page-standings td.newheader {
+  padding-top: 8px;
   padding-bottom: 2px;
 }
 
@@ -512,7 +538,23 @@ body.page-standings br {
 }
 
 body.page-standings > table + br + hr {
-  margin: 10px 0 18px;
+  margin: 2px 0 6px;
+}
+
+body.page-standings tr.standings-team-color-row > td.main:first-child {
+  overflow: hidden;
+  padding-left: 14px;
+  position: relative;
+}
+
+body.page-standings tr.standings-team-color-row > td.main:first-child::before {
+  background: var(--standings-team-color, var(--esl-classic-accent));
+  bottom: 0;
+  content: "";
+  left: 0;
+  position: absolute;
+  top: 0;
+  width: 4px;
 }
 
 html.league-theme-dark body.page-classic td.newheader {
