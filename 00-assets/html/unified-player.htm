@@ -604,6 +604,84 @@
       color: var(--ink);
       font-weight: 750;
     }
+    .analyst-report {
+      display: grid;
+      gap: 0.65rem;
+      padding: 0.6rem;
+    }
+    .analyst-summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem;
+    }
+    .analyst-summary-card {
+      border: 1px solid var(--line);
+      background: #fff;
+      padding: 0.45rem 0.5rem;
+      min-width: 0;
+    }
+    .analyst-label {
+      color: var(--muted);
+      display: block;
+      font-size: 0.58rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.16rem;
+      text-transform: uppercase;
+    }
+    .analyst-value {
+      color: var(--team-color);
+      display: block;
+      font-size: 0.86rem;
+      font-weight: 900;
+      line-height: 1.15;
+    }
+    .analyst-note {
+      border-left: 3px solid var(--team-color);
+      color: var(--ink);
+      font-size: 0.78rem;
+      line-height: 1.38;
+      padding: 0.05rem 0 0.05rem 0.55rem;
+    }
+    .analyst-list-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.45rem;
+    }
+    .analyst-list {
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      padding: 0.48rem 0.5rem;
+    }
+    .analyst-list-title {
+      color: var(--muted);
+      font-size: 0.6rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      margin-bottom: 0.34rem;
+      text-transform: uppercase;
+    }
+    .analyst-list ul {
+      display: grid;
+      gap: 0.25rem;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .analyst-list li {
+      font-size: 0.74rem;
+      line-height: 1.25;
+    }
+    .analyst-list li::before {
+      color: var(--team-color);
+      content: "+";
+      font-weight: 900;
+      margin-right: 0.28rem;
+    }
+    .analyst-list--concerns li::before {
+      color: var(--bad);
+      content: "-";
+    }
     .gamelog-wrap {
       max-height: min(52vh, 380px);
       overflow: auto;
@@ -676,6 +754,87 @@
     .history-wrap .history-table td:nth-child(2) {
       white-space: normal;
     }
+    .accolades-wrap {
+      display: grid;
+      gap: 0.55rem;
+      max-height: min(46vh, 420px);
+      overflow: auto;
+      padding: 0.55rem 0.6rem 0.65rem;
+      scrollbar-gutter: stable;
+    }
+    .accolade-total-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(112px, 1fr));
+      gap: 0.45rem;
+    }
+    .accolade-total {
+      border: 1px solid var(--line);
+      background: #f8fafc;
+      display: grid;
+      gap: 0.12rem;
+      min-height: 58px;
+      padding: 0.45rem 0.5rem;
+    }
+    .accolade-total strong {
+      color: var(--team-color);
+      font-size: 1.15rem;
+      line-height: 1;
+    }
+    .accolade-total span {
+      color: var(--muted);
+      font-size: 0.62rem;
+      font-weight: 850;
+      line-height: 1.2;
+      text-transform: uppercase;
+    }
+    .accolade-season-grid {
+      display: grid;
+      gap: 0.5rem;
+    }
+    .accolade-season {
+      border: 1px solid var(--line);
+      background: #fff;
+    }
+    .accolade-season h3 {
+      border-bottom: 1px solid var(--line);
+      color: var(--team-color);
+      font-size: 0.72rem;
+      font-weight: 950;
+      letter-spacing: 0.12em;
+      margin: 0;
+      padding: 0.4rem 0.5rem;
+      text-transform: uppercase;
+    }
+    .accolade-list {
+      display: grid;
+      gap: 0;
+    }
+    .accolade-item {
+      border-bottom: 1px solid var(--line);
+      display: grid;
+      grid-template-columns: 56px minmax(0, 1fr);
+      gap: 0.45rem;
+      padding: 0.42rem 0.5rem;
+    }
+    .accolade-item:last-child { border-bottom: 0; }
+    .accolade-item span {
+      color: var(--muted);
+      font-size: 0.62rem;
+      font-weight: 900;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+    }
+    .accolade-item strong {
+      font-size: 0.78rem;
+      line-height: 1.25;
+    }
+    .accolade-item em {
+      color: var(--muted);
+      display: block;
+      font-size: 0.68rem;
+      font-style: normal;
+      margin-top: 0.08rem;
+    }
     .timeline {
       display: grid;
       gap: 0;
@@ -729,7 +888,8 @@
       .layout-ratings,
       .layout-sidebar,
       .layout-stats,
-      .layout-player-articles {
+      .layout-player-articles,
+      .layout-analyst {
         align-self: stretch;
         max-width: 100%;
         min-width: 0;
@@ -742,6 +902,7 @@
       .layout-sidebar { order: 2; }
       .layout-stats { order: 3; }
       .layout-player-articles { order: 4; }
+      .layout-analyst { order: 5; }
       .ratings-board { grid-template-columns: 1fr; }
       .rating-personality-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
       .rating-category { border-right: 0; border-bottom: 1px solid var(--line); }
@@ -796,6 +957,8 @@
         width: 100%;
       }
       .header-statline { grid-template-columns: repeat(3, 1fr); }
+      .analyst-summary-grid,
+      .analyst-list-grid { grid-template-columns: 1fr; }
     }
   </style>
 </head>
@@ -849,6 +1012,13 @@
           </div>
           <div class="media-mentions-body" id="playerArticlesList"></div>
         </section>
+        <section class="panel layout-analyst" id="analystPanel">
+          <div class="panel-head">
+            <h2 class="panel-title">Analyst Report</h2>
+            <div class="note" id="analystNote">Live profile</div>
+          </div>
+          <div class="analyst-report" id="analystReport"></div>
+        </section>
       </div>
 
       <section class="panel stats-panel layout-stats">
@@ -876,9 +1046,7 @@
             <h2 class="panel-title">Awards &amp; Achievements</h2>
             <div class="note" id="awardsNote">Career honors</div>
           </div>
-          <div class="table-wrap history-wrap">
-            <table class="data-table history-table" id="awardsTable"></table>
-          </div>
+          <div class="accolades-wrap" id="awardsAccolades"></div>
         </div>
         <div class="history-panel" id="transactionsPanel">
           <div class="panel-head">
@@ -1133,6 +1301,235 @@
       const rows = stats && stats.season_averages && Array.isArray(stats.season_averages.rows) ? stats.season_averages.rows : [];
       const realRows = rows.filter((r) => String(r.season || "").toLowerCase() !== "career");
       return realRows.slice().sort((a, b) => Number(b.season) - Number(a.season))[0] || rows[0] || {};
+    }
+
+    function latestSeasonRowForStats(statsEntry) {
+      const stats = statsEntry && statsEntry.stats;
+      const rows = stats && stats.season_averages && Array.isArray(stats.season_averages.rows) ? stats.season_averages.rows : [];
+      const realRows = rows.filter((row) => String(row.season || "").toLowerCase() !== "career");
+      return realRows.slice().sort((a, b) => Number(b.season) - Number(a.season))[0] || rows[0] || null;
+    }
+
+    function ordinal(value) {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return "--";
+      const mod100 = n % 100;
+      const suffix = mod100 >= 11 && mod100 <= 13 ? "th" : ({ 1: "st", 2: "nd", 3: "rd" }[n % 10] || "th");
+      return `${n}${suffix}`;
+    }
+
+    function playerStatsEntry(player) {
+      return findStatsFor(player);
+    }
+
+    function playerTeamName(player) {
+      return normalizeName(player && (player.teamLabel || player.team));
+    }
+
+    function sameTeamPlayers(player) {
+      const teamKey = playerTeamName(player);
+      if (!teamKey) return [];
+      return state.players.filter((item) => playerTeamName(item) === teamKey);
+    }
+
+    function teamStatRank(player, statKey) {
+      const teamPlayers = sameTeamPlayers(player)
+        .map((item) => {
+          const row = latestSeasonRowForStats(playerStatsEntry(item));
+          const value = statKey === "reb" ? num(totalRebounds(row)) : num(row && row[statKey]);
+          return { player: item, value: value === null ? Number.NEGATIVE_INFINITY : value };
+        })
+        .filter((entry) => entry.value !== Number.NEGATIVE_INFINITY)
+        .sort((a, b) => b.value - a.value || clean(a.player.name).localeCompare(clean(b.player.name)));
+      const currentId = playerIdFromUrl(player && player.url);
+      const index = teamPlayers.findIndex((entry) => playerIdFromUrl(entry.player.url) === currentId);
+      if (index < 0) return "";
+      return `${ordinal(index + 1)} team ${statKey === "reb" ? "REB" : statKey.toUpperCase()}`;
+    }
+
+    const POSITION_PROFILES = {
+      PG: {
+        family: "guard",
+        primary: ["Hnd", "Pas", "Qkn", "Prd", "Stl", "Jps", "3ps"],
+        secondary: ["Fts", "Ins", "Sta"],
+        lowIgnore: ["Orb", "Drb", "Blk", "Str"]
+      },
+      SG: {
+        family: "guard",
+        primary: ["Jps", "3ps", "Hnd", "Prd", "Qkn", "Stl", "Pas"],
+        secondary: ["Ins", "Fts", "Sta"],
+        lowIgnore: ["Orb", "Blk", "Str"]
+      },
+      SF: {
+        family: "wing",
+        primary: ["Jps", "3ps", "Ins", "Prd", "Psd", "Qkn", "Drb", "Str"],
+        secondary: ["Hnd", "Pas", "Stl", "Sta"],
+        lowIgnore: ["Orb", "Blk"]
+      },
+      PF: {
+        family: "big",
+        primary: ["Ins", "Drb", "Orb", "Psd", "Blk", "Str", "Jps"],
+        secondary: ["Qkn", "Sta", "Fts"],
+        lowIgnore: ["3ps", "Hnd", "Pas", "Prd"]
+      },
+      C: {
+        family: "big",
+        primary: ["Ins", "Drb", "Orb", "Psd", "Blk", "Str", "Sta"],
+        secondary: ["Jps", "Qkn", "Fts"],
+        lowIgnore: ["3ps", "Hnd", "Pas", "Prd"]
+      }
+    };
+
+    const RATING_LABELS = {
+      Ins: "Inside", Jps: "Jump Shot", Fts: "Free Throw", "3ps": "Three",
+      Hnd: "Handle", Pas: "Pass", Orb: "Off Reb", Drb: "Def Reb",
+      Psd: "Post Def", Prd: "Per Def", Stl: "Steal", Blk: "Block",
+      Qkn: "Quick", Jmp: "Jump", Str: "Strength", Sta: "Stamina"
+    };
+
+    function positionProfile(player) {
+      const pos = clean(player && player.pos).toUpperCase().split(/[^A-Z]+/).filter(Boolean)[0] || "";
+      return POSITION_PROFILES[pos] || POSITION_PROFILES.SF;
+    }
+
+    function ratingScore(player, keys) {
+      const values = keys.map((key) => num(player && player[key])).filter((value) => value !== null);
+      if (!values.length) return 0;
+      return values.reduce((sum, value) => sum + value, 0) / values.length;
+    }
+
+    function playerRole(player, row) {
+      const pts = num(row && row.pts) || 0;
+      const ast = num(row && row.ast) || 0;
+      const reb = num(totalRebounds(row)) || 0;
+      const min = num(row && row.min) || 0;
+      const profile = positionProfile(player);
+      const get = (key) => num(player && player[key]) || 0;
+      const shooting = ratingScore(player, ["Jps", "3ps", "Fts"]);
+      const creation = ratingScore(player, ["Hnd", "Pas", "Qkn"]);
+      const perimeterDefense = ratingScore(player, ["Prd", "Stl", "Qkn"]);
+      const interiorDefense = ratingScore(player, ["Psd", "Blk", "Str"]);
+      const rebounding = ratingScore(player, ["Orb", "Drb"]);
+      const interiorScoring = ratingScore(player, ["Ins", "Orb", "Str"]);
+
+      if (profile.family === "guard") {
+        if (ast >= 7 || (creation >= 72 && ast >= 5)) return "Lead guard";
+        if (pts >= 20 && creation >= 64) return "Shot creator";
+        if (shooting >= 74 && pts >= 12) return "Floor spacer";
+        if (perimeterDefense >= 72) return "Point-of-attack defender";
+      } else if (profile.family === "wing") {
+        if (pts >= 20 && shooting >= 68) return "Scoring wing";
+        if (perimeterDefense >= 70 && shooting >= 62) return "Two-way wing";
+        if (shooting >= 74) return "Floor spacer";
+        if (interiorScoring >= 68 && reb >= 6) return "Slashing forward";
+      } else {
+        if (interiorDefense >= 72 && reb >= 7) return "Rim protector";
+        if (rebounding >= 74 && reb >= 8) return "Glass cleaner";
+        if (interiorScoring >= 72 && pts >= 12) return "Interior finisher";
+        if (shooting >= 70 && pts >= 10) return "Stretch big";
+      }
+
+      if (pts >= 23) return "Primary scorer";
+      if (min >= 24) return "Two-way rotation";
+      return "Depth piece";
+    }
+
+    function squadStatus(row) {
+      const min = num(row && row.min) || 0;
+      const pts = num(row && row.pts) || 0;
+      if (min >= 32 || pts >= 22) return "Key player";
+      if (min >= 24 || pts >= 14) return "Starter level";
+      if (min >= 14 || pts >= 7) return "Rotation";
+      if (min > 0) return "Depth";
+      return "Unproven";
+    }
+
+    function recentRows(player) {
+      const record = findGamelogsFor(player);
+      const section = record && record.gameLogs;
+      return section && Array.isArray(section.rows) ? section.rows.slice(-5) : [];
+    }
+
+    function averageStat(rows, key) {
+      const values = rows.map((row) => key === "reb" ? num(totalRebounds(row)) : num(row && row[key])).filter((value) => value !== null);
+      if (!values.length) return null;
+      return Math.round((values.reduce((sum, value) => sum + value, 0) / values.length) * 10) / 10;
+    }
+
+    function formLabel(player, row) {
+      const rows = recentRows(player);
+      if (!rows.length) return "No recent log";
+      const recentPts = averageStat(rows, "pts");
+      const seasonPts = num(row && row.pts);
+      if (recentPts === null || seasonPts === null) return `${rows.length}-game sample`;
+      const delta = Math.round((recentPts - seasonPts) * 10) / 10;
+      if (delta >= 4) return `Hot, +${delta} PPG`;
+      if (delta <= -4) return `Cold, ${delta} PPG`;
+      return `Stable, ${recentPts} PPG L${rows.length}`;
+    }
+
+    function positionRatingItems(player, direction) {
+      const profile = positionProfile(player);
+      const keys = direction === "high"
+        ? [...profile.primary, ...profile.secondary]
+        : profile.primary.filter((key) => !profile.lowIgnore.includes(key));
+      const seen = new Set();
+      const ratings = keys
+        .filter((key) => {
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        })
+        .map((key) => ({ key, label: RATING_LABELS[key] || key, value: num(player && player[key]) }))
+        .filter((item) => item.value !== null);
+      return ratings
+        .sort((a, b) => direction === "high" ? b.value - a.value || a.label.localeCompare(b.label) : a.value - b.value || a.label.localeCompare(b.label))
+        .slice(0, 3)
+        .map((item) => `${item.label} ${item.value}`);
+    }
+
+    function analystSentence(player, row, role, form, injury) {
+      const teamRanks = [teamStatRank(player, "pts"), teamStatRank(player, "reb"), teamStatRank(player, "ast")].filter(Boolean).slice(0, 2);
+      const availability = injury ? `${injury.injury} (${injury.length}d)` : "available";
+      return `${role} profile, ${availability}. ${form}. ${teamRanks.length ? teamRanks.join(", ") + "." : "Team rank context unavailable."}`;
+    }
+
+    function renderAnalystReport() {
+      const root = document.getElementById("analystReport");
+      const note = document.getElementById("analystNote");
+      if (!root || !state.current) return;
+      const player = state.current;
+      const row = bestCurrentRow();
+      const injury = findInjury(player);
+      const role = playerRole(player, row);
+      const status = squadStatus(row);
+      const form = formLabel(player, row);
+      const ranks = [teamStatRank(player, "pts"), teamStatRank(player, "reb"), teamStatRank(player, "ast")].filter(Boolean);
+      const strengths = positionRatingItems(player, "high");
+      const concerns = positionRatingItems(player, "low");
+      if (note) note.textContent = row.season ? `${row.season} profile` : "Live profile";
+      root.innerHTML = [
+        '<div class="analyst-summary-grid">',
+        summaryCard("Role", role),
+        summaryCard("Squad Status", status),
+        summaryCard("Form", form),
+        summaryCard("Team Rank", ranks[0] || "No rank"),
+        "</div>",
+        `<div class="analyst-note">${escapeHtml(analystSentence(player, row, role, form, injury))}</div>`,
+        '<div class="analyst-list-grid">',
+        analystList("Strengths", strengths, "analyst-list"),
+        analystList("Concerns", concerns, "analyst-list analyst-list--concerns"),
+        "</div>"
+      ].join("");
+    }
+
+    function summaryCard(label, value) {
+      return `<div class="analyst-summary-card"><span class="analyst-label">${escapeHtml(label)}</span><span class="analyst-value">${escapeHtml(value || "--")}</span></div>`;
+    }
+
+    function analystList(title, items, className) {
+      const rows = (items && items.length ? items : ["No clear signal"]).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
+      return `<div class="${className}"><div class="analyst-list-title">${escapeHtml(title)}</div><ul>${rows}</ul></div>`;
     }
 
     function setTeamColors(team) {
@@ -1462,15 +1859,109 @@
       makeTableSortable(table);
     }
 
+    function cleanAccoladeLabel(label) {
+      return clean(label).replace(/\s*\|\s*$/, "");
+    }
+
+    function parseAccoladeTotal(label) {
+      const match = String(label || "").match(/^(.*?):\s*(\d+)$/);
+      return {
+        label: cleanAccoladeLabel(match ? match[1] : label),
+        count: match ? Number(match[2]) : ""
+      };
+    }
+
+    function normalizeAccoladeKey(label) {
+      return cleanAccoladeLabel(label)
+        .toLowerCase()
+        .replace(/\b1st\b/g, "first")
+        .replace(/\b2nd\b/g, "second")
+        .replace(/\ball-defense\b/g, "all-defensive")
+        .replace(/\s+/g, " ");
+    }
+
+    function accoladeDetail(item) {
+      let season = clean(item && item.season);
+      let award = cleanAccoladeLabel(item && (item.award || item.name || item.label || item));
+      let tier = "";
+      const awardTier = String(award.match(/^(CLB|ELB|ECL)\s+/i)?.[1] || "").toUpperCase();
+      if (awardTier) {
+        tier = awardTier;
+        award = award.replace(/^(CLB|ELB|ECL)\s+/i, "").trim();
+      }
+      const context = tier || (/^\d{4}$/.test(season) ? "" : season);
+      const period = /^\d{4}$/.test(season) ? season : "";
+      return { context, period, tier, award };
+    }
+
+    function renderAwardsAccolades() {
+      const root = document.getElementById("awardsAccolades");
+      const note = document.getElementById("awardsNote");
+      const rows = Array.isArray(state.current && state.current.awards) ? state.current.awards : [];
+      const totals = new Map();
+      const grouped = new Map();
+
+      rows.forEach((item) => {
+        const season = clean(item && item.season);
+        const award = cleanAccoladeLabel(item && (item.award || item.name || item.label || item));
+        if (!award) return;
+        if (season.toLowerCase() === "total" || item.isTotal) {
+          const total = parseAccoladeTotal(award);
+          if (!total.label) return;
+          totals.set(total.label, Math.max(Number(totals.get(total.label) || 0), Number(total.count || 0)));
+          return;
+        }
+
+        const detail = accoladeDetail(item);
+        if (!detail.award) return;
+        const groupKey = detail.period || season || "Career";
+        if (!grouped.has(groupKey)) grouped.set(groupKey, []);
+        grouped.get(groupKey).push(detail);
+      });
+
+      const totalItems = Array.from(totals.entries())
+        .sort((a, b) => Number(b[1]) - Number(a[1]) || a[0].localeCompare(b[0]));
+      const totalHtml = totalItems.length
+        ? `<div class="accolade-total-grid">${totalItems.map(([label, count]) =>
+            `<div class="accolade-total"><strong>${escapeHtml(count)}</strong><span>${escapeHtml(label)}</span></div>`
+          ).join("")}</div>`
+        : "";
+
+      const groupSort = (key) => /^\d{4}$/.test(key) ? Number(key) : Number.MAX_SAFE_INTEGER;
+      const seasonHtml = Array.from(grouped.entries())
+        .sort((a, b) => groupSort(a[0]) - groupSort(b[0]) || String(a[0]).localeCompare(String(b[0])))
+        .map(([groupKey, groupRows]) => {
+          const unique = new Map();
+          groupRows.forEach((row) => {
+            const key = `${row.tier}|${normalizeAccoladeKey(row.award)}`;
+            const existing = unique.get(key);
+            if (!existing) {
+              unique.set(key, row);
+            } else if (!existing.context && row.context) {
+              existing.context = row.context;
+            }
+          });
+          const uniqueRows = Array.from(unique.values());
+          return `<article class="accolade-season">
+            <h3>${escapeHtml(groupKey)}</h3>
+            <div class="accolade-list">
+              ${uniqueRows.map((row) => `<div class="accolade-item"><span>${escapeHtml(row.context || row.tier || "ESL")}</span><div><strong>${escapeHtml(row.award)}</strong></div></div>`).join("")}
+            </div>
+          </article>`;
+        }).join("");
+
+      if (note) {
+        note.textContent = rows.length ? `${rows.length} record${rows.length === 1 ? "" : "s"}` : "No honors";
+      }
+      if (!root) return;
+      root.innerHTML = totalHtml || seasonHtml
+        ? `${totalHtml}${seasonHtml ? `<div class="accolade-season-grid">${seasonHtml}</div>` : ""}`
+        : `<div class="empty">No awards or achievements</div>`;
+    }
+
     function renderAwardsAndTransactions() {
       const player = state.current || {};
-      renderTwoColumnHistoryTable(
-        "awardsTable",
-        "awardsNote",
-        player.awards,
-        [{ key: "season", label: "Season" }, { key: "award", label: "Award" }],
-        "No awards or achievements"
-      );
+      renderAwardsAccolades();
       renderTwoColumnHistoryTable(
         "transactionsTable",
         "transactionsNote",
@@ -1803,6 +2294,7 @@
         renderTabs();
         renderTable();
         renderGameLogs();
+        renderAnalystReport();
         renderAwardsAndTransactions();
         renderCareerTimeline();
         await renderPlayerArticles();

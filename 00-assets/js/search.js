@@ -94,25 +94,7 @@
   }
 
   function ensureSearchRoot() {
-    if (!core.shouldAttachStandingsSearch()) {
-      return null;
-    }
-
-    var existingRoot = document.getElementById("player-search-root");
-    if (existingRoot) {
-      return existingRoot;
-    }
-
-    var titleTable = document.querySelector("body > table");
-    if (!titleTable || !titleTable.parentNode) {
-      return null;
-    }
-
-    var root = document.createElement("div");
-    root.id = "player-search-root";
-    titleTable.parentNode.insertBefore(root, titleTable);
-
-    return root;
+    return null;
   }
 
   function ensureWaiverTableRoot() {
