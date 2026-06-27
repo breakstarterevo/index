@@ -15,7 +15,6 @@ PROJECT_ROOT = os.path.dirname(BUILD_DIR)
 
 XLSX_PATH = os.path.join(PROJECT_ROOT, "00-assets", "spreadsheet", "Youth Intake.xlsx")
 OUTPUT_PATH = os.path.join(BUILD_DIR, "database", "youth_intake.json")
-OUTPUT_PLAYERS_PATH = os.path.join(BUILD_DIR, "database", "youth_intake_players.json")
 PLAYERS_PATH = os.path.join(BUILD_DIR, "database", "players.json")
 
 TEAM_ALIASES = {
@@ -257,7 +256,7 @@ def _find_sheet(sheets, desired_name):
 def _find_database_sheets(sheets):
     found = []
     seen = set()
-    for desired_name in ("Current Intake", "Sheet8", "DATATBASE", "DATABASE", "TIER 1", "TIER 2", "TIER 3"):
+    for desired_name in ("Current Intake", "DATABASE", "DATATBASE", "UNIQUE DB", "TIER 1", "TIER 2", "TIER 3"):
         sheet_name, rows = _find_sheet(sheets, desired_name)
         key = _normalize_key(sheet_name)
         if sheet_name and key not in seen:
@@ -293,6 +292,11 @@ def _build_combined_current_intake_players(sheets):
             if existing is None or _populated_field_count(player) > _populated_field_count(existing):
                 players_by_name[key] = player
     return sorted(players_by_name.values(), key=lambda p: str(p.get("name", "")).lower())
+
+
+def build_future_players_payload(xlsx_path: str, sheets=None):
+    sheets = sheets if sheets is not None else _xlsx_sheet_rows(xlsx_path)
+    return _build_combined_current_intake_players(sheets)
 
 
 def _build_database_lookup(rows):
@@ -599,15 +603,12 @@ def main():
     ratings = _load_player_ratings(PLAYERS_PATH)
     sheets = _xlsx_sheet_rows(XLSX_PATH)
     payload = build_youth_intake_payload(XLSX_PATH, ratings, sheets=sheets)
-    players_payload = _build_combined_current_intake_players(sheets)
 
     if not dry_run:
         atomic_dump_json(OUTPUT_PATH, payload, indent=2, ensure_ascii=False)
-        atomic_dump_json(OUTPUT_PLAYERS_PATH, players_payload, indent=4, ensure_ascii=False)
 
     prefix = "[dry-run] Would write" if dry_run else "Wrote"
     print(f"{prefix} {OUTPUT_PATH} ({payload.get('counts', {}).get('teams', 0)} teams)")
-    print(f"{prefix} {OUTPUT_PLAYERS_PATH} ({len(players_payload)} players)")
     return 0
 
 

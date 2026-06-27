@@ -6,6 +6,25 @@
   const LOGO_ROOT = "../../photos/";
   const SITE_LOGO = "../../images/ESLcropped-removebg-preview.png";
   const ATTR_KEYS = ["Ins", "Jps", "Fts", "3ps", "Hnd", "Pas", "Orb", "Drb", "Psd", "Prd", "Stl", "Blk", "Qkn", "Str", "Jmp", "Sta"];
+  const FUTURE_POOL_ATTRS = [
+    ["INS", "InsideScoring", "PotInside"],
+    ["JPS", "JumpShot", "PotJumpShot"],
+    ["FTS", "FtShot", "PotFtShot"],
+    ["3PS", "3pShot", "Pot3pShot"],
+    ["HND", "Handling", "PotHandling"],
+    ["PAS", "Passing", "PotPassing"],
+    ["ORB", "OReb", "PotOReb"],
+    ["DRB", "DReb", "PotDReb"],
+    ["PSD", "PostDefense", "PotPostDefense"],
+    ["PRD", "PerimeterDefense", "PotPerimeterDefense"],
+    ["STL", "Stealing", "PotStealing"],
+    ["BLK", "Blocking", "PotBlocking"],
+    ["QKN", "Quickness", ""],
+    ["JMP", "Jumping", ""],
+    ["STR", "Strength", ""],
+    ["STA", "Stamina", ""],
+    ["IA", "InjuryAvoidance", ""]
+  ];
   const LOGO_MAP = {
     "ac milan": "acmilan.jpg",
     "afc richmond": "richmond.jpg",
@@ -40,6 +59,7 @@
     playerIndex: null,
     currentPlayers: [],
     currentTeams: [],
+    futurePoolPlayers: [],
     seasonCache: new Map(),
     coreReady: null
   };
@@ -372,6 +392,7 @@
           <div class="history-nav-item"><a class="history-nav-link" href="teams.htm">Teams</a><div class="history-mega" id="megaTeams"><div class="empty">Loading teams...</div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="season.htm">Seasons</a><div class="history-mega" id="megaSeasons"></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="leaders.htm">Leaders</a><div class="history-mega"><div class="mega-line"><strong>Leaderboards:</strong> <a href="leaders.htm">Player Leaders</a> | <a href="season.htm">Season Summaries</a></div></div></div>
+          <div class="history-nav-item"><a class="history-nav-link" href="future-pool.htm">Future Pool</a><div class="history-mega"><div class="mega-line"><strong>Ratings:</strong> <a href="future-pool.htm#current-ratings">Current Ratings</a> | <a href="future-pool.htm#potential-ratings">Potential Ratings</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="supercup.htm">Super Cup</a><div class="history-mega"><div class="mega-line"><strong>Cup Archive:</strong> <a href="supercup.htm#knockout">Knockout Bracket</a> | <a href="supercup.htm#group-stage">Group Stage</a> | <a href="supercup.htm#cup-leaders">Stat Leaders</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="youth-intake.htm">Youth Intake</a><div class="history-mega"><div class="mega-line"><strong>Draft History:</strong> <a href="youth-intake.htm">Youth Intake by Season</a> | <a href="youth-intake.htm#franchise">Franchise Intake History</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="compare.htm">Compare</a><div class="history-mega"><div class="mega-line"><strong>Compare:</strong> <a href="compare.htm?type=players">Players</a> | <a href="compare.htm?type=teams">Teams</a></div></div></div>
@@ -438,6 +459,7 @@
         { terms: ["teams", "clubs", "franchises"], label: "Team Directory", href: "teams.htm" },
         { terms: ["season", "standings", "champions", "promoted", "promotion", "relegated", "relegation"], label: "Season Summary", href: "season.htm" },
         { terms: ["leaders", "leaderboard", "mvp", "points", "rebounds", "assists"], label: "Leaderboards", href: "leaders.htm" },
+        { terms: ["future", "pool", "prospects", "ratings", "potential"], label: "Future Player Pool", href: "future-pool.htm" },
         { terms: ["super cup", "supercup", "cup", "knockout", "bracket", "group stage"], label: "Super Cup Archive", href: "supercup.htm" },
         { terms: ["youth", "intake", "draft", "rookies"], label: "Youth Intake", href: "youth-intake.htm" },
         { terms: ["compare", "versus", "vs"], label: "Compare Players and Teams", href: "compare.htm" }
@@ -563,6 +585,7 @@
         <a href="players.htm"><span>Players</span><strong>All-time and active greats</strong></a>
         <a href="teams.htm"><span>Teams</span><strong>Club histories and timelines</strong></a>
         <a href="leaders.htm"><span>Leaders</span><strong>Filtered season leaderboards</strong></a>
+        <a href="future-pool.htm"><span>Future Pool</span><strong>Current and potential ratings</strong></a>
         <a href="supercup.htm"><span>Super Cup</span><strong>Knockouts, groups and leaders</strong></a>
         <a href="compare.htm"><span>Compare</span><strong>Player and team head-to-heads</strong></a>
       </div>`;
@@ -978,6 +1001,108 @@
     return table(["Season", "Team", "Player", "Pos", "Age", "College", "OVR", "POT"], rows, "No archived youth intake");
   }
 
+  function futurePoolNumber(value) {
+    const n = Number(value);
+    return Number.isFinite(n) ? n : Number.NEGATIVE_INFINITY;
+  }
+
+  function futurePoolDisplay(value) {
+    return value === undefined || value === null || value === "" ? "-" : String(value);
+  }
+
+  function futurePoolRating(player, currentField, potentialField, usePotential) {
+    const value = usePotential && potentialField ? player[potentialField] : player[currentField];
+    return futurePoolDisplay(value === undefined || value === null || value === "" ? player[currentField] : value);
+  }
+
+  function futurePoolTier(player) {
+    return futurePoolDisplay(player.tier || player.Tier || player.tierRaw);
+  }
+
+  function futurePoolRows(players, usePotential) {
+    const headers = ["#", "Player", "Tier", "Pos", "Age", "Ht", "Wt", "POT"].concat(FUTURE_POOL_ATTRS.map(([label]) => label));
+    const rows = players.map((player, index) => {
+      const cells = [
+        `<td class="num">${index + 1}</td>`,
+        `<td>${esc(player.name || `${player.FirstName || ""} ${player.LastName || ""}`.trim() || "Unnamed Player")}</td>`,
+        `<td>${esc(futurePoolTier(player))}</td>`,
+        `<td>${esc(player.Position || "-")}</td>`,
+        `<td class="num">${esc(futurePoolDisplay(player.Age))}</td>`,
+        `<td class="num">${esc(heightTextFromInches(player.Height) || "-")}</td>`,
+        `<td class="num">${esc(futurePoolDisplay(player.Weight))}</td>`,
+        `<td>${ratingChip("POT", player.potential || player.POT)}</td>`
+      ];
+      FUTURE_POOL_ATTRS.forEach(([, currentField, potentialField]) => {
+        cells.push(`<td class="num">${esc(futurePoolRating(player, currentField, potentialField, usePotential))}</td>`);
+      });
+      return `<tr>${cells.join("")}</tr>`;
+    });
+    return table(headers, rows, "No future pool players match these filters");
+  }
+
+  function filteredFuturePoolPlayers() {
+    const p = params();
+    const selectedPos = p.get("pos") || "all";
+    const selectedTier = p.get("tier") || "all";
+    const search = String(p.get("q") || "").trim().toLowerCase();
+    const limitValue = p.get("limit") || "100";
+    const limit = limitValue === "all" ? Infinity : Number(limitValue) || 100;
+    const players = Array.isArray(state.futurePoolPlayers) ? state.futurePoolPlayers : [];
+    return players
+      .filter((player) => selectedPos === "all" || String(player.Position || "") === selectedPos)
+      .filter((player) => selectedTier === "all" || futurePoolTier(player) === selectedTier)
+      .filter((player) => !search || String(player.name || `${player.FirstName || ""} ${player.LastName || ""}`).toLowerCase().includes(search))
+      .sort((a, b) => futurePoolNumber(b.potential || b.POT) - futurePoolNumber(a.potential || a.POT) || String(a.name || "").localeCompare(String(b.name || "")))
+      .slice(0, limit);
+  }
+
+  async function loadFuturePoolPlayers() {
+    if (Array.isArray(state.futurePoolPlayers) && state.futurePoolPlayers.length) return state.futurePoolPlayers;
+    state.futurePoolPlayers = await fetchJson(`${CURRENT_DB}future_players.json`, []);
+    return state.futurePoolPlayers;
+  }
+
+  async function renderFuturePool() {
+    const players = await loadFuturePoolPlayers();
+    const p = params();
+    const selectedPos = p.get("pos") || "all";
+    const selectedTier = p.get("tier") || "all";
+    const selectedLimit = p.get("limit") || "100";
+    const selectedView = p.get("view") === "potential" ? "potential" : "current";
+    const search = p.get("q") || "";
+    const positions = Array.from(new Set(players.map((player) => player.Position).filter(Boolean))).sort();
+    const tiers = Array.from(new Set(players.map((player) => futurePoolTier(player)).filter((tier) => tier && tier !== "-"))).sort();
+    const visible = filteredFuturePoolPlayers();
+    const usePotential = selectedView === "potential";
+    const tableTitle = usePotential ? "Potential Ratings" : "Current Ratings";
+    $("#history-app").innerHTML = `
+      <section class="reference-section compact-controls"><h2>Future Pool Controls</h2><div class="filter-bar future-pool-controls">
+        <label>Table <select id="futureView"><option value="current" ${selectedView === "current" ? "selected" : ""}>Current</option><option value="potential" ${selectedView === "potential" ? "selected" : ""}>Potential</option></select></label>
+        <label>Search <input id="futureSearch" type="search" value="${esc(search)}" placeholder="Player name"></label>
+        <label>Pos <select id="futurePos"><option value="all">All</option>${positions.map((pos) => `<option value="${esc(pos)}" ${selectedPos === pos ? "selected" : ""}>${esc(pos)}</option>`).join("")}</select></label>
+        <label>Tier <select id="futureTier"><option value="all">All</option>${tiers.map((tier) => `<option value="${esc(tier)}" ${selectedTier === tier ? "selected" : ""}>${esc(tier)}</option>`).join("")}</select></label>
+        <label>Rows <select id="futureLimit">${["50", "100", "250", "all"].map((limit) => `<option value="${limit}" ${selectedLimit === limit ? "selected" : ""}>${limit === "all" ? "All" : `Top ${limit}`}</option>`).join("")}</select></label>
+      </div></section>
+      <section class="reference-section" id="${usePotential ? "potential-ratings" : "current-ratings"}"><h2>${tableTitle} <span class="muted">${visible.length} shown</span></h2>${futurePoolRows(visible, usePotential)}</section>`;
+    const update = () => {
+      const next = new URL("future-pool.htm", window.location.href);
+      const query = String($("#futureSearch")?.value || "").trim();
+      if (query) next.searchParams.set("q", query);
+      next.searchParams.set("view", $("#futureView")?.value || selectedView);
+      next.searchParams.set("pos", $("#futurePos")?.value || selectedPos);
+      next.searchParams.set("tier", $("#futureTier")?.value || selectedTier);
+      next.searchParams.set("limit", $("#futureLimit")?.value || selectedLimit);
+      navigate(next.href);
+    };
+    ["futureView", "futurePos", "futureTier", "futureLimit"].forEach((id) => $(`#${id}`)?.addEventListener("change", update));
+    $("#futureSearch")?.addEventListener("keydown", (event) => {
+      if (event.key === "Enter") {
+        event.preventDefault();
+        update();
+      }
+    });
+  }
+
   function movementMarker(tier, position, teamCount) {
     const t = String(tier || "").toUpperCase();
     if (t === "CLB" && position === 1) return "C";
@@ -1289,6 +1414,7 @@
     if (file === "team.htm") return "team";
     if (file === "season.htm") return "season";
     if (file === "leaders.htm") return "leaders";
+    if (file === "future-pool.htm") return "future-pool";
     if (file === "supercup.htm") return "supercup";
     if (file === "youth-intake.htm") return "youth";
     if (file === "compare.htm") return "compare";
@@ -1307,6 +1433,7 @@
     if (page === "team") await renderTeam();
     if (page === "season") await renderSeason();
     if (page === "leaders") await renderLeaders();
+    if (page === "future-pool") await renderFuturePool();
     if (page === "supercup") await renderSupercupPage();
     if (page === "youth") await renderYouth();
     if (page === "compare") await renderCompare();

@@ -662,7 +662,7 @@ table.ref-table {
   margin-bottom: 12px;
 }
 
-select, .small-input {
+select, .small-input, .filter-bar input {
   border: 1px solid #9aa5b1;
   background: #fff;
   padding: 6px 8px;

@@ -156,6 +156,7 @@ td.tableheader {
   font-weight: 700;
   color: #1e293b;
   padding: 10px 8px 5px;
+  white-space: nowrap;
 }
 
 /* -- Team header -------------------------------------------- */
@@ -195,13 +196,17 @@ body > table:first-of-type:has(td.teamheader) td.teamheader2 {
 body.page-classic > table.classic-team-banner {
   border-radius: 0;
   box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
-  margin: 0 0 12px;
+  margin: 0 0 6px;
   overflow: hidden !important;
   width: min(800px, calc(100vw - 44px)) !important;
 }
 
+body.page-roster > table.classic-team-banner {
+  margin-bottom: 0;
+}
+
 body.page-roster > table.classic-team-banner + table td.tableheader {
-  padding-top: 6px;
+  padding-top: 0;
 }
 
 body.page-roster > br {
