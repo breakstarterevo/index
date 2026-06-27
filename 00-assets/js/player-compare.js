@@ -497,6 +497,24 @@
     }).filter(function (index) { return index >= 0; });
   }
 
+  function gradeScore(value) {
+    var match = clean(value).toUpperCase().match(/^([SABCDF])([+-])?$/);
+    var base = { S: 15, A: 12, B: 9, C: 6, D: 3, F: 0 };
+    if (!match || base[match[1]] == null) return null;
+    return base[match[1]] + (match[2] === "+" ? 1 : match[2] === "-" ? -1 : 0);
+  }
+
+  function bestGradeIndexes(values) {
+    var scores = values.map(gradeScore);
+    var available = scores.filter(function (value) { return value != null; });
+    var best;
+    if (!available.length) return [];
+    best = Math.max.apply(Math, available);
+    return scores.map(function (value, index) {
+      return value != null && value === best ? index : -1;
+    }).filter(function (index) { return index >= 0; });
+  }
+
   function renderCompareTable(rootId, rows, valueGetter) {
     var root = byId(rootId);
     var players = selectedPlayers();
@@ -529,6 +547,33 @@
           return player ? player[row[0]] : null;
         });
         var best = bestIndexes(values, false);
+        return '<div class="rating-compare-row">' +
+          '<div class="rating-name">' + esc(row[1]) + '</div>' +
+          values.map(function (value, index) {
+            return '<div class="rating-mini ' + (best.indexOf(index) >= 0 ? "is-best" : "") + '">' + esc(fmt(value)) + '</div>';
+          }).join("") +
+        '</div>';
+      }).join("");
+      return '<section class="rating-card"><h3 class="rating-card-title">' + esc(group.title) + '</h3>' + rows + '</section>';
+    }).join("") + '</div>';
+  }
+
+  function renderPotentialGrid() {
+    var root = byId("potentialTable");
+    var players = selectedPlayers();
+    root.style.setProperty("--visible-slots", String(state.visibleSlots));
+    root.innerHTML = '<div class="ratings-grid">' + RATING_GROUPS.map(function (group) {
+      var gradeRows = group.rows.filter(function (row) {
+        return players.some(function (player) {
+          return player && player.potentials && player.potentials[row[0]] != null && player.potentials[row[0]] !== "";
+        });
+      });
+      if (!gradeRows.length) return "";
+      var rows = gradeRows.map(function (row) {
+        var values = players.map(function (player) {
+          return player && player.potentials ? player.potentials[row[0]] : null;
+        });
+        var best = bestGradeIndexes(values);
         return '<div class="rating-compare-row">' +
           '<div class="rating-name">' + esc(row[1]) + '</div>' +
           values.map(function (value, index) {
@@ -578,12 +623,14 @@
 
   function renderTables() {
     renderRatingsGrid();
+    renderPotentialGrid();
     renderStatsCards();
   }
 
   function renderTabs() {
     var tabs = [
       ["ratings", "Ratings"],
+      ["potential", "Potential"],
       ["current", "Stats"]
     ];
     byId("compareTabs").innerHTML = tabs.map(function (tab) {
@@ -601,7 +648,7 @@
   }
 
   function renderActiveSection() {
-    ["ratings", "current"].forEach(function (tab) {
+    ["ratings", "potential", "current"].forEach(function (tab) {
       var section = byId("section-" + tab);
       if (section) section.hidden = tab !== state.activeTab;
     });
@@ -625,7 +672,7 @@
     state.visibleSlots = Math.max(2, state.selected.reduce(function (highest, id, index) {
       return id ? Math.max(highest, index + 1) : highest;
     }, 0));
-    if (["ratings", "current"].indexOf(clean(query.get("tab"))) >= 0) {
+    if (["ratings", "potential", "current"].indexOf(clean(query.get("tab"))) >= 0) {
       state.activeTab = clean(query.get("tab"));
     }
   }

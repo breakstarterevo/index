@@ -425,6 +425,17 @@
       ]
     });
     addSettingsSelect(form, {
+      id: "setting-team-page-destination",
+      name: "teamPageDestination",
+      label: "Team Page Links",
+      value: settings.teamPageDestination === "unified" ? "unified" : "classic",
+      help: "Choose whether team links on classic league pages open classic roster pages or unified team pages.",
+      options: [
+        { value: "classic", label: "Classic roster pages" },
+        { value: "unified", label: "Unified team page" }
+      ]
+    });
+    addSettingsSelect(form, {
       id: "setting-player-page-destination",
       name: "playerPageDestination",
       label: "Player Page Links",

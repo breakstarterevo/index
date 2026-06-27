@@ -1,0 +1,4263 @@
+{
+    "source": [
+        "../../00-build/database/players.json",
+        "../../00-build/database/freeagents.json",
+        "../../00-build/database/capreport.json",
+        "../../00-build/database/standings.json",
+        "../../00-build/database/teams.json",
+        "../../transactions.htm"
+    ],
+    "phase": "Sim 6",
+    "generatedAt": "2026-06-27T07:30:04.841285+00:00",
+    "summary": "Set the table before FA1: expiring contracts, cap-room teams, roster holes, and the free-agent board.",
+    "availableContext": {
+        "players": "../../00-build/database/players.json",
+        "freeAgents": "../../00-build/database/freeagents.json",
+        "capReport": "../../00-build/database/capreport.json",
+        "standings": "../../00-build/database/standings.json",
+        "teams": "../../00-build/database/teams.json",
+        "transactions": "../../transactions.htm"
+    },
+    "sections": {
+        "marketBoard": {
+            "topByOverall": [
+                {
+                    "name": "Greg Anthony",
+                    "team": "Brighton",
+                    "pos": "PG",
+                    "age": 23,
+                    "overall": 101,
+                    "potential": 102,
+                    "salary": "",
+                    "url": "./players/player377.htm"
+                },
+                {
+                    "name": "Kenny Carr",
+                    "team": "Monaco",
+                    "pos": "SF",
+                    "age": 26,
+                    "overall": 99,
+                    "potential": 99,
+                    "salary": "",
+                    "url": "./players/player741.htm"
+                },
+                {
+                    "name": "Jim Spanarkel",
+                    "team": "FL Fart",
+                    "pos": "SG",
+                    "age": 24,
+                    "overall": 99,
+                    "potential": 99,
+                    "salary": "",
+                    "url": "./players/player773.htm"
+                },
+                {
+                    "name": "Kevin Grevey",
+                    "team": "",
+                    "pos": "SG",
+                    "age": 28,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player770.htm"
+                },
+                {
+                    "name": "Jerome Whitehead",
+                    "team": "Manchester United",
+                    "pos": "PF",
+                    "age": 25,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player774.htm"
+                },
+                {
+                    "name": "Paul Westphal",
+                    "team": "FL Fart",
+                    "pos": "PG",
+                    "age": 30,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player1072.htm"
+                },
+                {
+                    "name": "Bob Gross",
+                    "team": "Benfica",
+                    "pos": "PG",
+                    "age": 28,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player1078.htm"
+                },
+                {
+                    "name": "Phil Ford",
+                    "team": "Sporting CP",
+                    "pos": "PG",
+                    "age": 25,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player1082.htm"
+                },
+                {
+                    "name": "Paul Mokeski",
+                    "team": "Ajax",
+                    "pos": "C",
+                    "age": 25,
+                    "overall": 97,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player915.htm"
+                },
+                {
+                    "name": "Darwin Cook",
+                    "team": "Sheffield United",
+                    "pos": "SG",
+                    "age": 23,
+                    "overall": 96,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player743.htm"
+                },
+                {
+                    "name": "Jim Brogan",
+                    "team": "",
+                    "pos": "PG",
+                    "age": 23,
+                    "overall": 96,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player768.htm"
+                },
+                {
+                    "name": "Scott Wedman",
+                    "team": "AC Milan",
+                    "pos": "SF",
+                    "age": 29,
+                    "overall": 96,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player771.htm"
+                },
+                {
+                    "name": "Gene Banks",
+                    "team": "Chelsea",
+                    "pos": "SF",
+                    "age": 22,
+                    "overall": 96,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player926.htm"
+                },
+                {
+                    "name": "Kevin Kunnert",
+                    "team": "Atletico Madrid",
+                    "pos": "C",
+                    "age": 29,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player765.htm"
+                },
+                {
+                    "name": "Cedrick Hordges",
+                    "team": "Real Madrid",
+                    "pos": "SF",
+                    "age": 24,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player782.htm"
+                },
+                {
+                    "name": "Butch Carter",
+                    "team": "Ajax",
+                    "pos": "SG",
+                    "age": 23,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player906.htm"
+                },
+                {
+                    "name": "Randy Smith",
+                    "team": "AC Milan",
+                    "pos": "SG",
+                    "age": 32,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player1071.htm"
+                },
+                {
+                    "name": "Bob Wilkerson",
+                    "team": "Barcelona",
+                    "pos": "SG",
+                    "age": 27,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player1089.htm"
+                },
+                {
+                    "name": "Freeman Williams",
+                    "team": "Crystal Palace",
+                    "pos": "PG",
+                    "age": 25,
+                    "overall": 94,
+                    "potential": 94,
+                    "salary": "",
+                    "url": "./players/player748.htm"
+                },
+                {
+                    "name": "Bob Lanier",
+                    "team": "Manchester United",
+                    "pos": "C",
+                    "age": 33,
+                    "overall": 94,
+                    "potential": 94,
+                    "salary": "",
+                    "url": "./players/player757.htm"
+                },
+                {
+                    "name": "Truck Robinson",
+                    "team": "Bayern Munich",
+                    "pos": "SF",
+                    "age": 30,
+                    "overall": 94,
+                    "potential": 94,
+                    "salary": "",
+                    "url": "./players/player777.htm"
+                },
+                {
+                    "name": "Phil Smith",
+                    "team": "Chelsea",
+                    "pos": "PG",
+                    "age": 29,
+                    "overall": 94,
+                    "potential": 94,
+                    "salary": "",
+                    "url": "./players/player916.htm"
+                },
+                {
+                    "name": "Lionel Hollins",
+                    "team": "Inter Milan",
+                    "pos": "PG",
+                    "age": 29,
+                    "overall": 94,
+                    "potential": 94,
+                    "salary": "",
+                    "url": "./players/player1091.htm"
+                },
+                {
+                    "name": "Kevin McKenna",
+                    "team": "Valencia",
+                    "pos": "SF",
+                    "age": 22,
+                    "overall": 93,
+                    "potential": 99,
+                    "salary": "",
+                    "url": "./players/player1085.htm"
+                },
+                {
+                    "name": "Earl Cureton",
+                    "team": "FL Fart",
+                    "pos": "PF",
+                    "age": 24,
+                    "overall": 93,
+                    "potential": 94,
+                    "salary": "",
+                    "url": "./players/player1088.htm"
+                }
+            ],
+            "topByPotential": [
+                {
+                    "name": "Greg Anthony",
+                    "team": "Brighton",
+                    "pos": "PG",
+                    "age": 23,
+                    "overall": 101,
+                    "potential": 102,
+                    "salary": "",
+                    "url": "./players/player377.htm"
+                },
+                {
+                    "name": "David Roddy",
+                    "team": "",
+                    "pos": "PF",
+                    "age": 20,
+                    "overall": 92,
+                    "potential": 99,
+                    "salary": "",
+                    "url": "./players/player690.htm"
+                },
+                {
+                    "name": "Kevin McKenna",
+                    "team": "Valencia",
+                    "pos": "SF",
+                    "age": 22,
+                    "overall": 93,
+                    "potential": 99,
+                    "salary": "",
+                    "url": "./players/player1085.htm"
+                },
+                {
+                    "name": "Jim Spanarkel",
+                    "team": "FL Fart",
+                    "pos": "SG",
+                    "age": 24,
+                    "overall": 99,
+                    "potential": 99,
+                    "salary": "",
+                    "url": "./players/player773.htm"
+                },
+                {
+                    "name": "Kenny Carr",
+                    "team": "Monaco",
+                    "pos": "SF",
+                    "age": 26,
+                    "overall": 99,
+                    "potential": 99,
+                    "salary": "",
+                    "url": "./players/player741.htm"
+                },
+                {
+                    "name": "Jason Hart",
+                    "team": "",
+                    "pos": "PG",
+                    "age": 21,
+                    "overall": 77,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player683.htm"
+                },
+                {
+                    "name": "Jerome Whitehead",
+                    "team": "Manchester United",
+                    "pos": "PF",
+                    "age": 25,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player774.htm"
+                },
+                {
+                    "name": "Paul Mokeski",
+                    "team": "Ajax",
+                    "pos": "C",
+                    "age": 25,
+                    "overall": 97,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player915.htm"
+                },
+                {
+                    "name": "Phil Ford",
+                    "team": "Sporting CP",
+                    "pos": "PG",
+                    "age": 25,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player1082.htm"
+                },
+                {
+                    "name": "Kevin Grevey",
+                    "team": "",
+                    "pos": "SG",
+                    "age": 28,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player770.htm"
+                },
+                {
+                    "name": "Bob Gross",
+                    "team": "Benfica",
+                    "pos": "PG",
+                    "age": 28,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player1078.htm"
+                },
+                {
+                    "name": "Paul Westphal",
+                    "team": "FL Fart",
+                    "pos": "PG",
+                    "age": 30,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player1072.htm"
+                },
+                {
+                    "name": "Joel Kramer",
+                    "team": "Atletico Madrid",
+                    "pos": "SG",
+                    "age": 25,
+                    "overall": 89,
+                    "potential": 97,
+                    "salary": "",
+                    "url": "./players/player793.htm"
+                },
+                {
+                    "name": "George McCloud",
+                    "team": "Manchester United",
+                    "pos": "SF",
+                    "age": 22,
+                    "overall": 91,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player375.htm"
+                },
+                {
+                    "name": "Gene Banks",
+                    "team": "Chelsea",
+                    "pos": "SF",
+                    "age": 22,
+                    "overall": 96,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player926.htm"
+                },
+                {
+                    "name": "Darwin Cook",
+                    "team": "Sheffield United",
+                    "pos": "SG",
+                    "age": 23,
+                    "overall": 96,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player743.htm"
+                },
+                {
+                    "name": "Jim Brogan",
+                    "team": "",
+                    "pos": "PG",
+                    "age": 23,
+                    "overall": 96,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player768.htm"
+                },
+                {
+                    "name": "Tom Lagarde",
+                    "team": "",
+                    "pos": "PF",
+                    "age": 26,
+                    "overall": 91,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player935.htm"
+                },
+                {
+                    "name": "Scott Wedman",
+                    "team": "AC Milan",
+                    "pos": "SF",
+                    "age": 29,
+                    "overall": 96,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player771.htm"
+                },
+                {
+                    "name": "Butch Carter",
+                    "team": "Ajax",
+                    "pos": "SG",
+                    "age": 23,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player906.htm"
+                },
+                {
+                    "name": "Cedrick Hordges",
+                    "team": "Real Madrid",
+                    "pos": "SF",
+                    "age": 24,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player782.htm"
+                },
+                {
+                    "name": "Bob Wilkerson",
+                    "team": "Barcelona",
+                    "pos": "SG",
+                    "age": 27,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player1089.htm"
+                },
+                {
+                    "name": "Kevin Kunnert",
+                    "team": "Atletico Madrid",
+                    "pos": "C",
+                    "age": 29,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player765.htm"
+                },
+                {
+                    "name": "Randy Smith",
+                    "team": "AC Milan",
+                    "pos": "SG",
+                    "age": 32,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player1071.htm"
+                },
+                {
+                    "name": "Earl Cureton",
+                    "team": "FL Fart",
+                    "pos": "PF",
+                    "age": 24,
+                    "overall": 93,
+                    "potential": 94,
+                    "salary": "",
+                    "url": "./players/player1088.htm"
+                }
+            ],
+            "youngUpside": [
+                {
+                    "name": "Greg Anthony",
+                    "team": "Brighton",
+                    "pos": "PG",
+                    "age": 23,
+                    "overall": 101,
+                    "potential": 102,
+                    "salary": "",
+                    "url": "./players/player377.htm"
+                },
+                {
+                    "name": "David Roddy",
+                    "team": "",
+                    "pos": "PF",
+                    "age": 20,
+                    "overall": 92,
+                    "potential": 99,
+                    "salary": "",
+                    "url": "./players/player690.htm"
+                },
+                {
+                    "name": "Kevin McKenna",
+                    "team": "Valencia",
+                    "pos": "SF",
+                    "age": 22,
+                    "overall": 93,
+                    "potential": 99,
+                    "salary": "",
+                    "url": "./players/player1085.htm"
+                },
+                {
+                    "name": "Jim Spanarkel",
+                    "team": "FL Fart",
+                    "pos": "SG",
+                    "age": 24,
+                    "overall": 99,
+                    "potential": 99,
+                    "salary": "",
+                    "url": "./players/player773.htm"
+                },
+                {
+                    "name": "Jason Hart",
+                    "team": "",
+                    "pos": "PG",
+                    "age": 21,
+                    "overall": 77,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player683.htm"
+                },
+                {
+                    "name": "Jerome Whitehead",
+                    "team": "Manchester United",
+                    "pos": "PF",
+                    "age": 25,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player774.htm"
+                },
+                {
+                    "name": "Paul Mokeski",
+                    "team": "Ajax",
+                    "pos": "C",
+                    "age": 25,
+                    "overall": 97,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player915.htm"
+                },
+                {
+                    "name": "Phil Ford",
+                    "team": "Sporting CP",
+                    "pos": "PG",
+                    "age": 25,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player1082.htm"
+                },
+                {
+                    "name": "Joel Kramer",
+                    "team": "Atletico Madrid",
+                    "pos": "SG",
+                    "age": 25,
+                    "overall": 89,
+                    "potential": 97,
+                    "salary": "",
+                    "url": "./players/player793.htm"
+                },
+                {
+                    "name": "George McCloud",
+                    "team": "Manchester United",
+                    "pos": "SF",
+                    "age": 22,
+                    "overall": 91,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player375.htm"
+                },
+                {
+                    "name": "Gene Banks",
+                    "team": "Chelsea",
+                    "pos": "SF",
+                    "age": 22,
+                    "overall": 96,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player926.htm"
+                },
+                {
+                    "name": "Darwin Cook",
+                    "team": "Sheffield United",
+                    "pos": "SG",
+                    "age": 23,
+                    "overall": 96,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player743.htm"
+                },
+                {
+                    "name": "Jim Brogan",
+                    "team": "",
+                    "pos": "PG",
+                    "age": 23,
+                    "overall": 96,
+                    "potential": 96,
+                    "salary": "",
+                    "url": "./players/player768.htm"
+                },
+                {
+                    "name": "Butch Carter",
+                    "team": "Ajax",
+                    "pos": "SG",
+                    "age": 23,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player906.htm"
+                },
+                {
+                    "name": "Cedrick Hordges",
+                    "team": "Real Madrid",
+                    "pos": "SF",
+                    "age": 24,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player782.htm"
+                },
+                {
+                    "name": "Earl Cureton",
+                    "team": "FL Fart",
+                    "pos": "PF",
+                    "age": 24,
+                    "overall": 93,
+                    "potential": 94,
+                    "salary": "",
+                    "url": "./players/player1088.htm"
+                },
+                {
+                    "name": "Freeman Williams",
+                    "team": "Crystal Palace",
+                    "pos": "PG",
+                    "age": 25,
+                    "overall": 94,
+                    "potential": 94,
+                    "salary": "",
+                    "url": "./players/player748.htm"
+                },
+                {
+                    "name": "Wes Matthews",
+                    "team": "Monaco",
+                    "pos": "PG",
+                    "age": 22,
+                    "overall": 93,
+                    "potential": 93,
+                    "salary": "",
+                    "url": "./players/player912.htm"
+                },
+                {
+                    "name": "Garry Witts",
+                    "team": "Inter Milan",
+                    "pos": "SF",
+                    "age": 22,
+                    "overall": 93,
+                    "potential": 93,
+                    "salary": "",
+                    "url": "./players/player1103.htm"
+                },
+                {
+                    "name": "Petur Gudmundsson",
+                    "team": "Monaco",
+                    "pos": "C",
+                    "age": 22,
+                    "overall": 92,
+                    "potential": 92,
+                    "salary": "",
+                    "url": "./players/player917.htm"
+                },
+                {
+                    "name": "Mark Olberding",
+                    "team": "Chelsea",
+                    "pos": "SF",
+                    "age": 25,
+                    "overall": 92,
+                    "potential": 92,
+                    "salary": "",
+                    "url": "./players/player927.htm"
+                },
+                {
+                    "name": "Derrick Favors",
+                    "team": "",
+                    "pos": "PF",
+                    "age": 20,
+                    "overall": 83,
+                    "potential": 91,
+                    "salary": "",
+                    "url": "./players/player260.htm"
+                },
+                {
+                    "name": "Marty Conlon",
+                    "team": "",
+                    "pos": "C",
+                    "age": 22,
+                    "overall": 80,
+                    "potential": 91,
+                    "salary": "",
+                    "url": "./players/player337.htm"
+                },
+                {
+                    "name": "Hank McDowell",
+                    "team": "Tottenham Hotspur",
+                    "pos": "PF",
+                    "age": 21,
+                    "overall": 85,
+                    "potential": 90,
+                    "salary": "",
+                    "url": "./players/player1115.htm"
+                },
+                {
+                    "name": "Don Collins",
+                    "team": "Inter Milan",
+                    "pos": "PG",
+                    "age": 22,
+                    "overall": 90,
+                    "potential": 90,
+                    "salary": "",
+                    "url": "./players/player1077.htm"
+                }
+            ],
+            "veteranHelp": [
+                {
+                    "name": "Paul Westphal",
+                    "team": "FL Fart",
+                    "pos": "PG",
+                    "age": 30,
+                    "overall": 98,
+                    "potential": 98,
+                    "salary": "",
+                    "url": "./players/player1072.htm"
+                },
+                {
+                    "name": "Randy Smith",
+                    "team": "AC Milan",
+                    "pos": "SG",
+                    "age": 32,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "",
+                    "url": "./players/player1071.htm"
+                },
+                {
+                    "name": "Bob Lanier",
+                    "team": "Manchester United",
+                    "pos": "C",
+                    "age": 33,
+                    "overall": 94,
+                    "potential": 94,
+                    "salary": "",
+                    "url": "./players/player757.htm"
+                },
+                {
+                    "name": "Truck Robinson",
+                    "team": "Bayern Munich",
+                    "pos": "SF",
+                    "age": 30,
+                    "overall": 94,
+                    "potential": 94,
+                    "salary": "",
+                    "url": "./players/player777.htm"
+                },
+                {
+                    "name": "George McGinnis",
+                    "team": "Juventus",
+                    "pos": "C",
+                    "age": 31,
+                    "overall": 93,
+                    "potential": 93,
+                    "salary": "",
+                    "url": "./players/player913.htm"
+                },
+                {
+                    "name": "Bob McAdoo",
+                    "team": "AC Milan",
+                    "pos": "C",
+                    "age": 30,
+                    "overall": 92,
+                    "potential": 92,
+                    "salary": "",
+                    "url": "./players/player778.htm"
+                },
+                {
+                    "name": "Kermit Washington",
+                    "team": "Brighton",
+                    "pos": "C",
+                    "age": 30,
+                    "overall": 92,
+                    "potential": 92,
+                    "salary": "",
+                    "url": "./players/player780.htm"
+                },
+                {
+                    "name": "Jim Chones",
+                    "team": "FL Fart",
+                    "pos": "C",
+                    "age": 31,
+                    "overall": 91,
+                    "potential": 91,
+                    "salary": "",
+                    "url": "./players/player1087.htm"
+                },
+                {
+                    "name": "Mike Newlin",
+                    "team": "Valencia",
+                    "pos": "SF",
+                    "age": 33,
+                    "overall": 90,
+                    "potential": 90,
+                    "salary": "",
+                    "url": "./players/player1067.htm"
+                },
+                {
+                    "name": "Nate Archibald",
+                    "team": "Sporting CP",
+                    "pos": "PG",
+                    "age": 33,
+                    "overall": 89,
+                    "potential": 89,
+                    "salary": "",
+                    "url": "./players/player1068.htm"
+                },
+                {
+                    "name": "Mike Gale",
+                    "team": "AC Milan",
+                    "pos": "SF",
+                    "age": 31,
+                    "overall": 88,
+                    "potential": 88,
+                    "salary": "",
+                    "url": "./players/player776.htm"
+                },
+                {
+                    "name": "M.L. Carr",
+                    "team": "Sporting CP",
+                    "pos": "SF",
+                    "age": 30,
+                    "overall": 85,
+                    "potential": 85,
+                    "salary": "",
+                    "url": "./players/player1079.htm"
+                },
+                {
+                    "name": "Don Buse",
+                    "team": "AC Milan",
+                    "pos": "SG",
+                    "age": 31,
+                    "overall": 84,
+                    "potential": 84,
+                    "salary": "",
+                    "url": "./players/player761.htm"
+                },
+                {
+                    "name": "Ollie Johnson",
+                    "team": "Atletico Madrid",
+                    "pos": "SF",
+                    "age": 32,
+                    "overall": 84,
+                    "potential": 84,
+                    "salary": "",
+                    "url": "./players/player775.htm"
+                },
+                {
+                    "name": "Dave Robisch",
+                    "team": "",
+                    "pos": "PF",
+                    "age": 31,
+                    "overall": 84,
+                    "potential": 84,
+                    "salary": "",
+                    "url": "./players/player798.htm"
+                },
+                {
+                    "name": "Steve Hawes",
+                    "team": "Tottenham Hotspur",
+                    "pos": "PF",
+                    "age": 31,
+                    "overall": 83,
+                    "potential": 83,
+                    "salary": "",
+                    "url": "./players/player1098.htm"
+                },
+                {
+                    "name": "Tom Owens",
+                    "team": "Marseille",
+                    "pos": "PF",
+                    "age": 32,
+                    "overall": 81,
+                    "potential": 81,
+                    "salary": "",
+                    "url": "./players/player924.htm"
+                },
+                {
+                    "name": "Calvin Murphy",
+                    "team": "Manchester City",
+                    "pos": "PG",
+                    "age": 33,
+                    "overall": 80,
+                    "potential": 80,
+                    "salary": "",
+                    "url": "./players/player1102.htm"
+                },
+                {
+                    "name": "Foots Walker",
+                    "team": "Barcelona",
+                    "pos": "PG",
+                    "age": 30,
+                    "overall": 80,
+                    "potential": 80,
+                    "salary": "",
+                    "url": "./players/player1108.htm"
+                },
+                {
+                    "name": "Charlie Criss",
+                    "team": "Aston Villa",
+                    "pos": "PG",
+                    "age": 32,
+                    "overall": 79,
+                    "potential": 79,
+                    "salary": "",
+                    "url": "./players/player941.htm"
+                }
+            ],
+            "positionBoards": {
+                "PG": [
+                    {
+                        "name": "Greg Anthony",
+                        "team": "Brighton",
+                        "pos": "PG",
+                        "age": 23,
+                        "overall": 101,
+                        "potential": 102,
+                        "salary": "",
+                        "url": "./players/player377.htm"
+                    },
+                    {
+                        "name": "Paul Westphal",
+                        "team": "FL Fart",
+                        "pos": "PG",
+                        "age": 30,
+                        "overall": 98,
+                        "potential": 98,
+                        "salary": "",
+                        "url": "./players/player1072.htm"
+                    },
+                    {
+                        "name": "Bob Gross",
+                        "team": "Benfica",
+                        "pos": "PG",
+                        "age": 28,
+                        "overall": 98,
+                        "potential": 98,
+                        "salary": "",
+                        "url": "./players/player1078.htm"
+                    },
+                    {
+                        "name": "Phil Ford",
+                        "team": "Sporting CP",
+                        "pos": "PG",
+                        "age": 25,
+                        "overall": 98,
+                        "potential": 98,
+                        "salary": "",
+                        "url": "./players/player1082.htm"
+                    },
+                    {
+                        "name": "Jim Brogan",
+                        "team": "",
+                        "pos": "PG",
+                        "age": 23,
+                        "overall": 96,
+                        "potential": 96,
+                        "salary": "",
+                        "url": "./players/player768.htm"
+                    },
+                    {
+                        "name": "Freeman Williams",
+                        "team": "Crystal Palace",
+                        "pos": "PG",
+                        "age": 25,
+                        "overall": 94,
+                        "potential": 94,
+                        "salary": "",
+                        "url": "./players/player748.htm"
+                    },
+                    {
+                        "name": "Phil Smith",
+                        "team": "Chelsea",
+                        "pos": "PG",
+                        "age": 29,
+                        "overall": 94,
+                        "potential": 94,
+                        "salary": "",
+                        "url": "./players/player916.htm"
+                    },
+                    {
+                        "name": "Lionel Hollins",
+                        "team": "Inter Milan",
+                        "pos": "PG",
+                        "age": 29,
+                        "overall": 94,
+                        "potential": 94,
+                        "salary": "",
+                        "url": "./players/player1091.htm"
+                    },
+                    {
+                        "name": "Wes Matthews",
+                        "team": "Monaco",
+                        "pos": "PG",
+                        "age": 22,
+                        "overall": 93,
+                        "potential": 93,
+                        "salary": "",
+                        "url": "./players/player912.htm"
+                    },
+                    {
+                        "name": "Don Collins",
+                        "team": "Inter Milan",
+                        "pos": "PG",
+                        "age": 22,
+                        "overall": 90,
+                        "potential": 90,
+                        "salary": "",
+                        "url": "./players/player1077.htm"
+                    },
+                    {
+                        "name": "Nate Archibald",
+                        "team": "Sporting CP",
+                        "pos": "PG",
+                        "age": 33,
+                        "overall": 89,
+                        "potential": 89,
+                        "salary": "",
+                        "url": "./players/player1068.htm"
+                    },
+                    {
+                        "name": "Quinn Buckner",
+                        "team": "FL Fart",
+                        "pos": "PG",
+                        "age": 27,
+                        "overall": 88,
+                        "potential": 88,
+                        "salary": "",
+                        "url": "./players/player1095.htm"
+                    }
+                ],
+                "SG": [
+                    {
+                        "name": "Jim Spanarkel",
+                        "team": "FL Fart",
+                        "pos": "SG",
+                        "age": 24,
+                        "overall": 99,
+                        "potential": 99,
+                        "salary": "",
+                        "url": "./players/player773.htm"
+                    },
+                    {
+                        "name": "Kevin Grevey",
+                        "team": "",
+                        "pos": "SG",
+                        "age": 28,
+                        "overall": 98,
+                        "potential": 98,
+                        "salary": "",
+                        "url": "./players/player770.htm"
+                    },
+                    {
+                        "name": "Darwin Cook",
+                        "team": "Sheffield United",
+                        "pos": "SG",
+                        "age": 23,
+                        "overall": 96,
+                        "potential": 96,
+                        "salary": "",
+                        "url": "./players/player743.htm"
+                    },
+                    {
+                        "name": "Butch Carter",
+                        "team": "Ajax",
+                        "pos": "SG",
+                        "age": 23,
+                        "overall": 95,
+                        "potential": 95,
+                        "salary": "",
+                        "url": "./players/player906.htm"
+                    },
+                    {
+                        "name": "Randy Smith",
+                        "team": "AC Milan",
+                        "pos": "SG",
+                        "age": 32,
+                        "overall": 95,
+                        "potential": 95,
+                        "salary": "",
+                        "url": "./players/player1071.htm"
+                    },
+                    {
+                        "name": "Bob Wilkerson",
+                        "team": "Barcelona",
+                        "pos": "SG",
+                        "age": 27,
+                        "overall": 95,
+                        "potential": 95,
+                        "salary": "",
+                        "url": "./players/player1089.htm"
+                    },
+                    {
+                        "name": "Mike Bantom",
+                        "team": "Juventus",
+                        "pos": "SG",
+                        "age": 29,
+                        "overall": 92,
+                        "potential": 92,
+                        "salary": "",
+                        "url": "./players/player919.htm"
+                    },
+                    {
+                        "name": "Joel Kramer",
+                        "team": "Atletico Madrid",
+                        "pos": "SG",
+                        "age": 25,
+                        "overall": 89,
+                        "potential": 97,
+                        "salary": "",
+                        "url": "./players/player793.htm"
+                    },
+                    {
+                        "name": "Ray Blume",
+                        "team": "Manchester United",
+                        "pos": "SG",
+                        "age": 23,
+                        "overall": 88,
+                        "potential": 88,
+                        "salary": "",
+                        "url": "./players/player781.htm"
+                    },
+                    {
+                        "name": "James Wilkes",
+                        "team": "",
+                        "pos": "SG",
+                        "age": 23,
+                        "overall": 88,
+                        "potential": 88,
+                        "salary": "",
+                        "url": "./players/player795.htm"
+                    },
+                    {
+                        "name": "Elston Turner",
+                        "team": "Manchester City",
+                        "pos": "SG",
+                        "age": 22,
+                        "overall": 87,
+                        "potential": 89,
+                        "salary": "",
+                        "url": "./players/player1105.htm"
+                    },
+                    {
+                        "name": "Sonny Parker",
+                        "team": "AC Milan",
+                        "pos": "SG",
+                        "age": 26,
+                        "overall": 86,
+                        "potential": 86,
+                        "salary": "",
+                        "url": "./players/player1080.htm"
+                    }
+                ],
+                "SF": [
+                    {
+                        "name": "Kenny Carr",
+                        "team": "Monaco",
+                        "pos": "SF",
+                        "age": 26,
+                        "overall": 99,
+                        "potential": 99,
+                        "salary": "",
+                        "url": "./players/player741.htm"
+                    },
+                    {
+                        "name": "Scott Wedman",
+                        "team": "AC Milan",
+                        "pos": "SF",
+                        "age": 29,
+                        "overall": 96,
+                        "potential": 96,
+                        "salary": "",
+                        "url": "./players/player771.htm"
+                    },
+                    {
+                        "name": "Gene Banks",
+                        "team": "Chelsea",
+                        "pos": "SF",
+                        "age": 22,
+                        "overall": 96,
+                        "potential": 96,
+                        "salary": "",
+                        "url": "./players/player926.htm"
+                    },
+                    {
+                        "name": "Cedrick Hordges",
+                        "team": "Real Madrid",
+                        "pos": "SF",
+                        "age": 24,
+                        "overall": 95,
+                        "potential": 95,
+                        "salary": "",
+                        "url": "./players/player782.htm"
+                    },
+                    {
+                        "name": "Truck Robinson",
+                        "team": "Bayern Munich",
+                        "pos": "SF",
+                        "age": 30,
+                        "overall": 94,
+                        "potential": 94,
+                        "salary": "",
+                        "url": "./players/player777.htm"
+                    },
+                    {
+                        "name": "Kevin McKenna",
+                        "team": "Valencia",
+                        "pos": "SF",
+                        "age": 22,
+                        "overall": 93,
+                        "potential": 99,
+                        "salary": "",
+                        "url": "./players/player1085.htm"
+                    },
+                    {
+                        "name": "Garry Witts",
+                        "team": "Inter Milan",
+                        "pos": "SF",
+                        "age": 22,
+                        "overall": 93,
+                        "potential": 93,
+                        "salary": "",
+                        "url": "./players/player1103.htm"
+                    },
+                    {
+                        "name": "Mark Olberding",
+                        "team": "Chelsea",
+                        "pos": "SF",
+                        "age": 25,
+                        "overall": 92,
+                        "potential": 92,
+                        "salary": "",
+                        "url": "./players/player927.htm"
+                    },
+                    {
+                        "name": "George McCloud",
+                        "team": "Manchester United",
+                        "pos": "SF",
+                        "age": 22,
+                        "overall": 91,
+                        "potential": 96,
+                        "salary": "",
+                        "url": "./players/player375.htm"
+                    },
+                    {
+                        "name": "Bill Robinzine",
+                        "team": "Real Madrid",
+                        "pos": "SF",
+                        "age": 28,
+                        "overall": 90,
+                        "potential": 90,
+                        "salary": "",
+                        "url": "./players/player792.htm"
+                    },
+                    {
+                        "name": "Mike Newlin",
+                        "team": "Valencia",
+                        "pos": "SF",
+                        "age": 33,
+                        "overall": 90,
+                        "potential": 90,
+                        "salary": "",
+                        "url": "./players/player1067.htm"
+                    },
+                    {
+                        "name": "Michael Brooks",
+                        "team": "FL Fart",
+                        "pos": "SF",
+                        "age": 23,
+                        "overall": 90,
+                        "potential": 90,
+                        "salary": "",
+                        "url": "./players/player1081.htm"
+                    }
+                ],
+                "PF": [
+                    {
+                        "name": "Jerome Whitehead",
+                        "team": "Manchester United",
+                        "pos": "PF",
+                        "age": 25,
+                        "overall": 98,
+                        "potential": 98,
+                        "salary": "",
+                        "url": "./players/player774.htm"
+                    },
+                    {
+                        "name": "Earl Cureton",
+                        "team": "FL Fart",
+                        "pos": "PF",
+                        "age": 24,
+                        "overall": 93,
+                        "potential": 94,
+                        "salary": "",
+                        "url": "./players/player1088.htm"
+                    },
+                    {
+                        "name": "David Roddy",
+                        "team": "",
+                        "pos": "PF",
+                        "age": 20,
+                        "overall": 92,
+                        "potential": 99,
+                        "salary": "",
+                        "url": "./players/player690.htm"
+                    },
+                    {
+                        "name": "Mitch Kupchak",
+                        "team": "",
+                        "pos": "PF",
+                        "age": 27,
+                        "overall": 92,
+                        "potential": 92,
+                        "salary": "",
+                        "url": "./players/player783.htm"
+                    },
+                    {
+                        "name": "Campy Russell",
+                        "team": "Barcelona",
+                        "pos": "PF",
+                        "age": 29,
+                        "overall": 92,
+                        "potential": 92,
+                        "salary": "",
+                        "url": "./players/player1084.htm"
+                    },
+                    {
+                        "name": "Tom Lagarde",
+                        "team": "",
+                        "pos": "PF",
+                        "age": 26,
+                        "overall": 91,
+                        "potential": 96,
+                        "salary": "",
+                        "url": "./players/player935.htm"
+                    },
+                    {
+                        "name": "Alvin Scott",
+                        "team": "Inter Milan",
+                        "pos": "PF",
+                        "age": 26,
+                        "overall": 91,
+                        "potential": 91,
+                        "salary": "",
+                        "url": "./players/player1097.htm"
+                    },
+                    {
+                        "name": "Lonnie Shelton",
+                        "team": "Monaco",
+                        "pos": "PF",
+                        "age": 27,
+                        "overall": 90,
+                        "potential": 90,
+                        "salary": "",
+                        "url": "./players/player928.htm"
+                    },
+                    {
+                        "name": "Dwight Jones",
+                        "team": "Manchester United",
+                        "pos": "PF",
+                        "age": 29,
+                        "overall": 89,
+                        "potential": 89,
+                        "salary": "",
+                        "url": "./players/player788.htm"
+                    },
+                    {
+                        "name": "Eric Fernsten",
+                        "team": "Valencia",
+                        "pos": "PF",
+                        "age": 27,
+                        "overall": 87,
+                        "potential": 90,
+                        "salary": "",
+                        "url": "./players/player1114.htm"
+                    },
+                    {
+                        "name": "Jeff Judkins",
+                        "team": "Sporting CP",
+                        "pos": "PF",
+                        "age": 25,
+                        "overall": 86,
+                        "potential": 87,
+                        "salary": "",
+                        "url": "./players/player1100.htm"
+                    },
+                    {
+                        "name": "Ozell Jones",
+                        "team": "Inter Milan",
+                        "pos": "PF",
+                        "age": 23,
+                        "overall": 86,
+                        "potential": 86,
+                        "salary": "",
+                        "url": "./players/player259.htm"
+                    }
+                ],
+                "C": [
+                    {
+                        "name": "Paul Mokeski",
+                        "team": "Ajax",
+                        "pos": "C",
+                        "age": 25,
+                        "overall": 97,
+                        "potential": 98,
+                        "salary": "",
+                        "url": "./players/player915.htm"
+                    },
+                    {
+                        "name": "Kevin Kunnert",
+                        "team": "Atletico Madrid",
+                        "pos": "C",
+                        "age": 29,
+                        "overall": 95,
+                        "potential": 95,
+                        "salary": "",
+                        "url": "./players/player765.htm"
+                    },
+                    {
+                        "name": "Bob Lanier",
+                        "team": "Manchester United",
+                        "pos": "C",
+                        "age": 33,
+                        "overall": 94,
+                        "potential": 94,
+                        "salary": "",
+                        "url": "./players/player757.htm"
+                    },
+                    {
+                        "name": "George McGinnis",
+                        "team": "Juventus",
+                        "pos": "C",
+                        "age": 31,
+                        "overall": 93,
+                        "potential": 93,
+                        "salary": "",
+                        "url": "./players/player913.htm"
+                    },
+                    {
+                        "name": "Bob McAdoo",
+                        "team": "AC Milan",
+                        "pos": "C",
+                        "age": 30,
+                        "overall": 92,
+                        "potential": 92,
+                        "salary": "",
+                        "url": "./players/player778.htm"
+                    },
+                    {
+                        "name": "Kermit Washington",
+                        "team": "Brighton",
+                        "pos": "C",
+                        "age": 30,
+                        "overall": 92,
+                        "potential": 92,
+                        "salary": "",
+                        "url": "./players/player780.htm"
+                    },
+                    {
+                        "name": "Petur Gudmundsson",
+                        "team": "Monaco",
+                        "pos": "C",
+                        "age": 22,
+                        "overall": 92,
+                        "potential": 92,
+                        "salary": "",
+                        "url": "./players/player917.htm"
+                    },
+                    {
+                        "name": "Jim Chones",
+                        "team": "FL Fart",
+                        "pos": "C",
+                        "age": 31,
+                        "overall": 91,
+                        "potential": 91,
+                        "salary": "",
+                        "url": "./players/player1087.htm"
+                    },
+                    {
+                        "name": "Rick Robey",
+                        "team": "Valencia",
+                        "pos": "C",
+                        "age": 25,
+                        "overall": 90,
+                        "potential": 90,
+                        "salary": "",
+                        "url": "./players/player1094.htm"
+                    },
+                    {
+                        "name": "Steve Hayes",
+                        "team": "Tottenham Hotspur",
+                        "pos": "C",
+                        "age": 26,
+                        "overall": 88,
+                        "potential": 88,
+                        "salary": "",
+                        "url": "./players/player1106.htm"
+                    },
+                    {
+                        "name": "Semih Erden",
+                        "team": "",
+                        "pos": "C",
+                        "age": 25,
+                        "overall": 87,
+                        "potential": 87,
+                        "salary": "",
+                        "url": "./players/player384.htm"
+                    },
+                    {
+                        "name": "George Johnson",
+                        "team": "Brighton",
+                        "pos": "C",
+                        "age": 24,
+                        "overall": 87,
+                        "potential": 87,
+                        "salary": "",
+                        "url": "./players/player764.htm"
+                    }
+                ]
+            }
+        },
+        "recentTransactions": [
+            {
+                "date": "12/3/1983",
+                "team": "Tottenham Hotspur",
+                "action": "Place C Darryl Dawkins on inactive list."
+            },
+            {
+                "date": "12/2/1983",
+                "team": "Benfica",
+                "action": "Adrian Dantley signed a contract extension for $48,745,266 over 3 years."
+            },
+            {
+                "date": "12/2/1983",
+                "team": "AFC Richmond",
+                "action": "Michael Cooper signed a contract extension for $63,636,300 over 3 years."
+            },
+            {
+                "date": "12/2/1983",
+                "team": "Bayern Munich",
+                "action": "Tree Rollins signed a contract extension for $63,263,079 over 3 years."
+            },
+            {
+                "date": "12/2/1983",
+                "team": "Bayern Munich",
+                "action": "Bernard King signed a contract extension for $48,667,500 over 3 years."
+            },
+            {
+                "date": "12/2/1983",
+                "team": "Brighton",
+                "action": "Kurt Nimphius signed a contract extension for $18,376,470 over 3 years."
+            },
+            {
+                "date": "12/2/1983",
+                "team": "Barcelona",
+                "action": "Darnell Valentine signed a contract extension for $32,705,805 over 3 years."
+            },
+            {
+                "date": "12/2/1983",
+                "team": "Barcelona",
+                "action": "Vincent Askew signed a contract extension for $2,604,672 over 3 years."
+            },
+            {
+                "date": "12/2/1983",
+                "team": "Paris Saint-Germain",
+                "action": "Brad Davis signed a contract extension for $42,328,125 over 3 years."
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Barcelona",
+                "action": "Place PF George Johnson on inactive list."
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Barcelona",
+                "action": "Place C Dan McClintock on inactive list."
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Barcelona",
+                "action": "Activate SF Vincent Askew"
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Paris Saint-Germain",
+                "action": "Cut PG Greg Anthony"
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Real Madrid",
+                "action": "Sign SF Jay Vincent for $1,290,000 over one year."
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Real Madrid",
+                "action": "Sign PF Jeff Wilkins for $1,110,000 over one year."
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Manchester United",
+                "action": "Sign PF Cedric Maxwell for $903,000 over one year."
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Barcelona",
+                "action": "Cut SF Bob Wilkerson"
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Real Madrid",
+                "action": "Cut PF Kobe Brown"
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Real Madrid",
+                "action": "Cut C Harry Giles"
+            },
+            {
+                "date": "12/1/1983",
+                "team": "AFC Richmond",
+                "action": "Cut C Jeff Withey"
+            },
+            {
+                "date": "12/1/1983",
+                "team": "AFC Richmond",
+                "action": "Cut PF Alex Len"
+            },
+            {
+                "date": "12/1/1983",
+                "team": "AC Milan",
+                "action": "Cut PF Richard Anderson"
+            },
+            {
+                "date": "12/1/1983",
+                "team": "AC Milan",
+                "action": "Cut SG Casey Jacobsen"
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Brighton",
+                "action": "Cut PG Greg Anthony"
+            },
+            {
+                "date": "12/1/1983",
+                "team": "Brighton",
+                "action": "Cut C Herb Williams"
+            },
+            {
+                "date": "11/24/1983",
+                "team": "Chelsea",
+                "action": "Sign PF Hollis Copeland for $1,290,000 over one year."
+            },
+            {
+                "date": "11/24/1983",
+                "team": "Chelsea",
+                "action": "Sign C Robert Sacre for $760,000 over one year."
+            },
+            {
+                "date": "11/24/1983",
+                "team": "Chelsea",
+                "action": "Sign SG Kameron McGusty for $760,000 over one year."
+            },
+            {
+                "date": "11/1/1983",
+                "team": "Brighton",
+                "action": "Cut SF Charlie Pittman"
+            },
+            {
+                "date": "11/1/1983",
+                "team": "Brighton",
+                "action": "Cut PG Don Buse"
+            }
+        ],
+        "capOutlook": {
+            "mostCapRoom": [
+                {
+                    "team": "Manchester United",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster5.htm",
+                    "salary": 52659860.0,
+                    "salaryText": "$52,659,860",
+                    "capRoom": 17340140.0,
+                    "capRoomText": "$17,340,140",
+                    "budgetRoom": 147340140.0,
+                    "budgetRoomText": "$147,340,140"
+                },
+                {
+                    "team": "Aston Villa",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster19.htm",
+                    "salary": 56739014.0,
+                    "salaryText": "$56,739,014",
+                    "capRoom": 13260986.0,
+                    "capRoomText": "$13,260,986",
+                    "budgetRoom": 143260986.0,
+                    "budgetRoomText": "$143,260,986"
+                },
+                {
+                    "team": "Sheffield United",
+                    "league": "Champions League Basketball",
+                    "rosterFile": "roster16.htm",
+                    "salary": 89736263.0,
+                    "salaryText": "$89,736,263",
+                    "capRoom": 10263737.0,
+                    "capRoomText": "$10,263,737",
+                    "budgetRoom": 110263737.0,
+                    "budgetRoomText": "$110,263,737"
+                },
+                {
+                    "team": "Valencia",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster25.htm",
+                    "salary": 41425028.0,
+                    "salaryText": "$41,425,028",
+                    "capRoom": 8574972.0,
+                    "capRoomText": "$8,574,972",
+                    "budgetRoom": 158574972.0,
+                    "budgetRoomText": "$158,574,972"
+                },
+                {
+                    "team": "Juventus",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster14.htm",
+                    "salary": 63223273.0,
+                    "salaryText": "$63,223,273",
+                    "capRoom": 6776727.0,
+                    "capRoomText": "$6,776,727",
+                    "budgetRoom": 136776727.0,
+                    "budgetRoomText": "$136,776,727"
+                },
+                {
+                    "team": "Manchester City",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster28.htm",
+                    "salary": 43522098.0,
+                    "salaryText": "$43,522,098",
+                    "capRoom": 6477902.0,
+                    "capRoomText": "$6,477,902",
+                    "budgetRoom": 156477902.0,
+                    "budgetRoomText": "$156,477,902"
+                },
+                {
+                    "team": "Atletico Madrid",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster11.htm",
+                    "salary": 64241234.0,
+                    "salaryText": "$64,241,234",
+                    "capRoom": 5758766.0,
+                    "capRoomText": "$5,758,766",
+                    "budgetRoom": 135758766.0,
+                    "budgetRoomText": "$135,758,766"
+                },
+                {
+                    "team": "Ajax",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster18.htm",
+                    "salary": 64435268.0,
+                    "salaryText": "$64,435,268",
+                    "capRoom": 5564732.0,
+                    "capRoomText": "$5,564,732",
+                    "budgetRoom": 135564732.0,
+                    "budgetRoomText": "$135,564,732"
+                },
+                {
+                    "team": "Bayern Munich",
+                    "league": "Champions League Basketball",
+                    "rosterFile": "roster7.htm",
+                    "salary": 95356303.0,
+                    "salaryText": "$95,356,303",
+                    "capRoom": 4643697.0,
+                    "capRoomText": "$4,643,697",
+                    "budgetRoom": 104643697.0,
+                    "budgetRoomText": "$104,643,697"
+                },
+                {
+                    "team": "Inter Milan",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster26.htm",
+                    "salary": 47567560.0,
+                    "salaryText": "$47,567,560",
+                    "capRoom": 2432440.0,
+                    "capRoomText": "$2,432,440",
+                    "budgetRoom": 152432440.0,
+                    "budgetRoomText": "$152,432,440"
+                },
+                {
+                    "team": "FL Fart",
+                    "league": "Champions League Basketball",
+                    "rosterFile": "roster27.htm",
+                    "salary": 97800901.0,
+                    "salaryText": "$97,800,901",
+                    "capRoom": 2199099.0,
+                    "capRoomText": "$2,199,099",
+                    "budgetRoom": 102199099.0,
+                    "budgetRoomText": "$102,199,099"
+                },
+                {
+                    "team": "Benfica",
+                    "league": "Champions League Basketball",
+                    "rosterFile": "roster13.htm",
+                    "salary": 98008098.0,
+                    "salaryText": "$98,008,098",
+                    "capRoom": 1991902.0,
+                    "capRoomText": "$1,991,902",
+                    "budgetRoom": 101991902.0,
+                    "budgetRoomText": "$101,991,902"
+                }
+            ],
+            "leastCapRoom": [
+                {
+                    "team": "Tottenham Hotspur",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster22.htm",
+                    "salary": 51454966.0,
+                    "salaryText": "$51,454,966",
+                    "capRoom": -1454966.0,
+                    "capRoomText": "($1,454,966)",
+                    "budgetRoom": 148545034.0,
+                    "budgetRoomText": "$148,545,034"
+                },
+                {
+                    "team": "Sporting CP",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster23.htm",
+                    "salary": 50000000.0,
+                    "salaryText": "$50,000,000",
+                    "capRoom": -0.0,
+                    "capRoomText": "($0)",
+                    "budgetRoom": 150000000.0,
+                    "budgetRoomText": "$150,000,000"
+                },
+                {
+                    "team": "AC Milan",
+                    "league": "Champions League Basketball",
+                    "rosterFile": "roster9.htm",
+                    "salary": 99991102.0,
+                    "salaryText": "$99,991,102",
+                    "capRoom": 8898.0,
+                    "capRoomText": "$8,898",
+                    "budgetRoom": 100008898.0,
+                    "budgetRoomText": "$100,008,898"
+                },
+                {
+                    "team": "Paris Saint-Germain",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster21.htm",
+                    "salary": 49859997.0,
+                    "salaryText": "$49,859,997",
+                    "capRoom": 140003.0,
+                    "capRoomText": "$140,003",
+                    "budgetRoom": 150140003.0,
+                    "budgetRoomText": "$150,140,003"
+                },
+                {
+                    "team": "Marseille",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster15.htm",
+                    "salary": 69859181.0,
+                    "salaryText": "$69,859,181",
+                    "capRoom": 140819.0,
+                    "capRoomText": "$140,819",
+                    "budgetRoom": 130140819.0,
+                    "budgetRoomText": "$130,140,819"
+                },
+                {
+                    "team": "Real Madrid",
+                    "league": "Champions League Basketball",
+                    "rosterFile": "roster8.htm",
+                    "salary": 99852764.0,
+                    "salaryText": "$99,852,764",
+                    "capRoom": 147236.0,
+                    "capRoomText": "$147,236",
+                    "budgetRoom": 100147236.0,
+                    "budgetRoomText": "$100,147,236"
+                },
+                {
+                    "team": "Chelsea",
+                    "league": "Champions League Basketball",
+                    "rosterFile": "roster17.htm",
+                    "salary": 99631586.0,
+                    "salaryText": "$99,631,586",
+                    "capRoom": 368414.0,
+                    "capRoomText": "$368,414",
+                    "budgetRoom": 100368414.0,
+                    "budgetRoomText": "$100,368,414"
+                },
+                {
+                    "team": "Monaco",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster20.htm",
+                    "salary": 49516054.0,
+                    "salaryText": "$49,516,054",
+                    "capRoom": 483946.0,
+                    "capRoomText": "$483,946",
+                    "budgetRoom": 150483946.0,
+                    "budgetRoomText": "$150,483,946"
+                },
+                {
+                    "team": "Brighton",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster10.htm",
+                    "salary": 69435739.0,
+                    "salaryText": "$69,435,739",
+                    "capRoom": 564261.0,
+                    "capRoomText": "$564,261",
+                    "budgetRoom": 130564261.0,
+                    "budgetRoomText": "$130,564,261"
+                },
+                {
+                    "team": "AFC Richmond",
+                    "league": "Champions League Basketball",
+                    "rosterFile": "roster12.htm",
+                    "salary": 99367312.0,
+                    "salaryText": "$99,367,312",
+                    "capRoom": 632688.0,
+                    "capRoomText": "$632,688",
+                    "budgetRoom": 100632688.0,
+                    "budgetRoomText": "$100,632,688"
+                },
+                {
+                    "team": "Crystal Palace",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster6.htm",
+                    "salary": 69047235.0,
+                    "salaryText": "$69,047,235",
+                    "capRoom": 952765.0,
+                    "capRoomText": "$952,765",
+                    "budgetRoom": 130952765.0,
+                    "budgetRoomText": "$130,952,765"
+                },
+                {
+                    "team": "Barcelona",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster24.htm",
+                    "salary": 48144866.0,
+                    "salaryText": "$48,144,866",
+                    "capRoom": 1855134.0,
+                    "capRoomText": "$1,855,134",
+                    "budgetRoom": 151855134.0,
+                    "budgetRoomText": "$151,855,134"
+                }
+            ],
+            "biggestBudgets": [
+                {
+                    "team": "Valencia",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster25.htm",
+                    "salary": 41425028.0,
+                    "salaryText": "$41,425,028",
+                    "capRoom": 8574972.0,
+                    "capRoomText": "$8,574,972",
+                    "budgetRoom": 158574972.0,
+                    "budgetRoomText": "$158,574,972"
+                },
+                {
+                    "team": "Manchester City",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster28.htm",
+                    "salary": 43522098.0,
+                    "salaryText": "$43,522,098",
+                    "capRoom": 6477902.0,
+                    "capRoomText": "$6,477,902",
+                    "budgetRoom": 156477902.0,
+                    "budgetRoomText": "$156,477,902"
+                },
+                {
+                    "team": "Inter Milan",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster26.htm",
+                    "salary": 47567560.0,
+                    "salaryText": "$47,567,560",
+                    "capRoom": 2432440.0,
+                    "capRoomText": "$2,432,440",
+                    "budgetRoom": 152432440.0,
+                    "budgetRoomText": "$152,432,440"
+                },
+                {
+                    "team": "Barcelona",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster24.htm",
+                    "salary": 48144866.0,
+                    "salaryText": "$48,144,866",
+                    "capRoom": 1855134.0,
+                    "capRoomText": "$1,855,134",
+                    "budgetRoom": 151855134.0,
+                    "budgetRoomText": "$151,855,134"
+                },
+                {
+                    "team": "Monaco",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster20.htm",
+                    "salary": 49516054.0,
+                    "salaryText": "$49,516,054",
+                    "capRoom": 483946.0,
+                    "capRoomText": "$483,946",
+                    "budgetRoom": 150483946.0,
+                    "budgetRoomText": "$150,483,946"
+                },
+                {
+                    "team": "Paris Saint-Germain",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster21.htm",
+                    "salary": 49859997.0,
+                    "salaryText": "$49,859,997",
+                    "capRoom": 140003.0,
+                    "capRoomText": "$140,003",
+                    "budgetRoom": 150140003.0,
+                    "budgetRoomText": "$150,140,003"
+                },
+                {
+                    "team": "Sporting CP",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster23.htm",
+                    "salary": 50000000.0,
+                    "salaryText": "$50,000,000",
+                    "capRoom": -0.0,
+                    "capRoomText": "($0)",
+                    "budgetRoom": 150000000.0,
+                    "budgetRoomText": "$150,000,000"
+                },
+                {
+                    "team": "Tottenham Hotspur",
+                    "league": "Conference League Basketball",
+                    "rosterFile": "roster22.htm",
+                    "salary": 51454966.0,
+                    "salaryText": "$51,454,966",
+                    "capRoom": -1454966.0,
+                    "capRoomText": "($1,454,966)",
+                    "budgetRoom": 148545034.0,
+                    "budgetRoomText": "$148,545,034"
+                },
+                {
+                    "team": "Manchester United",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster5.htm",
+                    "salary": 52659860.0,
+                    "salaryText": "$52,659,860",
+                    "capRoom": 17340140.0,
+                    "capRoomText": "$17,340,140",
+                    "budgetRoom": 147340140.0,
+                    "budgetRoomText": "$147,340,140"
+                },
+                {
+                    "team": "Aston Villa",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster19.htm",
+                    "salary": 56739014.0,
+                    "salaryText": "$56,739,014",
+                    "capRoom": 13260986.0,
+                    "capRoomText": "$13,260,986",
+                    "budgetRoom": 143260986.0,
+                    "budgetRoomText": "$143,260,986"
+                },
+                {
+                    "team": "Juventus",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster14.htm",
+                    "salary": 63223273.0,
+                    "salaryText": "$63,223,273",
+                    "capRoom": 6776727.0,
+                    "capRoomText": "$6,776,727",
+                    "budgetRoom": 136776727.0,
+                    "budgetRoomText": "$136,776,727"
+                },
+                {
+                    "team": "Atletico Madrid",
+                    "league": "Europa League Basketball",
+                    "rosterFile": "roster11.htm",
+                    "salary": 64241234.0,
+                    "salaryText": "$64,241,234",
+                    "capRoom": 5758766.0,
+                    "capRoomText": "$5,758,766",
+                    "budgetRoom": 135758766.0,
+                    "budgetRoomText": "$135,758,766"
+                }
+            ]
+        },
+        "teamNeeds": [
+            {
+                "team": "Ajax",
+                "needs": [
+                    "wing depth",
+                    "frontcourt depth"
+                ],
+                "positionCounts": {
+                    "guard": 5,
+                    "wing": 1,
+                    "big": 3
+                },
+                "topPlayers": [
+                    {
+                        "name": "Cliff Robinson",
+                        "team": "Ajax",
+                        "pos": "PF",
+                        "age": 21,
+                        "overall": 123,
+                        "potential": 126,
+                        "salary": "$17,500,000",
+                        "url": "./players/player881.htm"
+                    },
+                    {
+                        "name": "Maurice Cheeks",
+                        "team": "Ajax",
+                        "pos": "PG",
+                        "age": 25,
+                        "overall": 121,
+                        "potential": 124,
+                        "salary": "$13,708,053",
+                        "url": "./players/player886.htm"
+                    },
+                    {
+                        "name": "Andre Iguodala",
+                        "team": "Ajax",
+                        "pos": "SF",
+                        "age": 19,
+                        "overall": 119,
+                        "potential": 163,
+                        "salary": "$10,000,000",
+                        "url": "./players/player1314.htm"
+                    }
+                ],
+                "capRoom": "$5,564,732",
+                "budgetRoom": "$135,564,732"
+            },
+            {
+                "team": "Bayern Munich",
+                "needs": [
+                    "wing depth",
+                    "frontcourt depth"
+                ],
+                "positionCounts": {
+                    "guard": 6,
+                    "wing": 1,
+                    "big": 3
+                },
+                "topPlayers": [
+                    {
+                        "name": "Bernard King",
+                        "team": "Bayern Munich",
+                        "pos": "SF",
+                        "age": 24,
+                        "overall": 127,
+                        "potential": 127,
+                        "salary": "$11,900,213",
+                        "url": "./players/player713.htm"
+                    },
+                    {
+                        "name": "Mike Woodson",
+                        "team": "Bayern Munich",
+                        "pos": "SG",
+                        "age": 23,
+                        "overall": 122,
+                        "potential": 123,
+                        "salary": "$11,891,514",
+                        "url": "./players/player720.htm"
+                    },
+                    {
+                        "name": "Tree Rollins",
+                        "team": "Bayern Munich",
+                        "pos": "C",
+                        "age": 26,
+                        "overall": 121,
+                        "potential": 122,
+                        "salary": "$19,860,000",
+                        "url": "./players/player737.htm"
+                    }
+                ],
+                "capRoom": "$4,643,697",
+                "budgetRoom": "$104,643,697"
+            },
+            {
+                "team": "Monaco",
+                "needs": [
+                    "guard depth",
+                    "wing depth"
+                ],
+                "positionCounts": {
+                    "guard": 3,
+                    "wing": 1,
+                    "big": 6
+                },
+                "topPlayers": [
+                    {
+                        "name": "Purvis Short",
+                        "team": "Monaco",
+                        "pos": "PF",
+                        "age": 24,
+                        "overall": 134,
+                        "potential": 138,
+                        "salary": "$13,804,686",
+                        "url": "./players/player879.htm"
+                    },
+                    {
+                        "name": "Danny Ainge",
+                        "team": "Monaco",
+                        "pos": "SF",
+                        "age": 22,
+                        "overall": 123,
+                        "potential": 123,
+                        "salary": "$17,500,000",
+                        "url": "./players/player876.htm"
+                    },
+                    {
+                        "name": "Andre Drummond",
+                        "team": "Monaco",
+                        "pos": "C",
+                        "age": 20,
+                        "overall": 116,
+                        "potential": 128,
+                        "salary": "$10,000,000",
+                        "url": "./players/player378.htm"
+                    }
+                ],
+                "capRoom": "$483,946",
+                "budgetRoom": "$150,483,946"
+            },
+            {
+                "team": "Manchester United",
+                "needs": [
+                    "depth/upgrade optional"
+                ],
+                "positionCounts": {
+                    "guard": 6,
+                    "wing": 3,
+                    "big": 4
+                },
+                "topPlayers": [
+                    {
+                        "name": "Robert Reid",
+                        "team": "Manchester United",
+                        "pos": "SF",
+                        "age": 26,
+                        "overall": 124,
+                        "potential": 124,
+                        "salary": "$8,627,929",
+                        "url": "./players/player885.htm"
+                    },
+                    {
+                        "name": "Alton Lister",
+                        "team": "Manchester United",
+                        "pos": "C",
+                        "age": 23,
+                        "overall": 113,
+                        "potential": 113,
+                        "salary": "$12,500,000",
+                        "url": "./players/player1050.htm"
+                    },
+                    {
+                        "name": "Josh Richardson",
+                        "team": "Manchester United",
+                        "pos": "SG",
+                        "age": 23,
+                        "overall": 109,
+                        "potential": 119,
+                        "salary": "$7,489,643",
+                        "url": "./players/player632.htm"
+                    }
+                ],
+                "capRoom": "$17,340,140",
+                "budgetRoom": "$147,340,140"
+            },
+            {
+                "team": "Aston Villa",
+                "needs": [
+                    "guard depth"
+                ],
+                "positionCounts": {
+                    "guard": 3,
+                    "wing": 3,
+                    "big": 4
+                },
+                "topPlayers": [
+                    {
+                        "name": "Bill Laimbeer",
+                        "team": "Aston Villa",
+                        "pos": "C",
+                        "age": 24,
+                        "overall": 146,
+                        "potential": 149,
+                        "salary": "$13,612,097",
+                        "url": "./players/player874.htm"
+                    },
+                    {
+                        "name": "Larry Nance",
+                        "team": "Aston Villa",
+                        "pos": "PF",
+                        "age": 22,
+                        "overall": 125,
+                        "potential": 129,
+                        "salary": "$17,500,000",
+                        "url": "./players/player880.htm"
+                    },
+                    {
+                        "name": "Xavier McDaniel",
+                        "team": "Aston Villa",
+                        "pos": "SF",
+                        "age": 22,
+                        "overall": 122,
+                        "potential": 125,
+                        "salary": "$4,184,158",
+                        "url": "./players/player238.htm"
+                    }
+                ],
+                "capRoom": "$13,260,986",
+                "budgetRoom": "$143,260,986"
+            },
+            {
+                "team": "Sheffield United",
+                "needs": [
+                    "depth/upgrade optional"
+                ],
+                "positionCounts": {
+                    "guard": 4,
+                    "wing": 3,
+                    "big": 4
+                },
+                "topPlayers": [
+                    {
+                        "name": "Rickey Green",
+                        "team": "Sheffield United",
+                        "pos": "PG",
+                        "age": 27,
+                        "overall": 124,
+                        "potential": 124,
+                        "salary": "$13,422,194",
+                        "url": "./players/player882.htm"
+                    },
+                    {
+                        "name": "Bill Cartwright",
+                        "team": "Sheffield United",
+                        "pos": "C",
+                        "age": 24,
+                        "overall": 121,
+                        "potential": 121,
+                        "salary": "$17,500,000",
+                        "url": "./players/player887.htm"
+                    },
+                    {
+                        "name": "Billy Knight",
+                        "team": "Sheffield United",
+                        "pos": "SF",
+                        "age": 29,
+                        "overall": 116,
+                        "potential": 116,
+                        "salary": "$8,567,533",
+                        "url": "./players/player889.htm"
+                    }
+                ],
+                "capRoom": "$10,263,737",
+                "budgetRoom": "$110,263,737"
+            },
+            {
+                "team": "Valencia",
+                "needs": [
+                    "guard depth"
+                ],
+                "positionCounts": {
+                    "guard": 2,
+                    "wing": 3,
+                    "big": 5
+                },
+                "topPlayers": [
+                    {
+                        "name": "Isiah Thomas",
+                        "team": "Valencia",
+                        "pos": "PG",
+                        "age": 20,
+                        "overall": 108,
+                        "potential": 108,
+                        "salary": "$12,500,000",
+                        "url": "./players/player1047.htm"
+                    },
+                    {
+                        "name": "Geoff Huston",
+                        "team": "Valencia",
+                        "pos": "SF",
+                        "age": 23,
+                        "overall": 99,
+                        "potential": 99,
+                        "salary": "$6,206,250",
+                        "url": "./players/player1066.htm"
+                    },
+                    {
+                        "name": "Jamaal Tinsley",
+                        "team": "Valencia",
+                        "pos": "SG",
+                        "age": 23,
+                        "overall": 98,
+                        "potential": 103,
+                        "salary": "$3,030,065",
+                        "url": "./players/player242.htm"
+                    }
+                ],
+                "capRoom": "$8,574,972",
+                "budgetRoom": "$158,574,972"
+            },
+            {
+                "team": "Juventus",
+                "needs": [
+                    "depth/upgrade optional"
+                ],
+                "positionCounts": {
+                    "guard": 5,
+                    "wing": 3,
+                    "big": 4
+                },
+                "topPlayers": [
+                    {
+                        "name": "Rolando Blackman",
+                        "team": "Juventus",
+                        "pos": "SF",
+                        "age": 22,
+                        "overall": 126,
+                        "potential": 126,
+                        "salary": "$13,902,000",
+                        "url": "./players/player871.htm"
+                    },
+                    {
+                        "name": "John Lucas",
+                        "team": "Juventus",
+                        "pos": "PG",
+                        "age": 27,
+                        "overall": 116,
+                        "potential": 117,
+                        "salary": "$14,000,000",
+                        "url": "./players/player878.htm"
+                    },
+                    {
+                        "name": "Ron Anderson",
+                        "team": "Juventus",
+                        "pos": "SG",
+                        "age": 27,
+                        "overall": 105,
+                        "potential": 108,
+                        "salary": "$3,178,128",
+                        "url": "./players/player386.htm"
+                    }
+                ],
+                "capRoom": "$6,776,727",
+                "budgetRoom": "$136,776,727"
+            },
+            {
+                "team": "Manchester City",
+                "needs": [
+                    "wing depth"
+                ],
+                "positionCounts": {
+                    "guard": 4,
+                    "wing": 1,
+                    "big": 5
+                },
+                "topPlayers": [
+                    {
+                        "name": "Kirk Hinrich",
+                        "team": "Manchester City",
+                        "pos": "SG",
+                        "age": 23,
+                        "overall": 113,
+                        "potential": 120,
+                        "salary": "$4,978,131",
+                        "url": "./players/player636.htm"
+                    },
+                    {
+                        "name": "Jerry Sichting",
+                        "team": "Manchester City",
+                        "pos": "PG",
+                        "age": 24,
+                        "overall": 101,
+                        "potential": 102,
+                        "salary": "$6,119,667",
+                        "url": "./players/player1069.htm"
+                    },
+                    {
+                        "name": "Wayne Cooper",
+                        "team": "Manchester City",
+                        "pos": "PF",
+                        "age": 24,
+                        "overall": 101,
+                        "potential": 101,
+                        "salary": "$8,330,149",
+                        "url": "./players/player899.htm"
+                    }
+                ],
+                "capRoom": "$6,477,902",
+                "budgetRoom": "$156,477,902"
+            },
+            {
+                "team": "Atletico Madrid",
+                "needs": [
+                    "guard depth"
+                ],
+                "positionCounts": {
+                    "guard": 2,
+                    "wing": 2,
+                    "big": 4
+                },
+                "topPlayers": [
+                    {
+                        "name": "James Donaldson",
+                        "team": "Atletico Madrid",
+                        "pos": "C",
+                        "age": 24,
+                        "overall": 127,
+                        "potential": 127,
+                        "salary": "$19,582,933",
+                        "url": "./players/player712.htm"
+                    },
+                    {
+                        "name": "Dennis Johnson",
+                        "team": "Atletico Madrid",
+                        "pos": "SF",
+                        "age": 27,
+                        "overall": 125,
+                        "potential": 129,
+                        "salary": "$11,984,102",
+                        "url": "./players/player715.htm"
+                    },
+                    {
+                        "name": "Johnny Moore",
+                        "team": "Atletico Madrid",
+                        "pos": "SG",
+                        "age": 23,
+                        "overall": 124,
+                        "potential": 125,
+                        "salary": "$25,000,000",
+                        "url": "./players/player727.htm"
+                    }
+                ],
+                "capRoom": "$5,758,766",
+                "budgetRoom": "$135,758,766"
+            },
+            {
+                "team": "Inter Milan",
+                "needs": [
+                    "depth/upgrade optional"
+                ],
+                "positionCounts": {
+                    "guard": 7,
+                    "wing": 3,
+                    "big": 5
+                },
+                "topPlayers": [
+                    {
+                        "name": "World B. Free",
+                        "team": "Inter Milan",
+                        "pos": "SG",
+                        "age": 27,
+                        "overall": 140,
+                        "potential": 140,
+                        "salary": "$12,500,000",
+                        "url": "./players/player1048.htm"
+                    },
+                    {
+                        "name": "Greg Ballard",
+                        "team": "Inter Milan",
+                        "pos": "SF",
+                        "age": 26,
+                        "overall": 131,
+                        "potential": 135,
+                        "salary": "$4,000,000",
+                        "url": "./players/player728.htm"
+                    },
+                    {
+                        "name": "Kyle Macy",
+                        "team": "Inter Milan",
+                        "pos": "PG",
+                        "age": 24,
+                        "overall": 128,
+                        "potential": 129,
+                        "salary": "$4,500,000",
+                        "url": "./players/player716.htm"
+                    }
+                ],
+                "capRoom": "$2,432,440",
+                "budgetRoom": "$152,432,440"
+            },
+            {
+                "team": "FL Fart",
+                "needs": [
+                    "depth/upgrade optional"
+                ],
+                "positionCounts": {
+                    "guard": 7,
+                    "wing": 4,
+                    "big": 5
+                },
+                "topPlayers": [
+                    {
+                        "name": "Larry Drew",
+                        "team": "FL Fart",
+                        "pos": "PG",
+                        "age": 23,
+                        "overall": 134,
+                        "potential": 138,
+                        "salary": "$9,791,467",
+                        "url": "./players/player1053.htm"
+                    },
+                    {
+                        "name": "Jeff Ruland",
+                        "team": "FL Fart",
+                        "pos": "C",
+                        "age": 22,
+                        "overall": 126,
+                        "potential": 126,
+                        "salary": "$20,000,000",
+                        "url": "./players/player718.htm"
+                    },
+                    {
+                        "name": "Marques Johnson",
+                        "team": "FL Fart",
+                        "pos": "SF",
+                        "age": 25,
+                        "overall": 120,
+                        "potential": 120,
+                        "salary": "$20,000,000",
+                        "url": "./players/player725.htm"
+                    }
+                ],
+                "capRoom": "$2,199,099",
+                "budgetRoom": "$102,199,099"
+            },
+            {
+                "team": "Benfica",
+                "needs": [
+                    "depth/upgrade optional"
+                ],
+                "positionCounts": {
+                    "guard": 5,
+                    "wing": 2,
+                    "big": 4
+                },
+                "topPlayers": [
+                    {
+                        "name": "Moses Malone",
+                        "team": "Benfica",
+                        "pos": "C",
+                        "age": 26,
+                        "overall": 156,
+                        "potential": 156,
+                        "salary": "$17,500,000",
+                        "url": "./players/player872.htm"
+                    },
+                    {
+                        "name": "Walter Davis",
+                        "team": "Benfica",
+                        "pos": "SG",
+                        "age": 27,
+                        "overall": 138,
+                        "potential": 139,
+                        "salary": "$20,000,000",
+                        "url": "./players/player706.htm"
+                    },
+                    {
+                        "name": "Ray Williams",
+                        "team": "Benfica",
+                        "pos": "PG",
+                        "age": 27,
+                        "overall": 119,
+                        "potential": 119,
+                        "salary": "$8,688,750",
+                        "url": "./players/player903.htm"
+                    }
+                ],
+                "capRoom": "$1,991,902",
+                "budgetRoom": "$101,991,902"
+            },
+            {
+                "team": "Barcelona",
+                "needs": [
+                    "guard depth"
+                ],
+                "positionCounts": {
+                    "guard": 3,
+                    "wing": 5,
+                    "big": 4
+                },
+                "topPlayers": [
+                    {
+                        "name": "Paul Pierce",
+                        "team": "Barcelona",
+                        "pos": "SF",
+                        "age": 20,
+                        "overall": 133,
+                        "potential": 160,
+                        "salary": "$7,500,000",
+                        "url": "./players/player693.htm"
+                    },
+                    {
+                        "name": "Otis Birdsong",
+                        "team": "Barcelona",
+                        "pos": "SG",
+                        "age": 25,
+                        "overall": 130,
+                        "potential": 130,
+                        "salary": "$15,630,000",
+                        "url": "./players/player730.htm"
+                    },
+                    {
+                        "name": "Jalen Duren",
+                        "team": "Barcelona",
+                        "pos": "C",
+                        "age": 20,
+                        "overall": 119,
+                        "potential": 123,
+                        "salary": "$10,000,000",
+                        "url": "./players/player264.htm"
+                    }
+                ],
+                "capRoom": "$1,855,134",
+                "budgetRoom": "$151,855,134"
+            },
+            {
+                "team": "Crystal Palace",
+                "needs": [
+                    "depth/upgrade optional"
+                ],
+                "positionCounts": {
+                    "guard": 4,
+                    "wing": 3,
+                    "big": 4
+                },
+                "topPlayers": [
+                    {
+                        "name": "Darrell Griffith",
+                        "team": "Crystal Palace",
+                        "pos": "SG",
+                        "age": 23,
+                        "overall": 148,
+                        "potential": 148,
+                        "salary": "$25,000,000",
+                        "url": "./players/player703.htm"
+                    },
+                    {
+                        "name": "Alex English",
+                        "team": "Crystal Palace",
+                        "pos": "SF",
+                        "age": 28,
+                        "overall": 139,
+                        "potential": 139,
+                        "salary": "$12,068,582",
+                        "url": "./players/player711.htm"
+                    },
+                    {
+                        "name": "Reggie Theus",
+                        "team": "Crystal Palace",
+                        "pos": "PG",
+                        "age": 24,
+                        "overall": 133,
+                        "potential": 133,
+                        "salary": "$19,445,853",
+                        "url": "./players/player708.htm"
+                    }
+                ],
+                "capRoom": "$952,765",
+                "budgetRoom": "$130,952,765"
+            },
+            {
+                "team": "AFC Richmond",
+                "needs": [
+                    "depth/upgrade optional"
+                ],
+                "positionCounts": {
+                    "guard": 4,
+                    "wing": 2,
+                    "big": 5
+                },
+                "topPlayers": [
+                    {
+                        "name": "Michael Cooper",
+                        "team": "AFC Richmond",
+                        "pos": "SG",
+                        "age": 25,
+                        "overall": 145,
+                        "potential": 147,
+                        "salary": "$12,412,500",
+                        "url": "./players/player705.htm"
+                    },
+                    {
+                        "name": "Magic Johnson",
+                        "team": "AFC Richmond",
+                        "pos": "PG",
+                        "age": 22,
+                        "overall": 139,
+                        "potential": 139,
+                        "salary": "$25,000,000",
+                        "url": "./players/player698.htm"
+                    },
+                    {
+                        "name": "Tom Chambers",
+                        "team": "AFC Richmond",
+                        "pos": "PF",
+                        "age": 22,
+                        "overall": 126,
+                        "potential": 133,
+                        "salary": "$13,008,000",
+                        "url": "./players/player724.htm"
+                    }
+                ],
+                "capRoom": "$632,688",
+                "budgetRoom": "$100,632,688"
+            },
+            {
+                "team": "Brighton",
+                "needs": [
+                    "depth/upgrade optional"
+                ],
+                "positionCounts": {
+                    "guard": 5,
+                    "wing": 2,
+                    "big": 6
+                },
+                "topPlayers": [
+                    {
+                        "name": "Kiki Vandeweghe",
+                        "team": "Brighton",
+                        "pos": "SG",
+                        "age": 23,
+                        "overall": 155,
+                        "potential": 156,
+                        "salary": "$19,309,732",
+                        "url": "./players/player701.htm"
+                    },
+                    {
+                        "name": "Mark Aguirre",
+                        "team": "Brighton",
+                        "pos": "SF",
+                        "age": 21,
+                        "overall": 144,
+                        "potential": 150,
+                        "salary": "$25,000,000",
+                        "url": "./players/player702.htm"
+                    },
+                    {
+                        "name": "Kurt Nimphius",
+                        "team": "Brighton",
+                        "pos": "C",
+                        "age": 23,
+                        "overall": 106,
+                        "potential": 113,
+                        "salary": "$903,000",
+                        "url": "./players/player914.htm"
+                    }
+                ],
+                "capRoom": "$564,261",
+                "budgetRoom": "$130,564,261"
+            },
+            {
+                "team": "Chelsea",
+                "needs": [
+                    "wing depth"
+                ],
+                "positionCounts": {
+                    "guard": 4,
+                    "wing": 1,
+                    "big": 6
+                },
+                "topPlayers": [
+                    {
+                        "name": "Jack Sikma",
+                        "team": "Chelsea",
+                        "pos": "C",
+                        "age": 25,
+                        "overall": 146,
+                        "potential": 146,
+                        "salary": "$17,500,000",
+                        "url": "./players/player870.htm"
+                    },
+                    {
+                        "name": "Jim Paxson",
+                        "team": "Chelsea",
+                        "pos": "SG",
+                        "age": 24,
+                        "overall": 137,
+                        "potential": 137,
+                        "salary": "$13,328,239",
+                        "url": "./players/player875.htm"
+                    },
+                    {
+                        "name": "Norm Nixon",
+                        "team": "Chelsea",
+                        "pos": "PG",
+                        "age": 26,
+                        "overall": 120,
+                        "potential": 120,
+                        "salary": "$25,000,000",
+                        "url": "./players/player726.htm"
+                    }
+                ],
+                "capRoom": "$368,414",
+                "budgetRoom": "$100,368,414"
+            }
+        ],
+        "shortContracts": [],
+        "campWatch": {
+            "youngUpside": [
+                {
+                    "name": "Andre Iguodala",
+                    "team": "Ajax",
+                    "pos": "SF",
+                    "age": 19,
+                    "overall": 119,
+                    "potential": 163,
+                    "salary": "$10,000,000",
+                    "url": "./players/player1314.htm"
+                },
+                {
+                    "name": "Paul Pierce",
+                    "team": "Barcelona",
+                    "pos": "SF",
+                    "age": 20,
+                    "overall": 133,
+                    "potential": 160,
+                    "salary": "$7,500,000",
+                    "url": "./players/player693.htm"
+                },
+                {
+                    "name": "Larry Bird",
+                    "team": "AC Milan",
+                    "pos": "PF",
+                    "age": 24,
+                    "overall": 160,
+                    "potential": 160,
+                    "salary": "$25,000,000",
+                    "url": "./players/player697.htm"
+                },
+                {
+                    "name": "Kelly Tripucka",
+                    "team": "Paris Saint-Germain",
+                    "pos": "SF",
+                    "age": 22,
+                    "overall": 144,
+                    "potential": 156,
+                    "salary": "$12,500,000",
+                    "url": "./players/player1049.htm"
+                },
+                {
+                    "name": "Kiki Vandeweghe",
+                    "team": "Brighton",
+                    "pos": "SG",
+                    "age": 23,
+                    "overall": 155,
+                    "potential": 156,
+                    "salary": "$19,309,732",
+                    "url": "./players/player701.htm"
+                },
+                {
+                    "name": "Sidney Moncrief",
+                    "team": "Real Madrid",
+                    "pos": "SG",
+                    "age": 24,
+                    "overall": 150,
+                    "potential": 153,
+                    "salary": "$25,000,000",
+                    "url": "./players/player699.htm"
+                },
+                {
+                    "name": "Mark Aguirre",
+                    "team": "Brighton",
+                    "pos": "SF",
+                    "age": 21,
+                    "overall": 144,
+                    "potential": 150,
+                    "salary": "$25,000,000",
+                    "url": "./players/player702.htm"
+                },
+                {
+                    "name": "Bill Laimbeer",
+                    "team": "Aston Villa",
+                    "pos": "C",
+                    "age": 24,
+                    "overall": 146,
+                    "potential": 149,
+                    "salary": "$13,612,097",
+                    "url": "./players/player874.htm"
+                },
+                {
+                    "name": "Darrell Griffith",
+                    "team": "Crystal Palace",
+                    "pos": "SG",
+                    "age": 23,
+                    "overall": 148,
+                    "potential": 148,
+                    "salary": "$25,000,000",
+                    "url": "./players/player703.htm"
+                },
+                {
+                    "name": "Joe Barry Carroll",
+                    "team": "AC Milan",
+                    "pos": "C",
+                    "age": 23,
+                    "overall": 144,
+                    "potential": 147,
+                    "salary": "$19,040,342",
+                    "url": "./players/player710.htm"
+                },
+                {
+                    "name": "Michael Cooper",
+                    "team": "AFC Richmond",
+                    "pos": "SG",
+                    "age": 25,
+                    "overall": 145,
+                    "potential": 147,
+                    "salary": "$12,412,500",
+                    "url": "./players/player705.htm"
+                },
+                {
+                    "name": "Jack Sikma",
+                    "team": "Chelsea",
+                    "pos": "C",
+                    "age": 25,
+                    "overall": 146,
+                    "potential": 146,
+                    "salary": "$17,500,000",
+                    "url": "./players/player870.htm"
+                },
+                {
+                    "name": "Gilbert Arenas",
+                    "team": "Sporting CP",
+                    "pos": "SG",
+                    "age": 18,
+                    "overall": 101,
+                    "potential": 143,
+                    "salary": "$7,500,000",
+                    "url": "./players/player677.htm"
+                },
+                {
+                    "name": "Luol Deng",
+                    "team": "Manchester City",
+                    "pos": "SF",
+                    "age": 18,
+                    "overall": 100,
+                    "potential": 143,
+                    "salary": "$5,000,000",
+                    "url": "./players/player342.htm"
+                },
+                {
+                    "name": "Steve Nash",
+                    "team": "Paris Saint-Germain",
+                    "pos": "SG",
+                    "age": 22,
+                    "overall": 125,
+                    "potential": 143,
+                    "salary": "$10,000,000",
+                    "url": "./players/player255.htm"
+                },
+                {
+                    "name": "Magic Johnson",
+                    "team": "AFC Richmond",
+                    "pos": "PG",
+                    "age": 22,
+                    "overall": 139,
+                    "potential": 139,
+                    "salary": "$25,000,000",
+                    "url": "./players/player698.htm"
+                },
+                {
+                    "name": "Larry Drew",
+                    "team": "FL Fart",
+                    "pos": "PG",
+                    "age": 23,
+                    "overall": 134,
+                    "potential": 138,
+                    "salary": "$9,791,467",
+                    "url": "./players/player1053.htm"
+                },
+                {
+                    "name": "Purvis Short",
+                    "team": "Monaco",
+                    "pos": "PF",
+                    "age": 24,
+                    "overall": 134,
+                    "potential": 138,
+                    "salary": "$13,804,686",
+                    "url": "./players/player879.htm"
+                },
+                {
+                    "name": "Jim Paxson",
+                    "team": "Chelsea",
+                    "pos": "SG",
+                    "age": 24,
+                    "overall": 137,
+                    "potential": 137,
+                    "salary": "$13,328,239",
+                    "url": "./players/player875.htm"
+                },
+                {
+                    "name": "Dirk Nowitzki",
+                    "team": "Juventus",
+                    "pos": "PF",
+                    "age": 19,
+                    "overall": 94,
+                    "potential": 136,
+                    "salary": "$10,000,000",
+                    "url": "./players/player1325.htm"
+                }
+            ],
+            "veteranRegressionRisk": [
+                {
+                    "name": "Artis Gilmore",
+                    "team": "Paris Saint-Germain",
+                    "pos": "C",
+                    "age": 32,
+                    "overall": 128,
+                    "potential": 128,
+                    "salary": "$1,290,000",
+                    "url": "./players/player707.htm"
+                },
+                {
+                    "name": "Kareem Abdul-Jabbar",
+                    "team": "Crystal Palace",
+                    "pos": "C",
+                    "age": 34,
+                    "overall": 118,
+                    "potential": 118,
+                    "salary": "$903,000",
+                    "url": "./players/player877.htm"
+                },
+                {
+                    "name": "Fred Brown",
+                    "team": "FL Fart",
+                    "pos": "SG",
+                    "age": 33,
+                    "overall": 102,
+                    "potential": 102,
+                    "salary": "$1,290,000",
+                    "url": "./players/player723.htm"
+                },
+                {
+                    "name": "Elvin Hayes",
+                    "team": "Real Madrid",
+                    "pos": "C",
+                    "age": 35,
+                    "overall": 100,
+                    "potential": 100,
+                    "salary": "$1,290,000",
+                    "url": "./players/player735.htm"
+                },
+                {
+                    "name": "Dan Issel",
+                    "team": "Marseille",
+                    "pos": "PF",
+                    "age": 34,
+                    "overall": 99,
+                    "potential": 99,
+                    "salary": "$4,500,000",
+                    "url": "./players/player896.htm"
+                },
+                {
+                    "name": "George Johnson",
+                    "team": "Barcelona",
+                    "pos": "PF",
+                    "age": 32,
+                    "overall": 95,
+                    "potential": 95,
+                    "salary": "$645,000",
+                    "url": "./players/player762.htm"
+                },
+                {
+                    "name": "James Silas",
+                    "team": "Marseille",
+                    "pos": "PF",
+                    "age": 32,
+                    "overall": 80,
+                    "potential": 80,
+                    "salary": "$1,800,000",
+                    "url": "./players/player929.htm"
+                },
+                {
+                    "name": "Steve Mix",
+                    "team": "Juventus",
+                    "pos": "SF",
+                    "age": 33,
+                    "overall": 79,
+                    "potential": 79,
+                    "salary": "$2,302,908",
+                    "url": "./players/player923.htm"
+                },
+                {
+                    "name": "Dennis Awtrey",
+                    "team": "Atletico Madrid",
+                    "pos": "C",
+                    "age": 33,
+                    "overall": 60,
+                    "potential": 60,
+                    "salary": "$777,000",
+                    "url": "./players/player1136.htm"
+                }
+            ],
+            "highVariancePlayers": [
+                {
+                    "name": "Andre Iguodala",
+                    "team": "Ajax",
+                    "pos": "SF",
+                    "age": 19,
+                    "overall": 119,
+                    "potential": 163,
+                    "salary": "$10,000,000",
+                    "url": "./players/player1314.htm"
+                },
+                {
+                    "name": "Luol Deng",
+                    "team": "Manchester City",
+                    "pos": "SF",
+                    "age": 18,
+                    "overall": 100,
+                    "potential": 143,
+                    "salary": "$5,000,000",
+                    "url": "./players/player342.htm"
+                },
+                {
+                    "name": "Dirk Nowitzki",
+                    "team": "Juventus",
+                    "pos": "PF",
+                    "age": 19,
+                    "overall": 94,
+                    "potential": 136,
+                    "salary": "$10,000,000",
+                    "url": "./players/player1325.htm"
+                },
+                {
+                    "name": "Gilbert Arenas",
+                    "team": "Sporting CP",
+                    "pos": "SG",
+                    "age": 18,
+                    "overall": 101,
+                    "potential": 143,
+                    "salary": "$7,500,000",
+                    "url": "./players/player677.htm"
+                },
+                {
+                    "name": "Eric Gordon",
+                    "team": "Brighton",
+                    "pos": "SG",
+                    "age": 19,
+                    "overall": 97,
+                    "potential": 134,
+                    "salary": "$5,000,000",
+                    "url": "./players/player339.htm"
+                },
+                {
+                    "name": "J.J. Redick",
+                    "team": "Manchester United",
+                    "pos": "SG",
+                    "age": 23,
+                    "overall": 96,
+                    "potential": 132,
+                    "salary": "$2,911,416",
+                    "url": "./players/player373.htm"
+                },
+                {
+                    "name": "Michael Adams",
+                    "team": "AFC Richmond",
+                    "pos": "SG",
+                    "age": 21,
+                    "overall": 100,
+                    "potential": 132,
+                    "salary": "$7,500,000",
+                    "url": "./players/player681.htm"
+                },
+                {
+                    "name": "Pervis Ellison",
+                    "team": "Valencia",
+                    "pos": "C",
+                    "age": 22,
+                    "overall": 90,
+                    "potential": 119,
+                    "salary": "$3,373,713",
+                    "url": "./players/player436.htm"
+                },
+                {
+                    "name": "Vincent Askew",
+                    "team": "Barcelona",
+                    "pos": "SF",
+                    "age": 21,
+                    "overall": 81,
+                    "potential": 109,
+                    "salary": "$555,000",
+                    "url": "./players/player244.htm"
+                },
+                {
+                    "name": "Jordan Poole",
+                    "team": "Marseille",
+                    "pos": "SG",
+                    "age": 20,
+                    "overall": 89,
+                    "potential": 116,
+                    "salary": "$4,241,116",
+                    "url": "./players/player1330.htm"
+                },
+                {
+                    "name": "Paul Pierce",
+                    "team": "Barcelona",
+                    "pos": "SF",
+                    "age": 20,
+                    "overall": 133,
+                    "potential": 160,
+                    "salary": "$7,500,000",
+                    "url": "./players/player693.htm"
+                },
+                {
+                    "name": "Dan Majerle",
+                    "team": "Paris Saint-Germain",
+                    "pos": "SG",
+                    "age": 23,
+                    "overall": 110,
+                    "potential": 135,
+                    "salary": "$3,746,997",
+                    "url": "./players/player332.htm"
+                },
+                {
+                    "name": "Nate Robinson",
+                    "team": "Sheffield United",
+                    "pos": "PG",
+                    "age": 20,
+                    "overall": 81,
+                    "potential": 106,
+                    "salary": "$3,750,000",
+                    "url": "./players/player694.htm"
+                },
+                {
+                    "name": "Mike Conley",
+                    "team": "Tottenham Hotspur",
+                    "pos": "PG",
+                    "age": 19,
+                    "overall": 91,
+                    "potential": 115,
+                    "salary": "$3,750,000",
+                    "url": "./players/player674.htm"
+                },
+                {
+                    "name": "Ousmane Dieng",
+                    "team": "Sheffield United",
+                    "pos": "SF",
+                    "age": 20,
+                    "overall": 80,
+                    "potential": 104,
+                    "salary": "$5,481,521",
+                    "url": "./players/player621.htm"
+                },
+                {
+                    "name": "Scott Skiles",
+                    "team": "Ajax",
+                    "pos": "PG",
+                    "age": 22,
+                    "overall": 94,
+                    "potential": 118,
+                    "salary": "$5,000,000",
+                    "url": "./players/player390.htm"
+                },
+                {
+                    "name": "Hubert Davis",
+                    "team": "Tottenham Hotspur",
+                    "pos": "SG",
+                    "age": 22,
+                    "overall": 104,
+                    "potential": 127,
+                    "salary": "$3,769,512",
+                    "url": "./players/player440.htm"
+                },
+                {
+                    "name": "Jared Butler",
+                    "team": "Ajax",
+                    "pos": "SG",
+                    "age": 21,
+                    "overall": 80,
+                    "potential": 103,
+                    "salary": "$3,821,704",
+                    "url": "./players/player1312.htm"
+                },
+                {
+                    "name": "Maurice Harkless",
+                    "team": "Valencia",
+                    "pos": "SF",
+                    "age": 18,
+                    "overall": 72,
+                    "potential": 95,
+                    "salary": "$380,000",
+                    "url": "./players/player669.htm"
+                },
+                {
+                    "name": "Amari Bailey",
+                    "team": "Aston Villa",
+                    "pos": "SG",
+                    "age": 17,
+                    "overall": 71,
+                    "potential": 93,
+                    "salary": "$555,000",
+                    "url": "./players/player1340.htm"
+                }
+            ]
+        },
+        "standingsSnapshot": {
+            "source": "standings.htm",
+            "sections": [
+                {
+                    "title": "CLB Standings",
+                    "slug": "clb-standings",
+                    "teams": [
+                        {
+                            "team": "AFC Richmond",
+                            "rosterUrl": "./rosters/roster12.htm",
+                            "rosterFile": "roster12.htm",
+                            "wins": 14,
+                            "losses": 1,
+                            "pct": 0.933,
+                            "gb": "-",
+                            "home": "7-0",
+                            "road": "7-1",
+                            "division": "14-1",
+                            "conference": "14-1",
+                            "pf": 123.6,
+                            "pa": 109.2,
+                            "diff": 14.4,
+                            "streak": "W2",
+                            "last10": "9-1",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "AC Milan",
+                            "rosterUrl": "./rosters/roster9.htm",
+                            "rosterFile": "roster9.htm",
+                            "wins": 10,
+                            "losses": 7,
+                            "pct": 0.588,
+                            "gb": 5.0,
+                            "home": "6-6",
+                            "road": "4-1",
+                            "division": "10-7",
+                            "conference": "10-7",
+                            "pf": 122.2,
+                            "pa": 119.0,
+                            "diff": 3.2,
+                            "streak": "L1",
+                            "last10": "6-4",
+                            "rowClass": "row2"
+                        },
+                        {
+                            "team": "Benfica",
+                            "rosterUrl": "./rosters/roster13.htm",
+                            "rosterFile": "roster13.htm",
+                            "wins": 9,
+                            "losses": 7,
+                            "pct": 0.563,
+                            "gb": 5.5,
+                            "home": "5-1",
+                            "road": "4-6",
+                            "division": "9-7",
+                            "conference": "9-7",
+                            "pf": 122.9,
+                            "pa": 119.4,
+                            "diff": 3.5,
+                            "streak": "W1",
+                            "last10": "5-5",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "Chelsea",
+                            "rosterUrl": "./rosters/roster17.htm",
+                            "rosterFile": "roster17.htm",
+                            "wins": 6,
+                            "losses": 6,
+                            "pct": 0.5,
+                            "gb": 6.5,
+                            "home": "5-2",
+                            "road": "1-4",
+                            "division": "6-6",
+                            "conference": "6-6",
+                            "pf": 113.4,
+                            "pa": 111.9,
+                            "diff": 1.5,
+                            "streak": "L1",
+                            "last10": "4-6",
+                            "rowClass": "row2"
+                        },
+                        {
+                            "team": "FL Fart",
+                            "rosterUrl": "./rosters/roster27.htm",
+                            "rosterFile": "roster27.htm",
+                            "wins": 8,
+                            "losses": 9,
+                            "pct": 0.471,
+                            "gb": 7.0,
+                            "home": "5-4",
+                            "road": "3-5",
+                            "division": "8-9",
+                            "conference": "8-9",
+                            "pf": 124.1,
+                            "pa": 125.6,
+                            "diff": -1.5,
+                            "streak": "L1",
+                            "last10": "6-4",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "Real Madrid",
+                            "rosterUrl": "./rosters/roster8.htm",
+                            "rosterFile": "roster8.htm",
+                            "wins": 6,
+                            "losses": 9,
+                            "pct": 0.4,
+                            "gb": 8.0,
+                            "home": "2-3",
+                            "road": "4-6",
+                            "division": "6-9",
+                            "conference": "6-9",
+                            "pf": 112.7,
+                            "pa": 119.2,
+                            "diff": -6.5,
+                            "streak": "L5",
+                            "last10": "4-6",
+                            "rowClass": "row2"
+                        },
+                        {
+                            "team": "Sheffield United",
+                            "rosterUrl": "./rosters/roster16.htm",
+                            "rosterFile": "roster16.htm",
+                            "wins": 5,
+                            "losses": 12,
+                            "pct": 0.294,
+                            "gb": 10.0,
+                            "home": "4-6",
+                            "road": "1-6",
+                            "division": "5-12",
+                            "conference": "5-12",
+                            "pf": 116.3,
+                            "pa": 125.3,
+                            "diff": -9.0,
+                            "streak": "W1",
+                            "last10": "3-7",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "Bayern Munich",
+                            "rosterUrl": "./rosters/roster7.htm",
+                            "rosterFile": "roster7.htm",
+                            "wins": 4,
+                            "losses": 11,
+                            "pct": 0.267,
+                            "gb": 10.0,
+                            "home": "0-6",
+                            "road": "4-5",
+                            "division": "4-11",
+                            "conference": "4-11",
+                            "pf": 113.5,
+                            "pa": 118.1,
+                            "diff": -4.6,
+                            "streak": "W1",
+                            "last10": "3-7",
+                            "rowClass": "row2"
+                        }
+                    ]
+                },
+                {
+                    "title": "ELB Standings",
+                    "slug": "elb-standings",
+                    "teams": [
+                        {
+                            "team": "Crystal Palace",
+                            "rosterUrl": "./rosters/roster6.htm",
+                            "rosterFile": "roster6.htm",
+                            "wins": 16,
+                            "losses": 2,
+                            "pct": 0.889,
+                            "gb": "-",
+                            "home": "10-0",
+                            "road": "6-2",
+                            "division": "16-2",
+                            "conference": "16-2",
+                            "pf": 124.6,
+                            "pa": 108.9,
+                            "diff": 15.7,
+                            "streak": "W1",
+                            "last10": "9-1",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "Brighton",
+                            "rosterUrl": "./rosters/roster10.htm",
+                            "rosterFile": "roster10.htm",
+                            "wins": 10,
+                            "losses": 5,
+                            "pct": 0.667,
+                            "gb": 4.5,
+                            "home": "5-0",
+                            "road": "5-5",
+                            "division": "10-5",
+                            "conference": "10-5",
+                            "pf": 114.8,
+                            "pa": 107.3,
+                            "diff": 7.5,
+                            "streak": "W4",
+                            "last10": "7-3",
+                            "rowClass": "row2"
+                        },
+                        {
+                            "team": "Juventus",
+                            "rosterUrl": "./rosters/roster14.htm",
+                            "rosterFile": "roster14.htm",
+                            "wins": 8,
+                            "losses": 6,
+                            "pct": 0.571,
+                            "gb": 6.0,
+                            "home": "5-1",
+                            "road": "3-5",
+                            "division": "8-6",
+                            "conference": "8-6",
+                            "pf": 114.9,
+                            "pa": 110.3,
+                            "diff": 4.6,
+                            "streak": "W1",
+                            "last10": "6-4",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "Marseille",
+                            "rosterUrl": "./rosters/roster15.htm",
+                            "rosterFile": "roster15.htm",
+                            "wins": 8,
+                            "losses": 8,
+                            "pct": 0.5,
+                            "gb": 7.0,
+                            "home": "5-4",
+                            "road": "3-4",
+                            "division": "8-8",
+                            "conference": "8-8",
+                            "pf": 113.1,
+                            "pa": 119.3,
+                            "diff": -6.2,
+                            "streak": "L3",
+                            "last10": "7-3",
+                            "rowClass": "row2"
+                        },
+                        {
+                            "team": "Aston Villa",
+                            "rosterUrl": "./rosters/roster19.htm",
+                            "rosterFile": "roster19.htm",
+                            "wins": 7,
+                            "losses": 9,
+                            "pct": 0.438,
+                            "gb": 8.0,
+                            "home": "5-3",
+                            "road": "2-6",
+                            "division": "7-9",
+                            "conference": "7-9",
+                            "pf": 114.6,
+                            "pa": 111.5,
+                            "diff": 3.1,
+                            "streak": "L1",
+                            "last10": "3-7",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "Atletico Madrid",
+                            "rosterUrl": "./rosters/roster11.htm",
+                            "rosterFile": "roster11.htm",
+                            "wins": 6,
+                            "losses": 9,
+                            "pct": 0.4,
+                            "gb": 8.5,
+                            "home": "5-2",
+                            "road": "1-7",
+                            "division": "6-9",
+                            "conference": "6-9",
+                            "pf": 105.9,
+                            "pa": 115.5,
+                            "diff": -9.7,
+                            "streak": "L2",
+                            "last10": "3-7",
+                            "rowClass": "row2"
+                        },
+                        {
+                            "team": "Manchester United",
+                            "rosterUrl": "./rosters/roster5.htm",
+                            "rosterFile": "roster5.htm",
+                            "wins": 5,
+                            "losses": 12,
+                            "pct": 0.294,
+                            "gb": 10.5,
+                            "home": "5-6",
+                            "road": "0-6",
+                            "division": "5-12",
+                            "conference": "5-12",
+                            "pf": 103.0,
+                            "pa": 108.8,
+                            "diff": -5.8,
+                            "streak": "W1",
+                            "last10": "3-7",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "Ajax",
+                            "rosterUrl": "./rosters/roster18.htm",
+                            "rosterFile": "roster18.htm",
+                            "wins": 3,
+                            "losses": 12,
+                            "pct": 0.2,
+                            "gb": 11.5,
+                            "home": "2-5",
+                            "road": "1-7",
+                            "division": "3-12",
+                            "conference": "3-12",
+                            "pf": 106.4,
+                            "pa": 117.6,
+                            "diff": -11.2,
+                            "streak": "W1",
+                            "last10": "2-8",
+                            "rowClass": "row2"
+                        }
+                    ]
+                },
+                {
+                    "title": "ECL Standings",
+                    "slug": "ecl-standings",
+                    "teams": [
+                        {
+                            "team": "Paris Saint-Germain",
+                            "rosterUrl": "./rosters/roster21.htm",
+                            "rosterFile": "roster21.htm",
+                            "wins": 13,
+                            "losses": 3,
+                            "pct": 0.813,
+                            "gb": "-",
+                            "home": "6-0",
+                            "road": "7-3",
+                            "division": "13-3",
+                            "conference": "13-3",
+                            "pf": 109.2,
+                            "pa": 97.1,
+                            "diff": 12.1,
+                            "streak": "W9",
+                            "last10": "9-1",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "Inter Milan",
+                            "rosterUrl": "./rosters/roster26.htm",
+                            "rosterFile": "roster26.htm",
+                            "wins": 12,
+                            "losses": 4,
+                            "pct": 0.75,
+                            "gb": 1.0,
+                            "home": "6-0",
+                            "road": "6-4",
+                            "division": "12-4",
+                            "conference": "12-4",
+                            "pf": 105.5,
+                            "pa": 96.9,
+                            "diff": 8.6,
+                            "streak": "W4",
+                            "last10": "8-2",
+                            "rowClass": "row2"
+                        },
+                        {
+                            "team": "Barcelona",
+                            "rosterUrl": "./rosters/roster24.htm",
+                            "rosterFile": "roster24.htm",
+                            "wins": 11,
+                            "losses": 5,
+                            "pct": 0.688,
+                            "gb": 2.0,
+                            "home": "8-2",
+                            "road": "3-3",
+                            "division": "11-5",
+                            "conference": "11-5",
+                            "pf": 106.2,
+                            "pa": 101.3,
+                            "diff": 4.9,
+                            "streak": "W2",
+                            "last10": "6-4",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "Monaco",
+                            "rosterUrl": "./rosters/roster20.htm",
+                            "rosterFile": "roster20.htm",
+                            "wins": 10,
+                            "losses": 5,
+                            "pct": 0.667,
+                            "gb": 2.5,
+                            "home": "7-2",
+                            "road": "3-3",
+                            "division": "10-5",
+                            "conference": "10-5",
+                            "pf": 110.5,
+                            "pa": 107.9,
+                            "diff": 2.5,
+                            "streak": "L3",
+                            "last10": "6-4",
+                            "rowClass": "row2"
+                        },
+                        {
+                            "team": "Sporting CP",
+                            "rosterUrl": "./rosters/roster23.htm",
+                            "rosterFile": "roster23.htm",
+                            "wins": 6,
+                            "losses": 9,
+                            "pct": 0.4,
+                            "gb": 6.5,
+                            "home": "6-3",
+                            "road": "0-6",
+                            "division": "6-9",
+                            "conference": "6-9",
+                            "pf": 102.7,
+                            "pa": 103.2,
+                            "diff": -0.5,
+                            "streak": "W1",
+                            "last10": "4-6",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "Tottenham Hotspur",
+                            "rosterUrl": "./rosters/roster22.htm",
+                            "rosterFile": "roster22.htm",
+                            "wins": 4,
+                            "losses": 10,
+                            "pct": 0.286,
+                            "gb": 8.0,
+                            "home": "3-4",
+                            "road": "1-6",
+                            "division": "4-10",
+                            "conference": "4-10",
+                            "pf": 99.6,
+                            "pa": 109.6,
+                            "diff": -9.9,
+                            "streak": "W1",
+                            "last10": "3-7",
+                            "rowClass": "row2"
+                        },
+                        {
+                            "team": "Valencia",
+                            "rosterUrl": "./rosters/roster25.htm",
+                            "rosterFile": "roster25.htm",
+                            "wins": 3,
+                            "losses": 11,
+                            "pct": 0.214,
+                            "gb": 9.0,
+                            "home": "2-4",
+                            "road": "1-7",
+                            "division": "3-11",
+                            "conference": "3-11",
+                            "pf": 99.1,
+                            "pa": 108.6,
+                            "diff": -9.4,
+                            "streak": "L1",
+                            "last10": "3-7",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "team": "Manchester City",
+                            "rosterUrl": "./rosters/roster28.htm",
+                            "rosterFile": "roster28.htm",
+                            "wins": 2,
+                            "losses": 14,
+                            "pct": 0.125,
+                            "gb": 11.0,
+                            "home": "2-6",
+                            "road": "0-8",
+                            "division": "2-14",
+                            "conference": "2-14",
+                            "pf": 90.1,
+                            "pa": 100.7,
+                            "diff": -10.6,
+                            "streak": "L5",
+                            "last10": "2-8",
+                            "rowClass": "row2"
+                        }
+                    ]
+                }
+            ]
+        },
+        "teamDirectory": {
+            "AC Milan": {
+                "team": "AC Milan",
+                "rosterFile": "roster9.htm",
+                "starPlayer": {
+                    "name": "Larry Bird",
+                    "url": "../players/player697.htm",
+                    "pos": "PF",
+                    "age": "24",
+                    "overall": "160",
+                    "potential": "160"
+                }
+            },
+            "AFC Richmond": {
+                "team": "AFC Richmond",
+                "rosterFile": "roster12.htm",
+                "starPlayer": {
+                    "name": "Michael Cooper",
+                    "url": "../players/player705.htm",
+                    "pos": "SG",
+                    "age": "25",
+                    "overall": "145",
+                    "potential": "147"
+                }
+            },
+            "Ajax": {
+                "team": "Ajax",
+                "rosterFile": "roster18.htm",
+                "starPlayer": {
+                    "name": "Cliff Robinson",
+                    "url": "../players/player881.htm",
+                    "pos": "PF",
+                    "age": "21",
+                    "overall": "123",
+                    "potential": "126"
+                }
+            },
+            "Aston Villa": {
+                "team": "Aston Villa",
+                "rosterFile": "roster19.htm",
+                "starPlayer": {
+                    "name": "Bill Laimbeer",
+                    "url": "../players/player874.htm",
+                    "pos": "C",
+                    "age": "24",
+                    "overall": "146",
+                    "potential": "149"
+                }
+            },
+            "Atletico Madrid": {
+                "team": "Atletico Madrid",
+                "rosterFile": "roster11.htm",
+                "starPlayer": {
+                    "name": "James Donaldson",
+                    "url": "../players/player712.htm",
+                    "pos": "C",
+                    "age": "24",
+                    "overall": "127",
+                    "potential": "127"
+                }
+            },
+            "Barcelona": {
+                "team": "Barcelona",
+                "rosterFile": "roster24.htm",
+                "starPlayer": {
+                    "name": "Paul Pierce",
+                    "url": "../players/player693.htm",
+                    "pos": "SF",
+                    "age": "20",
+                    "overall": "133",
+                    "potential": "160"
+                }
+            },
+            "Bayern Munich": {
+                "team": "Bayern Munich",
+                "rosterFile": "roster7.htm",
+                "starPlayer": {
+                    "name": "Bernard King",
+                    "url": "../players/player713.htm",
+                    "pos": "SF",
+                    "age": "24",
+                    "overall": "127",
+                    "potential": "127"
+                }
+            },
+            "Benfica": {
+                "team": "Benfica",
+                "rosterFile": "roster13.htm",
+                "starPlayer": {
+                    "name": "Moses Malone",
+                    "url": "../players/player872.htm",
+                    "pos": "C",
+                    "age": "26",
+                    "overall": "156",
+                    "potential": "156"
+                }
+            },
+            "Brighton": {
+                "team": "Brighton",
+                "rosterFile": "roster10.htm",
+                "starPlayer": {
+                    "name": "Kiki Vandeweghe",
+                    "url": "../players/player701.htm",
+                    "pos": "SG",
+                    "age": "23",
+                    "overall": "155",
+                    "potential": "156"
+                }
+            },
+            "Chelsea": {
+                "team": "Chelsea",
+                "rosterFile": "roster17.htm",
+                "starPlayer": {
+                    "name": "Jack Sikma",
+                    "url": "../players/player870.htm",
+                    "pos": "C",
+                    "age": "25",
+                    "overall": "146",
+                    "potential": "146"
+                }
+            },
+            "Crystal Palace": {
+                "team": "Crystal Palace",
+                "rosterFile": "roster6.htm",
+                "starPlayer": {
+                    "name": "Darrell Griffith",
+                    "url": "../players/player703.htm",
+                    "pos": "SG",
+                    "age": "23",
+                    "overall": "148",
+                    "potential": "148"
+                }
+            },
+            "FL Fart": {
+                "team": "FL Fart",
+                "rosterFile": "roster27.htm",
+                "starPlayer": {
+                    "name": "Larry Drew",
+                    "url": "../players/player1053.htm",
+                    "pos": "PG",
+                    "age": "23",
+                    "overall": "134",
+                    "potential": "138"
+                }
+            },
+            "Inter Milan": {
+                "team": "Inter Milan",
+                "rosterFile": "roster26.htm",
+                "starPlayer": {
+                    "name": "World B. Free",
+                    "url": "../players/player1048.htm",
+                    "pos": "SG",
+                    "age": "27",
+                    "overall": "140",
+                    "potential": "140"
+                }
+            },
+            "Juventus": {
+                "team": "Juventus",
+                "rosterFile": "roster14.htm",
+                "starPlayer": {
+                    "name": "Rolando Blackman",
+                    "url": "../players/player871.htm",
+                    "pos": "SF",
+                    "age": "22",
+                    "overall": "126",
+                    "potential": "126"
+                }
+            },
+            "Manchester City": {
+                "team": "Manchester City",
+                "rosterFile": "roster28.htm",
+                "starPlayer": {
+                    "name": "Kirk Hinrich",
+                    "url": "../players/player636.htm",
+                    "pos": "SG",
+                    "age": "23",
+                    "overall": "113",
+                    "potential": "120"
+                }
+            },
+            "Manchester United": {
+                "team": "Manchester United",
+                "rosterFile": "roster5.htm",
+                "starPlayer": {
+                    "name": "Robert Reid",
+                    "url": "../players/player885.htm",
+                    "pos": "SF",
+                    "age": "26",
+                    "overall": "124",
+                    "potential": "124"
+                }
+            },
+            "Marseille": {
+                "team": "Marseille",
+                "rosterFile": "roster15.htm",
+                "starPlayer": {
+                    "name": "Robert Parish",
+                    "url": "../players/player873.htm",
+                    "pos": "C",
+                    "age": "28",
+                    "overall": "139",
+                    "potential": "139"
+                }
+            },
+            "Monaco": {
+                "team": "Monaco",
+                "rosterFile": "roster20.htm",
+                "starPlayer": {
+                    "name": "Purvis Short",
+                    "url": "../players/player879.htm",
+                    "pos": "PF",
+                    "age": "24",
+                    "overall": "134",
+                    "potential": "138"
+                }
+            },
+            "Paris Saint-Germain": {
+                "team": "Paris Saint-Germain",
+                "rosterFile": "roster21.htm",
+                "starPlayer": {
+                    "name": "Kelly Tripucka",
+                    "url": "../players/player1049.htm",
+                    "pos": "SF",
+                    "age": "22",
+                    "overall": "144",
+                    "potential": "156"
+                }
+            },
+            "Real Madrid": {
+                "team": "Real Madrid",
+                "rosterFile": "roster8.htm",
+                "starPlayer": {
+                    "name": "Sidney Moncrief",
+                    "url": "../players/player699.htm",
+                    "pos": "SG",
+                    "age": "24",
+                    "overall": "150",
+                    "potential": "153"
+                }
+            },
+            "Sheffield United": {
+                "team": "Sheffield United",
+                "rosterFile": "roster16.htm",
+                "starPlayer": {
+                    "name": "Rickey Green",
+                    "url": "../players/player882.htm",
+                    "pos": "PG",
+                    "age": "27",
+                    "overall": "124",
+                    "potential": "124"
+                }
+            },
+            "Sporting CP": {
+                "team": "Sporting CP",
+                "rosterFile": "roster23.htm",
+                "starPlayer": {
+                    "name": "Lewis Lloyd",
+                    "url": "../players/player902.htm",
+                    "pos": "SF",
+                    "age": "22",
+                    "overall": "118",
+                    "potential": "125"
+                }
+            },
+            "Tottenham Hotspur": {
+                "team": "Tottenham Hotspur",
+                "rosterFile": "roster22.htm",
+                "starPlayer": {
+                    "name": "Doug Christie",
+                    "url": "../players/player243.htm",
+                    "pos": "SF",
+                    "age": "22",
+                    "overall": "120",
+                    "potential": "136"
+                }
+            },
+            "Valencia": {
+                "team": "Valencia",
+                "rosterFile": "roster25.htm",
+                "starPlayer": {
+                    "name": "Isiah Thomas",
+                    "url": "../players/player1047.htm",
+                    "pos": "PG",
+                    "age": "20",
+                    "overall": "108",
+                    "potential": "108"
+                }
+            }
+        }
+    },
+    "articlePrompts": [
+        {
+            "id": "offseason-board",
+            "title": "The Offseason Board",
+            "prompt": "Write a ranked offseason board using the top free-agent, cap-space, and team-need context. Explain not just who is best, but who changes the market."
+        },
+        {
+            "id": "cap-space-power-rankings",
+            "title": "Cap Space Power Rankings",
+            "prompt": "Rank the teams with the most meaningful spending flexibility. Tie every ranking to roster need and realistic market leverage."
+        },
+        {
+            "id": "sim-6-pressure-index",
+            "title": "Sim 6 Pressure Index",
+            "prompt": "Identify the teams facing the hardest offseason decisions before FA1: expiring talent, cap stress, roster holes, and contender timelines."
+        },
+        {
+            "id": "free-agent-market-preview",
+            "title": "Free Agent Market Preview",
+            "prompt": "Preview the free-agent class before bidding begins. Group players by stars, starters, upside bets, specialists, and risky veterans."
+        }
+    ],
+    "writerNotes": [
+        "Use this as an evidence pack, not an auto-written article.",
+        "For Sim 6 and FA1, emphasize market setup and team needs more than transaction judgment.",
+        "For FA2, emphasize what changed after the first wave and who remains available.",
+        "For FA3/TC and TC, emphasize roster completion, internal development, and regression risk.",
+        "Every article should cite concrete players, cap situations, or roster holes from the package."
+    ]
+}

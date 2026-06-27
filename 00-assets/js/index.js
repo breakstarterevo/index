@@ -62,6 +62,40 @@
     return getRepoScopedPath(fallback);
   }
 
+  function getStatusFromDocumentTitle() {
+    var match = String(document.title || "").match(/\b(Pre[-\s]?Offseason|Offseason Preview|Sim\s*\d+|FA\s*[12]|FA\s*3(?:\s*\/\s*TC)?|TC|Preseason)\b/i);
+    var label;
+
+    if (!match) {
+      return "";
+    }
+
+    label = match[1].replace(/\s*\/\s*/g, "/").replace(/\s+/g, " ").trim();
+    if (/^(pre[-\s]?offseason|offseason preview)$/i.test(label)) {
+      return "Sim 6";
+    }
+    if (/^sim\s*\d+$/i.test(label)) {
+      return "Sim " + label.match(/\d+/)[0];
+    }
+    if (/^fa\s*[12]$/i.test(label)) {
+      return "FA" + label.match(/[123]/)[0];
+    }
+    if (/^fa\s*3\/tc$/i.test(label)) {
+      return "FA3/TC";
+    }
+    if (/^fa\s*3$/i.test(label)) {
+      return "FA3";
+    }
+    if (/^tc$/i.test(label)) {
+      return "TC";
+    }
+    if (/^preseason$/i.test(label)) {
+      return "Preseason";
+    }
+
+    return "";
+  }
+
   function ensureStyles() {
     if (document.getElementById(STYLE_ID)) {
       return;
@@ -255,8 +289,8 @@
     search.className = "site-shell-search";
     search.id = "siteShellSearch";
     searchStatus.className = "site-shell-search-status";
-    searchStatus.textContent = "Sim 2 · Dec 1983";
-    searchStatus.title = "Latest sim: updated through 31/12/1983";
+    searchStatus.textContent = getStatusFromDocumentTitle() || "Sim 2 · Dec 1983";
+    searchStatus.title = "Latest league status";
     searchInput.className = "site-shell-search-input";
     searchInput.type = "search";
     searchInput.autocomplete = "off";
@@ -557,6 +591,7 @@
 
   function updateLatestSimStatus() {
     var node = document.querySelector(".site-shell-search-status");
+    var titleStatus = getStatusFromDocumentTitle();
 
     if (!node) {
       return;
@@ -570,7 +605,9 @@
         var updatedThrough = getLatestSimEndDate(data && data.results);
         var labelParts = [];
 
-        if (simNumber) {
+        if (titleStatus) {
+          labelParts.push(titleStatus);
+        } else if (simNumber) {
           labelParts.push("Sim " + simNumber);
         }
         if (periodLabel) {
@@ -585,8 +622,8 @@
         }
       })
       .catch(function () {
-        node.textContent = "Sim 2 · Dec 1983";
-        node.title = "Latest sim: updated through 31/12/1983";
+        node.textContent = titleStatus || "Sim 2 · Dec 1983";
+        node.title = titleStatus ? "Latest league status" : "Latest sim: updated through 31/12/1983";
       });
   }
 

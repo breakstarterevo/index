@@ -579,6 +579,43 @@
     Array.prototype.slice.call(document.querySelectorAll('a[href*="player"]')).forEach(enhancePlayerAnchorHref);
   }
 
+  function isRewriteEligibleTeamHref(href) {
+    var h = String(href || "").toLowerCase();
+    return Boolean(core.getRosterFileFromUrl(href)) && h.indexOf("unified-roster") === -1 && h.indexOf("file=roster") === -1;
+  }
+
+  function enhanceTeamAnchorHref(link) {
+    if (!link || !link.getAttribute) {
+      return;
+    }
+
+    var href = link.getAttribute("href") || "";
+
+    if (link.dataset.leagueTeamDestBound === "true") {
+      if (link.dataset.leagueLegacyTeamHref) {
+        link.setAttribute("href", core.getTeamPageUrl(link.dataset.leagueLegacyTeamHref));
+      }
+      return;
+    }
+
+    if (!isRewriteEligibleTeamHref(href)) {
+      return;
+    }
+
+    link.dataset.leagueLegacyTeamHref = href;
+    link.dataset.leagueTeamDestBound = "true";
+    link.setAttribute("href", core.getTeamPageUrl(href));
+  }
+
+  function applyTeamPageLinksToAnchors() {
+    Array.prototype.slice.call(document.querySelectorAll('a[href*="roster"]')).forEach(enhanceTeamAnchorHref);
+  }
+
+  function applyPageDestinationLinksToAnchors() {
+    applyPlayerPageLinksToAnchors();
+    applyTeamPageLinksToAnchors();
+  }
+
   function getPlayerPreviewAttr(player, key) {
     var aliases = {
       Ins: ["Ins", "InsideScoring"],
@@ -1021,7 +1058,7 @@
 
         root.innerHTML = "";
         root.appendChild(buildWaiverTable(enrichedPlayers));
-        applyPlayerPageLinksToAnchors();
+        applyPageDestinationLinksToAnchors();
       })
       .catch(function () {
         root.innerHTML = "";
@@ -1035,12 +1072,12 @@
         var teamMap = core.buildTeamMap(teams);
         initPlayerSearch(teamMap);
         initWaiverDatabaseTable(teamMap);
-        applyPlayerPageLinksToAnchors();
+        applyPageDestinationLinksToAnchors();
       })
       .catch(function () {
         initPlayerSearch({});
         initWaiverDatabaseTable({});
-        applyPlayerPageLinksToAnchors();
+        applyPageDestinationLinksToAnchors();
       });
   });
 })();

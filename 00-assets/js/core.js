@@ -115,6 +115,10 @@
     return url;
   }
 
+  function normalizeRosterUrl(url) {
+    return normalizePlayerUrl(url);
+  }
+
   function loadJsonData(filename) {
     if (!jsonPromiseCache[filename]) {
       var jsonPath = getBuildJsonPath(filename);
@@ -313,8 +317,25 @@
     return "";
   }
 
+  function getRosterFileFromUrl(url) {
+    var str = String(url || "");
+    var match = str.match(/(?:^|\/)(roster\d+\.htm)(?:$|[?#])/i);
+    if (match) {
+      return match[1].toLowerCase();
+    }
+    var fileMatch = str.match(/[?&]file=(roster\d+\.htm)(?:&|#|$)/i);
+    if (fileMatch) {
+      return fileMatch[1].toLowerCase();
+    }
+    return "";
+  }
+
   function prefersClassicPlayerPages() {
     return getSettings().playerPageDestination === "classic";
+  }
+
+  function prefersClassicTeamPages() {
+    return getSettings().teamPageDestination !== "unified";
   }
 
   function getUnifiedPlayerPageHref(id) {
@@ -357,6 +378,48 @@
     }
 
     return getUnifiedPlayerPageHref(id);
+  }
+
+  function getUnifiedTeamPageHref(file) {
+    var pageName = usesSuperCupPlayerPages() ? "unified-roster-supercup.htm" : "unified-roster.htm";
+
+    if (isAssetHtmlPage()) {
+      return "./" + pageName + "?file=" + encodeURIComponent(file);
+    }
+
+    if (isNestedPage()) {
+      if (usesSuperCupPlayerPages()) {
+        return "../../00-assets/html/" + pageName + "?file=" + encodeURIComponent(file);
+      }
+      return "../00-assets/html/" + pageName + "?file=" + encodeURIComponent(file);
+    }
+
+    if (usesSuperCupPlayerPages()) {
+      return "../00-assets/html/" + pageName + "?file=" + encodeURIComponent(file);
+    }
+
+    return "./00-assets/html/" + pageName + "?file=" + encodeURIComponent(file);
+  }
+
+  function getTeamPageUrl(url) {
+    var raw = String(url || "");
+    if (prefersClassicTeamPages()) {
+      var fileFromUnified = raw.match(/[?&]file=(roster\d+\.htm)(?:&|#|$)/i);
+      if (fileFromUnified) {
+        if (isAssetHtmlPage()) {
+          return (usesSuperCupPlayerPages() ? "../../00-SuperCup/rosters/" : "../../rosters/") + fileFromUnified[1].toLowerCase();
+        }
+        return normalizeRosterUrl("../rosters/" + fileFromUnified[1].toLowerCase());
+      }
+      return normalizeRosterUrl(raw);
+    }
+
+    var file = getRosterFileFromUrl(url);
+    if (!file) {
+      return normalizeRosterUrl(url);
+    }
+
+    return getUnifiedTeamPageHref(file);
   }
 
   function buildTeamMap(teams) {
@@ -449,8 +512,11 @@
     normalizeName: normalizeName,
     escapeHtml: escapeHtml,
     getPlayerFileFromUrl: getPlayerFileFromUrl,
+    getRosterFileFromUrl: getRosterFileFromUrl,
     prefersClassicPlayerPages: prefersClassicPlayerPages,
+    prefersClassicTeamPages: prefersClassicTeamPages,
     getPlayerPageUrl: getPlayerPageUrl,
+    getTeamPageUrl: getTeamPageUrl,
     buildTeamMap: buildTeamMap,
     enrichPlayers: enrichPlayers,
     renderResults: renderResults
