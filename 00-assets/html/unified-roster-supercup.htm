@@ -281,6 +281,11 @@
       width: 240px;
     }
     .data-table th:first-child { background: var(--team-color); z-index: 3; }
+    .data-table td.rating-purple { background: #7e22ce; color: #fff; font-weight: 900; }
+    .data-table td.rating-blue { background: #1d4ed8; color: #fff; font-weight: 900; }
+    .data-table td.rating-green { background: #15803d; color: #fff; font-weight: 900; }
+    .data-table td.rating-yellow { background: #facc15; color: #1f2937; font-weight: 900; }
+    .data-table td.rating-orange { background: #f97316; color: #fff; font-weight: 900; }
     .data-table th.sort-asc::after { content: " ^"; font-size: 0.58rem; }
     .data-table th.sort-desc::after { content: " v"; font-size: 0.58rem; }
     .player-name-link {
@@ -1418,10 +1423,12 @@
             if (nameColIdx === i && text !== "-") {
               const href = toPlayerHref(cell.href) || resolvePlayerHref(text);
               if (href) {
-                return `<td><a class="player-name-link" href="${href}">${text}</a></td>`;
+                const classAttr = cell.className ? ` class="${cell.className}"` : "";
+                return `<td${classAttr}><a class="player-name-link" href="${href}">${text}</a></td>`;
               }
             }
-            return `<td>${text}</td>`;
+            const classAttr = cell.className ? ` class="${cell.className}"` : "";
+            return `<td${classAttr}>${text}</td>`;
           }).join("")}</tr>`).join("")
         : `<tr><td colspan="${headers.length}">No rows</td></tr>`;
       el.innerHTML = `${head}<tbody>${bodyRows}</tbody>`;
@@ -1437,6 +1444,50 @@
       const rawUrl = String((fallback && fallback.url) || "").trim();
       if (!rawUrl) return "";
       return toPlayerHref(rawUrl);
+    }
+
+    function findRosterPlayerByName(name) {
+      const key = normalizeName(name);
+      if (!key) return null;
+      const currentTeamName = state.current ? state.current.teamName : "";
+      const teamMatch = (state.players || []).find((p) => normalizeName(p.name) === key && normalizeName(p.teamLabel) === normalizeName(currentTeamName));
+      return teamMatch || (state.players || []).find((p) => normalizeName(p.name) === key) || null;
+    }
+
+    function ratingHeaderIndex(headers, label) {
+      const wanted = String(label || "").toLowerCase();
+      return headers.findIndex((h) => String(h || "").trim().toLowerCase() === wanted);
+    }
+
+    function ratingTierClass(value) {
+      const n = Number(value);
+      if (!Number.isFinite(n)) return "";
+      if (n >= 151) return "rating-purple";
+      if (n >= 115) return "rating-blue";
+      if (n >= 100) return "rating-green";
+      if (n >= 80) return "rating-yellow";
+      return "rating-orange";
+    }
+
+    function rosterRatingCell(cell, value) {
+      const text = value === undefined || value === null || value === "" ? "" : String(value);
+      if (!text) return cell;
+      return { ...cell, text, color: "", className: ratingTierClass(text) };
+    }
+
+    function applyRosterRatingCells(headers, rows) {
+      const nameIndex = findNameColumnIndex(headers);
+      const curIndex = ratingHeaderIndex(headers, "cur");
+      const futIndex = ratingHeaderIndex(headers, "fut");
+      if (nameIndex < 0 || (curIndex < 0 && futIndex < 0)) return rows;
+      return rows.map((row) => {
+        const player = findRosterPlayerByName((row[nameIndex] || {}).text);
+        if (!player) return row;
+        const next = row.slice();
+        if (curIndex >= 0) next[curIndex] = rosterRatingCell(next[curIndex] || { text: "", color: "" }, player.overall);
+        if (futIndex >= 0) next[futIndex] = rosterRatingCell(next[futIndex] || { text: "", color: "" }, player.potential);
+        return next;
+      });
     }
 
     function findNameColumnIndex(headers) {
@@ -1524,7 +1575,7 @@
       if (state.playerMode === "potentials") {
         table.classList.add("has-number-first");
         const { headers, rows } = headerAndRows(state.parsedSections["Potentials"]);
-        renderTable(table, headers, rows, { nameColumnIndex: findNameColumnIndex(headers) });
+        renderTable(table, headers, applyRosterRatingCells(headers, rows), { nameColumnIndex: findNameColumnIndex(headers) });
         return;
       }
       const attr = headerAndRows(state.parsedSections["Attributes"]);
@@ -1533,7 +1584,7 @@
         return;
       }
       table.classList.add("has-number-first");
-      renderTable(table, attr.headers, attr.rows, { nameColumnIndex: findNameColumnIndex(attr.headers) });
+      renderTable(table, attr.headers, applyRosterRatingCells(attr.headers, attr.rows), { nameColumnIndex: findNameColumnIndex(attr.headers) });
     }
 
     function renderStatsTable() {

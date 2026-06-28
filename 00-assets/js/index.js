@@ -113,6 +113,7 @@
       ".site-topbar-brand { align-items: center; background: var(--site-navy); border-right: 0; display: flex; height: 100%; justify-content: center; padding: 0 8px; position: relative; }",
       ".site-topbar-logo-link { align-items: center; display: flex; justify-content: center; min-width: 0; position: absolute; left: 50%; text-decoration: none; top: 50%; transform: translate(-50%, -50%); }",
       ".site-topbar-logo { display: block; filter: brightness(0) invert(1); height: 38px; object-fit: contain; width: 38px; }",
+      ".site-topbar-logo--supercup { filter: brightness(0) saturate(100%) invert(76%) sepia(39%) saturate(744%) hue-rotate(356deg) brightness(95%) contrast(94%); }",
       ".site-ticker { align-items: stretch; box-shadow: inset 0 -1px 0 rgba(17, 27, 54, 0.18); cursor: grab; display: flex; min-width: 0; overflow-x: auto; overflow-y: hidden; position: relative; scrollbar-width: none; }",
       ".site-ticker::-webkit-scrollbar { display: none; }",
       ".site-ticker.is-dragging { cursor: grabbing; user-select: none; }",
@@ -264,17 +265,22 @@
     var searchResults = document.createElement("div");
     var sidebar = document.createElement("aside");
     var content = document.createElement("main");
+    var isSuperCup = isSuperCupIndexPage();
 
     shell.className = "site-shell";
     topbar.className = "site-topbar";
     brand.className = "site-topbar-brand";
     logoLink.className = "site-topbar-logo-link";
-    logoLink.href = getCorePath("leagueDashboard", "00-assets/html/league%20dashboard.htm");
+    logoLink.href = isSuperCup
+      ? getCorePath("supercupDashboard", "00-assets/html/supercup-dashboard.htm")
+      : getCorePath("leagueDashboard", "00-assets/html/league%20dashboard.htm");
     logoLink.target = "data";
-    logoLink.setAttribute("aria-label", "League dashboard");
-    logo.className = "site-topbar-logo";
-    logo.src = getCorePath("leagueLogo", "00-assets/images/ESLcropped-removebg-preview.png");
-    logo.alt = "ESL";
+    logoLink.setAttribute("aria-label", isSuperCup ? "Super Cup dashboard" : "League dashboard");
+    logo.className = isSuperCup ? "site-topbar-logo site-topbar-logo--supercup" : "site-topbar-logo";
+    logo.src = isSuperCup
+      ? getCorePath("supercupLogo", "00-assets/images/eslsupercup.png")
+      : getCorePath("leagueLogo", "00-assets/images/ESLcropped-removebg-preview.png");
+    logo.alt = isSuperCup ? "ESL Super Cup" : "ESL";
     ticker.className = "site-ticker";
     ticker.setAttribute("aria-label", "Latest scores");
     tickerFilter.className = "site-ticker-filter";
@@ -505,6 +511,15 @@
   }
 
   function loadJson(filename) {
+    if (isSuperCupIndexPage()) {
+      return fetch(getRepoScopedPath("00-build/database/supercup/" + filename)).then(function (response) {
+        if (!response.ok) {
+          throw new Error("Failed to load Super Cup " + filename);
+        }
+        return response.json();
+      });
+    }
+
     if (window.LeagueSiteCore && window.LeagueSiteCore.loadJsonData) {
       return window.LeagueSiteCore.loadJsonData(filename);
     }
