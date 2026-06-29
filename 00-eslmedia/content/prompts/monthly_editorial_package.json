@@ -30,6 +30,8 @@
                     "Use the latest sim to justify movement, momentum, and skepticism.",
                     "Reference rank movement from the previous published board for every team, with an explicit up/down/no-change note and the number of places moved.",
                     "Each team capsule should include a reason, concern, and next trigger instead of a plain stat recap.",
+                    "Use the permanent article shell and ranking-card format from the article README when turning this prompt into HTML.",
+                    "Do not publish power rankings as one-line list items; each team needs a compact meta line, a main argument paragraph, and reason/concern/next-trigger fields.",
                     "Include a board notes block after the rankings with labels such as Control Team, Biggest Riser, Trust Problem, Danger Team, and Panic Team.",
                     "Use tier-specific stakes: Tier 1 credibility/survival, Tier 2 promotion/relegation pressure, and Tier 3 one-promotion urgency.",
                     "Work in star-player mentions for the biggest teams, risers, fallers, or arguments where roster quality matters.",
@@ -597,6 +599,8 @@
                     "Use the latest sim to justify movement, momentum, and skepticism.",
                     "Reference rank movement from the previous published board for every team, with an explicit up/down/no-change note and the number of places moved.",
                     "Each team capsule should include a reason, concern, and next trigger instead of a plain stat recap.",
+                    "Use the permanent article shell and ranking-card format from the article README when turning this prompt into HTML.",
+                    "Do not publish power rankings as one-line list items; each team needs a compact meta line, a main argument paragraph, and reason/concern/next-trigger fields.",
                     "Include a board notes block after the rankings with labels such as Control Team, Biggest Riser, Trust Problem, Danger Team, and Panic Team.",
                     "Use tier-specific stakes: Tier 1 credibility/survival, Tier 2 promotion/relegation pressure, and Tier 3 one-promotion urgency.",
                     "Work in star-player mentions for the biggest teams, risers, fallers, or arguments where roster quality matters.",
@@ -1156,6 +1160,8 @@
                     "Use the latest sim to justify movement, momentum, and skepticism.",
                     "Reference rank movement from the previous published board for every team, with an explicit up/down/no-change note and the number of places moved.",
                     "Each team capsule should include a reason, concern, and next trigger instead of a plain stat recap.",
+                    "Use the permanent article shell and ranking-card format from the article README when turning this prompt into HTML.",
+                    "Do not publish power rankings as one-line list items; each team needs a compact meta line, a main argument paragraph, and reason/concern/next-trigger fields.",
                     "Include a board notes block after the rankings with labels such as Control Team, Biggest Riser, Trust Problem, Danger Team, and Panic Team.",
                     "Use tier-specific stakes: Tier 1 credibility/survival, Tier 2 promotion/relegation pressure, and Tier 3 one-promotion urgency.",
                     "Work in star-player mentions for the biggest teams, risers, fallers, or arguments where roster quality matters.",
@@ -1697,11 +1703,15 @@
             "type": "race_watch",
             "title": "Promotion / Relegation Watch",
             "period": "January 1984",
-            "prompt": "Write a promotion/relegation watch article for January 1984. Cover Tier 1 relegation, Tier 2 promotion and relegation, and Tier 3 promotion. Focus on the live line, the closest chasers, and who has momentum. You can use any of the linked JSON context if it helps explain why a race is tightening or loosening. Use the style references to make the race easy to follow: state the rules, define the line, identify who controls their fate, and explain what changes next. Treat seeding as secondary to games-behind pressure: do not frame teams as truly in danger or truly live for promotion/relegation if they are only technically adjacent in seed but materially far from the line.",
+            "prompt": "Write a promotion/relegation watch article for January 1984. Cover Tier 1 relegation, Tier 2 promotion and relegation, and Tier 3 promotion. Use standings.json as the source of truth for the actual promotion/relegation line, team rank, record, games back, and whether a team is materially close enough to be in the race. Use the monthly race snapshot and monthly form only as momentum context after the real standings line is established. Use the style references to make the race easy to follow: state the rules, define the line, identify who controls their fate, and explain what changes next. Treat seeding as secondary to games-behind pressure: do not frame teams as truly in danger or truly live for promotion/relegation if they are only technically adjacent in seed but materially far from the line.",
             "writerNotes": [
                 "Tier 1 has 2 relegation spots.",
                 "Tier 2 has 2 promotion spots and 1 relegation spot.",
                 "Tier 3 has 1 promotion spot.",
+                "Source-of-truth rule: standings.json decides the actual line, records, rank order, games back, and true race status.",
+                "Do not use monthly_team_form.json or tier_race_snapshot.json to define who is on the promotion/relegation line.",
+                "Monthly form can make a team a stock-up or pressure team, but it does not make them live for promotion if standings games-back says they are far away.",
+                "If monthly form and standings conflict, explicitly trust standings and mention the monthly form only as context.",
                 "Explain the pressure line clearly before making bigger editorial claims.",
                 "Use games-behind logic, not seed alone, to decide whether a team is truly live, merely sweating, or only technical fringe.",
                 "If a team is close in seed but materially far from the line, label it as fringe or outside the real pressure group rather than forcing it into the danger tier.",
@@ -1731,6 +1741,217 @@
                 "../../00-build/database/monthly/overall_team_form.json",
                 "../../00-build/database/monthly/latest_sim_results.json",
                 "../../00-build/database/standings.json"
+            ],
+            "standingsSourceOfTruth": "../../00-build/database/standings.json",
+            "monthlyFormRaceContext": [
+                {
+                    "id": "tier-1-relegation",
+                    "tier": "Tier 1",
+                    "type": "relegation",
+                    "slots": 2,
+                    "lineTeam": "Sheffield United",
+                    "lineRecord": "2-4",
+                    "entries": [
+                        {
+                            "team": "FL Fart",
+                            "record": "2-4",
+                            "standingRank": 5,
+                            "streak": "W2",
+                            "last3": "LWW",
+                            "avgMargin": -11.33,
+                            "pointDiff": -68,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
+                            "rosterUrl": "./rosters/roster27.htm"
+                        },
+                        {
+                            "team": "Sheffield United",
+                            "record": "2-4",
+                            "standingRank": 8,
+                            "streak": "W1",
+                            "last3": "LLW",
+                            "avgMargin": -4.17,
+                            "pointDiff": -25,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
+                            "rosterUrl": "./rosters/roster16.htm"
+                        },
+                        {
+                            "team": "Real Madrid",
+                            "record": "2-6",
+                            "standingRank": 6,
+                            "streak": "L3",
+                            "last3": "LLL",
+                            "avgMargin": -1.88,
+                            "pointDiff": -15,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
+                            "rosterUrl": "./rosters/roster8.htm"
+                        },
+                        {
+                            "team": "Chelsea",
+                            "record": "4-4",
+                            "standingRank": 4,
+                            "streak": "W2",
+                            "last3": "LWW",
+                            "avgMargin": -4.75,
+                            "pointDiff": -38,
+                            "gapToLine": 2,
+                            "status": "above_safety",
+                            "rosterUrl": "./rosters/roster17.htm"
+                        }
+                    ]
+                },
+                {
+                    "id": "tier-2-promotion",
+                    "tier": "Tier 2",
+                    "type": "promotion",
+                    "slots": 2,
+                    "lineTeam": "Atletico Madrid",
+                    "lineRecord": "6-3",
+                    "entries": [
+                        {
+                            "team": "Juventus",
+                            "record": "6-2",
+                            "standingRank": 3,
+                            "streak": "W4",
+                            "last3": "WWW",
+                            "avgMargin": 9.12,
+                            "pointDiff": 73,
+                            "gapToLine": 0,
+                            "status": "on_or_above_line",
+                            "rosterUrl": "./rosters/roster14.htm"
+                        },
+                        {
+                            "team": "Atletico Madrid",
+                            "record": "6-3",
+                            "standingRank": 4,
+                            "streak": "L1",
+                            "last3": "WWL",
+                            "avgMargin": -4.44,
+                            "pointDiff": -40,
+                            "gapToLine": 0,
+                            "status": "on_or_above_line",
+                            "rosterUrl": "./rosters/roster11.htm"
+                        },
+                        {
+                            "team": "Brighton",
+                            "record": "5-2",
+                            "standingRank": 2,
+                            "streak": "L2",
+                            "last3": "WLL",
+                            "avgMargin": 13.86,
+                            "pointDiff": 97,
+                            "gapToLine": 1,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster10.htm"
+                        },
+                        {
+                            "team": "Crystal Palace",
+                            "record": "4-3",
+                            "standingRank": 1,
+                            "streak": "W1",
+                            "last3": "LLW",
+                            "avgMargin": 8.57,
+                            "pointDiff": 60,
+                            "gapToLine": 2,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster6.htm"
+                        }
+                    ]
+                },
+                {
+                    "id": "tier-2-relegation",
+                    "tier": "Tier 2",
+                    "type": "relegation",
+                    "slots": 1,
+                    "lineTeam": "Manchester United",
+                    "lineRecord": "0-7",
+                    "entries": [
+                        {
+                            "team": "Manchester United",
+                            "record": "0-7",
+                            "standingRank": 8,
+                            "streak": "L7",
+                            "last3": "LLL",
+                            "avgMargin": -8.43,
+                            "pointDiff": -59,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
+                            "rosterUrl": "./rosters/roster5.htm"
+                        },
+                        {
+                            "team": "Marseille",
+                            "record": "2-5",
+                            "standingRank": 6,
+                            "streak": "L3",
+                            "last3": "LLL",
+                            "avgMargin": -17.43,
+                            "pointDiff": -122,
+                            "gapToLine": 2,
+                            "status": "above_safety",
+                            "rosterUrl": "./rosters/roster15.htm"
+                        },
+                        {
+                            "team": "Ajax",
+                            "record": "3-5",
+                            "standingRank": 7,
+                            "streak": "L1",
+                            "last3": "LWL",
+                            "avgMargin": -5.75,
+                            "pointDiff": -46,
+                            "gapToLine": 3,
+                            "status": "above_safety",
+                            "rosterUrl": "./rosters/roster18.htm"
+                        }
+                    ]
+                },
+                {
+                    "id": "tier-3-promotion",
+                    "tier": "Tier 3",
+                    "type": "promotion",
+                    "slots": 1,
+                    "lineTeam": "Valencia",
+                    "lineRecord": "7-2",
+                    "entries": [
+                        {
+                            "team": "Valencia",
+                            "record": "7-2",
+                            "standingRank": 6,
+                            "streak": "W1",
+                            "last3": "WLW",
+                            "avgMargin": 8.44,
+                            "pointDiff": 76,
+                            "gapToLine": 0,
+                            "status": "on_or_above_line",
+                            "rosterUrl": "./rosters/roster25.htm"
+                        },
+                        {
+                            "team": "Inter Milan",
+                            "record": "6-1",
+                            "standingRank": 2,
+                            "streak": "L1",
+                            "last3": "WWL",
+                            "avgMargin": 8.14,
+                            "pointDiff": 57,
+                            "gapToLine": 1,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster26.htm"
+                        },
+                        {
+                            "team": "Paris Saint-Germain",
+                            "record": "5-2",
+                            "standingRank": 1,
+                            "streak": "W2",
+                            "last3": "LWW",
+                            "avgMargin": 10.57,
+                            "pointDiff": 74,
+                            "gapToLine": 2,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster21.htm"
+                        }
+                    ]
+                }
             ],
             "races": [
                 {
@@ -2969,14 +3190,16 @@
             "type": "month_in_review",
             "title": "Month in Review",
             "period": "January 1984",
-            "prompt": "Write a Month in Review feature for January 1984. Use the featured storylines below to build a coherent recap of the sim: best performances, biggest swings, weirdest result, and what matters next. You can pull from any linked JSON source if the strongest story sits outside the featured shortlist. Use star-player context when it helps explain a result, a hot team, or why a matchup mattered. Use the style references to write takeaways, not a logbook: focus on what the month changed.",
+            "prompt": "Write a Month in Review feature for January 1984. Use the featured storylines below to build a coherent recap of the sim: best performances, biggest swings, weirdest result, and what matters next. You can pull from any linked JSON source if the strongest story sits outside the featured shortlist. Use star-player context when it helps explain a result, a hot team, or why a matchup mattered. If you discuss promotion, relegation, race lines, or who is truly live in a race, use standings.json as the source of truth and use monthly form only as context. Use the style references to write takeaways, not a logbook: focus on what the month changed.",
             "writerNotes": [
                 "Lead with the strongest monthly theme, not just the biggest scoreline.",
                 "Work across tiers if the month demands it.",
                 "Mention star players naturally, not as a checklist.",
                 "End with a forward-looking note about next month.",
                 "Organize around three to five takeaways or winners/losers rather than every game in order.",
-                "Every section should connect a result or stat to a larger implication."
+                "Every section should connect a result or stat to a larger implication.",
+                "For race implications, standings.json decides the actual promotion/relegation line and games-back pressure.",
+                "A hot month can make a team stock-up or worth watching, but do not call them a promotion/relegation race team if the full standings say they are materially far away."
             ],
             "styleReferences": [
                 {

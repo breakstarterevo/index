@@ -26,6 +26,98 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
+  // Season 3 Sim 3 January package
+  {
+    file: "articles/season_3_sim_3_month_in_review.html",
+    title: "January 1984 Review: Valencia Run Hot And Richmond Finally Look Human",
+    category: "Recap",
+    desk: "Analysis",
+    sortKey: "2026-06-29-07",
+    tag: "Month in Review",
+    author: "Graham Trent",
+    meta: "Season 3 - Sim 3",
+    blurb: "Valencia had the loudest January, Brighton delivered the biggest blowout, Bayern clipped Richmond, and the race pressure shifted.",
+    teams: ["AFC Richmond", "Atletico Madrid", "Barcelona", "Bayern Munich", "Brighton", "Crystal Palace", "Inter Milan", "Juventus", "Manchester City", "Monaco", "Paris Saint-Germain", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Isiah Thomas", "Kiki Vandeweghe"]
+  },
+  {
+    file: "articles/season_3_sim_3_mvp_race.html",
+    title: "January 1984 MVP Race: Moses, Kiki And Tripucka Control The Ballots",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-06-29-06",
+    tag: "MVP Race",
+    author: "Damon Cross",
+    meta: "Season 3 - Sim 3",
+    blurb: "Moses Malone, Kiki Vandeweghe and Kelly Tripucka lead the January MVP ladders as team context starts separating good numbers from winning value.",
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Inter Milan", "Juventus", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sporting CP"],
+    playerTags: ["Adrian Dantley", "Bernard King", "Brad Davis", "Cliff Robinson", "Isiah Thomas", "James Donaldson", "Jim Paxson", "Joe Barry Carroll", "Johnny Moore", "Kelly Tripucka", "Kiki Vandeweghe", "Larry Nance", "Lewis Lloyd", "Mark Aguirre", "Moses Malone", "Otis Birdsong", "Paul Pierce", "Purvis Short", "Robert Parish", "Rolando Blackman", "Sidney Moncrief", "Tom Chambers", "World B. Free"]
+  },
+  {
+    file: "articles/season_3_sim_3_tier_1_power_rankings.html",
+    title: "January 1984 Tier 1 Power Rankings: Richmond Stay First, Benfica Close Hard",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-06-29-05",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 3",
+    blurb: "AFC Richmond remain first in Tier 1, but Benfica's January surge and AC Milan's steadiness make the top board tighter.",
+    teams: ["AFC Richmond", "AC Milan", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "Sheffield United"],
+    playerTags: ["Adrian Dantley", "Bernard King", "Jim Paxson", "Larry Bird", "Moses Malone", "Sidney Moncrief"]
+  },
+  {
+    file: "articles/season_3_sim_3_tier_2_power_rankings.html",
+    title: "January 1984 Tier 2 Power Rankings: Palace Lead, Brighton Hit Hardest",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-06-29-04",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 3",
+    blurb: "Crystal Palace remain the Tier 2 trust leader, Brighton produce the biggest blowout, and Juventus crash the promotion race.",
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Brighton", "Crystal Palace", "Juventus", "Manchester United", "Marseille"],
+    playerTags: ["Kiki Vandeweghe", "Larry Nance", "Robert Parish", "Rolando Blackman"]
+  },
+  {
+    file: "articles/season_3_sim_3_tier_3_power_rankings.html",
+    title: "January 1984 Tier 3 Power Rankings: PSG Hold, Inter And Valencia Charge",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-06-29-03",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 3",
+    blurb: "Paris Saint-Germain stay first in Tier 3, but Inter Milan and Valencia made January's promotion race louder.",
+    teams: ["Barcelona", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Brad Davis", "Isiah Thomas", "Kelly Tripucka", "Otis Birdsong", "Paul Pierce", "Purvis Short"]
+  },
+  {
+    file: "articles/season_3_sim_3_promotion_relegation_watch.html",
+    title: "January 1984 Race Watch: PSG And Inter Share The Tightest Line",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-06-29-02",
+    tag: "Promotion/Relegation",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 3",
+    blurb: "PSG and Inter Milan are tied on the ECL promotion line, Brighton are only one game clear of Juventus, and the relegation races stay narrow.",
+    teams: ["Ajax", "Bayern Munich", "Brighton", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Valencia"],
+    playerTags: []
+  },
+  {
+    file: "articles/season_3_sim_3_stock_up_stock_down.html",
+    title: "January 1984 Stock Report: Valencia, Benfica And Juventus Buy In",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-06-29-01",
+    tag: "Stock Report",
+    author: "Damon Cross",
+    meta: "Season 3 - Sim 3",
+    blurb: "Valencia, Benfica and Juventus rose sharply in January, while Tottenham, Manchester City and Manchester United lost ground.",
+    teams: ["Benfica", "Juventus", "Manchester City", "Manchester United", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Adrian Dantley", "Isiah Thomas", "Moses Malone", "Rolando Blackman"]
+  },
   // Season 3 Sim 2 December package
   {
     file: "articles/season_3_sim_2_month_in_review.html",

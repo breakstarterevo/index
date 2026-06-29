@@ -409,6 +409,8 @@ def build_power_rankings(overall_team_form, monthly_team_form, period_label, tea
                     "Use the latest sim to justify movement, momentum, and skepticism.",
                     "Reference rank movement from the previous published board for every team, with an explicit up/down/no-change note and the number of places moved.",
                     "Each team capsule should include a reason, concern, and next trigger instead of a plain stat recap.",
+                    "Use the permanent article shell and ranking-card format from the article README when turning this prompt into HTML.",
+                    "Do not publish power rankings as one-line list items; each team needs a compact meta line, a main argument paragraph, and reason/concern/next-trigger fields.",
                     "Include a board notes block after the rankings with labels such as Control Team, Biggest Riser, Trust Problem, Danger Team, and Panic Team.",
                     "Use tier-specific stakes: Tier 1 credibility/survival, Tier 2 promotion/relegation pressure, and Tier 3 one-promotion urgency.",
                     "Work in star-player mentions for the biggest teams, risers, fallers, or arguments where roster quality matters.",
@@ -472,10 +474,11 @@ def build_race_watch(tier_race_snapshot, period_label, include_preseason):
         "period": period_label,
         "prompt": (
             f"Write a promotion/relegation watch article for {period_label}. Cover Tier 1 relegation, "
-            "Tier 2 promotion and relegation, and Tier 3 promotion. Focus on the live line, the closest "
-            "chasers, and who has momentum. You can use any of the linked JSON context if it helps explain "
-            "why a race is tightening or loosening. Use the style references to make the race easy to follow: "
-            "state the rules, define the line, identify who controls their fate, and explain what changes next. "
+            "Tier 2 promotion and relegation, and Tier 3 promotion. Use standings.json as the source of truth "
+            "for the actual promotion/relegation line, team rank, record, games back, and whether a team is "
+            "materially close enough to be in the race. Use the monthly race snapshot and monthly form only as "
+            "momentum context after the real standings line is established. Use the style references to make "
+            "the race easy to follow: state the rules, define the line, identify who controls their fate, and explain what changes next. "
             "Treat seeding as secondary to games-behind pressure: do not frame teams as truly in danger or truly "
             "live for promotion/relegation if they are only technically adjacent in seed but materially far from the line."
         ),
@@ -483,6 +486,10 @@ def build_race_watch(tier_race_snapshot, period_label, include_preseason):
             "Tier 1 has 2 relegation spots.",
             "Tier 2 has 2 promotion spots and 1 relegation spot.",
             "Tier 3 has 1 promotion spot.",
+            "Source-of-truth rule: standings.json decides the actual line, records, rank order, games back, and true race status.",
+            "Do not use monthly_team_form.json or tier_race_snapshot.json to define who is on the promotion/relegation line.",
+            "Monthly form can make a team a stock-up or pressure team, but it does not make them live for promotion if standings games-back says they are far away.",
+            "If monthly form and standings conflict, explicitly trust standings and mention the monthly form only as context.",
             "Explain the pressure line clearly before making bigger editorial claims.",
             "Use games-behind logic, not seed alone, to decide whether a team is truly live, merely sweating, or only technical fringe.",
             "If a team is close in seed but materially far from the line, label it as fringe or outside the real pressure group rather than forcing it into the danger tier.",
@@ -498,6 +505,8 @@ def build_race_watch(tier_race_snapshot, period_label, include_preseason):
             "../../00-build/database/standings.json",
             GAME_RESULTS_CONTEXT,
         ], include_preseason),
+        "standingsSourceOfTruth": "../../00-build/database/standings.json",
+        "monthlyFormRaceContext": tier_race_snapshot.get("races", []),
         "races": tier_race_snapshot.get("races", []),
     }
 
@@ -565,6 +574,8 @@ def build_month_in_review(monthly_storylines, latest_sim_results, period_label, 
             "a coherent recap of the sim: best performances, biggest swings, weirdest result, and what matters next. "
             "You can pull from any linked JSON source if the strongest story sits outside the featured shortlist. "
             "Use star-player context when it helps explain a result, a hot team, or why a matchup mattered. "
+            "If you discuss promotion, relegation, race lines, or who is truly live in a race, use standings.json "
+            "as the source of truth and use monthly form only as context. "
             "Use the style references to write takeaways, not a logbook: focus on what the month changed."
         ),
         "writerNotes": [
@@ -574,6 +585,8 @@ def build_month_in_review(monthly_storylines, latest_sim_results, period_label, 
             "End with a forward-looking note about next month.",
             "Organize around three to five takeaways or winners/losers rather than every game in order.",
             "Every section should connect a result or stat to a larger implication.",
+            "For race implications, standings.json decides the actual promotion/relegation line and games-back pressure.",
+            "A hot month can make a team stock-up or worth watching, but do not call them a promotion/relegation race team if the full standings say they are materially far away.",
         ],
         "styleReferences": style_references("month_in_review"),
         "availableContext": context_sources([

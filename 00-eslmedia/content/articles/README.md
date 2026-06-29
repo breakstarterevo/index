@@ -14,7 +14,7 @@ Every article file should:
 - be a standalone `.html` file
 - include `@import url("../media-shared.css");` inside its `<style>` block
 - use `<body class="media-article">`
-- include one main article container: `<div class="paper"> ... </div>`
+- include one main article container using the permanent package shell: `<div class="package-paper"> ... </div>`
 - keep the standard topbar nav unchanged so the shared Teams dropdown can inject correctly
 - include shared scripts before `</body>`:
 
@@ -30,6 +30,51 @@ The `article-rail.js` script automatically:
 - adds a right rail
 - shows a recommended-articles list
 - shows two random ads from `00-eslmedia/content/Ads/`
+
+## Permanent package shell
+
+For monthly packages, offseason packages, rankings, race watches, stock reports,
+and month reviews, start from:
+
+`00-eslmedia/content/articles/_package_article_template.html`
+
+Use the shell classes from `media-shared.css`:
+- `package-paper`
+- `package-masthead`
+- `package-headline`
+- `package-dek`
+- `package-byline-bar`
+- `package-body`
+- `package-section-header`
+- `footer-rule`
+- `footer-text`
+
+Do not paste a full custom inline stylesheet into each article unless the story
+needs a genuinely unique component. Keep the page chrome consistent and let the
+newness come from reporting, ordering, board logic, and writer voice.
+
+For power rankings, use the shared ranking components:
+- `ranking-board`
+- `ranking-board-head`
+- `ranking-list`
+- `ranking-card`
+- `ranking-topline`
+- `ranking-number`
+- `ranking-team`
+- `ranking-move`
+- `ranking-meta`
+- `ranking-copy`
+- `ranking-detail-grid`
+- `ranking-detail`
+- `ranking-detail-label`
+- `ranking-detail-text`
+- `board-notes`
+
+Every power-ranking team should get a real capsule, not a one-line list item:
+- rank, team, movement
+- compact meta line with overall record, latest-sim form, differential/streak, and star/context hook
+- main argument paragraph
+- three mini-fields: `Reason`, `Concern`, and `Next trigger`
 
 ## Standard metadata block
 
@@ -183,6 +228,26 @@ Avoid:
 - using generic phrases like "player anchor," "the board respects the floor," or "the case is built on..."
 - presenting a hot month as proof without explaining whether it changes trust
 - burying movement only in the intro
+
+## Promotion/relegation race rules
+
+Any article that discusses promotion, relegation, race lines, or whether a team is
+truly live in a race must use the full standings as the source of truth. This
+applies to race-watch articles, month reviews, stock reports, power rankings,
+and any other package article that mentions race implications.
+
+For every article with race implications:
+- use `00-build/database/standings.json` to define the actual line, rank order, record, games back, and whether a team is truly live in the race
+- use monthly form, latest-sim record, and `tier_race_snapshot.json` only as momentum/context after the standings line is established
+- do not describe a team as being on, above, below, or close to the promotion/relegation line based only on latest-sim form
+- if a team has a hot month but remains materially far back in the standings, frame it as stock-up/context rather than as a promotion-line team
+- state the rules clearly: Tier 1 has two relegation spots, Tier 2 has two promotion spots and one relegation spot, and Tier 3 has one promotion spot
+- use games-behind pressure over seed adjacency when deciding who is safe, sweating, chasing, or fringe
+
+Avoid:
+- treating `monthly_team_form.json` or `tier_race_snapshot.json` as the standings table
+- calling a team "live for promotion" because it led the latest sim while still many games behind the actual line
+- burying the actual line behind monthly movement language
 
 ## Visual identity rules
 
