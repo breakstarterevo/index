@@ -114,7 +114,7 @@
     const body = document.body;
     if (!body || !body.classList.contains("media-article")) return;
 
-    const paper = document.querySelector(".paper");
+    const paper = document.querySelector(".package-paper, .paper");
     if (!paper || paper.closest(".article-shell")) return;
 
     await loadAdsIfNeeded();

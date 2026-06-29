@@ -1227,6 +1227,12 @@ nav {
   padding: 3rem 3.5rem 3.5rem;
 }
 
+.media-article .article-shell > .package-paper {
+  width: 100%;
+  max-width: none;
+  margin: 0;
+}
+
 .media-article .article-rail {
   position: static;
   display: flex;
@@ -1319,6 +1325,18 @@ nav {
   display: block;
   margin-top: 0.7rem;
   border: 1px solid var(--light);
+}
+
+@media (max-width: 1120px) {
+  .media-article .article-shell {
+    width: min(780px, calc(100% - 2.5rem));
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .media-article .article-rail {
+    order: 2;
+  }
 }
 
 .media-article .masthead {
