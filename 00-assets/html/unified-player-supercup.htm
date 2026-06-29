@@ -815,6 +815,8 @@
       </div>
       <nav class="nav-actions" aria-label="Player navigation">
         <a class="btn-link" id="teamLink" href="../../00-SuperCup/standings.htm">Team Page</a>
+        <button class="btn-link" id="copyPlayerLink" type="button">Copy Player Link</button>
+        <button class="btn-link" id="copyTeamLink" type="button" hidden>Copy Team Link</button>
         <a class="btn-link" id="classicLink" href="#">Classic Page</a>
         <a class="btn-link" href="../../00-SuperCup/standings.htm">Standings</a>
       </nav>
@@ -1003,6 +1005,44 @@
     function classicHref(url) {
       const cleanUrl = String(url || "").replace(/^(\.\/|\.\.\/)+/, "");
       return cleanUrl ? `../../00-SuperCup/${cleanUrl}` : "#";
+    }
+
+    function absoluteHref(href) {
+      return new URL(href || window.location.href, window.location.href).href;
+    }
+
+    function copyButtonText(button, text) {
+      if (!button) return;
+      const original = button.dataset.originalText || button.textContent;
+      button.dataset.originalText = original;
+      button.textContent = text;
+      window.clearTimeout(button._copyTimer);
+      button._copyTimer = window.setTimeout(() => {
+        button.textContent = button.dataset.originalText || original;
+      }, 1400);
+    }
+
+    async function copyText(value, button) {
+      const text = String(value || "");
+      if (!text) return;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const input = document.createElement("textarea");
+          input.value = text;
+          input.setAttribute("readonly", "");
+          input.style.position = "fixed";
+          input.style.opacity = "0";
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          input.remove();
+        }
+        copyButtonText(button, "Copied");
+      } catch (error) {
+        copyButtonText(button, "Copy Failed");
+      }
     }
 
     function initials(name) {
@@ -1298,7 +1338,17 @@
       document.getElementById("classicLink").href = classicHref(p.url);
       const teamLink = document.getElementById("teamLink");
       teamLink.href = team ? `./unified-roster-supercup.htm?file=${encodeURIComponent(team.rosterFile)}` : "../../00-SuperCup/standings.htm";
-      teamLink.textContent = team ? "Team Page" : "Standings";
+      teamLink.textContent = team ? "Back To Team" : "Standings";
+      const copyPlayerLink = document.getElementById("copyPlayerLink");
+      if (copyPlayerLink) {
+        copyPlayerLink.onclick = () => copyText(window.location.href, copyPlayerLink);
+      }
+      const copyTeamLink = document.getElementById("copyTeamLink");
+      if (copyTeamLink) {
+        const teamHref = team ? `./unified-roster-supercup.htm?file=${encodeURIComponent(team.rosterFile)}` : "../../00-SuperCup/standings.htm";
+        copyTeamLink.hidden = !team;
+        copyTeamLink.onclick = () => copyText(absoluteHref(teamHref), copyTeamLink);
+      }
       renderLogo(teamName);
       setTeamColors(team);
     }

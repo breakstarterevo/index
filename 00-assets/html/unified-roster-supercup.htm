@@ -132,6 +132,41 @@
       flex-wrap: wrap;
       gap: 0.38rem;
     }
+    .team-form-strip {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.24rem;
+      margin-top: 0.38rem;
+    }
+    .team-form-strip:empty {
+      display: none;
+    }
+    .form-chip {
+      align-items: center;
+      border: 1px solid rgba(255, 255, 255, 0.34);
+      color: #fff;
+      display: inline-flex;
+      font-size: 0.66rem;
+      font-weight: 900;
+      height: 1.35rem;
+      justify-content: center;
+      min-width: 1.35rem;
+      padding: 0 0.32rem;
+      text-decoration: none;
+    }
+    .form-chip.win {
+      background: #17803d;
+      border-color: rgba(226, 255, 236, 0.62);
+    }
+    .form-chip.loss {
+      background: #b42318;
+      border-color: rgba(255, 220, 217, 0.62);
+    }
+    .form-chip:hover {
+      filter: brightness(1.1);
+      text-decoration: none;
+    }
     .injury-pill {
       display: inline-flex;
       gap: 0.4rem;
@@ -1027,10 +1062,12 @@
       <div>
         <h1 class="team-name" id="teamName">Loading Team</h1>
         <p class="team-sub" id="teamSubtitle">Loading context</p>
+        <div class="team-form-strip" id="teamFormStrip" aria-label="Last 10 games"></div>
         <div class="hero-pills" id="heroInjuryPills"></div>
       </div>
       <div class="hero-actions">
         <select id="teamPicker" class="team-picker"></select>
+        <button class="btn-link" id="copyTeamLink" type="button">Copy Team Link</button>
         <a class="btn-link" id="backToDash" href="../../00-SuperCup/standings.htm">Back To Standings</a>
       </div>
     </section>
@@ -1267,6 +1304,16 @@
         .replace(/[^a-z0-9]/g, "");
     }
 
+    function escapeHtml(v) {
+      return String(v || "").replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[char]));
+    }
+
     function toPlayerHref(url) {
       const raw = String(url || "").trim();
       if (!raw) return "";
@@ -1282,6 +1329,40 @@
       if (idMatch) return `./unified-player-supercup.htm?id=${encodeURIComponent(`player${idMatch[1]}`)}`;
       const clean = raw.replace(/^(\.\/|\.\.\/)+/, "");
       return clean ? `../../${clean}` : "";
+    }
+
+    function copyButtonText(button, text) {
+      if (!button) return;
+      const original = button.dataset.originalText || button.textContent;
+      button.dataset.originalText = original;
+      button.textContent = text;
+      window.clearTimeout(button._copyTimer);
+      button._copyTimer = window.setTimeout(() => {
+        button.textContent = button.dataset.originalText || original;
+      }, 1400);
+    }
+
+    async function copyText(value, button) {
+      const text = String(value || "");
+      if (!text) return;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const input = document.createElement("textarea");
+          input.value = text;
+          input.setAttribute("readonly", "");
+          input.style.position = "fixed";
+          input.style.opacity = "0";
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          input.remove();
+        }
+        copyButtonText(button, "Copied");
+      } catch (error) {
+        copyButtonText(button, "Copy Failed");
+      }
     }
 
     function initials(name) {
@@ -1672,6 +1753,34 @@
       return days.flatMap((d) => (d.games || []).filter((g) => g.homeTeam === teamId || g.awayTeam === teamId).map((g) => ({ ...g, dateObj: parseScheduleDate(d.date), date: d.date })));
     }
 
+    function renderTeamFormStrip() {
+      const root = document.getElementById("teamFormStrip");
+      if (!root || !state.current) return;
+      const teamId = state.current.teamId;
+      const games = collectTeamGames(teamId)
+        .filter((g) => g.dateObj && Number.isFinite(Number(g.homeScore)) && Number.isFinite(Number(g.awayScore)))
+        .sort((a, b) => a.dateObj - b.dateObj)
+        .slice(-10);
+      if (!games.length) {
+        root.innerHTML = "";
+        return;
+      }
+      root.innerHTML = games.map((g) => {
+        const isHome = g.homeTeam === teamId;
+        const isWin = g.winner === teamId;
+        const oppName = isHome ? g.awayTeamName : g.homeTeamName;
+        const myScore = isHome ? g.homeScore : g.awayScore;
+        const oppScore = isHome ? g.awayScore : g.homeScore;
+        const boxHref = scheduleBoxHref(g);
+        const label = isWin ? "W" : "L";
+        const title = `${label} ${myScore}-${oppScore} ${isHome ? "vs" : "at"} ${oppName}`;
+        const chipClass = `form-chip ${isWin ? "win" : "loss"}`;
+        return boxHref
+          ? `<a class="${chipClass}" href="${boxHref}" title="${escapeHtml(title)}">${label}</a>`
+          : `<span class="${chipClass}" title="${escapeHtml(title)}">${label}</span>`;
+      }).join("");
+    }
+
     function monthKey(dateObj) {
       return `${dateObj.getFullYear()}-${dateObj.getMonth()}`;
     }
@@ -1836,6 +1945,10 @@
       if (crumbTeamName) {
         crumbTeamName.textContent = state.current.teamName || "Team";
       }
+      const copyTeamLink = document.getElementById("copyTeamLink");
+      if (copyTeamLink) {
+        copyTeamLink.onclick = () => copyText(window.location.href, copyTeamLink);
+      }
       buildTeamLogo(state.current.teamName);
       picker.addEventListener("change", () => {
         const selected = state.teamDirectory.find((t) => t.rosterFile === picker.value);
@@ -1875,6 +1988,7 @@
         await loadCurrentTeamBundle();
         setPickerAndHeader();
         renderHeroInjuryPills();
+        renderTeamFormStrip();
         const onPlayerTab = (id) => {
           state.playerMode = id;
           renderPlayerTable();

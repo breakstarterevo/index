@@ -672,6 +672,90 @@
       font-size: 0.74rem;
       line-height: 1.25;
     }
+    .development-trend {
+      border: 1px solid var(--line);
+      background: #fff;
+      display: grid;
+      gap: 0.5rem;
+      padding: 0.55rem;
+    }
+    .development-trend-head {
+      align-items: baseline;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.3rem 0.6rem;
+      justify-content: space-between;
+    }
+    .development-trend-title {
+      color: var(--team-color);
+      font-size: 0.64rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    .development-trend-delta {
+      color: var(--muted);
+      font-size: 0.66rem;
+      font-weight: 800;
+    }
+    .trend-chart {
+      display: block;
+      height: 150px;
+      overflow: visible;
+      width: 100%;
+    }
+    .trend-grid {
+      stroke: #e5e9f0;
+      stroke-width: 1;
+    }
+    .trend-line-ovr {
+      fill: none;
+      stroke: var(--team-color);
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 3;
+    }
+    .trend-line-pot {
+      fill: none;
+      stroke: #c59b2b;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      stroke-width: 3;
+    }
+    .trend-dot {
+      fill: #fff;
+      stroke-width: 2.5;
+    }
+    .trend-dot-ovr { stroke: var(--team-color); }
+    .trend-dot-pot { stroke: #c59b2b; }
+    .trend-axis-label {
+      fill: var(--muted);
+      font-size: 10px;
+      font-weight: 800;
+    }
+    .trend-legend {
+      align-items: center;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.35rem 0.65rem;
+    }
+    .trend-key {
+      align-items: center;
+      color: var(--muted);
+      display: inline-flex;
+      font-size: 0.64rem;
+      font-weight: 900;
+      gap: 0.28rem;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .trend-swatch {
+      background: var(--team-color);
+      display: inline-block;
+      height: 3px;
+      width: 18px;
+    }
+    .trend-swatch-pot { background: #c59b2b; }
     .analyst-list li::before {
       color: var(--team-color);
       content: "+";
@@ -978,6 +1062,8 @@
       <div class="header-side">
         <nav class="nav-actions player-header-actions" aria-label="Player navigation">
           <a class="btn-link" id="teamLink" href="./league%20dashboard.htm">Team Page</a>
+          <button class="btn-link" id="copyPlayerLink" type="button">Copy Player Link</button>
+          <button class="btn-link" id="copyTeamLink" type="button" hidden>Copy Team Link</button>
           <a class="btn-link" id="compareLink" href="./player-compare.htm">Compare</a>
           <a class="btn-link" id="classicLink" href="#">Classic Page</a>
           <a class="btn-link" href="./league%20dashboard.htm">Dashboard</a>
@@ -1077,7 +1163,8 @@
       playerStats: "../../00-build/database/player_stats.json",
       playerGamelogs: "../../00-build/database/player_gamelogs.json",
       injuries: "../../00-build/database/injuries.json",
-      standings: "../../00-build/database/standings.json"
+      standings: "../../00-build/database/standings.json",
+      playerHistory: "../../00-build/history/player_index.json"
     };
     const PLAYER_VIEWPORT = "width=device-width, initial-scale=1.0";
     let parentViewportMeta = null;
@@ -1155,6 +1242,7 @@
       playerGamelogs: [],
       injuries: [],
       standings: [],
+      playerHistory: null,
       teamDirectory: [],
       current: null,
       currentStats: null,
@@ -1196,9 +1284,56 @@
       return match ? `player${match[1]}` : "";
     }
 
+    function playerFileFromUrl(url) {
+      const id = playerIdFromUrl(url);
+      return id ? `${id}.htm` : "";
+    }
+
+    function normalizeIdentityName(value) {
+      return clean(value).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    }
+
     function classicHref(url) {
       const cleanUrl = String(url || "").replace(/^(\.\/|\.\.\/)+/, "");
       return cleanUrl ? `../../${cleanUrl}` : "#";
+    }
+
+    function absoluteHref(href) {
+      return new URL(href || window.location.href, window.location.href).href;
+    }
+
+    function copyButtonText(button, text) {
+      if (!button) return;
+      const original = button.dataset.originalText || button.textContent;
+      button.dataset.originalText = original;
+      button.textContent = text;
+      window.clearTimeout(button._copyTimer);
+      button._copyTimer = window.setTimeout(() => {
+        button.textContent = button.dataset.originalText || original;
+      }, 1400);
+    }
+
+    async function copyText(value, button) {
+      const text = String(value || "");
+      if (!text) return;
+      try {
+        if (navigator.clipboard && window.isSecureContext) {
+          await navigator.clipboard.writeText(text);
+        } else {
+          const input = document.createElement("textarea");
+          input.value = text;
+          input.setAttribute("readonly", "");
+          input.style.position = "fixed";
+          input.style.opacity = "0";
+          document.body.appendChild(input);
+          input.select();
+          document.execCommand("copy");
+          input.remove();
+        }
+        copyButtonText(button, "Copied");
+      } catch (error) {
+        copyButtonText(button, "Copy Failed");
+      }
     }
 
     function initials(name) {
@@ -1519,7 +1654,8 @@
         '<div class="analyst-list-grid">',
         analystList("Strengths", strengths, "analyst-list"),
         analystList("Concerns", concerns, "analyst-list analyst-list--concerns"),
-        "</div>"
+        "</div>",
+        renderDevelopmentTrend(player)
       ].join("");
     }
 
@@ -1530,6 +1666,123 @@
     function analystList(title, items, className) {
       const rows = (items && items.length ? items : ["No clear signal"]).map((item) => `<li>${escapeHtml(item)}</li>`).join("");
       return `<div class="${className}"><div class="analyst-list-title">${escapeHtml(title)}</div><ul>${rows}</ul></div>`;
+    }
+
+    function trendIdentityMatches(identity, player) {
+      if (!identity || !player) return false;
+      const playerFile = playerFileFromUrl(player.url);
+      const nameKey = normalizeIdentityName(player.name);
+      const height = clean(player.ht || player.height);
+      const appearances = Array.isArray(identity.appearances) ? identity.appearances : [];
+      if (playerFile && appearances.some((row) => clean(row.playerFile).toLowerCase() === playerFile.toLowerCase())) return true;
+      if (nameKey && normalizeIdentityName(identity.name) === nameKey) {
+        return Boolean(identity.height && height && clean(identity.height) === height);
+      }
+      return false;
+    }
+
+    function seasonSortValue(label) {
+      const match = String(label || "").match(/(\d+)/);
+      return match ? Number(match[1]) : 9999;
+    }
+
+    function seasonLabel(label) {
+      const raw = clean(label);
+      const match = raw.match(/^season-(\d+)$/i);
+      return match ? `S${match[1]}` : raw || "Current";
+    }
+
+    function signedDelta(value) {
+      if (!Number.isFinite(value) || value === 0) return "0";
+      return value > 0 ? `+${value}` : String(value);
+    }
+
+    function developmentTrendRows(player) {
+      const identities = state.playerHistory && Array.isArray(state.playerHistory.identities) ? state.playerHistory.identities : [];
+      const identity = identities.find((entry) => trendIdentityMatches(entry, player));
+      const rows = identity && Array.isArray(identity.appearances)
+        ? identity.appearances.map((row) => ({
+          label: seasonLabel(row.season),
+          sort: seasonSortValue(row.season),
+          overall: num(row.overall),
+          potential: num(row.potential)
+        })).filter((row) => row.overall !== null || row.potential !== null)
+        : [];
+      const currentOverall = num(player && player.overall);
+      const currentPotential = num(player && player.potential);
+      const currentFile = playerFileFromUrl(player && player.url);
+      const currentAppearance = identity && Array.isArray(identity.appearances) && currentFile
+        ? identity.appearances.find((row) => clean(row.playerFile).toLowerCase() === currentFile.toLowerCase())
+        : null;
+      const archivedMatchesCurrent = currentAppearance
+        && num(currentAppearance.overall) === currentOverall
+        && num(currentAppearance.potential) === currentPotential;
+      if (!archivedMatchesCurrent && (currentOverall !== null || currentPotential !== null)) {
+        rows.push({ label: "Current", sort: 10000, overall: currentOverall, potential: currentPotential });
+      }
+      const seen = new Set();
+      return rows
+        .sort((a, b) => a.sort - b.sort || a.label.localeCompare(b.label))
+        .filter((row) => {
+          const key = `${row.label}|${row.overall}|${row.potential}`;
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        });
+    }
+
+    function trendPath(rows, key, minValue, maxValue, width, height, pad) {
+      const points = rows.map((row, index) => {
+        const value = row[key];
+        if (value === null) return null;
+        const x = rows.length === 1 ? width / 2 : pad + (index * (width - pad * 2)) / (rows.length - 1);
+        const range = Math.max(1, maxValue - minValue);
+        const y = height - pad - ((value - minValue) / range) * (height - pad * 2);
+        return { x, y, value, label: row.label };
+      }).filter(Boolean);
+      return points;
+    }
+
+    function renderDevelopmentTrend(player) {
+      const rows = developmentTrendRows(player);
+      if (rows.length < 2) return "";
+      const values = rows.flatMap((row) => [row.overall, row.potential]).filter((value) => value !== null);
+      if (!values.length) return "";
+      const minValue = Math.max(0, Math.min(...values) - 4);
+      const maxValue = Math.max(...values) + 4;
+      const width = 360;
+      const height = 150;
+      const pad = 24;
+      const ovrPoints = trendPath(rows, "overall", minValue, maxValue, width, height, pad);
+      const potPoints = trendPath(rows, "potential", minValue, maxValue, width, height, pad);
+      const line = (points) => points.map((point, index) => `${index ? "L" : "M"} ${point.x.toFixed(1)} ${point.y.toFixed(1)}`).join(" ");
+      const dots = (points, cls) => points.map((point) => `<circle class="trend-dot ${cls}" cx="${point.x.toFixed(1)}" cy="${point.y.toFixed(1)}" r="4"><title>${escapeHtml(point.label)}: ${point.value}</title></circle>`).join("");
+      const labels = rows.map((row, index) => {
+        const x = rows.length === 1 ? width / 2 : pad + (index * (width - pad * 2)) / (rows.length - 1);
+        return `<text class="trend-axis-label" x="${x.toFixed(1)}" y="145" text-anchor="middle">${escapeHtml(row.label)}</text>`;
+      }).join("");
+      const first = rows[0];
+      const last = rows[rows.length - 1];
+      const ovrDelta = last.overall !== null && first.overall !== null ? signedDelta(last.overall - first.overall) : "--";
+      const potDelta = last.potential !== null && first.potential !== null ? signedDelta(last.potential - first.potential) : "--";
+      return [
+        '<div class="development-trend">',
+        '<div class="development-trend-head">',
+        '<div class="development-trend-title">Development Trend</div>',
+        `<div class="development-trend-delta">OVR ${escapeHtml(ovrDelta)} | POT ${escapeHtml(potDelta)}</div>`,
+        '</div>',
+        `<svg class="trend-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="Archived overall and potential trend">`,
+        `<line class="trend-grid" x1="${pad}" x2="${width - pad}" y1="${pad}" y2="${pad}"></line>`,
+        `<line class="trend-grid" x1="${pad}" x2="${width - pad}" y1="${height - pad}" y2="${height - pad}"></line>`,
+        ovrPoints.length > 1 ? `<path class="trend-line-ovr" d="${line(ovrPoints)}"></path>` : "",
+        potPoints.length > 1 ? `<path class="trend-line-pot" d="${line(potPoints)}"></path>` : "",
+        dots(ovrPoints, "trend-dot-ovr"),
+        dots(potPoints, "trend-dot-pot"),
+        labels,
+        '</svg>',
+        '<div class="trend-legend"><span class="trend-key"><span class="trend-swatch"></span>OVR</span><span class="trend-key"><span class="trend-swatch trend-swatch-pot"></span>POT</span></div>',
+        '</div>'
+      ].join("");
     }
 
     function setTeamColors(team) {
@@ -1729,8 +1982,17 @@
       }
       const teamLink = document.getElementById("teamLink");
       teamLink.href = team ? `./unified-roster.htm?file=${encodeURIComponent(team.rosterFile)}` : "./league%20dashboard.htm";
-      teamLink.textContent = team ? "Team Page" : "Dashboard";
+      teamLink.textContent = team ? "Back To Team" : "Dashboard";
       const teamHref = team ? `./unified-roster.htm?file=${encodeURIComponent(team.rosterFile)}` : "./league%20dashboard.htm";
+      const copyPlayerLink = document.getElementById("copyPlayerLink");
+      if (copyPlayerLink) {
+        copyPlayerLink.onclick = () => copyText(window.location.href, copyPlayerLink);
+      }
+      const copyTeamLink = document.getElementById("copyTeamLink");
+      if (copyTeamLink) {
+        copyTeamLink.hidden = !team;
+        copyTeamLink.onclick = () => copyText(absoluteHref(teamHref), copyTeamLink);
+      }
       const crumbTeamLink = document.getElementById("crumbTeamLink");
       const crumbPlayerName = document.getElementById("crumbPlayerName");
       if (crumbTeamLink) {
@@ -2279,11 +2541,21 @@
         } catch (error) {
           playerGamelogsData = { players: [] };
         }
+        let playerHistoryData = null;
+        try {
+          const playerHistoryRes = await fetch(DATA_URLS.playerHistory);
+          if (playerHistoryRes.ok) {
+            playerHistoryData = await playerHistoryRes.json();
+          }
+        } catch (error) {
+          playerHistoryData = null;
+        }
         state.players = Array.isArray(playersData) ? playersData : [];
         state.playerStats = Array.isArray(playerStatsData.players) ? playerStatsData.players : [];
         state.playerGamelogs = Array.isArray(playerGamelogsData.players) ? playerGamelogsData.players : [];
         state.injuries = Array.isArray(injuriesData.injuries) ? injuriesData.injuries : [];
         state.standings = Array.isArray(standingsData.sections) ? standingsData.sections : [];
+        state.playerHistory = playerHistoryData;
         state.teamDirectory = window.UnifiedRosterDataService.buildTeamDirectory(state.standings);
         state.current = findCurrentPlayer();
         if (!state.current) throw new Error("No player found");
