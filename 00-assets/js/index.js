@@ -105,7 +105,7 @@
     style.id = STYLE_ID;
     style.textContent = [
       "html, body { height: 100%; margin: 0; }",
-      "body { background: #f4f2ec; overflow: hidden; overflow-x: hidden; padding: 0; }",
+      "body { background: #f7f9fc; overflow: hidden; overflow-x: hidden; padding: 0; }",
       ":root { --site-sidebar-width: 150px; --site-topbar-height: 58px; --site-navy: #111b36; --site-blue: #5ca8ff; --site-line: rgba(148, 163, 184, 0.36); }",
       ".site-shell { display: grid; grid-template-columns: var(--site-sidebar-width) minmax(0, 1fr); grid-template-rows: var(--site-topbar-height) minmax(0, 1fr); height: 100vh; left: 0; position: fixed; right: 0; top: 0; transition: grid-template-columns 0.24s ease; width: 100%; }",
       "body.league-menu-closed .site-shell { grid-template-columns: 0 minmax(0, 1fr); }",
