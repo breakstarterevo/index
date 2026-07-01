@@ -26,6 +26,98 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
+  // Season 3 Sim 4 February package
+  {
+    file: "articles/season_3_sim_4_month_in_review.html",
+    title: "February 1984 Review: Richmond Close The Door And PSG Shake The Room",
+    category: "Recap",
+    desk: "Analysis",
+    sortKey: "2026-07-01-07",
+    tag: "Month in Review",
+    author: "Graham Trent",
+    meta: "Season 3 - Sim 4",
+    blurb: "AFC Richmond finished February unbeaten, PSG owned the loudest lower-tier month, and the promotion lines sharpened across the ESL.",
+    teams: ["AFC Richmond", "Ajax", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP", "Tottenham Hotspur"],
+    playerTags: ["Brad Davis", "Isiah Thomas", "Kelly Tripucka", "Magic Johnson", "Sidney Moncrief", "Tom Chambers"]
+  },
+  {
+    file: "articles/season_3_sim_4_mvp_race.html",
+    title: "February 1984 MVP Race: Kiki Is Untouchable, Moses Has A Problem",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-01-06",
+    tag: "MVP Race",
+    author: "Damon Cross",
+    meta: "Season 3 - Sim 4",
+    blurb: "Kiki Vandeweghe controls the clearest MVP lane while Moses Malone, Kelly Tripucka and Tom Chambers fight through team context.",
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Barcelona", "Benfica", "Brighton", "Inter Milan", "Juventus", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid"],
+    playerTags: ["Brad Davis", "Joe Barry Carroll", "Kelly Tripucka", "Kiki Vandeweghe", "Larry Nance", "Magic Johnson", "Mark Aguirre", "Moses Malone", "Otis Birdsong", "Purvis Short", "Robert Parish", "Rolando Blackman", "Sidney Moncrief", "Tom Chambers", "World B. Free"]
+  },
+  {
+    file: "articles/season_3_sim_4_tier_1_power_rankings.html",
+    title: "February 1984 Tier 1 Power Rankings: Richmond End The Debate",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-01-05",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 4",
+    blurb: "AFC Richmond stay first after an unbeaten February while Chelsea rise and Benfica lose trust.",
+    teams: ["AC Milan", "AFC Richmond", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "Sheffield United"],
+    playerTags: ["Adrian Dantley", "Bernard King", "Jim Paxson", "Joe Barry Carroll", "Larry Bird", "Moses Malone", "Sidney Moncrief", "Tom Chambers"]
+  },
+  {
+    file: "articles/season_3_sim_4_tier_2_power_rankings.html",
+    title: "February 1984 Tier 2 Power Rankings: Palace Hold, Ajax Crash The Board",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-01-04",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 4",
+    blurb: "Crystal Palace stay first in Tier 2, Brighton protect promotion, and Ajax force a trust-board jump after a 7-1 February.",
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Brighton", "Crystal Palace", "Juventus", "Manchester United", "Marseille"],
+    playerTags: ["Cliff Robinson", "Darrell Griffith", "Johnny Moore", "Kiki Vandeweghe", "Larry Nance", "Robert Parish", "Robert Reid", "Rolando Blackman"]
+  },
+  {
+    file: "articles/season_3_sim_4_tier_3_power_rankings.html",
+    title: "February 1984 Tier 3 Power Rankings: PSG Separate, Inter Take The Hit",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-01-03",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 4",
+    blurb: "Paris Saint-Germain stay first after an 8-1 month, while Inter Milan and Barcelona remain the main chasers in Tier 3.",
+    teams: ["Barcelona", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Brad Davis", "Doug Christie", "Isiah Thomas", "Kelly Tripucka", "Kirk Hinrich", "Lewis Lloyd", "Otis Birdsong", "Paul Pierce", "Purvis Short", "World B. Free"]
+  },
+  {
+    file: "articles/season_3_sim_4_promotion_relegation_watch.html",
+    title: "February 1984 Race Watch: PSG Stretch, Tier 2 Starts To Split",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-01-02",
+    tag: "Promotion/Relegation",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 4",
+    blurb: "PSG lead the ECL promotion race, Palace and Brighton hold Tier 2 promotion, and the relegation lines remain unforgiving.",
+    teams: ["Ajax", "Barcelona", "Bayern Munich", "Brighton", "Crystal Palace", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Paris Saint-Germain", "Real Madrid", "Sheffield United"],
+    playerTags: ["Sidney Moncrief"]
+  },
+  {
+    file: "articles/season_3_sim_4_stock_up_stock_down.html",
+    title: "February 1984 Stock Report: Richmond, PSG And Ajax Buy In",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-01-01",
+    tag: "Stock Report",
+    author: "Damon Cross",
+    meta: "Season 3 - Sim 4",
+    blurb: "AFC Richmond, PSG and Ajax rise after February, while Sporting CP, Marseille and Atletico Madrid take the sharpest hits.",
+    teams: ["AFC Richmond", "Ajax", "Atletico Madrid", "Inter Milan", "Manchester United", "Marseille", "Paris Saint-Germain", "Sporting CP"],
+    playerTags: ["Brad Davis", "Cliff Robinson", "Kelly Tripucka", "Magic Johnson", "Robert Parish", "Tom Chambers"]
+  },
   // Season 3 Sim 3 January package
   {
     file: "articles/season_3_sim_3_month_in_review.html",
