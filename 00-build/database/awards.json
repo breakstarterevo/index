@@ -10,6 +10,74 @@
                     "slug": "player-of-the-week",
                     "awards": [
                         {
+                            "date": "02/26/1984",
+                            "pos": "SG",
+                            "player": "Sidney Moncrief",
+                            "playerUrl": "./players/player699.htm",
+                            "playerFile": "player699.htm",
+                            "team": "roster8",
+                            "teamName": "Real Madrid",
+                            "teamUrl": "./rosters/roster8.htm",
+                            "teamFile": "roster8.htm",
+                            "ppg": 41.0,
+                            "rpg": 4.5,
+                            "apg": 5.0,
+                            "spg": 2.0,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/19/1984",
+                            "pos": "SG",
+                            "player": "Sidney Moncrief",
+                            "playerUrl": "./players/player699.htm",
+                            "playerFile": "player699.htm",
+                            "team": "roster8",
+                            "teamName": "Real Madrid",
+                            "teamUrl": "./rosters/roster8.htm",
+                            "teamFile": "roster8.htm",
+                            "ppg": 26.7,
+                            "rpg": 3.7,
+                            "apg": 3.7,
+                            "spg": 2.0,
+                            "bpg": 0.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "02/12/1984",
+                            "pos": "PG",
+                            "player": "Magic Johnson",
+                            "playerUrl": "./players/player698.htm",
+                            "playerFile": "player698.htm",
+                            "team": "roster12",
+                            "teamName": "AFC Richmond",
+                            "teamUrl": "./rosters/roster12.htm",
+                            "teamFile": "roster12.htm",
+                            "ppg": 24.0,
+                            "rpg": 7.0,
+                            "apg": 15.0,
+                            "spg": 2.0,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/05/1984",
+                            "pos": "C",
+                            "player": "Moses Malone",
+                            "playerUrl": "./players/player872.htm",
+                            "playerFile": "player872.htm",
+                            "team": "roster13",
+                            "teamName": "Benfica",
+                            "teamUrl": "./rosters/roster13.htm",
+                            "teamFile": "roster13.htm",
+                            "ppg": 32.0,
+                            "rpg": 21.5,
+                            "apg": 4.5,
+                            "spg": 0.5,
+                            "bpg": 3.0,
+                            "rowClass": "row2"
+                        },
+                        {
                             "date": "01/29/1984",
                             "pos": "PF",
                             "player": "Dan Roundfield",
@@ -237,6 +305,23 @@
                     "slug": "player-of-the-month",
                     "awards": [
                         {
+                            "date": "February",
+                            "pos": "SG",
+                            "player": "Sidney Moncrief",
+                            "playerUrl": "./players/player699.htm",
+                            "playerFile": "player699.htm",
+                            "team": "roster8",
+                            "teamName": "Real Madrid",
+                            "teamUrl": "./rosters/roster8.htm",
+                            "teamFile": "roster8.htm",
+                            "ppg": 30.1,
+                            "rpg": 3.7,
+                            "apg": 4.7,
+                            "spg": 1.9,
+                            "bpg": 0.1,
+                            "rowClass": "row1"
+                        },
+                        {
                             "date": "January",
                             "pos": "C",
                             "player": "Moses Malone",
@@ -251,7 +336,7 @@
                             "apg": 2.9,
                             "spg": 1.1,
                             "bpg": 2.6,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -268,7 +353,7 @@
                             "apg": 11.6,
                             "spg": 2.8,
                             "bpg": 0.2,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -285,7 +370,7 @@
                             "apg": 1.9,
                             "spg": 1.4,
                             "bpg": 5.8,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 },
@@ -293,6 +378,23 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "February",
+                            "pos": "SF",
+                            "player": "Alvan Adams",
+                            "playerUrl": "./players/player892.htm",
+                            "playerFile": "player892.htm",
+                            "team": "roster17",
+                            "teamName": "Chelsea",
+                            "teamUrl": "./rosters/roster17.htm",
+                            "teamFile": "roster17.htm",
+                            "ppg": 14.9,
+                            "rpg": 9.5,
+                            "apg": 6.1,
+                            "spg": 1.8,
+                            "bpg": 1.0,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "January",
                             "pos": "SG",
@@ -308,7 +410,7 @@
                             "apg": 6.9,
                             "spg": 2.6,
                             "bpg": 0.4,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -325,7 +427,7 @@
                             "apg": 3.1,
                             "spg": 0.1,
                             "bpg": 2.7,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -342,7 +444,7 @@
                             "apg": 3.1,
                             "spg": 1.0,
                             "bpg": 0.2,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 }
@@ -356,6 +458,74 @@
                     "title": "Player of the Week",
                     "slug": "player-of-the-week",
                     "awards": [
+                        {
+                            "date": "02/26/1984",
+                            "pos": "SG",
+                            "player": "Kiki Vandeweghe",
+                            "playerUrl": "./players/player701.htm",
+                            "playerFile": "player701.htm",
+                            "team": "roster10",
+                            "teamName": "Brighton",
+                            "teamUrl": "./rosters/roster10.htm",
+                            "teamFile": "roster10.htm",
+                            "ppg": 46.5,
+                            "rpg": 6.5,
+                            "apg": 4.5,
+                            "spg": 1.0,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/19/1984",
+                            "pos": "PF",
+                            "player": "Larry Nance",
+                            "playerUrl": "./players/player880.htm",
+                            "playerFile": "player880.htm",
+                            "team": "roster19",
+                            "teamName": "Aston Villa",
+                            "teamUrl": "./rosters/roster19.htm",
+                            "teamFile": "roster19.htm",
+                            "ppg": 41.7,
+                            "rpg": 8.0,
+                            "apg": 3.3,
+                            "spg": 2.3,
+                            "bpg": 2.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "02/12/1984",
+                            "pos": "SF",
+                            "player": "Mark Aguirre",
+                            "playerUrl": "./players/player702.htm",
+                            "playerFile": "player702.htm",
+                            "team": "roster10",
+                            "teamName": "Brighton",
+                            "teamUrl": "./rosters/roster10.htm",
+                            "teamFile": "roster10.htm",
+                            "ppg": 44.5,
+                            "rpg": 8.0,
+                            "apg": 3.0,
+                            "spg": 4.0,
+                            "bpg": 1.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/05/1984",
+                            "pos": "PF",
+                            "player": "Larry Nance",
+                            "playerUrl": "./players/player880.htm",
+                            "playerFile": "player880.htm",
+                            "team": "roster19",
+                            "teamName": "Aston Villa",
+                            "teamUrl": "./rosters/roster19.htm",
+                            "teamFile": "roster19.htm",
+                            "ppg": 32.0,
+                            "rpg": 8.0,
+                            "apg": 1.0,
+                            "spg": 3.0,
+                            "bpg": 4.0,
+                            "rowClass": "row2"
+                        },
                         {
                             "date": "01/29/1984",
                             "pos": "PF",
@@ -584,6 +754,23 @@
                     "slug": "player-of-the-month",
                     "awards": [
                         {
+                            "date": "February",
+                            "pos": "SG",
+                            "player": "Kiki Vandeweghe",
+                            "playerUrl": "./players/player701.htm",
+                            "playerFile": "player701.htm",
+                            "team": "roster10",
+                            "teamName": "Brighton",
+                            "teamUrl": "./rosters/roster10.htm",
+                            "teamFile": "roster10.htm",
+                            "ppg": 37.3,
+                            "rpg": 6.6,
+                            "apg": 4.4,
+                            "spg": 0.9,
+                            "bpg": 0.4,
+                            "rowClass": "row1"
+                        },
+                        {
                             "date": "January",
                             "pos": "SG",
                             "player": "Kiki Vandeweghe",
@@ -598,7 +785,7 @@
                             "apg": 3.9,
                             "spg": 0.7,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -615,7 +802,7 @@
                             "apg": 3.3,
                             "spg": 0.6,
                             "bpg": 0.3,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -632,7 +819,7 @@
                             "apg": 3.7,
                             "spg": 0.7,
                             "bpg": 0.6,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 },
@@ -640,6 +827,23 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "February",
+                            "pos": "SF",
+                            "player": "Robert Reid",
+                            "playerUrl": "./players/player885.htm",
+                            "playerFile": "player885.htm",
+                            "team": "roster5",
+                            "teamName": "Manchester United",
+                            "teamUrl": "./rosters/roster5.htm",
+                            "teamFile": "roster5.htm",
+                            "ppg": 22.3,
+                            "rpg": 8.0,
+                            "apg": 4.9,
+                            "spg": 1.9,
+                            "bpg": 0.3,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "January",
                             "pos": "PG",
@@ -655,7 +859,7 @@
                             "apg": 1.8,
                             "spg": 1.2,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -672,7 +876,7 @@
                             "apg": 2.1,
                             "spg": 0.3,
                             "bpg": 5.3,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -689,7 +893,7 @@
                             "apg": 2.8,
                             "spg": 0.6,
                             "bpg": 0.2,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 }
@@ -703,6 +907,74 @@
                     "title": "Player of the Week",
                     "slug": "player-of-the-week",
                     "awards": [
+                        {
+                            "date": "02/26/1984",
+                            "pos": "PG",
+                            "player": "Brad Davis",
+                            "playerUrl": "./players/player714.htm",
+                            "playerFile": "player714.htm",
+                            "team": "roster21",
+                            "teamName": "Paris Saint-Germain",
+                            "teamUrl": "./rosters/roster21.htm",
+                            "teamFile": "roster21.htm",
+                            "ppg": 27.3,
+                            "rpg": 5.7,
+                            "apg": 11.7,
+                            "spg": 1.0,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/19/1984",
+                            "pos": "SF",
+                            "player": "Kelly Tripucka",
+                            "playerUrl": "./players/player1049.htm",
+                            "playerFile": "player1049.htm",
+                            "team": "roster21",
+                            "teamName": "Paris Saint-Germain",
+                            "teamUrl": "./rosters/roster21.htm",
+                            "teamFile": "roster21.htm",
+                            "ppg": 37.0,
+                            "rpg": 8.0,
+                            "apg": 5.0,
+                            "spg": 3.0,
+                            "bpg": 0.5,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "02/12/1984",
+                            "pos": "PG",
+                            "player": "Brad Davis",
+                            "playerUrl": "./players/player714.htm",
+                            "playerFile": "player714.htm",
+                            "team": "roster21",
+                            "teamName": "Paris Saint-Germain",
+                            "teamUrl": "./rosters/roster21.htm",
+                            "teamFile": "roster21.htm",
+                            "ppg": 19.0,
+                            "rpg": 4.3,
+                            "apg": 7.3,
+                            "spg": 1.3,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/05/1984",
+                            "pos": "SG",
+                            "player": "Otis Birdsong",
+                            "playerUrl": "./players/player730.htm",
+                            "playerFile": "player730.htm",
+                            "team": "roster24",
+                            "teamName": "Barcelona",
+                            "teamUrl": "./rosters/roster24.htm",
+                            "teamFile": "roster24.htm",
+                            "ppg": 36.5,
+                            "rpg": 3.0,
+                            "apg": 2.5,
+                            "spg": 1.0,
+                            "bpg": 0.0,
+                            "rowClass": "row2"
+                        },
                         {
                             "date": "01/29/1984",
                             "pos": "SF",
@@ -931,6 +1203,23 @@
                     "slug": "player-of-the-month",
                     "awards": [
                         {
+                            "date": "February",
+                            "pos": "SF",
+                            "player": "Kelly Tripucka",
+                            "playerUrl": "./players/player1049.htm",
+                            "playerFile": "player1049.htm",
+                            "team": "roster21",
+                            "teamName": "Paris Saint-Germain",
+                            "teamUrl": "./rosters/roster21.htm",
+                            "teamFile": "roster21.htm",
+                            "ppg": 30.3,
+                            "rpg": 5.1,
+                            "apg": 5.0,
+                            "spg": 2.5,
+                            "bpg": 0.1,
+                            "rowClass": "row1"
+                        },
+                        {
                             "date": "January",
                             "pos": "SF",
                             "player": "Paul Pierce",
@@ -945,7 +1234,7 @@
                             "apg": 3.9,
                             "spg": 2.1,
                             "bpg": 0.8,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -962,7 +1251,7 @@
                             "apg": 3.8,
                             "spg": 1.6,
                             "bpg": 0.3,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -979,7 +1268,7 @@
                             "apg": 4.0,
                             "spg": 1.3,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 },
@@ -987,6 +1276,23 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "February",
+                            "pos": "PG",
+                            "player": "Brad Davis",
+                            "playerUrl": "./players/player714.htm",
+                            "playerFile": "player714.htm",
+                            "team": "roster21",
+                            "teamName": "Paris Saint-Germain",
+                            "teamUrl": "./rosters/roster21.htm",
+                            "teamFile": "roster21.htm",
+                            "ppg": 21.4,
+                            "rpg": 4.3,
+                            "apg": 9.2,
+                            "spg": 1.4,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "January",
                             "pos": "SF",
@@ -1002,7 +1308,7 @@
                             "apg": 3.9,
                             "spg": 2.1,
                             "bpg": 0.8,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -1019,7 +1325,7 @@
                             "apg": 9.9,
                             "spg": 1.6,
                             "bpg": 0.3,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -1036,7 +1342,7 @@
                             "apg": 4.6,
                             "spg": 3.9,
                             "bpg": 0.3,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 }

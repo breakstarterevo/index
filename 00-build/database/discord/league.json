@@ -7,21 +7,21 @@
       "teams": [
         {
           "name": "AFC Richmond",
-          "wins": 19,
+          "wins": 25,
           "losses": 3,
+          "streak": "W10"
+        },
+        {
+          "name": "AC Milan",
+          "wins": 18,
+          "losses": 12,
           "streak": "W4"
         },
         {
           "name": "Benfica",
-          "wins": 15,
-          "losses": 9,
-          "streak": "W1"
-        },
-        {
-          "name": "AC Milan",
-          "wins": 14,
-          "losses": 10,
-          "streak": "L1"
+          "wins": 17,
+          "losses": 13,
+          "streak": "L3"
         }
       ]
     },
@@ -30,21 +30,21 @@
       "teams": [
         {
           "name": "Crystal Palace",
-          "wins": 20,
-          "losses": 5,
-          "streak": "W1"
+          "wins": 23,
+          "losses": 8,
+          "streak": "W2"
         },
         {
           "name": "Brighton",
-          "wins": 15,
-          "losses": 7,
-          "streak": "L2"
+          "wins": 21,
+          "losses": 9,
+          "streak": "W4"
         },
         {
           "name": "Juventus",
-          "wins": 14,
-          "losses": 8,
-          "streak": "W4"
+          "wins": 17,
+          "losses": 13,
+          "streak": "L4"
         }
       ]
     },
@@ -53,21 +53,21 @@
       "teams": [
         {
           "name": "Paris Saint-Germain",
-          "wins": 18,
-          "losses": 5,
-          "streak": "W2"
-        },
-        {
-          "name": "Inter Milan",
-          "wins": 18,
-          "losses": 5,
+          "wins": 26,
+          "losses": 6,
           "streak": "L1"
         },
         {
-          "name": "Monaco",
-          "wins": 14,
-          "losses": 8,
-          "streak": "W3"
+          "name": "Inter Milan",
+          "wins": 22,
+          "losses": 7,
+          "streak": "L1"
+        },
+        {
+          "name": "Barcelona",
+          "wins": 19,
+          "losses": 12,
+          "streak": "W1"
         }
       ]
     }
@@ -75,33 +75,33 @@
   "leaders": [
     {
       "category": "Minutes",
-      "player": "Bernard King",
-      "team": "Bayern Munich",
-      "value": "40.6"
+      "player": "Adrian Dantley",
+      "team": "Benfica",
+      "value": "40.9"
     },
     {
       "category": "Points",
-      "player": "Bernard King",
-      "team": "Bayern Munich",
-      "value": "30.5"
+      "player": "Sidney Moncrief",
+      "team": "Real Madrid",
+      "value": "30.3"
     },
     {
       "category": "Rebounds",
       "player": "Moses Malone",
       "team": "Benfica",
-      "value": "10.5"
+      "value": "10.7"
     },
     {
       "category": "Assists",
-      "player": "Norm Nixon",
-      "team": "Chelsea",
+      "player": "Rickey Green",
+      "team": "Sheffield United",
       "value": "10.7"
     },
     {
       "category": "Steals",
       "player": "Allen Leavell",
       "team": "AC Milan",
-      "value": "2.5"
+      "value": "2.4"
     }
   ]
 }
