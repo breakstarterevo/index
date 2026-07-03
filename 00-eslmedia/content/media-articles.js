@@ -26,6 +26,111 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
+  // Season 3 Sim 5 March package
+  {
+    file: "articles/season_3_sim_5_month_in_review.html",
+    title: "March 1984 Review: Milan Keep Charging And The Lines Harden",
+    category: "Recap",
+    desk: "Analysis",
+    sortKey: "2026-07-03-08",
+    tag: "Month in Review",
+    author: "Graham Trent",
+    meta: "Season 3 - Sim 5",
+    blurb: "AC Milan stretched their winning streak, AFC Richmond kept command, and March made the promotion and relegation races feel less theoretical.",
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Valencia"],
+    playerTags: ["George Gervin", "Joe Barry Carroll", "Kelly Tripucka"]
+  },
+  {
+    file: "articles/season_3_sim_5_supercup_draw_difficulty.html",
+    title: "Supercup Draw Difficulty: Sporting Took The Tier Tax",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-03-07",
+    tag: "Supercup",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 5",
+    blurb: "A regular-season-only Supercup draw ranking weights tier first and record second, putting Sporting CP, Ajax and Inter Milan on the hardest roads.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    playerTags: []
+  },
+  {
+    file: "articles/season_3_sim_5_mvp_race.html",
+    title: "March 1984 MVP Race: Kiki Has The Number, Richmond Has The Problem",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-03-06",
+    tag: "MVP Race",
+    author: "Damon Cross",
+    meta: "Season 3 - Sim 5",
+    blurb: "Kiki Vandeweghe, Tom Chambers and Kelly Tripucka headline the March MVP board as team context tightens the ballot.",
+    teams: ["AC Milan", "AFC Richmond", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Inter Milan", "Juventus", "Monaco", "Paris Saint-Germain", "Real Madrid"],
+    playerTags: ["Bernard King", "George Gervin", "Kelly Tripucka", "Kiki Vandeweghe", "Magic Johnson", "Moses Malone", "Sidney Moncrief", "Tom Chambers"]
+  },
+  {
+    file: "articles/season_3_sim_5_tier_1_power_rankings.html",
+    title: "March 1984 Tier 1 Power Rankings: Richmond Rule, Milan Rush The Door",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-03-05",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 5",
+    blurb: "AFC Richmond stay first in Tier 1 while AC Milan's 6-0 month creates the strongest chase case.",
+    teams: ["AC Milan", "AFC Richmond", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "Sheffield United"],
+    playerTags: ["Bernard King", "George Gervin", "Larry Drew", "Moses Malone", "Norm Nixon", "Rickey Green", "Sidney Moncrief", "Tom Chambers"]
+  },
+  {
+    file: "articles/season_3_sim_5_tier_2_power_rankings.html",
+    title: "March 1984 Tier 2 Power Rankings: Brighton Take The Seat, Palace Keep The Case",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-03-04",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 5",
+    blurb: "Brighton move first on the Tier 2 trust board after a 6-1 March, with Crystal Palace and Aston Villa still central to the promotion race.",
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Brighton", "Crystal Palace", "Juventus", "Manchester United", "Marseille"],
+    playerTags: ["Alex English", "Cliff Robinson", "J.J. Redick", "James Donaldson", "Kiki Vandeweghe", "Larry Nance", "Robert Parish", "Rolando Blackman"]
+  },
+  {
+    file: "articles/season_3_sim_5_tier_3_power_rankings.html",
+    title: "March 1984 Tier 3 Power Rankings: PSG Lead, Inter Apply Heat",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-03-03",
+    tag: "Power Rankings",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 5",
+    blurb: "PSG stay first in Tier 3, but Inter Milan's W5 close and Monaco's strange winning month keep the promotion race alive.",
+    teams: ["Barcelona", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Chris Bosh", "Darryl Dawkins", "Isiah Thomas", "Kelly Tripucka", "Kirk Hinrich", "Otis Birdsong", "Purvis Short", "World B. Free"]
+  },
+  {
+    file: "articles/season_3_sim_5_promotion_relegation_watch.html",
+    title: "March 1984 Race Watch: Brighton Take The Line, Madrid Lose The Floor",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-03-02",
+    tag: "Promotion/Relegation",
+    author: "Nina Vale",
+    meta: "Season 3 - Sim 5",
+    blurb: "Brighton and Palace hold the Tier 2 promotion places, PSG lead Tier 3, and Real Madrid and Atletico Madrid sit under serious relegation pressure.",
+    teams: ["Aston Villa", "Atletico Madrid", "Bayern Munich", "Brighton", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester United", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United"],
+    playerTags: []
+  },
+  {
+    file: "articles/season_3_sim_5_stock_up_stock_down.html",
+    title: "March 1984 Stock Report: Milan Buy In, Atletico Hit The Floor",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-03-01",
+    tag: "Stock Report",
+    author: "Damon Cross",
+    meta: "Season 3 - Sim 5",
+    blurb: "AC Milan, Brighton and Inter Milan rise after March, while Atletico Madrid, Real Madrid and Valencia take the hardest hits.",
+    teams: ["AC Milan", "Atletico Madrid", "Brighton", "Inter Milan", "Paris Saint-Germain", "Real Madrid", "Valencia"],
+    playerTags: ["George Gervin", "Isiah Thomas", "Joe Barry Carroll", "Kiki Vandeweghe", "Sidney Moncrief", "World B. Free"]
+  },
   // Season 3 Sim 4 February package
   {
     file: "articles/season_3_sim_4_month_in_review.html",
