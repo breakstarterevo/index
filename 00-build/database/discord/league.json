@@ -7,21 +7,21 @@
       "teams": [
         {
           "name": "AFC Richmond",
-          "wins": 25,
-          "losses": 3,
-          "streak": "W10"
+          "wins": 33,
+          "losses": 4,
+          "streak": "W1"
         },
         {
           "name": "AC Milan",
-          "wins": 18,
+          "wins": 24,
           "losses": 12,
-          "streak": "W4"
+          "streak": "W10"
         },
         {
           "name": "Benfica",
-          "wins": 17,
-          "losses": 13,
-          "streak": "L3"
+          "wins": 20,
+          "losses": 16,
+          "streak": "W2"
         }
       ]
     },
@@ -29,22 +29,22 @@
       "title": "ELB Standings",
       "teams": [
         {
+          "name": "Brighton",
+          "wins": 27,
+          "losses": 10,
+          "streak": "L1"
+        },
+        {
           "name": "Crystal Palace",
-          "wins": 23,
-          "losses": 8,
+          "wins": 26,
+          "losses": 12,
           "streak": "W2"
         },
         {
-          "name": "Brighton",
-          "wins": 21,
-          "losses": 9,
-          "streak": "W4"
-        },
-        {
           "name": "Juventus",
-          "wins": 17,
-          "losses": 13,
-          "streak": "L4"
+          "wins": 20,
+          "losses": 18,
+          "streak": "W1"
         }
       ]
     },
@@ -53,21 +53,21 @@
       "teams": [
         {
           "name": "Paris Saint-Germain",
-          "wins": 26,
-          "losses": 6,
-          "streak": "L1"
+          "wins": 30,
+          "losses": 8,
+          "streak": "W1"
         },
         {
           "name": "Inter Milan",
-          "wins": 22,
-          "losses": 7,
-          "streak": "L1"
+          "wins": 27,
+          "losses": 9,
+          "streak": "W5"
         },
         {
           "name": "Barcelona",
-          "wins": 19,
-          "losses": 12,
-          "streak": "W1"
+          "wins": 23,
+          "losses": 14,
+          "streak": "L1"
         }
       ]
     }
@@ -77,31 +77,31 @@
       "category": "Minutes",
       "player": "Adrian Dantley",
       "team": "Benfica",
-      "value": "40.9"
+      "value": "41.4"
     },
     {
       "category": "Points",
-      "player": "Sidney Moncrief",
-      "team": "Real Madrid",
-      "value": "30.3"
+      "player": "Bernard King",
+      "team": "Bayern Munich",
+      "value": "30.5"
     },
     {
       "category": "Rebounds",
       "player": "Moses Malone",
       "team": "Benfica",
-      "value": "10.7"
+      "value": "10.9"
     },
     {
       "category": "Assists",
-      "player": "Rickey Green",
-      "team": "Sheffield United",
-      "value": "10.7"
+      "player": "Norm Nixon",
+      "team": "Chelsea",
+      "value": "11.0"
     },
     {
       "category": "Steals",
-      "player": "Allen Leavell",
-      "team": "AC Milan",
-      "value": "2.4"
+      "player": "Rickey Green",
+      "team": "Sheffield United",
+      "value": "2.3"
     }
   ]
 }

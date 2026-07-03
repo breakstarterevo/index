@@ -8,9 +8,20 @@
             "team": "roster26",
             "teamName": "Inter Milan",
             "rosterUrl": "./rosters/roster26.htm",
-            "length": "271",
+            "length": "240",
             "injury": "Ruptured Achilles",
             "rowClass": "row1"
+        },
+        {
+            "pos": "PF",
+            "name": "James Bailey",
+            "url": "",
+            "team": "roster21",
+            "teamName": "Paris Saint-Germain",
+            "rosterUrl": "./rosters/roster21.htm",
+            "length": "38",
+            "injury": "Broken Arm",
+            "rowClass": "row2"
         },
         {
             "pos": "SG",
@@ -19,9 +30,53 @@
             "team": "roster14",
             "teamName": "Juventus",
             "rosterUrl": "./rosters/roster14.htm",
-            "length": "49",
+            "length": "18",
             "injury": "Hernia",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PG",
+            "name": "Cameron Thomas",
+            "url": "",
+            "team": "roster13",
+            "teamName": "Benfica",
+            "rosterUrl": "./rosters/roster13.htm",
+            "length": "17",
+            "injury": "Broken Foot",
             "rowClass": "row2"
+        },
+        {
+            "pos": "PF",
+            "name": "Larry Bird",
+            "url": "",
+            "team": "roster9",
+            "teamName": "AC Milan",
+            "rosterUrl": "./rosters/roster9.htm",
+            "length": "10",
+            "injury": "Broken Foot",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "C",
+            "name": "Theo Ratliff",
+            "url": "",
+            "team": "roster9",
+            "teamName": "AC Milan",
+            "rosterUrl": "./rosters/roster9.htm",
+            "length": "3",
+            "injury": "Sprained Ankle",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "PG",
+            "name": "Isiah Thomas",
+            "url": "",
+            "team": "roster25",
+            "teamName": "Valencia",
+            "rosterUrl": "./rosters/roster25.htm",
+            "length": "2",
+            "injury": "Sprained Knee",
+            "rowClass": "row1"
         },
         {
             "pos": "SG",
@@ -30,86 +85,20 @@
             "team": "roster21",
             "teamName": "Paris Saint-Germain",
             "rosterUrl": "./rosters/roster21.htm",
-            "length": "33",
+            "length": "2",
             "injury": "Torn Ligament",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "PF",
-            "name": "A.C. Green",
-            "url": "",
-            "team": "roster25",
-            "teamName": "Valencia",
-            "rosterUrl": "./rosters/roster25.htm",
-            "length": "29",
-            "injury": "Stress Fracture",
             "rowClass": "row2"
-        },
-        {
-            "pos": "PF",
-            "name": "Wayne Cooper",
-            "url": "",
-            "team": "roster28",
-            "teamName": "Manchester City",
-            "rosterUrl": "./rosters/roster28.htm",
-            "length": "28",
-            "injury": "Broken Arm",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "C",
-            "name": "Keith Lee",
-            "url": "",
-            "team": "roster25",
-            "teamName": "Valencia",
-            "rosterUrl": "./rosters/roster25.htm",
-            "length": "8",
-            "injury": "Patellar Tendanitis",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "C",
-            "name": "Mike Gminski",
-            "url": "",
-            "team": "roster8",
-            "teamName": "Real Madrid",
-            "rosterUrl": "./rosters/roster8.htm",
-            "length": "7",
-            "injury": "Ruptured Disc",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "PG",
-            "name": "Tony Parker",
-            "url": "",
-            "team": "roster5",
-            "teamName": "Manchester United",
-            "rosterUrl": "./rosters/roster5.htm",
-            "length": "2",
-            "injury": "Broken Finger",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "PG",
-            "name": "Gus Williams",
-            "url": "",
-            "team": "roster15",
-            "teamName": "Marseille",
-            "rosterUrl": "./rosters/roster15.htm",
-            "length": "2",
-            "injury": "Sprained Knee",
-            "rowClass": "row1"
         },
         {
             "pos": "SF",
-            "name": "Luol Deng",
+            "name": "Kelly Tripucka",
             "url": "",
-            "team": "roster28",
-            "teamName": "Manchester City",
-            "rosterUrl": "./rosters/roster28.htm",
+            "team": "roster21",
+            "teamName": "Paris Saint-Germain",
+            "rosterUrl": "./rosters/roster21.htm",
             "length": "2",
-            "injury": "Sprained Knee",
-            "rowClass": "row2"
+            "injury": "Sprained Ankle",
+            "rowClass": "row1"
         }
     ]
 }
