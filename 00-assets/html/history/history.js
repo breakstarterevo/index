@@ -1174,6 +1174,204 @@
     return table(["Section", "Category", "Date", "Player", "Team"], rows, "Archived weekly/monthly awards unavailable");
   }
 
+  function statValue(row, key) {
+    const value = row?.[key];
+    return Number.isFinite(Number(value)) ? Number(value) : null;
+  }
+
+  function oneDecimal(value) {
+    const n = Number(value);
+    if (!Number.isFinite(n)) return "-";
+    return String(Math.round(n * 10) / 10);
+  }
+
+  function compareEdge(left, right, higherIsBetter = true) {
+    const a = Number(left);
+    const b = Number(right);
+    if (!Number.isFinite(a) || !Number.isFinite(b)) return "-";
+    const diff = a - b;
+    if (Math.abs(diff) < 0.001) return "Even";
+    const leader = higherIsBetter ? (diff > 0 ? "A" : "B") : (diff < 0 ? "A" : "B");
+    return `${leader} +${oneDecimal(Math.abs(diff))}`;
+  }
+
+  function compareRankEdge(left, right) {
+    return compareEdge(left, right, false);
+  }
+
+  function compareTextEdge(left, right) {
+    if (!left || !right) return "-";
+    return String(left) === String(right) ? "Even" : "-";
+  }
+
+  function compareMatrix(title, rows) {
+    const rendered = rows.filter(Boolean).map((row) => `<tr><td>${esc(row.label)}</td><td>${row.aHtml ?? esc(row.a ?? "-")}</td><td>${row.bHtml ?? esc(row.b ?? "-")}</td><td>${esc(row.edge ?? "-")}</td></tr>`);
+    return `<section class="reference-section compare-summary"><h2>${esc(title)}</h2>${table(["Metric", "A", "B", "Edge"], rendered, "Choose both sides to compare")}</section>`;
+  }
+
+  function playerStatRows(stat) {
+    return stat?.stats?.season_averages?.rows || [];
+  }
+
+  function playerCareerRow(stat) {
+    return playerStatRows(stat).find((row) => String(row.season || "").toLowerCase() === "career") || {};
+  }
+
+  function bestPlayerStatSeason(stat, key) {
+    return playerStatRows(stat)
+      .filter((row) => String(row.season || "").toLowerCase() !== "career")
+      .sort((a, b) => (statValue(b, key) || 0) - (statValue(a, key) || 0))[0] || {};
+  }
+
+  async function playerCompareSummary(key) {
+    const identity = (state.playerIndex?.identities || []).find((item) => item.key === key);
+    if (!identity) return null;
+    const appearances = identity.appearances || [];
+    const statSnapshots = [];
+    const awardKeys = new Set();
+    let weeklyAwards = 0;
+    for (const appearance of appearances) {
+      const data = await loadSeason(appearance.season);
+      const stat = (data.playerStats.players || []).find((p) => String(p.url || "").endsWith(appearance.playerFile));
+      if (stat) statSnapshots.push({ season: appearance.season, stat });
+      (data.seasonAwards.sections || []).forEach((section) => (section.awards || [])
+        .filter((award) => award.personFile === appearance.playerFile)
+        .forEach((award) => awardKeys.add(`${appearance.season}|${section.title}|${award.award}|${award.personFile}`)));
+      (data.awards.sections || []).forEach((section) => (section.categories || []).forEach((category) => (category.awards || [])
+        .filter((award) => award.playerFile === appearance.playerFile)
+        .forEach((award) => {
+          weeklyAwards += 1;
+          awardKeys.add(`${appearance.season}|${section.title}|${category.title}|${award.date}|${award.playerFile}`);
+        })));
+    }
+    const peak = appearances.slice().sort((a, b) => (num(b.overall) || 0) - (num(a.overall) || 0))[0] || {};
+    const latestStat = statSnapshots.slice().sort((a, b) => seasonNumber(a.season) - seasonNumber(b.season)).at(-1)?.stat || {};
+    const career = playerCareerRow(latestStat);
+    const bestPpg = bestPlayerStatSeason(latestStat, "pts");
+    const bestRpg = bestPlayerStatSeason(latestStat, "drb");
+    const reb = (statValue(career, "orb") || 0) + (statValue(career, "drb") || 0);
+    return {
+      name: identity.name,
+      seasons: appearances.length,
+      peak,
+      career,
+      ppg: statValue(career, "pts"),
+      rpg: reb || null,
+      apg: statValue(career, "ast"),
+      spg: statValue(career, "stl"),
+      bpg: statValue(career, "blk"),
+      fgPct: statValue(career, "fg_pct"),
+      threePct: statValue(career, "3p_pct"),
+      ftPct: statValue(career, "ft_pct"),
+      awards: awardKeys.size,
+      weeklyAwards,
+      bestPpg,
+      bestRpg
+    };
+  }
+
+  async function teamCompareSummary(id) {
+    if (!id) return null;
+    const seasons = await allSeasonData();
+    const history = [];
+    const statRows = [];
+    let seasonAwards = 0;
+    let weeklyAwards = 0;
+    seasons.forEach((data) => {
+      const standing = selectedTeamStanding(data, id);
+      if (standing.team) history.push({ season: data.season, standing });
+      const stats = (data.teamStats.teams || []).find((row) => fileStem(row.file) === id);
+      if (stats) statRows.push(stats);
+      (data.seasonAwards.sections || []).forEach((section) => (section.awards || [])
+        .filter((award) => fileStem(award.teamFile) === id)
+        .forEach(() => { seasonAwards += 1; }));
+      (data.awards.sections || []).forEach((section) => (section.categories || []).forEach((category) => (category.awards || [])
+        .filter((award) => fileStem(award.teamFile) === id)
+        .forEach(() => { weeklyAwards += 1; })));
+    });
+    const wins = history.reduce((sum, row) => sum + (num(row.standing.wins) || 0), 0);
+    const losses = history.reduce((sum, row) => sum + (num(row.standing.losses) || 0), 0);
+    const bestFinish = history.slice().sort((a, b) => teamOverallRank(a.standing) - teamOverallRank(b.standing))[0];
+    const avgFinish = history.length ? history.reduce((sum, row) => sum + (num(row.standing.position) || 0), 0) / history.length : null;
+    const avgDiff = history.length ? history.reduce((sum, row) => sum + (num(row.standing.diff) || 0), 0) / history.length : null;
+    const avgStat = (key, side = "team") => {
+      const values = statRows.map((row) => num(row.stats?.[key]?.[side]?.value)).filter((value) => value !== null);
+      return values.length ? values.reduce((sum, value) => sum + value, 0) / values.length : null;
+    };
+    return {
+      seasons: history.length,
+      wins,
+      losses,
+      winPct: wins + losses ? wins / (wins + losses) : null,
+      bestFinish,
+      avgFinish,
+      avgDiff,
+      promotions: history.filter((row) => row.standing.marker === "P").length,
+      relegations: history.filter((row) => row.standing.marker === "R").length,
+      titles: history.filter((row) => row.standing.marker === "C").length,
+      points: avgStat("points"),
+      opponentPoints: avgStat("points", "opponent"),
+      rebounds: avgStat("rebounds"),
+      assists: avgStat("assists"),
+      awards: seasonAwards + weeklyAwards,
+      seasonAwards,
+      weeklyAwards
+    };
+  }
+
+  function renderPlayerCompareSummary(a, b) {
+    if (!a || !b) return "";
+    const aPeak = num(a.peak.overall);
+    const bPeak = num(b.peak.overall);
+    return `
+      ${compareMatrix("Player Ratings", [
+        { label: "Archived Seasons", a: a.seasons, b: b.seasons, edge: compareEdge(a.seasons, b.seasons) },
+        { label: "Peak OVR", aHtml: ratingChip("OVR", a.peak.overall), bHtml: ratingChip("OVR", b.peak.overall), edge: compareEdge(aPeak, bPeak) },
+        { label: "Peak Season", a: seasonLabel(a.peak.season), b: seasonLabel(b.peak.season), edge: compareTextEdge(a.peak.season, b.peak.season) },
+        { label: "Peak Team", a: a.peak.team, b: b.peak.team, edge: compareTextEdge(a.peak.team, b.peak.team) }
+      ])}
+      ${compareMatrix("Player Stats & Awards", [
+        { label: "Career PPG", a: oneDecimal(a.ppg), b: oneDecimal(b.ppg), edge: compareEdge(a.ppg, b.ppg) },
+        { label: "Career RPG", a: oneDecimal(a.rpg), b: oneDecimal(b.rpg), edge: compareEdge(a.rpg, b.rpg) },
+        { label: "Career APG", a: oneDecimal(a.apg), b: oneDecimal(b.apg), edge: compareEdge(a.apg, b.apg) },
+        { label: "Career SPG", a: oneDecimal(a.spg), b: oneDecimal(b.spg), edge: compareEdge(a.spg, b.spg) },
+        { label: "Career BPG", a: oneDecimal(a.bpg), b: oneDecimal(b.bpg), edge: compareEdge(a.bpg, b.bpg) },
+        { label: "FG%", a: percent(a.fgPct), b: percent(b.fgPct), edge: compareEdge(a.fgPct, b.fgPct) },
+        { label: "3P%", a: percent(a.threePct), b: percent(b.threePct), edge: compareEdge(a.threePct, b.threePct) },
+        { label: "FT%", a: percent(a.ftPct), b: percent(b.ftPct), edge: compareEdge(a.ftPct, b.ftPct) },
+        { label: "Best PPG Season", a: `${oneDecimal(a.bestPpg.pts)} (${a.bestPpg.season || "-"})`, b: `${oneDecimal(b.bestPpg.pts)} (${b.bestPpg.season || "-"})`, edge: compareEdge(a.bestPpg.pts, b.bestPpg.pts) },
+        { label: "Awards / Honors", a: a.awards, b: b.awards, edge: compareEdge(a.awards, b.awards) },
+        { label: "Weekly / Monthly Awards", a: a.weeklyAwards, b: b.weeklyAwards, edge: compareEdge(a.weeklyAwards, b.weeklyAwards) }
+      ])}`;
+  }
+
+  function renderTeamCompareSummary(a, b) {
+    if (!a || !b) return "";
+    const bestA = a.bestFinish?.standing;
+    const bestB = b.bestFinish?.standing;
+    return `
+      ${compareMatrix("Team Results", [
+        { label: "Archived Seasons", a: a.seasons, b: b.seasons, edge: compareEdge(a.seasons, b.seasons) },
+        { label: "Total Record", a: `${a.wins}-${a.losses}`, b: `${b.wins}-${b.losses}`, edge: compareEdge(a.wins, b.wins) },
+        { label: "Win%", a: percent(a.winPct), b: percent(b.winPct), edge: compareEdge(a.winPct, b.winPct) },
+        { label: "Best Finish", a: `${bestA?.tier || "-"} #${bestA?.position || "-"}`, b: `${bestB?.tier || "-"} #${bestB?.position || "-"}`, edge: compareRankEdge(teamOverallRank(bestA || {}), teamOverallRank(bestB || {})) },
+        { label: "Average Finish", a: oneDecimal(a.avgFinish), b: oneDecimal(b.avgFinish), edge: compareRankEdge(a.avgFinish, b.avgFinish) },
+        { label: "Average Diff", a: oneDecimal(a.avgDiff), b: oneDecimal(b.avgDiff), edge: compareEdge(a.avgDiff, b.avgDiff) },
+        { label: "Titles", a: a.titles, b: b.titles, edge: compareEdge(a.titles, b.titles) },
+        { label: "Promotions", a: a.promotions, b: b.promotions, edge: compareEdge(a.promotions, b.promotions) },
+        { label: "Relegations", a: a.relegations, b: b.relegations, edge: compareEdge(a.relegations, b.relegations, false) }
+      ])}
+      ${compareMatrix("Team Stats & Awards", [
+        { label: "Avg PTS", a: oneDecimal(a.points), b: oneDecimal(b.points), edge: compareEdge(a.points, b.points) },
+        { label: "Avg OPP PTS", a: oneDecimal(a.opponentPoints), b: oneDecimal(b.opponentPoints), edge: compareEdge(a.opponentPoints, b.opponentPoints, false) },
+        { label: "Avg REB", a: oneDecimal(a.rebounds), b: oneDecimal(b.rebounds), edge: compareEdge(a.rebounds, b.rebounds) },
+        { label: "Avg AST", a: oneDecimal(a.assists), b: oneDecimal(b.assists), edge: compareEdge(a.assists, b.assists) },
+        { label: "Awards / Honors", a: a.awards, b: b.awards, edge: compareEdge(a.awards, b.awards) },
+        { label: "Season Awards", a: a.seasonAwards, b: b.seasonAwards, edge: compareEdge(a.seasonAwards, b.seasonAwards) },
+        { label: "Weekly / Monthly Awards", a: a.weeklyAwards, b: b.weeklyAwards, edge: compareEdge(a.weeklyAwards, b.weeklyAwards) }
+      ])}`;
+  }
+
   function renderSupercup(data) {
     const standingsRows = (data.supercupStandings.sections || []).flatMap((section) => (section.teams || []).map((team) => `<tr><td>${esc(section.title)}</td><td>${esc(team.team)}</td><td class="num">${esc(team.wins)}-${esc(team.losses)}</td><td class="num">${esc(team.diff)}</td><td>${esc(team.streak)}</td></tr>`));
     const leaderRows = (data.supercupLeaders.sections || []).flatMap((section) => (section.categories || []).slice(0, 2).flatMap((category) => (category.leaders || []).slice(0, 5).map((leader) => `<tr><td>${esc(category.title)}</td><td>${esc(leader.player)}</td><td>${esc(leader.teamName)}</td><td class="num">${esc(leader.valueText || leader.value)}</td></tr>`)));
@@ -1362,6 +1560,35 @@
       .join("");
   }
 
+  function comparePlayerSearchOptions() {
+    return (state.playerIndex?.identities || [])
+      .slice()
+      .sort((a, b) => String(a.name).localeCompare(String(b.name)))
+      .map((identity) => {
+        const peak = (identity.appearances || []).slice().sort((a, b) => (num(b.overall) || 0) - (num(a.overall) || 0))[0] || {};
+        const status = identityStatus(identity).label;
+        const label = `${identity.name} | ${identity.height || "No height"} | ${status} | Peak ${peak.overall || "-"} ${seasonLabel(peak.season)}`;
+        return `<option value="${esc(label)}" data-key="${esc(identity.key)}"></option>`;
+      })
+      .join("");
+  }
+
+  function comparePlayerInputValue(key) {
+    const identity = (state.playerIndex?.identities || []).find((item) => item.key === key);
+    if (!identity) return "";
+    const peak = (identity.appearances || []).slice().sort((a, b) => (num(b.overall) || 0) - (num(a.overall) || 0))[0] || {};
+    return `${identity.name} | ${identity.height || "No height"} | ${identityStatus(identity).label} | Peak ${peak.overall || "-"} ${seasonLabel(peak.season)}`;
+  }
+
+  function selectedComparePlayerKey(input) {
+    const value = String(input?.value || "").trim();
+    if (!value) return "";
+    const option = $$("#comparePlayerOptions option").find((item) => item.value === value);
+    if (option?.dataset.key) return option.dataset.key;
+    const exactMatches = (state.playerIndex?.identities || []).filter((identity) => String(identity.name || "").toLowerCase() === value.toLowerCase());
+    return exactMatches.length === 1 ? exactMatches[0].key : "";
+  }
+
   async function playerCompareCard(key) {
     const identity = (state.playerIndex?.identities || []).find((item) => item.key === key);
     if (!identity) return `<section class="reference-section"><h2>Player</h2><div class="empty">Choose a player to compare</div></section>`;
@@ -1391,19 +1618,47 @@
     const type = p.get("type") === "teams" ? "teams" : "players";
     const a = p.get("a") || "";
     const b = p.get("b") || "";
-    const options = comparePickerOptions(type);
+    const options = type === "teams" ? comparePickerOptions(type) : "";
+    const pickerHtml = type === "teams" ? `
+        <label>First <select id="compareA"><option value="">Choose</option>${options}</select></label>
+        <label>Second <select id="compareB"><option value="">Choose</option>${options}</select></label>`
+      : `
+        <datalist id="comparePlayerOptions">${comparePlayerSearchOptions()}</datalist>
+        <label>First <input id="compareA" class="compare-search-input" list="comparePlayerOptions" placeholder="Search player" value="${esc(comparePlayerInputValue(a))}" autocomplete="off"></label>
+        <label>Second <input id="compareB" class="compare-search-input" list="comparePlayerOptions" placeholder="Search player" value="${esc(comparePlayerInputValue(b))}" autocomplete="off"></label>`;
     const cards = type === "teams" ? [await teamCompareCard(a), await teamCompareCard(b)] : [await playerCompareCard(a), await playerCompareCard(b)];
+    const summaries = a && b
+      ? (type === "teams" ? [await teamCompareSummary(a), await teamCompareSummary(b)] : [await playerCompareSummary(a), await playerCompareSummary(b)])
+      : [null, null];
+    const summaryHtml = type === "teams" ? renderTeamCompareSummary(summaries[0], summaries[1]) : renderPlayerCompareSummary(summaries[0], summaries[1]);
     $("#history-app").innerHTML = `
       <section class="reference-section compact-controls"><h2>Compare Controls</h2><div class="filter-bar">
         <label>Type <select id="compareType"><option value="players" ${type === "players" ? "selected" : ""}>Players</option><option value="teams" ${type === "teams" ? "selected" : ""}>Teams</option></select></label>
-        <label>First <select id="compareA"><option value="">Choose</option>${options}</select></label>
-        <label>Second <select id="compareB"><option value="">Choose</option>${options}</select></label>
+        ${pickerHtml}
       </div></section>
+      ${summaryHtml}
       <div class="history-grid">${cards.join("")}</div>`;
-    $("#compareA").value = a;
-    $("#compareB").value = b;
-    const update = () => navigate(`compare.htm?type=${encodeURIComponent($("#compareType").value)}&a=${encodeURIComponent($("#compareA").value)}&b=${encodeURIComponent($("#compareB").value)}`);
-    ["compareType", "compareA", "compareB"].forEach((id) => $(`#${id}`)?.addEventListener("change", update));
+    if (type === "teams") {
+      $("#compareA").value = a;
+      $("#compareB").value = b;
+    }
+    $("#compareType")?.addEventListener("change", (event) => navigate(`compare.htm?type=${encodeURIComponent(event.target.value)}`));
+    const update = () => {
+      const first = type === "teams" ? $("#compareA")?.value || "" : selectedComparePlayerKey($("#compareA"));
+      const second = type === "teams" ? $("#compareB")?.value || "" : selectedComparePlayerKey($("#compareB"));
+      navigate(`compare.htm?type=${encodeURIComponent(type)}&a=${encodeURIComponent(first)}&b=${encodeURIComponent(second)}`);
+    };
+    if (type === "teams") {
+      ["compareA", "compareB"].forEach((id) => $(`#${id}`)?.addEventListener("change", update));
+    } else {
+      const updateIfResolved = (event) => {
+        if (selectedComparePlayerKey(event.target) || !String(event.target.value || "").trim()) update();
+      };
+      ["compareA", "compareB"].forEach((id) => {
+        $(`#${id}`)?.addEventListener("change", updateIfResolved);
+        $(`#${id}`)?.addEventListener("input", updateIfResolved);
+      });
+    }
   }
 
   function pageFromLocation() {
