@@ -444,16 +444,19 @@
                     "date": "11/2/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Atletico Madrid @ Aston Villa",
-                            "awayTeam": "roster9",
-                            "awayTeamName": "Atletico Madrid",
-                            "awayRosterUrl": "./rosters/roster9.htm",
-                            "awayRosterFile": "roster9.htm",
+                            "status": "completed",
+                            "matchupText": "Atletico Madrid 110, @Aston Villa 109",
+                            "boxscoreUrl": "./boxes/box16-1.htm",
+                            "boxscoreFile": "box16-1.htm",
                             "homeTeam": "roster8",
                             "homeTeamName": "Aston Villa",
-                            "homeRosterUrl": "./rosters/roster8.htm",
-                            "homeRosterFile": "roster8.htm",
+                            "homeScore": 109,
+                            "awayTeam": "roster9",
+                            "awayTeamName": "Atletico Madrid",
+                            "awayScore": 110,
+                            "winner": "roster9",
+                            "winnerName": "Atletico Madrid",
+                            "margin": 1,
                             "rowClass": "row1"
                         }
                     ]
@@ -462,16 +465,19 @@
                     "date": "11/9/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Bayern Munich @ Valencia",
-                            "awayTeam": "roster11",
-                            "awayTeamName": "Bayern Munich",
-                            "awayRosterUrl": "./rosters/roster11.htm",
-                            "awayRosterFile": "roster11.htm",
+                            "status": "completed",
+                            "matchupText": "Bayern Munich 129, @Valencia 125",
+                            "boxscoreUrl": "./boxes/box23-1.htm",
+                            "boxscoreFile": "box23-1.htm",
                             "homeTeam": "roster28",
                             "homeTeamName": "Valencia",
-                            "homeRosterUrl": "./rosters/roster28.htm",
-                            "homeRosterFile": "roster28.htm",
+                            "homeScore": 125,
+                            "awayTeam": "roster11",
+                            "awayTeamName": "Bayern Munich",
+                            "awayScore": 129,
+                            "winner": "roster11",
+                            "winnerName": "Bayern Munich",
+                            "margin": 4,
                             "rowClass": "row1"
                         }
                     ]
@@ -480,16 +486,19 @@
                     "date": "11/10/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Atletico Madrid @ Tottenham Hotspur",
-                            "awayTeam": "roster9",
-                            "awayTeamName": "Atletico Madrid",
-                            "awayRosterUrl": "./rosters/roster9.htm",
-                            "awayRosterFile": "roster9.htm",
+                            "status": "completed",
+                            "matchupText": "Atletico Madrid 88, @Tottenham Hotspur 82",
+                            "boxscoreUrl": "./boxes/box24-1.htm",
+                            "boxscoreFile": "box24-1.htm",
                             "homeTeam": "roster27",
                             "homeTeamName": "Tottenham Hotspur",
-                            "homeRosterUrl": "./rosters/roster27.htm",
-                            "homeRosterFile": "roster27.htm",
+                            "homeScore": 82,
+                            "awayTeam": "roster9",
+                            "awayTeamName": "Atletico Madrid",
+                            "awayScore": 88,
+                            "winner": "roster9",
+                            "winnerName": "Atletico Madrid",
+                            "margin": 6,
                             "rowClass": "row1"
                         }
                     ]
@@ -498,16 +507,19 @@
                     "date": "11/11/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Paris Saint-Germain @ Sheffield United",
-                            "awayTeam": "roster23",
-                            "awayTeamName": "Paris Saint-Germain",
-                            "awayRosterUrl": "./rosters/roster23.htm",
-                            "awayRosterFile": "roster23.htm",
+                            "status": "completed",
+                            "matchupText": "@Sheffield United 114, Paris Saint-Germain 86",
+                            "boxscoreUrl": "./boxes/box25-1.htm",
+                            "boxscoreFile": "box25-1.htm",
                             "homeTeam": "roster25",
                             "homeTeamName": "Sheffield United",
-                            "homeRosterUrl": "./rosters/roster25.htm",
-                            "homeRosterFile": "roster25.htm",
+                            "homeScore": 114,
+                            "awayTeam": "roster23",
+                            "awayTeamName": "Paris Saint-Germain",
+                            "awayScore": 86,
+                            "winner": "roster25",
+                            "winnerName": "Sheffield United",
+                            "margin": 28,
                             "rowClass": "row1"
                         }
                     ]
@@ -516,16 +528,19 @@
                     "date": "11/15/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Sporting CP @ AC Milan",
-                            "awayTeam": "roster26",
-                            "awayTeamName": "Sporting CP",
-                            "awayRosterUrl": "./rosters/roster26.htm",
-                            "awayRosterFile": "roster26.htm",
+                            "status": "completed",
+                            "matchupText": "@AC Milan 114, Sporting CP 102",
+                            "boxscoreUrl": "./boxes/box29-1.htm",
+                            "boxscoreFile": "box29-1.htm",
                             "homeTeam": "roster5",
                             "homeTeamName": "AC Milan",
-                            "homeRosterUrl": "./rosters/roster5.htm",
-                            "homeRosterFile": "roster5.htm",
+                            "homeScore": 114,
+                            "awayTeam": "roster26",
+                            "awayTeamName": "Sporting CP",
+                            "awayScore": 102,
+                            "winner": "roster5",
+                            "winnerName": "AC Milan",
+                            "margin": 12,
                             "rowClass": "row1"
                         }
                     ]
@@ -534,16 +549,19 @@
                     "date": "11/16/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Inter Milan @ Sheffield United",
-                            "awayTeam": "roster18",
-                            "awayTeamName": "Inter Milan",
-                            "awayRosterUrl": "./rosters/roster18.htm",
-                            "awayRosterFile": "roster18.htm",
+                            "status": "completed",
+                            "matchupText": "Inter Milan 109, @Sheffield United 86",
+                            "boxscoreUrl": "./boxes/box30-1.htm",
+                            "boxscoreFile": "box30-1.htm",
                             "homeTeam": "roster25",
                             "homeTeamName": "Sheffield United",
-                            "homeRosterUrl": "./rosters/roster25.htm",
-                            "homeRosterFile": "roster25.htm",
+                            "homeScore": 86,
+                            "awayTeam": "roster18",
+                            "awayTeamName": "Inter Milan",
+                            "awayScore": 109,
+                            "winner": "roster18",
+                            "winnerName": "Inter Milan",
+                            "margin": 23,
                             "rowClass": "row1"
                         }
                     ]
@@ -552,16 +570,19 @@
                     "date": "11/17/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Monaco @ Brighton",
-                            "awayTeam": "roster22",
-                            "awayTeamName": "Monaco",
-                            "awayRosterUrl": "./rosters/roster22.htm",
-                            "awayRosterFile": "roster22.htm",
+                            "status": "completed",
+                            "matchupText": "@Brighton 109, Monaco 88",
+                            "boxscoreUrl": "./boxes/box31-1.htm",
+                            "boxscoreFile": "box31-1.htm",
                             "homeTeam": "roster13",
                             "homeTeamName": "Brighton",
-                            "homeRosterUrl": "./rosters/roster13.htm",
-                            "homeRosterFile": "roster13.htm",
+                            "homeScore": 109,
+                            "awayTeam": "roster22",
+                            "awayTeamName": "Monaco",
+                            "awayScore": 88,
+                            "winner": "roster13",
+                            "winnerName": "Brighton",
+                            "margin": 21,
                             "rowClass": "row1"
                         }
                     ]
@@ -570,29 +591,35 @@
                     "date": "11/19/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "AC Milan @ FL Fart",
-                            "awayTeam": "roster5",
-                            "awayTeamName": "AC Milan",
-                            "awayRosterUrl": "./rosters/roster5.htm",
-                            "awayRosterFile": "roster5.htm",
+                            "status": "completed",
+                            "matchupText": "@FL Fart 125, AC Milan 116",
+                            "boxscoreUrl": "./boxes/box33-1.htm",
+                            "boxscoreFile": "box33-1.htm",
                             "homeTeam": "roster17",
                             "homeTeamName": "FL Fart",
-                            "homeRosterUrl": "./rosters/roster17.htm",
-                            "homeRosterFile": "roster17.htm",
+                            "homeScore": 125,
+                            "awayTeam": "roster5",
+                            "awayTeamName": "AC Milan",
+                            "awayScore": 116,
+                            "winner": "roster17",
+                            "winnerName": "FL Fart",
+                            "margin": 9,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Paris Saint-Germain @ Real Madrid",
-                            "awayTeam": "roster23",
-                            "awayTeamName": "Paris Saint-Germain",
-                            "awayRosterUrl": "./rosters/roster23.htm",
-                            "awayRosterFile": "roster23.htm",
+                            "status": "completed",
+                            "matchupText": "@Real Madrid 114, Paris Saint-Germain 109",
+                            "boxscoreUrl": "./boxes/box33-2.htm",
+                            "boxscoreFile": "box33-2.htm",
                             "homeTeam": "roster24",
                             "homeTeamName": "Real Madrid",
-                            "homeRosterUrl": "./rosters/roster24.htm",
-                            "homeRosterFile": "roster24.htm",
+                            "homeScore": 114,
+                            "awayTeam": "roster23",
+                            "awayTeamName": "Paris Saint-Germain",
+                            "awayScore": 109,
+                            "winner": "roster24",
+                            "winnerName": "Real Madrid",
+                            "margin": 5,
                             "rowClass": "row2"
                         }
                     ]
@@ -601,29 +628,35 @@
                     "date": "11/23/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Manchester United @ Juventus",
-                            "awayTeam": "roster20",
-                            "awayTeamName": "Manchester United",
-                            "awayRosterUrl": "./rosters/roster20.htm",
-                            "awayRosterFile": "roster20.htm",
+                            "status": "completed",
+                            "matchupText": "@Juventus 97, Manchester United 94",
+                            "boxscoreUrl": "./boxes/box37-1.htm",
+                            "boxscoreFile": "box37-1.htm",
                             "homeTeam": "roster19",
                             "homeTeamName": "Juventus",
-                            "homeRosterUrl": "./rosters/roster19.htm",
-                            "homeRosterFile": "roster19.htm",
+                            "homeScore": 97,
+                            "awayTeam": "roster20",
+                            "awayTeamName": "Manchester United",
+                            "awayScore": 94,
+                            "winner": "roster19",
+                            "winnerName": "Juventus",
+                            "margin": 3,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Bayern Munich @ AFC Richmond",
-                            "awayTeam": "roster11",
-                            "awayTeamName": "Bayern Munich",
-                            "awayRosterUrl": "./rosters/roster11.htm",
-                            "awayRosterFile": "roster11.htm",
+                            "status": "completed",
+                            "matchupText": "@AFC Richmond 118, Bayern Munich 107",
+                            "boxscoreUrl": "./boxes/box37-2.htm",
+                            "boxscoreFile": "box37-2.htm",
                             "homeTeam": "roster6",
                             "homeTeamName": "AFC Richmond",
-                            "homeRosterUrl": "./rosters/roster6.htm",
-                            "homeRosterFile": "roster6.htm",
+                            "homeScore": 118,
+                            "awayTeam": "roster11",
+                            "awayTeamName": "Bayern Munich",
+                            "awayScore": 107,
+                            "winner": "roster6",
+                            "winnerName": "AFC Richmond",
+                            "margin": 11,
                             "rowClass": "row2"
                         }
                     ]
@@ -632,29 +665,35 @@
                     "date": "11/24/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Valencia @ Monaco",
-                            "awayTeam": "roster28",
-                            "awayTeamName": "Valencia",
-                            "awayRosterUrl": "./rosters/roster28.htm",
-                            "awayRosterFile": "roster28.htm",
+                            "status": "completed",
+                            "matchupText": "@Monaco 129, Valencia 77",
+                            "boxscoreUrl": "./boxes/box38-1.htm",
+                            "boxscoreFile": "box38-1.htm",
                             "homeTeam": "roster22",
                             "homeTeamName": "Monaco",
-                            "homeRosterUrl": "./rosters/roster22.htm",
-                            "homeRosterFile": "roster22.htm",
+                            "homeScore": 129,
+                            "awayTeam": "roster28",
+                            "awayTeamName": "Valencia",
+                            "awayScore": 77,
+                            "winner": "roster22",
+                            "winnerName": "Monaco",
+                            "margin": 52,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Sporting CP @ Chelsea",
-                            "awayTeam": "roster26",
-                            "awayTeamName": "Sporting CP",
-                            "awayRosterUrl": "./rosters/roster26.htm",
-                            "awayRosterFile": "roster26.htm",
+                            "status": "completed",
+                            "matchupText": "@Chelsea 111, Sporting CP 77",
+                            "boxscoreUrl": "./boxes/box38-2.htm",
+                            "boxscoreFile": "box38-2.htm",
                             "homeTeam": "roster14",
                             "homeTeamName": "Chelsea",
-                            "homeRosterUrl": "./rosters/roster14.htm",
-                            "homeRosterFile": "roster14.htm",
+                            "homeScore": 111,
+                            "awayTeam": "roster26",
+                            "awayTeamName": "Sporting CP",
+                            "awayScore": 77,
+                            "winner": "roster14",
+                            "winnerName": "Chelsea",
+                            "margin": 34,
                             "rowClass": "row2"
                         }
                     ]
@@ -663,16 +702,19 @@
                     "date": "11/25/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Barcelona @ Benfica",
-                            "awayTeam": "roster10",
-                            "awayTeamName": "Barcelona",
-                            "awayRosterUrl": "./rosters/roster10.htm",
-                            "awayRosterFile": "roster10.htm",
+                            "status": "completed",
+                            "matchupText": "@Benfica 130, Barcelona 97",
+                            "boxscoreUrl": "./boxes/box39-1.htm",
+                            "boxscoreFile": "box39-1.htm",
                             "homeTeam": "roster12",
                             "homeTeamName": "Benfica",
-                            "homeRosterUrl": "./rosters/roster12.htm",
-                            "homeRosterFile": "roster12.htm",
+                            "homeScore": 130,
+                            "awayTeam": "roster10",
+                            "awayTeamName": "Barcelona",
+                            "awayScore": 97,
+                            "winner": "roster12",
+                            "winnerName": "Benfica",
+                            "margin": 33,
                             "rowClass": "row1"
                         }
                     ]
@@ -681,16 +723,19 @@
                     "date": "11/27/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Inter Milan @ Real Madrid",
-                            "awayTeam": "roster18",
-                            "awayTeamName": "Inter Milan",
-                            "awayRosterUrl": "./rosters/roster18.htm",
-                            "awayRosterFile": "roster18.htm",
+                            "status": "completed",
+                            "matchupText": "Inter Milan 107, @Real Madrid 103",
+                            "boxscoreUrl": "./boxes/box41-1.htm",
+                            "boxscoreFile": "box41-1.htm",
                             "homeTeam": "roster24",
                             "homeTeamName": "Real Madrid",
-                            "homeRosterUrl": "./rosters/roster24.htm",
-                            "homeRosterFile": "roster24.htm",
+                            "homeScore": 103,
+                            "awayTeam": "roster18",
+                            "awayTeamName": "Inter Milan",
+                            "awayScore": 107,
+                            "winner": "roster18",
+                            "winnerName": "Inter Milan",
+                            "margin": 4,
                             "rowClass": "row1"
                         }
                     ]
@@ -699,16 +744,19 @@
                     "date": "11/29/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Manchester United @ Marseille",
-                            "awayTeam": "roster20",
-                            "awayTeamName": "Manchester United",
-                            "awayRosterUrl": "./rosters/roster20.htm",
-                            "awayRosterFile": "roster20.htm",
+                            "status": "completed",
+                            "matchupText": "@Marseille 102, Manchester United 90",
+                            "boxscoreUrl": "./boxes/box43-1.htm",
+                            "boxscoreFile": "box43-1.htm",
                             "homeTeam": "roster21",
                             "homeTeamName": "Marseille",
-                            "homeRosterUrl": "./rosters/roster21.htm",
-                            "homeRosterFile": "roster21.htm",
+                            "homeScore": 102,
+                            "awayTeam": "roster20",
+                            "awayTeamName": "Manchester United",
+                            "awayScore": 90,
+                            "winner": "roster21",
+                            "winnerName": "Marseille",
+                            "margin": 12,
                             "rowClass": "row1"
                         }
                     ]
@@ -717,29 +765,35 @@
                     "date": "11/30/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Sheffield United @ Tottenham Hotspur",
-                            "awayTeam": "roster25",
-                            "awayTeamName": "Sheffield United",
-                            "awayRosterUrl": "./rosters/roster25.htm",
-                            "awayRosterFile": "roster25.htm",
+                            "status": "completed",
+                            "matchupText": "Sheffield United 91, @Tottenham Hotspur 83",
+                            "boxscoreUrl": "./boxes/box44-1.htm",
+                            "boxscoreFile": "box44-1.htm",
                             "homeTeam": "roster27",
                             "homeTeamName": "Tottenham Hotspur",
-                            "homeRosterUrl": "./rosters/roster27.htm",
-                            "homeRosterFile": "roster27.htm",
+                            "homeScore": 83,
+                            "awayTeam": "roster25",
+                            "awayTeamName": "Sheffield United",
+                            "awayScore": 91,
+                            "winner": "roster25",
+                            "winnerName": "Sheffield United",
+                            "margin": 8,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Benfica @ Aston Villa",
-                            "awayTeam": "roster12",
-                            "awayTeamName": "Benfica",
-                            "awayRosterUrl": "./rosters/roster12.htm",
-                            "awayRosterFile": "roster12.htm",
+                            "status": "completed",
+                            "matchupText": "Benfica 101, @Aston Villa 92",
+                            "boxscoreUrl": "./boxes/box44-2.htm",
+                            "boxscoreFile": "box44-2.htm",
                             "homeTeam": "roster8",
                             "homeTeamName": "Aston Villa",
-                            "homeRosterUrl": "./rosters/roster8.htm",
-                            "homeRosterFile": "roster8.htm",
+                            "homeScore": 92,
+                            "awayTeam": "roster12",
+                            "awayTeamName": "Benfica",
+                            "awayScore": 101,
+                            "winner": "roster12",
+                            "winnerName": "Benfica",
+                            "margin": 9,
                             "rowClass": "row2"
                         }
                     ]
@@ -748,16 +802,19 @@
                     "date": "12/1/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Ajax @ Atletico Madrid",
-                            "awayTeam": "roster7",
-                            "awayTeamName": "Ajax",
-                            "awayRosterUrl": "./rosters/roster7.htm",
-                            "awayRosterFile": "roster7.htm",
+                            "status": "completed",
+                            "matchupText": "@Atletico Madrid 123, Ajax 115",
+                            "boxscoreUrl": "./boxes/box45-1.htm",
+                            "boxscoreFile": "box45-1.htm",
                             "homeTeam": "roster9",
                             "homeTeamName": "Atletico Madrid",
-                            "homeRosterUrl": "./rosters/roster9.htm",
-                            "homeRosterFile": "roster9.htm",
+                            "homeScore": 123,
+                            "awayTeam": "roster7",
+                            "awayTeamName": "Ajax",
+                            "awayScore": 115,
+                            "winner": "roster9",
+                            "winnerName": "Atletico Madrid",
+                            "margin": 8,
                             "rowClass": "row1"
                         }
                     ]
@@ -766,16 +823,19 @@
                     "date": "12/2/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "AFC Richmond @ Inter Milan",
-                            "awayTeam": "roster6",
-                            "awayTeamName": "AFC Richmond",
-                            "awayRosterUrl": "./rosters/roster6.htm",
-                            "awayRosterFile": "roster6.htm",
+                            "status": "completed",
+                            "matchupText": "AFC Richmond 107, @Inter Milan 94",
+                            "boxscoreUrl": "./boxes/box46-1.htm",
+                            "boxscoreFile": "box46-1.htm",
                             "homeTeam": "roster18",
                             "homeTeamName": "Inter Milan",
-                            "homeRosterUrl": "./rosters/roster18.htm",
-                            "homeRosterFile": "roster18.htm",
+                            "homeScore": 94,
+                            "awayTeam": "roster6",
+                            "awayTeamName": "AFC Richmond",
+                            "awayScore": 107,
+                            "winner": "roster6",
+                            "winnerName": "AFC Richmond",
+                            "margin": 13,
                             "rowClass": "row1"
                         }
                     ]
@@ -784,29 +844,35 @@
                     "date": "12/4/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Benfica @ Manchester City",
-                            "awayTeam": "roster12",
-                            "awayTeamName": "Benfica",
-                            "awayRosterUrl": "./rosters/roster12.htm",
-                            "awayRosterFile": "roster12.htm",
+                            "status": "completed",
+                            "matchupText": "Benfica 128, @Manchester City 102",
+                            "boxscoreUrl": "./boxes/box48-1.htm",
+                            "boxscoreFile": "box48-1.htm",
                             "homeTeam": "roster16",
                             "homeTeamName": "Manchester City",
-                            "homeRosterUrl": "./rosters/roster16.htm",
-                            "homeRosterFile": "roster16.htm",
+                            "homeScore": 102,
+                            "awayTeam": "roster12",
+                            "awayTeamName": "Benfica",
+                            "awayScore": 128,
+                            "winner": "roster12",
+                            "winnerName": "Benfica",
+                            "margin": 26,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Juventus @ Crystal Palace",
-                            "awayTeam": "roster19",
-                            "awayTeamName": "Juventus",
-                            "awayRosterUrl": "./rosters/roster19.htm",
-                            "awayRosterFile": "roster19.htm",
+                            "status": "completed",
+                            "matchupText": "@Crystal Palace 121, Juventus 112",
+                            "boxscoreUrl": "./boxes/box48-2.htm",
+                            "boxscoreFile": "box48-2.htm",
                             "homeTeam": "roster15",
                             "homeTeamName": "Crystal Palace",
-                            "homeRosterUrl": "./rosters/roster15.htm",
-                            "homeRosterFile": "roster15.htm",
+                            "homeScore": 121,
+                            "awayTeam": "roster19",
+                            "awayTeamName": "Juventus",
+                            "awayScore": 112,
+                            "winner": "roster15",
+                            "winnerName": "Crystal Palace",
+                            "margin": 9,
                             "rowClass": "row2"
                         }
                     ]
@@ -815,42 +881,51 @@
                     "date": "12/7/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Barcelona @ Manchester United",
-                            "awayTeam": "roster10",
-                            "awayTeamName": "Barcelona",
-                            "awayRosterUrl": "./rosters/roster10.htm",
-                            "awayRosterFile": "roster10.htm",
+                            "status": "completed",
+                            "matchupText": "@Manchester United 98, Barcelona 95",
+                            "boxscoreUrl": "./boxes/box51-1.htm",
+                            "boxscoreFile": "box51-1.htm",
                             "homeTeam": "roster20",
                             "homeTeamName": "Manchester United",
-                            "homeRosterUrl": "./rosters/roster20.htm",
-                            "homeRosterFile": "roster20.htm",
+                            "homeScore": 98,
+                            "awayTeam": "roster10",
+                            "awayTeamName": "Barcelona",
+                            "awayScore": 95,
+                            "winner": "roster20",
+                            "winnerName": "Manchester United",
+                            "margin": 3,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Inter Milan @ Tottenham Hotspur",
-                            "awayTeam": "roster18",
-                            "awayTeamName": "Inter Milan",
-                            "awayRosterUrl": "./rosters/roster18.htm",
-                            "awayRosterFile": "roster18.htm",
+                            "status": "completed",
+                            "matchupText": "Inter Milan 109, @Tottenham Hotspur 82",
+                            "boxscoreUrl": "./boxes/box51-2.htm",
+                            "boxscoreFile": "box51-2.htm",
                             "homeTeam": "roster27",
                             "homeTeamName": "Tottenham Hotspur",
-                            "homeRosterUrl": "./rosters/roster27.htm",
-                            "homeRosterFile": "roster27.htm",
+                            "homeScore": 82,
+                            "awayTeam": "roster18",
+                            "awayTeamName": "Inter Milan",
+                            "awayScore": 109,
+                            "winner": "roster18",
+                            "winnerName": "Inter Milan",
+                            "margin": 27,
                             "rowClass": "row2"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Marseille @ Real Madrid",
-                            "awayTeam": "roster21",
-                            "awayTeamName": "Marseille",
-                            "awayRosterUrl": "./rosters/roster21.htm",
-                            "awayRosterFile": "roster21.htm",
+                            "status": "completed",
+                            "matchupText": "@Real Madrid 131, Marseille 98",
+                            "boxscoreUrl": "./boxes/box51-3.htm",
+                            "boxscoreFile": "box51-3.htm",
                             "homeTeam": "roster24",
                             "homeTeamName": "Real Madrid",
-                            "homeRosterUrl": "./rosters/roster24.htm",
-                            "homeRosterFile": "roster24.htm",
+                            "homeScore": 131,
+                            "awayTeam": "roster21",
+                            "awayTeamName": "Marseille",
+                            "awayScore": 98,
+                            "winner": "roster24",
+                            "winnerName": "Real Madrid",
+                            "margin": 33,
                             "rowClass": "row1"
                         }
                     ]
@@ -859,16 +934,19 @@
                     "date": "12/8/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Sheffield United @ FL Fart",
-                            "awayTeam": "roster25",
-                            "awayTeamName": "Sheffield United",
-                            "awayRosterUrl": "./rosters/roster25.htm",
-                            "awayRosterFile": "roster25.htm",
+                            "status": "completed",
+                            "matchupText": "@FL Fart 132, Sheffield United 124",
+                            "boxscoreUrl": "./boxes/box52-1.htm",
+                            "boxscoreFile": "box52-1.htm",
                             "homeTeam": "roster17",
                             "homeTeamName": "FL Fart",
-                            "homeRosterUrl": "./rosters/roster17.htm",
-                            "homeRosterFile": "roster17.htm",
+                            "homeScore": 132,
+                            "awayTeam": "roster25",
+                            "awayTeamName": "Sheffield United",
+                            "awayScore": 124,
+                            "winner": "roster17",
+                            "winnerName": "FL Fart",
+                            "margin": 8,
                             "rowClass": "row1"
                         }
                     ]
@@ -877,16 +955,19 @@
                     "date": "12/11/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Aston Villa @ Manchester United",
-                            "awayTeam": "roster8",
-                            "awayTeamName": "Aston Villa",
-                            "awayRosterUrl": "./rosters/roster8.htm",
-                            "awayRosterFile": "roster8.htm",
+                            "status": "completed",
+                            "matchupText": "@Manchester United 104, Aston Villa 96",
+                            "boxscoreUrl": "./boxes/box55-1.htm",
+                            "boxscoreFile": "box55-1.htm",
                             "homeTeam": "roster20",
                             "homeTeamName": "Manchester United",
-                            "homeRosterUrl": "./rosters/roster20.htm",
-                            "homeRosterFile": "roster20.htm",
+                            "homeScore": 104,
+                            "awayTeam": "roster8",
+                            "awayTeamName": "Aston Villa",
+                            "awayScore": 96,
+                            "winner": "roster20",
+                            "winnerName": "Manchester United",
+                            "margin": 8,
                             "rowClass": "row1"
                         }
                     ]
@@ -895,29 +976,35 @@
                     "date": "12/12/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Juventus @ Manchester City",
-                            "awayTeam": "roster19",
-                            "awayTeamName": "Juventus",
-                            "awayRosterUrl": "./rosters/roster19.htm",
-                            "awayRosterFile": "roster19.htm",
+                            "status": "completed",
+                            "matchupText": "Juventus 106, @Manchester City 98",
+                            "boxscoreUrl": "./boxes/box56-1.htm",
+                            "boxscoreFile": "box56-1.htm",
                             "homeTeam": "roster16",
                             "homeTeamName": "Manchester City",
-                            "homeRosterUrl": "./rosters/roster16.htm",
-                            "homeRosterFile": "roster16.htm",
+                            "homeScore": 98,
+                            "awayTeam": "roster19",
+                            "awayTeamName": "Juventus",
+                            "awayScore": 106,
+                            "winner": "roster19",
+                            "winnerName": "Juventus",
+                            "margin": 8,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "AFC Richmond @ AC Milan",
-                            "awayTeam": "roster6",
-                            "awayTeamName": "AFC Richmond",
-                            "awayRosterUrl": "./rosters/roster6.htm",
-                            "awayRosterFile": "roster6.htm",
+                            "status": "completed",
+                            "matchupText": "AFC Richmond 116, @AC Milan 105",
+                            "boxscoreUrl": "./boxes/box56-2.htm",
+                            "boxscoreFile": "box56-2.htm",
                             "homeTeam": "roster5",
                             "homeTeamName": "AC Milan",
-                            "homeRosterUrl": "./rosters/roster5.htm",
-                            "homeRosterFile": "roster5.htm",
+                            "homeScore": 105,
+                            "awayTeam": "roster6",
+                            "awayTeamName": "AFC Richmond",
+                            "awayScore": 116,
+                            "winner": "roster6",
+                            "winnerName": "AFC Richmond",
+                            "margin": 11,
                             "rowClass": "row2"
                         }
                     ]
@@ -926,16 +1013,19 @@
                     "date": "12/17/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Manchester City @ Sheffield United",
-                            "awayTeam": "roster16",
-                            "awayTeamName": "Manchester City",
-                            "awayRosterUrl": "./rosters/roster16.htm",
-                            "awayRosterFile": "roster16.htm",
+                            "status": "completed",
+                            "matchupText": "Manchester City 105, @Sheffield United 99",
+                            "boxscoreUrl": "./boxes/box61-1.htm",
+                            "boxscoreFile": "box61-1.htm",
                             "homeTeam": "roster25",
                             "homeTeamName": "Sheffield United",
-                            "homeRosterUrl": "./rosters/roster25.htm",
-                            "homeRosterFile": "roster25.htm",
+                            "homeScore": 99,
+                            "awayTeam": "roster16",
+                            "awayTeamName": "Manchester City",
+                            "awayScore": 105,
+                            "winner": "roster16",
+                            "winnerName": "Manchester City",
+                            "margin": 6,
                             "rowClass": "row1"
                         }
                     ]
@@ -944,16 +1034,19 @@
                     "date": "12/18/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Sporting CP @ Monaco",
-                            "awayTeam": "roster26",
-                            "awayTeamName": "Sporting CP",
-                            "awayRosterUrl": "./rosters/roster26.htm",
-                            "awayRosterFile": "roster26.htm",
+                            "status": "completed",
+                            "matchupText": "Sporting CP 92, @Monaco 86",
+                            "boxscoreUrl": "./boxes/box62-1.htm",
+                            "boxscoreFile": "box62-1.htm",
                             "homeTeam": "roster22",
                             "homeTeamName": "Monaco",
-                            "homeRosterUrl": "./rosters/roster22.htm",
-                            "homeRosterFile": "roster22.htm",
+                            "homeScore": 86,
+                            "awayTeam": "roster26",
+                            "awayTeamName": "Sporting CP",
+                            "awayScore": 92,
+                            "winner": "roster26",
+                            "winnerName": "Sporting CP",
+                            "margin": 6,
                             "rowClass": "row1"
                         }
                     ]
@@ -962,16 +1055,19 @@
                     "date": "12/21/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Crystal Palace @ Barcelona",
-                            "awayTeam": "roster15",
-                            "awayTeamName": "Crystal Palace",
-                            "awayRosterUrl": "./rosters/roster15.htm",
-                            "awayRosterFile": "roster15.htm",
+                            "status": "completed",
+                            "matchupText": "Crystal Palace 106, @Barcelona 91",
+                            "boxscoreUrl": "./boxes/box65-1.htm",
+                            "boxscoreFile": "box65-1.htm",
                             "homeTeam": "roster10",
                             "homeTeamName": "Barcelona",
-                            "homeRosterUrl": "./rosters/roster10.htm",
-                            "homeRosterFile": "roster10.htm",
+                            "homeScore": 91,
+                            "awayTeam": "roster15",
+                            "awayTeamName": "Crystal Palace",
+                            "awayScore": 106,
+                            "winner": "roster15",
+                            "winnerName": "Crystal Palace",
+                            "margin": 15,
                             "rowClass": "row1"
                         }
                     ]
@@ -980,16 +1076,19 @@
                     "date": "12/23/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Manchester City @ Atletico Madrid",
-                            "awayTeam": "roster16",
-                            "awayTeamName": "Manchester City",
-                            "awayRosterUrl": "./rosters/roster16.htm",
-                            "awayRosterFile": "roster16.htm",
+                            "status": "completed",
+                            "matchupText": "@Atletico Madrid 111, Manchester City 99",
+                            "boxscoreUrl": "./boxes/box67-1.htm",
+                            "boxscoreFile": "box67-1.htm",
                             "homeTeam": "roster9",
                             "homeTeamName": "Atletico Madrid",
-                            "homeRosterUrl": "./rosters/roster9.htm",
-                            "homeRosterFile": "roster9.htm",
+                            "homeScore": 111,
+                            "awayTeam": "roster16",
+                            "awayTeamName": "Manchester City",
+                            "awayScore": 99,
+                            "winner": "roster9",
+                            "winnerName": "Atletico Madrid",
+                            "margin": 12,
                             "rowClass": "row1"
                         }
                     ]
@@ -998,16 +1097,19 @@
                     "date": "12/24/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Chelsea @ Valencia",
-                            "awayTeam": "roster14",
-                            "awayTeamName": "Chelsea",
-                            "awayRosterUrl": "./rosters/roster14.htm",
-                            "awayRosterFile": "roster14.htm",
+                            "status": "completed",
+                            "matchupText": "Chelsea 114, @Valencia 113",
+                            "boxscoreUrl": "./boxes/box68-1.htm",
+                            "boxscoreFile": "box68-1.htm",
                             "homeTeam": "roster28",
                             "homeTeamName": "Valencia",
-                            "homeRosterUrl": "./rosters/roster28.htm",
-                            "homeRosterFile": "roster28.htm",
+                            "homeScore": 113,
+                            "awayTeam": "roster14",
+                            "awayTeamName": "Chelsea",
+                            "awayScore": 114,
+                            "winner": "roster14",
+                            "winnerName": "Chelsea",
+                            "margin": 1,
                             "rowClass": "row1"
                         }
                     ]
@@ -1016,16 +1118,19 @@
                     "date": "12/26/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Benfica @ Inter Milan",
-                            "awayTeam": "roster12",
-                            "awayTeamName": "Benfica",
-                            "awayRosterUrl": "./rosters/roster12.htm",
-                            "awayRosterFile": "roster12.htm",
+                            "status": "completed",
+                            "matchupText": "Benfica 99, @Inter Milan 79",
+                            "boxscoreUrl": "./boxes/box70-1.htm",
+                            "boxscoreFile": "box70-1.htm",
                             "homeTeam": "roster18",
                             "homeTeamName": "Inter Milan",
-                            "homeRosterUrl": "./rosters/roster18.htm",
-                            "homeRosterFile": "roster18.htm",
+                            "homeScore": 79,
+                            "awayTeam": "roster12",
+                            "awayTeamName": "Benfica",
+                            "awayScore": 99,
+                            "winner": "roster12",
+                            "winnerName": "Benfica",
+                            "margin": 20,
                             "rowClass": "row1"
                         }
                     ]
@@ -1034,16 +1139,19 @@
                     "date": "12/27/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Monaco @ FL Fart",
-                            "awayTeam": "roster22",
-                            "awayTeamName": "Monaco",
-                            "awayRosterUrl": "./rosters/roster22.htm",
-                            "awayRosterFile": "roster22.htm",
+                            "status": "completed",
+                            "matchupText": "Monaco 125, @FL Fart 112",
+                            "boxscoreUrl": "./boxes/box71-1.htm",
+                            "boxscoreFile": "box71-1.htm",
                             "homeTeam": "roster17",
                             "homeTeamName": "FL Fart",
-                            "homeRosterUrl": "./rosters/roster17.htm",
-                            "homeRosterFile": "roster17.htm",
+                            "homeScore": 112,
+                            "awayTeam": "roster22",
+                            "awayTeamName": "Monaco",
+                            "awayScore": 125,
+                            "winner": "roster22",
+                            "winnerName": "Monaco",
+                            "margin": 13,
                             "rowClass": "row1"
                         }
                     ]
@@ -1052,16 +1160,19 @@
                     "date": "12/29/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Aston Villa @ Brighton",
-                            "awayTeam": "roster8",
-                            "awayTeamName": "Aston Villa",
-                            "awayRosterUrl": "./rosters/roster8.htm",
-                            "awayRosterFile": "roster8.htm",
+                            "status": "completed",
+                            "matchupText": "Aston Villa 104, @Brighton 96",
+                            "boxscoreUrl": "./boxes/box73-1.htm",
+                            "boxscoreFile": "box73-1.htm",
                             "homeTeam": "roster13",
                             "homeTeamName": "Brighton",
-                            "homeRosterUrl": "./rosters/roster13.htm",
-                            "homeRosterFile": "roster13.htm",
+                            "homeScore": 96,
+                            "awayTeam": "roster8",
+                            "awayTeamName": "Aston Villa",
+                            "awayScore": 104,
+                            "winner": "roster8",
+                            "winnerName": "Aston Villa",
+                            "margin": 8,
                             "rowClass": "row1"
                         }
                     ]
@@ -1070,55 +1181,67 @@
                     "date": "12/31/1983",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Real Madrid @ Chelsea",
-                            "awayTeam": "roster24",
-                            "awayTeamName": "Real Madrid",
-                            "awayRosterUrl": "./rosters/roster24.htm",
-                            "awayRosterFile": "roster24.htm",
+                            "status": "completed",
+                            "matchupText": "Real Madrid 117, @Chelsea 116",
+                            "boxscoreUrl": "./boxes/box75-1.htm",
+                            "boxscoreFile": "box75-1.htm",
                             "homeTeam": "roster14",
                             "homeTeamName": "Chelsea",
-                            "homeRosterUrl": "./rosters/roster14.htm",
-                            "homeRosterFile": "roster14.htm",
+                            "homeScore": 116,
+                            "awayTeam": "roster24",
+                            "awayTeamName": "Real Madrid",
+                            "awayScore": 117,
+                            "winner": "roster24",
+                            "winnerName": "Real Madrid",
+                            "margin": 1,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Valencia @ AC Milan",
-                            "awayTeam": "roster28",
-                            "awayTeamName": "Valencia",
-                            "awayRosterUrl": "./rosters/roster28.htm",
-                            "awayRosterFile": "roster28.htm",
+                            "status": "completed",
+                            "matchupText": "@AC Milan 126, Valencia 91",
+                            "boxscoreUrl": "./boxes/box75-2.htm",
+                            "boxscoreFile": "box75-2.htm",
                             "homeTeam": "roster5",
                             "homeTeamName": "AC Milan",
-                            "homeRosterUrl": "./rosters/roster5.htm",
-                            "homeRosterFile": "roster5.htm",
+                            "homeScore": 126,
+                            "awayTeam": "roster28",
+                            "awayTeamName": "Valencia",
+                            "awayScore": 91,
+                            "winner": "roster5",
+                            "winnerName": "AC Milan",
+                            "margin": 35,
                             "rowClass": "row2"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Ajax @ Benfica",
-                            "awayTeam": "roster7",
-                            "awayTeamName": "Ajax",
-                            "awayRosterUrl": "./rosters/roster7.htm",
-                            "awayRosterFile": "roster7.htm",
+                            "status": "completed",
+                            "matchupText": "@Benfica 135, Ajax 134",
+                            "boxscoreUrl": "./boxes/box75-3.htm",
+                            "boxscoreFile": "box75-3.htm",
                             "homeTeam": "roster12",
                             "homeTeamName": "Benfica",
-                            "homeRosterUrl": "./rosters/roster12.htm",
-                            "homeRosterFile": "roster12.htm",
+                            "homeScore": 135,
+                            "awayTeam": "roster7",
+                            "awayTeamName": "Ajax",
+                            "awayScore": 134,
+                            "winner": "roster12",
+                            "winnerName": "Benfica",
+                            "margin": 1,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Bayern Munich @ Marseille",
-                            "awayTeam": "roster11",
-                            "awayTeamName": "Bayern Munich",
-                            "awayRosterUrl": "./rosters/roster11.htm",
-                            "awayRosterFile": "roster11.htm",
+                            "status": "completed",
+                            "matchupText": "@Marseille 101, Bayern Munich 91",
+                            "boxscoreUrl": "./boxes/box75-4.htm",
+                            "boxscoreFile": "box75-4.htm",
                             "homeTeam": "roster21",
                             "homeTeamName": "Marseille",
-                            "homeRosterUrl": "./rosters/roster21.htm",
-                            "homeRosterFile": "roster21.htm",
+                            "homeScore": 101,
+                            "awayTeam": "roster11",
+                            "awayTeamName": "Bayern Munich",
+                            "awayScore": 91,
+                            "winner": "roster21",
+                            "winnerName": "Marseille",
+                            "margin": 10,
                             "rowClass": "row2"
                         }
                     ]
@@ -1127,16 +1250,19 @@
                     "date": "1/2/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Brighton @ Inter Milan",
-                            "awayTeam": "roster13",
-                            "awayTeamName": "Brighton",
-                            "awayRosterUrl": "./rosters/roster13.htm",
-                            "awayRosterFile": "roster13.htm",
+                            "status": "completed",
+                            "matchupText": "@Inter Milan 104, Brighton 103",
+                            "boxscoreUrl": "./boxes/box77-1.htm",
+                            "boxscoreFile": "box77-1.htm",
                             "homeTeam": "roster18",
                             "homeTeamName": "Inter Milan",
-                            "homeRosterUrl": "./rosters/roster18.htm",
-                            "homeRosterFile": "roster18.htm",
+                            "homeScore": 104,
+                            "awayTeam": "roster13",
+                            "awayTeamName": "Brighton",
+                            "awayScore": 103,
+                            "winner": "roster18",
+                            "winnerName": "Inter Milan",
+                            "margin": 1,
                             "rowClass": "row1"
                         }
                     ]
@@ -1145,16 +1271,19 @@
                     "date": "1/4/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Monaco @ Aston Villa",
-                            "awayTeam": "roster22",
-                            "awayTeamName": "Monaco",
-                            "awayRosterUrl": "./rosters/roster22.htm",
-                            "awayRosterFile": "roster22.htm",
+                            "status": "completed",
+                            "matchupText": "@Aston Villa 113, Monaco 92",
+                            "boxscoreUrl": "./boxes/box79-1.htm",
+                            "boxscoreFile": "box79-1.htm",
                             "homeTeam": "roster8",
                             "homeTeamName": "Aston Villa",
-                            "homeRosterUrl": "./rosters/roster8.htm",
-                            "homeRosterFile": "roster8.htm",
+                            "homeScore": 113,
+                            "awayTeam": "roster22",
+                            "awayTeamName": "Monaco",
+                            "awayScore": 92,
+                            "winner": "roster8",
+                            "winnerName": "Aston Villa",
+                            "margin": 21,
                             "rowClass": "row1"
                         }
                     ]
@@ -1163,16 +1292,19 @@
                     "date": "1/7/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Real Madrid @ Juventus",
-                            "awayTeam": "roster24",
-                            "awayTeamName": "Real Madrid",
-                            "awayRosterUrl": "./rosters/roster24.htm",
-                            "awayRosterFile": "roster24.htm",
+                            "status": "completed",
+                            "matchupText": "Real Madrid 115, @Juventus 112",
+                            "boxscoreUrl": "./boxes/box82-1.htm",
+                            "boxscoreFile": "box82-1.htm",
                             "homeTeam": "roster19",
                             "homeTeamName": "Juventus",
-                            "homeRosterUrl": "./rosters/roster19.htm",
-                            "homeRosterFile": "roster19.htm",
+                            "homeScore": 112,
+                            "awayTeam": "roster24",
+                            "awayTeamName": "Real Madrid",
+                            "awayScore": 115,
+                            "winner": "roster24",
+                            "winnerName": "Real Madrid",
+                            "margin": 3,
                             "rowClass": "row1"
                         }
                     ]
@@ -1181,16 +1313,19 @@
                     "date": "1/11/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Sporting CP @ AFC Richmond",
-                            "awayTeam": "roster26",
-                            "awayTeamName": "Sporting CP",
-                            "awayRosterUrl": "./rosters/roster26.htm",
-                            "awayRosterFile": "roster26.htm",
+                            "status": "completed",
+                            "matchupText": "@AFC Richmond 132, Sporting CP 82",
+                            "boxscoreUrl": "./boxes/box86-1.htm",
+                            "boxscoreFile": "box86-1.htm",
                             "homeTeam": "roster6",
                             "homeTeamName": "AFC Richmond",
-                            "homeRosterUrl": "./rosters/roster6.htm",
-                            "homeRosterFile": "roster6.htm",
+                            "homeScore": 132,
+                            "awayTeam": "roster26",
+                            "awayTeamName": "Sporting CP",
+                            "awayScore": 82,
+                            "winner": "roster6",
+                            "winnerName": "AFC Richmond",
+                            "margin": 50,
                             "rowClass": "row1"
                         }
                     ]
@@ -1199,16 +1334,19 @@
                     "date": "1/13/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Atletico Madrid @ Juventus",
-                            "awayTeam": "roster9",
-                            "awayTeamName": "Atletico Madrid",
-                            "awayRosterUrl": "./rosters/roster9.htm",
-                            "awayRosterFile": "roster9.htm",
+                            "status": "completed",
+                            "matchupText": "Atletico Madrid 114, @Juventus 99",
+                            "boxscoreUrl": "./boxes/box88-1.htm",
+                            "boxscoreFile": "box88-1.htm",
                             "homeTeam": "roster19",
                             "homeTeamName": "Juventus",
-                            "homeRosterUrl": "./rosters/roster19.htm",
-                            "homeRosterFile": "roster19.htm",
+                            "homeScore": 99,
+                            "awayTeam": "roster9",
+                            "awayTeamName": "Atletico Madrid",
+                            "awayScore": 114,
+                            "winner": "roster9",
+                            "winnerName": "Atletico Madrid",
+                            "margin": 15,
                             "rowClass": "row1"
                         }
                     ]
@@ -1217,42 +1355,51 @@
                     "date": "1/14/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Paris Saint-Germain @ Barcelona",
-                            "awayTeam": "roster23",
-                            "awayTeamName": "Paris Saint-Germain",
-                            "awayRosterUrl": "./rosters/roster23.htm",
-                            "awayRosterFile": "roster23.htm",
+                            "status": "completed",
+                            "matchupText": "Paris Saint-Germain 115, @Barcelona 108",
+                            "boxscoreUrl": "./boxes/box89-1.htm",
+                            "boxscoreFile": "box89-1.htm",
                             "homeTeam": "roster10",
                             "homeTeamName": "Barcelona",
-                            "homeRosterUrl": "./rosters/roster10.htm",
-                            "homeRosterFile": "roster10.htm",
+                            "homeScore": 108,
+                            "awayTeam": "roster23",
+                            "awayTeamName": "Paris Saint-Germain",
+                            "awayScore": 115,
+                            "winner": "roster23",
+                            "winnerName": "Paris Saint-Germain",
+                            "margin": 7,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Marseille @ Chelsea",
-                            "awayTeam": "roster21",
-                            "awayTeamName": "Marseille",
-                            "awayRosterUrl": "./rosters/roster21.htm",
-                            "awayRosterFile": "roster21.htm",
+                            "status": "completed",
+                            "matchupText": "@Chelsea 108, Marseille 102",
+                            "boxscoreUrl": "./boxes/box89-2.htm",
+                            "boxscoreFile": "box89-2.htm",
                             "homeTeam": "roster14",
                             "homeTeamName": "Chelsea",
-                            "homeRosterUrl": "./rosters/roster14.htm",
-                            "homeRosterFile": "roster14.htm",
+                            "homeScore": 108,
+                            "awayTeam": "roster21",
+                            "awayTeamName": "Marseille",
+                            "awayScore": 102,
+                            "winner": "roster14",
+                            "winnerName": "Chelsea",
+                            "margin": 6,
                             "rowClass": "row2"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Ajax @ Crystal Palace",
-                            "awayTeam": "roster7",
-                            "awayTeamName": "Ajax",
-                            "awayRosterUrl": "./rosters/roster7.htm",
-                            "awayRosterFile": "roster7.htm",
+                            "status": "completed",
+                            "matchupText": "@Crystal Palace 144, Ajax 140",
+                            "boxscoreUrl": "./boxes/box89-3.htm",
+                            "boxscoreFile": "box89-3.htm",
                             "homeTeam": "roster15",
                             "homeTeamName": "Crystal Palace",
-                            "homeRosterUrl": "./rosters/roster15.htm",
-                            "homeRosterFile": "roster15.htm",
+                            "homeScore": 144,
+                            "awayTeam": "roster7",
+                            "awayTeamName": "Ajax",
+                            "awayScore": 140,
+                            "winner": "roster15",
+                            "winnerName": "Crystal Palace",
+                            "margin": 4,
                             "rowClass": "row1"
                         }
                     ]
@@ -1261,16 +1408,19 @@
                     "date": "1/16/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Manchester United @ Brighton",
-                            "awayTeam": "roster20",
-                            "awayTeamName": "Manchester United",
-                            "awayRosterUrl": "./rosters/roster20.htm",
-                            "awayRosterFile": "roster20.htm",
+                            "status": "completed",
+                            "matchupText": "@Brighton 102, Manchester United 62",
+                            "boxscoreUrl": "./boxes/box91-1.htm",
+                            "boxscoreFile": "box91-1.htm",
                             "homeTeam": "roster13",
                             "homeTeamName": "Brighton",
-                            "homeRosterUrl": "./rosters/roster13.htm",
-                            "homeRosterFile": "roster13.htm",
+                            "homeScore": 102,
+                            "awayTeam": "roster20",
+                            "awayTeamName": "Manchester United",
+                            "awayScore": 62,
+                            "winner": "roster13",
+                            "winnerName": "Brighton",
+                            "margin": 40,
                             "rowClass": "row1"
                         }
                     ]
@@ -1279,16 +1429,19 @@
                     "date": "1/18/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Marseille @ Sporting CP",
-                            "awayTeam": "roster21",
-                            "awayTeamName": "Marseille",
-                            "awayRosterUrl": "./rosters/roster21.htm",
-                            "awayRosterFile": "roster21.htm",
+                            "status": "completed",
+                            "matchupText": "Marseille 106, @Sporting CP 104",
+                            "boxscoreUrl": "./boxes/box93-1.htm",
+                            "boxscoreFile": "box93-1.htm",
                             "homeTeam": "roster26",
                             "homeTeamName": "Sporting CP",
-                            "homeRosterUrl": "./rosters/roster26.htm",
-                            "homeRosterFile": "roster26.htm",
+                            "homeScore": 104,
+                            "awayTeam": "roster21",
+                            "awayTeamName": "Marseille",
+                            "awayScore": 106,
+                            "winner": "roster21",
+                            "winnerName": "Marseille",
+                            "margin": 2,
                             "rowClass": "row1"
                         }
                     ]
@@ -1297,29 +1450,35 @@
                     "date": "1/19/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "FL Fart @ Benfica",
-                            "awayTeam": "roster17",
-                            "awayTeamName": "FL Fart",
-                            "awayRosterUrl": "./rosters/roster17.htm",
-                            "awayRosterFile": "roster17.htm",
+                            "status": "completed",
+                            "matchupText": "FL Fart 110, @Benfica 100",
+                            "boxscoreUrl": "./boxes/box94-1.htm",
+                            "boxscoreFile": "box94-1.htm",
                             "homeTeam": "roster12",
                             "homeTeamName": "Benfica",
-                            "homeRosterUrl": "./rosters/roster12.htm",
-                            "homeRosterFile": "roster12.htm",
+                            "homeScore": 100,
+                            "awayTeam": "roster17",
+                            "awayTeamName": "FL Fart",
+                            "awayScore": 110,
+                            "winner": "roster17",
+                            "winnerName": "FL Fart",
+                            "margin": 10,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Chelsea @ AC Milan",
-                            "awayTeam": "roster14",
-                            "awayTeamName": "Chelsea",
-                            "awayRosterUrl": "./rosters/roster14.htm",
-                            "awayRosterFile": "roster14.htm",
+                            "status": "completed",
+                            "matchupText": "@AC Milan 142, Chelsea 130",
+                            "boxscoreUrl": "./boxes/box94-2.htm",
+                            "boxscoreFile": "box94-2.htm",
                             "homeTeam": "roster5",
                             "homeTeamName": "AC Milan",
-                            "homeRosterUrl": "./rosters/roster5.htm",
-                            "homeRosterFile": "roster5.htm",
+                            "homeScore": 142,
+                            "awayTeam": "roster14",
+                            "awayTeamName": "Chelsea",
+                            "awayScore": 130,
+                            "winner": "roster5",
+                            "winnerName": "AC Milan",
+                            "margin": 12,
                             "rowClass": "row2"
                         }
                     ]
@@ -1328,16 +1487,19 @@
                     "date": "1/23/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Tottenham Hotspur @ Aston Villa",
-                            "awayTeam": "roster27",
-                            "awayTeamName": "Tottenham Hotspur",
-                            "awayRosterUrl": "./rosters/roster27.htm",
-                            "awayRosterFile": "roster27.htm",
+                            "status": "completed",
+                            "matchupText": "@Aston Villa 115, Tottenham Hotspur 99",
+                            "boxscoreUrl": "./boxes/box98-1.htm",
+                            "boxscoreFile": "box98-1.htm",
                             "homeTeam": "roster8",
                             "homeTeamName": "Aston Villa",
-                            "homeRosterUrl": "./rosters/roster8.htm",
-                            "homeRosterFile": "roster8.htm",
+                            "homeScore": 115,
+                            "awayTeam": "roster27",
+                            "awayTeamName": "Tottenham Hotspur",
+                            "awayScore": 99,
+                            "winner": "roster8",
+                            "winnerName": "Aston Villa",
+                            "margin": 16,
                             "rowClass": "row1"
                         }
                     ]
@@ -1346,29 +1508,35 @@
                     "date": "1/26/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Barcelona @ Bayern Munich",
-                            "awayTeam": "roster10",
-                            "awayTeamName": "Barcelona",
-                            "awayRosterUrl": "./rosters/roster10.htm",
-                            "awayRosterFile": "roster10.htm",
+                            "status": "completed",
+                            "matchupText": "Barcelona 103, @Bayern Munich 95",
+                            "boxscoreUrl": "./boxes/box101-1.htm",
+                            "boxscoreFile": "box101-1.htm",
                             "homeTeam": "roster11",
                             "homeTeamName": "Bayern Munich",
-                            "homeRosterUrl": "./rosters/roster11.htm",
-                            "homeRosterFile": "roster11.htm",
+                            "homeScore": 95,
+                            "awayTeam": "roster10",
+                            "awayTeamName": "Barcelona",
+                            "awayScore": 103,
+                            "winner": "roster10",
+                            "winnerName": "Barcelona",
+                            "margin": 8,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Manchester City @ Monaco",
-                            "awayTeam": "roster16",
-                            "awayTeamName": "Manchester City",
-                            "awayRosterUrl": "./rosters/roster16.htm",
-                            "awayRosterFile": "roster16.htm",
+                            "status": "completed",
+                            "matchupText": "@Monaco 124, Manchester City 90",
+                            "boxscoreUrl": "./boxes/box101-2.htm",
+                            "boxscoreFile": "box101-2.htm",
                             "homeTeam": "roster22",
                             "homeTeamName": "Monaco",
-                            "homeRosterUrl": "./rosters/roster22.htm",
-                            "homeRosterFile": "roster22.htm",
+                            "homeScore": 124,
+                            "awayTeam": "roster16",
+                            "awayTeamName": "Manchester City",
+                            "awayScore": 90,
+                            "winner": "roster22",
+                            "winnerName": "Monaco",
+                            "margin": 34,
                             "rowClass": "row2"
                         }
                     ]
@@ -1377,16 +1545,19 @@
                     "date": "2/2/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Ajax @ Paris Saint-Germain",
-                            "awayTeam": "roster7",
-                            "awayTeamName": "Ajax",
-                            "awayRosterUrl": "./rosters/roster7.htm",
-                            "awayRosterFile": "roster7.htm",
+                            "status": "completed",
+                            "matchupText": "@Paris Saint-Germain 119, Ajax 101",
+                            "boxscoreUrl": "./boxes/box108-1.htm",
+                            "boxscoreFile": "box108-1.htm",
                             "homeTeam": "roster23",
                             "homeTeamName": "Paris Saint-Germain",
-                            "homeRosterUrl": "./rosters/roster23.htm",
-                            "homeRosterFile": "roster23.htm",
+                            "homeScore": 119,
+                            "awayTeam": "roster7",
+                            "awayTeamName": "Ajax",
+                            "awayScore": 101,
+                            "winner": "roster23",
+                            "winnerName": "Paris Saint-Germain",
+                            "margin": 18,
                             "rowClass": "row1"
                         }
                     ]
@@ -1395,29 +1566,35 @@
                     "date": "2/3/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Sheffield United @ Sporting CP",
-                            "awayTeam": "roster25",
-                            "awayTeamName": "Sheffield United",
-                            "awayRosterUrl": "./rosters/roster25.htm",
-                            "awayRosterFile": "roster25.htm",
+                            "status": "completed",
+                            "matchupText": "Sheffield United 93, @Sporting CP 87",
+                            "boxscoreUrl": "./boxes/box109-1.htm",
+                            "boxscoreFile": "box109-1.htm",
                             "homeTeam": "roster26",
                             "homeTeamName": "Sporting CP",
-                            "homeRosterUrl": "./rosters/roster26.htm",
-                            "homeRosterFile": "roster26.htm",
+                            "homeScore": 87,
+                            "awayTeam": "roster25",
+                            "awayTeamName": "Sheffield United",
+                            "awayScore": 93,
+                            "winner": "roster25",
+                            "winnerName": "Sheffield United",
+                            "margin": 6,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Monaco @ Crystal Palace",
-                            "awayTeam": "roster22",
-                            "awayTeamName": "Monaco",
-                            "awayRosterUrl": "./rosters/roster22.htm",
-                            "awayRosterFile": "roster22.htm",
+                            "status": "completed",
+                            "matchupText": "@Crystal Palace 107, Monaco 90",
+                            "boxscoreUrl": "./boxes/box109-2.htm",
+                            "boxscoreFile": "box109-2.htm",
                             "homeTeam": "roster15",
                             "homeTeamName": "Crystal Palace",
-                            "homeRosterUrl": "./rosters/roster15.htm",
-                            "homeRosterFile": "roster15.htm",
+                            "homeScore": 107,
+                            "awayTeam": "roster22",
+                            "awayTeamName": "Monaco",
+                            "awayScore": 90,
+                            "winner": "roster15",
+                            "winnerName": "Crystal Palace",
+                            "margin": 17,
                             "rowClass": "row2"
                         }
                     ]
@@ -1426,16 +1603,19 @@
                     "date": "2/6/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "AFC Richmond @ Manchester United",
-                            "awayTeam": "roster6",
-                            "awayTeamName": "AFC Richmond",
-                            "awayRosterUrl": "./rosters/roster6.htm",
-                            "awayRosterFile": "roster6.htm",
+                            "status": "completed",
+                            "matchupText": "AFC Richmond 124, @Manchester United 102",
+                            "boxscoreUrl": "./boxes/box112-1.htm",
+                            "boxscoreFile": "box112-1.htm",
                             "homeTeam": "roster20",
                             "homeTeamName": "Manchester United",
-                            "homeRosterUrl": "./rosters/roster20.htm",
-                            "homeRosterFile": "roster20.htm",
+                            "homeScore": 102,
+                            "awayTeam": "roster6",
+                            "awayTeamName": "AFC Richmond",
+                            "awayScore": 124,
+                            "winner": "roster6",
+                            "winnerName": "AFC Richmond",
+                            "margin": 22,
                             "rowClass": "row1"
                         }
                     ]
@@ -1444,16 +1624,19 @@
                     "date": "2/8/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Benfica @ Sporting CP",
-                            "awayTeam": "roster12",
-                            "awayTeamName": "Benfica",
-                            "awayRosterUrl": "./rosters/roster12.htm",
-                            "awayRosterFile": "roster12.htm",
+                            "status": "completed",
+                            "matchupText": "Benfica 136, @Sporting CP 116",
+                            "boxscoreUrl": "./boxes/box114-1.htm",
+                            "boxscoreFile": "box114-1.htm",
                             "homeTeam": "roster26",
                             "homeTeamName": "Sporting CP",
-                            "homeRosterUrl": "./rosters/roster26.htm",
-                            "homeRosterFile": "roster26.htm",
+                            "homeScore": 116,
+                            "awayTeam": "roster12",
+                            "awayTeamName": "Benfica",
+                            "awayScore": 136,
+                            "winner": "roster12",
+                            "winnerName": "Benfica",
+                            "margin": 20,
                             "rowClass": "row1"
                         }
                     ]
@@ -1462,16 +1645,40 @@
                     "date": "2/9/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "FL Fart @ Manchester City",
-                            "awayTeam": "roster17",
-                            "awayTeamName": "FL Fart",
-                            "awayRosterUrl": "./rosters/roster17.htm",
-                            "awayRosterFile": "roster17.htm",
+                            "status": "completed",
+                            "matchupText": "FL Fart 121, @Manchester City 106",
+                            "boxscoreUrl": "./boxes/box115-1.htm",
+                            "boxscoreFile": "box115-1.htm",
                             "homeTeam": "roster16",
                             "homeTeamName": "Manchester City",
-                            "homeRosterUrl": "./rosters/roster16.htm",
-                            "homeRosterFile": "roster16.htm",
+                            "homeScore": 106,
+                            "awayTeam": "roster17",
+                            "awayTeamName": "FL Fart",
+                            "awayScore": 121,
+                            "winner": "roster17",
+                            "winnerName": "FL Fart",
+                            "margin": 15,
+                            "rowClass": "row1"
+                        }
+                    ]
+                },
+                {
+                    "date": "2/12/1984",
+                    "games": [
+                        {
+                            "status": "completed",
+                            "matchupText": "@West 153, East 151",
+                            "boxscoreUrl": "./boxes/box118-1.htm",
+                            "boxscoreFile": "box118-1.htm",
+                            "homeTeam": "West",
+                            "homeTeamName": "West",
+                            "homeScore": 153,
+                            "awayTeam": "East",
+                            "awayTeamName": "East",
+                            "awayScore": 151,
+                            "winner": "West",
+                            "winnerName": "West",
+                            "margin": 2,
                             "rowClass": "row1"
                         }
                     ]
@@ -1480,16 +1687,19 @@
                     "date": "2/14/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Crystal Palace @ Paris Saint-Germain",
-                            "awayTeam": "roster15",
-                            "awayTeamName": "Crystal Palace",
-                            "awayRosterUrl": "./rosters/roster15.htm",
-                            "awayRosterFile": "roster15.htm",
+                            "status": "completed",
+                            "matchupText": "@Paris Saint-Germain 128, Crystal Palace 109",
+                            "boxscoreUrl": "./boxes/box120-1.htm",
+                            "boxscoreFile": "box120-1.htm",
                             "homeTeam": "roster23",
                             "homeTeamName": "Paris Saint-Germain",
-                            "homeRosterUrl": "./rosters/roster23.htm",
-                            "homeRosterFile": "roster23.htm",
+                            "homeScore": 128,
+                            "awayTeam": "roster15",
+                            "awayTeamName": "Crystal Palace",
+                            "awayScore": 109,
+                            "winner": "roster23",
+                            "winnerName": "Paris Saint-Germain",
+                            "margin": 19,
                             "rowClass": "row1"
                         }
                     ]
@@ -1498,16 +1708,19 @@
                     "date": "2/18/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Real Madrid @ Bayern Munich",
-                            "awayTeam": "roster24",
-                            "awayTeamName": "Real Madrid",
-                            "awayRosterUrl": "./rosters/roster24.htm",
-                            "awayRosterFile": "roster24.htm",
+                            "status": "completed",
+                            "matchupText": "Real Madrid 116, @Bayern Munich 113",
+                            "boxscoreUrl": "./boxes/box124-1.htm",
+                            "boxscoreFile": "box124-1.htm",
                             "homeTeam": "roster11",
                             "homeTeamName": "Bayern Munich",
-                            "homeRosterUrl": "./rosters/roster11.htm",
-                            "homeRosterFile": "roster11.htm",
+                            "homeScore": 113,
+                            "awayTeam": "roster24",
+                            "awayTeamName": "Real Madrid",
+                            "awayScore": 116,
+                            "winner": "roster24",
+                            "winnerName": "Real Madrid",
+                            "margin": 3,
                             "rowClass": "row1"
                         }
                     ]
@@ -1516,29 +1729,35 @@
                     "date": "2/20/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "AC Milan @ Inter Milan",
-                            "awayTeam": "roster5",
-                            "awayTeamName": "AC Milan",
-                            "awayRosterUrl": "./rosters/roster5.htm",
-                            "awayRosterFile": "roster5.htm",
+                            "status": "completed",
+                            "matchupText": "AC Milan 122, @Inter Milan 107",
+                            "boxscoreUrl": "./boxes/box126-1.htm",
+                            "boxscoreFile": "box126-1.htm",
                             "homeTeam": "roster18",
                             "homeTeamName": "Inter Milan",
-                            "homeRosterUrl": "./rosters/roster18.htm",
-                            "homeRosterFile": "roster18.htm",
+                            "homeScore": 107,
+                            "awayTeam": "roster5",
+                            "awayTeamName": "AC Milan",
+                            "awayScore": 122,
+                            "winner": "roster5",
+                            "winnerName": "AC Milan",
+                            "margin": 15,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "FL Fart @ Ajax",
-                            "awayTeam": "roster17",
-                            "awayTeamName": "FL Fart",
-                            "awayRosterUrl": "./rosters/roster17.htm",
-                            "awayRosterFile": "roster17.htm",
+                            "status": "completed",
+                            "matchupText": "@Ajax 128, FL Fart 104",
+                            "boxscoreUrl": "./boxes/box126-2.htm",
+                            "boxscoreFile": "box126-2.htm",
                             "homeTeam": "roster7",
                             "homeTeamName": "Ajax",
-                            "homeRosterUrl": "./rosters/roster7.htm",
-                            "homeRosterFile": "roster7.htm",
+                            "homeScore": 128,
+                            "awayTeam": "roster17",
+                            "awayTeamName": "FL Fart",
+                            "awayScore": 104,
+                            "winner": "roster7",
+                            "winnerName": "Ajax",
+                            "margin": 24,
                             "rowClass": "row2"
                         }
                     ]
@@ -1547,16 +1766,19 @@
                     "date": "2/21/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Tottenham Hotspur @ Manchester United",
-                            "awayTeam": "roster27",
-                            "awayTeamName": "Tottenham Hotspur",
-                            "awayRosterUrl": "./rosters/roster27.htm",
-                            "awayRosterFile": "roster27.htm",
+                            "status": "completed",
+                            "matchupText": "@Manchester United 94, Tottenham Hotspur 92",
+                            "boxscoreUrl": "./boxes/box127-1.htm",
+                            "boxscoreFile": "box127-1.htm",
                             "homeTeam": "roster20",
                             "homeTeamName": "Manchester United",
-                            "homeRosterUrl": "./rosters/roster20.htm",
-                            "homeRosterFile": "roster20.htm",
+                            "homeScore": 94,
+                            "awayTeam": "roster27",
+                            "awayTeamName": "Tottenham Hotspur",
+                            "awayScore": 92,
+                            "winner": "roster20",
+                            "winnerName": "Manchester United",
+                            "margin": 2,
                             "rowClass": "row1"
                         }
                     ]
@@ -1565,16 +1787,19 @@
                     "date": "2/23/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Brighton @ Bayern Munich",
-                            "awayTeam": "roster13",
-                            "awayTeamName": "Brighton",
-                            "awayRosterUrl": "./rosters/roster13.htm",
-                            "awayRosterFile": "roster13.htm",
+                            "status": "completed",
+                            "matchupText": "@Bayern Munich 105, Brighton 104",
+                            "boxscoreUrl": "./boxes/box129-1.htm",
+                            "boxscoreFile": "box129-1.htm",
                             "homeTeam": "roster11",
                             "homeTeamName": "Bayern Munich",
-                            "homeRosterUrl": "./rosters/roster11.htm",
-                            "homeRosterFile": "roster11.htm",
+                            "homeScore": 105,
+                            "awayTeam": "roster13",
+                            "awayTeamName": "Brighton",
+                            "awayScore": 104,
+                            "winner": "roster11",
+                            "winnerName": "Bayern Munich",
+                            "margin": 1,
                             "rowClass": "row1"
                         }
                     ]
@@ -1583,16 +1808,19 @@
                     "date": "2/24/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "AFC Richmond @ Ajax",
-                            "awayTeam": "roster6",
-                            "awayTeamName": "AFC Richmond",
-                            "awayRosterUrl": "./rosters/roster6.htm",
-                            "awayRosterFile": "roster6.htm",
+                            "status": "completed",
+                            "matchupText": "@Ajax 138, AFC Richmond 129",
+                            "boxscoreUrl": "./boxes/box130-1.htm",
+                            "boxscoreFile": "box130-1.htm",
                             "homeTeam": "roster7",
                             "homeTeamName": "Ajax",
-                            "homeRosterUrl": "./rosters/roster7.htm",
-                            "homeRosterFile": "roster7.htm",
+                            "homeScore": 138,
+                            "awayTeam": "roster6",
+                            "awayTeamName": "AFC Richmond",
+                            "awayScore": 129,
+                            "winner": "roster7",
+                            "winnerName": "Ajax",
+                            "margin": 9,
                             "rowClass": "row1"
                         }
                     ]
@@ -1601,16 +1829,19 @@
                     "date": "2/27/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "AC Milan @ Paris Saint-Germain",
-                            "awayTeam": "roster5",
-                            "awayTeamName": "AC Milan",
-                            "awayRosterUrl": "./rosters/roster5.htm",
-                            "awayRosterFile": "roster5.htm",
+                            "status": "completed",
+                            "matchupText": "@Paris Saint-Germain 148, AC Milan 141",
+                            "boxscoreUrl": "./boxes/box133-1.htm",
+                            "boxscoreFile": "box133-1.htm",
                             "homeTeam": "roster23",
                             "homeTeamName": "Paris Saint-Germain",
-                            "homeRosterUrl": "./rosters/roster23.htm",
-                            "homeRosterFile": "roster23.htm",
+                            "homeScore": 148,
+                            "awayTeam": "roster5",
+                            "awayTeamName": "AC Milan",
+                            "awayScore": 141,
+                            "winner": "roster23",
+                            "winnerName": "Paris Saint-Germain",
+                            "margin": 7,
                             "rowClass": "row1"
                         }
                     ]
@@ -1619,29 +1850,35 @@
                     "date": "3/2/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Crystal Palace @ Sheffield United",
-                            "awayTeam": "roster15",
-                            "awayTeamName": "Crystal Palace",
-                            "awayRosterUrl": "./rosters/roster15.htm",
-                            "awayRosterFile": "roster15.htm",
+                            "status": "completed",
+                            "matchupText": "Crystal Palace 115, @Sheffield United 109",
+                            "boxscoreUrl": "./boxes/box137-1.htm",
+                            "boxscoreFile": "box137-1.htm",
                             "homeTeam": "roster25",
                             "homeTeamName": "Sheffield United",
-                            "homeRosterUrl": "./rosters/roster25.htm",
-                            "homeRosterFile": "roster25.htm",
+                            "homeScore": 109,
+                            "awayTeam": "roster15",
+                            "awayTeamName": "Crystal Palace",
+                            "awayScore": 115,
+                            "winner": "roster15",
+                            "winnerName": "Crystal Palace",
+                            "margin": 6,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "FL Fart @ AFC Richmond",
-                            "awayTeam": "roster17",
-                            "awayTeamName": "FL Fart",
-                            "awayRosterUrl": "./rosters/roster17.htm",
-                            "awayRosterFile": "roster17.htm",
+                            "status": "completed",
+                            "matchupText": "FL Fart 142, @AFC Richmond 138",
+                            "boxscoreUrl": "./boxes/box137-2.htm",
+                            "boxscoreFile": "box137-2.htm",
                             "homeTeam": "roster6",
                             "homeTeamName": "AFC Richmond",
-                            "homeRosterUrl": "./rosters/roster6.htm",
-                            "homeRosterFile": "roster6.htm",
+                            "homeScore": 138,
+                            "awayTeam": "roster17",
+                            "awayTeamName": "FL Fart",
+                            "awayScore": 142,
+                            "winner": "roster17",
+                            "winnerName": "FL Fart",
+                            "margin": 4,
                             "rowClass": "row2"
                         }
                     ]
@@ -1650,16 +1887,19 @@
                     "date": "3/4/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Aston Villa @ Sporting CP",
-                            "awayTeam": "roster8",
-                            "awayTeamName": "Aston Villa",
-                            "awayRosterUrl": "./rosters/roster8.htm",
-                            "awayRosterFile": "roster8.htm",
+                            "status": "completed",
+                            "matchupText": "@Sporting CP 96, Aston Villa 86",
+                            "boxscoreUrl": "./boxes/box139-1.htm",
+                            "boxscoreFile": "box139-1.htm",
                             "homeTeam": "roster26",
                             "homeTeamName": "Sporting CP",
-                            "homeRosterUrl": "./rosters/roster26.htm",
-                            "homeRosterFile": "roster26.htm",
+                            "homeScore": 96,
+                            "awayTeam": "roster8",
+                            "awayTeamName": "Aston Villa",
+                            "awayScore": 86,
+                            "winner": "roster26",
+                            "winnerName": "Sporting CP",
+                            "margin": 10,
                             "rowClass": "row1"
                         }
                     ]
@@ -1668,16 +1908,19 @@
                     "date": "3/6/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Brighton @ Manchester City",
-                            "awayTeam": "roster13",
-                            "awayTeamName": "Brighton",
-                            "awayRosterUrl": "./rosters/roster13.htm",
-                            "awayRosterFile": "roster13.htm",
+                            "status": "completed",
+                            "matchupText": "Brighton 110, @Manchester City 92",
+                            "boxscoreUrl": "./boxes/box141-1.htm",
+                            "boxscoreFile": "box141-1.htm",
                             "homeTeam": "roster16",
                             "homeTeamName": "Manchester City",
-                            "homeRosterUrl": "./rosters/roster16.htm",
-                            "homeRosterFile": "roster16.htm",
+                            "homeScore": 92,
+                            "awayTeam": "roster13",
+                            "awayTeamName": "Brighton",
+                            "awayScore": 110,
+                            "winner": "roster13",
+                            "winnerName": "Brighton",
+                            "margin": 18,
                             "rowClass": "row1"
                         }
                     ]
@@ -1686,16 +1929,19 @@
                     "date": "3/12/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "AC Milan @ Ajax",
-                            "awayTeam": "roster5",
-                            "awayTeamName": "AC Milan",
-                            "awayRosterUrl": "./rosters/roster5.htm",
-                            "awayRosterFile": "roster5.htm",
+                            "status": "completed",
+                            "matchupText": "AC Milan 136, @Ajax 102",
+                            "boxscoreUrl": "./boxes/box147-1.htm",
+                            "boxscoreFile": "box147-1.htm",
                             "homeTeam": "roster7",
                             "homeTeamName": "Ajax",
-                            "homeRosterUrl": "./rosters/roster7.htm",
-                            "homeRosterFile": "roster7.htm",
+                            "homeScore": 102,
+                            "awayTeam": "roster5",
+                            "awayTeamName": "AC Milan",
+                            "awayScore": 136,
+                            "winner": "roster5",
+                            "winnerName": "AC Milan",
+                            "margin": 34,
                             "rowClass": "row1"
                         }
                     ]
@@ -1704,29 +1950,35 @@
                     "date": "3/13/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Juventus @ Barcelona",
-                            "awayTeam": "roster19",
-                            "awayTeamName": "Juventus",
-                            "awayRosterUrl": "./rosters/roster19.htm",
-                            "awayRosterFile": "roster19.htm",
+                            "status": "completed",
+                            "matchupText": "@Barcelona 103, Juventus 75",
+                            "boxscoreUrl": "./boxes/box148-1.htm",
+                            "boxscoreFile": "box148-1.htm",
                             "homeTeam": "roster10",
                             "homeTeamName": "Barcelona",
-                            "homeRosterUrl": "./rosters/roster10.htm",
-                            "homeRosterFile": "roster10.htm",
+                            "homeScore": 103,
+                            "awayTeam": "roster19",
+                            "awayTeamName": "Juventus",
+                            "awayScore": 75,
+                            "winner": "roster10",
+                            "winnerName": "Barcelona",
+                            "margin": 28,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Valencia @ Tottenham Hotspur",
-                            "awayTeam": "roster28",
-                            "awayTeamName": "Valencia",
-                            "awayRosterUrl": "./rosters/roster28.htm",
-                            "awayRosterFile": "roster28.htm",
+                            "status": "completed",
+                            "matchupText": "Valencia 125, @Tottenham Hotspur 124",
+                            "boxscoreUrl": "./boxes/box148-2.htm",
+                            "boxscoreFile": "box148-2.htm",
                             "homeTeam": "roster27",
                             "homeTeamName": "Tottenham Hotspur",
-                            "homeRosterUrl": "./rosters/roster27.htm",
-                            "homeRosterFile": "roster27.htm",
+                            "homeScore": 124,
+                            "awayTeam": "roster28",
+                            "awayTeamName": "Valencia",
+                            "awayScore": 125,
+                            "winner": "roster28",
+                            "winnerName": "Valencia",
+                            "margin": 1,
                             "rowClass": "row2"
                         }
                     ]
@@ -1735,16 +1987,19 @@
                     "date": "3/17/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Paris Saint-Germain @ Bayern Munich",
-                            "awayTeam": "roster23",
-                            "awayTeamName": "Paris Saint-Germain",
-                            "awayRosterUrl": "./rosters/roster23.htm",
-                            "awayRosterFile": "roster23.htm",
+                            "status": "completed",
+                            "matchupText": "@Bayern Munich 112, Paris Saint-Germain 108",
+                            "boxscoreUrl": "./boxes/box152-1.htm",
+                            "boxscoreFile": "box152-1.htm",
                             "homeTeam": "roster11",
                             "homeTeamName": "Bayern Munich",
-                            "homeRosterUrl": "./rosters/roster11.htm",
-                            "homeRosterFile": "roster11.htm",
+                            "homeScore": 112,
+                            "awayTeam": "roster23",
+                            "awayTeamName": "Paris Saint-Germain",
+                            "awayScore": 108,
+                            "winner": "roster11",
+                            "winnerName": "Bayern Munich",
+                            "margin": 4,
                             "rowClass": "row1"
                         }
                     ]
@@ -1753,16 +2008,19 @@
                     "date": "3/21/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Marseille @ Barcelona",
-                            "awayTeam": "roster21",
-                            "awayTeamName": "Marseille",
-                            "awayRosterUrl": "./rosters/roster21.htm",
-                            "awayRosterFile": "roster21.htm",
+                            "status": "completed",
+                            "matchupText": "@Barcelona 103, Marseille 99",
+                            "boxscoreUrl": "./boxes/box156-1.htm",
+                            "boxscoreFile": "box156-1.htm",
                             "homeTeam": "roster10",
                             "homeTeamName": "Barcelona",
-                            "homeRosterUrl": "./rosters/roster10.htm",
-                            "homeRosterFile": "roster10.htm",
+                            "homeScore": 103,
+                            "awayTeam": "roster21",
+                            "awayTeamName": "Marseille",
+                            "awayScore": 99,
+                            "winner": "roster10",
+                            "winnerName": "Barcelona",
+                            "margin": 4,
                             "rowClass": "row1"
                         }
                     ]
@@ -1771,29 +2029,35 @@
                     "date": "3/22/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Manchester City @ Valencia",
-                            "awayTeam": "roster16",
-                            "awayTeamName": "Manchester City",
-                            "awayRosterUrl": "./rosters/roster16.htm",
-                            "awayRosterFile": "roster16.htm",
+                            "status": "completed",
+                            "matchupText": "Manchester City 123, @Valencia 117",
+                            "boxscoreUrl": "./boxes/box157-1.htm",
+                            "boxscoreFile": "box157-1.htm",
                             "homeTeam": "roster28",
                             "homeTeamName": "Valencia",
-                            "homeRosterUrl": "./rosters/roster28.htm",
-                            "homeRosterFile": "roster28.htm",
+                            "homeScore": 117,
+                            "awayTeam": "roster16",
+                            "awayTeamName": "Manchester City",
+                            "awayScore": 123,
+                            "winner": "roster16",
+                            "winnerName": "Manchester City",
+                            "margin": 6,
                             "rowClass": "row1"
                         },
                         {
-                            "status": "scheduled",
-                            "matchupText": "Bayern Munich @ Benfica",
-                            "awayTeam": "roster11",
-                            "awayTeamName": "Bayern Munich",
-                            "awayRosterUrl": "./rosters/roster11.htm",
-                            "awayRosterFile": "roster11.htm",
+                            "status": "completed",
+                            "matchupText": "@Benfica 129, Bayern Munich 101",
+                            "boxscoreUrl": "./boxes/box157-2.htm",
+                            "boxscoreFile": "box157-2.htm",
                             "homeTeam": "roster12",
                             "homeTeamName": "Benfica",
-                            "homeRosterUrl": "./rosters/roster12.htm",
-                            "homeRosterFile": "roster12.htm",
+                            "homeScore": 129,
+                            "awayTeam": "roster11",
+                            "awayTeamName": "Bayern Munich",
+                            "awayScore": 101,
+                            "winner": "roster12",
+                            "winnerName": "Benfica",
+                            "margin": 28,
                             "rowClass": "row2"
                         }
                     ]
@@ -1802,16 +2066,19 @@
                     "date": "3/23/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Chelsea @ Juventus",
-                            "awayTeam": "roster14",
-                            "awayTeamName": "Chelsea",
-                            "awayRosterUrl": "./rosters/roster14.htm",
-                            "awayRosterFile": "roster14.htm",
+                            "status": "completed",
+                            "matchupText": "@Juventus 92, Chelsea 83",
+                            "boxscoreUrl": "./boxes/box158-1.htm",
+                            "boxscoreFile": "box158-1.htm",
                             "homeTeam": "roster19",
                             "homeTeamName": "Juventus",
-                            "homeRosterUrl": "./rosters/roster19.htm",
-                            "homeRosterFile": "roster19.htm",
+                            "homeScore": 92,
+                            "awayTeam": "roster14",
+                            "awayTeamName": "Chelsea",
+                            "awayScore": 83,
+                            "winner": "roster19",
+                            "winnerName": "Juventus",
+                            "margin": 9,
                             "rowClass": "row1"
                         }
                     ]
@@ -1820,16 +2087,19 @@
                     "date": "3/26/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Manchester United @ Crystal Palace",
-                            "awayTeam": "roster20",
-                            "awayTeamName": "Manchester United",
-                            "awayRosterUrl": "./rosters/roster20.htm",
-                            "awayRosterFile": "roster20.htm",
+                            "status": "completed",
+                            "matchupText": "@Crystal Palace 97, Manchester United 75",
+                            "boxscoreUrl": "./boxes/box161-1.htm",
+                            "boxscoreFile": "box161-1.htm",
                             "homeTeam": "roster15",
                             "homeTeamName": "Crystal Palace",
-                            "homeRosterUrl": "./rosters/roster15.htm",
-                            "homeRosterFile": "roster15.htm",
+                            "homeScore": 97,
+                            "awayTeam": "roster20",
+                            "awayTeamName": "Manchester United",
+                            "awayScore": 75,
+                            "winner": "roster15",
+                            "winnerName": "Crystal Palace",
+                            "margin": 22,
                             "rowClass": "row1"
                         }
                     ]
@@ -1838,16 +2108,19 @@
                     "date": "3/27/1984",
                     "games": [
                         {
-                            "status": "scheduled",
-                            "matchupText": "Brighton @ Marseille",
-                            "awayTeam": "roster13",
-                            "awayTeamName": "Brighton",
-                            "awayRosterUrl": "./rosters/roster13.htm",
-                            "awayRosterFile": "roster13.htm",
+                            "status": "completed",
+                            "matchupText": "@Marseille 117, Brighton 110",
+                            "boxscoreUrl": "./boxes/box162-1.htm",
+                            "boxscoreFile": "box162-1.htm",
                             "homeTeam": "roster21",
                             "homeTeamName": "Marseille",
-                            "homeRosterUrl": "./rosters/roster21.htm",
-                            "homeRosterFile": "roster21.htm",
+                            "homeScore": 117,
+                            "awayTeam": "roster13",
+                            "awayTeamName": "Brighton",
+                            "awayScore": 110,
+                            "winner": "roster21",
+                            "winnerName": "Marseille",
+                            "margin": 7,
                             "rowClass": "row1"
                         }
                     ]
@@ -1855,6 +2128,283 @@
                 {
                     "date": "3/29/1984",
                     "games": [
+                        {
+                            "status": "completed",
+                            "matchupText": "@Chelsea 101, Atletico Madrid 94",
+                            "boxscoreUrl": "./boxes/box164-1.htm",
+                            "boxscoreFile": "box164-1.htm",
+                            "homeTeam": "roster14",
+                            "homeTeamName": "Chelsea",
+                            "homeScore": 101,
+                            "awayTeam": "roster9",
+                            "awayTeamName": "Atletico Madrid",
+                            "awayScore": 94,
+                            "winner": "roster14",
+                            "winnerName": "Chelsea",
+                            "margin": 7,
+                            "rowClass": "row1"
+                        }
+                    ]
+                },
+                {
+                    "date": "3/31/1984",
+                    "games": [
+                        {
+                            "status": "completed",
+                            "matchupText": "@Valencia 104, Juventus 103",
+                            "boxscoreUrl": "./boxes/box166-1.htm",
+                            "boxscoreFile": "box166-1.htm",
+                            "homeTeam": "roster28",
+                            "homeTeamName": "Valencia",
+                            "homeScore": 104,
+                            "awayTeam": "roster19",
+                            "awayTeamName": "Juventus",
+                            "awayScore": 103,
+                            "winner": "roster28",
+                            "winnerName": "Valencia",
+                            "margin": 1,
+                            "rowClass": "row1"
+                        }
+                    ]
+                },
+                {
+                    "date": "4/2/1984",
+                    "games": [
+                        {
+                            "status": "completed",
+                            "matchupText": "Inter Milan 103, @Monaco 100",
+                            "boxscoreUrl": "./boxes/box168-1.htm",
+                            "boxscoreFile": "box168-1.htm",
+                            "homeTeam": "roster22",
+                            "homeTeamName": "Monaco",
+                            "homeScore": 100,
+                            "awayTeam": "roster18",
+                            "awayTeamName": "Inter Milan",
+                            "awayScore": 103,
+                            "winner": "roster18",
+                            "winnerName": "Inter Milan",
+                            "margin": 3,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "status": "completed",
+                            "matchupText": "@Paris Saint-Germain 112, Tottenham Hotspur 88",
+                            "boxscoreUrl": "./boxes/box168-2.htm",
+                            "boxscoreFile": "box168-2.htm",
+                            "homeTeam": "roster23",
+                            "homeTeamName": "Paris Saint-Germain",
+                            "homeScore": 112,
+                            "awayTeam": "roster27",
+                            "awayTeamName": "Tottenham Hotspur",
+                            "awayScore": 88,
+                            "winner": "roster23",
+                            "winnerName": "Paris Saint-Germain",
+                            "margin": 24,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "status": "completed",
+                            "matchupText": "@Real Madrid 115, Barcelona 100",
+                            "boxscoreUrl": "./boxes/box168-3.htm",
+                            "boxscoreFile": "box168-3.htm",
+                            "homeTeam": "roster24",
+                            "homeTeamName": "Real Madrid",
+                            "homeScore": 115,
+                            "awayTeam": "roster10",
+                            "awayTeamName": "Barcelona",
+                            "awayScore": 100,
+                            "winner": "roster24",
+                            "winnerName": "Real Madrid",
+                            "margin": 15,
+                            "rowClass": "row1"
+                        }
+                    ]
+                },
+                {
+                    "date": "4/6/1984",
+                    "games": [
+                        {
+                            "status": "completed",
+                            "matchupText": "Sheffield United 117, @Atletico Madrid 93",
+                            "boxscoreUrl": "./boxes/box172-1.htm",
+                            "boxscoreFile": "box172-1.htm",
+                            "homeTeam": "roster9",
+                            "homeTeamName": "Atletico Madrid",
+                            "homeScore": 93,
+                            "awayTeam": "roster25",
+                            "awayTeamName": "Sheffield United",
+                            "awayScore": 117,
+                            "winner": "roster25",
+                            "winnerName": "Sheffield United",
+                            "margin": 24,
+                            "rowClass": "row1"
+                        }
+                    ]
+                },
+                {
+                    "date": "4/12/1984",
+                    "games": [
+                        {
+                            "status": "completed",
+                            "matchupText": "@Marseille 108, Tottenham Hotspur 99",
+                            "boxscoreUrl": "./boxes/box178-1.htm",
+                            "boxscoreFile": "box178-1.htm",
+                            "homeTeam": "roster21",
+                            "homeTeamName": "Marseille",
+                            "homeScore": 108,
+                            "awayTeam": "roster27",
+                            "awayTeamName": "Tottenham Hotspur",
+                            "awayScore": 99,
+                            "winner": "roster21",
+                            "winnerName": "Marseille",
+                            "margin": 9,
+                            "rowClass": "row1"
+                        }
+                    ]
+                },
+                {
+                    "date": "4/15/1984",
+                    "games": [
+                        {
+                            "status": "completed",
+                            "matchupText": "Crystal Palace 105, @Atletico Madrid 99",
+                            "boxscoreUrl": "./boxes/box181-1.htm",
+                            "boxscoreFile": "box181-1.htm",
+                            "homeTeam": "roster9",
+                            "homeTeamName": "Atletico Madrid",
+                            "homeScore": 99,
+                            "awayTeam": "roster15",
+                            "awayTeamName": "Crystal Palace",
+                            "awayScore": 105,
+                            "winner": "roster15",
+                            "winnerName": "Crystal Palace",
+                            "margin": 6,
+                            "rowClass": "row1"
+                        }
+                    ]
+                },
+                {
+                    "date": "4/16/1984",
+                    "games": [
+                        {
+                            "status": "completed",
+                            "matchupText": "@Ajax 130, Aston Villa 115",
+                            "boxscoreUrl": "./boxes/box182-1.htm",
+                            "boxscoreFile": "box182-1.htm",
+                            "homeTeam": "roster7",
+                            "homeTeamName": "Ajax",
+                            "homeScore": 130,
+                            "awayTeam": "roster8",
+                            "awayTeamName": "Aston Villa",
+                            "awayScore": 115,
+                            "winner": "roster7",
+                            "winnerName": "Ajax",
+                            "margin": 15,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "status": "completed",
+                            "matchupText": "@Brighton 103, Valencia 102",
+                            "boxscoreUrl": "./boxes/box182-2.htm",
+                            "boxscoreFile": "box182-2.htm",
+                            "homeTeam": "roster13",
+                            "homeTeamName": "Brighton",
+                            "homeScore": 103,
+                            "awayTeam": "roster28",
+                            "awayTeamName": "Valencia",
+                            "awayScore": 102,
+                            "winner": "roster13",
+                            "winnerName": "Brighton",
+                            "margin": 1,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "status": "completed",
+                            "matchupText": "Chelsea 120, @FL Fart 115",
+                            "boxscoreUrl": "./boxes/box182-3.htm",
+                            "boxscoreFile": "box182-3.htm",
+                            "homeTeam": "roster17",
+                            "homeTeamName": "FL Fart",
+                            "homeScore": 115,
+                            "awayTeam": "roster14",
+                            "awayTeamName": "Chelsea",
+                            "awayScore": 120,
+                            "winner": "roster14",
+                            "winnerName": "Chelsea",
+                            "margin": 5,
+                            "rowClass": "row1"
+                        }
+                    ]
+                },
+                {
+                    "date": "4/19/1984",
+                    "games": [
+                        {
+                            "status": "completed",
+                            "matchupText": "@AFC Richmond 132, Real Madrid 111",
+                            "boxscoreUrl": "./boxes/box185-1.htm",
+                            "boxscoreFile": "box185-1.htm",
+                            "homeTeam": "roster6",
+                            "homeTeamName": "AFC Richmond",
+                            "homeScore": 132,
+                            "awayTeam": "roster24",
+                            "awayTeamName": "Real Madrid",
+                            "awayScore": 111,
+                            "winner": "roster6",
+                            "winnerName": "AFC Richmond",
+                            "margin": 21,
+                            "rowClass": "row1"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "title": "Playoffs",
+            "slug": "playoffs",
+            "days": [
+                {
+                    "date": "4/21/1984",
+                    "games": [
+                        {
+                            "status": "scheduled",
+                            "matchupText": "Manchester United @ Benfica",
+                            "awayTeam": "roster20",
+                            "awayTeamName": "Manchester United",
+                            "awayRosterUrl": "./rosters/roster20.htm",
+                            "awayRosterFile": "roster20.htm",
+                            "homeTeam": "roster12",
+                            "homeTeamName": "Benfica",
+                            "homeRosterUrl": "./rosters/roster12.htm",
+                            "homeRosterFile": "roster12.htm",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "status": "scheduled",
+                            "matchupText": "Marseille @ AC Milan",
+                            "awayTeam": "roster21",
+                            "awayTeamName": "Marseille",
+                            "awayRosterUrl": "./rosters/roster21.htm",
+                            "awayRosterFile": "roster21.htm",
+                            "homeTeam": "roster5",
+                            "homeTeamName": "AC Milan",
+                            "homeRosterUrl": "./rosters/roster5.htm",
+                            "homeRosterFile": "roster5.htm",
+                            "rowClass": "row2"
+                        },
+                        {
+                            "status": "scheduled",
+                            "matchupText": "Ajax @ AFC Richmond",
+                            "awayTeam": "roster7",
+                            "awayTeamName": "Ajax",
+                            "awayRosterUrl": "./rosters/roster7.htm",
+                            "awayRosterFile": "roster7.htm",
+                            "homeTeam": "roster6",
+                            "homeTeamName": "AFC Richmond",
+                            "homeRosterUrl": "./rosters/roster6.htm",
+                            "homeRosterFile": "roster6.htm",
+                            "rowClass": "row1"
+                        },
                         {
                             "status": "scheduled",
                             "matchupText": "Atletico Madrid @ Chelsea",
@@ -1866,185 +2416,59 @@
                             "homeTeamName": "Chelsea",
                             "homeRosterUrl": "./rosters/roster14.htm",
                             "homeRosterFile": "roster14.htm",
-                            "rowClass": "row1"
-                        }
-                    ]
-                },
-                {
-                    "date": "3/31/1984",
-                    "games": [
-                        {
-                            "status": "scheduled",
-                            "matchupText": "Juventus @ Valencia",
-                            "awayTeam": "roster19",
-                            "awayTeamName": "Juventus",
-                            "awayRosterUrl": "./rosters/roster19.htm",
-                            "awayRosterFile": "roster19.htm",
-                            "homeTeam": "roster28",
-                            "homeTeamName": "Valencia",
-                            "homeRosterUrl": "./rosters/roster28.htm",
-                            "homeRosterFile": "roster28.htm",
-                            "rowClass": "row1"
-                        }
-                    ]
-                },
-                {
-                    "date": "4/2/1984",
-                    "games": [
-                        {
-                            "status": "scheduled",
-                            "matchupText": "Inter Milan @ Monaco",
-                            "awayTeam": "roster18",
-                            "awayTeamName": "Inter Milan",
-                            "awayRosterUrl": "./rosters/roster18.htm",
-                            "awayRosterFile": "roster18.htm",
-                            "homeTeam": "roster22",
-                            "homeTeamName": "Monaco",
-                            "homeRosterUrl": "./rosters/roster22.htm",
-                            "homeRosterFile": "roster22.htm",
-                            "rowClass": "row1"
-                        },
-                        {
-                            "status": "scheduled",
-                            "matchupText": "Tottenham Hotspur @ Paris Saint-Germain",
-                            "awayTeam": "roster27",
-                            "awayTeamName": "Tottenham Hotspur",
-                            "awayRosterUrl": "./rosters/roster27.htm",
-                            "awayRosterFile": "roster27.htm",
-                            "homeTeam": "roster23",
-                            "homeTeamName": "Paris Saint-Germain",
-                            "homeRosterUrl": "./rosters/roster23.htm",
-                            "homeRosterFile": "roster23.htm",
                             "rowClass": "row2"
                         },
                         {
                             "status": "scheduled",
-                            "matchupText": "Barcelona @ Real Madrid",
+                            "matchupText": "Barcelona @ Crystal Palace",
                             "awayTeam": "roster10",
                             "awayTeamName": "Barcelona",
                             "awayRosterUrl": "./rosters/roster10.htm",
                             "awayRosterFile": "roster10.htm",
+                            "homeTeam": "roster15",
+                            "homeTeamName": "Crystal Palace",
+                            "homeRosterUrl": "./rosters/roster15.htm",
+                            "homeRosterFile": "roster15.htm",
+                            "rowClass": "row1"
+                        },
+                        {
+                            "status": "scheduled",
+                            "matchupText": "Inter Milan @ FL Fart",
+                            "awayTeam": "roster18",
+                            "awayTeamName": "Inter Milan",
+                            "awayRosterUrl": "./rosters/roster18.htm",
+                            "awayRosterFile": "roster18.htm",
+                            "homeTeam": "roster17",
+                            "homeTeamName": "FL Fart",
+                            "homeRosterUrl": "./rosters/roster17.htm",
+                            "homeRosterFile": "roster17.htm",
+                            "rowClass": "row2"
+                        },
+                        {
+                            "status": "scheduled",
+                            "matchupText": "Brighton @ Real Madrid",
+                            "awayTeam": "roster13",
+                            "awayTeamName": "Brighton",
+                            "awayRosterUrl": "./rosters/roster13.htm",
+                            "awayRosterFile": "roster13.htm",
                             "homeTeam": "roster24",
                             "homeTeamName": "Real Madrid",
                             "homeRosterUrl": "./rosters/roster24.htm",
                             "homeRosterFile": "roster24.htm",
                             "rowClass": "row1"
-                        }
-                    ]
-                },
-                {
-                    "date": "4/6/1984",
-                    "games": [
+                        },
                         {
                             "status": "scheduled",
-                            "matchupText": "Sheffield United @ Atletico Madrid",
+                            "matchupText": "Sheffield United @ Paris Saint-Germain",
                             "awayTeam": "roster25",
                             "awayTeamName": "Sheffield United",
                             "awayRosterUrl": "./rosters/roster25.htm",
                             "awayRosterFile": "roster25.htm",
-                            "homeTeam": "roster9",
-                            "homeTeamName": "Atletico Madrid",
-                            "homeRosterUrl": "./rosters/roster9.htm",
-                            "homeRosterFile": "roster9.htm",
-                            "rowClass": "row1"
-                        }
-                    ]
-                },
-                {
-                    "date": "4/12/1984",
-                    "games": [
-                        {
-                            "status": "scheduled",
-                            "matchupText": "Tottenham Hotspur @ Marseille",
-                            "awayTeam": "roster27",
-                            "awayTeamName": "Tottenham Hotspur",
-                            "awayRosterUrl": "./rosters/roster27.htm",
-                            "awayRosterFile": "roster27.htm",
-                            "homeTeam": "roster21",
-                            "homeTeamName": "Marseille",
-                            "homeRosterUrl": "./rosters/roster21.htm",
-                            "homeRosterFile": "roster21.htm",
-                            "rowClass": "row1"
-                        }
-                    ]
-                },
-                {
-                    "date": "4/15/1984",
-                    "games": [
-                        {
-                            "status": "scheduled",
-                            "matchupText": "Crystal Palace @ Atletico Madrid",
-                            "awayTeam": "roster15",
-                            "awayTeamName": "Crystal Palace",
-                            "awayRosterUrl": "./rosters/roster15.htm",
-                            "awayRosterFile": "roster15.htm",
-                            "homeTeam": "roster9",
-                            "homeTeamName": "Atletico Madrid",
-                            "homeRosterUrl": "./rosters/roster9.htm",
-                            "homeRosterFile": "roster9.htm",
-                            "rowClass": "row1"
-                        }
-                    ]
-                },
-                {
-                    "date": "4/16/1984",
-                    "games": [
-                        {
-                            "status": "scheduled",
-                            "matchupText": "Aston Villa @ Ajax",
-                            "awayTeam": "roster8",
-                            "awayTeamName": "Aston Villa",
-                            "awayRosterUrl": "./rosters/roster8.htm",
-                            "awayRosterFile": "roster8.htm",
-                            "homeTeam": "roster7",
-                            "homeTeamName": "Ajax",
-                            "homeRosterUrl": "./rosters/roster7.htm",
-                            "homeRosterFile": "roster7.htm",
-                            "rowClass": "row1"
-                        },
-                        {
-                            "status": "scheduled",
-                            "matchupText": "Valencia @ Brighton",
-                            "awayTeam": "roster28",
-                            "awayTeamName": "Valencia",
-                            "awayRosterUrl": "./rosters/roster28.htm",
-                            "awayRosterFile": "roster28.htm",
-                            "homeTeam": "roster13",
-                            "homeTeamName": "Brighton",
-                            "homeRosterUrl": "./rosters/roster13.htm",
-                            "homeRosterFile": "roster13.htm",
+                            "homeTeam": "roster23",
+                            "homeTeamName": "Paris Saint-Germain",
+                            "homeRosterUrl": "./rosters/roster23.htm",
+                            "homeRosterFile": "roster23.htm",
                             "rowClass": "row2"
-                        },
-                        {
-                            "status": "scheduled",
-                            "matchupText": "Chelsea @ FL Fart",
-                            "awayTeam": "roster14",
-                            "awayTeamName": "Chelsea",
-                            "awayRosterUrl": "./rosters/roster14.htm",
-                            "awayRosterFile": "roster14.htm",
-                            "homeTeam": "roster17",
-                            "homeTeamName": "FL Fart",
-                            "homeRosterUrl": "./rosters/roster17.htm",
-                            "homeRosterFile": "roster17.htm",
-                            "rowClass": "row1"
-                        }
-                    ]
-                },
-                {
-                    "date": "4/19/1984",
-                    "games": [
-                        {
-                            "status": "scheduled",
-                            "matchupText": "Real Madrid @ AFC Richmond",
-                            "awayTeam": "roster24",
-                            "awayTeamName": "Real Madrid",
-                            "awayRosterUrl": "./rosters/roster24.htm",
-                            "awayRosterFile": "roster24.htm",
-                            "homeTeam": "roster6",
-                            "homeTeamName": "AFC Richmond",
-                            "homeRosterUrl": "./rosters/roster6.htm",
-                            "homeRosterFile": "roster6.htm",
-                            "rowClass": "row1"
                         }
                     ]
                 }

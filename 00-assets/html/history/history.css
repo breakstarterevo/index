@@ -538,8 +538,60 @@ h3 {
 }
 
 .table-wrap {
-  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
   border: 1px solid #d8dee8;
+  max-width: 100%;
+  overflow-x: auto;
+  position: relative;
+}
+
+.table-tools {
+  align-items: end;
+  background: #f5f7fb;
+  border: 1px solid #d8dee8;
+  border-bottom: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding: 8px;
+}
+
+.table-tools label {
+  color: var(--hist-muted);
+  display: grid;
+  flex: 1 1 180px;
+  font-size: 11px;
+  font-weight: 900;
+  gap: 3px;
+  letter-spacing: .8px;
+  max-width: 260px;
+  text-transform: uppercase;
+}
+
+.table-tools input,
+.table-tools select {
+  border: 1px solid #9aa5b1;
+  background: #fff;
+  color: var(--hist-ink);
+  font-size: 13px;
+  min-height: 31px;
+  padding: 5px 7px;
+}
+
+.table-tools button {
+  background: #fff;
+  border: 1px solid #9aa5b1;
+  color: var(--hist-ink);
+  cursor: pointer;
+  font-size: 12px;
+  font-weight: 900;
+  min-height: 31px;
+  padding: 6px 10px;
+  text-transform: uppercase;
+}
+
+.table-tools button:hover {
+  background: var(--hist-head);
 }
 
 table.ref-table {
@@ -547,6 +599,7 @@ table.ref-table {
   border-collapse: collapse;
   background: #fff;
   font-size: 13px;
+  min-width: max-content;
 }
 
 .ref-table th {
@@ -588,6 +641,32 @@ table.ref-table {
   white-space: nowrap;
 }
 
+.ref-table th:first-child,
+.ref-table td:first-child {
+  left: 0;
+  position: sticky;
+}
+
+.ref-table th:first-child {
+  z-index: 4;
+}
+
+.ref-table td:first-child {
+  background: #fff;
+  box-shadow: 8px 0 10px -10px rgba(8, 24, 50, 0.75);
+  z-index: 2;
+}
+
+.ref-table tr:nth-child(even) td:first-child {
+  background: #f7f9fc;
+}
+
+.ref-table tr[hidden],
+.ref-table th[hidden],
+.ref-table td[hidden] {
+  display: none;
+}
+
 .ref-table tr:nth-child(even) td { background: #f7f9fc; }
 .ref-table tr.standing-champ td { background: #f7d95b; }
 .ref-table tr.standing-promo td { background: #bfe8c6; }
@@ -595,6 +674,9 @@ table.ref-table {
 .ref-table tr.standing-champ:nth-child(even) td { background: #f7d95b; }
 .ref-table tr.standing-promo:nth-child(even) td { background: #bfe8c6; }
 .ref-table tr.standing-relegated:nth-child(even) td { background: #f2b7b9; }
+.ref-table tr.standing-champ td:first-child { background: #f7d95b; }
+.ref-table tr.standing-promo td:first-child { background: #bfe8c6; }
+.ref-table tr.standing-relegated td:first-child { background: #f2b7b9; }
 .ref-table .num { text-align: right; font-variant-numeric: tabular-nums; }
 .ref-table tfoot td { background: #f0f2f5; font-weight: 800; }
 
@@ -1045,6 +1127,28 @@ select, .small-input, .filter-bar input {
   .team-directory-grid,
   .timeline-grid,
   .filter-bar { grid-template-columns: 1fr; }
+  .table-tools {
+    align-items: stretch;
+    gap: 6px;
+  }
+  .table-tools label {
+    flex-basis: 100%;
+    max-width: none;
+  }
+  .table-tools button {
+    flex: 1 1 88px;
+  }
+  .table-wrap {
+    margin-left: -4px;
+    margin-right: -4px;
+  }
+  table.ref-table {
+    font-size: 12px;
+  }
+  .ref-table th,
+  .ref-table td {
+    padding: 5px 6px;
+  }
   .accolade-item {
     align-items: start;
     grid-template-columns: 1fr;

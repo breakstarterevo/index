@@ -147,6 +147,7 @@
       teamStats: await fetchJson(`${base}team_stats.json`, { teams: [] }),
       awards: await fetchJson(`${base}awards.json`, { sections: [] }),
       seasonAwards: await fetchJson(`${base}season_awards.json`, { sections: [], missing: true }),
+      gameResults: await fetchJson(`${base}game_results.json`, { results: [] }),
       youth: await fetchJson(`${base}youth_intake.json`, { teams: [] }),
       supercupStandings: await fetchJson(`${base}supercup/standings.json`, { sections: [] }),
       supercupLeaders: await fetchJson(`${base}supercup/leaders.json`, { sections: [] }),
@@ -232,6 +233,127 @@
       tableEl.querySelectorAll("tbody tr").forEach((row, index) => {
         if (!row.dataset.originalIndex) row.dataset.originalIndex = String(index);
       });
+    });
+    setupTableTools(root);
+  }
+
+  function tableToolKey(tableEl) {
+    const section = tableEl.closest(".reference-section")?.querySelector("h2")?.textContent || "";
+    const headers = Array.from(tableEl.querySelectorAll("thead th")).map((th) => th.textContent.trim()).join("|");
+    return `history-table:${window.location.pathname}${window.location.search}:${section}:${headers}`;
+  }
+
+  function tableVisibleColumnIndexes(tableEl) {
+    return Array.from(tableEl.querySelectorAll("thead th"))
+      .map((th, index) => th.hidden ? null : index)
+      .filter((index) => index !== null);
+  }
+
+  function tableCsvValue(value) {
+    const text = String(value || "").replace(/\s+/g, " ").trim();
+    return /[",\n]/.test(text) ? `"${text.replace(/"/g, '""')}"` : text;
+  }
+
+  function tableCsv(tableEl) {
+    const columns = tableVisibleColumnIndexes(tableEl);
+    const rows = [
+      Array.from(tableEl.querySelectorAll("thead th")),
+      ...Array.from(tableEl.querySelectorAll("tbody tr")).filter((row) => !row.hidden).map((row) => Array.from(row.children))
+    ];
+    return rows
+      .map((cells) => columns.map((index) => tableCsvValue(cells[index]?.textContent || "")).join(","))
+      .join("\n");
+  }
+
+  function applyTableFilter(tableEl, query) {
+    const q = String(query || "").trim().toLowerCase();
+    tableEl.querySelectorAll("tbody tr").forEach((row) => {
+      row.hidden = q ? !row.textContent.toLowerCase().includes(q) : false;
+    });
+  }
+
+  function applyColumnPreset(tableEl, preset) {
+    const headers = Array.from(tableEl.querySelectorAll("thead th"));
+    const keyPattern = /^(#|rank|season|date|team|player|person|pos|tier|award|w-l|record|ovr|pot|value|pts|diff|move)$/i;
+    const show = headers.map((th, index) => {
+      if (preset === "all") return true;
+      if (preset === "compact") return index < Math.min(headers.length, 6);
+      return index === 0 || keyPattern.test(th.textContent.trim());
+    });
+    if (!show.some(Boolean)) show[0] = true;
+    tableEl.querySelectorAll("tr").forEach((row) => {
+      Array.from(row.children).forEach((cell, index) => {
+        cell.hidden = !show[index];
+      });
+    });
+  }
+
+  async function copyTable(tableEl, button) {
+    const csv = tableCsv(tableEl);
+    try {
+      await navigator.clipboard.writeText(csv);
+      if (button) {
+        const label = button.textContent;
+        button.textContent = "Copied";
+        setTimeout(() => { button.textContent = label; }, 1200);
+      }
+    } catch (_error) {
+      const area = document.createElement("textarea");
+      area.value = csv;
+      document.body.appendChild(area);
+      area.select();
+      document.execCommand("copy");
+      area.remove();
+    }
+  }
+
+  function exportTableCsv(tableEl) {
+    const blob = new Blob([tableCsv(tableEl)], { type: "text/csv;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+    const section = tableEl.closest(".reference-section")?.querySelector("h2")?.textContent || "history-table";
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = `${slug(section) || "history-table"}.csv`;
+    document.body.appendChild(link);
+    link.click();
+    link.remove();
+    URL.revokeObjectURL(url);
+  }
+
+  function setupTableTools(root = document) {
+    root.querySelectorAll(".table-wrap").forEach((wrap, index) => {
+      const tableEl = wrap.querySelector("table.ref-table");
+      if (!tableEl || wrap.dataset.toolsReady) return;
+      wrap.dataset.toolsReady = "1";
+      tableEl.dataset.tableIndex = tableEl.dataset.tableIndex || String(index);
+      const key = tableToolKey(tableEl);
+      const savedFilter = localStorage.getItem(`${key}:filter`) || "";
+      const savedPreset = localStorage.getItem(`${key}:preset`) || "all";
+      const headers = tableEl.querySelectorAll("thead th").length;
+      const tools = document.createElement("div");
+      tools.className = "table-tools";
+      tools.innerHTML = `
+        <label><span>Filter</span><input class="table-filter-input" type="search" value="${esc(savedFilter)}" placeholder="Filter rows"></label>
+        ${headers > 6 ? `<label><span>Columns</span><select class="table-column-preset"><option value="all">All</option><option value="compact">Compact</option><option value="key">Key</option></select></label>` : ""}
+        <button type="button" class="table-copy-button">Copy</button>
+        <button type="button" class="table-export-button">CSV</button>`;
+      wrap.parentNode.insertBefore(tools, wrap);
+
+      const filterInput = $(".table-filter-input", tools);
+      const presetSelect = $(".table-column-preset", tools);
+      filterInput?.addEventListener("input", () => {
+        localStorage.setItem(`${key}:filter`, filterInput.value);
+        applyTableFilter(tableEl, filterInput.value);
+      });
+      presetSelect?.addEventListener("change", () => {
+        localStorage.setItem(`${key}:preset`, presetSelect.value);
+        applyColumnPreset(tableEl, presetSelect.value);
+      });
+      $(".table-copy-button", tools)?.addEventListener("click", (event) => copyTable(tableEl, event.currentTarget));
+      $(".table-export-button", tools)?.addEventListener("click", () => exportTableCsv(tableEl));
+      if (presetSelect) presetSelect.value = savedPreset;
+      applyColumnPreset(tableEl, presetSelect?.value || "all");
+      applyTableFilter(tableEl, savedFilter);
     });
   }
 
@@ -1151,6 +1273,90 @@
     }).filter(Boolean).sort((a, b) => seasonNumber(a.season) - seasonNumber(b.season));
   }
 
+  function competitiveResults(data) {
+    return (data.gameResults?.results || data.game_results?.results || [])
+      .filter((game) => !String(game.section || "").toLowerCase().includes("preseason"))
+      .filter((game) => Number.isFinite(Number(game.homeScore)) && Number.isFinite(Number(game.awayScore)));
+  }
+
+  function leaderCategoryByTitle(data, patterns) {
+    const wanted = patterns.map((pattern) => String(pattern).toLowerCase());
+    return leaderCategories(data).find(({ category }) => {
+      const title = String(category.title || "").toLowerCase();
+      return wanted.some((pattern) => title.includes(pattern));
+    });
+  }
+
+  function seasonAwardRows(data, patterns = []) {
+    const wanted = patterns.map((pattern) => String(pattern).toLowerCase());
+    return (data.seasonAwards.sections || []).flatMap((section) => (section.awards || [])
+      .filter((award) => !wanted.length || wanted.some((pattern) => String(award.award || "").toLowerCase().includes(pattern)))
+      .map((award) => ({ section, award })));
+  }
+
+  function teamStatLeader(data, key, side = "team", higherIsBetter = true) {
+    return (data.teamStats.teams || []).slice().sort((a, b) => {
+      const av = num(a.stats?.[key]?.[side]?.value);
+      const bv = num(b.stats?.[key]?.[side]?.value);
+      if (av === null && bv === null) return 0;
+      if (av === null) return 1;
+      if (bv === null) return -1;
+      return higherIsBetter ? bv - av : av - bv;
+    })[0] || {};
+  }
+
+  function renderSeasonRecap(data) {
+    const selected = data.season;
+    const teams = allTeamsFromLatest(data);
+    const champion = teams.slice().sort((a, b) => teamOverallRank(a) - teamOverallRank(b))[0] || {};
+    const promoted = teams.filter((row) => movementMarker(row.tier, row.position, row.teamCount) === "P");
+    const relegated = teams.filter((row) => movementMarker(row.tier, row.position, row.teamCount) === "R");
+    const awardHighlights = seasonAwardRows(data, ["most valuable", "rookie", "defender", "6th", "sixth", "gm"]).slice(0, 8);
+    const leaderHighlights = ["points", "rebounds", "assists", "steals", "blocks"].map((key) => {
+      const match = leaderCategoryByTitle(data, [key]);
+      const leader = match?.category?.leaders?.[0];
+      return leader ? { key, tier: match.tier, category: match.category, leader } : null;
+    }).filter(Boolean);
+    const topPlayers = (data.players || []).slice()
+      .filter((player) => num(player.overall) !== null)
+      .sort((a, b) => (num(b.overall) || 0) - (num(a.overall) || 0))
+      .slice(0, 8);
+    const blowouts = competitiveResults(data).slice().sort((a, b) => (num(b.margin) || 0) - (num(a.margin) || 0)).slice(0, 6);
+    const shootouts = competitiveResults(data).slice().sort((a, b) => ((num(b.homeScore) || 0) + (num(b.awayScore) || 0)) - ((num(a.homeScore) || 0) + (num(a.awayScore) || 0))).slice(0, 6);
+    const pointsLeader = teamStatLeader(data, "points");
+    const defenseLeader = teamStatLeader(data, "points", "opponent", false);
+    const marginLeader = teamStatLeader(data, "points", "margin");
+    const rebLeader = teamStatLeader(data, "rebounds");
+    const astLeader = teamStatLeader(data, "assists");
+
+    return `
+      <section class="dashboard-grid season-recap-grid">
+        ${dashboardCard("Champion", teamMini(champion.team, champion.rosterFile), `${esc(champion.wins)}-${esc(champion.losses)} in ${esc(champion.tier)} with a ${esc(champion.diff)} point diff.`)}
+        ${dashboardCard("Best Attack", teamMini(pointsLeader.team, pointsLeader.file), `${esc(pointsLeader.stats?.points?.team?.value ?? "-")} PPG, rank ${esc(pointsLeader.stats?.points?.team?.totalRank ?? "-")}.`)}
+        ${dashboardCard("Best Defense", teamMini(defenseLeader.team, defenseLeader.file), `${esc(defenseLeader.stats?.points?.opponent?.value ?? "-")} opponent PPG.`)}
+        ${dashboardCard("Movement", "Promotion / Relegation", `${promoted.map((team) => esc(team.team)).join(", ") || "No promoted teams"}${relegated.length ? ` | Down: ${relegated.map((team) => esc(team.team)).join(", ")}` : ""}`, "#standings")}
+      </section>
+      <div class="history-grid main-rail">
+        <div>
+          <section class="reference-section"><h2>Season Award Snapshot</h2>${table(["Tier", "Award", "Person", "Team"], awardHighlights.map(({ section, award }) => `<tr><td>${esc(section.title)}</td><td>${esc(award.award)}</td><td>${playerLink(selected, award.personFile, award.person)}</td><td>${teamLink(award.teamFile, award.team)}</td></tr>`), "No archived season awards")}</section>
+          <section class="reference-section"><h2>Stat Leaders Snapshot</h2>${table(["Category", "Tier", "Player", "Team", "Value"], leaderHighlights.map(({ tier, category, leader }) => `<tr><td>${esc(category.title)}</td><td>${esc(tier)}</td><td>${playerLink(selected, leader.playerFile, leader.player)}</td><td>${teamLink(leader.teamFile, leader.teamName)}</td><td class="num">${esc(leader.valueText || leader.value)}</td></tr>`), "No leader highlights")}</section>
+          <section class="reference-section"><h2>Highest Rated Players</h2>${table(["Player", "Pos", "Team", "Age", "OVR", "POT"], topPlayers.map((player) => {
+            const file = String(player.url || "").split("/").pop();
+            return `<tr><td>${playerLink(selected, file, player.name)}</td><td>${esc(player.pos)}</td><td>${teamLink(player.teamFile || player.team, player.teamLabel || player.team)}</td><td class="num">${esc(player.age)}</td><td>${ratingChip("OVR", player.overall)}</td><td>${ratingChip("POT", player.potential)}</td></tr>`;
+          }), "No player ratings archived")}</section>
+        </div>
+        <div>
+          <section class="reference-section"><h2>Team Identity</h2>${table(["Trait", "Team", "Value"], [
+            `<tr><td>Point Margin</td><td>${teamMini(marginLeader.team, marginLeader.file)}</td><td class="num">${esc(marginLeader.stats?.points?.margin?.value ?? "-")}</td></tr>`,
+            `<tr><td>Rebounding</td><td>${teamMini(rebLeader.team, rebLeader.file)}</td><td class="num">${esc(rebLeader.stats?.rebounds?.team?.value ?? "-")}</td></tr>`,
+            `<tr><td>Passing</td><td>${teamMini(astLeader.team, astLeader.file)}</td><td class="num">${esc(astLeader.stats?.assists?.team?.value ?? "-")}</td></tr>`
+          ], "No team stat leaders")}</section>
+          <section class="reference-section"><h2>Biggest Wins</h2>${table(["Date", "Winner", "Loser", "Score", "Margin"], blowouts.map((game) => `<tr><td>${esc(game.date)}</td><td>${teamLink(game.winner, game.winnerName)}</td><td>${teamLink(game.loser, game.loserName)}</td><td class="num">${esc(game.homeScore)}-${esc(game.awayScore)}</td><td class="num">${esc(game.margin)}</td></tr>`), "No game results archived")}</section>
+          <section class="reference-section"><h2>Highest Scoring Games</h2>${table(["Date", "Matchup", "Score", "Total"], shootouts.map((game) => `<tr><td>${esc(game.date)}</td><td>${teamLink(game.awayTeam, game.awayTeamName)} at ${teamLink(game.homeTeam, game.homeTeamName)}</td><td class="num">${esc(game.awayScore)}-${esc(game.homeScore)}</td><td class="num">${esc((num(game.homeScore) || 0) + (num(game.awayScore) || 0))}</td></tr>`), "No game results archived")}</section>
+        </div>
+      </div>`;
+  }
+
   async function renderSeason() {
     const selected = selectedSeasonOrLatest();
     const data = await loadSeason(selected);
@@ -1159,6 +1365,7 @@
         <label>Season ${seasonSelector(selected)}</label>
         <div class="history-meta"><span class="pill">${(data.standings.sections || []).length} Divisions</span><span class="pill">Archive Only</span></div>
       </div></section>
+      ${renderSeasonRecap(data)}
       <section class="reference-section" id="standings"><h2>Standings</h2>${renderStandings(data)}</section>
       <section class="reference-section" id="team-stats"><h2>Team Stats</h2>${renderTeamStatsTable(data)}</section>
       <div class="history-grid">
