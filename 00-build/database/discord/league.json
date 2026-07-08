@@ -7,21 +7,21 @@
       "teams": [
         {
           "name": "AFC Richmond",
-          "wins": 33,
-          "losses": 4,
+          "wins": 36,
+          "losses": 6,
           "streak": "W1"
         },
         {
           "name": "AC Milan",
-          "wins": 24,
-          "losses": 12,
-          "streak": "W10"
+          "wins": 27,
+          "losses": 15,
+          "streak": "L3"
         },
         {
           "name": "Benfica",
-          "wins": 20,
-          "losses": 16,
-          "streak": "W2"
+          "wins": 23,
+          "losses": 19,
+          "streak": "L1"
         }
       ]
     },
@@ -30,21 +30,21 @@
       "teams": [
         {
           "name": "Brighton",
-          "wins": 27,
-          "losses": 10,
-          "streak": "L1"
+          "wins": 31,
+          "losses": 11,
+          "streak": "W1"
         },
         {
           "name": "Crystal Palace",
-          "wins": 26,
-          "losses": 12,
+          "wins": 29,
+          "losses": 13,
           "streak": "W2"
         },
         {
           "name": "Juventus",
-          "wins": 20,
-          "losses": 18,
-          "streak": "W1"
+          "wins": 22,
+          "losses": 20,
+          "streak": "W2"
         }
       ]
     },
@@ -53,20 +53,20 @@
       "teams": [
         {
           "name": "Paris Saint-Germain",
-          "wins": 30,
+          "wins": 34,
           "losses": 8,
-          "streak": "W1"
-        },
-        {
-          "name": "Inter Milan",
-          "wins": 27,
-          "losses": 9,
           "streak": "W5"
         },
         {
+          "name": "Inter Milan",
+          "wins": 31,
+          "losses": 11,
+          "streak": "W4"
+        },
+        {
           "name": "Barcelona",
-          "wins": 23,
-          "losses": 14,
+          "wins": 27,
+          "losses": 15,
           "streak": "L1"
         }
       ]
@@ -77,31 +77,31 @@
       "category": "Minutes",
       "player": "Adrian Dantley",
       "team": "Benfica",
-      "value": "41.4"
+      "value": "41.9"
     },
     {
       "category": "Points",
       "player": "Bernard King",
       "team": "Bayern Munich",
-      "value": "30.5"
+      "value": "30.1"
     },
     {
       "category": "Rebounds",
       "player": "Moses Malone",
       "team": "Benfica",
-      "value": "10.9"
+      "value": "11.1"
     },
     {
       "category": "Assists",
       "player": "Norm Nixon",
       "team": "Chelsea",
-      "value": "11.0"
+      "value": "11.1"
     },
     {
       "category": "Steals",
       "player": "Rickey Green",
       "team": "Sheffield United",
-      "value": "2.3"
+      "value": "2.4"
     }
   ]
 }
