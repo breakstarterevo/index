@@ -1,0 +1,2887 @@
+{
+    "source": [
+        "standings.json",
+        "monthly/latest_sim_results.json"
+    ],
+    "tiers": {
+        "Tier 1": [
+            {
+                "team": "AFC Richmond",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 1,
+                "rosterUrl": "./rosters/roster12.htm",
+                "rosterFile": "roster12.htm",
+                "standingsLast10": "7-3",
+                "wins": 3,
+                "losses": 2,
+                "games": 5,
+                "pointsFor": 570,
+                "pointsAgainst": 504,
+                "pointDiff": 66,
+                "avgMargin": 13.2,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/2/1984",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 12,
+                        "score": "@Benfica 121, AFC Richmond 109",
+                        "boxscoreUrl": "./boxes/box168-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 51,
+                        "score": "@AFC Richmond 124, Real Madrid 73",
+                        "boxscoreUrl": "./boxes/box175-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1984",
+                        "opponent": "AC Milan",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "@AFC Richmond 119, AC Milan 98",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "Chelsea",
+                        "result": "L",
+                        "margin": 9,
+                        "score": "@Chelsea 106, AFC Richmond 97",
+                        "boxscoreUrl": "./boxes/box184-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Benfica",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "@AFC Richmond 121, Benfica 106",
+                        "boxscoreUrl": "./boxes/box185-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/9/1984",
+                    "opponent": "Real Madrid",
+                    "result": "W",
+                    "margin": 51,
+                    "score": "@AFC Richmond 124, Real Madrid 73",
+                    "boxscoreUrl": "./boxes/box175-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/2/1984",
+                    "opponent": "Benfica",
+                    "result": "L",
+                    "margin": 12,
+                    "score": "@Benfica 121, AFC Richmond 109",
+                    "boxscoreUrl": "./boxes/box168-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 51,
+                        "score": "@AFC Richmond 124, Real Madrid 73",
+                        "boxscoreUrl": "./boxes/box175-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1984",
+                        "opponent": "AC Milan",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "@AFC Richmond 119, AC Milan 98",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Benfica",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "@AFC Richmond 121, Benfica 106",
+                        "boxscoreUrl": "./boxes/box185-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "3-2",
+                "closeGameCount": 0,
+                "last3": "WLW"
+            },
+            {
+                "team": "AC Milan",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 2,
+                "rosterUrl": "./rosters/roster9.htm",
+                "rosterFile": "roster9.htm",
+                "standingsLast10": "7-3",
+                "wins": 3,
+                "losses": 3,
+                "games": 6,
+                "pointsFor": 666,
+                "pointsAgainst": 620,
+                "pointDiff": 46,
+                "avgMargin": 7.67,
+                "streak": "L3",
+                "recentResults": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "FL Fart",
+                        "result": "W",
+                        "margin": 26,
+                        "score": "AC Milan 122, @FL Fart 96",
+                        "boxscoreUrl": "./boxes/box167-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 20,
+                        "score": "@AC Milan 130, Real Madrid 110",
+                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 34,
+                        "score": "@AC Milan 115, Sheffield United 81",
+                        "boxscoreUrl": "./boxes/box175-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1984",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 21,
+                        "score": "@AFC Richmond 119, AC Milan 98",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1984",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Real Madrid 92, AC Milan 91",
+                        "boxscoreUrl": "./boxes/box180-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Chelsea",
+                        "result": "L",
+                        "margin": 12,
+                        "score": "Chelsea 122, @AC Milan 110",
+                        "boxscoreUrl": "./boxes/box185-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/9/1984",
+                    "opponent": "Sheffield United",
+                    "result": "W",
+                    "margin": 34,
+                    "score": "@AC Milan 115, Sheffield United 81",
+                    "boxscoreUrl": "./boxes/box175-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/13/1984",
+                    "opponent": "AFC Richmond",
+                    "result": "L",
+                    "margin": 21,
+                    "score": "@AFC Richmond 119, AC Milan 98",
+                    "boxscoreUrl": "./boxes/box179-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/14/1984",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Real Madrid 92, AC Milan 91",
+                        "boxscoreUrl": "./boxes/box180-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "FL Fart",
+                        "result": "W",
+                        "margin": 26,
+                        "score": "AC Milan 122, @FL Fart 96",
+                        "boxscoreUrl": "./boxes/box167-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 20,
+                        "score": "@AC Milan 130, Real Madrid 110",
+                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 34,
+                        "score": "@AC Milan 115, Sheffield United 81",
+                        "boxscoreUrl": "./boxes/box175-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/13/1984",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 21,
+                        "score": "@AFC Richmond 119, AC Milan 98",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "3-3",
+                "closeGameCount": 1,
+                "last3": "LLL"
+            },
+            {
+                "team": "Bayern Munich",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 5,
+                "rosterUrl": "./rosters/roster7.htm",
+                "rosterFile": "roster7.htm",
+                "standingsLast10": "7-3",
+                "wins": 3,
+                "losses": 2,
+                "games": 5,
+                "pointsFor": 624,
+                "pointsAgainst": 596,
+                "pointDiff": 28,
+                "avgMargin": 5.6,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "Sheffield United",
+                        "result": "L",
+                        "margin": 22,
+                        "score": "@Sheffield United 137, Bayern Munich 115",
+                        "boxscoreUrl": "./boxes/box171-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "Benfica",
+                        "result": "W",
+                        "margin": 14,
+                        "score": "Bayern Munich 119, @Benfica 105",
+                        "boxscoreUrl": "./boxes/box172-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Benfica",
+                        "result": "W",
+                        "margin": 18,
+                        "score": "@Bayern Munich 133, Benfica 115",
+                        "boxscoreUrl": "./boxes/box176-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1984",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 27,
+                        "score": "@Bayern Munich 138, Sheffield United 111",
+                        "boxscoreUrl": "./boxes/box182-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "FL Fart",
+                        "result": "L",
+                        "margin": 9,
+                        "score": "FL Fart 128, @Bayern Munich 119",
+                        "boxscoreUrl": "./boxes/box185-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/16/1984",
+                    "opponent": "Sheffield United",
+                    "result": "W",
+                    "margin": 27,
+                    "score": "@Bayern Munich 138, Sheffield United 111",
+                    "boxscoreUrl": "./boxes/box182-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/5/1984",
+                    "opponent": "Sheffield United",
+                    "result": "L",
+                    "margin": 22,
+                    "score": "@Sheffield United 137, Bayern Munich 115",
+                    "boxscoreUrl": "./boxes/box171-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Benfica",
+                        "result": "W",
+                        "margin": 18,
+                        "score": "@Bayern Munich 133, Benfica 115",
+                        "boxscoreUrl": "./boxes/box176-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1984",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 27,
+                        "score": "@Bayern Munich 138, Sheffield United 111",
+                        "boxscoreUrl": "./boxes/box182-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "Sheffield United",
+                        "result": "L",
+                        "margin": 22,
+                        "score": "@Sheffield United 137, Bayern Munich 115",
+                        "boxscoreUrl": "./boxes/box171-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "3-2",
+                "closeGameCount": 0,
+                "last3": "WWL"
+            },
+            {
+                "team": "Chelsea",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 4,
+                "rosterUrl": "./rosters/roster17.htm",
+                "rosterFile": "roster17.htm",
+                "standingsLast10": "4-6",
+                "wins": 3,
+                "losses": 3,
+                "games": 6,
+                "pointsFor": 707,
+                "pointsAgainst": 682,
+                "pointDiff": 25,
+                "avgMargin": 4.17,
+                "streak": "W2",
+                "recentResults": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "Real Madrid 116, @Chelsea 115",
+                        "boxscoreUrl": "./boxes/box167-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "FL Fart",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@FL Fart 109, Chelsea 108",
+                        "boxscoreUrl": "./boxes/box172-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "FL Fart",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "@Chelsea 137, FL Fart 120",
+                        "boxscoreUrl": "./boxes/box176-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1984",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 11,
+                        "score": "@Benfica 130, Chelsea 119",
+                        "boxscoreUrl": "./boxes/box180-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "AFC Richmond",
+                        "result": "W",
+                        "margin": 9,
+                        "score": "@Chelsea 106, AFC Richmond 97",
+                        "boxscoreUrl": "./boxes/box184-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "AC Milan",
+                        "result": "W",
+                        "margin": 12,
+                        "score": "Chelsea 122, @AC Milan 110",
+                        "boxscoreUrl": "./boxes/box185-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/10/1984",
+                    "opponent": "FL Fart",
+                    "result": "W",
+                    "margin": 17,
+                    "score": "@Chelsea 137, FL Fart 120",
+                    "boxscoreUrl": "./boxes/box176-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/14/1984",
+                    "opponent": "Benfica",
+                    "result": "L",
+                    "margin": 11,
+                    "score": "@Benfica 130, Chelsea 119",
+                    "boxscoreUrl": "./boxes/box180-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "Real Madrid 116, @Chelsea 115",
+                        "boxscoreUrl": "./boxes/box167-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "FL Fart",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@FL Fart 109, Chelsea 108",
+                        "boxscoreUrl": "./boxes/box172-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "FL Fart",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "@Chelsea 137, FL Fart 120",
+                        "boxscoreUrl": "./boxes/box176-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "3-3",
+                "closeGameCount": 2,
+                "last3": "LWW"
+            },
+            {
+                "team": "Benfica",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 3,
+                "rosterUrl": "./rosters/roster13.htm",
+                "rosterFile": "roster13.htm",
+                "standingsLast10": "5-5",
+                "wins": 3,
+                "losses": 3,
+                "games": 6,
+                "pointsFor": 703,
+                "pointsAgainst": 708,
+                "pointDiff": -5,
+                "avgMargin": -0.83,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/2/1984",
+                        "opponent": "AFC Richmond",
+                        "result": "W",
+                        "margin": 12,
+                        "score": "@Benfica 121, AFC Richmond 109",
+                        "boxscoreUrl": "./boxes/box168-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 14,
+                        "score": "Bayern Munich 119, @Benfica 105",
+                        "boxscoreUrl": "./boxes/box172-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 18,
+                        "score": "@Bayern Munich 133, Benfica 115",
+                        "boxscoreUrl": "./boxes/box176-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1984",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 11,
+                        "score": "@Benfica 130, Chelsea 119",
+                        "boxscoreUrl": "./boxes/box180-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "FL Fart",
+                        "result": "W",
+                        "margin": 19,
+                        "score": "@Benfica 126, FL Fart 107",
+                        "boxscoreUrl": "./boxes/box184-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 15,
+                        "score": "@AFC Richmond 121, Benfica 106",
+                        "boxscoreUrl": "./boxes/box185-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/18/1984",
+                    "opponent": "FL Fart",
+                    "result": "W",
+                    "margin": 19,
+                    "score": "@Benfica 126, FL Fart 107",
+                    "boxscoreUrl": "./boxes/box184-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/10/1984",
+                    "opponent": "Bayern Munich",
+                    "result": "L",
+                    "margin": 18,
+                    "score": "@Bayern Munich 133, Benfica 115",
+                    "boxscoreUrl": "./boxes/box176-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "FL Fart",
+                        "result": "W",
+                        "margin": 19,
+                        "score": "@Benfica 126, FL Fart 107",
+                        "boxscoreUrl": "./boxes/box184-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 18,
+                        "score": "@Bayern Munich 133, Benfica 115",
+                        "boxscoreUrl": "./boxes/box176-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 15,
+                        "score": "@AFC Richmond 121, Benfica 106",
+                        "boxscoreUrl": "./boxes/box185-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "3-3",
+                "closeGameCount": 0,
+                "last3": "WWL"
+            },
+            {
+                "team": "Real Madrid",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 7,
+                "rosterUrl": "./rosters/roster8.htm",
+                "rosterFile": "roster8.htm",
+                "standingsLast10": "3-7",
+                "wins": 3,
+                "losses": 2,
+                "games": 5,
+                "pointsFor": 498,
+                "pointsAgainst": 550,
+                "pointDiff": -52,
+                "avgMargin": -10.4,
+                "streak": "W2",
+                "recentResults": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "Real Madrid 116, @Chelsea 115",
+                        "boxscoreUrl": "./boxes/box167-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 20,
+                        "score": "@AC Milan 130, Real Madrid 110",
+                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 51,
+                        "score": "@AFC Richmond 124, Real Madrid 73",
+                        "boxscoreUrl": "./boxes/box175-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1984",
+                        "opponent": "AC Milan",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Real Madrid 92, AC Milan 91",
+                        "boxscoreUrl": "./boxes/box180-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "Real Madrid 107, @Sheffield United 90",
+                        "boxscoreUrl": "./boxes/box185-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/19/1984",
+                    "opponent": "Sheffield United",
+                    "result": "W",
+                    "margin": 17,
+                    "score": "Real Madrid 107, @Sheffield United 90",
+                    "boxscoreUrl": "./boxes/box185-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/9/1984",
+                    "opponent": "AFC Richmond",
+                    "result": "L",
+                    "margin": 51,
+                    "score": "@AFC Richmond 124, Real Madrid 73",
+                    "boxscoreUrl": "./boxes/box175-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "Real Madrid 116, @Chelsea 115",
+                        "boxscoreUrl": "./boxes/box167-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1984",
+                        "opponent": "AC Milan",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Real Madrid 92, AC Milan 91",
+                        "boxscoreUrl": "./boxes/box180-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "Real Madrid 107, @Sheffield United 90",
+                        "boxscoreUrl": "./boxes/box185-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 20,
+                        "score": "@AC Milan 130, Real Madrid 110",
+                        "boxscoreUrl": "./boxes/box171-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "AFC Richmond",
+                        "result": "L",
+                        "margin": 51,
+                        "score": "@AFC Richmond 124, Real Madrid 73",
+                        "boxscoreUrl": "./boxes/box175-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "3-2",
+                "closeGameCount": 2,
+                "last3": "LWW"
+            },
+            {
+                "team": "FL Fart",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 6,
+                "rosterUrl": "./rosters/roster27.htm",
+                "rosterFile": "roster27.htm",
+                "standingsLast10": "4-6",
+                "wins": 2,
+                "losses": 4,
+                "games": 6,
+                "pointsFor": 679,
+                "pointsAgainst": 732,
+                "pointDiff": -53,
+                "avgMargin": -8.83,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 26,
+                        "score": "AC Milan 122, @FL Fart 96",
+                        "boxscoreUrl": "./boxes/box167-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@FL Fart 109, Chelsea 108",
+                        "boxscoreUrl": "./boxes/box172-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Chelsea",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "@Chelsea 137, FL Fart 120",
+                        "boxscoreUrl": "./boxes/box176-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1984",
+                        "opponent": "Sheffield United",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Sheffield United 120, FL Fart 119",
+                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 19,
+                        "score": "@Benfica 126, FL Fart 107",
+                        "boxscoreUrl": "./boxes/box184-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 9,
+                        "score": "FL Fart 128, @Bayern Munich 119",
+                        "boxscoreUrl": "./boxes/box185-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/19/1984",
+                    "opponent": "Bayern Munich",
+                    "result": "W",
+                    "margin": 9,
+                    "score": "FL Fart 128, @Bayern Munich 119",
+                    "boxscoreUrl": "./boxes/box185-4.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/1/1984",
+                    "opponent": "AC Milan",
+                    "result": "L",
+                    "margin": 26,
+                    "score": "AC Milan 122, @FL Fart 96",
+                    "boxscoreUrl": "./boxes/box167-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@FL Fart 109, Chelsea 108",
+                        "boxscoreUrl": "./boxes/box172-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1984",
+                        "opponent": "Sheffield United",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Sheffield United 120, FL Fart 119",
+                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 26,
+                        "score": "AC Milan 122, @FL Fart 96",
+                        "boxscoreUrl": "./boxes/box167-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Chelsea",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "@Chelsea 137, FL Fart 120",
+                        "boxscoreUrl": "./boxes/box176-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 19,
+                        "score": "@Benfica 126, FL Fart 107",
+                        "boxscoreUrl": "./boxes/box184-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "2-4",
+                "closeGameCount": 2,
+                "last3": "LLW"
+            },
+            {
+                "team": "Sheffield United",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 8,
+                "rosterUrl": "./rosters/roster16.htm",
+                "rosterFile": "roster16.htm",
+                "standingsLast10": "3-7",
+                "wins": 2,
+                "losses": 3,
+                "games": 5,
+                "pointsFor": 539,
+                "pointsAgainst": 594,
+                "pointDiff": -55,
+                "avgMargin": -11.0,
+                "streak": "L2",
+                "recentResults": [
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 22,
+                        "score": "@Sheffield United 137, Bayern Munich 115",
+                        "boxscoreUrl": "./boxes/box171-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 34,
+                        "score": "@AC Milan 115, Sheffield United 81",
+                        "boxscoreUrl": "./boxes/box175-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1984",
+                        "opponent": "FL Fart",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Sheffield United 120, FL Fart 119",
+                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1984",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 27,
+                        "score": "@Bayern Munich 138, Sheffield United 111",
+                        "boxscoreUrl": "./boxes/box182-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "Real Madrid 107, @Sheffield United 90",
+                        "boxscoreUrl": "./boxes/box185-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/5/1984",
+                    "opponent": "Bayern Munich",
+                    "result": "W",
+                    "margin": 22,
+                    "score": "@Sheffield United 137, Bayern Munich 115",
+                    "boxscoreUrl": "./boxes/box171-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/9/1984",
+                    "opponent": "AC Milan",
+                    "result": "L",
+                    "margin": 34,
+                    "score": "@AC Milan 115, Sheffield United 81",
+                    "boxscoreUrl": "./boxes/box175-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/12/1984",
+                        "opponent": "FL Fart",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Sheffield United 120, FL Fart 119",
+                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 22,
+                        "score": "@Sheffield United 137, Bayern Munich 115",
+                        "boxscoreUrl": "./boxes/box171-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 34,
+                        "score": "@AC Milan 115, Sheffield United 81",
+                        "boxscoreUrl": "./boxes/box175-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1984",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 27,
+                        "score": "@Bayern Munich 138, Sheffield United 111",
+                        "boxscoreUrl": "./boxes/box182-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "Real Madrid 107, @Sheffield United 90",
+                        "boxscoreUrl": "./boxes/box185-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "2-3",
+                "closeGameCount": 1,
+                "last3": "WLL"
+            }
+        ],
+        "Tier 2": [
+            {
+                "team": "Brighton",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 1,
+                "rosterUrl": "./rosters/roster10.htm",
+                "rosterFile": "roster10.htm",
+                "standingsLast10": "8-2",
+                "wins": 4,
+                "losses": 1,
+                "games": 5,
+                "pointsFor": 614,
+                "pointsAgainst": 577,
+                "pointDiff": 37,
+                "avgMargin": 7.4,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/4/1984",
+                        "opponent": "Ajax",
+                        "result": "W",
+                        "margin": 11,
+                        "score": "Brighton 123, @Ajax 112",
+                        "boxscoreUrl": "./boxes/box170-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1984",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Brighton 104, Manchester United 103",
+                        "boxscoreUrl": "./boxes/box174-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 33,
+                        "score": "@Brighton 132, Atletico Madrid 99",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 15,
+                        "score": "@Ajax 130, Brighton 115",
+                        "boxscoreUrl": "./boxes/box181-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 7,
+                        "score": "Brighton 140, @Atletico Madrid 133",
+                        "boxscoreUrl": "./boxes/box185-7.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/11/1984",
+                    "opponent": "Atletico Madrid",
+                    "result": "W",
+                    "margin": 33,
+                    "score": "@Brighton 132, Atletico Madrid 99",
+                    "boxscoreUrl": "./boxes/box177-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/15/1984",
+                    "opponent": "Ajax",
+                    "result": "L",
+                    "margin": 15,
+                    "score": "@Ajax 130, Brighton 115",
+                    "boxscoreUrl": "./boxes/box181-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/8/1984",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Brighton 104, Manchester United 103",
+                        "boxscoreUrl": "./boxes/box174-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 33,
+                        "score": "@Brighton 132, Atletico Madrid 99",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 15,
+                        "score": "@Ajax 130, Brighton 115",
+                        "boxscoreUrl": "./boxes/box181-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "4-1",
+                "closeGameCount": 1,
+                "last3": "WLW"
+            },
+            {
+                "team": "Marseille",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 6,
+                "rosterUrl": "./rosters/roster15.htm",
+                "rosterFile": "roster15.htm",
+                "standingsLast10": "6-4",
+                "wins": 3,
+                "losses": 1,
+                "games": 4,
+                "pointsFor": 489,
+                "pointsAgainst": 436,
+                "pointDiff": 53,
+                "avgMargin": 13.25,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 14,
+                        "score": "@Marseille 126, Juventus 112",
+                        "boxscoreUrl": "./boxes/box172-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 12,
+                        "score": "@Marseille 128, Juventus 116",
+                        "boxscoreUrl": "./boxes/box177-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Juventus",
+                        "result": "L",
+                        "margin": 10,
+                        "score": "@Juventus 129, Marseille 119",
+                        "boxscoreUrl": "./boxes/box181-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Aston Villa",
+                        "result": "W",
+                        "margin": 37,
+                        "score": "Marseille 116, @Aston Villa 79",
+                        "boxscoreUrl": "./boxes/box185-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/19/1984",
+                    "opponent": "Aston Villa",
+                    "result": "W",
+                    "margin": 37,
+                    "score": "Marseille 116, @Aston Villa 79",
+                    "boxscoreUrl": "./boxes/box185-5.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/15/1984",
+                    "opponent": "Juventus",
+                    "result": "L",
+                    "margin": 10,
+                    "score": "@Juventus 129, Marseille 119",
+                    "boxscoreUrl": "./boxes/box181-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Aston Villa",
+                        "result": "W",
+                        "margin": 37,
+                        "score": "Marseille 116, @Aston Villa 79",
+                        "boxscoreUrl": "./boxes/box185-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "3-1",
+                "closeGameCount": 0,
+                "last3": "WLW"
+            },
+            {
+                "team": "Crystal Palace",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 2,
+                "rosterUrl": "./rosters/roster6.htm",
+                "rosterFile": "roster6.htm",
+                "standingsLast10": "6-4",
+                "wins": 3,
+                "losses": 1,
+                "games": 4,
+                "pointsFor": 503,
+                "pointsAgainst": 457,
+                "pointDiff": 46,
+                "avgMargin": 11.5,
+                "streak": "W2",
+                "recentResults": [
+                    {
+                        "date": "4/3/1984",
+                        "opponent": "Aston Villa",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "Crystal Palace 127, @Aston Villa 110",
+                        "boxscoreUrl": "./boxes/box169-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Ajax 131, Crystal Palace 128",
+                        "boxscoreUrl": "./boxes/box176-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 25,
+                        "score": "Crystal Palace 126, @Atletico Madrid 101",
+                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Ajax",
+                        "result": "W",
+                        "margin": 7,
+                        "score": "Crystal Palace 122, @Ajax 115",
+                        "boxscoreUrl": "./boxes/box185-6.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/18/1984",
+                    "opponent": "Atletico Madrid",
+                    "result": "W",
+                    "margin": 25,
+                    "score": "Crystal Palace 126, @Atletico Madrid 101",
+                    "boxscoreUrl": "./boxes/box184-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/10/1984",
+                    "opponent": "Ajax",
+                    "result": "L",
+                    "margin": 3,
+                    "score": "@Ajax 131, Crystal Palace 128",
+                    "boxscoreUrl": "./boxes/box176-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Ajax 131, Crystal Palace 128",
+                        "boxscoreUrl": "./boxes/box176-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/3/1984",
+                        "opponent": "Aston Villa",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "Crystal Palace 127, @Aston Villa 110",
+                        "boxscoreUrl": "./boxes/box169-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 25,
+                        "score": "Crystal Palace 126, @Atletico Madrid 101",
+                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "3-1",
+                "closeGameCount": 1,
+                "last3": "LWW"
+            },
+            {
+                "team": "Juventus",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 3,
+                "rosterUrl": "./rosters/roster14.htm",
+                "rosterFile": "roster14.htm",
+                "standingsLast10": "4-6",
+                "wins": 2,
+                "losses": 2,
+                "games": 4,
+                "pointsFor": 464,
+                "pointsAgainst": 459,
+                "pointDiff": 5,
+                "avgMargin": 1.25,
+                "streak": "W2",
+                "recentResults": [
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "Marseille",
+                        "result": "L",
+                        "margin": 14,
+                        "score": "@Marseille 126, Juventus 112",
+                        "boxscoreUrl": "./boxes/box172-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Marseille",
+                        "result": "L",
+                        "margin": 12,
+                        "score": "@Marseille 128, Juventus 116",
+                        "boxscoreUrl": "./boxes/box177-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 10,
+                        "score": "@Juventus 129, Marseille 119",
+                        "boxscoreUrl": "./boxes/box181-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "@Juventus 107, Manchester United 86",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/19/1984",
+                    "opponent": "Manchester United",
+                    "result": "W",
+                    "margin": 21,
+                    "score": "@Juventus 107, Manchester United 86",
+                    "boxscoreUrl": "./boxes/box185-8.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/6/1984",
+                    "opponent": "Marseille",
+                    "result": "L",
+                    "margin": 14,
+                    "score": "@Marseille 126, Juventus 112",
+                    "boxscoreUrl": "./boxes/box172-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "@Juventus 107, Manchester United 86",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "2-2",
+                "closeGameCount": 0,
+                "last3": "LWW"
+            },
+            {
+                "team": "Ajax",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 5,
+                "rosterUrl": "./rosters/roster18.htm",
+                "rosterFile": "roster18.htm",
+                "standingsLast10": "6-4",
+                "wins": 2,
+                "losses": 2,
+                "games": 4,
+                "pointsFor": 488,
+                "pointsAgainst": 488,
+                "pointDiff": 0,
+                "avgMargin": 0.0,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/4/1984",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 11,
+                        "score": "Brighton 123, @Ajax 112",
+                        "boxscoreUrl": "./boxes/box170-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Crystal Palace",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "@Ajax 131, Crystal Palace 128",
+                        "boxscoreUrl": "./boxes/box176-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Brighton",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "@Ajax 130, Brighton 115",
+                        "boxscoreUrl": "./boxes/box181-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Crystal Palace",
+                        "result": "L",
+                        "margin": 7,
+                        "score": "Crystal Palace 122, @Ajax 115",
+                        "boxscoreUrl": "./boxes/box185-6.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/15/1984",
+                    "opponent": "Brighton",
+                    "result": "W",
+                    "margin": 15,
+                    "score": "@Ajax 130, Brighton 115",
+                    "boxscoreUrl": "./boxes/box181-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/4/1984",
+                    "opponent": "Brighton",
+                    "result": "L",
+                    "margin": 11,
+                    "score": "Brighton 123, @Ajax 112",
+                    "boxscoreUrl": "./boxes/box170-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Crystal Palace",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "@Ajax 131, Crystal Palace 128",
+                        "boxscoreUrl": "./boxes/box176-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Brighton",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "@Ajax 130, Brighton 115",
+                        "boxscoreUrl": "./boxes/box181-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "2-2",
+                "closeGameCount": 1,
+                "last3": "WWL"
+            },
+            {
+                "team": "Atletico Madrid",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 7,
+                "rosterUrl": "./rosters/roster11.htm",
+                "rosterFile": "roster11.htm",
+                "standingsLast10": "3-7",
+                "wins": 2,
+                "losses": 3,
+                "games": 5,
+                "pointsFor": 577,
+                "pointsAgainst": 626,
+                "pointDiff": -49,
+                "avgMargin": -9.8,
+                "streak": "L3",
+                "recentResults": [
+                    {
+                        "date": "4/2/1984",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 13,
+                        "score": "@Atletico Madrid 112, Manchester United 99",
+                        "boxscoreUrl": "./boxes/box168-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1984",
+                        "opponent": "Aston Villa",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "@Atletico Madrid 132, Aston Villa 129",
+                        "boxscoreUrl": "./boxes/box173-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 33,
+                        "score": "@Brighton 132, Atletico Madrid 99",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "Crystal Palace",
+                        "result": "L",
+                        "margin": 25,
+                        "score": "Crystal Palace 126, @Atletico Madrid 101",
+                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 7,
+                        "score": "Brighton 140, @Atletico Madrid 133",
+                        "boxscoreUrl": "./boxes/box185-7.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/2/1984",
+                    "opponent": "Manchester United",
+                    "result": "W",
+                    "margin": 13,
+                    "score": "@Atletico Madrid 112, Manchester United 99",
+                    "boxscoreUrl": "./boxes/box168-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/11/1984",
+                    "opponent": "Brighton",
+                    "result": "L",
+                    "margin": 33,
+                    "score": "@Brighton 132, Atletico Madrid 99",
+                    "boxscoreUrl": "./boxes/box177-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/7/1984",
+                        "opponent": "Aston Villa",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "@Atletico Madrid 132, Aston Villa 129",
+                        "boxscoreUrl": "./boxes/box173-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 33,
+                        "score": "@Brighton 132, Atletico Madrid 99",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "Crystal Palace",
+                        "result": "L",
+                        "margin": 25,
+                        "score": "Crystal Palace 126, @Atletico Madrid 101",
+                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "2-3",
+                "closeGameCount": 1,
+                "last3": "LLL"
+            },
+            {
+                "team": "Manchester United",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 8,
+                "rosterUrl": "./rosters/roster5.htm",
+                "rosterFile": "roster5.htm",
+                "standingsLast10": "3-7",
+                "wins": 1,
+                "losses": 4,
+                "games": 5,
+                "pointsFor": 491,
+                "pointsAgainst": 532,
+                "pointDiff": -41,
+                "avgMargin": -8.2,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/2/1984",
+                        "opponent": "Atletico Madrid",
+                        "result": "L",
+                        "margin": 13,
+                        "score": "@Atletico Madrid 112, Manchester United 99",
+                        "boxscoreUrl": "./boxes/box168-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1984",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Brighton 104, Manchester United 103",
+                        "boxscoreUrl": "./boxes/box174-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1984",
+                        "opponent": "Aston Villa",
+                        "result": "L",
+                        "margin": 10,
+                        "score": "@Aston Villa 108, Manchester United 98",
+                        "boxscoreUrl": "./boxes/box178-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1984",
+                        "opponent": "Aston Villa",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "Manchester United 105, @Aston Villa 101",
+                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Juventus",
+                        "result": "L",
+                        "margin": 21,
+                        "score": "@Juventus 107, Manchester United 86",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/17/1984",
+                    "opponent": "Aston Villa",
+                    "result": "W",
+                    "margin": 4,
+                    "score": "Manchester United 105, @Aston Villa 101",
+                    "boxscoreUrl": "./boxes/box183-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/19/1984",
+                    "opponent": "Juventus",
+                    "result": "L",
+                    "margin": 21,
+                    "score": "@Juventus 107, Manchester United 86",
+                    "boxscoreUrl": "./boxes/box185-8.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/8/1984",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Brighton 104, Manchester United 103",
+                        "boxscoreUrl": "./boxes/box174-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1984",
+                        "opponent": "Aston Villa",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "Manchester United 105, @Aston Villa 101",
+                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Juventus",
+                        "result": "L",
+                        "margin": 21,
+                        "score": "@Juventus 107, Manchester United 86",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "1-4",
+                "closeGameCount": 2,
+                "last3": "LWL"
+            },
+            {
+                "team": "Aston Villa",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 4,
+                "rosterUrl": "./rosters/roster19.htm",
+                "rosterFile": "roster19.htm",
+                "standingsLast10": "4-6",
+                "wins": 1,
+                "losses": 4,
+                "games": 5,
+                "pointsFor": 527,
+                "pointsAgainst": 578,
+                "pointDiff": -51,
+                "avgMargin": -10.2,
+                "streak": "L2",
+                "recentResults": [
+                    {
+                        "date": "4/3/1984",
+                        "opponent": "Crystal Palace",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "Crystal Palace 127, @Aston Villa 110",
+                        "boxscoreUrl": "./boxes/box169-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1984",
+                        "opponent": "Atletico Madrid",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Atletico Madrid 132, Aston Villa 129",
+                        "boxscoreUrl": "./boxes/box173-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1984",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 10,
+                        "score": "@Aston Villa 108, Manchester United 98",
+                        "boxscoreUrl": "./boxes/box178-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1984",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "Manchester United 105, @Aston Villa 101",
+                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Marseille",
+                        "result": "L",
+                        "margin": 37,
+                        "score": "Marseille 116, @Aston Villa 79",
+                        "boxscoreUrl": "./boxes/box185-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/12/1984",
+                    "opponent": "Manchester United",
+                    "result": "W",
+                    "margin": 10,
+                    "score": "@Aston Villa 108, Manchester United 98",
+                    "boxscoreUrl": "./boxes/box178-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/19/1984",
+                    "opponent": "Marseille",
+                    "result": "L",
+                    "margin": 37,
+                    "score": "Marseille 116, @Aston Villa 79",
+                    "boxscoreUrl": "./boxes/box185-5.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/7/1984",
+                        "opponent": "Atletico Madrid",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Atletico Madrid 132, Aston Villa 129",
+                        "boxscoreUrl": "./boxes/box173-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1984",
+                        "opponent": "Manchester United",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "Manchester United 105, @Aston Villa 101",
+                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/3/1984",
+                        "opponent": "Crystal Palace",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "Crystal Palace 127, @Aston Villa 110",
+                        "boxscoreUrl": "./boxes/box169-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Marseille",
+                        "result": "L",
+                        "margin": 37,
+                        "score": "Marseille 116, @Aston Villa 79",
+                        "boxscoreUrl": "./boxes/box185-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "1-4",
+                "closeGameCount": 2,
+                "last3": "WLL"
+            }
+        ],
+        "Tier 3": [
+            {
+                "team": "Barcelona",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 3,
+                "rosterUrl": "./rosters/roster24.htm",
+                "rosterFile": "roster24.htm",
+                "standingsLast10": "7-3",
+                "wins": 4,
+                "losses": 1,
+                "games": 5,
+                "pointsFor": 607,
+                "pointsAgainst": 527,
+                "pointDiff": 80,
+                "avgMargin": 16.0,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 2,
+                        "score": "Barcelona 124, @Tottenham Hotspur 122",
+                        "boxscoreUrl": "./boxes/box167-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "Manchester City",
+                        "result": "W",
+                        "margin": 6,
+                        "score": "Barcelona 88, @Manchester City 82",
+                        "boxscoreUrl": "./boxes/box171-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "@Barcelona 136, Tottenham Hotspur 115",
+                        "boxscoreUrl": "./boxes/box177-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Manchester City",
+                        "result": "W",
+                        "margin": 55,
+                        "score": "@Barcelona 124, Manchester City 69",
+                        "boxscoreUrl": "./boxes/box181-5.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Valencia",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "@Valencia 139, Barcelona 135",
+                        "boxscoreUrl": "./boxes/box185-11.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/15/1984",
+                    "opponent": "Manchester City",
+                    "result": "W",
+                    "margin": 55,
+                    "score": "@Barcelona 124, Manchester City 69",
+                    "boxscoreUrl": "./boxes/box181-5.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/19/1984",
+                    "opponent": "Valencia",
+                    "result": "L",
+                    "margin": 4,
+                    "score": "@Valencia 139, Barcelona 135",
+                    "boxscoreUrl": "./boxes/box185-11.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 2,
+                        "score": "Barcelona 124, @Tottenham Hotspur 122",
+                        "boxscoreUrl": "./boxes/box167-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Valencia",
+                        "result": "L",
+                        "margin": 4,
+                        "score": "@Valencia 139, Barcelona 135",
+                        "boxscoreUrl": "./boxes/box185-11.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "@Barcelona 136, Tottenham Hotspur 115",
+                        "boxscoreUrl": "./boxes/box177-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Manchester City",
+                        "result": "W",
+                        "margin": 55,
+                        "score": "@Barcelona 124, Manchester City 69",
+                        "boxscoreUrl": "./boxes/box181-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "4-1",
+                "closeGameCount": 2,
+                "last3": "WWL"
+            },
+            {
+                "team": "Paris Saint-Germain",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 1,
+                "rosterUrl": "./rosters/roster21.htm",
+                "rosterFile": "roster21.htm",
+                "standingsLast10": "8-2",
+                "wins": 4,
+                "losses": 0,
+                "games": 4,
+                "pointsFor": 466,
+                "pointsAgainst": 390,
+                "pointDiff": 76,
+                "avgMargin": 19.0,
+                "streak": "W4",
+                "recentResults": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Inter Milan",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "Paris Saint-Germain 100, @Inter Milan 97",
+                        "boxscoreUrl": "./boxes/box167-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "Inter Milan",
+                        "result": "W",
+                        "margin": 14,
+                        "score": "Paris Saint-Germain 128, @Inter Milan 114",
+                        "boxscoreUrl": "./boxes/box171-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 25,
+                        "score": "Paris Saint-Germain 129, @Sporting CP 104",
+                        "boxscoreUrl": "./boxes/box176-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 34,
+                        "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
+                        "boxscoreUrl": "./boxes/box181-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/15/1984",
+                    "opponent": "Tottenham Hotspur",
+                    "result": "W",
+                    "margin": 34,
+                    "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
+                    "boxscoreUrl": "./boxes/box181-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": null,
+                "closeGames": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Inter Milan",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "Paris Saint-Germain 100, @Inter Milan 97",
+                        "boxscoreUrl": "./boxes/box167-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 25,
+                        "score": "Paris Saint-Germain 129, @Sporting CP 104",
+                        "boxscoreUrl": "./boxes/box176-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 34,
+                        "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
+                        "boxscoreUrl": "./boxes/box181-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "4-0",
+                "closeGameCount": 1,
+                "last3": "WWW"
+            },
+            {
+                "team": "Inter Milan",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 2,
+                "rosterUrl": "./rosters/roster26.htm",
+                "rosterFile": "roster26.htm",
+                "standingsLast10": "8-2",
+                "wins": 4,
+                "losses": 2,
+                "games": 6,
+                "pointsFor": 652,
+                "pointsAgainst": 618,
+                "pointDiff": 34,
+                "avgMargin": 5.67,
+                "streak": "W4",
+                "recentResults": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "Paris Saint-Germain 100, @Inter Milan 97",
+                        "boxscoreUrl": "./boxes/box167-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 14,
+                        "score": "Paris Saint-Germain 128, @Inter Milan 114",
+                        "boxscoreUrl": "./boxes/box171-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1984",
+                        "opponent": "Valencia",
+                        "result": "W",
+                        "margin": 10,
+                        "score": "Inter Milan 118, @Valencia 108",
+                        "boxscoreUrl": "./boxes/box173-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Valencia",
+                        "result": "W",
+                        "margin": 22,
+                        "score": "@Inter Milan 134, Valencia 112",
+                        "boxscoreUrl": "./boxes/box177-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 12,
+                        "score": "@Inter Milan 98, Monaco 86",
+                        "boxscoreUrl": "./boxes/box184-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Manchester City",
+                        "result": "W",
+                        "margin": 7,
+                        "score": "@Inter Milan 91, Manchester City 84",
+                        "boxscoreUrl": "./boxes/box185-10.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/11/1984",
+                    "opponent": "Valencia",
+                    "result": "W",
+                    "margin": 22,
+                    "score": "@Inter Milan 134, Valencia 112",
+                    "boxscoreUrl": "./boxes/box177-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/5/1984",
+                    "opponent": "Paris Saint-Germain",
+                    "result": "L",
+                    "margin": 14,
+                    "score": "Paris Saint-Germain 128, @Inter Milan 114",
+                    "boxscoreUrl": "./boxes/box171-4.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "Paris Saint-Germain 100, @Inter Milan 97",
+                        "boxscoreUrl": "./boxes/box167-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Valencia",
+                        "result": "W",
+                        "margin": 22,
+                        "score": "@Inter Milan 134, Valencia 112",
+                        "boxscoreUrl": "./boxes/box177-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "4-2",
+                "closeGameCount": 1,
+                "last3": "WWW"
+            },
+            {
+                "team": "Valencia",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 5,
+                "rosterUrl": "./rosters/roster25.htm",
+                "rosterFile": "roster25.htm",
+                "standingsLast10": "4-6",
+                "wins": 3,
+                "losses": 2,
+                "games": 5,
+                "pointsFor": 556,
+                "pointsAgainst": 582,
+                "pointDiff": -26,
+                "avgMargin": -5.2,
+                "streak": "W2",
+                "recentResults": [
+                    {
+                        "date": "4/3/1984",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Valencia 97, Monaco 96",
+                        "boxscoreUrl": "./boxes/box169-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1984",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 10,
+                        "score": "Inter Milan 118, @Valencia 108",
+                        "boxscoreUrl": "./boxes/box173-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 22,
+                        "score": "@Inter Milan 134, Valencia 112",
+                        "boxscoreUrl": "./boxes/box177-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "Valencia 100, @Sporting CP 99",
+                        "boxscoreUrl": "./boxes/box181-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Barcelona",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "@Valencia 139, Barcelona 135",
+                        "boxscoreUrl": "./boxes/box185-11.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/19/1984",
+                    "opponent": "Barcelona",
+                    "result": "W",
+                    "margin": 4,
+                    "score": "@Valencia 139, Barcelona 135",
+                    "boxscoreUrl": "./boxes/box185-11.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/11/1984",
+                    "opponent": "Inter Milan",
+                    "result": "L",
+                    "margin": 22,
+                    "score": "@Inter Milan 134, Valencia 112",
+                    "boxscoreUrl": "./boxes/box177-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/3/1984",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Valencia 97, Monaco 96",
+                        "boxscoreUrl": "./boxes/box169-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "Valencia 100, @Sporting CP 99",
+                        "boxscoreUrl": "./boxes/box181-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Barcelona",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "@Valencia 139, Barcelona 135",
+                        "boxscoreUrl": "./boxes/box185-11.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 22,
+                        "score": "@Inter Milan 134, Valencia 112",
+                        "boxscoreUrl": "./boxes/box177-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "3-2",
+                "closeGameCount": 3,
+                "last3": "LWW"
+            },
+            {
+                "team": "Manchester City",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 8,
+                "rosterUrl": "./rosters/roster28.htm",
+                "rosterFile": "roster28.htm",
+                "standingsLast10": "4-6",
+                "wins": 2,
+                "losses": 4,
+                "games": 6,
+                "pointsFor": 544,
+                "pointsAgainst": 619,
+                "pointDiff": -75,
+                "avgMargin": -12.5,
+                "streak": "L2",
+                "recentResults": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 7,
+                        "score": "Manchester City 100, @Sporting CP 93",
+                        "boxscoreUrl": "./boxes/box167-5.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1984",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 6,
+                        "score": "Barcelona 88, @Manchester City 82",
+                        "boxscoreUrl": "./boxes/box171-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "Monaco",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "@Monaco 119, Manchester City 102",
+                        "boxscoreUrl": "./boxes/box175-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1984",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "@Manchester City 107, Monaco 104",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 55,
+                        "score": "@Barcelona 124, Manchester City 69",
+                        "boxscoreUrl": "./boxes/box181-5.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 7,
+                        "score": "@Inter Milan 91, Manchester City 84",
+                        "boxscoreUrl": "./boxes/box185-10.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/1/1984",
+                    "opponent": "Sporting CP",
+                    "result": "W",
+                    "margin": 7,
+                    "score": "Manchester City 100, @Sporting CP 93",
+                    "boxscoreUrl": "./boxes/box167-5.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/15/1984",
+                    "opponent": "Barcelona",
+                    "result": "L",
+                    "margin": 55,
+                    "score": "@Barcelona 124, Manchester City 69",
+                    "boxscoreUrl": "./boxes/box181-5.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/13/1984",
+                        "opponent": "Monaco",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "@Manchester City 107, Monaco 104",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "Monaco",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "@Monaco 119, Manchester City 102",
+                        "boxscoreUrl": "./boxes/box175-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 55,
+                        "score": "@Barcelona 124, Manchester City 69",
+                        "boxscoreUrl": "./boxes/box181-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "2-4",
+                "closeGameCount": 1,
+                "last3": "WLL"
+            },
+            {
+                "team": "Monaco",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 4,
+                "rosterUrl": "./rosters/roster20.htm",
+                "rosterFile": "roster20.htm",
+                "standingsLast10": "4-6",
+                "wins": 1,
+                "losses": 3,
+                "games": 4,
+                "pointsFor": 405,
+                "pointsAgainst": 404,
+                "pointDiff": 1,
+                "avgMargin": 0.25,
+                "streak": "L2",
+                "recentResults": [
+                    {
+                        "date": "4/3/1984",
+                        "opponent": "Valencia",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Valencia 97, Monaco 96",
+                        "boxscoreUrl": "./boxes/box169-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "Manchester City",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "@Monaco 119, Manchester City 102",
+                        "boxscoreUrl": "./boxes/box175-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1984",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Manchester City 107, Monaco 104",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1984",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 12,
+                        "score": "@Inter Milan 98, Monaco 86",
+                        "boxscoreUrl": "./boxes/box184-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/9/1984",
+                    "opponent": "Manchester City",
+                    "result": "W",
+                    "margin": 17,
+                    "score": "@Monaco 119, Manchester City 102",
+                    "boxscoreUrl": "./boxes/box175-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/18/1984",
+                    "opponent": "Inter Milan",
+                    "result": "L",
+                    "margin": 12,
+                    "score": "@Inter Milan 98, Monaco 86",
+                    "boxscoreUrl": "./boxes/box184-4.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/3/1984",
+                        "opponent": "Valencia",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Valencia 97, Monaco 96",
+                        "boxscoreUrl": "./boxes/box169-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1984",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Manchester City 107, Monaco 104",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/9/1984",
+                        "opponent": "Manchester City",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "@Monaco 119, Manchester City 102",
+                        "boxscoreUrl": "./boxes/box175-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "1-3",
+                "closeGameCount": 2,
+                "last3": "WLL"
+            },
+            {
+                "team": "Sporting CP",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 6,
+                "rosterUrl": "./rosters/roster23.htm",
+                "rosterFile": "roster23.htm",
+                "standingsLast10": "4-6",
+                "wins": 1,
+                "losses": 4,
+                "games": 5,
+                "pointsFor": 499,
+                "pointsAgainst": 528,
+                "pointDiff": -29,
+                "avgMargin": -5.8,
+                "streak": "L3",
+                "recentResults": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Manchester City",
+                        "result": "L",
+                        "margin": 7,
+                        "score": "Manchester City 100, @Sporting CP 93",
+                        "boxscoreUrl": "./boxes/box167-5.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "Sporting CP 109, @Tottenham Hotspur 104",
+                        "boxscoreUrl": "./boxes/box172-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 25,
+                        "score": "Paris Saint-Germain 129, @Sporting CP 104",
+                        "boxscoreUrl": "./boxes/box176-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Valencia",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "Valencia 100, @Sporting CP 99",
+                        "boxscoreUrl": "./boxes/box181-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Tottenham Hotspur 95, Sporting CP 94",
+                        "boxscoreUrl": "./boxes/box185-9.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/6/1984",
+                    "opponent": "Tottenham Hotspur",
+                    "result": "W",
+                    "margin": 5,
+                    "score": "Sporting CP 109, @Tottenham Hotspur 104",
+                    "boxscoreUrl": "./boxes/box172-4.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/10/1984",
+                    "opponent": "Paris Saint-Germain",
+                    "result": "L",
+                    "margin": 25,
+                    "score": "Paris Saint-Germain 129, @Sporting CP 104",
+                    "boxscoreUrl": "./boxes/box176-4.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "Sporting CP 109, @Tottenham Hotspur 104",
+                        "boxscoreUrl": "./boxes/box172-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Valencia",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "Valencia 100, @Sporting CP 99",
+                        "boxscoreUrl": "./boxes/box181-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "L",
+                        "margin": 1,
+                        "score": "@Tottenham Hotspur 95, Sporting CP 94",
+                        "boxscoreUrl": "./boxes/box185-9.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/10/1984",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 25,
+                        "score": "Paris Saint-Germain 129, @Sporting CP 104",
+                        "boxscoreUrl": "./boxes/box176-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "1-4",
+                "closeGameCount": 3,
+                "last3": "LLL"
+            },
+            {
+                "team": "Tottenham Hotspur",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 7,
+                "rosterUrl": "./rosters/roster22.htm",
+                "rosterFile": "roster22.htm",
+                "standingsLast10": "3-7",
+                "wins": 1,
+                "losses": 4,
+                "games": 5,
+                "pointsFor": 511,
+                "pointsAgainst": 572,
+                "pointDiff": -61,
+                "avgMargin": -12.2,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "Barcelona 124, @Tottenham Hotspur 122",
+                        "boxscoreUrl": "./boxes/box167-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "Sporting CP",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "Sporting CP 109, @Tottenham Hotspur 104",
+                        "boxscoreUrl": "./boxes/box172-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 21,
+                        "score": "@Barcelona 136, Tottenham Hotspur 115",
+                        "boxscoreUrl": "./boxes/box177-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 34,
+                        "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
+                        "boxscoreUrl": "./boxes/box181-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Tottenham Hotspur 95, Sporting CP 94",
+                        "boxscoreUrl": "./boxes/box185-9.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/19/1984",
+                    "opponent": "Sporting CP",
+                    "result": "W",
+                    "margin": 1,
+                    "score": "@Tottenham Hotspur 95, Sporting CP 94",
+                    "boxscoreUrl": "./boxes/box185-9.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/15/1984",
+                    "opponent": "Paris Saint-Germain",
+                    "result": "L",
+                    "margin": 34,
+                    "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
+                    "boxscoreUrl": "./boxes/box181-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/1/1984",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "Barcelona 124, @Tottenham Hotspur 122",
+                        "boxscoreUrl": "./boxes/box167-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/6/1984",
+                        "opponent": "Sporting CP",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "Sporting CP 109, @Tottenham Hotspur 104",
+                        "boxscoreUrl": "./boxes/box172-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/19/1984",
+                        "opponent": "Sporting CP",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Tottenham Hotspur 95, Sporting CP 94",
+                        "boxscoreUrl": "./boxes/box185-9.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/11/1984",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 21,
+                        "score": "@Barcelona 136, Tottenham Hotspur 115",
+                        "boxscoreUrl": "./boxes/box177-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1984",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 34,
+                        "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
+                        "boxscoreUrl": "./boxes/box181-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "1-4",
+                "closeGameCount": 3,
+                "last3": "LLW"
+            }
+        ]
+    }
+}
