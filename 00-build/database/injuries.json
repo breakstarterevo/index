@@ -8,7 +8,7 @@
             "team": "",
             "teamName": "",
             "rosterUrl": "",
-            "length": "150",
+            "length": "125",
             "injury": "Ruptured Achilles",
             "rowClass": "row1"
         },
@@ -16,23 +16,12 @@
             "pos": "SG",
             "name": "Kiki Vandeweghe",
             "url": "",
-            "team": "",
-            "teamName": "",
-            "rosterUrl": "",
-            "length": "34",
+            "team": "roster10",
+            "teamName": "Brighton",
+            "rosterUrl": "./rosters/roster10.htm",
+            "length": "9",
             "injury": "Broken Leg",
             "rowClass": "row2"
-        },
-        {
-            "pos": "SG",
-            "name": "World B. Free",
-            "url": "",
-            "team": "roster26",
-            "teamName": "Inter Milan",
-            "rosterUrl": "./rosters/roster26.htm",
-            "length": "13",
-            "injury": "Broken Leg",
-            "rowClass": "row1"
         }
     ]
 }

@@ -9,8 +9,8 @@
     ],
     "period": {
         "year": 1984,
-        "month": 4,
-        "label": "April 1984"
+        "month": 12,
+        "label": "December 1984"
     },
     "package": {
         "powerRankings": [
@@ -19,9 +19,9 @@
                 "type": "power_rankings",
                 "tier": "Tier 1",
                 "title": "Tier 1 Power Rankings",
-                "period": "April 1984",
+                "period": "December 1984",
                 "previousArticle": "../articles/clb_power_rankings_1_0.html",
-                "prompt": "Write a Tier 1 power rankings article for April 1984. Rank the teams yourself using the context below. Use overall season-to-date performance as the base ranking logic, and use the latest sim performance to explain changes, jumps, or drops from the previous board. Explicitly note each team's movement from the last published power rankings article, including how many spots they moved up or down or if they stayed level. Make the movement visible in each team capsule, not just the intro. You are allowed to pull extra context from any of the linked JSON sources if it strengthens the board. When it fits the article, mention the listed star players as roster context; starPlayer is the highest OVR player on that team's current roster. Use the style references to add substance: open with a clear ranking thesis, then make each team earn its spot with current form, evidence, belief, doubt, and what could change next. Give a little player reference where necessary, especially when a star, scorer, defender, or depth piece explains why the team's results are sustainable, misleading, or changing.",
+                "prompt": "Write a Tier 1 power rankings article for December 1984. Rank the teams yourself using the context below. Use overall season-to-date performance as the base ranking logic, and use the latest sim performance to explain changes, jumps, or drops from the previous board. Explicitly note each team's movement from the last published power rankings article, including how many spots they moved up or down or if they stayed level. Make the movement visible in each team capsule, not just the intro. You are allowed to pull extra context from any of the linked JSON sources if it strengthens the board. When it fits the article, mention the listed star players as roster context; starPlayer is the highest OVR player on that team's current roster. Use the style references to add substance: open with a clear ranking thesis, then make each team earn its spot with current form, evidence, belief, doubt, and what could change next. Give a little player reference where necessary, especially when a star, scorer, defender, or depth piece explains why the team's results are sustainable, misleading, or changing.",
                 "writerNotes": [
                     "Treat power rankings as a trust board, not a standings table: who would you trust most if the league kept playing like this right now?",
                     "Open the article with the ranking lens: full-season profile first, latest sim/month form second, and tier stakes third.",
@@ -78,7 +78,7 @@
                             "avgMargin": 11.76,
                             "pointDiff": 494,
                             "bestWin": {
-                                "date": "4/9/1984",
+                                "date": "9/04/1984",
                                 "opponent": "Real Madrid",
                                 "result": "W",
                                 "margin": 51,
@@ -87,7 +87,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "1/1/1984",
+                                "date": "1/01/1984",
                                 "opponent": "AC Milan",
                                 "result": "L",
                                 "margin": 27,
@@ -98,29 +98,13 @@
                             "closeGameCount": 7
                         },
                         "latestSim": {
-                            "record": "3-2",
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 13.2,
-                            "pointDiff": 66,
-                            "bestWin": {
-                                "date": "4/9/1984",
-                                "opponent": "Real Madrid",
-                                "result": "W",
-                                "margin": 51,
-                                "score": "@AFC Richmond 124, Real Madrid 73",
-                                "boxscoreUrl": "./boxes/box175-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/2/1984",
-                                "opponent": "Benfica",
-                                "result": "L",
-                                "margin": 12,
-                                "score": "@Benfica 121, AFC Richmond 109",
-                                "boxscoreUrl": "./boxes/box168-1.htm",
-                                "section": "Regular Season"
-                            },
+                            "record": "0-0",
+                            "streak": "-",
+                            "last3": "-",
+                            "avgMargin": 0.0,
+                            "pointDiff": 0,
+                            "bestWin": null,
+                            "worstLoss": null,
                             "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster12.htm",
@@ -142,7 +126,7 @@
                             "avgMargin": 7.81,
                             "pointDiff": 328,
                             "bestWin": {
-                                "date": "1/22/1984",
+                                "date": "22/01/1984",
                                 "opponent": "Marseille",
                                 "result": "W",
                                 "margin": 51,
@@ -151,7 +135,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "2/3/1984",
+                                "date": "3/02/1984",
                                 "opponent": "Aston Villa",
                                 "result": "L",
                                 "margin": 37,
@@ -162,39 +146,31 @@
                             "closeGameCount": 11
                         },
                         "latestSim": {
-                            "record": "4-1",
+                            "record": "1-0",
                             "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 7.4,
-                            "pointDiff": 37,
+                            "last3": "W",
+                            "avgMargin": 5.0,
+                            "pointDiff": 5,
                             "bestWin": {
-                                "date": "4/11/1984",
-                                "opponent": "Atletico Madrid",
+                                "date": "12/01/1984",
+                                "opponent": "Aston Villa",
                                 "result": "W",
-                                "margin": 33,
-                                "score": "@Brighton 132, Atletico Madrid 99",
-                                "boxscoreUrl": "./boxes/box177-2.htm",
+                                "margin": 5,
+                                "score": "Brighton 125, @Aston Villa 120",
+                                "boxscoreUrl": "./boxes/box87-3.htm",
                                 "section": "Regular Season"
                             },
-                            "worstLoss": {
-                                "date": "4/15/1984",
-                                "opponent": "Ajax",
-                                "result": "L",
-                                "margin": 15,
-                                "score": "@Ajax 130, Brighton 115",
-                                "boxscoreUrl": "./boxes/box181-1.htm",
-                                "section": "Regular Season"
-                            },
+                            "worstLoss": null,
                             "closeGameCount": 1
                         },
                         "rosterUrl": "./rosters/roster10.htm",
                         "starPlayer": {
-                            "name": "Mark Aguirre",
-                            "url": "../players/player702.htm",
-                            "pos": "SF",
-                            "age": "21",
-                            "overall": "144",
-                            "potential": "150"
+                            "name": "Kiki Vandeweghe",
+                            "url": "../players/player701.htm",
+                            "pos": "SG",
+                            "age": "24",
+                            "overall": "155",
+                            "potential": "156"
                         }
                     },
                     {
@@ -206,7 +182,7 @@
                             "avgMargin": 11.14,
                             "pointDiff": 468,
                             "bestWin": {
-                                "date": "2/26/1984",
+                                "date": "26/02/1984",
                                 "opponent": "Atletico Madrid",
                                 "result": "W",
                                 "margin": 42,
@@ -215,7 +191,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "2/22/1984",
+                                "date": "22/02/1984",
                                 "opponent": "Brighton",
                                 "result": "L",
                                 "margin": 18,
@@ -226,30 +202,22 @@
                             "closeGameCount": 8
                         },
                         "latestSim": {
-                            "record": "3-1",
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": 11.5,
-                            "pointDiff": 46,
+                            "record": "1-0",
+                            "streak": "W1",
+                            "last3": "W",
+                            "avgMargin": 21.0,
+                            "pointDiff": 21,
                             "bestWin": {
-                                "date": "4/18/1984",
+                                "date": "12/01/1984",
                                 "opponent": "Atletico Madrid",
                                 "result": "W",
-                                "margin": 25,
-                                "score": "Crystal Palace 126, @Atletico Madrid 101",
-                                "boxscoreUrl": "./boxes/box184-3.htm",
+                                "margin": 21,
+                                "score": "@Crystal Palace 132, Atletico Madrid 111",
+                                "boxscoreUrl": "./boxes/box87-2.htm",
                                 "section": "Regular Season"
                             },
-                            "worstLoss": {
-                                "date": "4/10/1984",
-                                "opponent": "Ajax",
-                                "result": "L",
-                                "margin": 3,
-                                "score": "@Ajax 131, Crystal Palace 128",
-                                "boxscoreUrl": "./boxes/box176-3.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 1
+                            "worstLoss": null,
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster6.htm",
                         "starPlayer": {
@@ -270,7 +238,7 @@
                             "avgMargin": 4.83,
                             "pointDiff": 203,
                             "bestWin": {
-                                "date": "11/30/1983",
+                                "date": "30/11/1983",
                                 "opponent": "Sheffield United",
                                 "result": "W",
                                 "margin": 34,
@@ -279,7 +247,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "12/2/1983",
+                                "date": "2/12/1983",
                                 "opponent": "Benfica",
                                 "result": "L",
                                 "margin": 28,
@@ -290,37 +258,29 @@
                             "closeGameCount": 12
                         },
                         "latestSim": {
-                            "record": "3-3",
-                            "streak": "L3",
-                            "last3": "LLL",
-                            "avgMargin": 7.67,
-                            "pointDiff": 46,
+                            "record": "1-0",
+                            "streak": "W1",
+                            "last3": "W",
+                            "avgMargin": 7.0,
+                            "pointDiff": 7,
                             "bestWin": {
-                                "date": "4/9/1984",
-                                "opponent": "Sheffield United",
+                                "date": "12/03/1984",
+                                "opponent": "FL Fart",
                                 "result": "W",
-                                "margin": 34,
-                                "score": "@AC Milan 115, Sheffield United 81",
-                                "boxscoreUrl": "./boxes/box175-2.htm",
+                                "margin": 7,
+                                "score": "AC Milan 127, @FL Fart 120",
+                                "boxscoreUrl": "./boxes/box147-1.htm",
                                 "section": "Regular Season"
                             },
-                            "worstLoss": {
-                                "date": "4/13/1984",
-                                "opponent": "AFC Richmond",
-                                "result": "L",
-                                "margin": 21,
-                                "score": "@AFC Richmond 119, AC Milan 98",
-                                "boxscoreUrl": "./boxes/box179-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 1
+                            "worstLoss": null,
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster9.htm",
                         "starPlayer": {
                             "name": "Larry Bird",
                             "url": "../players/player697.htm",
                             "pos": "PF",
-                            "age": "24",
+                            "age": "25",
                             "overall": "160",
                             "potential": "160"
                         }
@@ -334,7 +294,7 @@
                             "avgMargin": 3.1,
                             "pointDiff": 130,
                             "bestWin": {
-                                "date": "11/6/1983",
+                                "date": "6/11/1983",
                                 "opponent": "Sheffield United",
                                 "result": "W",
                                 "margin": 37,
@@ -343,7 +303,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "2/22/1984",
+                                "date": "22/02/1984",
                                 "opponent": "Bayern Munich",
                                 "result": "L",
                                 "margin": 28,
@@ -354,29 +314,21 @@
                             "closeGameCount": 8
                         },
                         "latestSim": {
-                            "record": "3-3",
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": -0.83,
-                            "pointDiff": -5,
+                            "record": "1-0",
+                            "streak": "W1",
+                            "last3": "W",
+                            "avgMargin": 20.0,
+                            "pointDiff": 20,
                             "bestWin": {
-                                "date": "4/18/1984",
+                                "date": "12/01/1984",
                                 "opponent": "FL Fart",
                                 "result": "W",
-                                "margin": 19,
-                                "score": "@Benfica 126, FL Fart 107",
-                                "boxscoreUrl": "./boxes/box184-2.htm",
+                                "margin": 20,
+                                "score": "@Benfica 139, FL Fart 119",
+                                "boxscoreUrl": "./boxes/box87-1.htm",
                                 "section": "Regular Season"
                             },
-                            "worstLoss": {
-                                "date": "4/10/1984",
-                                "opponent": "Bayern Munich",
-                                "result": "L",
-                                "margin": 18,
-                                "score": "@Bayern Munich 133, Benfica 115",
-                                "boxscoreUrl": "./boxes/box176-1.htm",
-                                "section": "Regular Season"
-                            },
+                            "worstLoss": null,
                             "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster13.htm",
@@ -398,7 +350,7 @@
                             "avgMargin": 0.93,
                             "pointDiff": 39,
                             "bestWin": {
-                                "date": "3/7/1984",
+                                "date": "7/03/1984",
                                 "opponent": "Bayern Munich",
                                 "result": "W",
                                 "margin": 29,
@@ -407,7 +359,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "12/26/1983",
+                                "date": "26/12/1983",
                                 "opponent": "AC Milan",
                                 "result": "L",
                                 "margin": 28,
@@ -418,30 +370,22 @@
                             "closeGameCount": 6
                         },
                         "latestSim": {
-                            "record": "3-3",
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": 4.17,
-                            "pointDiff": 25,
-                            "bestWin": {
-                                "date": "4/10/1984",
-                                "opponent": "FL Fart",
-                                "result": "W",
-                                "margin": 17,
-                                "score": "@Chelsea 137, FL Fart 120",
-                                "boxscoreUrl": "./boxes/box176-2.htm",
-                                "section": "Regular Season"
-                            },
+                            "record": "0-1",
+                            "streak": "L1",
+                            "last3": "L",
+                            "avgMargin": -23.0,
+                            "pointDiff": -23,
+                            "bestWin": null,
                             "worstLoss": {
-                                "date": "4/14/1984",
-                                "opponent": "Benfica",
+                                "date": "12/03/1984",
+                                "opponent": "Sheffield United",
                                 "result": "L",
-                                "margin": 11,
-                                "score": "@Benfica 130, Chelsea 119",
-                                "boxscoreUrl": "./boxes/box180-1.htm",
+                                "margin": 23,
+                                "score": "@Sheffield United 134, Chelsea 111",
+                                "boxscoreUrl": "./boxes/box147-2.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 2
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster17.htm",
                         "starPlayer": {
@@ -462,7 +406,7 @@
                             "avgMargin": -2.69,
                             "pointDiff": -113,
                             "bestWin": {
-                                "date": "2/22/1984",
+                                "date": "22/02/1984",
                                 "opponent": "Benfica",
                                 "result": "W",
                                 "margin": 28,
@@ -471,7 +415,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "3/27/1984",
+                                "date": "27/03/1984",
                                 "opponent": "FL Fart",
                                 "result": "L",
                                 "margin": 33,
@@ -482,29 +426,13 @@
                             "closeGameCount": 11
                         },
                         "latestSim": {
-                            "record": "3-2",
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": 5.6,
-                            "pointDiff": 28,
-                            "bestWin": {
-                                "date": "4/16/1984",
-                                "opponent": "Sheffield United",
-                                "result": "W",
-                                "margin": 27,
-                                "score": "@Bayern Munich 138, Sheffield United 111",
-                                "boxscoreUrl": "./boxes/box182-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/5/1984",
-                                "opponent": "Sheffield United",
-                                "result": "L",
-                                "margin": 22,
-                                "score": "@Sheffield United 137, Bayern Munich 115",
-                                "boxscoreUrl": "./boxes/box171-2.htm",
-                                "section": "Regular Season"
-                            },
+                            "record": "0-0",
+                            "streak": "-",
+                            "last3": "-",
+                            "avgMargin": 0.0,
+                            "pointDiff": 0,
+                            "bestWin": null,
+                            "worstLoss": null,
                             "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster7.htm",
@@ -512,7 +440,7 @@
                             "name": "Bernard King",
                             "url": "../players/player713.htm",
                             "pos": "SF",
-                            "age": "24",
+                            "age": "25",
                             "overall": "127",
                             "potential": "127"
                         }
@@ -526,7 +454,7 @@
                             "avgMargin": -4.02,
                             "pointDiff": -169,
                             "bestWin": {
-                                "date": "3/27/1984",
+                                "date": "27/03/1984",
                                 "opponent": "Bayern Munich",
                                 "result": "W",
                                 "margin": 33,
@@ -535,7 +463,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "11/26/1983",
+                                "date": "26/11/1983",
                                 "opponent": "AFC Richmond",
                                 "result": "L",
                                 "margin": 34,
@@ -546,30 +474,22 @@
                             "closeGameCount": 11
                         },
                         "latestSim": {
-                            "record": "2-4",
-                            "streak": "W1",
-                            "last3": "LLW",
-                            "avgMargin": -8.83,
-                            "pointDiff": -53,
-                            "bestWin": {
-                                "date": "4/19/1984",
-                                "opponent": "Bayern Munich",
-                                "result": "W",
-                                "margin": 9,
-                                "score": "FL Fart 128, @Bayern Munich 119",
-                                "boxscoreUrl": "./boxes/box185-4.htm",
-                                "section": "Regular Season"
-                            },
+                            "record": "0-3",
+                            "streak": "L3",
+                            "last3": "LLL",
+                            "avgMargin": -9.33,
+                            "pointDiff": -28,
+                            "bestWin": null,
                             "worstLoss": {
-                                "date": "4/1/1984",
-                                "opponent": "AC Milan",
+                                "date": "12/01/1984",
+                                "opponent": "Benfica",
                                 "result": "L",
-                                "margin": 26,
-                                "score": "AC Milan 122, @FL Fart 96",
-                                "boxscoreUrl": "./boxes/box167-2.htm",
+                                "margin": 20,
+                                "score": "@Benfica 139, FL Fart 119",
+                                "boxscoreUrl": "./boxes/box87-1.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 2
+                            "closeGameCount": 1
                         },
                         "rosterUrl": "./rosters/roster27.htm",
                         "starPlayer": {
@@ -588,9 +508,9 @@
                 "type": "power_rankings",
                 "tier": "Tier 2",
                 "title": "Tier 2 Power Rankings",
-                "period": "April 1984",
+                "period": "December 1984",
                 "previousArticle": "../articles/elb_power_rankings_1_0.html",
-                "prompt": "Write a Tier 2 power rankings article for April 1984. Rank the teams yourself using the context below. Use overall season-to-date performance as the base ranking logic, and use the latest sim performance to explain changes, jumps, or drops from the previous board. Explicitly note each team's movement from the last published power rankings article, including how many spots they moved up or down or if they stayed level. Make the movement visible in each team capsule, not just the intro. You are allowed to pull extra context from any of the linked JSON sources if it strengthens the board. When it fits the article, mention the listed star players as roster context; starPlayer is the highest OVR player on that team's current roster. Use the style references to add substance: open with a clear ranking thesis, then make each team earn its spot with current form, evidence, belief, doubt, and what could change next. Give a little player reference where necessary, especially when a star, scorer, defender, or depth piece explains why the team's results are sustainable, misleading, or changing.",
+                "prompt": "Write a Tier 2 power rankings article for December 1984. Rank the teams yourself using the context below. Use overall season-to-date performance as the base ranking logic, and use the latest sim performance to explain changes, jumps, or drops from the previous board. Explicitly note each team's movement from the last published power rankings article, including how many spots they moved up or down or if they stayed level. Make the movement visible in each team capsule, not just the intro. You are allowed to pull extra context from any of the linked JSON sources if it strengthens the board. When it fits the article, mention the listed star players as roster context; starPlayer is the highest OVR player on that team's current roster. Use the style references to add substance: open with a clear ranking thesis, then make each team earn its spot with current form, evidence, belief, doubt, and what could change next. Give a little player reference where necessary, especially when a star, scorer, defender, or depth piece explains why the team's results are sustainable, misleading, or changing.",
                 "writerNotes": [
                     "Treat power rankings as a trust board, not a standings table: who would you trust most if the league kept playing like this right now?",
                     "Open the article with the ranking lens: full-season profile first, latest sim/month form second, and tier stakes third.",
@@ -647,7 +567,7 @@
                             "avgMargin": 12.9,
                             "pointDiff": 542,
                             "bestWin": {
-                                "date": "12/30/1983",
+                                "date": "30/12/1983",
                                 "opponent": "Manchester City",
                                 "result": "W",
                                 "margin": 48,
@@ -656,7 +576,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "11/9/1983",
+                                "date": "9/11/1983",
                                 "opponent": "Barcelona",
                                 "result": "L",
                                 "margin": 23,
@@ -667,22 +587,22 @@
                             "closeGameCount": 9
                         },
                         "latestSim": {
-                            "record": "4-0",
-                            "streak": "W4",
-                            "last3": "WWW",
-                            "avgMargin": 19.0,
-                            "pointDiff": 76,
+                            "record": "1-0",
+                            "streak": "W1",
+                            "last3": "W",
+                            "avgMargin": 35.0,
+                            "pointDiff": 35,
                             "bestWin": {
-                                "date": "4/15/1984",
-                                "opponent": "Tottenham Hotspur",
+                                "date": "12/03/1984",
+                                "opponent": "Monaco",
                                 "result": "W",
-                                "margin": 34,
-                                "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
-                                "boxscoreUrl": "./boxes/box181-3.htm",
+                                "margin": 35,
+                                "score": "@Paris Saint-Germain 130, Monaco 95",
+                                "boxscoreUrl": "./boxes/box147-4.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": null,
-                            "closeGameCount": 1
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster21.htm",
                         "starPlayer": {
@@ -703,7 +623,7 @@
                             "avgMargin": 2.76,
                             "pointDiff": 116,
                             "bestWin": {
-                                "date": "1/30/1984",
+                                "date": "30/01/1984",
                                 "opponent": "Atletico Madrid",
                                 "result": "W",
                                 "margin": 47,
@@ -712,7 +632,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "3/12/1984",
+                                "date": "12/03/1984",
                                 "opponent": "Ajax",
                                 "result": "L",
                                 "margin": 34,
@@ -723,27 +643,19 @@
                             "closeGameCount": 9
                         },
                         "latestSim": {
-                            "record": "2-2",
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": 1.25,
-                            "pointDiff": 5,
-                            "bestWin": {
-                                "date": "4/19/1984",
-                                "opponent": "Manchester United",
-                                "result": "W",
-                                "margin": 21,
-                                "score": "@Juventus 107, Manchester United 86",
-                                "boxscoreUrl": "./boxes/box185-8.htm",
-                                "section": "Regular Season"
-                            },
+                            "record": "0-1",
+                            "streak": "L1",
+                            "last3": "L",
+                            "avgMargin": -34.0,
+                            "pointDiff": -34,
+                            "bestWin": null,
                             "worstLoss": {
-                                "date": "4/6/1984",
-                                "opponent": "Marseille",
+                                "date": "12/03/1984",
+                                "opponent": "Ajax",
                                 "result": "L",
-                                "margin": 14,
-                                "score": "@Marseille 126, Juventus 112",
-                                "boxscoreUrl": "./boxes/box172-3.htm",
+                                "margin": 34,
+                                "score": "@Ajax 115, Juventus 81",
+                                "boxscoreUrl": "./boxes/box147-3.htm",
                                 "section": "Regular Season"
                             },
                             "closeGameCount": 0
@@ -767,7 +679,7 @@
                             "avgMargin": 1.93,
                             "pointDiff": 81,
                             "bestWin": {
-                                "date": "12/21/1983",
+                                "date": "21/12/1983",
                                 "opponent": "Ajax",
                                 "result": "W",
                                 "margin": 42,
@@ -776,7 +688,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "4/19/1984",
+                                "date": "19/04/1984",
                                 "opponent": "Marseille",
                                 "result": "L",
                                 "margin": 37,
@@ -787,13 +699,13 @@
                             "closeGameCount": 12
                         },
                         "latestSim": {
-                            "record": "1-4",
-                            "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": -10.2,
-                            "pointDiff": -51,
+                            "record": "1-1",
+                            "streak": "W1",
+                            "last3": "LW",
+                            "avgMargin": 2.5,
+                            "pointDiff": 5,
                             "bestWin": {
-                                "date": "4/12/1984",
+                                "date": "12/04/1984",
                                 "opponent": "Manchester United",
                                 "result": "W",
                                 "margin": 10,
@@ -802,22 +714,22 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "4/19/1984",
-                                "opponent": "Marseille",
+                                "date": "12/01/1984",
+                                "opponent": "Brighton",
                                 "result": "L",
-                                "margin": 37,
-                                "score": "Marseille 116, @Aston Villa 79",
-                                "boxscoreUrl": "./boxes/box185-5.htm",
+                                "margin": 5,
+                                "score": "Brighton 125, @Aston Villa 120",
+                                "boxscoreUrl": "./boxes/box87-3.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 2
+                            "closeGameCount": 1
                         },
                         "rosterUrl": "./rosters/roster19.htm",
                         "starPlayer": {
                             "name": "Larry Nance",
                             "url": "../players/player880.htm",
                             "pos": "PF",
-                            "age": "23",
+                            "age": "22",
                             "overall": "125",
                             "potential": "129"
                         }
@@ -831,7 +743,7 @@
                             "avgMargin": -2.48,
                             "pointDiff": -104,
                             "bestWin": {
-                                "date": "3/12/1984",
+                                "date": "12/03/1984",
                                 "opponent": "Juventus",
                                 "result": "W",
                                 "margin": 34,
@@ -840,7 +752,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "11/27/1983",
+                                "date": "27/11/1983",
                                 "opponent": "Brighton",
                                 "result": "L",
                                 "margin": 43,
@@ -851,30 +763,22 @@
                             "closeGameCount": 12
                         },
                         "latestSim": {
-                            "record": "2-2",
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": 0.0,
-                            "pointDiff": 0,
+                            "record": "1-0",
+                            "streak": "W1",
+                            "last3": "W",
+                            "avgMargin": 34.0,
+                            "pointDiff": 34,
                             "bestWin": {
-                                "date": "4/15/1984",
-                                "opponent": "Brighton",
+                                "date": "12/03/1984",
+                                "opponent": "Juventus",
                                 "result": "W",
-                                "margin": 15,
-                                "score": "@Ajax 130, Brighton 115",
-                                "boxscoreUrl": "./boxes/box181-1.htm",
+                                "margin": 34,
+                                "score": "@Ajax 115, Juventus 81",
+                                "boxscoreUrl": "./boxes/box147-3.htm",
                                 "section": "Regular Season"
                             },
-                            "worstLoss": {
-                                "date": "4/4/1984",
-                                "opponent": "Brighton",
-                                "result": "L",
-                                "margin": 11,
-                                "score": "Brighton 123, @Ajax 112",
-                                "boxscoreUrl": "./boxes/box170-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 1
+                            "worstLoss": null,
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster18.htm",
                         "starPlayer": {
@@ -895,7 +799,7 @@
                             "avgMargin": -6.31,
                             "pointDiff": -265,
                             "bestWin": {
-                                "date": "4/19/1984",
+                                "date": "19/04/1984",
                                 "opponent": "Aston Villa",
                                 "result": "W",
                                 "margin": 37,
@@ -904,7 +808,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "1/22/1984",
+                                "date": "22/01/1984",
                                 "opponent": "Brighton",
                                 "result": "L",
                                 "margin": 51,
@@ -915,29 +819,13 @@
                             "closeGameCount": 12
                         },
                         "latestSim": {
-                            "record": "3-1",
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 13.25,
-                            "pointDiff": 53,
-                            "bestWin": {
-                                "date": "4/19/1984",
-                                "opponent": "Aston Villa",
-                                "result": "W",
-                                "margin": 37,
-                                "score": "Marseille 116, @Aston Villa 79",
-                                "boxscoreUrl": "./boxes/box185-5.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/15/1984",
-                                "opponent": "Juventus",
-                                "result": "L",
-                                "margin": 10,
-                                "score": "@Juventus 129, Marseille 119",
-                                "boxscoreUrl": "./boxes/box181-2.htm",
-                                "section": "Regular Season"
-                            },
+                            "record": "0-0",
+                            "streak": "-",
+                            "last3": "-",
+                            "avgMargin": 0.0,
+                            "pointDiff": 0,
+                            "bestWin": null,
+                            "worstLoss": null,
                             "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster15.htm",
@@ -959,7 +847,7 @@
                             "avgMargin": -9.79,
                             "pointDiff": -411,
                             "bestWin": {
-                                "date": "11/29/1983",
+                                "date": "29/11/1983",
                                 "opponent": "Ajax",
                                 "result": "W",
                                 "margin": 27,
@@ -968,7 +856,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "1/30/1984",
+                                "date": "30/01/1984",
                                 "opponent": "Juventus",
                                 "result": "L",
                                 "margin": 47,
@@ -979,30 +867,22 @@
                             "closeGameCount": 5
                         },
                         "latestSim": {
-                            "record": "2-3",
-                            "streak": "L3",
-                            "last3": "LLL",
-                            "avgMargin": -9.8,
-                            "pointDiff": -49,
-                            "bestWin": {
-                                "date": "4/2/1984",
-                                "opponent": "Manchester United",
-                                "result": "W",
-                                "margin": 13,
-                                "score": "@Atletico Madrid 112, Manchester United 99",
-                                "boxscoreUrl": "./boxes/box168-2.htm",
-                                "section": "Regular Season"
-                            },
+                            "record": "0-1",
+                            "streak": "L1",
+                            "last3": "L",
+                            "avgMargin": -21.0,
+                            "pointDiff": -21,
+                            "bestWin": null,
                             "worstLoss": {
-                                "date": "4/11/1984",
-                                "opponent": "Brighton",
+                                "date": "12/01/1984",
+                                "opponent": "Crystal Palace",
                                 "result": "L",
-                                "margin": 33,
-                                "score": "@Brighton 132, Atletico Madrid 99",
-                                "boxscoreUrl": "./boxes/box177-2.htm",
+                                "margin": 21,
+                                "score": "@Crystal Palace 132, Atletico Madrid 111",
+                                "boxscoreUrl": "./boxes/box87-2.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 1
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster11.htm",
                         "starPlayer": {
@@ -1023,7 +903,7 @@
                             "avgMargin": -5.52,
                             "pointDiff": -232,
                             "bestWin": {
-                                "date": "12/9/1983",
+                                "date": "9/12/1983",
                                 "opponent": "Bayern Munich",
                                 "result": "W",
                                 "margin": 28,
@@ -1032,7 +912,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "4/9/1984",
+                                "date": "9/04/1984",
                                 "opponent": "AFC Richmond",
                                 "result": "L",
                                 "margin": 51,
@@ -1043,30 +923,14 @@
                             "closeGameCount": 15
                         },
                         "latestSim": {
-                            "record": "3-2",
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": -10.4,
-                            "pointDiff": -52,
-                            "bestWin": {
-                                "date": "4/19/1984",
-                                "opponent": "Sheffield United",
-                                "result": "W",
-                                "margin": 17,
-                                "score": "Real Madrid 107, @Sheffield United 90",
-                                "boxscoreUrl": "./boxes/box185-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/9/1984",
-                                "opponent": "AFC Richmond",
-                                "result": "L",
-                                "margin": 51,
-                                "score": "@AFC Richmond 124, Real Madrid 73",
-                                "boxscoreUrl": "./boxes/box175-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 2
+                            "record": "0-0",
+                            "streak": "-",
+                            "last3": "-",
+                            "avgMargin": 0.0,
+                            "pointDiff": 0,
+                            "bestWin": null,
+                            "worstLoss": null,
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster8.htm",
                         "starPlayer": {
@@ -1096,7 +960,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "11/20/1983",
+                                "date": "20/11/1983",
                                 "opponent": "AFC Richmond",
                                 "result": "L",
                                 "margin": 40,
@@ -1107,29 +971,21 @@
                             "closeGameCount": 12
                         },
                         "latestSim": {
-                            "record": "2-3",
-                            "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": -11.0,
-                            "pointDiff": -55,
+                            "record": "2-0",
+                            "streak": "W2",
+                            "last3": "WW",
+                            "avgMargin": 12.0,
+                            "pointDiff": 24,
                             "bestWin": {
-                                "date": "4/5/1984",
-                                "opponent": "Bayern Munich",
+                                "date": "12/03/1984",
+                                "opponent": "Chelsea",
                                 "result": "W",
-                                "margin": 22,
-                                "score": "@Sheffield United 137, Bayern Munich 115",
-                                "boxscoreUrl": "./boxes/box171-2.htm",
+                                "margin": 23,
+                                "score": "@Sheffield United 134, Chelsea 111",
+                                "boxscoreUrl": "./boxes/box147-2.htm",
                                 "section": "Regular Season"
                             },
-                            "worstLoss": {
-                                "date": "4/9/1984",
-                                "opponent": "AC Milan",
-                                "result": "L",
-                                "margin": 34,
-                                "score": "@AC Milan 115, Sheffield United 81",
-                                "boxscoreUrl": "./boxes/box175-2.htm",
-                                "section": "Regular Season"
-                            },
+                            "worstLoss": null,
                             "closeGameCount": 1
                         },
                         "rosterUrl": "./rosters/roster16.htm",
@@ -1149,9 +1005,9 @@
                 "type": "power_rankings",
                 "tier": "Tier 3",
                 "title": "Tier 3 Power Rankings",
-                "period": "April 1984",
+                "period": "December 1984",
                 "previousArticle": "../articles/ecl_power_rankings_1_0.html",
-                "prompt": "Write a Tier 3 power rankings article for April 1984. Rank the teams yourself using the context below. Use overall season-to-date performance as the base ranking logic, and use the latest sim performance to explain changes, jumps, or drops from the previous board. Explicitly note each team's movement from the last published power rankings article, including how many spots they moved up or down or if they stayed level. Make the movement visible in each team capsule, not just the intro. You are allowed to pull extra context from any of the linked JSON sources if it strengthens the board. When it fits the article, mention the listed star players as roster context; starPlayer is the highest OVR player on that team's current roster. Use the style references to add substance: open with a clear ranking thesis, then make each team earn its spot with current form, evidence, belief, doubt, and what could change next. Give a little player reference where necessary, especially when a star, scorer, defender, or depth piece explains why the team's results are sustainable, misleading, or changing.",
+                "prompt": "Write a Tier 3 power rankings article for December 1984. Rank the teams yourself using the context below. Use overall season-to-date performance as the base ranking logic, and use the latest sim performance to explain changes, jumps, or drops from the previous board. Explicitly note each team's movement from the last published power rankings article, including how many spots they moved up or down or if they stayed level. Make the movement visible in each team capsule, not just the intro. You are allowed to pull extra context from any of the linked JSON sources if it strengthens the board. When it fits the article, mention the listed star players as roster context; starPlayer is the highest OVR player on that team's current roster. Use the style references to add substance: open with a clear ranking thesis, then make each team earn its spot with current form, evidence, belief, doubt, and what could change next. Give a little player reference where necessary, especially when a star, scorer, defender, or depth piece explains why the team's results are sustainable, misleading, or changing.",
                 "writerNotes": [
                     "Treat power rankings as a trust board, not a standings table: who would you trust most if the league kept playing like this right now?",
                     "Open the article with the ranking lens: full-season profile first, latest sim/month form second, and tier stakes third.",
@@ -1208,7 +1064,7 @@
                             "avgMargin": 7.45,
                             "pointDiff": 313,
                             "bestWin": {
-                                "date": "3/17/1984",
+                                "date": "17/03/1984",
                                 "opponent": "Barcelona",
                                 "result": "W",
                                 "margin": 34,
@@ -1217,7 +1073,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "2/9/1984",
+                                "date": "9/02/1984",
                                 "opponent": "Paris Saint-Germain",
                                 "result": "L",
                                 "margin": 30,
@@ -1228,29 +1084,21 @@
                             "closeGameCount": 9
                         },
                         "latestSim": {
-                            "record": "4-2",
-                            "streak": "W4",
-                            "last3": "WWW",
-                            "avgMargin": 5.67,
-                            "pointDiff": 34,
+                            "record": "1-0",
+                            "streak": "W1",
+                            "last3": "W",
+                            "avgMargin": 1.0,
+                            "pointDiff": 1,
                             "bestWin": {
-                                "date": "4/11/1984",
-                                "opponent": "Valencia",
+                                "date": "12/01/1984",
+                                "opponent": "Monaco",
                                 "result": "W",
-                                "margin": 22,
-                                "score": "@Inter Milan 134, Valencia 112",
-                                "boxscoreUrl": "./boxes/box177-3.htm",
+                                "margin": 1,
+                                "score": "Inter Milan 113, @Monaco 112",
+                                "boxscoreUrl": "./boxes/box87-4.htm",
                                 "section": "Regular Season"
                             },
-                            "worstLoss": {
-                                "date": "4/5/1984",
-                                "opponent": "Paris Saint-Germain",
-                                "result": "L",
-                                "margin": 14,
-                                "score": "Paris Saint-Germain 128, @Inter Milan 114",
-                                "boxscoreUrl": "./boxes/box171-4.htm",
-                                "section": "Regular Season"
-                            },
+                            "worstLoss": null,
                             "closeGameCount": 1
                         },
                         "rosterUrl": "./rosters/roster26.htm",
@@ -1272,7 +1120,7 @@
                             "avgMargin": 6.19,
                             "pointDiff": 260,
                             "bestWin": {
-                                "date": "4/15/1984",
+                                "date": "15/04/1984",
                                 "opponent": "Manchester City",
                                 "result": "W",
                                 "margin": 55,
@@ -1281,7 +1129,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "3/17/1984",
+                                "date": "17/03/1984",
                                 "opponent": "Inter Milan",
                                 "result": "L",
                                 "margin": 34,
@@ -1292,30 +1140,22 @@
                             "closeGameCount": 8
                         },
                         "latestSim": {
-                            "record": "4-1",
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": 16.0,
-                            "pointDiff": 80,
+                            "record": "2-0",
+                            "streak": "W2",
+                            "last3": "WW",
+                            "avgMargin": 16.5,
+                            "pointDiff": 33,
                             "bestWin": {
-                                "date": "4/15/1984",
-                                "opponent": "Manchester City",
-                                "result": "W",
-                                "margin": 55,
-                                "score": "@Barcelona 124, Manchester City 69",
-                                "boxscoreUrl": "./boxes/box181-5.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/19/1984",
+                                "date": "12/01/1984",
                                 "opponent": "Valencia",
-                                "result": "L",
-                                "margin": 4,
-                                "score": "@Valencia 139, Barcelona 135",
-                                "boxscoreUrl": "./boxes/box185-11.htm",
+                                "result": "W",
+                                "margin": 17,
+                                "score": "@Barcelona 134, Valencia 117",
+                                "boxscoreUrl": "./boxes/box87-5.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 2
+                            "worstLoss": null,
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster24.htm",
                         "starPlayer": {
@@ -1336,7 +1176,7 @@
                             "avgMargin": -0.1,
                             "pointDiff": -4,
                             "bestWin": {
-                                "date": "11/20/1983",
+                                "date": "20/11/1983",
                                 "opponent": "Barcelona",
                                 "result": "W",
                                 "margin": 21,
@@ -1345,7 +1185,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "3/12/1984",
+                                "date": "12/03/1984",
                                 "opponent": "Paris Saint-Germain",
                                 "result": "L",
                                 "margin": 35,
@@ -1356,30 +1196,22 @@
                             "closeGameCount": 11
                         },
                         "latestSim": {
-                            "record": "1-3",
+                            "record": "0-2",
                             "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": 0.25,
-                            "pointDiff": 1,
-                            "bestWin": {
-                                "date": "4/9/1984",
-                                "opponent": "Manchester City",
-                                "result": "W",
-                                "margin": 17,
-                                "score": "@Monaco 119, Manchester City 102",
-                                "boxscoreUrl": "./boxes/box175-3.htm",
-                                "section": "Regular Season"
-                            },
+                            "last3": "LL",
+                            "avgMargin": -18.0,
+                            "pointDiff": -36,
+                            "bestWin": null,
                             "worstLoss": {
-                                "date": "4/18/1984",
-                                "opponent": "Inter Milan",
+                                "date": "12/03/1984",
+                                "opponent": "Paris Saint-Germain",
                                 "result": "L",
-                                "margin": 12,
-                                "score": "@Inter Milan 98, Monaco 86",
-                                "boxscoreUrl": "./boxes/box184-4.htm",
+                                "margin": 35,
+                                "score": "@Paris Saint-Germain 130, Monaco 95",
+                                "boxscoreUrl": "./boxes/box147-4.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 2
+                            "closeGameCount": 1
                         },
                         "rosterUrl": "./rosters/roster20.htm",
                         "starPlayer": {
@@ -1400,7 +1232,7 @@
                             "avgMargin": -2.71,
                             "pointDiff": -114,
                             "bestWin": {
-                                "date": "2/25/1984",
+                                "date": "25/02/1984",
                                 "opponent": "Manchester City",
                                 "result": "W",
                                 "margin": 35,
@@ -1409,7 +1241,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "11/9/1983",
+                                "date": "9/11/1983",
                                 "opponent": "Sporting CP",
                                 "result": "L",
                                 "margin": 29,
@@ -1420,30 +1252,22 @@
                             "closeGameCount": 13
                         },
                         "latestSim": {
-                            "record": "3-2",
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": -5.2,
-                            "pointDiff": -26,
-                            "bestWin": {
-                                "date": "4/19/1984",
-                                "opponent": "Barcelona",
-                                "result": "W",
-                                "margin": 4,
-                                "score": "@Valencia 139, Barcelona 135",
-                                "boxscoreUrl": "./boxes/box185-11.htm",
-                                "section": "Regular Season"
-                            },
+                            "record": "0-1",
+                            "streak": "L1",
+                            "last3": "L",
+                            "avgMargin": -17.0,
+                            "pointDiff": -17,
+                            "bestWin": null,
                             "worstLoss": {
-                                "date": "4/11/1984",
-                                "opponent": "Inter Milan",
+                                "date": "12/01/1984",
+                                "opponent": "Barcelona",
                                 "result": "L",
-                                "margin": 22,
-                                "score": "@Inter Milan 134, Valencia 112",
-                                "boxscoreUrl": "./boxes/box177-3.htm",
+                                "margin": 17,
+                                "score": "@Barcelona 134, Valencia 117",
+                                "boxscoreUrl": "./boxes/box87-5.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 3
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster25.htm",
                         "starPlayer": {
@@ -1464,7 +1288,7 @@
                             "avgMargin": -2.12,
                             "pointDiff": -89,
                             "bestWin": {
-                                "date": "11/9/1983",
+                                "date": "9/11/1983",
                                 "opponent": "Valencia",
                                 "result": "W",
                                 "margin": 29,
@@ -1473,7 +1297,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "2/1/1984",
+                                "date": "1/02/1984",
                                 "opponent": "Paris Saint-Germain",
                                 "result": "L",
                                 "margin": 25,
@@ -1484,30 +1308,30 @@
                             "closeGameCount": 15
                         },
                         "latestSim": {
-                            "record": "1-4",
-                            "streak": "L3",
-                            "last3": "LLL",
-                            "avgMargin": -5.8,
-                            "pointDiff": -29,
+                            "record": "1-1",
+                            "streak": "L1",
+                            "last3": "WL",
+                            "avgMargin": 0.5,
+                            "pointDiff": 1,
                             "bestWin": {
-                                "date": "4/6/1984",
+                                "date": "12/01/1984",
                                 "opponent": "Tottenham Hotspur",
                                 "result": "W",
-                                "margin": 5,
-                                "score": "Sporting CP 109, @Tottenham Hotspur 104",
-                                "boxscoreUrl": "./boxes/box172-4.htm",
+                                "margin": 17,
+                                "score": "@Sporting CP 105, Tottenham Hotspur 88",
+                                "boxscoreUrl": "./boxes/box87-6.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "4/10/1984",
-                                "opponent": "Paris Saint-Germain",
+                                "date": "12/03/1984",
+                                "opponent": "Barcelona",
                                 "result": "L",
-                                "margin": 25,
-                                "score": "Paris Saint-Germain 129, @Sporting CP 104",
-                                "boxscoreUrl": "./boxes/box176-4.htm",
+                                "margin": 16,
+                                "score": "Barcelona 110, @Sporting CP 94",
+                                "boxscoreUrl": "./boxes/box147-5.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 3
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster23.htm",
                         "starPlayer": {
@@ -1528,7 +1352,7 @@
                             "avgMargin": -5.07,
                             "pointDiff": -213,
                             "bestWin": {
-                                "date": "12/29/1983",
+                                "date": "29/12/1983",
                                 "opponent": "Atletico Madrid",
                                 "result": "W",
                                 "margin": 43,
@@ -1537,7 +1361,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "12/13/1983",
+                                "date": "13/12/1983",
                                 "opponent": "Crystal Palace",
                                 "result": "L",
                                 "margin": 34,
@@ -1548,37 +1372,29 @@
                             "closeGameCount": 11
                         },
                         "latestSim": {
-                            "record": "1-4",
+                            "record": "0-1",
                             "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -8.2,
-                            "pointDiff": -41,
-                            "bestWin": {
-                                "date": "4/17/1984",
-                                "opponent": "Aston Villa",
-                                "result": "W",
-                                "margin": 4,
-                                "score": "Manchester United 105, @Aston Villa 101",
-                                "boxscoreUrl": "./boxes/box183-1.htm",
-                                "section": "Regular Season"
-                            },
+                            "last3": "L",
+                            "avgMargin": -10.0,
+                            "pointDiff": -10,
+                            "bestWin": null,
                             "worstLoss": {
-                                "date": "4/19/1984",
-                                "opponent": "Juventus",
+                                "date": "12/04/1984",
+                                "opponent": "Aston Villa",
                                 "result": "L",
-                                "margin": 21,
-                                "score": "@Juventus 107, Manchester United 86",
-                                "boxscoreUrl": "./boxes/box185-8.htm",
+                                "margin": 10,
+                                "score": "@Aston Villa 108, Manchester United 98",
+                                "boxscoreUrl": "./boxes/box178-2.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 2
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster5.htm",
                         "starPlayer": {
                             "name": "Alton Lister",
                             "url": "../players/player1050.htm",
                             "pos": "C",
-                            "age": "23",
+                            "age": "24",
                             "overall": "113",
                             "potential": "113"
                         }
@@ -1592,7 +1408,7 @@
                             "avgMargin": -12.17,
                             "pointDiff": -511,
                             "bestWin": {
-                                "date": "2/15/1984",
+                                "date": "15/02/1984",
                                 "opponent": "Monaco",
                                 "result": "W",
                                 "margin": 30,
@@ -1601,7 +1417,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "1/27/1984",
+                                "date": "27/01/1984",
                                 "opponent": "Barcelona",
                                 "result": "L",
                                 "margin": 44,
@@ -1612,37 +1428,29 @@
                             "closeGameCount": 9
                         },
                         "latestSim": {
-                            "record": "1-4",
-                            "streak": "W1",
-                            "last3": "LLW",
-                            "avgMargin": -12.2,
-                            "pointDiff": -61,
-                            "bestWin": {
-                                "date": "4/19/1984",
-                                "opponent": "Sporting CP",
-                                "result": "W",
-                                "margin": 1,
-                                "score": "@Tottenham Hotspur 95, Sporting CP 94",
-                                "boxscoreUrl": "./boxes/box185-9.htm",
-                                "section": "Regular Season"
-                            },
+                            "record": "0-1",
+                            "streak": "L1",
+                            "last3": "L",
+                            "avgMargin": -17.0,
+                            "pointDiff": -17,
+                            "bestWin": null,
                             "worstLoss": {
-                                "date": "4/15/1984",
-                                "opponent": "Paris Saint-Germain",
+                                "date": "12/01/1984",
+                                "opponent": "Sporting CP",
                                 "result": "L",
-                                "margin": 34,
-                                "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
-                                "boxscoreUrl": "./boxes/box181-3.htm",
+                                "margin": 17,
+                                "score": "@Sporting CP 105, Tottenham Hotspur 88",
+                                "boxscoreUrl": "./boxes/box87-6.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 3
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster22.htm",
                         "starPlayer": {
                             "name": "Doug Christie",
                             "url": "../players/player243.htm",
                             "pos": "SF",
-                            "age": "23",
+                            "age": "22",
                             "overall": "120",
                             "potential": "136"
                         }
@@ -1656,7 +1464,7 @@
                             "avgMargin": -9.45,
                             "pointDiff": -397,
                             "bestWin": {
-                                "date": "3/13/1984",
+                                "date": "13/03/1984",
                                 "opponent": "Tottenham Hotspur",
                                 "result": "W",
                                 "margin": 23,
@@ -1665,7 +1473,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "4/15/1984",
+                                "date": "15/04/1984",
                                 "opponent": "Barcelona",
                                 "result": "L",
                                 "margin": 55,
@@ -1676,30 +1484,14 @@
                             "closeGameCount": 10
                         },
                         "latestSim": {
-                            "record": "2-4",
-                            "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": -12.5,
-                            "pointDiff": -75,
-                            "bestWin": {
-                                "date": "4/1/1984",
-                                "opponent": "Sporting CP",
-                                "result": "W",
-                                "margin": 7,
-                                "score": "Manchester City 100, @Sporting CP 93",
-                                "boxscoreUrl": "./boxes/box167-5.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/15/1984",
-                                "opponent": "Barcelona",
-                                "result": "L",
-                                "margin": 55,
-                                "score": "@Barcelona 124, Manchester City 69",
-                                "boxscoreUrl": "./boxes/box181-5.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 1
+                            "record": "0-0",
+                            "streak": "-",
+                            "last3": "-",
+                            "avgMargin": 0.0,
+                            "pointDiff": 0,
+                            "bestWin": null,
+                            "worstLoss": null,
+                            "closeGameCount": 0
                         },
                         "rosterUrl": "./rosters/roster28.htm",
                         "starPlayer": {
@@ -1718,8 +1510,8 @@
             "id": "promotion-relegation-watch",
             "type": "race_watch",
             "title": "Promotion / Relegation Watch",
-            "period": "April 1984",
-            "prompt": "Write a promotion/relegation watch article for April 1984. Cover Tier 1 relegation, Tier 2 promotion and relegation, and Tier 3 promotion. Use standings.json as the source of truth for the actual promotion/relegation line, team rank, record, games back, and whether a team is materially close enough to be in the race. Use the monthly race snapshot and monthly form only as momentum context after the real standings line is established. Use the style references to make the race easy to follow: state the rules, define the line, identify who controls their fate, and explain what changes next. Treat seeding as secondary to games-behind pressure: do not frame teams as truly in danger or truly live for promotion/relegation if they are only technically adjacent in seed but materially far from the line.",
+            "period": "December 1984",
+            "prompt": "Write a promotion/relegation watch article for December 1984. Cover Tier 1 relegation, Tier 2 promotion and relegation, and Tier 3 promotion. Use standings.json as the source of truth for the actual promotion/relegation line, team rank, record, games back, and whether a team is materially close enough to be in the race. Use the monthly race snapshot and monthly form only as momentum context after the real standings line is established. Use the style references to make the race easy to follow: state the rules, define the line, identify who controls their fate, and explain what changes next. Treat seeding as secondary to games-behind pressure: do not frame teams as truly in danger or truly live for promotion/relegation if they are only technically adjacent in seed but materially far from the line.",
             "writerNotes": [
                 "Tier 1 has 2 relegation spots.",
                 "Tier 2 has 2 promotion spots and 1 relegation spot.",
@@ -1765,53 +1557,53 @@
                     "tier": "Tier 1",
                     "type": "relegation",
                     "slots": 2,
-                    "lineTeam": "Benfica",
-                    "lineRecord": "3-3",
+                    "lineTeam": "Chelsea",
+                    "lineRecord": "0-1",
                     "entries": [
                         {
                             "team": "FL Fart",
-                            "record": "2-4",
+                            "record": "0-3",
                             "standingRank": 8,
-                            "streak": "W1",
-                            "last3": "LLW",
-                            "avgMargin": -8.83,
-                            "pointDiff": -53,
-                            "gapToLine": -1,
+                            "streak": "L3",
+                            "last3": "LLL",
+                            "avgMargin": -9.33,
+                            "pointDiff": -28,
+                            "gapToLine": 0,
                             "status": "on_or_below_line",
                             "rosterUrl": "./rosters/roster27.htm"
                         },
                         {
-                            "team": "Benfica",
-                            "record": "3-3",
-                            "standingRank": 6,
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": -0.83,
-                            "pointDiff": -5,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster13.htm"
-                        },
-                        {
                             "team": "Chelsea",
-                            "record": "3-3",
+                            "record": "0-1",
                             "standingRank": 7,
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": 4.17,
-                            "pointDiff": 25,
+                            "streak": "L1",
+                            "last3": "L",
+                            "avgMargin": -23.0,
+                            "pointDiff": -23,
                             "gapToLine": 0,
                             "status": "on_or_below_line",
                             "rosterUrl": "./rosters/roster17.htm"
                         },
                         {
+                            "team": "AFC Richmond",
+                            "record": "0-0",
+                            "standingRank": 5,
+                            "streak": "-",
+                            "last3": "-",
+                            "avgMargin": 0.0,
+                            "pointDiff": 0,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
+                            "rosterUrl": "./rosters/roster12.htm"
+                        },
+                        {
                             "team": "Bayern Munich",
-                            "record": "3-2",
+                            "record": "0-0",
                             "standingRank": 2,
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": 5.6,
-                            "pointDiff": 28,
+                            "streak": "-",
+                            "last3": "-",
+                            "avgMargin": 0.0,
+                            "pointDiff": 0,
                             "gapToLine": 0,
                             "status": "on_or_below_line",
                             "rosterUrl": "./rosters/roster7.htm"
@@ -1823,56 +1615,56 @@
                     "tier": "Tier 2",
                     "type": "promotion",
                     "slots": 2,
-                    "lineTeam": "Marseille",
-                    "lineRecord": "3-1",
+                    "lineTeam": "Paris Saint-Germain",
+                    "lineRecord": "1-0",
                     "entries": [
                         {
-                            "team": "Paris Saint-Germain",
-                            "record": "4-0",
-                            "standingRank": 8,
-                            "streak": "W4",
-                            "last3": "WWW",
-                            "avgMargin": 19.0,
-                            "pointDiff": 76,
+                            "team": "Sheffield United",
+                            "record": "2-0",
+                            "standingRank": 5,
+                            "streak": "W2",
+                            "last3": "WW",
+                            "avgMargin": 12.0,
+                            "pointDiff": 24,
                             "gapToLine": -1,
+                            "status": "on_or_above_line",
+                            "rosterUrl": "./rosters/roster16.htm"
+                        },
+                        {
+                            "team": "Paris Saint-Germain",
+                            "record": "1-0",
+                            "standingRank": 8,
+                            "streak": "W1",
+                            "last3": "W",
+                            "avgMargin": 35.0,
+                            "pointDiff": 35,
+                            "gapToLine": 0,
                             "status": "on_or_above_line",
                             "rosterUrl": "./rosters/roster21.htm"
                         },
                         {
-                            "team": "Marseille",
-                            "record": "3-1",
-                            "standingRank": 4,
+                            "team": "Ajax",
+                            "record": "1-0",
+                            "standingRank": 6,
                             "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 13.25,
-                            "pointDiff": 53,
+                            "last3": "W",
+                            "avgMargin": 34.0,
+                            "pointDiff": 34,
                             "gapToLine": 0,
                             "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster15.htm"
+                            "rosterUrl": "./rosters/roster18.htm"
                         },
                         {
-                            "team": "Real Madrid",
-                            "record": "3-2",
-                            "standingRank": 1,
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": -10.4,
-                            "pointDiff": -52,
-                            "gapToLine": 0,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster8.htm"
-                        },
-                        {
-                            "team": "Juventus",
-                            "record": "2-2",
-                            "standingRank": 3,
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": 1.25,
+                            "team": "Aston Villa",
+                            "record": "1-1",
+                            "standingRank": 7,
+                            "streak": "W1",
+                            "last3": "LW",
+                            "avgMargin": 2.5,
                             "pointDiff": 5,
-                            "gapToLine": 1,
-                            "status": "chasing",
-                            "rosterUrl": "./rosters/roster14.htm"
+                            "gapToLine": 0,
+                            "status": "on_or_above_line",
+                            "rosterUrl": "./rosters/roster19.htm"
                         }
                     ]
                 },
@@ -1881,44 +1673,44 @@
                     "tier": "Tier 2",
                     "type": "relegation",
                     "slots": 1,
-                    "lineTeam": "Aston Villa",
-                    "lineRecord": "1-4",
+                    "lineTeam": "Juventus",
+                    "lineRecord": "0-1",
                     "entries": [
                         {
-                            "team": "Aston Villa",
-                            "record": "1-4",
-                            "standingRank": 7,
-                            "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": -10.2,
-                            "pointDiff": -51,
+                            "team": "Juventus",
+                            "record": "0-1",
+                            "standingRank": 3,
+                            "streak": "L1",
+                            "last3": "L",
+                            "avgMargin": -34.0,
+                            "pointDiff": -34,
                             "gapToLine": 0,
                             "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster19.htm"
-                        },
-                        {
-                            "team": "Sheffield United",
-                            "record": "2-3",
-                            "standingRank": 5,
-                            "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": -11.0,
-                            "pointDiff": -55,
-                            "gapToLine": 1,
-                            "status": "above_safety",
-                            "rosterUrl": "./rosters/roster16.htm"
+                            "rosterUrl": "./rosters/roster14.htm"
                         },
                         {
                             "team": "Atletico Madrid",
-                            "record": "2-3",
+                            "record": "0-1",
                             "standingRank": 2,
-                            "streak": "L3",
-                            "last3": "LLL",
-                            "avgMargin": -9.8,
-                            "pointDiff": -49,
-                            "gapToLine": 1,
-                            "status": "above_safety",
+                            "streak": "L1",
+                            "last3": "L",
+                            "avgMargin": -21.0,
+                            "pointDiff": -21,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
                             "rosterUrl": "./rosters/roster11.htm"
+                        },
+                        {
+                            "team": "Marseille",
+                            "record": "0-0",
+                            "standingRank": 4,
+                            "streak": "-",
+                            "last3": "-",
+                            "avgMargin": 0.0,
+                            "pointDiff": 0,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
+                            "rosterUrl": "./rosters/roster15.htm"
                         }
                     ]
                 },
@@ -1928,43 +1720,43 @@
                     "type": "promotion",
                     "slots": 1,
                     "lineTeam": "Barcelona",
-                    "lineRecord": "4-1",
+                    "lineRecord": "2-0",
                     "entries": [
                         {
                             "team": "Barcelona",
-                            "record": "4-1",
+                            "record": "2-0",
                             "standingRank": 5,
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": 16.0,
-                            "pointDiff": 80,
+                            "streak": "W2",
+                            "last3": "WW",
+                            "avgMargin": 16.5,
+                            "pointDiff": 33,
                             "gapToLine": 0,
                             "status": "on_or_above_line",
                             "rosterUrl": "./rosters/roster24.htm"
                         },
                         {
-                            "team": "Inter Milan",
-                            "record": "4-2",
-                            "standingRank": 7,
-                            "streak": "W4",
-                            "last3": "WWW",
-                            "avgMargin": 5.67,
-                            "pointDiff": 34,
-                            "gapToLine": 0,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster26.htm"
-                        },
-                        {
-                            "team": "Valencia",
-                            "record": "3-2",
-                            "standingRank": 6,
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": -5.2,
-                            "pointDiff": -26,
+                            "team": "Sporting CP",
+                            "record": "1-1",
+                            "standingRank": 4,
+                            "streak": "L1",
+                            "last3": "WL",
+                            "avgMargin": 0.5,
+                            "pointDiff": 1,
                             "gapToLine": 1,
                             "status": "chasing",
-                            "rosterUrl": "./rosters/roster25.htm"
+                            "rosterUrl": "./rosters/roster23.htm"
+                        },
+                        {
+                            "team": "Inter Milan",
+                            "record": "1-0",
+                            "standingRank": 7,
+                            "streak": "W1",
+                            "last3": "W",
+                            "avgMargin": 1.0,
+                            "pointDiff": 1,
+                            "gapToLine": 1,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster26.htm"
                         }
                     ]
                 }
@@ -1975,53 +1767,53 @@
                     "tier": "Tier 1",
                     "type": "relegation",
                     "slots": 2,
-                    "lineTeam": "Benfica",
-                    "lineRecord": "3-3",
+                    "lineTeam": "Chelsea",
+                    "lineRecord": "0-1",
                     "entries": [
                         {
                             "team": "FL Fart",
-                            "record": "2-4",
+                            "record": "0-3",
                             "standingRank": 8,
-                            "streak": "W1",
-                            "last3": "LLW",
-                            "avgMargin": -8.83,
-                            "pointDiff": -53,
-                            "gapToLine": -1,
+                            "streak": "L3",
+                            "last3": "LLL",
+                            "avgMargin": -9.33,
+                            "pointDiff": -28,
+                            "gapToLine": 0,
                             "status": "on_or_below_line",
                             "rosterUrl": "./rosters/roster27.htm"
                         },
                         {
-                            "team": "Benfica",
-                            "record": "3-3",
-                            "standingRank": 6,
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": -0.83,
-                            "pointDiff": -5,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster13.htm"
-                        },
-                        {
                             "team": "Chelsea",
-                            "record": "3-3",
+                            "record": "0-1",
                             "standingRank": 7,
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": 4.17,
-                            "pointDiff": 25,
+                            "streak": "L1",
+                            "last3": "L",
+                            "avgMargin": -23.0,
+                            "pointDiff": -23,
                             "gapToLine": 0,
                             "status": "on_or_below_line",
                             "rosterUrl": "./rosters/roster17.htm"
                         },
                         {
+                            "team": "AFC Richmond",
+                            "record": "0-0",
+                            "standingRank": 5,
+                            "streak": "-",
+                            "last3": "-",
+                            "avgMargin": 0.0,
+                            "pointDiff": 0,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
+                            "rosterUrl": "./rosters/roster12.htm"
+                        },
+                        {
                             "team": "Bayern Munich",
-                            "record": "3-2",
+                            "record": "0-0",
                             "standingRank": 2,
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": 5.6,
-                            "pointDiff": 28,
+                            "streak": "-",
+                            "last3": "-",
+                            "avgMargin": 0.0,
+                            "pointDiff": 0,
                             "gapToLine": 0,
                             "status": "on_or_below_line",
                             "rosterUrl": "./rosters/roster7.htm"
@@ -2033,56 +1825,56 @@
                     "tier": "Tier 2",
                     "type": "promotion",
                     "slots": 2,
-                    "lineTeam": "Marseille",
-                    "lineRecord": "3-1",
+                    "lineTeam": "Paris Saint-Germain",
+                    "lineRecord": "1-0",
                     "entries": [
                         {
-                            "team": "Paris Saint-Germain",
-                            "record": "4-0",
-                            "standingRank": 8,
-                            "streak": "W4",
-                            "last3": "WWW",
-                            "avgMargin": 19.0,
-                            "pointDiff": 76,
+                            "team": "Sheffield United",
+                            "record": "2-0",
+                            "standingRank": 5,
+                            "streak": "W2",
+                            "last3": "WW",
+                            "avgMargin": 12.0,
+                            "pointDiff": 24,
                             "gapToLine": -1,
+                            "status": "on_or_above_line",
+                            "rosterUrl": "./rosters/roster16.htm"
+                        },
+                        {
+                            "team": "Paris Saint-Germain",
+                            "record": "1-0",
+                            "standingRank": 8,
+                            "streak": "W1",
+                            "last3": "W",
+                            "avgMargin": 35.0,
+                            "pointDiff": 35,
+                            "gapToLine": 0,
                             "status": "on_or_above_line",
                             "rosterUrl": "./rosters/roster21.htm"
                         },
                         {
-                            "team": "Marseille",
-                            "record": "3-1",
-                            "standingRank": 4,
+                            "team": "Ajax",
+                            "record": "1-0",
+                            "standingRank": 6,
                             "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 13.25,
-                            "pointDiff": 53,
+                            "last3": "W",
+                            "avgMargin": 34.0,
+                            "pointDiff": 34,
                             "gapToLine": 0,
                             "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster15.htm"
+                            "rosterUrl": "./rosters/roster18.htm"
                         },
                         {
-                            "team": "Real Madrid",
-                            "record": "3-2",
-                            "standingRank": 1,
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": -10.4,
-                            "pointDiff": -52,
-                            "gapToLine": 0,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster8.htm"
-                        },
-                        {
-                            "team": "Juventus",
-                            "record": "2-2",
-                            "standingRank": 3,
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": 1.25,
+                            "team": "Aston Villa",
+                            "record": "1-1",
+                            "standingRank": 7,
+                            "streak": "W1",
+                            "last3": "LW",
+                            "avgMargin": 2.5,
                             "pointDiff": 5,
-                            "gapToLine": 1,
-                            "status": "chasing",
-                            "rosterUrl": "./rosters/roster14.htm"
+                            "gapToLine": 0,
+                            "status": "on_or_above_line",
+                            "rosterUrl": "./rosters/roster19.htm"
                         }
                     ]
                 },
@@ -2091,44 +1883,44 @@
                     "tier": "Tier 2",
                     "type": "relegation",
                     "slots": 1,
-                    "lineTeam": "Aston Villa",
-                    "lineRecord": "1-4",
+                    "lineTeam": "Juventus",
+                    "lineRecord": "0-1",
                     "entries": [
                         {
-                            "team": "Aston Villa",
-                            "record": "1-4",
-                            "standingRank": 7,
-                            "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": -10.2,
-                            "pointDiff": -51,
+                            "team": "Juventus",
+                            "record": "0-1",
+                            "standingRank": 3,
+                            "streak": "L1",
+                            "last3": "L",
+                            "avgMargin": -34.0,
+                            "pointDiff": -34,
                             "gapToLine": 0,
                             "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster19.htm"
-                        },
-                        {
-                            "team": "Sheffield United",
-                            "record": "2-3",
-                            "standingRank": 5,
-                            "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": -11.0,
-                            "pointDiff": -55,
-                            "gapToLine": 1,
-                            "status": "above_safety",
-                            "rosterUrl": "./rosters/roster16.htm"
+                            "rosterUrl": "./rosters/roster14.htm"
                         },
                         {
                             "team": "Atletico Madrid",
-                            "record": "2-3",
+                            "record": "0-1",
                             "standingRank": 2,
-                            "streak": "L3",
-                            "last3": "LLL",
-                            "avgMargin": -9.8,
-                            "pointDiff": -49,
-                            "gapToLine": 1,
-                            "status": "above_safety",
+                            "streak": "L1",
+                            "last3": "L",
+                            "avgMargin": -21.0,
+                            "pointDiff": -21,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
                             "rosterUrl": "./rosters/roster11.htm"
+                        },
+                        {
+                            "team": "Marseille",
+                            "record": "0-0",
+                            "standingRank": 4,
+                            "streak": "-",
+                            "last3": "-",
+                            "avgMargin": 0.0,
+                            "pointDiff": 0,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
+                            "rosterUrl": "./rosters/roster15.htm"
                         }
                     ]
                 },
@@ -2138,43 +1930,43 @@
                     "type": "promotion",
                     "slots": 1,
                     "lineTeam": "Barcelona",
-                    "lineRecord": "4-1",
+                    "lineRecord": "2-0",
                     "entries": [
                         {
                             "team": "Barcelona",
-                            "record": "4-1",
+                            "record": "2-0",
                             "standingRank": 5,
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": 16.0,
-                            "pointDiff": 80,
+                            "streak": "W2",
+                            "last3": "WW",
+                            "avgMargin": 16.5,
+                            "pointDiff": 33,
                             "gapToLine": 0,
                             "status": "on_or_above_line",
                             "rosterUrl": "./rosters/roster24.htm"
                         },
                         {
-                            "team": "Inter Milan",
-                            "record": "4-2",
-                            "standingRank": 7,
-                            "streak": "W4",
-                            "last3": "WWW",
-                            "avgMargin": 5.67,
-                            "pointDiff": 34,
-                            "gapToLine": 0,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster26.htm"
-                        },
-                        {
-                            "team": "Valencia",
-                            "record": "3-2",
-                            "standingRank": 6,
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": -5.2,
-                            "pointDiff": -26,
+                            "team": "Sporting CP",
+                            "record": "1-1",
+                            "standingRank": 4,
+                            "streak": "L1",
+                            "last3": "WL",
+                            "avgMargin": 0.5,
+                            "pointDiff": 1,
                             "gapToLine": 1,
                             "status": "chasing",
-                            "rosterUrl": "./rosters/roster25.htm"
+                            "rosterUrl": "./rosters/roster23.htm"
+                        },
+                        {
+                            "team": "Inter Milan",
+                            "record": "1-0",
+                            "standingRank": 7,
+                            "streak": "W1",
+                            "last3": "W",
+                            "avgMargin": 1.0,
+                            "pointDiff": 1,
+                            "gapToLine": 1,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster26.htm"
                         }
                     ]
                 }
@@ -2184,8 +1976,8 @@
             "id": "stock-up-stock-down",
             "type": "stock_report",
             "title": "Stock Up / Stock Down",
-            "period": "April 1984",
-            "prompt": "Write a Stock Up / Stock Down piece for April 1984. Pick exactly three teams up and three teams down from the latest sim and explain the change in plain language. You can pull supporting detail from any linked JSON source if a team's monthly record alone is too thin. Use the style references for verdict-first sections: what changed, why it matters, and what happens if it continues.",
+            "period": "December 1984",
+            "prompt": "Write a Stock Up / Stock Down piece for December 1984. Pick exactly three teams up and three teams down from the latest sim and explain the change in plain language. You can pull supporting detail from any linked JSON source if a team's monthly record alone is too thin. Use the style references for verdict-first sections: what changed, why it matters, and what happens if it continues.",
             "writerNotes": [
                 "Do not just sort by record; explain why the shape of the month matters.",
                 "A close 1-0 month can be less convincing than a dominant 1-0 month.",
@@ -2221,123 +2013,142 @@
                     "rosterUrl": "./rosters/roster24.htm",
                     "rosterFile": "roster24.htm",
                     "standingsLast10": "7-3",
-                    "wins": 4,
-                    "losses": 1,
-                    "games": 5,
-                    "pointsFor": 607,
-                    "pointsAgainst": 527,
-                    "pointDiff": 80,
-                    "avgMargin": 16.0,
-                    "streak": "L1",
+                    "wins": 2,
+                    "losses": 0,
+                    "games": 2,
+                    "pointsFor": 244,
+                    "pointsAgainst": 211,
+                    "pointDiff": 33,
+                    "avgMargin": 16.5,
+                    "streak": "W2",
                     "recentResults": [
                         {
-                            "date": "4/1/1984",
-                            "opponent": "Tottenham Hotspur",
-                            "result": "W",
-                            "margin": 2,
-                            "score": "Barcelona 124, @Tottenham Hotspur 122",
-                            "boxscoreUrl": "./boxes/box167-3.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/5/1984",
-                            "opponent": "Manchester City",
-                            "result": "W",
-                            "margin": 6,
-                            "score": "Barcelona 88, @Manchester City 82",
-                            "boxscoreUrl": "./boxes/box171-3.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/11/1984",
-                            "opponent": "Tottenham Hotspur",
-                            "result": "W",
-                            "margin": 21,
-                            "score": "@Barcelona 136, Tottenham Hotspur 115",
-                            "boxscoreUrl": "./boxes/box177-4.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/15/1984",
-                            "opponent": "Manchester City",
-                            "result": "W",
-                            "margin": 55,
-                            "score": "@Barcelona 124, Manchester City 69",
-                            "boxscoreUrl": "./boxes/box181-5.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/19/1984",
+                            "date": "12/01/1984",
                             "opponent": "Valencia",
-                            "result": "L",
-                            "margin": 4,
-                            "score": "@Valencia 139, Barcelona 135",
-                            "boxscoreUrl": "./boxes/box185-11.htm",
+                            "result": "W",
+                            "margin": 17,
+                            "score": "@Barcelona 134, Valencia 117",
+                            "boxscoreUrl": "./boxes/box87-5.htm",
+                            "section": "Regular Season"
+                        },
+                        {
+                            "date": "12/03/1984",
+                            "opponent": "Sporting CP",
+                            "result": "W",
+                            "margin": 16,
+                            "score": "Barcelona 110, @Sporting CP 94",
+                            "boxscoreUrl": "./boxes/box147-5.htm",
                             "section": "Regular Season"
                         }
                     ],
                     "bestWin": {
-                        "date": "4/15/1984",
-                        "opponent": "Manchester City",
-                        "result": "W",
-                        "margin": 55,
-                        "score": "@Barcelona 124, Manchester City 69",
-                        "boxscoreUrl": "./boxes/box181-5.htm",
-                        "section": "Regular Season"
-                    },
-                    "worstLoss": {
-                        "date": "4/19/1984",
+                        "date": "12/01/1984",
                         "opponent": "Valencia",
-                        "result": "L",
-                        "margin": 4,
-                        "score": "@Valencia 139, Barcelona 135",
-                        "boxscoreUrl": "./boxes/box185-11.htm",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "@Barcelona 134, Valencia 117",
+                        "boxscoreUrl": "./boxes/box87-5.htm",
                         "section": "Regular Season"
                     },
-                    "closeGames": [
+                    "worstLoss": null,
+                    "closeGames": [],
+                    "blowoutWins": [
                         {
-                            "date": "4/1/1984",
-                            "opponent": "Tottenham Hotspur",
+                            "date": "12/01/1984",
+                            "opponent": "Valencia",
                             "result": "W",
-                            "margin": 2,
-                            "score": "Barcelona 124, @Tottenham Hotspur 122",
-                            "boxscoreUrl": "./boxes/box167-3.htm",
+                            "margin": 17,
+                            "score": "@Barcelona 134, Valencia 117",
+                            "boxscoreUrl": "./boxes/box87-5.htm",
                             "section": "Regular Season"
                         },
                         {
-                            "date": "4/19/1984",
-                            "opponent": "Valencia",
-                            "result": "L",
-                            "margin": 4,
-                            "score": "@Valencia 139, Barcelona 135",
-                            "boxscoreUrl": "./boxes/box185-11.htm",
+                            "date": "12/03/1984",
+                            "opponent": "Sporting CP",
+                            "result": "W",
+                            "margin": 16,
+                            "score": "Barcelona 110, @Sporting CP 94",
+                            "boxscoreUrl": "./boxes/box147-5.htm",
+                            "section": "Regular Season"
+                        }
+                    ],
+                    "blowoutLosses": [],
+                    "record": "2-0",
+                    "closeGameCount": 0,
+                    "last3": "WW"
+                },
+                {
+                    "team": "Sheffield United",
+                    "tier": "Tier 2",
+                    "tierShort": "T2",
+                    "standingRank": 5,
+                    "rosterUrl": "./rosters/roster16.htm",
+                    "rosterFile": "roster16.htm",
+                    "standingsLast10": "3-7",
+                    "wins": 2,
+                    "losses": 0,
+                    "games": 2,
+                    "pointsFor": 254,
+                    "pointsAgainst": 230,
+                    "pointDiff": 24,
+                    "avgMargin": 12.0,
+                    "streak": "W2",
+                    "recentResults": [
+                        {
+                            "date": "12/03/1984",
+                            "opponent": "Chelsea",
+                            "result": "W",
+                            "margin": 23,
+                            "score": "@Sheffield United 134, Chelsea 111",
+                            "boxscoreUrl": "./boxes/box147-2.htm",
+                            "section": "Regular Season"
+                        },
+                        {
+                            "date": "12/04/1984",
+                            "opponent": "FL Fart",
+                            "result": "W",
+                            "margin": 1,
+                            "score": "@Sheffield United 120, FL Fart 119",
+                            "boxscoreUrl": "./boxes/box178-1.htm",
+                            "section": "Regular Season"
+                        }
+                    ],
+                    "bestWin": {
+                        "date": "12/03/1984",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 23,
+                        "score": "@Sheffield United 134, Chelsea 111",
+                        "boxscoreUrl": "./boxes/box147-2.htm",
+                        "section": "Regular Season"
+                    },
+                    "worstLoss": null,
+                    "closeGames": [
+                        {
+                            "date": "12/04/1984",
+                            "opponent": "FL Fart",
+                            "result": "W",
+                            "margin": 1,
+                            "score": "@Sheffield United 120, FL Fart 119",
+                            "boxscoreUrl": "./boxes/box178-1.htm",
                             "section": "Regular Season"
                         }
                     ],
                     "blowoutWins": [
                         {
-                            "date": "4/11/1984",
-                            "opponent": "Tottenham Hotspur",
+                            "date": "12/03/1984",
+                            "opponent": "Chelsea",
                             "result": "W",
-                            "margin": 21,
-                            "score": "@Barcelona 136, Tottenham Hotspur 115",
-                            "boxscoreUrl": "./boxes/box177-4.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/15/1984",
-                            "opponent": "Manchester City",
-                            "result": "W",
-                            "margin": 55,
-                            "score": "@Barcelona 124, Manchester City 69",
-                            "boxscoreUrl": "./boxes/box181-5.htm",
+                            "margin": 23,
+                            "score": "@Sheffield United 134, Chelsea 111",
+                            "boxscoreUrl": "./boxes/box147-2.htm",
                             "section": "Regular Season"
                         }
                     ],
                     "blowoutLosses": [],
-                    "record": "4-1",
-                    "closeGameCount": 2,
-                    "last3": "WWL"
+                    "record": "2-0",
+                    "closeGameCount": 1,
+                    "last3": "WW"
                 },
                 {
                     "team": "Paris Saint-Germain",
@@ -2347,595 +2158,262 @@
                     "rosterUrl": "./rosters/roster21.htm",
                     "rosterFile": "roster21.htm",
                     "standingsLast10": "8-2",
-                    "wins": 4,
+                    "wins": 1,
                     "losses": 0,
-                    "games": 4,
-                    "pointsFor": 466,
-                    "pointsAgainst": 390,
-                    "pointDiff": 76,
-                    "avgMargin": 19.0,
-                    "streak": "W4",
+                    "games": 1,
+                    "pointsFor": 130,
+                    "pointsAgainst": 95,
+                    "pointDiff": 35,
+                    "avgMargin": 35.0,
+                    "streak": "W1",
                     "recentResults": [
                         {
-                            "date": "4/1/1984",
-                            "opponent": "Inter Milan",
+                            "date": "12/03/1984",
+                            "opponent": "Monaco",
                             "result": "W",
-                            "margin": 3,
-                            "score": "Paris Saint-Germain 100, @Inter Milan 97",
-                            "boxscoreUrl": "./boxes/box167-4.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/5/1984",
-                            "opponent": "Inter Milan",
-                            "result": "W",
-                            "margin": 14,
-                            "score": "Paris Saint-Germain 128, @Inter Milan 114",
-                            "boxscoreUrl": "./boxes/box171-4.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/10/1984",
-                            "opponent": "Sporting CP",
-                            "result": "W",
-                            "margin": 25,
-                            "score": "Paris Saint-Germain 129, @Sporting CP 104",
-                            "boxscoreUrl": "./boxes/box176-4.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/15/1984",
-                            "opponent": "Tottenham Hotspur",
-                            "result": "W",
-                            "margin": 34,
-                            "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
-                            "boxscoreUrl": "./boxes/box181-3.htm",
+                            "margin": 35,
+                            "score": "@Paris Saint-Germain 130, Monaco 95",
+                            "boxscoreUrl": "./boxes/box147-4.htm",
                             "section": "Regular Season"
                         }
                     ],
                     "bestWin": {
-                        "date": "4/15/1984",
-                        "opponent": "Tottenham Hotspur",
+                        "date": "12/03/1984",
+                        "opponent": "Monaco",
                         "result": "W",
-                        "margin": 34,
-                        "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
-                        "boxscoreUrl": "./boxes/box181-3.htm",
+                        "margin": 35,
+                        "score": "@Paris Saint-Germain 130, Monaco 95",
+                        "boxscoreUrl": "./boxes/box147-4.htm",
                         "section": "Regular Season"
                     },
                     "worstLoss": null,
-                    "closeGames": [
-                        {
-                            "date": "4/1/1984",
-                            "opponent": "Inter Milan",
-                            "result": "W",
-                            "margin": 3,
-                            "score": "Paris Saint-Germain 100, @Inter Milan 97",
-                            "boxscoreUrl": "./boxes/box167-4.htm",
-                            "section": "Regular Season"
-                        }
-                    ],
+                    "closeGames": [],
                     "blowoutWins": [
                         {
-                            "date": "4/10/1984",
-                            "opponent": "Sporting CP",
+                            "date": "12/03/1984",
+                            "opponent": "Monaco",
                             "result": "W",
-                            "margin": 25,
-                            "score": "Paris Saint-Germain 129, @Sporting CP 104",
-                            "boxscoreUrl": "./boxes/box176-4.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/15/1984",
-                            "opponent": "Tottenham Hotspur",
-                            "result": "W",
-                            "margin": 34,
-                            "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
-                            "boxscoreUrl": "./boxes/box181-3.htm",
+                            "margin": 35,
+                            "score": "@Paris Saint-Germain 130, Monaco 95",
+                            "boxscoreUrl": "./boxes/box147-4.htm",
                             "section": "Regular Season"
                         }
                     ],
                     "blowoutLosses": [],
-                    "record": "4-0",
-                    "closeGameCount": 1,
-                    "last3": "WWW"
-                },
-                {
-                    "team": "Brighton",
-                    "tier": "Tier 1",
-                    "tierShort": "T1",
-                    "standingRank": 4,
-                    "rosterUrl": "./rosters/roster10.htm",
-                    "rosterFile": "roster10.htm",
-                    "standingsLast10": "8-2",
-                    "wins": 4,
-                    "losses": 1,
-                    "games": 5,
-                    "pointsFor": 614,
-                    "pointsAgainst": 577,
-                    "pointDiff": 37,
-                    "avgMargin": 7.4,
-                    "streak": "W1",
-                    "recentResults": [
-                        {
-                            "date": "4/4/1984",
-                            "opponent": "Ajax",
-                            "result": "W",
-                            "margin": 11,
-                            "score": "Brighton 123, @Ajax 112",
-                            "boxscoreUrl": "./boxes/box170-1.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/8/1984",
-                            "opponent": "Manchester United",
-                            "result": "W",
-                            "margin": 1,
-                            "score": "@Brighton 104, Manchester United 103",
-                            "boxscoreUrl": "./boxes/box174-1.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/11/1984",
-                            "opponent": "Atletico Madrid",
-                            "result": "W",
-                            "margin": 33,
-                            "score": "@Brighton 132, Atletico Madrid 99",
-                            "boxscoreUrl": "./boxes/box177-2.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/15/1984",
-                            "opponent": "Ajax",
-                            "result": "L",
-                            "margin": 15,
-                            "score": "@Ajax 130, Brighton 115",
-                            "boxscoreUrl": "./boxes/box181-1.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/19/1984",
-                            "opponent": "Atletico Madrid",
-                            "result": "W",
-                            "margin": 7,
-                            "score": "Brighton 140, @Atletico Madrid 133",
-                            "boxscoreUrl": "./boxes/box185-7.htm",
-                            "section": "Regular Season"
-                        }
-                    ],
-                    "bestWin": {
-                        "date": "4/11/1984",
-                        "opponent": "Atletico Madrid",
-                        "result": "W",
-                        "margin": 33,
-                        "score": "@Brighton 132, Atletico Madrid 99",
-                        "boxscoreUrl": "./boxes/box177-2.htm",
-                        "section": "Regular Season"
-                    },
-                    "worstLoss": {
-                        "date": "4/15/1984",
-                        "opponent": "Ajax",
-                        "result": "L",
-                        "margin": 15,
-                        "score": "@Ajax 130, Brighton 115",
-                        "boxscoreUrl": "./boxes/box181-1.htm",
-                        "section": "Regular Season"
-                    },
-                    "closeGames": [
-                        {
-                            "date": "4/8/1984",
-                            "opponent": "Manchester United",
-                            "result": "W",
-                            "margin": 1,
-                            "score": "@Brighton 104, Manchester United 103",
-                            "boxscoreUrl": "./boxes/box174-1.htm",
-                            "section": "Regular Season"
-                        }
-                    ],
-                    "blowoutWins": [
-                        {
-                            "date": "4/11/1984",
-                            "opponent": "Atletico Madrid",
-                            "result": "W",
-                            "margin": 33,
-                            "score": "@Brighton 132, Atletico Madrid 99",
-                            "boxscoreUrl": "./boxes/box177-2.htm",
-                            "section": "Regular Season"
-                        }
-                    ],
-                    "blowoutLosses": [
-                        {
-                            "date": "4/15/1984",
-                            "opponent": "Ajax",
-                            "result": "L",
-                            "margin": 15,
-                            "score": "@Ajax 130, Brighton 115",
-                            "boxscoreUrl": "./boxes/box181-1.htm",
-                            "section": "Regular Season"
-                        }
-                    ],
-                    "record": "4-1",
-                    "closeGameCount": 1,
-                    "last3": "WLW"
+                    "record": "1-0",
+                    "closeGameCount": 0,
+                    "last3": "W"
                 }
             ],
             "stockDownPool": [
                 {
-                    "team": "Tottenham Hotspur",
+                    "team": "Monaco",
                     "tier": "Tier 3",
                     "tierShort": "T3",
-                    "standingRank": 3,
-                    "rosterUrl": "./rosters/roster22.htm",
-                    "rosterFile": "roster22.htm",
-                    "standingsLast10": "3-7",
-                    "wins": 1,
-                    "losses": 4,
-                    "games": 5,
-                    "pointsFor": 511,
-                    "pointsAgainst": 572,
-                    "pointDiff": -61,
-                    "avgMargin": -12.2,
-                    "streak": "W1",
-                    "recentResults": [
-                        {
-                            "date": "4/1/1984",
-                            "opponent": "Barcelona",
-                            "result": "L",
-                            "margin": 2,
-                            "score": "Barcelona 124, @Tottenham Hotspur 122",
-                            "boxscoreUrl": "./boxes/box167-3.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/6/1984",
-                            "opponent": "Sporting CP",
-                            "result": "L",
-                            "margin": 5,
-                            "score": "Sporting CP 109, @Tottenham Hotspur 104",
-                            "boxscoreUrl": "./boxes/box172-4.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/11/1984",
-                            "opponent": "Barcelona",
-                            "result": "L",
-                            "margin": 21,
-                            "score": "@Barcelona 136, Tottenham Hotspur 115",
-                            "boxscoreUrl": "./boxes/box177-4.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/15/1984",
-                            "opponent": "Paris Saint-Germain",
-                            "result": "L",
-                            "margin": 34,
-                            "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
-                            "boxscoreUrl": "./boxes/box181-3.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/19/1984",
-                            "opponent": "Sporting CP",
-                            "result": "W",
-                            "margin": 1,
-                            "score": "@Tottenham Hotspur 95, Sporting CP 94",
-                            "boxscoreUrl": "./boxes/box185-9.htm",
-                            "section": "Regular Season"
-                        }
-                    ],
-                    "bestWin": {
-                        "date": "4/19/1984",
-                        "opponent": "Sporting CP",
-                        "result": "W",
-                        "margin": 1,
-                        "score": "@Tottenham Hotspur 95, Sporting CP 94",
-                        "boxscoreUrl": "./boxes/box185-9.htm",
-                        "section": "Regular Season"
-                    },
-                    "worstLoss": {
-                        "date": "4/15/1984",
-                        "opponent": "Paris Saint-Germain",
-                        "result": "L",
-                        "margin": 34,
-                        "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
-                        "boxscoreUrl": "./boxes/box181-3.htm",
-                        "section": "Regular Season"
-                    },
-                    "closeGames": [
-                        {
-                            "date": "4/1/1984",
-                            "opponent": "Barcelona",
-                            "result": "L",
-                            "margin": 2,
-                            "score": "Barcelona 124, @Tottenham Hotspur 122",
-                            "boxscoreUrl": "./boxes/box167-3.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/6/1984",
-                            "opponent": "Sporting CP",
-                            "result": "L",
-                            "margin": 5,
-                            "score": "Sporting CP 109, @Tottenham Hotspur 104",
-                            "boxscoreUrl": "./boxes/box172-4.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/19/1984",
-                            "opponent": "Sporting CP",
-                            "result": "W",
-                            "margin": 1,
-                            "score": "@Tottenham Hotspur 95, Sporting CP 94",
-                            "boxscoreUrl": "./boxes/box185-9.htm",
-                            "section": "Regular Season"
-                        }
-                    ],
-                    "blowoutWins": [],
-                    "blowoutLosses": [
-                        {
-                            "date": "4/11/1984",
-                            "opponent": "Barcelona",
-                            "result": "L",
-                            "margin": 21,
-                            "score": "@Barcelona 136, Tottenham Hotspur 115",
-                            "boxscoreUrl": "./boxes/box177-4.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/15/1984",
-                            "opponent": "Paris Saint-Germain",
-                            "result": "L",
-                            "margin": 34,
-                            "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
-                            "boxscoreUrl": "./boxes/box181-3.htm",
-                            "section": "Regular Season"
-                        }
-                    ],
-                    "record": "1-4",
-                    "closeGameCount": 3,
-                    "last3": "LLW"
-                },
-                {
-                    "team": "Aston Villa",
-                    "tier": "Tier 2",
-                    "tierShort": "T2",
-                    "standingRank": 7,
-                    "rosterUrl": "./rosters/roster19.htm",
-                    "rosterFile": "roster19.htm",
+                    "standingRank": 2,
+                    "rosterUrl": "./rosters/roster20.htm",
+                    "rosterFile": "roster20.htm",
                     "standingsLast10": "4-6",
-                    "wins": 1,
-                    "losses": 4,
-                    "games": 5,
-                    "pointsFor": 527,
-                    "pointsAgainst": 578,
-                    "pointDiff": -51,
-                    "avgMargin": -10.2,
+                    "wins": 0,
+                    "losses": 2,
+                    "games": 2,
+                    "pointsFor": 207,
+                    "pointsAgainst": 243,
+                    "pointDiff": -36,
+                    "avgMargin": -18.0,
                     "streak": "L2",
                     "recentResults": [
                         {
-                            "date": "4/3/1984",
-                            "opponent": "Crystal Palace",
+                            "date": "12/01/1984",
+                            "opponent": "Inter Milan",
                             "result": "L",
-                            "margin": 17,
-                            "score": "Crystal Palace 127, @Aston Villa 110",
-                            "boxscoreUrl": "./boxes/box169-1.htm",
+                            "margin": 1,
+                            "score": "Inter Milan 113, @Monaco 112",
+                            "boxscoreUrl": "./boxes/box87-4.htm",
                             "section": "Regular Season"
                         },
                         {
-                            "date": "4/7/1984",
-                            "opponent": "Atletico Madrid",
+                            "date": "12/03/1984",
+                            "opponent": "Paris Saint-Germain",
                             "result": "L",
-                            "margin": 3,
-                            "score": "@Atletico Madrid 132, Aston Villa 129",
-                            "boxscoreUrl": "./boxes/box173-1.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/12/1984",
-                            "opponent": "Manchester United",
-                            "result": "W",
-                            "margin": 10,
-                            "score": "@Aston Villa 108, Manchester United 98",
-                            "boxscoreUrl": "./boxes/box178-2.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/17/1984",
-                            "opponent": "Manchester United",
-                            "result": "L",
-                            "margin": 4,
-                            "score": "Manchester United 105, @Aston Villa 101",
-                            "boxscoreUrl": "./boxes/box183-1.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/19/1984",
-                            "opponent": "Marseille",
-                            "result": "L",
-                            "margin": 37,
-                            "score": "Marseille 116, @Aston Villa 79",
-                            "boxscoreUrl": "./boxes/box185-5.htm",
+                            "margin": 35,
+                            "score": "@Paris Saint-Germain 130, Monaco 95",
+                            "boxscoreUrl": "./boxes/box147-4.htm",
                             "section": "Regular Season"
                         }
                     ],
-                    "bestWin": {
-                        "date": "4/12/1984",
-                        "opponent": "Manchester United",
-                        "result": "W",
-                        "margin": 10,
-                        "score": "@Aston Villa 108, Manchester United 98",
-                        "boxscoreUrl": "./boxes/box178-2.htm",
-                        "section": "Regular Season"
-                    },
+                    "bestWin": null,
                     "worstLoss": {
-                        "date": "4/19/1984",
-                        "opponent": "Marseille",
+                        "date": "12/03/1984",
+                        "opponent": "Paris Saint-Germain",
                         "result": "L",
-                        "margin": 37,
-                        "score": "Marseille 116, @Aston Villa 79",
-                        "boxscoreUrl": "./boxes/box185-5.htm",
+                        "margin": 35,
+                        "score": "@Paris Saint-Germain 130, Monaco 95",
+                        "boxscoreUrl": "./boxes/box147-4.htm",
                         "section": "Regular Season"
                     },
                     "closeGames": [
                         {
-                            "date": "4/7/1984",
-                            "opponent": "Atletico Madrid",
+                            "date": "12/01/1984",
+                            "opponent": "Inter Milan",
                             "result": "L",
-                            "margin": 3,
-                            "score": "@Atletico Madrid 132, Aston Villa 129",
-                            "boxscoreUrl": "./boxes/box173-1.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/17/1984",
-                            "opponent": "Manchester United",
-                            "result": "L",
-                            "margin": 4,
-                            "score": "Manchester United 105, @Aston Villa 101",
-                            "boxscoreUrl": "./boxes/box183-1.htm",
+                            "margin": 1,
+                            "score": "Inter Milan 113, @Monaco 112",
+                            "boxscoreUrl": "./boxes/box87-4.htm",
                             "section": "Regular Season"
                         }
                     ],
                     "blowoutWins": [],
                     "blowoutLosses": [
                         {
-                            "date": "4/3/1984",
-                            "opponent": "Crystal Palace",
+                            "date": "12/03/1984",
+                            "opponent": "Paris Saint-Germain",
                             "result": "L",
-                            "margin": 17,
-                            "score": "Crystal Palace 127, @Aston Villa 110",
-                            "boxscoreUrl": "./boxes/box169-1.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/19/1984",
-                            "opponent": "Marseille",
-                            "result": "L",
-                            "margin": 37,
-                            "score": "Marseille 116, @Aston Villa 79",
-                            "boxscoreUrl": "./boxes/box185-5.htm",
+                            "margin": 35,
+                            "score": "@Paris Saint-Germain 130, Monaco 95",
+                            "boxscoreUrl": "./boxes/box147-4.htm",
                             "section": "Regular Season"
                         }
                     ],
-                    "record": "1-4",
-                    "closeGameCount": 2,
-                    "last3": "WLL"
+                    "record": "0-2",
+                    "closeGameCount": 1,
+                    "last3": "LL"
                 },
                 {
-                    "team": "Manchester United",
-                    "tier": "Tier 3",
-                    "tierShort": "T3",
-                    "standingRank": 1,
-                    "rosterUrl": "./rosters/roster5.htm",
-                    "rosterFile": "roster5.htm",
-                    "standingsLast10": "3-7",
-                    "wins": 1,
-                    "losses": 4,
-                    "games": 5,
-                    "pointsFor": 491,
-                    "pointsAgainst": 532,
-                    "pointDiff": -41,
-                    "avgMargin": -8.2,
+                    "team": "Juventus",
+                    "tier": "Tier 2",
+                    "tierShort": "T2",
+                    "standingRank": 3,
+                    "rosterUrl": "./rosters/roster14.htm",
+                    "rosterFile": "roster14.htm",
+                    "standingsLast10": "4-6",
+                    "wins": 0,
+                    "losses": 1,
+                    "games": 1,
+                    "pointsFor": 81,
+                    "pointsAgainst": 115,
+                    "pointDiff": -34,
+                    "avgMargin": -34.0,
                     "streak": "L1",
                     "recentResults": [
                         {
-                            "date": "4/2/1984",
-                            "opponent": "Atletico Madrid",
+                            "date": "12/03/1984",
+                            "opponent": "Ajax",
                             "result": "L",
-                            "margin": 13,
-                            "score": "@Atletico Madrid 112, Manchester United 99",
-                            "boxscoreUrl": "./boxes/box168-2.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/8/1984",
-                            "opponent": "Brighton",
-                            "result": "L",
-                            "margin": 1,
-                            "score": "@Brighton 104, Manchester United 103",
-                            "boxscoreUrl": "./boxes/box174-1.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/12/1984",
-                            "opponent": "Aston Villa",
-                            "result": "L",
-                            "margin": 10,
-                            "score": "@Aston Villa 108, Manchester United 98",
-                            "boxscoreUrl": "./boxes/box178-2.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/17/1984",
-                            "opponent": "Aston Villa",
-                            "result": "W",
-                            "margin": 4,
-                            "score": "Manchester United 105, @Aston Villa 101",
-                            "boxscoreUrl": "./boxes/box183-1.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/19/1984",
-                            "opponent": "Juventus",
-                            "result": "L",
-                            "margin": 21,
-                            "score": "@Juventus 107, Manchester United 86",
-                            "boxscoreUrl": "./boxes/box185-8.htm",
+                            "margin": 34,
+                            "score": "@Ajax 115, Juventus 81",
+                            "boxscoreUrl": "./boxes/box147-3.htm",
                             "section": "Regular Season"
                         }
                     ],
-                    "bestWin": {
-                        "date": "4/17/1984",
-                        "opponent": "Aston Villa",
-                        "result": "W",
-                        "margin": 4,
-                        "score": "Manchester United 105, @Aston Villa 101",
-                        "boxscoreUrl": "./boxes/box183-1.htm",
+                    "bestWin": null,
+                    "worstLoss": {
+                        "date": "12/03/1984",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 34,
+                        "score": "@Ajax 115, Juventus 81",
+                        "boxscoreUrl": "./boxes/box147-3.htm",
                         "section": "Regular Season"
                     },
+                    "closeGames": [],
+                    "blowoutWins": [],
+                    "blowoutLosses": [
+                        {
+                            "date": "12/03/1984",
+                            "opponent": "Ajax",
+                            "result": "L",
+                            "margin": 34,
+                            "score": "@Ajax 115, Juventus 81",
+                            "boxscoreUrl": "./boxes/box147-3.htm",
+                            "section": "Regular Season"
+                        }
+                    ],
+                    "record": "0-1",
+                    "closeGameCount": 0,
+                    "last3": "L"
+                },
+                {
+                    "team": "FL Fart",
+                    "tier": "Tier 1",
+                    "tierShort": "T1",
+                    "standingRank": 8,
+                    "rosterUrl": "./rosters/roster27.htm",
+                    "rosterFile": "roster27.htm",
+                    "standingsLast10": "4-6",
+                    "wins": 0,
+                    "losses": 3,
+                    "games": 3,
+                    "pointsFor": 358,
+                    "pointsAgainst": 386,
+                    "pointDiff": -28,
+                    "avgMargin": -9.33,
+                    "streak": "L3",
+                    "recentResults": [
+                        {
+                            "date": "12/01/1984",
+                            "opponent": "Benfica",
+                            "result": "L",
+                            "margin": 20,
+                            "score": "@Benfica 139, FL Fart 119",
+                            "boxscoreUrl": "./boxes/box87-1.htm",
+                            "section": "Regular Season"
+                        },
+                        {
+                            "date": "12/03/1984",
+                            "opponent": "AC Milan",
+                            "result": "L",
+                            "margin": 7,
+                            "score": "AC Milan 127, @FL Fart 120",
+                            "boxscoreUrl": "./boxes/box147-1.htm",
+                            "section": "Regular Season"
+                        },
+                        {
+                            "date": "12/04/1984",
+                            "opponent": "Sheffield United",
+                            "result": "L",
+                            "margin": 1,
+                            "score": "@Sheffield United 120, FL Fart 119",
+                            "boxscoreUrl": "./boxes/box178-1.htm",
+                            "section": "Regular Season"
+                        }
+                    ],
+                    "bestWin": null,
                     "worstLoss": {
-                        "date": "4/19/1984",
-                        "opponent": "Juventus",
+                        "date": "12/01/1984",
+                        "opponent": "Benfica",
                         "result": "L",
-                        "margin": 21,
-                        "score": "@Juventus 107, Manchester United 86",
-                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "margin": 20,
+                        "score": "@Benfica 139, FL Fart 119",
+                        "boxscoreUrl": "./boxes/box87-1.htm",
                         "section": "Regular Season"
                     },
                     "closeGames": [
                         {
-                            "date": "4/8/1984",
-                            "opponent": "Brighton",
+                            "date": "12/04/1984",
+                            "opponent": "Sheffield United",
                             "result": "L",
                             "margin": 1,
-                            "score": "@Brighton 104, Manchester United 103",
-                            "boxscoreUrl": "./boxes/box174-1.htm",
-                            "section": "Regular Season"
-                        },
-                        {
-                            "date": "4/17/1984",
-                            "opponent": "Aston Villa",
-                            "result": "W",
-                            "margin": 4,
-                            "score": "Manchester United 105, @Aston Villa 101",
-                            "boxscoreUrl": "./boxes/box183-1.htm",
+                            "score": "@Sheffield United 120, FL Fart 119",
+                            "boxscoreUrl": "./boxes/box178-1.htm",
                             "section": "Regular Season"
                         }
                     ],
                     "blowoutWins": [],
                     "blowoutLosses": [
                         {
-                            "date": "4/19/1984",
-                            "opponent": "Juventus",
+                            "date": "12/01/1984",
+                            "opponent": "Benfica",
                             "result": "L",
-                            "margin": 21,
-                            "score": "@Juventus 107, Manchester United 86",
-                            "boxscoreUrl": "./boxes/box185-8.htm",
+                            "margin": 20,
+                            "score": "@Benfica 139, FL Fart 119",
+                            "boxscoreUrl": "./boxes/box87-1.htm",
                             "section": "Regular Season"
                         }
                     ],
-                    "record": "1-4",
-                    "closeGameCount": 2,
-                    "last3": "LWL"
+                    "record": "0-3",
+                    "closeGameCount": 1,
+                    "last3": "LLL"
                 }
             ]
         },
@@ -2943,8 +2421,8 @@
             "id": "month-in-review",
             "type": "month_in_review",
             "title": "Month in Review",
-            "period": "April 1984",
-            "prompt": "Write a Month in Review feature for April 1984. Use the featured storylines below to build a coherent recap of the sim: best performances, biggest swings, weirdest result, and what matters next. You can pull from any linked JSON source if the strongest story sits outside the featured shortlist. Use star-player context when it helps explain a result, a hot team, or why a matchup mattered. If you discuss promotion, relegation, race lines, or who is truly live in a race, use standings.json as the source of truth and use monthly form only as context. Use the style references to write takeaways, not a logbook: focus on what the month changed.",
+            "period": "December 1984",
+            "prompt": "Write a Month in Review feature for December 1984. Use the featured storylines below to build a coherent recap of the sim: best performances, biggest swings, weirdest result, and what matters next. You can pull from any linked JSON source if the strongest story sits outside the featured shortlist. Use star-player context when it helps explain a result, a hot team, or why a matchup mattered. If you discuss promotion, relegation, race lines, or who is truly live in a race, use standings.json as the source of truth and use monthly form only as context. Use the style references to write takeaways, not a logbook: focus on what the month changed.",
             "writerNotes": [
                 "Lead with the strongest monthly theme, not just the biggest scoreline.",
                 "Work across tiers if the month demands it.",
@@ -2988,48 +2466,48 @@
                     "id": "biggest-blowout",
                     "type": "game",
                     "title": "Biggest Blowout of the Month",
-                    "summary": "Barcelona beat Manchester City by 55, the biggest margin of the sim.",
-                    "tier": "Tier 3",
-                    "importance": 125,
+                    "summary": "Paris Saint-Germain beat Monaco by 35, the biggest margin of the sim.",
+                    "tier": "Tier 2",
+                    "importance": 105,
                     "data": {
                         "section": "Regular Season",
                         "sectionSlug": "regular-season",
-                        "date": "4/15/1984",
-                        "matchupText": "@Barcelona 124, Manchester City 69",
-                        "boxscoreUrl": "./boxes/box181-5.htm",
-                        "boxscoreFile": "box181-5.htm",
-                        "homeTeam": "roster24",
-                        "homeTeamName": "Barcelona",
-                        "homeScore": 124,
-                        "awayTeam": "roster28",
-                        "awayTeamName": "Manchester City",
-                        "awayScore": 69,
-                        "winner": "roster24",
-                        "winnerName": "Barcelona",
-                        "loser": "roster28",
-                        "loserName": "Manchester City",
-                        "margin": 55
+                        "date": "12/03/1984",
+                        "matchupText": "@Paris Saint-Germain 130, Monaco 95",
+                        "boxscoreUrl": "./boxes/box147-4.htm",
+                        "boxscoreFile": "box147-4.htm",
+                        "homeTeam": "roster21",
+                        "homeTeamName": "Paris Saint-Germain",
+                        "homeScore": 130,
+                        "awayTeam": "roster20",
+                        "awayTeamName": "Monaco",
+                        "awayScore": 95,
+                        "winner": "roster21",
+                        "winnerName": "Paris Saint-Germain",
+                        "loser": "roster20",
+                        "loserName": "Monaco",
+                        "margin": 35
                     }
                 },
                 {
                     "id": "hottest-team",
                     "type": "team_trend",
                     "title": "Hottest Team of the Month",
-                    "summary": "Barcelona posted the strongest month at 4-1 and closed on a L1 run.",
+                    "summary": "Barcelona posted the strongest month at 2-0 and closed on a W2 run.",
                     "tier": "Tier 3",
                     "importance": 88,
                     "data": {
                         "team": "Barcelona",
-                        "record": "4-1",
-                        "streak": "L1",
-                        "avgMargin": 16.0,
+                        "record": "2-0",
+                        "streak": "W2",
+                        "avgMargin": 16.5,
                         "bestWin": {
-                            "date": "4/15/1984",
-                            "opponent": "Manchester City",
+                            "date": "12/01/1984",
+                            "opponent": "Valencia",
                             "result": "W",
-                            "margin": 55,
-                            "score": "@Barcelona 124, Manchester City 69",
-                            "boxscoreUrl": "./boxes/box181-5.htm",
+                            "margin": 17,
+                            "score": "@Barcelona 134, Valencia 117",
+                            "boxscoreUrl": "./boxes/box87-5.htm",
                             "section": "Regular Season"
                         },
                         "rosterUrl": "./rosters/roster24.htm"
@@ -3039,26 +2517,26 @@
                     "id": "closest-game",
                     "type": "game",
                     "title": "Closest Game of the Month",
-                    "summary": "Real Madrid edged Chelsea by 1 in the tightest finish of the sim.",
-                    "tier": "Tier 2",
+                    "summary": "Inter Milan edged Monaco by 1 in the tightest finish of the sim.",
+                    "tier": "Tier 3",
                     "importance": 84,
                     "data": {
                         "section": "Regular Season",
                         "sectionSlug": "regular-season",
-                        "date": "4/1/1984",
-                        "matchupText": "Real Madrid 116, @Chelsea 115",
-                        "boxscoreUrl": "./boxes/box167-1.htm",
-                        "boxscoreFile": "box167-1.htm",
-                        "homeTeam": "roster17",
-                        "homeTeamName": "Chelsea",
-                        "homeScore": 115,
-                        "awayTeam": "roster8",
-                        "awayTeamName": "Real Madrid",
-                        "awayScore": 116,
-                        "winner": "roster8",
-                        "winnerName": "Real Madrid",
-                        "loser": "roster17",
-                        "loserName": "Chelsea",
+                        "date": "12/01/1984",
+                        "matchupText": "Inter Milan 113, @Monaco 112",
+                        "boxscoreUrl": "./boxes/box87-4.htm",
+                        "boxscoreFile": "box87-4.htm",
+                        "homeTeam": "roster20",
+                        "homeTeamName": "Monaco",
+                        "homeScore": 112,
+                        "awayTeam": "roster26",
+                        "awayTeamName": "Inter Milan",
+                        "awayScore": 113,
+                        "winner": "roster26",
+                        "winnerName": "Inter Milan",
+                        "loser": "roster20",
+                        "loserName": "Monaco",
                         "margin": 1
                     }
                 },
@@ -3066,51 +2544,51 @@
                     "id": "coldest-team",
                     "type": "team_trend",
                     "title": "Coldest Team of the Month",
-                    "summary": "Tottenham Hotspur had the roughest month at 1-4 and now carries a W1 slide.",
+                    "summary": "Monaco had the roughest month at 0-2 and now carries a L2 slide.",
                     "tier": "Tier 3",
                     "importance": 84,
                     "data": {
-                        "team": "Tottenham Hotspur",
-                        "record": "1-4",
-                        "streak": "W1",
-                        "avgMargin": -12.2,
+                        "team": "Monaco",
+                        "record": "0-2",
+                        "streak": "L2",
+                        "avgMargin": -18.0,
                         "worstLoss": {
-                            "date": "4/15/1984",
+                            "date": "12/03/1984",
                             "opponent": "Paris Saint-Germain",
                             "result": "L",
-                            "margin": 34,
-                            "score": "@Paris Saint-Germain 109, Tottenham Hotspur 75",
-                            "boxscoreUrl": "./boxes/box181-3.htm",
+                            "margin": 35,
+                            "score": "@Paris Saint-Germain 130, Monaco 95",
+                            "boxscoreUrl": "./boxes/box147-4.htm",
                             "section": "Regular Season"
                         },
-                        "rosterUrl": "./rosters/roster22.htm"
+                        "rosterUrl": "./rosters/roster20.htm"
                     }
                 },
                 {
                     "id": "upset-of-the-month",
                     "type": "game",
                     "title": "Upset of the Month",
-                    "summary": "FL Fart landed the sharpest upset of the sim by beating Bayern Munich.",
-                    "tier": "Tier 1",
+                    "summary": "Inter Milan landed the sharpest upset of the sim by beating Monaco.",
+                    "tier": "Tier 3",
                     "importance": 82,
                     "data": {
                         "section": "Regular Season",
                         "sectionSlug": "regular-season",
-                        "date": "4/19/1984",
-                        "matchupText": "FL Fart 128, @Bayern Munich 119",
-                        "boxscoreUrl": "./boxes/box185-4.htm",
-                        "boxscoreFile": "box185-4.htm",
-                        "homeTeam": "roster7",
-                        "homeTeamName": "Bayern Munich",
-                        "homeScore": 119,
-                        "awayTeam": "roster27",
-                        "awayTeamName": "FL Fart",
-                        "awayScore": 128,
-                        "winner": "roster27",
-                        "winnerName": "FL Fart",
-                        "loser": "roster7",
-                        "loserName": "Bayern Munich",
-                        "margin": 9
+                        "date": "12/01/1984",
+                        "matchupText": "Inter Milan 113, @Monaco 112",
+                        "boxscoreUrl": "./boxes/box87-4.htm",
+                        "boxscoreFile": "box87-4.htm",
+                        "homeTeam": "roster20",
+                        "homeTeamName": "Monaco",
+                        "homeScore": 112,
+                        "awayTeam": "roster26",
+                        "awayTeamName": "Inter Milan",
+                        "awayScore": 113,
+                        "winner": "roster26",
+                        "winnerName": "Inter Milan",
+                        "loser": "roster20",
+                        "loserName": "Monaco",
+                        "margin": 1
                     }
                 }
             ],
@@ -3121,7 +2599,7 @@
                         "name": "Larry Bird",
                         "url": "../players/player697.htm",
                         "pos": "PF",
-                        "age": "24",
+                        "age": "25",
                         "overall": "160",
                         "potential": "160"
                     }
@@ -3154,7 +2632,7 @@
                         "name": "Larry Nance",
                         "url": "../players/player880.htm",
                         "pos": "PF",
-                        "age": "23",
+                        "age": "22",
                         "overall": "125",
                         "potential": "129"
                     }
@@ -3187,7 +2665,7 @@
                         "name": "Bernard King",
                         "url": "../players/player713.htm",
                         "pos": "SF",
-                        "age": "24",
+                        "age": "25",
                         "overall": "127",
                         "potential": "127"
                     }
@@ -3206,12 +2684,12 @@
                 {
                     "team": "Brighton",
                     "starPlayer": {
-                        "name": "Mark Aguirre",
-                        "url": "../players/player702.htm",
-                        "pos": "SF",
-                        "age": "21",
-                        "overall": "144",
-                        "potential": "150"
+                        "name": "Kiki Vandeweghe",
+                        "url": "../players/player701.htm",
+                        "pos": "SG",
+                        "age": "24",
+                        "overall": "155",
+                        "potential": "156"
                     }
                 },
                 {
@@ -3286,7 +2764,7 @@
                         "name": "Alton Lister",
                         "url": "../players/player1050.htm",
                         "pos": "C",
-                        "age": "23",
+                        "age": "24",
                         "overall": "113",
                         "potential": "113"
                     }
@@ -3363,7 +2841,7 @@
                         "name": "Doug Christie",
                         "url": "../players/player243.htm",
                         "pos": "SF",
-                        "age": "23",
+                        "age": "22",
                         "overall": "120",
                         "potential": "136"
                     }
@@ -3380,14 +2858,14 @@
                     }
                 }
             ],
-            "latestSimGameCount": 60
+            "latestSimGameCount": 16
         },
         "mvpRace": {
             "id": "mvp-race",
             "type": "mvp_race",
             "title": "MVP Race",
-            "period": "April 1984",
-            "prompt": "Write an MVP race article for April 1984. Build separate ranked MVP ballots for Tier 1, Tier 2, and Tier 3. Include at least five candidates in each tier. Use the tier candidate pools as a starting point, but do not treat the generated order as final if the stats, awards, and leaderboard context point to a better argument. Use player stats as the base, awards as evidence of recent peaks, and leaders as supporting context for category dominance. Balance raw production, efficiency, team context, availability, and recent award momentum. Use the style references to build a more layered race: lead with the state of the ballot, include a stat-to-know or deciding factor, then give every candidate a case, caveat, and path to move up.",
+            "period": "December 1984",
+            "prompt": "Write an MVP race article for December 1984. Build separate ranked MVP ballots for Tier 1, Tier 2, and Tier 3. Include at least five candidates in each tier. Use the tier candidate pools as a starting point, but do not treat the generated order as final if the stats, awards, and leaderboard context point to a better argument. Use player stats as the base, awards as evidence of recent peaks, and leaders as supporting context for category dominance. Balance raw production, efficiency, team context, availability, and recent award momentum. Use the style references to build a more layered race: lead with the state of the ballot, include a stat-to-know or deciding factor, then give every candidate a case, caveat, and path to move up.",
             "writerNotes": [
                 "Rank at least five MVP candidates for each tier: Tier 1, Tier 2, and Tier 3.",
                 "Use player_stats.json for the main statistical case.",
@@ -3459,8 +2937,8 @@
                     },
                     {
                         "name": "Joe Barry Carroll",
-                        "team": "FA",
-                        "teamName": "FA",
+                        "team": "roster9",
+                        "teamName": "AC Milan",
                         "pos": "C",
                         "url": "../players/player710.htm",
                         "overall": "144",
@@ -3579,8 +3057,8 @@
                     },
                     {
                         "name": "Jim Paxson",
-                        "team": "FA",
-                        "teamName": "FA",
+                        "team": "roster17",
+                        "teamName": "Chelsea",
                         "pos": "SG",
                         "url": "../players/player875.htm",
                         "overall": "137",
@@ -3671,8 +3149,8 @@
                 "Tier 2": [
                     {
                         "name": "Kiki Vandeweghe",
-                        "team": "FA",
-                        "teamName": "FA",
+                        "team": "roster10",
+                        "teamName": "Brighton",
                         "pos": "SG",
                         "url": "../players/player701.htm",
                         "overall": "155",
