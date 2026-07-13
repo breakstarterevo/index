@@ -32,9 +32,28 @@ def load_json(path):
         return json.load(handle)
 
 
-def parse_game_date(value):
+def infer_game_date_format(values):
+    """Infer one date order for a whole export, never per individual date."""
+    for value in values:
+        parts = str(value or "").strip().split("/")
+        if len(parts) != 3:
+            continue
+        try:
+            first, second = int(parts[0]), int(parts[1])
+        except ValueError:
+            continue
+        if first > 12 and second <= 12:
+            return "%d/%m/%Y"
+        if second > 12 and first <= 12:
+            return "%m/%d/%Y"
+
+    # Fast Break exports use day/month/year. Ambiguous datasets keep that default.
+    return "%d/%m/%Y"
+
+
+def parse_game_date(value, date_format):
     try:
-        return datetime.strptime(str(value or "").strip(), "%m/%d/%Y")
+        return datetime.strptime(str(value or "").strip(), date_format)
     except ValueError:
         return None
 
@@ -76,9 +95,11 @@ def make_team_lookup(standings_data):
 
 
 def build_latest_sim_results(game_results_data):
+    results = game_results_data.get("results", [])
+    date_format = infer_game_date_format(game.get("date", "") for game in results)
     dated_results = []
-    for game in game_results_data.get("results", []):
-        parsed_date = parse_game_date(game.get("date", ""))
+    for game in results:
+        parsed_date = parse_game_date(game.get("date", ""), date_format)
         if parsed_date is None:
             continue
         dated_results.append((parsed_date, game))

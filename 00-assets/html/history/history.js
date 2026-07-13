@@ -873,14 +873,79 @@
     return `<div class="chart-wrap"><svg class="history-chart position-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="All-tier league position chart">${bands}<polyline class="position-line" points="${points}"></polyline>${dots}${labels}</svg></div>`;
   }
 
-  async function renderTeamTimeline(positionHistory, id) {
+  function sameTeamName(left, right) {
+    return slug(left) === slug(right);
+  }
+
+  function supercupPerformance(data, teamName) {
+    const rounds = supercupRoundGames(data);
+    const groupTeam = (data.supercupStandings.sections || [])
+      .flatMap((section) => section.teams || [])
+      .find((team) => sameTeamName(team.team, teamName));
+    const playoffGames = rounds.flatMap((round) => round.games || []);
+    const appearedInKnockout = playoffGames.some((game) => (
+      sameTeamName(game.homeTeamName, teamName) || sameTeamName(game.awayTeamName, teamName)
+    ));
+
+    if (!groupTeam && !appearedInKnockout) {
+      return { label: "Unavailable", key: "unavailable" };
+    }
+    if (!appearedInKnockout) {
+      return { label: "Group Stage", key: "group-stage" };
+    }
+
+    for (let index = 0; index < rounds.length; index += 1) {
+      const round = rounds[index];
+      const game = (round.games || []).find((item) => (
+        sameTeamName(item.homeTeamName, teamName) || sameTeamName(item.awayTeamName, teamName)
+      ));
+      if (!game) continue;
+
+      const won = sameTeamName(game.winnerName, teamName);
+      const isFinal = index === rounds.length - 1;
+      if (isFinal) {
+        return won
+          ? { label: "Champion", key: "champion" }
+          : { label: "Runner-up", key: "runner-up" };
+      }
+      if (!won) {
+        return { label: round.title, key: slug(round.title) };
+      }
+    }
+
+    return { label: "Knockout Stage", key: "knockout-stage" };
+  }
+
+  async function teamSupercupHistory(positionHistory, teamName) {
+    return Promise.all(positionHistory.map(async ({ season }) => {
+      const data = await loadSeason(season);
+      return { season, performance: supercupPerformance(data, teamName) };
+    }));
+  }
+
+  function supercupFinishBadge(performance) {
+    const result = performance || { label: "Unavailable", key: "unavailable" };
+    return `<span class="supercup-finish is-${esc(result.key)}">${esc(result.label)}</span>`;
+  }
+
+  function renderTeamSupercupHistory(history) {
+    const rows = history.map(({ season, performance }) => `<tr class="${performance.key === "champion" ? "supercup-champion-row" : ""}">
+      <td><a href="supercup.htm?season=${encodeURIComponent(season)}">${esc(seasonLabel(season))}</a></td>
+      <td>${supercupFinishBadge(performance)}</td>
+    </tr>`);
+    return table(["Season", "Finish"], rows, "No archived Super Cup history");
+  }
+
+  async function renderTeamTimeline(positionHistory, id, supercupHistory) {
     const rows = await Promise.all(positionHistory.map(async ({ season, standing }) => {
       const best = await bestPlayerForTeam(season, id);
       const marker = movementMarker(standing.tier, standing.position, standing.teamCount);
+      const cup = supercupHistory.find((entry) => entry.season === season)?.performance;
       return `<article class="timeline-card">
         <div><strong>${esc(seasonLabel(season))}</strong><span>${esc(standing.tier)} #${esc(standing.position)}</span></div>
         <p>${esc(standing.wins)}-${esc(standing.losses)} (${percent(standing.pct)}) | Diff ${esc(standing.diff)} | ${esc(standing.last10 || "")}</p>
         <p>Best player: ${best ? playerLink(season, String(best.url || "").split("/").pop(), best.name) + ` ${ratingChip("OVR", best.overall)}` : "Unavailable"}</p>
+        <p class="timeline-cup">Super Cup: ${supercupFinishBadge(cup)}</p>
         ${movementBadge(marker)}
       </article>`;
     }));
@@ -1060,7 +1125,8 @@
     const players = (data.players || []).filter((p) => fileStem(p.team) === id || p.teamLabel === teamName).sort((a, b) => (num(b.overall) || 0) - (num(a.overall) || 0));
     const teamStats = (data.teamStats.teams || []).find((row) => fileStem(row.file) === id) || {};
     const positionHistory = await teamPositionHistory(id);
-    const timelineHtml = await renderTeamTimeline(positionHistory, id);
+    const supercupHistory = await teamSupercupHistory(positionHistory, teamName);
+    const timelineHtml = await renderTeamTimeline(positionHistory, id, supercupHistory);
     const selectedMarker = standing.marker || "";
     $("#history-app").innerHTML = `
       <section class="history-hero profile-split">
@@ -1080,6 +1146,7 @@
         </div>
         <div>
           <section class="reference-section"><h2>Season Record</h2>${table(["Tier", "W-L", "PCT", "Home", "Road", "PF", "PA", "Diff"], [`<tr><td>${esc(standing.tier)}</td><td>${esc(standing.wins)}-${esc(standing.losses)}</td><td class="num">${esc(standing.pct)}</td><td>${esc(standing.home)}</td><td>${esc(standing.road)}</td><td class="num">${esc(standing.pf)}</td><td class="num">${esc(standing.pa)}</td><td class="num">${esc(standing.diff)}</td></tr>`])}</section>
+          <section class="reference-section"><h2>Super Cup History</h2>${renderTeamSupercupHistory(supercupHistory)}</section>
           <section class="reference-section"><h2>Awards</h2>${table(["Group", "Award", "Person"], (data.seasonAwards.sections || []).flatMap((section) => (section.awards || []).filter((award) => fileStem(award.teamFile) === id).map((award) => `<tr><td>${esc(section.title)}</td><td>${esc(award.award)}</td><td>${esc(award.person)}</td></tr>`)), "No season awards")}</section>
           <section class="reference-section"><h2>Youth Intake</h2>${renderYouthTeam(data, teamName, 5)}</section>
         </div>
@@ -1590,6 +1657,16 @@
     return `<span class="cup-team">${logo ? `<img src="${logo}" alt="">` : ""}<strong>${esc(team)}</strong></span>`;
   }
 
+  function supercupTeamHistoryLink(data, team) {
+    const archivedTeam = (data.teams || []).find((row) => sameTeamName(row.name || row.team, team))
+      || (data.standings.sections || []).flatMap((section) => section.teams || []).find((row) => sameTeamName(row.team, team));
+    const file = archivedTeam?.file || archivedTeam?.rosterFile || archivedTeam?.id || "";
+    const teamHtml = supercupTeam(team);
+    return file
+      ? `<a class="cup-team-link" href="team.htm?id=${encodeURIComponent(fileStem(file))}">${teamHtml}</a>`
+      : teamHtml;
+  }
+
   function supercupSeedMap(data) {
     const teams = data.supercupStandings.sections?.[0]?.teams || [];
     return new Map(teams.map((team, index) => [team.team, index + 1]));
@@ -1614,19 +1691,19 @@
       else grouped.push({ date: game.date, games: [game] });
     });
     const titles = grouped.length === 4
-      ? ["First Round", "Quarterfinals", "Semifinals", "Final"]
+      ? ["Round of 16", "Quarterfinals", "Semifinals", "Final"]
       : grouped.map((_round, index) => `Round ${index + 1}`);
     return grouped.map((round, index) => ({ ...round, title: titles[index] }));
   }
 
-  function supercupMatchCard(game, seeds) {
+  function supercupMatchCard(game, seeds, data) {
     const winner = game.winnerName;
     const teams = [
       { name: game.awayTeamName, score: game.awayScore },
       { name: game.homeTeamName, score: game.homeScore }
     ].sort((a, b) => (seeds.get(a.name) || 99) - (seeds.get(b.name) || 99));
     return `<article class="cup-match">
-      ${teams.map((team) => `<div class="cup-match-row ${team.name === winner ? "winner" : ""}"><span class="cup-seed">#${esc(seeds.get(team.name) || "-")}</span>${supercupTeam(team.name)}<strong class="cup-score">${esc(team.score)}</strong></div>`).join("")}
+      ${teams.map((team) => `<div class="cup-match-row ${team.name === winner ? "winner" : ""}"><span class="cup-seed">#${esc(seeds.get(team.name) || "-")}</span>${supercupTeamHistoryLink(data, team.name)}<strong class="cup-score">${esc(team.score)}</strong></div>`).join("")}
       <div class="cup-date">${esc(game.date)}</div>
     </article>`;
   }
@@ -1638,7 +1715,7 @@
     return `<div class="cup-bracket">${rounds.map((round) => `
       <section class="cup-round">
         <h3>${esc(round.title)}</h3>
-        <div class="cup-round-matches">${round.games.map((game) => supercupMatchCard(game, seeds)).join("")}</div>
+        <div class="cup-round-matches">${round.games.map((game) => supercupMatchCard(game, seeds, data)).join("")}</div>
       </section>`).join("")}</div>`;
   }
 

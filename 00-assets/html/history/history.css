@@ -836,6 +836,48 @@ select, .small-input, .filter-bar input {
   margin: 8px 0 0;
 }
 
+.cup-team-link {
+  color: inherit;
+  min-width: 0;
+  text-decoration: none;
+}
+
+.cup-team-link:hover {
+  text-decoration: underline;
+}
+
+.timeline-cup {
+  align-items: center;
+  display: flex;
+  gap: 6px;
+}
+
+.supercup-finish {
+  background: #edf2f7;
+  border: 1px solid #b9c5d4;
+  color: var(--hist-ink);
+  display: inline-flex;
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .06em;
+  line-height: 1;
+  padding: 4px 6px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.supercup-finish.is-champion {
+  background: linear-gradient(180deg, #ffe9a3, #e2b73f);
+  border-color: #9b6b00;
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, .72);
+  color: #4a3200;
+}
+
+.supercup-champion-row td {
+  background: #fff8dc;
+  border-color: #d7bd64;
+}
+
 .quick-link-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
   margin-bottom: 14px;

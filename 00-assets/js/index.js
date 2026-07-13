@@ -545,14 +545,50 @@
       .replace(/'/g, "&#39;");
   }
 
-  function parseScheduleDate(value) {
+  var scheduleDateOrder = "dmy";
+
+  function inferScheduleDateOrder(values) {
+    var order = "";
+
+    (values || []).some(function (value) {
+      var match = String(value || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+      var first;
+      var second;
+
+      if (!match) {
+        return false;
+      }
+
+      first = Number(match[1]);
+      second = Number(match[2]);
+      if (first > 12 && second <= 12) {
+        order = "dmy";
+        return true;
+      }
+      if (second > 12 && first <= 12) {
+        order = "mdy";
+        return true;
+      }
+      return false;
+    });
+
+    // Fast Break exports use day/month/year, including fully ambiguous datasets.
+    return order || "dmy";
+  }
+
+  function parseScheduleDate(value, dateOrder) {
     var match = String(value || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    var order = dateOrder || scheduleDateOrder;
+    var day;
+    var month;
 
     if (!match) {
       return 0;
     }
 
-    return new Date(Number(match[3]), Number(match[1]) - 1, Number(match[2])).getTime();
+    day = Number(order === "mdy" ? match[2] : match[1]);
+    month = Number(order === "mdy" ? match[1] : match[2]);
+    return new Date(Number(match[3]), month - 1, day).getTime();
   }
 
   function inferRegularSeasonSimNumber(period) {
@@ -573,23 +609,27 @@
     return "";
   }
 
-  function formatDayMonthYear(value) {
+  function formatDayMonthYear(value, dateOrder) {
     var match = String(value || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    var order = dateOrder || scheduleDateOrder;
 
     if (!match) {
       return "";
     }
 
     return [
-      String(match[2]).padStart(2, "0"),
-      String(match[1]).padStart(2, "0"),
+      String(order === "mdy" ? match[2] : match[1]).padStart(2, "0"),
+      String(order === "mdy" ? match[1] : match[2]).padStart(2, "0"),
       match[3]
     ].join("/");
   }
 
   function getLatestSimEndDate(results) {
+    var dateOrder = inferScheduleDateOrder((results || []).map(function (game) {
+      return game && game.date;
+    }));
     var latest = (results || []).reduce(function (best, game) {
-      var time = parseScheduleDate(game && game.date);
+      var time = parseScheduleDate(game && game.date, dateOrder);
 
       if (!time || (best && time <= best.time)) {
         return best;
@@ -601,7 +641,7 @@
       };
     }, null);
 
-    return latest ? formatDayMonthYear(latest.date) : "";
+    return latest ? formatDayMonthYear(latest.date, dateOrder) : "";
   }
 
   function updateLatestSimStatus() {
@@ -717,8 +757,8 @@
       return "";
     }
 
-    month = match[1].padStart(2, "0");
-    day = match[2].padStart(2, "0");
+    month = (scheduleDateOrder === "mdy" ? match[1] : match[2]).padStart(2, "0");
+    day = (scheduleDateOrder === "mdy" ? match[2] : match[1]).padStart(2, "0");
     return day + "/" + month;
   }
 
@@ -1036,6 +1076,14 @@
       .then(function (schedule) {
         var completedGames = [];
         var order = 0;
+        var scheduleDates = [];
+
+        (schedule.sections || []).forEach(function (section) {
+          (section.days || []).forEach(function (day) {
+            scheduleDates.push(day.date);
+          });
+        });
+        scheduleDateOrder = inferScheduleDateOrder(scheduleDates);
 
         (schedule.sections || []).forEach(function (section) {
           (section.days || []).forEach(function (day) {
