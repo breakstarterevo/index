@@ -206,6 +206,84 @@ Use these conventions:
 - do not mention JSON files, templates, prompts, databases, repo structure, source extraction, or any behind-the-scenes workflow in the visible article
 - writer persona guidance is internal only and should shape the prose without being named inside the article body
 
+## Reporting and anti-template writing rules
+
+An article should feel observed, argued, and edited rather than assembled from a
+data pack. Accurate facts are the starting point, not the finished voice.
+
+For every article:
+
+- decide what the writer genuinely finds surprising, suspicious, funny, worrying,
+  or difficult to explain before drafting
+- include at least one inconvenient detail that complicates the cleanest version
+  of the main argument
+- include at least one reasonable counterargument or uncertainty; answer it when
+  the evidence allows, and leave it unresolved when the evidence does not
+- use only the statistics that change the reader's understanding of the subject
+- interpret a number instead of restating every available field around it
+- make direct judgments when the evidence supports them; do not give every praise
+  sentence a matching caution merely to sound balanced
+- vary paragraph length, sentence length, transitions, and section rhythm
+- let some paragraphs perform different jobs: observation, argument, scene,
+  objection, comparison, punchline, or consequence
+- prefer precise basketball consequences over portable sports language that could
+  be pasted into an article about any team or player
+- preserve odd roster shapes, questionable decisions, awkward fits, and unresolved
+  questions instead of forcing every section into a clean thesis
+
+Do not build a whole article from repeated formulas such as:
+
+- `claim -> statistic -> balanced caveat -> tidy verdict`
+- `Fit / Risk / Bidders` for every player
+- `Reason / Concern / Next trigger` written with identical sentence construction
+- one paragraph of equal length for every ranked entry
+- a topic sentence that announces the purpose of every paragraph
+
+Shared board fields may remain for visual consistency, but the prose inside them
+must not repeat the same syntax. Do not use the same capsule formula for more than
+three consecutive entries. Change the analytical lens when the subject changes:
+contract pressure, roster geometry, age curve, role scarcity, tactical fit,
+developmental risk, or a specific club decision.
+
+Avoid stock rhetorical signposts as default transitions, including:
+
+- `the case is simple`
+- `that matters`
+- `the point is`
+- `the mistake is`
+- `make no mistake`
+- `it is not X; it is Y`
+- `options, not obligations`
+- `money is leverage only when...`
+- `read that again`
+- `stop pretending`
+
+A writer may use one of these only when it is genuinely natural to that writer's
+voice and has not already appeared elsewhere in the article. Catchphrases cannot
+substitute for an argument.
+
+### Draft and revision method
+
+Write in two passes:
+
+1. **Reporting draft**
+   - establish the claim, best evidence, awkward evidence, and unanswered question
+   - write freely without trying to make every paragraph publication-ready
+   - identify the one or two details a human columnist would keep talking about
+
+2. **Voice edit**
+   - cut generic transitions and sentences that could survive unchanged in another article
+   - break repeated paragraph and capsule patterns
+   - replace broad praise or criticism with a specific basketball consequence
+   - read the opening, one middle section, and the ending aloud for repeated rhythm
+   - remove one unnecessary statistic from any paragraph carrying three or more numbers
+   - check that the ending advances the argument instead of summarizing every section
+
+Do not aim for perfect polish in the first draft. Immediate, uniformly polished
+prose often becomes symmetrical, cautious, and generic. The second pass is where
+the assigned writer's preferences, irritations, humour, and judgment should become
+unmistakable.
+
 ## Power rankings rules
 
 Power rankings should read as a trust board, not a standings table. They should
@@ -327,7 +405,7 @@ Always note the chosen persona in the article plan before drafting.
 
 Use these rules to keep reports from sounding interchangeable:
 
-- `Damon Cross` should sound like argument first, evidence second. Use short, forceful paragraphs, direct judgments, rhetorical questions, and phrases like "stop pretending," "that matters," or "the case is simple." He can be funny, but the main engine is pressure and conviction.
+- `Damon Cross` should sound like argument first, evidence second. Use short, forceful paragraphs, direct judgments, selective rhetorical questions, and pressure framing. He can be funny, but the main engine is conviction. Do not manufacture his voice by repeating catchphrases such as "stop pretending," "that matters," or "the case is simple."
 - `Nina Vale` should sound like evidence first, judgment second. Use measured claims, explicit criteria, ranking logic, statistical qualifiers, and clean transitions. Avoid yelling, mockery, or theatrical phrasing; her authority comes from being precise.
 - `Graham Trent` should sound like a newspaper feature writer. Use polished sentences, dry understatement, scene-setting, and quiet irony. He should explain why a result feels meaningful without turning every paragraph into a take.
 - `Malik Sparks` should sound like controlled chaos with a basketball brain. Use punchlines, quick turns, exaggerated disbelief, and self-aware asides, but always land on a real tactical or statistical point before moving on.
@@ -360,6 +438,25 @@ Run this quick check before publishing any article:
 5. **A/B identity test**
    - Read any 2 random paragraphs without the byline.
    - If you cannot correctly guess the writer persona, revise for stronger voice markers.
+
+6. **Template test**
+   - Do three consecutive sections or capsules use the same sentence construction?
+   - Does each paragraph follow claim, statistic, caveat, and verdict in that order?
+   - If so, change the lens, length, or structure of at least one section.
+
+7. **Specificity test**
+   - Could any sentence be pasted unchanged into an article about another league?
+   - Replace portable phrases with a player, contract, roster, tactical, or race consequence.
+   - Confirm the article contains at least one awkward or surprising detail that resists a tidy summary.
+
+8. **Counterargument test**
+   - Does the article acknowledge the strongest reasonable objection to its main claim?
+   - Does the writer answer it honestly rather than inserting a token balanced sentence?
+
+9. **Rhythm test**
+   - Read the opening, a middle section, and the ending aloud.
+   - Break repeated transition words, identical paragraph lengths, and consecutive sentences with the same cadence.
+   - Confirm the ending adds a consequence, prediction, or unresolved pressure point rather than merely recapping.
 
 ## Team-biased reporter personas
 

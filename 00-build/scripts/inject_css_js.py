@@ -36,7 +36,7 @@ INDEX_JS_FILENAME = "00-assets/js/index.js"
 INDEX_JS_VERSION = "ticker-date-order-2"
 FAVICON_FILE = "00-build/database/favicon.png"
 MOBILE_INDEX_VIEWPORT_TAG = '<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">'
-SKIP_DIRS = {"00-build", "00-assets", "00-eslmedia"}
+SKIP_DIRS = {"00-build", "00-assets", "00-eslmedia", "00-SuperCup"}
 SKIP_FILENAMES = set()
 
 

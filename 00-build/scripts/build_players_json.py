@@ -1982,21 +1982,21 @@ def main():
     all_player_stats.sort(key=lambda player: player["name"])
     all_player_gamelogs.sort(key=lambda player: player["name"])
 
-    atomic_dump_json(PLAYERS_OUT, all_players, indent=4)
+    atomic_dump_json(PLAYERS_OUT, all_players, separators=(",", ":"))
 
     player_stats_data = {
         "source": "players/*.htm",
         "players": all_player_stats,
     }
 
-    atomic_dump_json(PLAYER_STATS_OUT, player_stats_data, indent=4)
+    atomic_dump_json(PLAYER_STATS_OUT, player_stats_data, separators=(",", ":"))
 
     player_gamelogs_data = {
         "source": "players/*.htm",
         "players": all_player_gamelogs,
     }
 
-    atomic_dump_json(PLAYER_GAMELOGS_OUT, player_gamelogs_data, indent=4)
+    atomic_dump_json(PLAYER_GAMELOGS_OUT, player_gamelogs_data, separators=(",", ":"))
 
     team_stats_data = {
         "source": "rosters/*.htm",
