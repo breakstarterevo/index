@@ -13,6 +13,7 @@
     depthCharts: toSitePath("00-assets/html/depthcharts.htm"),
     camps: toSitePath("00-assets/html/camps.htm"),
     faWarRoom: toSitePath("00-assets/html/fa-war-room.htm"),
+    playerDatabase: toSitePath("00-assets/html/player-database.htm"),
     playerCompare: toSitePath("00-assets/html/player-compare.htm"),
     tradeTool: toSitePath("00-assets/html/trade-tool.htm"),
     trainingCamp: toSitePath("00-assets/html/training-camp.htm"),

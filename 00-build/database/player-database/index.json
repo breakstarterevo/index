@@ -1,0 +1,33 @@
+{
+  "source": "ESL player database compact feeds",
+  "currentSnapshot": "current",
+  "latestCompletedSnapshot": "season-3",
+  "latestCompletedLabel": "1983-1984",
+  "currentHasStats": false,
+  "snapshots": [
+    {
+      "id": "current",
+      "label": "Current",
+      "path": "current.json",
+      "statYear": 1983
+    },
+    {
+      "id": "season-3",
+      "label": "1983-1984",
+      "path": "season-3.json",
+      "statYear": 1983
+    },
+    {
+      "id": "season-2",
+      "label": "1982-1983",
+      "path": "season-2.json",
+      "statYear": 1982
+    },
+    {
+      "id": "season-1",
+      "label": "1981-1982",
+      "path": "season-1.json",
+      "statYear": 1981
+    }
+  ]
+}

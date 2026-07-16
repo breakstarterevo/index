@@ -1147,6 +1147,7 @@
       { type: "Page", name: "League Dashboard", meta: "League overview", href: getCorePath("leagueDashboard", "00-assets/html/league%20dashboard.htm"), aliases: "home overview dashboard hub" },
       { type: "Page", name: "Free Agents", meta: "Classic free agent list", href: "freeagents.htm", aliases: "fa waiver unsigned players" },
       { type: "Page", name: "Waiver Database", meta: "Filterable player market", href: "waiverwire.htm", aliases: "waiver free agents fa database" },
+      { type: "Page", name: "Player Database", meta: "Season attributes, potential and stats", href: getCorePath("playerDatabase", "00-assets/html/player-database.htm"), aliases: "players ratings overall ovr potential pot regular advanced stats history seasons" },
       { type: "Page", name: "Trade Tool", meta: "Roster and salary tool", href: getCorePath("tradeTool", "00-assets/html/trade-tool.htm"), aliases: "trades assets salaries cap" },
       { type: "Page", name: "FA War Room", meta: "Free agency ratings", href: getCorePath("faWarRoom", "00-assets/html/fa-war-room.htm"), aliases: "free agency war room ratings" },
       { type: "Page", name: "Youth Intake", meta: "Youth intake database", href: getCorePath("youthIntake", "00-assets/html/youth-intake.htm"), aliases: "youth prospects intake juniors" },

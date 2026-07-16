@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.5, maximum-scale=5.0, user-scalable=yes">
+  <title>Player Database</title>
+  <link rel="icon" type="image/png" href="../../00-build/database/favicon.png">
+  <script src="../js/theme-preload.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script src="../js/core.js" defer></script>
+  <script src="../js/settings.js" defer></script>
+  <script src="../js/player-database.js" defer></script>
+  <style>
+    :root {
+      --db-navy: #111b36; --db-blue: #1d3666; --db-ink: #202124;
+      --db-muted: #5f6368; --db-paper: #f6f7f9; --db-card: #fff;
+      --db-line: #d8dee7; --db-soft: #eef2f6; --db-gold: #c7952d;
+      --db-font: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { background: var(--db-paper); color: var(--db-ink); font-family: var(--db-font); font-size: 14px; margin: 0; padding: .85rem; }
+    a { color: #1d4ed8; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    button, input, select { font: inherit; }
+    .db-shell { display: grid; gap: .75rem; max-width: min(1600px, calc(100vw - 1.7rem)); min-width: 0; width: 100%; }
+    .db-panel { background: var(--db-card); border: 1px solid var(--db-line); }
+    .db-button { align-items: center; background: #fff; border: 1px solid var(--db-line); color: var(--db-ink); cursor: pointer; display: inline-flex; font-size: .78rem; font-weight: 800; justify-content: center; min-height: 32px; padding: .35rem .55rem; text-decoration: none; }
+    .db-button:hover, .db-button:focus-visible { border-color: var(--db-navy); text-decoration: none; }
+    .db-panel { min-width: 0; padding: .7rem; }
+    .db-controls { display: grid; gap: .55rem; grid-template-columns: minmax(210px, 2fr) repeat(4, minmax(125px, 1fr)) auto; }
+    .db-field { display: grid; gap: .22rem; min-width: 0; }
+    .db-label { color: var(--db-muted); font-size: .7rem; font-weight: 900; letter-spacing: .05em; text-transform: uppercase; }
+    .db-input, .db-select { background: #fff; border: 1px solid var(--db-line); border-radius: 0; color: var(--db-ink); min-height: 36px; min-width: 0; padding: .42rem .5rem; width: 100%; }
+    .db-input:focus, .db-select:focus { border-color: var(--db-blue); outline: 2px solid rgba(29,54,102,.13); }
+    .db-reset-wrap { align-items: end; display: flex; gap: .35rem; }
+    .db-tabs { border-bottom: 1px solid var(--db-line); display: flex; gap: .2rem; margin-top: .7rem; overflow-x: auto; }
+    .db-tab { background: transparent; border: 0; border-bottom: 3px solid transparent; color: var(--db-muted); cursor: pointer; flex: 0 0 auto; font-size: .82rem; font-weight: 900; padding: .65rem .8rem .55rem; }
+    .db-tab[aria-selected="true"] { border-color: var(--db-navy); color: var(--db-navy); }
+    .db-tab:focus-visible { outline: 2px solid var(--db-blue); outline-offset: -2px; }
+    .db-meta { align-items: center; display: flex; flex-wrap: wrap; gap: .45rem .8rem; justify-content: space-between; min-height: 32px; padding: .55rem 0 .3rem; }
+    .db-summary { color: var(--db-muted); font-size: .8rem; font-weight: 700; }
+    .db-note { background: #fff7df; border-left: 3px solid var(--db-gold); color: #6b4c0b; font-size: .78rem; font-weight: 800; padding: .35rem .5rem; }
+    .db-table-wrap { border: 1px solid var(--db-line); height: 852px; max-height: 852px; overflow: auto; position: relative; }
+    .db-table { border-collapse: separate; border-radius: 0; border-spacing: 0; box-shadow: none; margin: 0; max-width: none !important; min-width: 100%; overflow: visible; table-layout: auto !important; width: max-content !important; }
+    .db-table th, .db-table td { background: var(--db-card); border-bottom: 1px solid var(--db-line); border-right: 1px solid #edf0f4; font-size: .78rem; height: 34px; padding: .34rem .42rem; text-align: right; white-space: nowrap; }
+    .db-table th { background: var(--db-navy); color: #fff; font-size: .67rem; font-weight: 900; letter-spacing: .035em; position: sticky; text-transform: uppercase; top: 0; z-index: 3; }
+    .db-table th button { align-items: center; background: transparent; border: 0; color: inherit; cursor: pointer; display: inline-flex; font: inherit; gap: .2rem; padding: 0; text-transform: inherit; }
+    .db-table th button:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+    .db-table th[aria-sort="ascending"] button::after { content: "▲"; font-size: .55rem; }
+    .db-table th[aria-sort="descending"] button::after { content: "▼"; font-size: .55rem; }
+    .db-table tbody tr:nth-child(even) td { background: #fafbfc; }
+    .db-table tbody tr:hover td { background: #eef4ff; }
+    .db-table .db-player { left: 0; max-width: 200px; min-width: 200px; position: sticky; text-align: left; width: 200px; z-index: 2; }
+    .db-table th.db-player { background: var(--db-navy); z-index: 5; }
+    .db-player-link { display: block; font-weight: 850; max-width: 182px; overflow: hidden; text-overflow: ellipsis; }
+    .db-rating, .db-grade { display: inline-flex; font-weight: 900; justify-content: center; min-width: 30px; padding: .15rem .3rem; }
+    .db-rating { border: 1px solid transparent; color: #fff; }
+    .db-rating.rating-purple { background: #7e22ce; border-color: #7e22ce; }
+    .db-rating.rating-blue { background: #1d4ed8; border-color: #1d4ed8; }
+    .db-rating.rating-green { background: #15803d; border-color: #15803d; }
+    .db-rating.rating-yellow { background: #facc15; border-color: #eab308; color: #1f2937; }
+    .db-rating.rating-orange { background: #f97316; border-color: #ea580c; }
+    .db-grade { background: var(--db-soft); }
+    .grade-a { background: #dcf3e3; color: #146b31; } .grade-b { background: #e4f0ff; color: #175ba8; }
+    .grade-c { background: #fff3cd; color: #765600; } .grade-d, .grade-e, .grade-f { background: #fde5e3; color: #a12a20; }
+    .db-empty, .db-error { color: var(--db-muted); padding: 2rem; text-align: center; }
+    .db-error { color: #a12a20; }
+    .db-pagination { align-items: center; display: flex; flex-wrap: wrap; gap: .45rem; justify-content: flex-end; padding-top: .65rem; }
+    .db-page-info { color: var(--db-muted); font-size: .78rem; font-weight: 750; min-width: 115px; text-align: center; }
+    .db-page-size { width: 78px; }
+    [hidden] { display: none !important; }
+    @media (max-width: 950px) { .db-controls { grid-template-columns: repeat(3, minmax(0, 1fr)); } .db-search { grid-column: span 2; } .db-table-wrap { height: auto; max-height: min(70vh, 760px); } }
+    @media (max-width: 620px) { body { padding: .45rem; } .db-shell { max-width: calc(100vw - .9rem); } .db-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); } .db-search { grid-column: 1 / -1; } .db-reset-wrap { align-items: stretch; } .db-reset-wrap .db-button { width: 100%; } }
+    html[data-theme="dark"] { --db-ink: #e8ebf2; --db-muted: #aeb6c5; --db-paper: #101521; --db-card: #182031; --db-line: #354057; --db-soft: #253049; }
+    html[data-theme="dark"] .db-button, html[data-theme="dark"] .db-input, html[data-theme="dark"] .db-select { background: #182031; color: var(--db-ink); }
+    html[data-theme="dark"] .db-table tbody tr:nth-child(even) td { background: #151d2c; }
+    html[data-theme="dark"] .db-table tbody tr:hover td { background: #202e48; }
+    html[data-theme="dark"] .db-note { background: #382e17; color: #f1d286; }
+  </style>
+</head>
+<body>
+  <main class="db-shell">
+    <section class="db-panel" aria-label="Player database">
+      <div class="db-controls">
+        <label class="db-field db-search"><span class="db-label">Player search</span><input class="db-input" id="playerSearch" type="search" autocomplete="off" placeholder="Search by player name"></label>
+        <label class="db-field"><span class="db-label">Status</span><select class="db-select" id="statusFilter"><option value="all">All statuses</option><option value="rostered">Rostered</option><option value="free_agent">Free agents</option></select></label>
+        <label class="db-field"><span class="db-label">Team</span><select class="db-select" id="teamFilter"><option value="all">All teams</option></select></label>
+        <label class="db-field"><span class="db-label">Position</span><select class="db-select" id="positionFilter"><option value="all">All positions</option></select></label>
+        <label class="db-field"><span class="db-label">Season</span><select class="db-select" id="seasonFilter"></select></label>
+        <div class="db-reset-wrap"><button class="db-button" id="exportCsv" type="button">Export CSV</button><button class="db-button" id="resetFilters" type="button">Reset</button></div>
+      </div>
+
+      <div class="db-tabs" role="tablist" aria-label="Player database views">
+        <button class="db-tab" id="tab-attributes" role="tab" aria-selected="true" aria-controls="databaseTable" data-tab="attributes" type="button">Attributes</button>
+        <button class="db-tab" id="tab-potential" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="potential" type="button">Potential</button>
+        <button class="db-tab" id="tab-contracts" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="contracts" type="button">Contracts</button>
+        <button class="db-tab" id="tab-regular" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="regular" type="button">Regular Stats</button>
+        <button class="db-tab" id="tab-advanced" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="advanced" type="button">Advanced Stats</button>
+      </div>
+
+      <div class="db-meta" aria-live="polite">
+        <div class="db-summary" id="resultSummary">Loading player database…</div>
+        <div class="db-note" id="seasonNote" hidden></div>
+      </div>
+      <div class="db-table-wrap" id="databaseTable" role="tabpanel" aria-labelledby="tab-attributes" tabindex="0">
+        <table class="db-table" id="playerTable"><thead></thead><tbody><tr><td class="db-empty">Loading…</td></tr></tbody></table>
+      </div>
+      <div class="db-pagination">
+        <label class="db-field"><span class="db-label">Rows</span><select class="db-select db-page-size" id="pageSize"><option value="50">50</option><option value="100" selected>100</option><option value="200">200</option></select></label>
+        <button class="db-button" id="previousPage" type="button">Previous</button>
+        <span class="db-page-info" id="pageInfo">Page 1 of 1</span>
+        <button class="db-button" id="nextPage" type="button">Next</button>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
