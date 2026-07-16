@@ -26,58 +26,58 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
-  // 1984 offseason - after FA1 package
+  // 1984 offseason - after FA2 package
   {
-    file: "articles/1984_offseason_board_after_fa1.html",
-    title: "After FA1, Alex English Still Owns The Offseason Board",
+    file: "articles/1984_offseason_board_after_fa2.html",
+    title: "After FA2, Rickey Green Controls A Smaller Offseason Board",
     category: "Rankings",
     desk: "Analysis",
-    sortKey: "2026-07-13-04",
+    sortKey: "2026-07-16-04",
     tag: "Offseason Board",
     author: "Nina Vale",
-    meta: "1984 Offseason - After FA1",
-    blurb: "Alex English leads the post-FA1 board, with Purvis Short and Greg Ballard defining the next tier of a market still rich in wings.",
-    teams: ["Aston Villa", "Atletico Madrid", "Crystal Palace", "Inter Milan"],
-    playerTags: ["Alex English", "Purvis Short", "Greg Ballard", "Kyle Macy", "Artis Gilmore", "James Donaldson", "Rolando Blackman", "Dennis Johnson", "Rickey Green", "Robert Reid"]
+    meta: "1984 Offseason - After FA2",
+    blurb: "Rickey Green leads a thinner post-FA2 board, with Larry Smith's upside and Billy Knight's wing scoring shaping the next market wave.",
+    teams: ["Aston Villa", "Chelsea", "Crystal Palace", "Sheffield United", "Sporting CP"],
+    playerTags: ["Rickey Green", "Larry Smith", "Billy Knight", "Mike Dunleavy", "James Bailey", "Mike McGee", "Al Wood", "Mike O'Koren", "Michael Wiley", "Kent Benson"]
   },
   {
-    file: "articles/1984_cap_space_power_rankings_after_fa1.html",
-    title: "After FA1 Cap Space Power Rankings: Atletico Can Dictate The Room",
+    file: "articles/1984_cap_space_power_rankings_after_fa2.html",
+    title: "After FA2 Cap Space Power Rankings: Aston Villa Owns The Leverage",
     category: "Rankings",
     desk: "Analysis",
-    sortKey: "2026-07-13-03",
+    sortKey: "2026-07-16-03",
     tag: "Cap Rankings",
     author: "Nina Vale",
-    meta: "1984 Offseason - After FA1",
-    blurb: "Atletico Madrid tops the post-FA1 leverage board ahead of Aston Villa, Inter Milan, Juventus and Crystal Palace.",
-    teams: ["AC Milan", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Crystal Palace", "Inter Milan", "Juventus", "Manchester City", "Marseille", "Real Madrid", "Sporting CP", "Valencia"],
+    meta: "1984 Offseason - After FA2",
+    blurb: "Aston Villa's $31.97 million in room sets the post-FA2 leverage board, while Juventus, Sheffield United and Sporting CP retain meaningful choices.",
+    teams: ["Aston Villa", "Atletico Madrid", "Chelsea", "Inter Milan", "Juventus", "Real Madrid", "Sheffield United", "Sporting CP", "Valencia"],
     playerTags: []
   },
   {
-    file: "articles/1984_fa1_winners_and_losers.html",
-    title: "FA1 Winners And Losers: PSG Bought Certainty, The Market Kept Its Teeth",
+    file: "articles/1984_fa2_winners_and_losers.html",
+    title: "FA2 Winners And Losers: Inter Bought The Middle, Villa Kept Waiting",
     category: "Analysis",
     desk: "Analysis",
-    sortKey: "2026-07-13-02",
-    tag: "FA1 Verdict",
+    sortKey: "2026-07-16-02",
+    tag: "FA2 Verdict",
     author: "Damon Cross",
-    meta: "1984 Offseason - After FA1",
-    blurb: "PSG, Chelsea, AC Milan and Brighton moved decisively while the league's cap-rich clubs left their biggest questions for the next wave.",
-    teams: ["AC Milan", "Aston Villa", "Atletico Madrid", "Brighton", "Chelsea", "Inter Milan", "Paris Saint-Germain"],
-    playerTags: ["Mike Gminski", "Dan Roundfield", "Jim Paxson", "Jack Sikma", "Norm Nixon", "Joe Barry Carroll", "Bill Laimbeer", "Larry Bird", "George Gervin", "Kiki Vandeweghe", "Alex English", "Purvis Short", "Greg Ballard", "Kyle Macy", "Artis Gilmore", "James Donaldson", "Rickey Green"]
+    meta: "1984 Offseason - After FA2",
+    blurb: "Inter Milan, Crystal Palace and Brighton converted FA2 into useful depth, while Aston Villa's untouched room now comes with a thinner market.",
+    teams: ["AC Milan", "Aston Villa", "Atletico Madrid", "Crystal Palace", "Inter Milan", "Paris Saint-Germain", "Real Madrid"],
+    playerTags: ["Alex English", "Artis Gilmore", "Bill Laimbeer", "Greg Ballard", "James Donaldson", "Joe Barry Carroll", "Julius Erving", "Kyle Macy", "Purvis Short", "Rickey Green", "Robert Reid"]
   },
   {
-    file: "articles/1984_best_remaining_free_agents_after_fa1.html",
-    title: "Best Remaining Free Agents After FA1: English Sets The Price",
+    file: "articles/1984_best_remaining_free_agents_after_fa2.html",
+    title: "Best Remaining Free Agents After FA2: Rickey Green Sets The Price",
     category: "Scouting",
     desk: "Scouting",
-    sortKey: "2026-07-13-01",
+    sortKey: "2026-07-16-01",
     tag: "Market Board",
     author: "Nina Vale",
-    meta: "1984 Offseason - After FA1",
-    blurb: "Alex English, Purvis Short, Greg Ballard, Kyle Macy and Artis Gilmore lead a remaining market that is strong but increasingly concentrated.",
-    teams: ["Aston Villa", "Atletico Madrid", "Crystal Palace", "Inter Milan", "Marseille", "Real Madrid", "Valencia"],
-    playerTags: ["Alex English", "Purvis Short", "Greg Ballard", "Rolando Blackman", "Kyle Macy", "Rickey Green", "Gus Williams", "Artis Gilmore", "James Donaldson", "Kareem Abdul-Jabbar"]
+    meta: "1984 Offseason - After FA2",
+    blurb: "Rickey Green is the last clear starter atop a remaining market built around Larry Smith's upside, Billy Knight's scoring and targeted depth.",
+    teams: ["Aston Villa", "Chelsea", "Crystal Palace", "Sheffield United", "Sporting CP"],
+    playerTags: ["Rickey Green", "Larry Smith", "Billy Knight", "Mike Dunleavy", "James Bailey", "Mike McGee", "Al Wood", "Mike O'Koren", "Michael Wiley", "Kent Benson", "Ricky Sobers", "Johnny Davis"]
   },
   // Season 3 Sim 5 March package
   {
