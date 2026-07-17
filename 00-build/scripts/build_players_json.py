@@ -1222,12 +1222,12 @@ def build_stat_team_lookup(players, player_stats):
         for player in players
         if normalize_name(player.get("name", ""))
     }
-    lookup = {}
+    candidates = {}
 
     for stats_entry in player_stats:
         file_key = normalize_player_file(stats_entry.get("url", ""))
         name_key = normalize_name(stats_entry.get("name", ""))
-        player = players_by_file.get(file_key) or players_by_name.get(name_key)
+        player = players_by_file.get(file_key) if file_key else players_by_name.get(name_key)
         stat_team = latest_stat_team(stats_entry)
 
         if not player or not stat_team:
@@ -1235,10 +1235,24 @@ def build_stat_team_lookup(players, player_stats):
         if normalize_name(player.get("team")) in {"fa", "draft"} or normalize_name(player.get("teamLabel")) in {"fa", "freeagent", "freeagents", "draft"}:
             continue
 
-        lookup.setdefault(normalize_name(stat_team), {
-            "lastTeamId": player.get("team", "") or "",
-            "lastTeam": player.get("teamLabel", "") or player.get("team", "") or "",
-        })
+        stat_team_key = normalize_name(stat_team)
+        candidate = (
+            player.get("team", "") or "",
+            player.get("teamLabel", "") or player.get("team", "") or "",
+        )
+        team_counts = candidates.setdefault(stat_team_key, {})
+        team_counts[candidate] = team_counts.get(candidate, 0) + 1
+
+    lookup = {}
+    for stat_team_key, team_counts in candidates.items():
+        team_id, team_label = min(
+            team_counts,
+            key=lambda candidate: (-team_counts[candidate], candidate[0], candidate[1]),
+        )
+        lookup[stat_team_key] = {
+            "lastTeamId": team_id,
+            "lastTeam": team_label,
+        }
 
     return lookup
 
@@ -1263,7 +1277,7 @@ def build_last_team_lookup(players, player_stats=None, stat_team_lookup=None):
         name_key = normalize_name(player.get("name", ""))
         team = player.get("team", "")
         team_label = player.get("teamLabel", "")
-        stats_entry = stats_by_file.get(file_key) or stats_by_name.get(name_key)
+        stats_entry = stats_by_file.get(file_key) if file_key else stats_by_name.get(name_key)
         stat_team = latest_stat_team(stats_entry) if stats_entry else ""
 
         if normalize_name(team) in {"fa", "draft"} or normalize_name(team_label) in {"fa", "freeagent", "freeagents", "draft"}:
@@ -1297,7 +1311,7 @@ def attach_last_team(players, last_team_lookup):
     for player in players:
         file_key = normalize_player_file(player.get("url", ""))
         name_key = normalize_name(player.get("name", ""))
-        entry = last_team_lookup.get(file_key) or last_team_lookup.get(name_key)
+        entry = last_team_lookup.get(file_key) if file_key else last_team_lookup.get(name_key)
 
         if entry:
             player["lastTeamId"] = entry.get("lastTeamId", "")
@@ -1344,7 +1358,9 @@ def parse_free_agents(html, ratings, last_team_lookup=None):
         player_url = normalize_schedule_url(player_link.group(2))
         player_file = player_url.split("/")[-1]
         rating_data = find_rating(ratings, name, player_file)
-        last_team = last_team_lookup.get(normalize_player_file(player_file)) or last_team_lookup.get(normalize_name(name)) or {}
+        file_key = normalize_player_file(player_file)
+        last_team = last_team_lookup.get(file_key) if file_key else last_team_lookup.get(normalize_name(name))
+        last_team = last_team or {}
         player_number = parse_numeric_value(cells[0])
         cur_color_match = re.search(r"__COLOR__([#A-Za-z0-9]+)__", cells[6], re.IGNORECASE)
         fut_color_match = re.search(r"__COLOR__([#A-Za-z0-9]+)__", cells[7], re.IGNORECASE)

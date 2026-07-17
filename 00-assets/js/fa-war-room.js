@@ -998,7 +998,7 @@
     }).join("");
     byId("fa-salary").value = bid ? bid.salary : "Min";
     byId("fa-years").value = bid ? bid.years : "1";
-    byId("fa-bird").checked = bid ? !!bid.bird : isBirdEligible(player);
+    byId("fa-bird").checked = bid ? !!bid.bird : false;
     updateContractControls();
     byId("fa-raise").value = formatRaise(bid ? bid.raise : "0.0%");
     byId("fa-notes").value = bid ? bid.notes || "" : "";

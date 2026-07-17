@@ -1,27 +1,4 @@
 {
     "source": "injuries.htm",
-    "injuries": [
-        {
-            "pos": "SF",
-            "name": "Brian Winters",
-            "url": "",
-            "team": "roster21",
-            "teamName": "Paris Saint-Germain",
-            "rosterUrl": "./rosters/roster21.htm",
-            "length": "117",
-            "injury": "Ruptured Achilles",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "SG",
-            "name": "Kiki Vandeweghe",
-            "url": "",
-            "team": "roster10",
-            "teamName": "Brighton",
-            "rosterUrl": "./rosters/roster10.htm",
-            "length": "1",
-            "injury": "Broken Leg",
-            "rowClass": "row2"
-        }
-    ]
+    "injuries": []
 }
