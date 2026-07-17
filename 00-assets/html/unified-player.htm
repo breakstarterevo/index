@@ -1674,10 +1674,10 @@
       const nameKey = normalizeIdentityName(player.name);
       const height = clean(player.ht || player.height);
       const appearances = Array.isArray(identity.appearances) ? identity.appearances : [];
-      if (playerFile && appearances.some((row) => clean(row.playerFile).toLowerCase() === playerFile.toLowerCase())) return true;
-      if (nameKey && normalizeIdentityName(identity.name) === nameKey) {
-        return Boolean(identity.height && height && clean(identity.height) === height);
-      }
+      const nameMatches = nameKey && normalizeIdentityName(identity.name) === nameKey;
+      const heightMatches = identity.height && height && clean(identity.height) === height;
+      if (nameMatches && heightMatches) return true;
+      if (nameMatches && playerFile && appearances.some((row) => clean(row.playerFile).toLowerCase() === playerFile.toLowerCase())) return true;
       return false;
     }
 
@@ -2543,7 +2543,8 @@
         }
         let playerHistoryData = null;
         try {
-          const playerHistoryRes = await fetch(DATA_URLS.playerHistory);
+          const playerHistoryUrl = `${DATA_URLS.playerHistory}?v=${Date.now()}`;
+          const playerHistoryRes = await fetch(playerHistoryUrl, { cache: "no-store" });
           if (playerHistoryRes.ok) {
             playerHistoryData = await playerHistoryRes.json();
           }
