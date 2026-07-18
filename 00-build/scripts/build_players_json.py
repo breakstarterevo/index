@@ -1171,6 +1171,13 @@ def parse_contract_table(html, team=None, team_label=None):
 def attach_contracts(players, contract_entries, contract_years):
     by_file = {}
     by_name = {}
+    duplicate_contract_names = set()
+    player_name_counts = {}
+
+    for player in players:
+        name_key = normalize_name(player.get("name", ""))
+        if name_key:
+            player_name_counts[name_key] = player_name_counts.get(name_key, 0) + 1
 
     for entry in contract_entries:
         file_key = entry.get("file", "")
@@ -1178,7 +1185,13 @@ def attach_contracts(players, contract_entries, contract_years):
         if file_key:
             by_file[file_key] = entry
         if name_key:
-            by_name.setdefault(name_key, entry)
+            if name_key in by_name:
+                duplicate_contract_names.add(name_key)
+            else:
+                by_name[name_key] = entry
+
+    for name_key in duplicate_contract_names:
+        by_name.pop(name_key, None)
 
     attached = 0
     default_contracts = zero_contracts(contract_years)
@@ -1186,7 +1199,9 @@ def attach_contracts(players, contract_entries, contract_years):
     for player in players:
         file_key = normalize_player_file(player.get("url", ""))
         name_key = normalize_name(player.get("name", ""))
-        entry = by_file.get(file_key) or by_name.get(name_key)
+        entry = by_file.get(file_key)
+        if not entry and player_name_counts.get(name_key) == 1:
+            entry = by_name.get(name_key)
         if entry:
             player["contracts"] = entry.get("contracts", zero_contracts(contract_years))
             if entry.get("birdYears"):

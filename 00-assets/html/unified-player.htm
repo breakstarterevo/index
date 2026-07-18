@@ -158,6 +158,12 @@
       flex-wrap: wrap;
       line-height: 1.35;
     }
+    .player-meta-link {
+      color: var(--team-color);
+      font-weight: 800;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
     .tag-row,
     .skill-row {
       display: flex;
@@ -1316,6 +1322,13 @@
       return id ? `${id}.htm` : "";
     }
 
+    function basketballReferenceHref(player) {
+      const playerId = player?.playerId || playerIdFromUrl(player?.url);
+      const sourceId = String(state.playerPhotos?.[playerId]?.sourceId || "").toLowerCase();
+      if (!/^[a-z]{5,8}\d{2}$/.test(sourceId)) return "";
+      return `https://www.basketball-reference.com/players/${sourceId[0]}/${sourceId}.html`;
+    }
+
     function normalizeIdentityName(value) {
       return clean(value).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
     }
@@ -2009,7 +2022,11 @@
         p.experience
       ].filter(Boolean);
       document.getElementById("playerName").textContent = p.name || "Unknown Player";
-      document.getElementById("playerMeta").innerHTML = meta.map((item) => `<span>${item}</span>`).join("");
+      const bbrefHref = basketballReferenceHref(p);
+      document.getElementById("playerMeta").innerHTML = [
+        ...meta.map((item) => `<span>${item}</span>`),
+        bbrefHref ? `<a class="player-meta-link" href="${bbrefHref}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHtml(p.name)} on Basketball Reference">BBRef</a>` : ""
+      ].filter(Boolean).join("");
       document.title = `${p.name || "Unified Player"} - Unified Player`;
       document.getElementById("heroPills").innerHTML = [
         p.overall ? `<span class="rating-chip primary ${ratingTierClass(p.overall)}">OVR ${p.overall}</span>` : "",
@@ -2068,14 +2085,15 @@
     function renderPlayerDetails() {
       const p = state.current;
       const contracts = Array.isArray(p.contracts) ? p.contracts : [];
+      const hasActiveContract = contracts.some((contract) => Number(contract.salary) > 0);
       const birdYears = Number.isFinite(Number(p.birdYears)) ? Number(p.birdYears) : 0;
       const contractNote = document.getElementById("contractNote");
       if (contractNote) {
         contractNote.textContent = `Bird Years: ${birdYears}`;
       }
-      document.getElementById("contractTable").innerHTML = contracts.length
+      document.getElementById("contractTable").innerHTML = hasActiveContract
         ? `<tbody>${contracts.map((contract) => `<tr><th>${fmt(contract.year)}</th><td>${fmt(contract.salaryText)}</td></tr>`).join("")}</tbody>`
-        : `<tbody><tr><th>Contract</th><td>$0</td></tr></tbody>`;
+        : `<tbody><tr><th>Status</th><td>Free Agent</td></tr></tbody>`;
 
       const potentials = p.potentials || {};
       let personalityRows = "";
