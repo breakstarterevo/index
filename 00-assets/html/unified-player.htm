@@ -78,7 +78,7 @@
     .btn-link:hover { border-color: var(--team-color); text-decoration: none; }
     .player-header {
       display: grid;
-      grid-template-columns: 78px minmax(0, 1fr) auto;
+      grid-template-columns: 88px minmax(0, 1fr) auto;
       gap: 0.8rem;
       align-items: center;
       border: 1px solid var(--line);
@@ -98,7 +98,8 @@
       font-size: 0.7rem;
     }
     .logo,
-    .logo-fallback {
+    .logo-fallback,
+    .player-portrait {
       width: 64px;
       height: 64px;
       border-radius: 4px;
@@ -106,6 +107,30 @@
       background: var(--soft);
     }
     .logo { object-fit: cover; }
+    .player-portrait {
+      width: 72px;
+      height: 96px;
+      object-fit: cover;
+      object-position: center top;
+      background: var(--soft);
+    }
+    .player-identity-art {
+      position: relative;
+      width: 72px;
+      height: 96px;
+    }
+    .player-team-badge {
+      position: absolute;
+      right: -7px;
+      bottom: -5px;
+      width: 32px;
+      height: 32px;
+      border: 2px solid #fff;
+      outline: 1px solid var(--line);
+      border-radius: 3px;
+      background: #fff;
+      object-fit: cover;
+    }
     .logo-fallback {
       display: grid;
       place-items: center;
@@ -1164,7 +1189,8 @@
       playerGamelogs: "../../00-build/database/player_gamelogs.json",
       injuries: "../../00-build/database/injuries.json",
       standings: "../../00-build/database/standings.json",
-      playerHistory: "../../00-build/history/player_index.json"
+      playerHistory: "../../00-build/history/player_index.json",
+      playerPhotos: "../../00-build/database/player_photos.json"
     };
     const PLAYER_VIEWPORT = "width=device-width, initial-scale=1.0";
     let parentViewportMeta = null;
@@ -1243,6 +1269,7 @@
       injuries: [],
       standings: [],
       playerHistory: null,
+      playerPhotos: {},
       teamDirectory: [],
       current: null,
       currentStats: null,
@@ -1797,6 +1824,38 @@
 
     function renderLogo(teamName) {
       const slot = document.getElementById("teamLogoSlot");
+      slot.innerHTML = "";
+      const playerId = state.current?.playerId || playerIdFromUrl(state.current?.url);
+      const photo = state.playerPhotos?.[playerId];
+      if (photo?.url) {
+        const art = document.createElement("div");
+        art.className = "player-identity-art";
+        const portrait = document.createElement("img");
+        portrait.className = "player-portrait";
+        portrait.alt = `${state.current?.name || "Player"} headshot`;
+        portrait.src = photo.url;
+        portrait.decoding = "async";
+        portrait.referrerPolicy = "no-referrer";
+        portrait.addEventListener("error", () => renderTeamLogo(slot, teamName));
+        art.appendChild(portrait);
+        renderTeamBadge(art, teamName);
+        slot.appendChild(art);
+        return;
+      }
+      renderTeamLogo(slot, teamName);
+    }
+
+    function renderTeamBadge(holder, teamName) {
+      if (!teamName || ["FA", "Draft"].includes(teamName)) return;
+      const badge = document.createElement("img");
+      badge.className = "player-team-badge";
+      badge.alt = `${teamName} logo`;
+      badge.src = `../../00-assets/photos/${TEAM_LOGOS[teamName] || (slugify(teamName) + ".jpg")}`;
+      badge.addEventListener("error", () => badge.remove());
+      holder.appendChild(badge);
+    }
+
+    function renderTeamLogo(slot, teamName) {
       slot.innerHTML = "";
       if (!teamName || ["FA", "Draft"].includes(teamName)) {
         const fallback = document.createElement("div");
@@ -2551,12 +2610,22 @@
         } catch (error) {
           playerHistoryData = null;
         }
+        let playerPhotosData = { players: {} };
+        try {
+          const playerPhotosRes = await fetch(DATA_URLS.playerPhotos);
+          if (playerPhotosRes.ok) {
+            playerPhotosData = await playerPhotosRes.json();
+          }
+        } catch (error) {
+          playerPhotosData = { players: {} };
+        }
         state.players = Array.isArray(playersData) ? playersData : [];
         state.playerStats = Array.isArray(playerStatsData.players) ? playerStatsData.players : [];
         state.playerGamelogs = Array.isArray(playerGamelogsData.players) ? playerGamelogsData.players : [];
         state.injuries = Array.isArray(injuriesData.injuries) ? injuriesData.injuries : [];
         state.standings = Array.isArray(standingsData.sections) ? standingsData.sections : [];
         state.playerHistory = playerHistoryData;
+        state.playerPhotos = playerPhotosData?.players || {};
         state.teamDirectory = window.UnifiedRosterDataService.buildTeamDirectory(state.standings);
         state.current = findCurrentPlayer();
         if (!state.current) throw new Error("No player found");

@@ -16,6 +16,7 @@ VERBOSE = "--verbose" in sys.argv
 
 SCRIPTS = [
     (os.path.join(BUILD_DIR, "build_players_json.py"), "Building database JSON files"),
+    (os.path.join(BUILD_DIR, "build_player_photos_json.py"), "Building player photo mapping"),
     (os.path.join(BUILD_DIR, "build_player_database_json.py"), "Building season-aware player database feeds"),
     (os.path.join(BUILD_DIR, "build_discord_json.py"), "Building compact Discord lookup JSON files"),
     (os.path.join(BUILD_DIR, "build_youth_intake_json.py"), "Building youth intake JSON from spreadsheet"),

@@ -29,16 +29,20 @@ That script resolves Python, then runs:
 `build.py` currently runs these steps in order:
 
 1. `build_players_json.py`
-2. `build_youth_intake_json.py`
-3. `build_monthly_jsons.py`
-4. `build_media_package_prompts.py`
-5. `ensure_settings_page.py`
-6. `inject_css_js.py`
-7. `validate_media_site.py`
+2. `build_player_photos_json.py`
+3. `build_player_database_json.py`
+4. `build_discord_json.py`
+5. `build_youth_intake_json.py`
+6. `build_monthly_jsons.py`
+7. `build_media_package_prompts.py`
+8. `ensure_settings_page.py`
+9. `inject_css_js.py`
+10. `validate_media_site.py`
 
 So the build now does more than just JSON generation and CSS injection. It also:
 
 - builds youth-intake data
+- builds the compact player-headshot mapping from cached Basketball GM sources
 - builds monthly editorial context JSON
 - builds the monthly media prompt package
 - ensures the browser-only settings page exists
@@ -56,6 +60,7 @@ Important files there include:
 
 ```text
 players.json
+player_photos.json
 player_stats.json
 player_gamelogs.json
 teams.json
@@ -68,6 +73,19 @@ injuries.json
 freeagents.json
 leaders.json
 awards.json
+```
+
+Player-photo source snapshots are deliberately not refreshed during an ordinary
+build. To update them from the upstream Basketball GM files, run:
+
+```text
+python 00-build/scripts/build_player_photos_json.py --refresh
+```
+
+Manual identity corrections live in:
+
+```text
+00-assets/data/player-photo-overrides.json
 ```
 
 Monthly editorial/supporting output lives in:

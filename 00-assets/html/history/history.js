@@ -93,23 +93,41 @@
     return `${Math.floor(inches / 12)}-${inches % 12}`;
   }
 
-  function youthPlayerLink(player, season) {
+  function youthPlayerIdentity(player, season) {
     const name = String(player?.name || "").trim();
-    if (!name) return "";
+    if (!name) return null;
     const playerId = String(player?.playerId || "").trim();
     const archivedKey = playerId && season ? state.playerIndex?.seasonMaps?.[season]?.[`${playerId}.htm`] : "";
     if (archivedKey) {
-      return `<a href="player.htm?key=${encodeURIComponent(archivedKey)}">${esc(name)}</a>`;
+      return (state.playerIndex?.identities || []).find((identity) => identity.key === archivedKey) || null;
     }
     const height = heightTextFromInches(player.Height);
     const candidates = (state.playerIndex?.identities || []).filter((identity) => {
       if (String(identity.name || "").toLowerCase() !== name.toLowerCase()) return false;
       return !height || String(identity.height || "") === height;
     });
-    if (candidates.length === 1) {
-      return `<a href="player.htm?key=${encodeURIComponent(candidates[0].key)}">${esc(name)}</a>`;
-    }
+    return candidates.length === 1 ? candidates[0] : null;
+  }
+
+  function youthPlayerLink(player, season) {
+    const name = String(player?.name || "").trim();
+    if (!name) return "";
+    const identity = youthPlayerIdentity(player, season);
+    if (identity) return `<a href="player.htm?key=${encodeURIComponent(identity.key)}">${esc(name)}</a>`;
     return esc(name);
+  }
+
+  function youthPeakRatings(player, season) {
+    const appearances = youthPlayerIdentity(player, season)?.appearances || [];
+    const maximum = (field) => appearances.reduce((peak, appearance) => {
+      const value = num(appearance[field]);
+      return value === null ? peak : Math.max(peak ?? value, value);
+    }, null);
+    const peakAppearance = appearances.reduce((peak, appearance) => {
+      const value = num(appearance.overall);
+      return value !== null && (peak === null || value > num(peak.overall)) ? appearance : peak;
+    }, null);
+    return { overall: maximum("overall"), potential: maximum("potential"), season: peakAppearance?.season || "" };
   }
 
   async function fetchJson(path, fallback) {
@@ -1166,18 +1184,20 @@
   function renderYouthTeam(data, teamName, limit = Infinity) {
     const youthTeam = (data.youth.teams || []).find((row) => row.team === teamName);
     const players = (youthTeam?.intakePlayers || []).slice(0, limit);
-    return table(["Player", "Pos", "Age", "College", "OVR", "POT"], players.map((p) => {
+    return table(["Player", "Pos", "Age", "College", "OVR", "POT", "Peak OVR", "Peak POT", "Peak Season"], players.map((p) => {
       const ratedPlayer = youthRatedPlayer(data, p);
-      return `<tr><td>${youthPlayerLink(p, data.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td></tr>`;
+      const peak = youthPeakRatings(p, data.season);
+      return `<tr><td>${youthPlayerLink(p, data.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td><td>${ratingChip("OVR", peak.overall)}</td><td>${ratingChip("POT", peak.potential)}</td><td>${esc(peak.season ? seasonLabel(peak.season) : "-")}</td></tr>`;
     }), "No archived youth intake");
   }
 
   function renderYouthAllTeams(data) {
     const rows = (data.youth.teams || []).flatMap((team) => (team.intakePlayers || []).map((p) => {
       const ratedPlayer = youthRatedPlayer(data, p);
-      return `<tr><td>${esc(team.team)}</td><td>${youthPlayerLink(p, data.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td></tr>`;
+      const peak = youthPeakRatings(p, data.season);
+      return `<tr><td>${esc(team.team)}</td><td>${youthPlayerLink(p, data.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td><td>${ratingChip("OVR", peak.overall)}</td><td>${ratingChip("POT", peak.potential)}</td><td>${esc(peak.season ? seasonLabel(peak.season) : "-")}</td></tr>`;
     }));
-    return table(["Team", "Player", "Pos", "Age", "College", "OVR", "POT"], rows, "No archived youth intake");
+    return table(["Team", "Player", "Pos", "Age", "College", "OVR", "POT", "Peak OVR", "Peak POT", "Peak Season"], rows, "No archived youth intake");
   }
 
   function renderYouthAllSeasons(allData, selectedTeam) {
@@ -1185,9 +1205,10 @@
       .filter((team) => selectedTeam === "all" || team.team === selectedTeam)
       .flatMap((team) => (team.intakePlayers || []).map((p) => {
         const ratedPlayer = youthRatedPlayer(seasonData, p);
-        return `<tr><td>${esc(seasonLabel(seasonData.season))}</td><td>${esc(team.team)}</td><td>${youthPlayerLink(p, seasonData.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td></tr>`;
+        const peak = youthPeakRatings(p, seasonData.season);
+        return `<tr><td>${esc(seasonLabel(seasonData.season))}</td><td>${esc(team.team)}</td><td>${youthPlayerLink(p, seasonData.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td><td>${ratingChip("OVR", peak.overall)}</td><td>${ratingChip("POT", peak.potential)}</td><td>${esc(peak.season ? seasonLabel(peak.season) : "-")}</td></tr>`;
       })));
-    return table(["Season", "Team", "Player", "Pos", "Age", "College", "OVR", "POT"], rows, "No archived youth intake");
+    return table(["Season", "Team", "Player", "Pos", "Age", "College", "OVR", "POT", "Peak OVR", "Peak POT", "Peak Season"], rows, "No archived youth intake");
   }
 
   function futurePoolNumber(value) {
@@ -1814,7 +1835,10 @@
     const selectedTeam = params().get("team") || "all";
     const team = teams.find((row) => row.team === selectedTeam) || {};
     const visibleTeams = selectedTeam === "all" ? teams : teams.filter((row) => row.team === selectedTeam);
-    const franchiseRows = allData.flatMap((seasonData) => (seasonData.youth.teams || []).filter((row) => selectedTeam === "all" || row.team === selectedTeam).flatMap((row) => (row.intakePlayers || []).map((p) => `<tr><td>${esc(seasonLabel(seasonData.season))}</td><td>${esc(row.team)}</td><td>${youthPlayerLink(p, seasonData.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td></tr>`)));
+    const franchiseRows = allData.flatMap((seasonData) => (seasonData.youth.teams || []).filter((row) => selectedTeam === "all" || row.team === selectedTeam).flatMap((row) => (row.intakePlayers || []).map((p) => {
+      const peak = youthPeakRatings(p, seasonData.season);
+      return `<tr><td>${esc(seasonLabel(seasonData.season))}</td><td>${esc(row.team)}</td><td>${youthPlayerLink(p, seasonData.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", peak.overall)}</td><td>${ratingChip("POT", peak.potential)}</td><td>${esc(peak.season ? seasonLabel(peak.season) : "-")}</td></tr>`;
+    })));
     const intakeTitle = selected === "all"
       ? (selectedTeam === "all" ? "All Seasons Intake" : `${team.team || "Team"} All Seasons Intake`)
       : (selectedTeam === "all" ? "All Teams Intake" : `${team.team || "Team"} Intake`);
@@ -1827,7 +1851,7 @@
         <label>Team <select id="teamSelect"><option value="all" ${selectedTeam === "all" ? "selected" : ""}>All</option>${teams.map((row) => `<option value="${esc(row.team)}" ${row.team === selectedTeam ? "selected" : ""}>${esc(row.team)}</option>`).join("")}</select></label>
       </div></section>
       <section class="reference-section"><h2>${esc(intakeTitle)}</h2>${visibleTeams.length ? intakeHtml : `<div class="empty">No archived youth intake</div>`}</section>
-      <section class="reference-section" id="franchise"><h2>Franchise Intake History</h2>${table(["Season", "Team", "Player", "Pos", "Age", "College"], franchiseRows, "No archived youth intake")}</section>`;
+      <section class="reference-section" id="franchise"><h2>Franchise Intake History</h2>${table(["Season", "Team", "Player", "Pos", "Age", "College", "Peak OVR", "Peak POT", "Peak Season"], franchiseRows, "No archived youth intake")}</section>`;
     $("#seasonSelect")?.addEventListener("change", (event) => { navigate(`youth-intake.htm?season=${encodeURIComponent(event.target.value)}&team=${encodeURIComponent(selectedTeam)}`); });
     $("#teamSelect")?.addEventListener("change", (event) => { navigate(`youth-intake.htm?season=${encodeURIComponent(selected)}&team=${encodeURIComponent(event.target.value)}`); });
   }
