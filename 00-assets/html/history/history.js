@@ -574,8 +574,7 @@
           <div class="history-nav-item"><a class="history-nav-link" href="teams.htm">Teams</a><div class="history-mega" id="megaTeams"><div class="empty">Loading teams...</div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="season.htm">Seasons</a><div class="history-mega" id="megaSeasons"></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="leaders.htm">Leaders</a><div class="history-mega"><div class="mega-line"><strong>Leaderboards:</strong> <a href="leaders.htm">Player Leaders</a> | <a href="season.htm">Season Summaries</a></div></div></div>
-          <div class="history-nav-item"><a class="history-nav-link" href="records.htm">Records</a><div class="history-mega"><div class="mega-line"><strong>All-Time:</strong> <a href="records.htm#career-records">Career Totals</a> | <a href="records.htm#game-highs">Single-Game Highs</a> | <a href="records.htm#honours">Honours</a></div></div></div>
-          <div class="history-nav-item"><a class="history-nav-link" href="future-pool.htm">Future Pool</a><div class="history-mega"><div class="mega-line"><strong>Ratings:</strong> <a href="future-pool.htm#current-ratings">Current Ratings</a> | <a href="future-pool.htm#potential-ratings">Potential Ratings</a></div></div></div>
+          <div class="history-nav-item"><a class="history-nav-link" href="records.htm">Records</a><div class="history-mega"><div class="mega-line"><strong>All-Time:</strong> <a href="records.htm#career-records">Career Totals</a> | <a href="records.htm#game-highs">Single-Game Highs</a> | <a href="records.htm#franchise-records">Franchises</a></div><div class="mega-line"><strong>Database Sections:</strong> <a href="finance.htm">Finance</a> | <a href="finance.htm#cap-history">Cap History</a> | <a href="finance.htm#earnings">Player Earnings</a> | <a href="future-pool.htm">Future Pool</a> | <a href="future-pool.htm#potential-ratings">Potential Ratings</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="supercup.htm">Super Cup</a><div class="history-mega"><div class="mega-line"><strong>Cup Archive:</strong> <a href="supercup.htm#knockout">Knockout Bracket</a> | <a href="supercup.htm#group-stage">Group Stage</a> | <a href="supercup.htm#cup-leaders">Stat Leaders</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="youth-intake.htm">Youth Intake</a><div class="history-mega"><div class="mega-line"><strong>Draft History:</strong> <a href="youth-intake.htm">Youth Intake by Season</a> | <a href="youth-intake.htm#franchise">Franchise Intake History</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="compare.htm">Compare</a><div class="history-mega"><div class="mega-line"><strong>Compare:</strong> <a href="compare.htm?type=players">Players</a> | <a href="compare.htm?type=teams">Teams</a></div></div></div>
@@ -643,6 +642,7 @@
         { terms: ["season", "standings", "champions", "promoted", "promotion", "relegated", "relegation"], label: "Season Summary", href: "season.htm" },
         { terms: ["leaders", "leaderboard"], label: "Leaderboards", href: "leaders.htm" },
         { terms: ["records", "all time", "career", "highs", "mvp", "points", "rebounds", "assists", "championships", "awards"], label: "League Records", href: "records.htm" },
+        { terms: ["finance", "salary", "cap", "payroll", "earnings", "contract"], label: "Finance History", href: "finance.htm" },
         { terms: ["future", "pool", "prospects", "ratings", "potential"], label: "Future Player Pool", href: "future-pool.htm" },
         { terms: ["super cup", "supercup", "cup", "knockout", "bracket", "group stage"], label: "Super Cup Archive", href: "supercup.htm" },
         { terms: ["youth", "intake", "draft", "rookies"], label: "Youth Intake", href: "youth-intake.htm" },
@@ -770,8 +770,10 @@
         <a href="teams.htm"><span>Teams</span><strong>Club histories and timelines</strong></a>
         <a href="leaders.htm"><span>Leaders</span><strong>Filtered season leaderboards</strong></a>
         <a href="records.htm"><span>Records</span><strong>Career totals, game highs and honours</strong></a>
+        <a href="finance.htm"><span>Finance</span><strong>Salary, cap and earnings history</strong></a>
         <a href="future-pool.htm"><span>Future Pool</span><strong>Current and potential ratings</strong></a>
         <a href="supercup.htm"><span>Super Cup</span><strong>Knockouts, groups and leaders</strong></a>
+        <a href="youth-intake.htm#analytics"><span>Youth Analytics</span><strong>Classes, hit rates and development</strong></a>
         <a href="compare.htm"><span>Compare</span><strong>Player and team head-to-heads</strong></a>
       </div>`;
   }
@@ -1142,6 +1144,7 @@
     const profile = await loadPlayerProfile(identity.key);
     if (profile?.peakPlayer && Object.keys(profile.peakPlayer).length) peak.player = profile.peakPlayer;
     const latestStats = profile?.latestStats;
+    const earnings = profile?.earnings || { total: 0, history: [] };
     (profile?.awards || []).forEach((award) => accolades.push({
       archiveSeason: identity.latestSeason,
       group: award.season,
@@ -1165,6 +1168,7 @@
         </div>
         <div>
           <section class="reference-section"><h2>Peak Snapshot</h2><p><strong>${esc(seasonLabel(peak.season))}</strong> | ${esc(peak.player.pos || "")} | ${esc(peak.player.teamLabel || peak.player.team || "")}</p><p>${ratingChip("OVR", peak.player.overall)} ${ratingChip("POT", peak.player.potential)}</p>${table(["Attribute", "Value"], ATTR_KEYS.map((key) => `<tr><td>${esc(key)}</td><td class="num">${esc(peak.player[key])}</td></tr>`), "No peak attributes")}</section>
+          <section class="reference-section"><h2>Archived Earnings</h2><p><strong>${formatMoney(earnings.total)}</strong> across completed archive seasons</p>${table(["Season", "Team", "Salary"], (earnings.history || []).map((row) => `<tr><td>${esc(row.label || seasonLabel(row.season))}</td><td>${esc(row.team || "-")}</td><td class="num">${formatMoney(row.salary)}</td></tr>`), "No archived salary history")}</section>
           <section class="reference-section"><h2>Archived Appearances</h2>${table(["Season", "Team", "Age", "OVR", "POT"], appearances.map((a) => `<tr><td>${esc(seasonLabel(a.season))}</td><td>${esc(a.team)}</td><td class="num">${esc(a.age)}</td><td>${ratingChip("OVR", a.overall)}</td><td>${ratingChip("POT", a.potential)}</td></tr>`))}</section>
         </div>
       </div>`;
@@ -1178,6 +1182,39 @@
 
   function selectedSeasonOrLatest() {
     return params().get("season") || latestSeason();
+  }
+
+  function matchupRecord(record) {
+    return `${record?.wins || 0}-${record?.losses || 0}`;
+  }
+
+  function renderTeamHeadToHead(feed, teamName) {
+    const key = String(teamName || "").trim().toLowerCase();
+    const teamRecord = feed?.teams?.[key];
+    const opponents = teamRecord?.opponents || [];
+    const rows = opponents.map((row) => {
+      const largest = row.combined?.largestWin || {};
+      const biggestWin = largest.margin
+        ? `+${esc(largest.margin)} (${esc(largest.score)}) · ${esc(largest.competition || "")} · ${esc(largest.label || "")}`
+        : "-";
+      const diff = Number(row.combined?.avgDiff || 0);
+      return `<tr>
+        <td>${teamMini(row.opponent, row.file)}</td>
+        <td class="num">${matchupRecord(row.league)}</td>
+        <td class="num">${matchupRecord(row.supercup)}</td>
+        <td class="num"><strong>${matchupRecord(row.combined)}</strong></td>
+        <td class="num">${percent(row.combined?.pct)}</td>
+        <td class="num">${oneDecimal(row.combined?.avgPointsFor)}</td>
+        <td class="num">${oneDecimal(row.combined?.avgPointsAgainst)}</td>
+        <td class="num">${diff > 0 ? "+" : ""}${oneDecimal(diff)}</td>
+        <td>${biggestWin}</td>
+      </tr>`;
+    });
+    return `<section class="reference-section" id="head-to-head">
+      <h2>Head-to-Head Records</h2>
+      <p class="muted">All completed archive seasons through ${esc(feed?.throughLabel || seasonLabel(latestSeason()))}. League excludes preseason; Super Cup includes its regular season and playoffs.</p>
+      ${table(["Opponent", "League W-L", "Super Cup W-L", "Combined W-L", "Win%", "Avg PF", "Avg PA", "Diff", "Biggest Win"], rows, "No archived head-to-head games")}
+    </section>`;
   }
 
   async function renderTeam() {
@@ -1194,9 +1231,11 @@
     const standing = selectedTeamStanding(data, id);
     const players = (data.players || []).filter((p) => fileStem(p.team) === id || p.teamLabel === teamName).sort((a, b) => (num(b.overall) || 0) - (num(a.overall) || 0));
     const teamStats = (data.teamStats.teams || []).find((row) => fileStem(row.file) === id) || {};
+    const headToHeadPromise = fetchJson(`${HISTORY_ROOT}head_to_head.json`, { throughLabel: seasonLabel(latestSeason()), teams: {} }, { cache: "force-cache" });
     const positionHistory = await teamPositionHistory(id);
     const supercupHistory = await teamSupercupHistory(positionHistory, teamName);
     const timelineHtml = await renderTeamTimeline(positionHistory, id, supercupHistory);
+    const headToHead = await headToHeadPromise;
     const selectedMarker = standing.marker || "";
     $("#history-app").innerHTML = `
       <section class="history-hero profile-split">
@@ -1220,7 +1259,8 @@
           <section class="reference-section"><h2>Awards</h2>${table(["Group", "Award", "Person"], (data.seasonAwards.sections || []).flatMap((section) => (section.awards || []).filter((award) => fileStem(award.teamFile) === id).map((award) => `<tr><td>${esc(section.title)}</td><td>${esc(award.award)}</td><td>${esc(award.person)}</td></tr>`)), "No season awards")}</section>
           <section class="reference-section"><h2>Youth Intake</h2>${renderYouthTeam(data, teamName, 5)}</section>
         </div>
-      </div>`;
+      </div>
+      ${renderTeamHeadToHead(headToHead, teamName)}`;
     $("#seasonSelect")?.addEventListener("change", (event) => { navigate(`team.htm?id=${encodeURIComponent(id)}&season=${encodeURIComponent(event.target.value)}`); });
   }
 
@@ -1834,7 +1874,14 @@
     return Number.isFinite(n) ? n.toLocaleString("en-US") : "-";
   }
 
-  function recordLeaderboard(title, records, rowKey, limit, valueLabel = "Total") {
+  function formatMoney(value) {
+    if (value === null || value === undefined || value === "") return "-";
+    const n = Number(value);
+    if (!Number.isFinite(n)) return "-";
+    return `$${Math.round(n).toLocaleString("en-US")}`;
+  }
+
+  function recordLeaderboard(title, records, rowKey, limit, valueLabel = "Total", formatter = recordNumber) {
     const ranked = records
       .map((record) => ({ record, value: statValue(record[rowKey.source], rowKey.key) }))
       .filter(({ value }) => value !== null && value > 0)
@@ -1842,9 +1889,63 @@
       .slice(0, limit);
     return `<section class="reference-section"><h2>${esc(title)}</h2>${table(
       ["Rank", "Player", "Team", valueLabel],
-      ranked.map(({ record, value }, index) => `<tr><td class="num">${index + 1}</td><td>${recordPlayerAnchor(record)}</td><td>${esc(record.appearance?.team || "-")}</td><td class="num">${recordNumber(value)}</td></tr>`),
+      ranked.map(({ record, value }, index) => `<tr><td class="num">${index + 1}</td><td>${recordPlayerAnchor(record)}</td><td>${esc(record.appearance?.team || "-")}</td><td class="num">${formatter(value)}</td></tr>`),
       `No ${title.toLowerCase()} available`
     )}</section>`;
+  }
+
+  async function renderFinance() {
+    const feed = await fetchJson(`${HISTORY_ROOT}finance_history.json`, { throughLabel: seasonLabel(latestSeason()), capHistory: [], earnings: [] }, { cache: "force-cache" });
+    const identityMap = new Map((state.playerIndex?.identities || []).map((identity) => [identity.key, identity]));
+    const p = params();
+    const selectedSeason = p.get("season") || "all";
+    const selectedTeam = p.get("team") || "all";
+    const teams = Array.from(new Map((feed.capHistory || []).map((row) => [row.file || row.team, { file: row.file, team: row.team }])).values())
+      .sort((a, b) => String(a.team).localeCompare(String(b.team)));
+    const filtered = (feed.capHistory || []).filter((row) =>
+      (selectedSeason === "all" || row.season === selectedSeason)
+      && (selectedTeam === "all" || row.file === selectedTeam)
+    );
+    const latestId = latestSeason();
+    const latestRows = (feed.capHistory || []).filter((row) => row.season === latestId && (selectedTeam === "all" || row.file === selectedTeam));
+    const payrollLeader = latestRows.slice().sort((a, b) => Number(b.salary || 0) - Number(a.salary || 0))[0];
+    const roomLeader = latestRows.slice().sort((a, b) => Number(b.capRoom || 0) - Number(a.capRoom || 0))[0];
+    const earnings = (feed.earnings || []).map((row) => ({ ...row, identity: identityMap.get(row.key) || { key: row.key, name: row.name } }));
+    const earningsLeader = earnings[0];
+    const capRows = filtered.slice().sort((a, b) => seasonNumber(b.season) - seasonNumber(a.season) || String(a.team).localeCompare(String(b.team)));
+    const paidLink = (row) => row?.highestPaid?.key
+      ? `<a href="player.htm?key=${encodeURIComponent(row.highestPaid.key)}">${esc(row.highestPaid.name)}</a>`
+      : esc(row?.highestPaid?.name || "-");
+
+    $("#history-app").innerHTML = `
+      <section class="history-hero">
+        <div class="eyebrow">Archive Finance Database</div>
+        <h1>Salary and Cap History</h1>
+        <div class="history-meta"><span class="pill">Through ${esc(feed.throughLabel || seasonLabel(latestId))}</span><span class="pill">${feed.capHistory?.length || 0} Team Seasons</span><span class="pill">Estimated Archived Earnings</span></div>
+      </section>
+      <section class="reference-section compact-controls"><h2>Finance Controls</h2><div class="filter-bar">
+        <label>Season <select id="financeSeason"><option value="all">All</option>${(state.index?.seasons || []).map((row) => `<option value="${esc(row.season)}" ${selectedSeason === row.season ? "selected" : ""}>${esc(row.label || row.season)}</option>`).join("")}</select></label>
+        <label>Team <select id="financeTeam"><option value="all">All</option>${teams.map((row) => `<option value="${esc(row.file)}" ${selectedTeam === row.file ? "selected" : ""}>${esc(row.team)}</option>`).join("")}</select></label>
+      </div></section>
+      <section class="dashboard-grid">
+        ${dashboardCard("Largest Latest Payroll", payrollLeader ? teamMini(payrollLeader.team, payrollLeader.file) : "-", formatMoney(payrollLeader?.salary))}
+        ${dashboardCard("Most Latest Cap Room", roomLeader ? teamMini(roomLeader.team, roomLeader.file) : "-", formatMoney(roomLeader?.capRoom))}
+        ${dashboardCard("Archived Earnings Leader", earningsLeader ? recordPlayerAnchor(earningsLeader) : "-", formatMoney(earningsLeader?.total))}
+        ${dashboardCard("Archive Coverage", `${feed.capHistory?.length || 0} team seasons`, `${earnings.length} paid players`)}
+      </section>
+      <section class="reference-section" id="cap-history"><h2>Team Cap History</h2><p class="muted">Season-end archived snapshots. Exceptions and cap room reflect the state of the original cap report when that season was archived.</p>${table(
+        ["Season", "Team", "Payroll", "Cap Room", "Budget Room", "Mid Exception", "Low Exception", "Highest-Paid Player", "Salary"],
+        capRows.map((row) => `<tr><td>${esc(row.label || seasonLabel(row.season))}</td><td>${teamMini(row.team, row.file)}</td><td class="num">${formatMoney(row.salary)}</td><td class="num">${formatMoney(row.capRoom)}</td><td class="num">${formatMoney(row.budgetRoom)}</td><td class="num">${formatMoney(row.midException)}</td><td class="num">${formatMoney(row.lowException)}</td><td>${paidLink(row)}</td><td class="num">${formatMoney(row.highestPaid?.salary)}</td></tr>`),
+        "No cap history matches these filters"
+      )}</section>
+      <section class="reference-section" id="earnings"><h2>Estimated Player Earnings</h2><p class="muted">Sum of each player's salary in completed archived seasons only. It is not a full pre-archive career earnings figure.</p>${table(
+        ["Rank", "Player", "Archived Seasons Paid", "Estimated Earnings"],
+        earnings.slice(0, 100).map((row, index) => `<tr><td class="num">${index + 1}</td><td>${recordPlayerAnchor(row)}</td><td class="num">${row.history?.length || 0}</td><td class="num">${formatMoney(row.total)}</td></tr>`),
+        "No archived earnings available"
+      )}</section>`;
+    const update = () => navigate(`finance.htm?season=${encodeURIComponent($("#financeSeason")?.value || "all")}&team=${encodeURIComponent($("#financeTeam")?.value || "all")}`);
+    $("#financeSeason")?.addEventListener("change", update);
+    $("#financeTeam")?.addEventListener("change", update);
   }
 
   async function renderRecords() {
@@ -1853,7 +1954,8 @@
       players: [],
       awards: [],
       championships: [],
-      championshipTotals: []
+      championshipTotals: [],
+      franchises: []
     });
     const identities = new Map((state.playerIndex?.identities || []).map((identity) => [identity.key, identity]));
     const records = (feed.players || []).map((record) => ({
@@ -1867,6 +1969,8 @@
     }));
     const championships = feed.championships || [];
     const titleTotals = feed.championshipTotals || [];
+    const franchises = feed.franchises || [];
+    const hasPlayoffRecords = records.some((record) => (statValue(record.playoffs, "g") || 0) > 0);
     const selectedLimit = ["10", "25", "50"].includes(params().get("limit")) ? params().get("limit") : "10";
     const limit = Number(selectedLimit);
     const through = feed.throughLabel || seasonLabel(latestSeason());
@@ -1902,6 +2006,22 @@
           ${recordLeaderboard("Career Blocks", records, { source: "career", key: "blk" }, limit)}
           ${recordLeaderboard("Career Games", records, { source: "career", key: "g" }, limit)}
         </div>
+        <section class="reference-section"><h2>Expanded Career Totals</h2><p class="muted">Volume and possession records from the latest archived Career totals row for each player.</p></section>
+        <div class="history-grid three">
+          ${recordLeaderboard("Career Minutes", records, { source: "career", key: "min" }, limit)}
+          ${recordLeaderboard("Career Field Goals", records, { source: "career", key: "fgm" }, limit)}
+          ${recordLeaderboard("Career Three-Pointers", records, { source: "career", key: "3pm" }, limit)}
+          ${recordLeaderboard("Career Free Throws", records, { source: "career", key: "ftm" }, limit)}
+          ${recordLeaderboard("Career Turnovers", records, { source: "career", key: "to" }, limit)}
+          ${recordLeaderboard("Career Plus/Minus", records, { source: "career", key: "plus_minus" }, limit)}
+        </div>
+        <section class="reference-section"><h2>Career Efficiency</h2><p class="muted">Efficiency values come from the export's Career efficiency row and are not summed across archive snapshots.</p></section>
+        <div class="history-grid three">
+          ${recordLeaderboard("Career PER", records, { source: "efficiency", key: "per" }, limit, "PER")}
+          ${recordLeaderboard("Career EWA", records, { source: "efficiency", key: "ewa" }, limit, "EWA")}
+          ${recordLeaderboard("Career True Shooting", records, { source: "efficiency", key: "ts_pct" }, limit, "TS%", percent)}
+          ${recordLeaderboard("Efficiency Plus/Minus", records, { source: "efficiency", key: "plus_minus" }, limit, "+/-")}
+        </div>
       </div>
       <div id="game-highs">
         <section class="reference-section"><h2>Single-Game Records <span class="muted">Player Career Highs</span></h2><p class="muted">These values come directly from each player's Career Highs table. The export does not attach a date or opponent to the record.</p></section>
@@ -1912,8 +2032,27 @@
           ${recordLeaderboard("Single-Game Steals", records, { source: "highs", key: "stl" }, limit, "High")}
           ${recordLeaderboard("Single-Game Blocks", records, { source: "highs", key: "blk" }, limit, "High")}
           ${recordLeaderboard("Single-Game Threes", records, { source: "highs", key: "3pm" }, limit, "High")}
+          ${recordLeaderboard("Single-Game Field Goals", records, { source: "highs", key: "fgm" }, limit, "High")}
+          ${recordLeaderboard("Single-Game Free Throws", records, { source: "highs", key: "ftm" }, limit, "High")}
+          ${recordLeaderboard("Single-Game Turnovers", records, { source: "highs", key: "to" }, limit, "High")}
         </div>
       </div>
+      <div id="playoff-records">
+        <section class="reference-section"><h2>Playoff Records</h2><p class="muted">Career playoff games and per-game production from each player's archived playoff Career row.</p></section>
+        ${hasPlayoffRecords ? `<div class="history-grid three">
+          ${recordLeaderboard("Playoff Games", records, { source: "playoffs", key: "g" }, limit)}
+          ${recordLeaderboard("Playoff Points Per Game", records, { source: "playoffs", key: "pts" }, limit, "PPG")}
+          ${recordLeaderboard("Playoff Rebounds Per Game", records, { source: "playoffs", key: "reb" }, limit, "RPG")}
+          ${recordLeaderboard("Playoff Assists Per Game", records, { source: "playoffs", key: "ast" }, limit, "APG")}
+          ${recordLeaderboard("Playoff Steals Per Game", records, { source: "playoffs", key: "stl" }, limit, "SPG")}
+          ${recordLeaderboard("Playoff Blocks Per Game", records, { source: "playoffs", key: "blk" }, limit, "BPG")}
+        </div>` : `<div class="empty">The completed archives currently contain zero playoff games in every player playoff table. This section will populate automatically once a future archive includes valid playoff statistics.</div>`}
+      </div>
+      <section class="reference-section" id="franchise-records"><h2>Franchise Record Book</h2><p class="muted">Regular-season standings and game results across completed archive seasons. Highest scoring is points per game; biggest victory excludes preseason.</p>${table(
+        ["Team", "Seasons", "W", "L", "Win%", "Titles", "Best Season", "Worst Season", "Highest Scoring", "Biggest Victory"],
+        franchises.map((row) => `<tr><td>${teamMini(row.team, row.file)}</td><td class="num">${row.seasons}</td><td class="num">${row.wins}</td><td class="num">${row.losses}</td><td class="num">${(Number(row.pct || 0) * 100).toFixed(1)}%</td><td class="num">${row.titles}</td><td>${esc(row.bestSeason?.label || "-")} (${esc(row.bestSeason?.wins ?? "-")}-${esc(row.bestSeason?.losses ?? "-")})</td><td>${esc(row.worstSeason?.label || "-")} (${esc(row.worstSeason?.wins ?? "-")}-${esc(row.worstSeason?.losses ?? "-")})</td><td>${esc(row.highestScoring?.points ?? "-")} <span class="muted">${esc(row.highestScoring?.label || "")}</span></td><td>${row.biggestVictory?.margin ? `+${esc(row.biggestVictory.margin)} vs ${esc(row.biggestVictory.opponent)} <span class="muted">${esc(row.biggestVictory.label)}</span>` : "-"}</td></tr>`),
+        "No franchise records available"
+      )}</section>
       <div id="honours" class="history-grid main-rail">
         <div>
           <section class="reference-section"><h2>Major Award Leaders</h2>${table(
@@ -2010,11 +2149,70 @@
     const intakeHtml = selected === "all"
       ? renderYouthAllSeasons(allData, selectedTeam)
       : (selectedTeam === "all" ? renderYouthAllTeams(data) : renderYouthTeam(data, team.team));
+    const analyticsPlayers = allData.flatMap((seasonData) => (seasonData.youth.teams || [])
+      .filter((row) => selectedTeam === "all" || row.team === selectedTeam)
+      .flatMap((row) => (row.intakePlayers || []).map((player) => {
+        const rated = youthRatedPlayer(seasonData, player);
+        const intakeAppearance = (youthPlayerIdentity(player, seasonData.season)?.appearances || [])
+          .find((appearance) => appearance.season === seasonData.season) || {};
+        const peak = youthPeakRatings(player, seasonData.season);
+        const listedOvr = num(player.overall ?? rated.overall);
+        const listedPot = num(player.potential ?? rated.potential);
+        return {
+          player,
+          season: seasonData.season,
+          team: row.team,
+          initialOvr: listedOvr && listedOvr > 0 ? listedOvr : num(intakeAppearance.overall),
+          initialPot: listedPot && listedPot > 0 ? listedPot : num(intakeAppearance.potential),
+          peakOvr: num(peak.overall),
+          peakPot: num(peak.potential),
+          peakSeason: peak.season
+        };
+      })))
+      .filter((row) => row.peakOvr !== null && row.peakOvr > 0);
+    const summarizeYouth = (rows) => ({
+      count: rows.length,
+      avgPeak: rows.length ? rows.reduce((sum, row) => sum + row.peakOvr, 0) / rows.length : 0,
+      hits: rows.filter((row) => row.peakOvr >= 100).length,
+      busts: rows.filter((row) => row.initialPot >= 100 && row.peakOvr <= row.initialPot - 15).length
+    });
+    const classGroups = new Map();
+    const franchiseGroups = new Map();
+    analyticsPlayers.forEach((row) => {
+      const classKey = `${row.season}|${row.team}`;
+      if (!classGroups.has(classKey)) classGroups.set(classKey, []);
+      classGroups.get(classKey).push(row);
+      if (!franchiseGroups.has(row.team)) franchiseGroups.set(row.team, []);
+      franchiseGroups.get(row.team).push(row);
+    });
+    const classAnalytics = Array.from(classGroups.entries()).map(([key, rows]) => {
+      const [seasonId, teamName] = key.split("|");
+      return { season: seasonId, team: teamName, ...summarizeYouth(rows) };
+    }).sort((a, b) => b.avgPeak - a.avgPeak);
+    const franchiseAnalytics = Array.from(franchiseGroups.entries()).map(([teamName, rows]) => ({ team: teamName, ...summarizeYouth(rows) }))
+      .sort((a, b) => b.avgPeak - a.avgPeak);
+    const development = analyticsPlayers.map((row) => ({ ...row, gain: row.peakOvr - (row.initialOvr || row.peakOvr), versusPot: row.peakOvr - (row.initialPot || row.peakOvr) }))
+      .sort((a, b) => b.gain - a.gain || b.versusPot - a.versusPot);
+    const overallYouth = summarizeYouth(analyticsPlayers);
+    const bestClass = classAnalytics[0];
+    const bestFranchise = franchiseAnalytics[0];
+    const biggestGain = development[0];
     $("#history-app").innerHTML = `
       <section class="reference-section compact-controls"><h2>Youth Intake Controls</h2><div class="filter-bar">
         <label>Season ${youthSeasonSelector(selected)}</label>
         <label>Team <select id="teamSelect"><option value="all" ${selectedTeam === "all" ? "selected" : ""}>All</option>${teams.map((row) => `<option value="${esc(row.team)}" ${row.team === selectedTeam ? "selected" : ""}>${esc(row.team)}</option>`).join("")}</select></label>
       </div></section>
+      <section class="dashboard-grid" id="analytics">
+        ${dashboardCard("Best Intake Class", bestClass ? `${esc(bestClass.team)} · ${esc(seasonLabel(bestClass.season))}` : "-", `${oneDecimal(bestClass?.avgPeak)} average peak OVR`)}
+        ${dashboardCard("Best Franchise Average", bestFranchise ? esc(bestFranchise.team) : "-", `${oneDecimal(bestFranchise?.avgPeak)} peak OVR across ${bestFranchise?.count || 0} players`)}
+        ${dashboardCard("Hit Rate", overallYouth.count ? `${oneDecimal(overallYouth.hits * 100 / overallYouth.count)}%` : "-", `${overallYouth.hits}/${overallYouth.count} reached 100 OVR`)}
+        ${dashboardCard("Biggest Development Gain", biggestGain ? youthPlayerLink(biggestGain.player, biggestGain.season) : "-", biggestGain ? `+${biggestGain.gain} OVR` : "No evaluated players")}
+      </section>
+      <section class="reference-section"><h2>Youth Analytics</h2><p class="muted">Peak values use all archived appearances currently available. Hit = reached 100 OVR. Bust = intake POT of at least 100 and archived peak OVR at least 15 points below that POT. Recent classes are still developing, so these are live development snapshots rather than final career verdicts.</p><div class="history-grid">
+        <div><h3>Best Intake Classes</h3>${table(["Rank", "Season", "Team", "Players", "Avg Peak OVR", "Hit Rate", "Bust Rate"], classAnalytics.slice(0, 25).map((row, index) => `<tr><td class="num">${index + 1}</td><td>${esc(seasonLabel(row.season))}</td><td>${esc(row.team)}</td><td class="num">${row.count}</td><td class="num">${oneDecimal(row.avgPeak)}</td><td class="num">${oneDecimal(row.hits * 100 / row.count)}%</td><td class="num">${oneDecimal(row.busts * 100 / row.count)}%</td></tr>`), "No evaluated intake classes")}</div>
+        <div><h3>Franchise Development</h3>${table(["Rank", "Team", "Players", "Avg Peak OVR", "Hits", "Busts"], franchiseAnalytics.map((row, index) => `<tr><td class="num">${index + 1}</td><td>${esc(row.team)}</td><td class="num">${row.count}</td><td class="num">${oneDecimal(row.avgPeak)}</td><td class="num">${row.hits}</td><td class="num">${row.busts}</td></tr>`), "No franchise development data")}</div>
+      </div></section>
+      <section class="reference-section"><h2>Biggest Development Surprises</h2>${table(["Rank", "Player", "Season", "Team", "Intake OVR", "Intake POT", "Peak OVR", "Gain", "vs POT"], development.slice(0, 25).map((row, index) => `<tr><td class="num">${index + 1}</td><td>${youthPlayerLink(row.player, row.season)}</td><td>${esc(seasonLabel(row.season))}</td><td>${esc(row.team)}</td><td>${ratingChip("OVR", row.initialOvr)}</td><td>${ratingChip("POT", row.initialPot)}</td><td>${ratingChip("OVR", row.peakOvr)}</td><td class="num">${row.gain >= 0 ? "+" : ""}${row.gain}</td><td class="num">${row.versusPot >= 0 ? "+" : ""}${row.versusPot}</td></tr>`), "No development data")}</section>
       <section class="reference-section"><h2>${esc(intakeTitle)}</h2>${visibleTeams.length ? intakeHtml : `<div class="empty">No archived youth intake</div>`}</section>
       <section class="reference-section" id="franchise"><h2>Franchise Intake History</h2>${table(["Season", "Team", "Player", "Pos", "Age", "College", "Peak OVR", "Peak POT", "Peak Season"], franchiseRows, "No archived youth intake")}</section>`;
     $("#seasonSelect")?.addEventListener("change", (event) => { navigate(`youth-intake.htm?season=${encodeURIComponent(event.target.value)}&team=${encodeURIComponent(selectedTeam)}`); });
@@ -2144,6 +2342,7 @@
     if (file === "season.htm") return "season";
     if (file === "leaders.htm") return "leaders";
     if (file === "records.htm") return "records";
+    if (file === "finance.htm") return "finance";
     if (file === "future-pool.htm") return "future-pool";
     if (file === "supercup.htm") return "supercup";
     if (file === "youth-intake.htm") return "youth";
@@ -2164,6 +2363,7 @@
     if (page === "season") await renderSeason();
     if (page === "leaders") await renderLeaders();
     if (page === "records") await renderRecords();
+    if (page === "finance") await renderFinance();
     if (page === "future-pool") await renderFuturePool();
     if (page === "supercup") await renderSupercupPage();
     if (page === "youth") await renderYouth();
