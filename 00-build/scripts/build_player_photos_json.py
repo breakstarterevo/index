@@ -30,6 +30,7 @@ OVERRIDES_PATH = os.path.join(PROJECT_ROOT, "00-assets", "data", "player-photo-o
 PHOTO_URLS_URL = "https://raw.githubusercontent.com/alexnoob/BasketBall-GM-Rosters/master/player-photos.json"
 PLAYER_NAMES_URL = "https://zengm.com/files/player-photos.json"
 DESCRIPTION_RE = re.compile(r"^URL to photo of (.+) \((\d{4}) draft class\)$", re.DOTALL)
+MINIMUM_PHOTO_OVERALL = 50
 
 
 def normalize_name(value):
@@ -131,6 +132,14 @@ def build_feed(players, photo_urls, template, overrides):
             counts["unmatched"] += 1
             continue
 
+        try:
+            overall = float(player.get("overall"))
+        except (TypeError, ValueError):
+            overall = None
+        if overall is not None and overall < MINIMUM_PHOTO_OVERALL:
+            counts["below-minimum-overall"] += 1
+            continue
+
         source_id = overrides["byPlayerId"].get(player_id)
         match_method = "player-id-override" if source_id else ""
         if not source_id:
@@ -171,6 +180,7 @@ def build_feed(players, photo_urls, template, overrides):
             "name": counts["name"],
             "nameAndAge": counts["name-and-age"],
             "overrides": counts["player-id-override"] + counts["name-override"],
+            "belowMinimumOverall": counts["below-minimum-overall"],
         },
         "players": dict(sorted(matches.items())),
         "review": {

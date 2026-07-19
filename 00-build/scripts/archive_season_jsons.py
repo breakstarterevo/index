@@ -497,6 +497,8 @@ def main() -> int:
     )
     seasons = update_history_index(history_root)
     player_index = build_player_identity_index(history_root)
+    records_script = root / "00-build" / "scripts" / "build_history_records.py"
+    subprocess.run([sys.executable, str(records_script)], cwd=root, check=True)
 
     print(f"Archived {len(copied)} JSON files to {season_dir}")
     print(f"Updated history index with {len(seasons)} season(s)")

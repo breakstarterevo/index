@@ -5,6 +5,21 @@
   const CURRENT_DB = "../../../00-build/database/";
   const LOGO_ROOT = "../../photos/";
   const SITE_LOGO = "../../images/ESLcropped-removebg-preview.png";
+  const SEASON_FEEDS = {
+    players: ["players.json", []],
+    playerStats: ["player_stats.json", { players: [] }],
+    standings: ["standings.json", { sections: [] }],
+    leaders: ["leaders.json", { sections: [] }],
+    teams: ["teams.json", []],
+    teamStats: ["team_stats.json", { teams: [] }],
+    awards: ["awards.json", { sections: [] }],
+    seasonAwards: ["season_awards.json", { sections: [], missing: true }],
+    gameResults: ["game_results.json", { results: [] }],
+    youth: ["youth_intake.json", { teams: [] }],
+    supercupStandings: ["supercup/standings.json", { sections: [] }],
+    supercupLeaders: ["supercup/leaders.json", { sections: [] }],
+    supercupResults: ["supercup/game_results.json", { results: [] }]
+  };
   const ATTR_KEYS = ["Ins", "Jps", "Fts", "3ps", "Hnd", "Pas", "Orb", "Drb", "Psd", "Prd", "Stl", "Blk", "Qkn", "Str", "Jmp", "Sta"];
   const FUTURE_POOL_ATTRS = [
     ["INS", "InsideScoring", "PotInside"],
@@ -61,7 +76,10 @@
     currentTeams: [],
     futurePoolPlayers: [],
     seasonCache: new Map(),
-    coreReady: null
+    seasonFeedPromises: new Map(),
+    playerProfileCache: new Map(),
+    coreReady: null,
+    currentReady: null
   };
 
   const $ = (selector, root = document) => root.querySelector(selector);
@@ -130,9 +148,9 @@
     return { overall: maximum("overall"), potential: maximum("potential"), season: peakAppearance?.season || "" };
   }
 
-  async function fetchJson(path, fallback) {
+  async function fetchJson(path, fallback, options = {}) {
     try {
-      const response = await fetch(path, { cache: "no-store" });
+      const response = await fetch(path, { cache: options.cache || "no-store" });
       if (!response.ok) return fallback;
       return await response.json();
     } catch (_error) {
@@ -143,40 +161,67 @@
   async function initCore() {
     if (state.coreReady) return state.coreReady;
     state.coreReady = (async () => {
-    state.index = await fetchJson(`${HISTORY_ROOT}index.json`, { seasons: [] });
-    state.playerIndex = await fetchJson(`${HISTORY_ROOT}player_index.json`, { identities: [], seasonMaps: {} });
-    state.currentTeams = await fetchJson(`${CURRENT_DB}teams.json`, []);
-    state.currentPlayers = await fetchJson(`${CURRENT_DB}players.json`, []);
-    renderTopbar();
+      [state.index, state.playerIndex] = await Promise.all([
+        fetchJson(`${HISTORY_ROOT}index.json`, { seasons: [] }),
+        fetchJson(`${HISTORY_ROOT}player_index.json`, { identities: [], seasonMaps: {} })
+      ]);
+      renderTopbar();
     })();
     return state.coreReady;
   }
 
-  async function loadSeason(season) {
-    if (state.seasonCache.has(season)) return state.seasonCache.get(season);
+  async function ensureCurrentData() {
+    if (!state.currentReady) {
+      state.currentReady = Promise.all([
+        fetchJson(`${CURRENT_DB}teams.json`, []),
+        fetchJson(`${CURRENT_DB}players.json`, [])
+      ]).then(([teams, players]) => {
+        state.currentTeams = teams;
+        state.currentPlayers = players;
+      });
+    }
+    await state.currentReady;
+  }
+
+  async function loadSeason(season, feeds = Object.keys(SEASON_FEEDS)) {
+    if (!state.seasonCache.has(season)) state.seasonCache.set(season, { season });
+    const data = state.seasonCache.get(season);
     const base = `${HISTORY_ROOT}${season}/database/`;
-    const data = {
-      season,
-      players: await fetchJson(`${base}players.json`, []),
-      playerStats: await fetchJson(`${base}player_stats.json`, { players: [] }),
-      standings: await fetchJson(`${base}standings.json`, { sections: [] }),
-      leaders: await fetchJson(`${base}leaders.json`, { sections: [] }),
-      teams: await fetchJson(`${base}teams.json`, []),
-      teamStats: await fetchJson(`${base}team_stats.json`, { teams: [] }),
-      awards: await fetchJson(`${base}awards.json`, { sections: [] }),
-      seasonAwards: await fetchJson(`${base}season_awards.json`, { sections: [], missing: true }),
-      gameResults: await fetchJson(`${base}game_results.json`, { results: [] }),
-      youth: await fetchJson(`${base}youth_intake.json`, { teams: [] }),
-      supercupStandings: await fetchJson(`${base}supercup/standings.json`, { sections: [] }),
-      supercupLeaders: await fetchJson(`${base}supercup/leaders.json`, { sections: [] }),
-      supercupResults: await fetchJson(`${base}supercup/game_results.json`, { results: [] })
-    };
-    state.seasonCache.set(season, data);
+    const requested = Array.isArray(feeds) ? feeds : [feeds];
+    await Promise.all(requested.map(async (feed) => {
+      if (Object.prototype.hasOwnProperty.call(data, feed)) return;
+      const config = SEASON_FEEDS[feed];
+      if (!config) throw new Error(`Unknown history feed: ${feed}`);
+      const requestKey = `${season}:${feed}`;
+      if (!state.seasonFeedPromises.has(requestKey)) {
+        state.seasonFeedPromises.set(requestKey, fetchJson(`${base}${config[0]}`, config[1], { cache: "force-cache" })
+          .then((value) => { data[feed] = value; })
+          .finally(() => { state.seasonFeedPromises.delete(requestKey); }));
+      }
+      await state.seasonFeedPromises.get(requestKey);
+    }));
     return data;
   }
 
-  async function allSeasonData() {
-    return Promise.all((state.index?.seasons || []).map((s) => loadSeason(s.season)));
+  async function allSeasonData(feeds = Object.keys(SEASON_FEEDS)) {
+    return Promise.all((state.index?.seasons || []).map((s) => loadSeason(s.season, feeds)));
+  }
+
+  function playerProfileBucket(key) {
+    return String(key || "").toLowerCase().match(/[a-z0-9]/)?.[0] || "_";
+  }
+
+  async function loadPlayerProfile(key) {
+    const bucket = playerProfileBucket(key);
+    if (!state.playerProfileCache.has(bucket)) {
+      state.playerProfileCache.set(bucket, fetchJson(
+        `${HISTORY_ROOT}player_profiles/${encodeURIComponent(bucket)}.json`,
+        { players: {} },
+        { cache: "force-cache" }
+      ));
+    }
+    const payload = await state.playerProfileCache.get(bucket);
+    return payload?.players?.[key] || null;
   }
 
   function ratingClass(value) {
@@ -452,10 +497,10 @@
     return (tierSortValue(row.tier) - 1) * Math.max(18, row.teamCount || 18) + Number(row.position || 0);
   }
 
-  async function bestPlayerForTeam(season, teamId) {
-    const data = await loadSeason(season);
-    return (data.players || [])
-      .filter((player) => fileStem(player.team) === teamId || fileStem(player.teamFile) === teamId)
+  function bestPlayerForTeam(season, teamName) {
+    return (state.playerIndex?.identities || []).flatMap((identity) => (identity.appearances || [])
+      .filter((appearance) => appearance.season === season && sameTeamName(appearance.team, teamName))
+      .map((appearance) => ({ ...appearance, name: identity.name })))
       .sort((a, b) => (num(b.overall) || 0) - (num(a.overall) || 0))[0] || null;
   }
 
@@ -488,22 +533,19 @@
 
   async function rankedLatestSeasonPlayers({ limit = 12 } = {}) {
     const season = latestSeason();
-    const data = await loadSeason(season);
-    return (data.players || []).map((player) => {
-      const playerFile = String(player.url || "").split("/").pop() || `${player.playerId || ""}.htm`;
-      const identity = identityForSeasonPlayer(season, playerFile);
-      return {
-        key: identity?.key || "",
-        name: player.name,
-        pos: player.pos,
-        team: player.teamLabel || player.team,
+    return (state.playerIndex?.identities || []).flatMap((identity) => (identity.appearances || [])
+      .filter((appearance) => appearance.season === season)
+      .map((appearance) => ({
+        key: identity.key,
+        name: identity.name,
+        pos: appearance.pos,
+        team: appearance.team,
         season,
-        overall: num(player.overall) || 0,
-        potential: player.potential,
-        playerFile,
+        overall: num(appearance.overall) || 0,
+        potential: appearance.potential,
+        playerFile: appearance.playerFile,
         identity
-      };
-    })
+      })))
       .filter((row) => row.overall > 0)
       .sort((a, b) => b.overall - a.overall || String(a.name || "").localeCompare(String(b.name || "")))
       .slice(0, limit);
@@ -527,11 +569,12 @@
           <a class="history-index-button" href="../../../index.htm">Back to Index</a>
         </div>
         <nav class="history-nav">
-          <div class="history-nav-item"><a class="history-nav-link" href="index.htm">Archive Home</a><div class="history-mega" id="megaHome"><div class="mega-line"><strong>Jump:</strong> <a href="players.htm">Players</a> | <a href="teams.htm">Teams</a> | <a href="leaders.htm">Leaders</a> | <a href="compare.htm">Compare</a></div></div></div>
+          <div class="history-nav-item"><a class="history-nav-link" href="index.htm">Archive Home</a><div class="history-mega" id="megaHome"><div class="mega-line"><strong>Jump:</strong> <a href="players.htm">Players</a> | <a href="teams.htm">Teams</a> | <a href="leaders.htm">Leaders</a> | <a href="records.htm">Records</a> | <a href="compare.htm">Compare</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="players.htm">Players</a><div class="history-mega" id="megaPlayers"><div class="empty">Loading greats...</div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="teams.htm">Teams</a><div class="history-mega" id="megaTeams"><div class="empty">Loading teams...</div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="season.htm">Seasons</a><div class="history-mega" id="megaSeasons"></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="leaders.htm">Leaders</a><div class="history-mega"><div class="mega-line"><strong>Leaderboards:</strong> <a href="leaders.htm">Player Leaders</a> | <a href="season.htm">Season Summaries</a></div></div></div>
+          <div class="history-nav-item"><a class="history-nav-link" href="records.htm">Records</a><div class="history-mega"><div class="mega-line"><strong>All-Time:</strong> <a href="records.htm#career-records">Career Totals</a> | <a href="records.htm#game-highs">Single-Game Highs</a> | <a href="records.htm#honours">Honours</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="future-pool.htm">Future Pool</a><div class="history-mega"><div class="mega-line"><strong>Ratings:</strong> <a href="future-pool.htm#current-ratings">Current Ratings</a> | <a href="future-pool.htm#potential-ratings">Potential Ratings</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="supercup.htm">Super Cup</a><div class="history-mega"><div class="mega-line"><strong>Cup Archive:</strong> <a href="supercup.htm#knockout">Knockout Bracket</a> | <a href="supercup.htm#group-stage">Group Stage</a> | <a href="supercup.htm#cup-leaders">Stat Leaders</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="youth-intake.htm">Youth Intake</a><div class="history-mega"><div class="mega-line"><strong>Draft History:</strong> <a href="youth-intake.htm">Youth Intake by Season</a> | <a href="youth-intake.htm#franchise">Franchise Intake History</a></div></div></div>
@@ -549,7 +592,7 @@
       <div class="mega-line"><strong>All-Time Greats:</strong> ${allTime.map((p) => `<a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a>`).join(" | ") || "No archived players"}</div>
       <div class="mega-line"><strong>Current Greats:</strong> ${current.map((p) => p.key ? `<a href="player.htm?key=${encodeURIComponent(p.key)}">${esc(p.name)}</a>` : esc(p.name)).join(" | ") || "No current players"}</div>`;
 
-    const season = await loadSeason(latestSeason());
+    const season = await loadSeason(latestSeason(), ["standings"]);
     $("#megaTeams").innerHTML = `<div class="mega-grid">${(season.standings.sections || []).map((section) => `
       <div><strong>${esc(tierFromTitle(section.title))}</strong><div class="mega-line">${(section.teams || []).map((team) => teamMini(team.team, team.rosterFile)).join("")}</div></div>`).join("")}</div>`;
 
@@ -580,15 +623,15 @@
         results.innerHTML = "";
         return;
       }
-      const season = await loadSeason(latestSeason());
       const playerRows = (state.playerIndex?.identities || [])
         .filter((p) => String(p.name || "").toLowerCase().includes(query))
         .slice(0, 8)
         .map((p) => `<a class="history-result" href="player.htm?key=${encodeURIComponent(p.key)}"><span>${esc(p.name)}</span><small>Player</small></a>`);
-      const teamRows = (season.teams || [])
-        .filter((t) => String(t.name || "").toLowerCase().includes(query))
+      const latest = await loadSeason(latestSeason(), ["standings"]);
+      const teamRows = allTeamsFromLatest(latest)
+        .filter((t) => String(t.team || "").toLowerCase().includes(query))
         .slice(0, 8)
-        .map((t) => `<a class="history-result" href="team.htm?id=${encodeURIComponent(fileStem(t.file || t.id))}"><span>${esc(t.name)}</span><small>Team</small></a>`);
+        .map((t) => `<a class="history-result" href="team.htm?id=${encodeURIComponent(t.id)}"><span>${esc(t.team)}</span><small>Team</small></a>`);
       const seasonRows = (state.index?.seasons || [])
         .filter((s) => `${s.season} ${s.label || ""}`.toLowerCase().includes(query))
         .slice(0, 4)
@@ -598,7 +641,8 @@
         { terms: ["players", "greats", "active", "retired"], label: "Player Directory", href: "players.htm" },
         { terms: ["teams", "clubs", "franchises"], label: "Team Directory", href: "teams.htm" },
         { terms: ["season", "standings", "champions", "promoted", "promotion", "relegated", "relegation"], label: "Season Summary", href: "season.htm" },
-        { terms: ["leaders", "leaderboard", "mvp", "points", "rebounds", "assists"], label: "Leaderboards", href: "leaders.htm" },
+        { terms: ["leaders", "leaderboard"], label: "Leaderboards", href: "leaders.htm" },
+        { terms: ["records", "all time", "career", "highs", "mvp", "points", "rebounds", "assists", "championships", "awards"], label: "League Records", href: "records.htm" },
         { terms: ["future", "pool", "prospects", "ratings", "potential"], label: "Future Player Pool", href: "future-pool.htm" },
         { terms: ["super cup", "supercup", "cup", "knockout", "bracket", "group stage"], label: "Super Cup Archive", href: "supercup.htm" },
         { terms: ["youth", "intake", "draft", "rookies"], label: "Youth Intake", href: "youth-intake.htm" },
@@ -725,6 +769,7 @@
         <a href="players.htm"><span>Players</span><strong>All-time and active greats</strong></a>
         <a href="teams.htm"><span>Teams</span><strong>Club histories and timelines</strong></a>
         <a href="leaders.htm"><span>Leaders</span><strong>Filtered season leaderboards</strong></a>
+        <a href="records.htm"><span>Records</span><strong>Career totals, game highs and honours</strong></a>
         <a href="future-pool.htm"><span>Future Pool</span><strong>Current and potential ratings</strong></a>
         <a href="supercup.htm"><span>Super Cup</span><strong>Knockouts, groups and leaders</strong></a>
         <a href="compare.htm"><span>Compare</span><strong>Player and team head-to-heads</strong></a>
@@ -732,7 +777,7 @@
   }
 
   async function renderIndex() {
-    const season = await loadSeason(latestSeason());
+    const season = await loadSeason(latestSeason(), ["standings", "leaders"]);
     const facts = await dashboardFacts(season);
     const allTimeGreats = await rankedPlayers({ limit: 8 });
     const currentGreats = await rankedLatestSeasonPlayers({ limit: 8 });
@@ -781,7 +826,7 @@
   }
 
   async function renderTeamsDirectory() {
-    const season = await loadSeason(latestSeason());
+    const season = await loadSeason(latestSeason(), ["standings"]);
     const teams = allTeamsFromLatest(season);
     $("#history-app").innerHTML = `
       <section class="team-directory-grid">${teams.map((team) => `
@@ -936,7 +981,7 @@
 
   async function teamSupercupHistory(positionHistory, teamName) {
     return Promise.all(positionHistory.map(async ({ season }) => {
-      const data = await loadSeason(season);
+      const data = await loadSeason(season, ["supercupStandings", "supercupResults"]);
       return { season, performance: supercupPerformance(data, teamName) };
     }));
   }
@@ -956,13 +1001,13 @@
 
   async function renderTeamTimeline(positionHistory, id, supercupHistory) {
     const rows = await Promise.all(positionHistory.map(async ({ season, standing }) => {
-      const best = await bestPlayerForTeam(season, id);
+      const best = bestPlayerForTeam(season, standing.team);
       const marker = movementMarker(standing.tier, standing.position, standing.teamCount);
       const cup = supercupHistory.find((entry) => entry.season === season)?.performance;
       return `<article class="timeline-card">
         <div><strong>${esc(seasonLabel(season))}</strong><span>${esc(standing.tier)} #${esc(standing.position)}</span></div>
         <p>${esc(standing.wins)}-${esc(standing.losses)} (${percent(standing.pct)}) | Diff ${esc(standing.diff)} | ${esc(standing.last10 || "")}</p>
-        <p>Best player: ${best ? playerLink(season, String(best.url || "").split("/").pop(), best.name) + ` ${ratingChip("OVR", best.overall)}` : "Unavailable"}</p>
+        <p>Best player: ${best ? playerLink(season, best.playerFile, best.name) + ` ${ratingChip("OVR", best.overall)}` : "Unavailable"}</p>
         <p class="timeline-cup">Super Cup: ${supercupFinishBadge(cup)}</p>
         ${movementBadge(marker)}
       </article>`;
@@ -1068,22 +1113,21 @@
       $("#history-app").innerHTML = `<section class="history-hero"><h1>Player Not Found</h1><p class="muted">Use a history player key from search or an archived season map.</p></section>`;
       return;
     }
+    await ensureCurrentData();
     const appearances = identity.appearances || [];
     const snapshots = [];
-    const statSnapshots = [];
     const accolades = [];
     for (const appearance of appearances) {
-      const data = await loadSeason(appearance.season);
-      const player = (data.players || []).find((p) => String(p.url || "").endsWith(appearance.playerFile)) || {};
+      const data = await loadSeason(appearance.season, ["seasonAwards"]);
+      const player = {
+        overall: appearance.overall,
+        potential: appearance.potential,
+        pos: appearance.pos,
+        age: appearance.age,
+        teamLabel: appearance.team,
+        team: appearance.team
+      };
       snapshots.push({ season: appearance.season, player });
-      const stat = (data.playerStats.players || []).find((p) => String(p.url || "").endsWith(appearance.playerFile));
-      if (stat) statSnapshots.push({ season: appearance.season, stat });
-      (player.awards || []).forEach((award) => accolades.push({
-        archiveSeason: appearance.season,
-        group: award.season,
-        award: award.award,
-        isTotal: Boolean(award.isTotal) || String(award.season || "").toLowerCase() === "total"
-      }));
       (data.seasonAwards.sections || []).forEach((section) => (section.awards || []).filter((award) => award.personFile === appearance.playerFile).forEach((award) => {
         accolades.push({
           archiveSeason: appearance.season,
@@ -1095,7 +1139,15 @@
       }));
     }
     const peak = snapshots.slice().sort((a, b) => (num(b.player.overall) || 0) - (num(a.player.overall) || 0))[0] || { player: {}, season: "" };
-    const latestStats = statSnapshots.slice().sort((a, b) => seasonNumber(a.season) - seasonNumber(b.season)).at(-1)?.stat;
+    const profile = await loadPlayerProfile(identity.key);
+    if (profile?.peakPlayer && Object.keys(profile.peakPlayer).length) peak.player = profile.peakPlayer;
+    const latestStats = profile?.latestStats;
+    (profile?.awards || []).forEach((award) => accolades.push({
+      archiveSeason: identity.latestSeason,
+      group: award.season,
+      award: award.award,
+      isTotal: Boolean(award.isTotal) || String(award.season || "").toLowerCase() === "total"
+    }));
     const selectedStatTable = params().get("table") || "season_averages";
     const playerStatsView = renderPlayerStatTable(latestStats, selectedStatTable);
     const status = identityStatus(identity);
@@ -1131,7 +1183,7 @@
   async function renderTeam() {
     const id = fileStem(params().get("id") || params().get("team") || "");
     const selected = selectedSeasonOrLatest();
-    const data = await loadSeason(selected);
+    const data = await loadSeason(selected, ["teams", "standings", "players", "teamStats", "seasonAwards", "youth"]);
     const team = (data.teams || []).find((t) => fileStem(t.file || t.id) === id) || (data.standings.sections || []).flatMap((s) => s.teams || []).find((t) => fileStem(t.rosterFile) === id);
     if (!team) {
       $("#history-app").innerHTML = `<section class="history-hero"><h1>Team Not Found</h1></section>`;
@@ -1173,12 +1225,10 @@
   }
 
   function youthRatedPlayer(data, p) {
-    const name = String(p.name || "").toLowerCase();
-    const height = heightTextFromInches(p.Height);
-    return p.overall !== undefined || p.potential !== undefined ? p
-      : (data.players || []).find((player) => String(player.name || "").toLowerCase() === name && (!height || String(player.ht || "") === height))
-        || (data.players || []).find((player) => String(player.name || "").toLowerCase() === name)
-        || {};
+    if (p.overall !== undefined || p.potential !== undefined) return p;
+    const appearance = (youthPlayerIdentity(p, data.season)?.appearances || [])
+      .find((item) => item.season === data.season);
+    return appearance || {};
   }
 
   function renderYouthTeam(data, teamName, limit = Infinity) {
@@ -1354,7 +1404,7 @@
   }
 
   async function teamPositionHistory(id) {
-    const seasons = await allSeasonData();
+    const seasons = await allSeasonData(["standings"]);
     return seasons.map((data) => {
       const standing = selectedTeamStanding(data, id);
       return standing.team ? { season: data.season, standing } : null;
@@ -1396,6 +1446,7 @@
   function renderSeasonRecap(data) {
     const selected = data.season;
     const teams = allTeamsFromLatest(data);
+    const teamFiles = new Map(teams.map((team) => [slug(team.team), team.rosterFile]));
     const champion = teams.slice().sort((a, b) => teamOverallRank(a) - teamOverallRank(b))[0] || {};
     const promoted = teams.filter((row) => movementMarker(row.tier, row.position, row.teamCount) === "P");
     const relegated = teams.filter((row) => movementMarker(row.tier, row.position, row.teamCount) === "R");
@@ -1405,7 +1456,9 @@
       const leader = match?.category?.leaders?.[0];
       return leader ? { key, tier: match.tier, category: match.category, leader } : null;
     }).filter(Boolean);
-    const topPlayers = (data.players || []).slice()
+    const topPlayers = (state.playerIndex?.identities || []).flatMap((identity) => (identity.appearances || [])
+      .filter((appearance) => appearance.season === selected)
+      .map((appearance) => ({ ...appearance, name: identity.name, key: identity.key })))
       .filter((player) => num(player.overall) !== null)
       .sort((a, b) => (num(b.overall) || 0) - (num(a.overall) || 0))
       .slice(0, 8);
@@ -1429,8 +1482,7 @@
           <section class="reference-section"><h2>Season Award Snapshot</h2>${table(["Tier", "Award", "Person", "Team"], awardHighlights.map(({ section, award }) => `<tr><td>${esc(section.title)}</td><td>${esc(award.award)}</td><td>${playerLink(selected, award.personFile, award.person)}</td><td>${teamLink(award.teamFile, award.team)}</td></tr>`), "No archived season awards")}</section>
           <section class="reference-section"><h2>Stat Leaders Snapshot</h2>${table(["Category", "Tier", "Player", "Team", "Value"], leaderHighlights.map(({ tier, category, leader }) => `<tr><td>${esc(category.title)}</td><td>${esc(tier)}</td><td>${playerLink(selected, leader.playerFile, leader.player)}</td><td>${teamLink(leader.teamFile, leader.teamName)}</td><td class="num">${esc(leader.valueText || leader.value)}</td></tr>`), "No leader highlights")}</section>
           <section class="reference-section"><h2>Highest Rated Players</h2>${table(["Player", "Pos", "Team", "Age", "OVR", "POT"], topPlayers.map((player) => {
-            const file = String(player.url || "").split("/").pop();
-            return `<tr><td>${playerLink(selected, file, player.name)}</td><td>${esc(player.pos)}</td><td>${teamLink(player.teamFile || player.team, player.teamLabel || player.team)}</td><td class="num">${esc(player.age)}</td><td>${ratingChip("OVR", player.overall)}</td><td>${ratingChip("POT", player.potential)}</td></tr>`;
+            return `<tr><td><a href="player.htm?key=${encodeURIComponent(player.key)}">${esc(player.name)}</a></td><td>${esc(player.pos)}</td><td>${teamLink(teamFiles.get(slug(player.team)), player.team)}</td><td class="num">${esc(player.age)}</td><td>${ratingChip("OVR", player.overall)}</td><td>${ratingChip("POT", player.potential)}</td></tr>`;
           }), "No player ratings archived")}</section>
         </div>
         <div>
@@ -1447,7 +1499,7 @@
 
   async function renderSeason() {
     const selected = selectedSeasonOrLatest();
-    const data = await loadSeason(selected);
+    const data = await loadSeason(selected, ["standings", "leaders", "teamStats", "awards", "seasonAwards", "gameResults", "supercupStandings", "supercupLeaders"]);
     $("#history-app").innerHTML = `
       <section class="reference-section compact-controls"><h2>Season Controls</h2><div class="filter-bar">
         <label>Season ${seasonSelector(selected)}</label>
@@ -1522,13 +1574,10 @@
     const identity = (state.playerIndex?.identities || []).find((item) => item.key === key);
     if (!identity) return null;
     const appearances = identity.appearances || [];
-    const statSnapshots = [];
     const awardKeys = new Set();
     let weeklyAwards = 0;
     for (const appearance of appearances) {
-      const data = await loadSeason(appearance.season);
-      const stat = (data.playerStats.players || []).find((p) => String(p.url || "").endsWith(appearance.playerFile));
-      if (stat) statSnapshots.push({ season: appearance.season, stat });
+      const data = await loadSeason(appearance.season, ["seasonAwards", "awards"]);
       (data.seasonAwards.sections || []).forEach((section) => (section.awards || [])
         .filter((award) => award.personFile === appearance.playerFile)
         .forEach((award) => awardKeys.add(`${appearance.season}|${section.title}|${award.award}|${award.personFile}`)));
@@ -1540,7 +1589,7 @@
         })));
     }
     const peak = appearances.slice().sort((a, b) => (num(b.overall) || 0) - (num(a.overall) || 0))[0] || {};
-    const latestStat = statSnapshots.slice().sort((a, b) => seasonNumber(a.season) - seasonNumber(b.season)).at(-1)?.stat || {};
+    const latestStat = (await loadPlayerProfile(key))?.latestStats || {};
     const career = playerCareerRow(latestStat);
     const bestPpg = bestPlayerStatSeason(latestStat, "pts");
     const bestRpg = bestPlayerStatSeason(latestStat, "drb");
@@ -1567,7 +1616,7 @@
 
   async function teamCompareSummary(id) {
     if (!id) return null;
-    const seasons = await allSeasonData();
+    const seasons = await allSeasonData(["standings", "teamStats", "seasonAwards", "awards"]);
     const history = [];
     const statRows = [];
     let seasonAwards = 0;
@@ -1761,7 +1810,7 @@
 
   async function renderSupercupPage() {
     const selected = selectedSeasonOrLatest();
-    const data = await loadSeason(selected);
+    const data = await loadSeason(selected, ["teams", "standings", "supercupStandings", "supercupLeaders", "supercupResults"]);
     $("#history-app").innerHTML = `
       <section class="reference-section compact-controls"><h2>Super Cup Archive</h2><div class="filter-bar">
         <label>Season ${seasonSelector(selected)}</label>
@@ -1773,9 +1822,126 @@
     $("#seasonSelect")?.addEventListener("change", (event) => { navigate(`supercup.htm?season=${encodeURIComponent(event.target.value)}`); });
   }
 
+  function recordPlayerAnchor(record) {
+    return record?.identity?.key
+      ? `<a href="player.htm?key=${encodeURIComponent(record.identity.key)}">${esc(record.identity.name)}</a>`
+      : esc(record?.name || "Unknown Player");
+  }
+
+  function recordNumber(value) {
+    if (value === null || value === undefined || value === "") return "-";
+    const n = Number(value);
+    return Number.isFinite(n) ? n.toLocaleString("en-US") : "-";
+  }
+
+  function recordLeaderboard(title, records, rowKey, limit, valueLabel = "Total") {
+    const ranked = records
+      .map((record) => ({ record, value: statValue(record[rowKey.source], rowKey.key) }))
+      .filter(({ value }) => value !== null && value > 0)
+      .sort((a, b) => b.value - a.value || String(a.record.identity?.name || "").localeCompare(String(b.record.identity?.name || "")))
+      .slice(0, limit);
+    return `<section class="reference-section"><h2>${esc(title)}</h2>${table(
+      ["Rank", "Player", "Team", valueLabel],
+      ranked.map(({ record, value }, index) => `<tr><td class="num">${index + 1}</td><td>${recordPlayerAnchor(record)}</td><td>${esc(record.appearance?.team || "-")}</td><td class="num">${recordNumber(value)}</td></tr>`),
+      `No ${title.toLowerCase()} available`
+    )}</section>`;
+  }
+
+  async function renderRecords() {
+    const feed = await fetchJson(`${HISTORY_ROOT}league_records.json`, {
+      throughLabel: seasonLabel(latestSeason()),
+      players: [],
+      awards: [],
+      championships: [],
+      championshipTotals: []
+    });
+    const identities = new Map((state.playerIndex?.identities || []).map((identity) => [identity.key, identity]));
+    const records = (feed.players || []).map((record) => ({
+      ...record,
+      identity: identities.get(record.key) || { key: record.key, name: record.name },
+      appearance: { team: record.team, season: record.season }
+    }));
+    const awards = (feed.awards || []).map((record) => ({
+      ...record,
+      identity: identities.get(record.key) || { key: record.key, name: record.name }
+    }));
+    const championships = feed.championships || [];
+    const titleTotals = feed.championshipTotals || [];
+    const selectedLimit = ["10", "25", "50"].includes(params().get("limit")) ? params().get("limit") : "10";
+    const limit = Number(selectedLimit);
+    const through = feed.throughLabel || seasonLabel(latestSeason());
+    const pointsLeader = records.slice().sort((a, b) => (statValue(b.career, "pts") || 0) - (statValue(a.career, "pts") || 0))[0];
+    const gamePointsLeader = records.slice().sort((a, b) => (statValue(b.highs, "pts") || 0) - (statValue(a.highs, "pts") || 0))[0];
+    const titleLeader = titleTotals[0];
+    const awardLeader = awards[0];
+    const seasonDisplay = (season) => (state.index?.seasons || []).find((item) => String(item.label || "").startsWith(String(season)))?.label || season;
+
+    $("#history-app").innerHTML = `
+      <section class="history-hero">
+        <div class="eyebrow">Archive Record Book</div>
+        <h1>League Records</h1>
+        <div class="history-meta"><span class="pill">Through ${esc(through)}</span><span class="pill">${records.length} Players</span><span class="pill">${championships.length} Championships</span></div>
+      </section>
+      <section class="reference-section compact-controls"><h2>Record Controls</h2><div class="filter-bar">
+        <label>Rows <select id="recordsLimit">${["10", "25", "50"].map((value) => `<option value="${value}" ${selectedLimit === value ? "selected" : ""}>Top ${value}</option>`).join("")}</select></label>
+        <div class="history-meta"><span class="pill">Completed Seasons Only</span><span class="pill">Career Highs = Single Game</span></div>
+      </div></section>
+      <section class="dashboard-grid">
+        ${dashboardCard("Career Scoring", recordPlayerAnchor(pointsLeader), `${recordNumber(statValue(pointsLeader?.career, "pts"))} points`)}
+        ${dashboardCard("Single-Game Points", recordPlayerAnchor(gamePointsLeader), `${recordNumber(statValue(gamePointsLeader?.highs, "pts"))} points`)}
+        ${dashboardCard("Most Championships", titleLeader ? teamMini(titleLeader.team, titleLeader.file) : "No champion", `${recordNumber(titleLeader?.titles)} titles`)}
+        ${dashboardCard("Major Awards", awardLeader ? recordPlayerAnchor(awardLeader) : "No winner", `${recordNumber(awardLeader?.total)} awards`)}
+      </section>
+      <div id="career-records">
+        <section class="reference-section"><h2>Career Records <span class="muted">Regular season totals</span></h2><p class="muted">The latest archived Career row is used once per historical player; archived seasons are not added together twice.</p></section>
+        <div class="history-grid three">
+          ${recordLeaderboard("Career Points", records, { source: "career", key: "pts" }, limit)}
+          ${recordLeaderboard("Career Rebounds", records, { source: "career", key: "reb" }, limit)}
+          ${recordLeaderboard("Career Assists", records, { source: "career", key: "ast" }, limit)}
+          ${recordLeaderboard("Career Steals", records, { source: "career", key: "stl" }, limit)}
+          ${recordLeaderboard("Career Blocks", records, { source: "career", key: "blk" }, limit)}
+          ${recordLeaderboard("Career Games", records, { source: "career", key: "g" }, limit)}
+        </div>
+      </div>
+      <div id="game-highs">
+        <section class="reference-section"><h2>Single-Game Records <span class="muted">Player Career Highs</span></h2><p class="muted">These values come directly from each player's Career Highs table. The export does not attach a date or opponent to the record.</p></section>
+        <div class="history-grid three">
+          ${recordLeaderboard("Single-Game Points", records, { source: "highs", key: "pts" }, limit, "High")}
+          ${recordLeaderboard("Single-Game Rebounds", records, { source: "highs", key: "reb" }, limit, "High")}
+          ${recordLeaderboard("Single-Game Assists", records, { source: "highs", key: "ast" }, limit, "High")}
+          ${recordLeaderboard("Single-Game Steals", records, { source: "highs", key: "stl" }, limit, "High")}
+          ${recordLeaderboard("Single-Game Blocks", records, { source: "highs", key: "blk" }, limit, "High")}
+          ${recordLeaderboard("Single-Game Threes", records, { source: "highs", key: "3pm" }, limit, "High")}
+        </div>
+      </div>
+      <div id="honours" class="history-grid main-rail">
+        <div>
+          <section class="reference-section"><h2>Major Award Leaders</h2>${table(
+            ["Rank", "Player", "MVP", "DPOY", "ROTY", "6MOY", "MIP", "Total"],
+            awards.slice(0, limit).map((record, index) => `<tr><td class="num">${index + 1}</td><td>${recordPlayerAnchor(record)}</td><td class="num">${record.MVP}</td><td class="num">${record.DPOY}</td><td class="num">${record.ROTY}</td><td class="num">${record["6MOY"]}</td><td class="num">${record.MIP}</td><td class="num">${record.total}</td></tr>`),
+            "No archived major awards"
+          )}</section>
+        </div>
+        <div>
+          <section class="reference-section"><h2>Championship Totals</h2>${table(
+            ["Rank", "Team", "Titles", "Winning Seasons"],
+            titleTotals.map((record, index) => `<tr><td class="num">${index + 1}</td><td>${teamMini(record.team, record.file)}</td><td class="num">${record.titles}</td><td>${esc(record.wins.join(", "))}</td></tr>`),
+            "Championship history unavailable"
+          )}</section>
+        </div>
+      </div>
+      <section class="reference-section"><h2>Championship History</h2>${table(
+        ["Season", "Competition", "Champion", "Finalist"],
+        championships.map((record) => `<tr><td>${esc(seasonDisplay(record.season))}</td><td>${esc(record.tier)}</td><td>${teamMini(record.champion, record.championFile)}</td><td>${teamMini(record.opponent, record.opponentFile)}</td></tr>`),
+        "Championship history unavailable"
+      )}</section>`;
+    $("#recordsLimit")?.addEventListener("change", (event) => navigate(`records.htm?limit=${encodeURIComponent(event.target.value)}`));
+  }
+
   async function renderLeaders() {
     const selected = selectedSeasonOrLatest();
-    const data = await loadSeason(selected);
+    await ensureCurrentData();
+    const data = await loadSeason(selected, ["leaders", "standings"]);
     const allCategories = leaderCategories(data);
     const p = params();
     const selectedTier = p.get("tier") || "all";
@@ -1791,10 +1957,9 @@
       || categoryOptions[0]
       || allCategories[0];
     const teams = allTeamsFromLatest(data).sort((a, b) => a.team.localeCompare(b.team));
-    const playerByFile = new Map((data.players || []).map((player) => [String(player.url || "").split("/").pop(), player]));
     let leaders = (active?.category?.leaders || []).map((leader) => {
-      const player = playerByFile.get(leader.playerFile) || {};
       const identity = identityForSeasonPlayer(selected, leader.playerFile);
+      const player = (identity?.appearances || []).find((appearance) => appearance.season === selected) || {};
       return { leader, player, identity };
     });
     if (selectedTeam !== "all") leaders = leaders.filter(({ leader }) => fileStem(leader.teamFile) === selectedTeam);
@@ -1828,8 +1993,8 @@
 
   async function renderYouth() {
     const selected = params().get("season") || "all";
-    const allData = await allSeasonData();
-    const data = selected === "all" ? allData.at(-1) || { season: latestSeason(), youth: { teams: [] }, players: [] } : await loadSeason(selected);
+    const allData = await allSeasonData(["youth"]);
+    const data = selected === "all" ? allData.at(-1) || { season: latestSeason(), youth: { teams: [] } } : await loadSeason(selected, ["youth"]);
     const teamNames = Array.from(new Set(allData.flatMap((seasonData) => (seasonData.youth.teams || []).map((row) => row.team)))).sort((a, b) => a.localeCompare(b));
     const teams = teamNames.map((team) => ({ team }));
     const selectedTeam = params().get("team") || "all";
@@ -1910,7 +2075,7 @@
 
   async function teamCompareCard(id) {
     if (!id) return `<section class="reference-section"><h2>Team</h2><div class="empty">Choose a team to compare</div></section>`;
-    const latest = await loadSeason(latestSeason());
+    const latest = await loadSeason(latestSeason(), ["standings"]);
     const team = allTeamsFromLatest(latest).find((row) => row.id === id);
     const history = await teamPositionHistory(id);
     const bestFinish = history.slice().sort((a, b) => teamOverallRank(a.standing) - teamOverallRank(b.standing))[0];
@@ -1921,9 +2086,10 @@
   }
 
   async function renderCompare() {
-    await loadSeason(latestSeason());
     const p = params();
     const type = p.get("type") === "teams" ? "teams" : "players";
+    if (type === "players") await ensureCurrentData();
+    if (type === "teams") await loadSeason(latestSeason(), ["standings"]);
     const a = p.get("a") || "";
     const b = p.get("b") || "";
     const options = type === "teams" ? comparePickerOptions(type) : "";
@@ -1977,6 +2143,7 @@
     if (file === "team.htm") return "team";
     if (file === "season.htm") return "season";
     if (file === "leaders.htm") return "leaders";
+    if (file === "records.htm") return "records";
     if (file === "future-pool.htm") return "future-pool";
     if (file === "supercup.htm") return "supercup";
     if (file === "youth-intake.htm") return "youth";
@@ -1996,6 +2163,7 @@
     if (page === "team") await renderTeam();
     if (page === "season") await renderSeason();
     if (page === "leaders") await renderLeaders();
+    if (page === "records") await renderRecords();
     if (page === "future-pool") await renderFuturePool();
     if (page === "supercup") await renderSupercupPage();
     if (page === "youth") await renderYouth();
