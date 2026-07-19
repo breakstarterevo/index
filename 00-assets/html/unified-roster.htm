@@ -1337,10 +1337,36 @@
         .join("") || "TM";
     }
 
-    function parseDateMMDDYYYY(v) {
+    let scheduleDateOrder = "dmy";
+
+    function inferScheduleDateOrder(values) {
+      let order = "";
+      (values || []).some((value) => {
+        const match = String(value || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+        if (!match) return false;
+        const first = Number(match[1]);
+        const second = Number(match[2]);
+        if (first > 12 && second <= 12) {
+          order = "dmy";
+          return true;
+        }
+        if (second > 12 && first <= 12) {
+          order = "mdy";
+          return true;
+        }
+        return false;
+      });
+
+      // Fast Break exports use day/month/year when every date is ambiguous.
+      return order || "dmy";
+    }
+
+    function parseScheduleDate(v) {
       const m = String(v || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
       if (!m) return null;
-      return new Date(Number(m[3]), Number(m[1]) - 1, Number(m[2]));
+      const day = Number(scheduleDateOrder === "mdy" ? m[2] : m[1]);
+      const month = Number(scheduleDateOrder === "mdy" ? m[1] : m[2]);
+      return new Date(Number(m[3]), month - 1, day);
     }
 
     function buildTeamLogo(teamName) {
@@ -1804,7 +1830,7 @@
 
     function collectTeamGames(teamId) {
       const days = state.scheduleSections.flatMap((sec) => sec.days || []);
-      return days.flatMap((d) => (d.games || []).filter((g) => g.homeTeam === teamId || g.awayTeam === teamId).map((g) => ({ ...g, dateObj: parseDateMMDDYYYY(d.date), date: d.date })));
+      return days.flatMap((d) => (d.games || []).filter((g) => g.homeTeam === teamId || g.awayTeam === teamId).map((g) => ({ ...g, dateObj: parseScheduleDate(d.date), date: d.date })));
     }
 
     function renderTeamFormStrip() {
@@ -1890,7 +1916,7 @@
       window.UnifiedRosterGMDashboard.render({
         state,
         rootId: "gmDashboardBody",
-        helpers: { toPlayerHref, scheduleBoxHref, parseDate: parseDateMMDDYYYY }
+        helpers: { toPlayerHref, scheduleBoxHref, parseDate: parseScheduleDate }
       });
     }
 
@@ -2031,6 +2057,9 @@
         state.players = base.players;
         state.playerStats = base.playerStats;
         state.scheduleSections = base.scheduleSections;
+        scheduleDateOrder = inferScheduleDateOrder(state.scheduleSections.flatMap((section) =>
+          (section.days || []).map((day) => day.date)
+        ));
         state.injuries = base.injuries;
         state.capReport = base.capReport || [];
         state.monthlyTeamForm = base.monthlyTeamForm || {};

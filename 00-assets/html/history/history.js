@@ -158,7 +158,7 @@
     const initialPot = listedPot && listedPot > 0 ? listedPot : num(intakeAppearance.potential);
     const peakOvr = num(peak.overall);
     const developmentSeasons = appearances.filter((appearance) => seasonNumber(appearance.season) > seasonNumber(season)).length;
-    const wildcard = initialPot !== null && initialPot > 115;
+    const wildcard = initialPot !== null && initialPot >= 115;
     const mature = developmentSeasons >= 5;
     const versusPot = peakOvr !== null && initialPot !== null && initialPot > 0 ? peakOvr - initialPot : null;
     const outcome = versusPot === null
@@ -924,7 +924,7 @@
     }).join("");
     const labels = rows.map((row, index) => `<text x="${x(index)}" y="${height - 10}" text-anchor="middle">${esc(row.shortLabel || row.label)}</text>`).join("");
     const legend = keys.map((key, index) => `<span><i style="background:${colors[index % colors.length]}"></i>${esc(key)}</span>`).join("");
-    return `<div class="chart-wrap"><svg class="history-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(options.label || "Archive chart")}">
+    return `<div class="chart-wrap career-chart-wrap"><svg class="history-chart" viewBox="0 0 ${width} ${height}" role="img" aria-label="${esc(options.label || "Archive chart")}">
       <line class="chart-axis" x1="${pad.left}" y1="${height - pad.bottom}" x2="${width - pad.right}" y2="${height - pad.bottom}"></line>
       <line class="chart-axis" x1="${pad.left}" y1="${pad.top}" x2="${pad.left}" y2="${height - pad.bottom}"></line>
       <text class="chart-y" x="8" y="${pad.top + 4}">${esc(max)}</text>
@@ -2276,13 +2276,13 @@
     const overallYouth = summarizeYouth(analyticsPlayers);
     const bestClass = classAnalytics[0];
     const biggestGain = development[0];
-    const classesTable = table(["Rank", "Season", "Team", "Players", "Top-2 Avg Peak OVR", "Hit Rate", "Bust Rate", "Home Run Rate"], classAnalytics.slice(0, 25).map((row, index) => {
+    const classesTable = table(["Rank", "Season", "Team", "Players", "Top-2 Avg Peak OVR", "Elite Prospect Rate", "Bust Rate", "Home Run Rate"], classAnalytics.slice(0, 25).map((row, index) => {
       const detailId = `intake-class-${slug(row.season)}-${slug(row.team)}-${index}`;
       const preview = row.members.map((member) => member.player.name).join(", ");
       const playerRows = row.members.slice().sort((a, b) => b.peakOvr - a.peakOvr).map((member) => `<div class="intake-player-grid-row" role="row"><div role="cell">${youthPlayerLink(member.player, member.season)}</div><div role="cell">${esc(member.player.Position || "-")}</div><div role="cell">${ratingChip("OVR", member.initialOvr)}</div><div role="cell">${ratingChip("POT", member.initialPot)}</div><div role="cell">${ratingChip("OVR", member.peakOvr)}</div><div role="cell">${esc(member.peakSeason ? seasonLabel(member.peakSeason) : "-")}</div><div role="cell">${esc(member.outcome)}</div></div>`).join("");
       return `<tr class="intake-class-summary" data-detail-id="${esc(detailId)}"><td class="num">${index + 1}</td><td>${esc(seasonLabel(row.season))}</td><td><button class="intake-class-toggle" type="button" aria-expanded="false" aria-controls="${esc(detailId)}" data-preview="${esc(preview)}" title="${esc(preview)}"><span>${esc(row.team)}</span><span class="intake-class-chevron" aria-hidden="true">▸</span></button></td><td class="num">${row.count}</td><td class="num">${oneDecimal(row.avgPeak)}</td><td class="num">${oneDecimal(row.hits * 100 / row.count)}%</td><td class="num">${row.matureWildcards ? `${oneDecimal(row.busts * 100 / row.matureWildcards)}%` : "-"}</td><td class="num">${row.count ? `${oneDecimal(row.homeRuns * 100 / row.count)}%` : "-"}</td></tr><tr class="intake-class-detail-row" id="${esc(detailId)}" data-expanded="false" hidden><td colspan="8"><div class="intake-player-grid" role="table" aria-label="${esc(row.team)} ${esc(seasonLabel(row.season))} intake players"><div class="intake-player-grid-row header" role="row"><div role="columnheader">Player</div><div role="columnheader">Pos</div><div role="columnheader">Intake OVR</div><div role="columnheader">Intake POT</div><div role="columnheader">Peak OVR</div><div role="columnheader">Peak Season</div><div role="columnheader">Outcome</div></div>${playerRows}</div></td></tr>`;
     }), "No evaluated intake classes");
-    const franchisesTable = table(["Rank", "Team", "Elite Pool", "Elite Pool Score", "Hit Rate", "Bust Rate", "Home Run Rate"], franchiseAnalytics.map((row, index) => {
+    const franchisesTable = table(["Rank", "Team", "Elite Pool", "Elite Pool Score", "Elite Prospect Rate", "Bust Rate", "Home Run Rate"], franchiseAnalytics.map((row, index) => {
       const detailId = `intake-franchise-${slug(row.team)}-${index}`;
       const preview = row.members.map((member) => member.player.name).join(", ");
       const playerRows = row.members.slice().sort((a, b) => seasonNumber(a.season) - seasonNumber(b.season) || b.peakOvr - a.peakOvr).map((member) => `<div class="intake-player-grid-row" role="row"><div role="cell">${youthPlayerLink(member.player, member.season)}</div><div role="cell">${esc(seasonLabel(member.season))}</div><div role="cell">${ratingChip("OVR", member.initialOvr)}</div><div role="cell">${ratingChip("POT", member.initialPot)}</div><div role="cell">${ratingChip("OVR", member.peakOvr)}</div><div role="cell">${esc(member.peakSeason ? seasonLabel(member.peakSeason) : "-")}</div><div role="cell">${esc(member.outcome)}</div></div>`).join("");
@@ -2295,14 +2295,14 @@
       </div></section>
       <section class="dashboard-grid compact-summary">
         ${dashboardCard("Best Intake Class", bestClass ? `${esc(bestClass.team)} · ${esc(seasonLabel(bestClass.season))}` : "-", `${oneDecimal(bestClass?.avgPeak)} top-two average peak OVR`)}
-        ${dashboardCard("Wildcard Hit Rate", overallYouth.count ? `${oneDecimal(overallYouth.hits * 100 / overallYouth.count)}%` : "-", `${overallYouth.hits}/${overallYouth.count} pulls above 115 POT`)}
+        ${dashboardCard("Elite Prospect Rate", overallYouth.count ? `${oneDecimal(overallYouth.hits * 100 / overallYouth.count)}%` : "-", `${overallYouth.hits}/${overallYouth.count} players entered with 115+ POT`)}
         ${dashboardCard("Biggest Development Gain", biggestGain ? youthPlayerLink(biggestGain.player, biggestGain.season) : "-", biggestGain ? `+${biggestGain.gain} OVR` : "No evaluated players")}
       </section>
       <section class="reference-section"><div class="section-tabs"><a class="section-tab ${selectedView === "classes" ? "active" : ""}" href="development-stats.htm?team=${encodeURIComponent(selectedTeam)}&view=classes">Intake Classes</a><a class="section-tab ${selectedView === "franchises" ? "active" : ""}" href="development-stats.htm?team=${encodeURIComponent(selectedTeam)}&view=franchises">Franchises</a></div>
         <h2>${selectedView === "classes" ? "Best Intake Classes" : "Franchise Development"}</h2>${selectedView === "classes" ? classesTable : franchisesTable}
       </section>
       <section class="reference-section"><h2>Biggest Development Surprises</h2>${table(["Player", "Team", "Intake POT", "Peak OVR", "vs POT", "Outcome"], development.slice(0, 25).map((row) => `<tr><td>${youthPlayerLink(row.player, row.season)}</td><td>${esc(row.team)}</td><td>${ratingChip("POT", row.initialPot)}</td><td>${ratingChip("OVR", row.peakOvr)}</td><td class="num">${row.versusPot === null ? "-" : `${row.versusPot >= 0 ? "+" : ""}${row.versusPot}`}</td><td>${esc(row.outcome)}</td></tr>`), "No development data")}</section>
-      <details class="development-definitions"><summary>How outcomes work</summary><p>Class average peak OVR uses the best two players when a class has three or more. Franchise rank uses an Elite Pool Score based on the top 25% of its intake players by peak OVR, with at least three players when available. Rank weights decrease linearly from 2× for the best player to 1× for the lowest player in the pool, then normalize into one comparable score. Wildcard hit = an intake pull above 115 POT. Bust = a wildcard pull that has not reached its initial POT after five post-intake archive seasons. Development home run = peak OVR at least 10 points above initial POT. Wildcard pulls inside that five-season window remain developing.</p></details>`;
+      <details class="development-definitions"><summary>How outcomes work</summary><p>Class average peak OVR uses the best two players when a class has three or more. Franchise rank uses an Elite Pool Score based on the top 25% of its intake players by peak OVR, with at least three players when available. Rank weights decrease linearly from 2× for the best player to 1× for the lowest player in the pool, then normalize into one comparable score. Elite Prospect = an intake player who entered with at least 115 POT. Bust = an Elite Prospect who has not reached initial POT after five post-intake archive seasons. Development home run = peak OVR at least 10 points above initial POT. Elite Prospects inside that five-season window remain developing.</p></details>`;
     $("#teamSelect")?.addEventListener("change", (event) => { navigate(`development-stats.htm?team=${encodeURIComponent(event.target.value)}&view=${encodeURIComponent(selectedView)}`); });
     const toggleIntakeClass = (summaryRow) => {
       const detailRow = document.getElementById(summaryRow?.dataset.detailId || "");

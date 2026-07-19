@@ -1129,6 +1129,10 @@ select, .small-input, .filter-bar input {
   max-height: 230px;
 }
 
+.career-chart-wrap {
+  max-height: none;
+}
+
 .position-chart {
   max-height: 210px;
   min-width: 420px;

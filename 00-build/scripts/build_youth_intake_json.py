@@ -158,7 +158,7 @@ def _enrich_intake_player(player, team_name, rating_lookup):
     rated_player = _rated_player_for_intake(enriched, team_name, rating_lookup)
     enriched["playerId"] = rated_player.get("playerId", "") or _player_id_from_url(rated_player.get("url", ""))
     enriched["overall"] = _parse_overall(rated_player.get("overall", ""))
-    enriched["potential"] = _parse_overall(rated_player.get("potential", "") or enriched.get("POT", ""))
+    enriched["potential"] = _parse_overall(enriched.get("POT", "") or rated_player.get("potential", ""))
     return enriched
 
 
@@ -254,6 +254,14 @@ def _find_sheet(sheets, desired_name):
 
 
 def _find_database_sheets(sheets):
+    # Sheet8 is the maintained full player database. Prefer it exclusively so
+    # partial/derived tabs cannot overwrite its attributes or POT values.
+    primary_name, primary_rows = _find_sheet(sheets, "Sheet8")
+    if primary_name:
+        return [(primary_name, primary_rows)]
+
+    # Retain the older multi-sheet discovery for backward compatibility with
+    # workbooks created before the full Sheet8 database was introduced.
     found = []
     seen = set()
     for desired_name in ("Current Intake", "DATABASE", "DATATBASE", "UNIQUE DB", "TIER 1", "TIER 2", "TIER 3"):
