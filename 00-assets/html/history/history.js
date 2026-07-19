@@ -148,6 +148,44 @@
     return { overall: maximum("overall"), potential: maximum("potential"), season: peakAppearance?.season || "" };
   }
 
+  function youthDevelopmentMeta(player, season, ratedPlayer = {}) {
+    const appearances = youthPlayerIdentity(player, season)?.appearances || [];
+    const intakeAppearance = appearances.find((appearance) => appearance.season === season) || {};
+    const peak = youthPeakRatings(player, season);
+    const listedOvr = num(player?.overall ?? ratedPlayer.overall);
+    const listedPot = num(player?.potential ?? ratedPlayer.potential);
+    const initialOvr = listedOvr && listedOvr > 0 ? listedOvr : num(intakeAppearance.overall);
+    const initialPot = listedPot && listedPot > 0 ? listedPot : num(intakeAppearance.potential);
+    const peakOvr = num(peak.overall);
+    const developmentSeasons = appearances.filter((appearance) => seasonNumber(appearance.season) > seasonNumber(season)).length;
+    const wildcard = initialPot !== null && initialPot > 115;
+    const mature = developmentSeasons >= 5;
+    const versusPot = peakOvr !== null && initialPot !== null && initialPot > 0 ? peakOvr - initialPot : null;
+    const outcome = versusPot === null
+      ? "-"
+      : versusPot >= 10
+        ? "Home Run"
+        : versusPot >= 0
+          ? "Reached POT"
+          : wildcard && mature
+            ? "Bust"
+            : wildcard
+              ? "Developing"
+              : "Below POT";
+    return {
+      initialOvr,
+      initialPot,
+      peakOvr,
+      peakPot: num(peak.potential),
+      peakSeason: peak.season,
+      developmentSeasons,
+      wildcard,
+      mature,
+      versusPot,
+      outcome
+    };
+  }
+
   async function fetchJson(path, fallback, options = {}) {
     try {
       const response = await fetch(path, { cache: options.cache || "no-store" });
@@ -267,13 +305,13 @@
 
   function sortTableByHeader(header) {
     const tableEl = header.closest("table");
-    const tbody = tableEl?.querySelector("tbody");
+    const tbody = tableEl?.tBodies?.[0];
     if (!tableEl || !tbody) return;
     const index = Number(header.dataset.sortIndex);
     const current = header.getAttribute("aria-sort");
     const next = current === "ascending" ? "descending" : "ascending";
     const direction = next === "ascending" ? 1 : -1;
-    const rows = Array.from(tbody.querySelectorAll("tr"));
+    const rows = Array.from(tbody.children).filter((row) => !row.classList.contains("intake-class-detail-row"));
 
     rows.sort((rowA, rowB) => {
       const result = compareSortValues(cellSortValue(rowA.children[index]), cellSortValue(rowB.children[index]), direction);
@@ -288,12 +326,19 @@
     header.setAttribute("aria-sort", next);
     header.classList.toggle("sort-asc", next === "ascending");
     header.classList.toggle("sort-desc", next === "descending");
-    rows.forEach((row) => tbody.appendChild(row));
+    rows.forEach((row) => {
+      tbody.appendChild(row);
+      const detailId = row.dataset.detailId;
+      if (detailId) {
+        const detailRow = document.getElementById(detailId);
+        if (detailRow) tbody.appendChild(detailRow);
+      }
+    });
   }
 
   function setupSortableTables(root = document) {
     root.querySelectorAll("table.sortable-table").forEach((tableEl) => {
-      tableEl.querySelectorAll("tbody tr").forEach((row, index) => {
+      Array.from(tableEl.tBodies?.[0]?.children || []).filter((row) => !row.classList.contains("intake-class-detail-row")).forEach((row, index) => {
         if (!row.dataset.originalIndex) row.dataset.originalIndex = String(index);
       });
     });
@@ -321,7 +366,7 @@
     const columns = tableVisibleColumnIndexes(tableEl);
     const rows = [
       Array.from(tableEl.querySelectorAll("thead th")),
-      ...Array.from(tableEl.querySelectorAll("tbody tr")).filter((row) => !row.hidden).map((row) => Array.from(row.children))
+      ...Array.from(tableEl.tBodies?.[0]?.children || []).filter((row) => !row.hidden && !row.classList.contains("intake-class-detail-row")).map((row) => Array.from(row.children))
     ];
     return rows
       .map((cells) => columns.map((index) => tableCsvValue(cells[index]?.textContent || "")).join(","))
@@ -330,8 +375,12 @@
 
   function applyTableFilter(tableEl, query) {
     const q = String(query || "").trim().toLowerCase();
-    tableEl.querySelectorAll("tbody tr").forEach((row) => {
-      row.hidden = q ? !row.textContent.toLowerCase().includes(q) : false;
+    Array.from(tableEl.tBodies?.[0]?.children || []).filter((row) => !row.classList.contains("intake-class-detail-row")).forEach((row) => {
+      const detailRow = row.dataset.detailId ? document.getElementById(row.dataset.detailId) : null;
+      const searchableText = `${row.textContent} ${detailRow?.textContent || ""}`.toLowerCase();
+      const matches = !q || searchableText.includes(q);
+      row.hidden = !matches;
+      if (detailRow) detailRow.hidden = !matches || detailRow.dataset.expanded !== "true";
     });
   }
 
@@ -344,7 +393,9 @@
       return index === 0 || keyPattern.test(th.textContent.trim());
     });
     if (!show.some(Boolean)) show[0] = true;
-    tableEl.querySelectorAll("tr").forEach((row) => {
+    const rows = [tableEl.tHead?.rows?.[0], ...Array.from(tableEl.tBodies?.[0]?.children || [])].filter(Boolean);
+    rows.forEach((row) => {
+      if (row.classList.contains("intake-class-detail-row")) return;
       Array.from(row.children).forEach((cell, index) => {
         cell.hidden = !show[index];
       });
@@ -437,7 +488,7 @@
   }
 
   function youthSeasonSelector(selected, id = "seasonSelect") {
-    return `<select id="${id}"><option value="all" ${selected === "all" ? "selected" : ""}>All</option>${(state.index?.seasons || []).map((s) => `<option value="${esc(s.season)}" ${s.season === selected ? "selected" : ""}>${esc(s.label || s.season)}</option>`).join("")}</select>`;
+    return `<select id="${id}"><option value="all" ${selected === "all" ? "selected" : ""}>All Seasons</option>${(state.index?.seasons || []).map((s) => `<option value="${esc(s.season)}" ${s.season === selected ? "selected" : ""}>${esc(s.label || s.season)}</option>`).join("")}</select>`;
   }
 
   function isRealCurrentTeam(player) {
@@ -576,7 +627,7 @@
           <div class="history-nav-item"><a class="history-nav-link" href="leaders.htm">Leaders</a><div class="history-mega"><div class="mega-line"><strong>Leaderboards:</strong> <a href="leaders.htm">Player Leaders</a> | <a href="season.htm">Season Summaries</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="records.htm">Records</a><div class="history-mega"><div class="mega-line"><strong>All-Time:</strong> <a href="records.htm#career-records">Career Totals</a> | <a href="records.htm#game-highs">Single-Game Highs</a> | <a href="records.htm#franchise-records">Franchises</a></div><div class="mega-line"><strong>Database Sections:</strong> <a href="finance.htm">Finance</a> | <a href="finance.htm#cap-history">Cap History</a> | <a href="finance.htm#earnings">Player Earnings</a> | <a href="future-pool.htm">Future Pool</a> | <a href="future-pool.htm#potential-ratings">Potential Ratings</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="supercup.htm">Super Cup</a><div class="history-mega"><div class="mega-line"><strong>Cup Archive:</strong> <a href="supercup.htm#knockout">Knockout Bracket</a> | <a href="supercup.htm#group-stage">Group Stage</a> | <a href="supercup.htm#cup-leaders">Stat Leaders</a></div></div></div>
-          <div class="history-nav-item"><a class="history-nav-link" href="youth-intake.htm">Youth Intake</a><div class="history-mega"><div class="mega-line"><strong>Draft History:</strong> <a href="youth-intake.htm">Youth Intake by Season</a> | <a href="youth-intake.htm#franchise">Franchise Intake History</a></div></div></div>
+          <div class="history-nav-item"><a class="history-nav-link" href="youth-intake.htm">Youth Intake</a><div class="history-mega"><div class="mega-line"><strong>Youth History:</strong> <a href="youth-intake.htm">Youth Intake</a> | <a href="youth-intake.htm?season=all">All Seasons</a> | <a href="development-stats.htm">Development Stats</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="compare.htm">Compare</a><div class="history-mega"><div class="mega-line"><strong>Compare:</strong> <a href="compare.htm?type=players">Players</a> | <a href="compare.htm?type=teams">Teams</a></div></div></div>
         </nav>
       </header>`;
@@ -773,7 +824,7 @@
         <a href="finance.htm"><span>Finance</span><strong>Salary, cap and earnings history</strong></a>
         <a href="future-pool.htm"><span>Future Pool</span><strong>Current and potential ratings</strong></a>
         <a href="supercup.htm"><span>Super Cup</span><strong>Knockouts, groups and leaders</strong></a>
-        <a href="youth-intake.htm#analytics"><span>Youth Analytics</span><strong>Classes, hit rates and development</strong></a>
+        <a href="development-stats.htm"><span>Development Stats</span><strong>Classes, hit rates and development</strong></a>
         <a href="compare.htm"><span>Compare</span><strong>Player and team head-to-heads</strong></a>
       </div>`;
   }
@@ -1274,10 +1325,11 @@
   function renderYouthTeam(data, teamName, limit = Infinity) {
     const youthTeam = (data.youth.teams || []).find((row) => row.team === teamName);
     const players = (youthTeam?.intakePlayers || []).slice(0, limit);
-    return table(["Player", "Pos", "Age", "College", "OVR", "POT", "Peak OVR", "Peak POT", "Peak Season"], players.map((p) => {
+    return table(["Player", "Pos", "Age", "OVR", "POT", "Peak OVR", "Peak Season", "Outcome"], players.map((p) => {
       const ratedPlayer = youthRatedPlayer(data, p);
       const peak = youthPeakRatings(p, data.season);
-      return `<tr><td>${youthPlayerLink(p, data.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td><td>${ratingChip("OVR", peak.overall)}</td><td>${ratingChip("POT", peak.potential)}</td><td>${esc(peak.season ? seasonLabel(peak.season) : "-")}</td></tr>`;
+      const development = youthDevelopmentMeta(p, data.season, ratedPlayer);
+      return `<tr><td>${youthPlayerLink(p, data.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td><td>${ratingChip("OVR", peak.overall)}</td><td>${esc(peak.season ? seasonLabel(peak.season) : "-")}</td><td>${esc(development.outcome)}</td></tr>`;
     }), "No archived youth intake");
   }
 
@@ -1285,9 +1337,10 @@
     const rows = (data.youth.teams || []).flatMap((team) => (team.intakePlayers || []).map((p) => {
       const ratedPlayer = youthRatedPlayer(data, p);
       const peak = youthPeakRatings(p, data.season);
-      return `<tr><td>${esc(team.team)}</td><td>${youthPlayerLink(p, data.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td><td>${ratingChip("OVR", peak.overall)}</td><td>${ratingChip("POT", peak.potential)}</td><td>${esc(peak.season ? seasonLabel(peak.season) : "-")}</td></tr>`;
+      const development = youthDevelopmentMeta(p, data.season, ratedPlayer);
+      return `<tr><td>${esc(team.team)}</td><td>${youthPlayerLink(p, data.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td><td>${ratingChip("OVR", peak.overall)}</td><td>${esc(peak.season ? seasonLabel(peak.season) : "-")}</td><td>${esc(development.outcome)}</td></tr>`;
     }));
-    return table(["Team", "Player", "Pos", "Age", "College", "OVR", "POT", "Peak OVR", "Peak POT", "Peak Season"], rows, "No archived youth intake");
+    return table(["Team", "Player", "Pos", "Age", "OVR", "POT", "Peak OVR", "Peak Season", "Outcome"], rows, "No archived youth intake");
   }
 
   function renderYouthAllSeasons(allData, selectedTeam) {
@@ -1296,9 +1349,10 @@
       .flatMap((team) => (team.intakePlayers || []).map((p) => {
         const ratedPlayer = youthRatedPlayer(seasonData, p);
         const peak = youthPeakRatings(p, seasonData.season);
-        return `<tr><td>${esc(seasonLabel(seasonData.season))}</td><td>${esc(team.team)}</td><td>${youthPlayerLink(p, seasonData.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td><td>${ratingChip("OVR", peak.overall)}</td><td>${ratingChip("POT", peak.potential)}</td><td>${esc(peak.season ? seasonLabel(peak.season) : "-")}</td></tr>`;
+        const development = youthDevelopmentMeta(p, seasonData.season, ratedPlayer);
+        return `<tr><td>${esc(seasonLabel(seasonData.season))}</td><td>${esc(team.team)}</td><td>${youthPlayerLink(p, seasonData.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${ratingChip("OVR", ratedPlayer.overall)}</td><td>${ratingChip("POT", ratedPlayer.potential)}</td><td>${ratingChip("OVR", peak.overall)}</td><td>${esc(peak.season ? seasonLabel(peak.season) : "-")}</td><td>${esc(development.outcome)}</td></tr>`;
       })));
-    return table(["Season", "Team", "Player", "Pos", "Age", "College", "OVR", "POT", "Peak OVR", "Peak POT", "Peak Season"], rows, "No archived youth intake");
+    return table(["Season", "Team", "Player", "Pos", "Age", "OVR", "POT", "Peak OVR", "Peak Season", "Outcome"], rows, "No archived youth intake");
   }
 
   function futurePoolNumber(value) {
@@ -2131,51 +2185,66 @@
   }
 
   async function renderYouth() {
-    const selected = params().get("season") || "all";
-    const allData = await allSeasonData(["youth"]);
-    const data = selected === "all" ? allData.at(-1) || { season: latestSeason(), youth: { teams: [] } } : await loadSeason(selected, ["youth"]);
-    const teamNames = Array.from(new Set(allData.flatMap((seasonData) => (seasonData.youth.teams || []).map((row) => row.team)))).sort((a, b) => a.localeCompare(b));
+    const requestedSeason = params().get("season");
+    const selected = requestedSeason || "all";
+    const allData = selected === "all" ? await allSeasonData(["youth"]) : [];
+    const data = selected === "all"
+      ? allData.at(-1) || { season: latestSeason(), youth: { teams: [] } }
+      : await loadSeason(selected, ["youth"]);
+    const teamNames = Array.from(new Set((selected === "all" ? allData.flatMap((seasonData) => seasonData.youth.teams || []) : data.youth.teams || []).map((row) => row.team)))
+      .sort((a, b) => a.localeCompare(b));
     const teams = teamNames.map((team) => ({ team }));
     const selectedTeam = params().get("team") || "all";
     const team = teams.find((row) => row.team === selectedTeam) || {};
     const visibleTeams = selectedTeam === "all" ? teams : teams.filter((row) => row.team === selectedTeam);
-    const franchiseRows = allData.flatMap((seasonData) => (seasonData.youth.teams || []).filter((row) => selectedTeam === "all" || row.team === selectedTeam).flatMap((row) => (row.intakePlayers || []).map((p) => {
-      const peak = youthPeakRatings(p, seasonData.season);
-      return `<tr><td>${esc(seasonLabel(seasonData.season))}</td><td>${esc(row.team)}</td><td>${youthPlayerLink(p, seasonData.season)}</td><td>${esc(p.Position)}</td><td class="num">${esc(p.Age)}</td><td>${esc(p.College)}</td><td>${ratingChip("OVR", peak.overall)}</td><td>${ratingChip("POT", peak.potential)}</td><td>${esc(peak.season ? seasonLabel(peak.season) : "-")}</td></tr>`;
-    })));
     const intakeTitle = selected === "all"
-      ? (selectedTeam === "all" ? "All Seasons Intake" : `${team.team || "Team"} All Seasons Intake`)
+      ? (selectedTeam === "all" ? "All Seasons Intake" : `${team.team || "Team"} · All Seasons Intake`)
       : (selectedTeam === "all" ? "All Teams Intake" : `${team.team || "Team"} Intake`);
     const intakeHtml = selected === "all"
       ? renderYouthAllSeasons(allData, selectedTeam)
       : (selectedTeam === "all" ? renderYouthAllTeams(data) : renderYouthTeam(data, team.team));
+    $("#history-app").innerHTML = `
+      <section class="history-hero"><h1>Youth Intake</h1><p class="muted">Archived intake players by season and team, with an all-seasons view.</p></section>
+      <section class="reference-section"><h2>${esc(intakeTitle)}</h2><div class="filter-bar intake-filter-bar">
+        <label>Season ${youthSeasonSelector(selected)}</label>
+        <label>Team <select id="teamSelect"><option value="all" ${selectedTeam === "all" ? "selected" : ""}>All</option>${teams.map((row) => `<option value="${esc(row.team)}" ${row.team === selectedTeam ? "selected" : ""}>${esc(row.team)}</option>`).join("")}</select></label>
+      </div>${visibleTeams.length ? intakeHtml : `<div class="empty">No archived youth intake</div>`}</section>`;
+    $("#seasonSelect")?.addEventListener("change", (event) => { navigate(`youth-intake.htm?season=${encodeURIComponent(event.target.value)}&team=${encodeURIComponent(selectedTeam)}`); });
+    $("#teamSelect")?.addEventListener("change", (event) => { navigate(`youth-intake.htm?season=${encodeURIComponent(selected)}&team=${encodeURIComponent(event.target.value)}`); });
+  }
+
+  async function renderDevelopmentStats() {
+    const allData = await allSeasonData(["youth"]);
+    const teamNames = Array.from(new Set(allData.flatMap((seasonData) => (seasonData.youth.teams || []).map((row) => row.team)))).sort((a, b) => a.localeCompare(b));
+    const selectedTeam = params().get("team") || "all";
+    const selectedView = params().get("view") === "franchises" ? "franchises" : "classes";
     const analyticsPlayers = allData.flatMap((seasonData) => (seasonData.youth.teams || [])
       .filter((row) => selectedTeam === "all" || row.team === selectedTeam)
       .flatMap((row) => (row.intakePlayers || []).map((player) => {
         const rated = youthRatedPlayer(seasonData, player);
-        const intakeAppearance = (youthPlayerIdentity(player, seasonData.season)?.appearances || [])
-          .find((appearance) => appearance.season === seasonData.season) || {};
-        const peak = youthPeakRatings(player, seasonData.season);
-        const listedOvr = num(player.overall ?? rated.overall);
-        const listedPot = num(player.potential ?? rated.potential);
         return {
           player,
           season: seasonData.season,
           team: row.team,
-          initialOvr: listedOvr && listedOvr > 0 ? listedOvr : num(intakeAppearance.overall),
-          initialPot: listedPot && listedPot > 0 ? listedPot : num(intakeAppearance.potential),
-          peakOvr: num(peak.overall),
-          peakPot: num(peak.potential),
-          peakSeason: peak.season
+          ...youthDevelopmentMeta(player, seasonData.season, rated)
         };
       })))
       .filter((row) => row.peakOvr !== null && row.peakOvr > 0);
-    const summarizeYouth = (rows) => ({
-      count: rows.length,
-      avgPeak: rows.length ? rows.reduce((sum, row) => sum + row.peakOvr, 0) / rows.length : 0,
-      hits: rows.filter((row) => row.peakOvr >= 100).length,
-      busts: rows.filter((row) => row.initialPot >= 100 && row.peakOvr <= row.initialPot - 15).length
-    });
+    const summarizeYouth = (rows, { topTwoPeak = false } = {}) => {
+      const matureWildcards = rows.filter((row) => row.wildcard && row.mature);
+      const peakRows = topTwoPeak && rows.length >= 3
+        ? rows.slice().sort((a, b) => b.peakOvr - a.peakOvr).slice(0, 2)
+        : rows;
+      return {
+        count: rows.length,
+        avgPeak: peakRows.length ? peakRows.reduce((sum, row) => sum + row.peakOvr, 0) / peakRows.length : 0,
+        peakPlayersCounted: peakRows.length,
+        hits: rows.filter((row) => row.wildcard).length,
+        matureWildcards: matureWildcards.length,
+        busts: matureWildcards.filter((row) => row.peakOvr < row.initialPot).length,
+        homeRuns: rows.filter((row) => row.outcome === "Home Run").length
+      };
+    };
     const classGroups = new Map();
     const franchiseGroups = new Map();
     analyticsPlayers.forEach((row) => {
@@ -2187,36 +2256,74 @@
     });
     const classAnalytics = Array.from(classGroups.entries()).map(([key, rows]) => {
       const [seasonId, teamName] = key.split("|");
-      return { season: seasonId, team: teamName, ...summarizeYouth(rows) };
+      return { season: seasonId, team: teamName, members: rows, ...summarizeYouth(rows, { topTwoPeak: true }) };
     }).sort((a, b) => b.avgPeak - a.avgPeak);
-    const franchiseAnalytics = Array.from(franchiseGroups.entries()).map(([teamName, rows]) => ({ team: teamName, ...summarizeYouth(rows) }))
-      .sort((a, b) => b.avgPeak - a.avgPeak);
-    const development = analyticsPlayers.map((row) => ({ ...row, gain: row.peakOvr - (row.initialOvr || row.peakOvr), versusPot: row.peakOvr - (row.initialPot || row.peakOvr) }))
+    const franchiseAnalytics = Array.from(franchiseGroups.entries()).map(([teamName, rows]) => {
+      const elitePoolCount = Math.min(rows.length, Math.max(3, Math.ceil(rows.length * 0.25)));
+      const elitePlayers = rows.slice().sort((a, b) => b.peakOvr - a.peakOvr).slice(0, elitePoolCount);
+      const weights = elitePlayers.map((_player, index) => elitePlayers.length === 1 ? 1 : 2 - index / (elitePlayers.length - 1));
+      const weightTotal = weights.reduce((sum, weight) => sum + weight, 0);
+      const elitePoolScore = weightTotal
+        ? elitePlayers.reduce((sum, player, index) => sum + player.peakOvr * weights[index], 0) / weightTotal
+        : 0;
+      return { team: teamName, members: rows, elitePoolCount, elitePoolScore, ...summarizeYouth(rows) };
+    }).sort((a, b) => b.elitePoolScore - a.elitePoolScore);
+    const development = analyticsPlayers.map((row) => ({
+      ...row,
+      gain: row.peakOvr - (row.initialOvr || row.peakOvr)
+    }))
       .sort((a, b) => b.gain - a.gain || b.versusPot - a.versusPot);
     const overallYouth = summarizeYouth(analyticsPlayers);
     const bestClass = classAnalytics[0];
-    const bestFranchise = franchiseAnalytics[0];
     const biggestGain = development[0];
+    const classesTable = table(["Rank", "Season", "Team", "Players", "Top-2 Avg Peak OVR", "Hit Rate", "Bust Rate", "Home Run Rate"], classAnalytics.slice(0, 25).map((row, index) => {
+      const detailId = `intake-class-${slug(row.season)}-${slug(row.team)}-${index}`;
+      const preview = row.members.map((member) => member.player.name).join(", ");
+      const playerRows = row.members.slice().sort((a, b) => b.peakOvr - a.peakOvr).map((member) => `<div class="intake-player-grid-row" role="row"><div role="cell">${youthPlayerLink(member.player, member.season)}</div><div role="cell">${esc(member.player.Position || "-")}</div><div role="cell">${ratingChip("OVR", member.initialOvr)}</div><div role="cell">${ratingChip("POT", member.initialPot)}</div><div role="cell">${ratingChip("OVR", member.peakOvr)}</div><div role="cell">${esc(member.peakSeason ? seasonLabel(member.peakSeason) : "-")}</div><div role="cell">${esc(member.outcome)}</div></div>`).join("");
+      return `<tr class="intake-class-summary" data-detail-id="${esc(detailId)}"><td class="num">${index + 1}</td><td>${esc(seasonLabel(row.season))}</td><td><button class="intake-class-toggle" type="button" aria-expanded="false" aria-controls="${esc(detailId)}" data-preview="${esc(preview)}" title="${esc(preview)}"><span>${esc(row.team)}</span><span class="intake-class-chevron" aria-hidden="true">▸</span></button></td><td class="num">${row.count}</td><td class="num">${oneDecimal(row.avgPeak)}</td><td class="num">${oneDecimal(row.hits * 100 / row.count)}%</td><td class="num">${row.matureWildcards ? `${oneDecimal(row.busts * 100 / row.matureWildcards)}%` : "-"}</td><td class="num">${row.count ? `${oneDecimal(row.homeRuns * 100 / row.count)}%` : "-"}</td></tr><tr class="intake-class-detail-row" id="${esc(detailId)}" data-expanded="false" hidden><td colspan="8"><div class="intake-player-grid" role="table" aria-label="${esc(row.team)} ${esc(seasonLabel(row.season))} intake players"><div class="intake-player-grid-row header" role="row"><div role="columnheader">Player</div><div role="columnheader">Pos</div><div role="columnheader">Intake OVR</div><div role="columnheader">Intake POT</div><div role="columnheader">Peak OVR</div><div role="columnheader">Peak Season</div><div role="columnheader">Outcome</div></div>${playerRows}</div></td></tr>`;
+    }), "No evaluated intake classes");
+    const franchisesTable = table(["Rank", "Team", "Elite Pool", "Elite Pool Score", "Hit Rate", "Bust Rate", "Home Run Rate"], franchiseAnalytics.map((row, index) => {
+      const detailId = `intake-franchise-${slug(row.team)}-${index}`;
+      const preview = row.members.map((member) => member.player.name).join(", ");
+      const playerRows = row.members.slice().sort((a, b) => seasonNumber(a.season) - seasonNumber(b.season) || b.peakOvr - a.peakOvr).map((member) => `<div class="intake-player-grid-row" role="row"><div role="cell">${youthPlayerLink(member.player, member.season)}</div><div role="cell">${esc(seasonLabel(member.season))}</div><div role="cell">${ratingChip("OVR", member.initialOvr)}</div><div role="cell">${ratingChip("POT", member.initialPot)}</div><div role="cell">${ratingChip("OVR", member.peakOvr)}</div><div role="cell">${esc(member.peakSeason ? seasonLabel(member.peakSeason) : "-")}</div><div role="cell">${esc(member.outcome)}</div></div>`).join("");
+      return `<tr class="intake-class-summary" data-detail-id="${esc(detailId)}"><td class="num">${index + 1}</td><td><button class="intake-class-toggle" type="button" aria-expanded="false" aria-controls="${esc(detailId)}" data-preview="${esc(preview)}" title="${esc(preview)}"><span>${esc(row.team)}</span><span class="intake-class-chevron" aria-hidden="true">▸</span></button></td><td class="num">${row.elitePoolCount}/${row.count}</td><td class="num">${oneDecimal(row.elitePoolScore)}</td><td class="num">${row.count ? `${oneDecimal(row.hits * 100 / row.count)}%` : "-"}</td><td class="num">${row.matureWildcards ? `${oneDecimal(row.busts * 100 / row.matureWildcards)}%` : "-"}</td><td class="num">${row.count ? `${oneDecimal(row.homeRuns * 100 / row.count)}%` : "-"}</td></tr><tr class="intake-class-detail-row" id="${esc(detailId)}" data-expanded="false" hidden><td colspan="7"><div class="intake-player-grid franchise-player-grid" role="table" aria-label="${esc(row.team)} franchise intake players"><div class="intake-player-grid-row header" role="row"><div role="columnheader">Player</div><div role="columnheader">Intake Season</div><div role="columnheader">Intake OVR</div><div role="columnheader">Intake POT</div><div role="columnheader">Peak OVR</div><div role="columnheader">Peak Season</div><div role="columnheader">Outcome</div></div>${playerRows}</div></td></tr>`;
+    }), "No franchise development data");
     $("#history-app").innerHTML = `
-      <section class="reference-section compact-controls"><h2>Youth Intake Controls</h2><div class="filter-bar">
-        <label>Season ${youthSeasonSelector(selected)}</label>
-        <label>Team <select id="teamSelect"><option value="all" ${selectedTeam === "all" ? "selected" : ""}>All</option>${teams.map((row) => `<option value="${esc(row.team)}" ${row.team === selectedTeam ? "selected" : ""}>${esc(row.team)}</option>`).join("")}</select></label>
+      <section class="history-hero"><h1>Development Stats</h1><p class="muted">Youth development outcomes across every archived season.</p></section>
+      <section class="reference-section compact-controls"><h2>Development Controls</h2><div class="filter-bar">
+        <label>Team <select id="teamSelect"><option value="all" ${selectedTeam === "all" ? "selected" : ""}>All</option>${teamNames.map((teamName) => `<option value="${esc(teamName)}" ${teamName === selectedTeam ? "selected" : ""}>${esc(teamName)}</option>`).join("")}</select></label>
       </div></section>
-      <section class="dashboard-grid" id="analytics">
-        ${dashboardCard("Best Intake Class", bestClass ? `${esc(bestClass.team)} · ${esc(seasonLabel(bestClass.season))}` : "-", `${oneDecimal(bestClass?.avgPeak)} average peak OVR`)}
-        ${dashboardCard("Best Franchise Average", bestFranchise ? esc(bestFranchise.team) : "-", `${oneDecimal(bestFranchise?.avgPeak)} peak OVR across ${bestFranchise?.count || 0} players`)}
-        ${dashboardCard("Hit Rate", overallYouth.count ? `${oneDecimal(overallYouth.hits * 100 / overallYouth.count)}%` : "-", `${overallYouth.hits}/${overallYouth.count} reached 100 OVR`)}
+      <section class="dashboard-grid compact-summary">
+        ${dashboardCard("Best Intake Class", bestClass ? `${esc(bestClass.team)} · ${esc(seasonLabel(bestClass.season))}` : "-", `${oneDecimal(bestClass?.avgPeak)} top-two average peak OVR`)}
+        ${dashboardCard("Wildcard Hit Rate", overallYouth.count ? `${oneDecimal(overallYouth.hits * 100 / overallYouth.count)}%` : "-", `${overallYouth.hits}/${overallYouth.count} pulls above 115 POT`)}
         ${dashboardCard("Biggest Development Gain", biggestGain ? youthPlayerLink(biggestGain.player, biggestGain.season) : "-", biggestGain ? `+${biggestGain.gain} OVR` : "No evaluated players")}
       </section>
-      <section class="reference-section"><h2>Youth Analytics</h2><p class="muted">Peak values use all archived appearances currently available. Hit = reached 100 OVR. Bust = intake POT of at least 100 and archived peak OVR at least 15 points below that POT. Recent classes are still developing, so these are live development snapshots rather than final career verdicts.</p><div class="history-grid">
-        <div><h3>Best Intake Classes</h3>${table(["Rank", "Season", "Team", "Players", "Avg Peak OVR", "Hit Rate", "Bust Rate"], classAnalytics.slice(0, 25).map((row, index) => `<tr><td class="num">${index + 1}</td><td>${esc(seasonLabel(row.season))}</td><td>${esc(row.team)}</td><td class="num">${row.count}</td><td class="num">${oneDecimal(row.avgPeak)}</td><td class="num">${oneDecimal(row.hits * 100 / row.count)}%</td><td class="num">${oneDecimal(row.busts * 100 / row.count)}%</td></tr>`), "No evaluated intake classes")}</div>
-        <div><h3>Franchise Development</h3>${table(["Rank", "Team", "Players", "Avg Peak OVR", "Hits", "Busts"], franchiseAnalytics.map((row, index) => `<tr><td class="num">${index + 1}</td><td>${esc(row.team)}</td><td class="num">${row.count}</td><td class="num">${oneDecimal(row.avgPeak)}</td><td class="num">${row.hits}</td><td class="num">${row.busts}</td></tr>`), "No franchise development data")}</div>
-      </div></section>
-      <section class="reference-section"><h2>Biggest Development Surprises</h2>${table(["Rank", "Player", "Season", "Team", "Intake OVR", "Intake POT", "Peak OVR", "Gain", "vs POT"], development.slice(0, 25).map((row, index) => `<tr><td class="num">${index + 1}</td><td>${youthPlayerLink(row.player, row.season)}</td><td>${esc(seasonLabel(row.season))}</td><td>${esc(row.team)}</td><td>${ratingChip("OVR", row.initialOvr)}</td><td>${ratingChip("POT", row.initialPot)}</td><td>${ratingChip("OVR", row.peakOvr)}</td><td class="num">${row.gain >= 0 ? "+" : ""}${row.gain}</td><td class="num">${row.versusPot >= 0 ? "+" : ""}${row.versusPot}</td></tr>`), "No development data")}</section>
-      <section class="reference-section"><h2>${esc(intakeTitle)}</h2>${visibleTeams.length ? intakeHtml : `<div class="empty">No archived youth intake</div>`}</section>
-      <section class="reference-section" id="franchise"><h2>Franchise Intake History</h2>${table(["Season", "Team", "Player", "Pos", "Age", "College", "Peak OVR", "Peak POT", "Peak Season"], franchiseRows, "No archived youth intake")}</section>`;
-    $("#seasonSelect")?.addEventListener("change", (event) => { navigate(`youth-intake.htm?season=${encodeURIComponent(event.target.value)}&team=${encodeURIComponent(selectedTeam)}`); });
-    $("#teamSelect")?.addEventListener("change", (event) => { navigate(`youth-intake.htm?season=${encodeURIComponent(selected)}&team=${encodeURIComponent(event.target.value)}`); });
+      <section class="reference-section"><div class="section-tabs"><a class="section-tab ${selectedView === "classes" ? "active" : ""}" href="development-stats.htm?team=${encodeURIComponent(selectedTeam)}&view=classes">Intake Classes</a><a class="section-tab ${selectedView === "franchises" ? "active" : ""}" href="development-stats.htm?team=${encodeURIComponent(selectedTeam)}&view=franchises">Franchises</a></div>
+        <h2>${selectedView === "classes" ? "Best Intake Classes" : "Franchise Development"}</h2>${selectedView === "classes" ? classesTable : franchisesTable}
+      </section>
+      <section class="reference-section"><h2>Biggest Development Surprises</h2>${table(["Player", "Team", "Intake POT", "Peak OVR", "vs POT", "Outcome"], development.slice(0, 25).map((row) => `<tr><td>${youthPlayerLink(row.player, row.season)}</td><td>${esc(row.team)}</td><td>${ratingChip("POT", row.initialPot)}</td><td>${ratingChip("OVR", row.peakOvr)}</td><td class="num">${row.versusPot === null ? "-" : `${row.versusPot >= 0 ? "+" : ""}${row.versusPot}`}</td><td>${esc(row.outcome)}</td></tr>`), "No development data")}</section>
+      <details class="development-definitions"><summary>How outcomes work</summary><p>Class average peak OVR uses the best two players when a class has three or more. Franchise rank uses an Elite Pool Score based on the top 25% of its intake players by peak OVR, with at least three players when available. Rank weights decrease linearly from 2× for the best player to 1× for the lowest player in the pool, then normalize into one comparable score. Wildcard hit = an intake pull above 115 POT. Bust = a wildcard pull that has not reached its initial POT after five post-intake archive seasons. Development home run = peak OVR at least 10 points above initial POT. Wildcard pulls inside that five-season window remain developing.</p></details>`;
+    $("#teamSelect")?.addEventListener("change", (event) => { navigate(`development-stats.htm?team=${encodeURIComponent(event.target.value)}&view=${encodeURIComponent(selectedView)}`); });
+    const toggleIntakeClass = (summaryRow) => {
+      const detailRow = document.getElementById(summaryRow?.dataset.detailId || "");
+      if (!detailRow) return;
+      const willOpen = detailRow.hidden;
+      $$(".intake-class-detail-row").forEach((row) => {
+        row.hidden = true;
+        row.dataset.expanded = "false";
+      });
+      $$(".intake-class-toggle").forEach((button) => button.setAttribute("aria-expanded", "false"));
+      if (willOpen) {
+        detailRow.hidden = false;
+        detailRow.dataset.expanded = "true";
+        $(".intake-class-toggle", summaryRow)?.setAttribute("aria-expanded", "true");
+      }
+    };
+    $$(".intake-class-toggle").forEach((button) => button.addEventListener("click", () => toggleIntakeClass(button.closest("tr"))));
+    $$(".intake-class-summary").forEach((row) => row.addEventListener("click", (event) => {
+      if (event.target.closest("button, a")) return;
+      toggleIntakeClass(row);
+    }));
   }
 
   function comparePickerOptions(type) {
@@ -2346,6 +2453,7 @@
     if (file === "future-pool.htm") return "future-pool";
     if (file === "supercup.htm") return "supercup";
     if (file === "youth-intake.htm") return "youth";
+    if (file === "development-stats.htm") return "youth-development";
     if (file === "compare.htm") return "compare";
     return "index";
   }
@@ -2367,6 +2475,7 @@
     if (page === "future-pool") await renderFuturePool();
     if (page === "supercup") await renderSupercupPage();
     if (page === "youth") await renderYouth();
+    if (page === "youth-development") await renderDevelopmentStats();
     if (page === "compare") await renderCompare();
     setupSortableTables($("#history-app"));
     if (window.location.hash) {
