@@ -331,13 +331,13 @@
       return '<div class="slot-control" data-slot="' + index + '">' +
         '<label class="slot-label" for="slotSearch' + index + '">Player ' + (index + 1) + '</label>' +
         '<div class="slot-row">' +
-          '<input class="slot-search" id="slotSearch' + index + '" type="search" autocomplete="off" spellcheck="false" value="' + esc(player ? player.name : "") + '" placeholder="Search players">' +
-          '<button class="slot-clear" type="button" data-remove-slot="' + index + '">' + (index < 2 ? "Clear" : "Remove") + '</button>' +
+          '<input class="slot-search ui-input" id="slotSearch' + index + '" type="search" autocomplete="off" spellcheck="false" value="' + esc(player ? player.name : "") + '" placeholder="Search players">' +
+          '<button class="slot-clear ui-button" type="button" data-remove-slot="' + index + '">' + (index < 2 ? "Clear" : "Remove") + '</button>' +
         '</div>' +
         '<div class="slot-results" id="slotResults' + index + '" hidden></div>' +
       '</div>';
     }).join("") + (state.visibleSlots < SLOT_COUNT
-      ? '<div class="add-slot-wrap"><button class="btn-link" id="addPlayerSlot" type="button">Add Player</button></div>'
+      ? '<div class="add-slot-wrap"><button class="btn-link ui-button" id="addPlayerSlot" type="button">Add Player</button></div>'
       : "");
     bindSlotControls();
     if (byId("addPlayerSlot")) {
@@ -462,8 +462,8 @@
         '<h2 class="player-card-name"><a href="' + esc(playerHref(player)) + '">' + esc(player.name) + '</a></h2>' +
         '<div class="card-meta">' + esc(meta) + '</div>' +
         '<div class="chip-row">' +
-          (player.overall ? '<span class="rating-chip primary ' + ratingTierClass(player.overall) + '">OVR ' + esc(player.overall) + '</span>' : "") +
-          (player.potential ? '<span class="rating-chip primary ' + ratingTierClass(player.potential) + '">POT ' + esc(player.potential) + '</span>' : "") +
+          (player.overall ? (window.ESLUnifiedUI ? window.ESLUnifiedUI.ratingBadge(player.overall, "OVR " + player.overall) : '<span class="rating-chip primary ' + ratingTierClass(player.overall) + '">OVR ' + esc(player.overall) + '</span>') : "") +
+          (player.potential ? (window.ESLUnifiedUI ? window.ESLUnifiedUI.ratingBadge(player.potential, "POT " + player.potential) : '<span class="rating-chip primary ' + ratingTierClass(player.potential) + '">POT ' + esc(player.potential) + '</span>') : "") +
           (player.currentSalaryText ? '<span class="info-chip">' + esc(player.currentSalaryText) + '</span>' : "") +
           (injury ? '<span class="info-chip injury-chip">' + esc(injury.injury + " | " + injury.length + "d") + '</span>' : "") +
         '</div>' +
@@ -532,7 +532,7 @@
           return '<td class="' + (best.indexOf(index) >= 0 ? "is-best" : "") + '">' + esc(fmt(value)) + '</td>';
         }).join("") + '</tr>';
     }).join("");
-    root.innerHTML = '<table class="compare-table"><thead><tr><th>Metric</th>' +
+    root.innerHTML = '<table class="compare-table ui-table"><thead><tr><th>Metric</th>' +
       headers.map(function (header) { return '<th>' + esc(header) + '</th>'; }).join("") +
       '</tr></thead><tbody>' + body + '</tbody></table>';
   }
@@ -634,7 +634,7 @@
       ["current", "Stats"]
     ];
     byId("compareTabs").innerHTML = tabs.map(function (tab) {
-      return '<button class="tab-btn ' + (state.activeTab === tab[0] ? "active" : "") + '" type="button" data-tab="' + esc(tab[0]) + '">' + esc(tab[1]) + '</button>';
+      return '<button class="tab-btn ui-tab ' + (state.activeTab === tab[0] ? "active" : "") + '" type="button" data-tab="' + esc(tab[0]) + '" aria-selected="' + (state.activeTab === tab[0]) + '">' + esc(tab[1]) + '</button>';
     }).join("");
     Array.prototype.slice.call(document.querySelectorAll(".tab-btn")).forEach(function (button) {
       button.addEventListener("click", function () {

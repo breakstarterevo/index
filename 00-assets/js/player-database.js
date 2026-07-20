@@ -198,11 +198,18 @@
     if (n >= 80) { return "rating-yellow"; }
     return "rating-orange";
   }
-  function formatRating(value) { return isMissing(value) ? "—" : '<span class="db-rating ' + ratingTierClass(value) + '">' + escapeHtml(value) + "</span>"; }
+  function formatRating(value) {
+    if (isMissing(value)) { return "—"; }
+    return window.ESLUnifiedUI
+      ? window.ESLUnifiedUI.ratingBadge(value)
+      : '<span class="db-rating ' + ratingTierClass(value) + '">' + escapeHtml(value) + "</span>";
+  }
   function formatGrade(value) {
     if (isMissing(value)) { return "—"; }
     var grade = String(value).trim();
-    return '<span class="db-grade grade-' + escapeHtml(grade.charAt(0).toLowerCase()) + '">' + escapeHtml(grade) + "</span>";
+    return window.ESLUnifiedUI
+      ? window.ESLUnifiedUI.tierBadge(grade)
+      : '<span class="db-grade grade-' + escapeHtml(grade.charAt(0).toLowerCase()) + '">' + escapeHtml(grade) + "</span>";
   }
   function escapeHtml(value) {
     return String(value === null || value === undefined ? "" : value).replace(/[&<>"']/g, function (char) {
@@ -359,15 +366,15 @@
     elements.table.querySelector("thead").innerHTML = "<tr>" + columns.map(function (column) {
       var active = column.key === activeSort;
       var sort = active ? (state.directions[state.tab] === "asc" ? "ascending" : "descending") : "none";
-      return '<th scope="col"' + (column.player ? ' class="db-player"' : "") + ' aria-sort="' + sort + '"><button type="button" data-sort="' + escapeHtml(column.key) + '">' + escapeHtml(column.label) + "</button></th>";
+      return '<th scope="col"' + (column.player ? ' class="db-player ui-sticky"' : "") + ' aria-sort="' + sort + '"><button type="button" data-sort="' + escapeHtml(column.key) + '">' + escapeHtml(column.label) + "</button></th>";
     }).join("") + "</tr>";
     if (!pageRows.length) {
-      elements.table.querySelector("tbody").innerHTML = '<tr><td class="db-empty" colspan="' + columns.length + '">No players match these filters.</td></tr>';
+      elements.table.querySelector("tbody").innerHTML = '<tr><td class="db-empty ui-state" colspan="' + columns.length + '">No players match these filters.</td></tr>';
     } else {
       elements.table.querySelector("tbody").innerHTML = pageRows.map(function (player) {
         return "<tr>" + columns.map(function (column) {
           var value = column.get(player);
-          return '<td' + (column.player ? ' class="db-player"' : "") + ">" + column.format(value, player) + "</td>";
+          return '<td' + (column.player ? ' class="db-player ui-sticky"' : "") + ">" + column.format(value, player) + "</td>";
         }).join("") + "</tr>";
       }).join("");
     }
@@ -404,7 +411,7 @@
   function showError(error) {
     elements.resultSummary.textContent = "Player database unavailable";
     elements.table.querySelector("thead").innerHTML = "";
-    elements.table.querySelector("tbody").innerHTML = '<tr><td class="db-error">' + escapeHtml(error.message || error) + "</td></tr>";
+    elements.table.querySelector("tbody").innerHTML = '<tr><td class="db-error ui-state ui-state--error">' + escapeHtml(error.message || error) + "</td></tr>";
   }
 
   function selectTab(tab, preservePage) {

@@ -6,18 +6,21 @@
   <title>Unified League Leaders</title>
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
+  <script src="../js/unified-ui.js"></script>
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
   <style>
     :root {
-      --team-color: #111b36;
-      --ink: #202124;
-      --paper: #f6f7f9;
-      --card: #ffffff;
-      --line: #d8dee7;
-      --muted: #5f6368;
-      --soft: #f1f4f8;
-      --font-sans: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --team-color: var(--ui-navy);
+      --ui-team: var(--team-color);
+      --ink: var(--ui-ink);
+      --paper: var(--ui-paper);
+      --card: var(--ui-card);
+      --line: var(--ui-line);
+      --muted: var(--ui-muted);
+      --soft: var(--ui-soft);
+      --font-sans: var(--ui-font);
     }
     * { box-sizing: border-box; }
     body {
@@ -289,8 +292,8 @@
     }
   </style>
 </head>
-<body>
-  <main class="shell">
+<body class="ui-page">
+  <main class="shell ui-shell">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="../../index.htm" target="_top">League</a>
       <span>/</span>
@@ -299,35 +302,35 @@
       <span class="breadcrumbs-current">League Leaders</span>
     </nav>
 
-    <section class="topbar">
-      <input class="search-input" id="leaderSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Search player or team">
+    <section class="topbar ui-panel">
+      <input class="search-input ui-input" id="leaderSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Search player or team">
       <div class="filters">
-        <select class="filter-select" id="positionFilter" aria-label="Position filter">
+        <select class="filter-select ui-select" id="positionFilter" aria-label="Position filter">
           <option value="all">All Positions</option>
         </select>
-        <select class="filter-select" id="teamFilter" aria-label="Team filter">
+        <select class="filter-select ui-select" id="teamFilter" aria-label="Team filter">
           <option value="all">All Teams</option>
         </select>
       </div>
-      <div class="tabs" id="tierTabs" aria-label="Tier tabs"></div>
-      <div class="tabs" id="categoryTabs" aria-label="Category tabs"></div>
+      <div class="tabs ui-tabs" id="tierTabs" aria-label="Tier tabs"></div>
+      <div class="tabs ui-tabs" id="categoryTabs" aria-label="Category tabs"></div>
     </section>
 
-    <section class="panel">
-      <div class="panel-head">
-        <h2 class="panel-title" id="podiumTitle">Top Leaders</h2>
+    <section class="panel ui-panel">
+      <div class="panel-head ui-panel-head">
+        <h2 class="panel-title ui-panel-title" id="podiumTitle">Top Leaders</h2>
         <div class="status" id="podiumStatus"></div>
       </div>
       <div class="leader-grid" id="leaderPodium"></div>
     </section>
 
-    <section class="panel">
-      <div class="panel-head">
-        <h2 class="panel-title">Leaderboard</h2>
+    <section class="panel ui-panel">
+      <div class="panel-head ui-panel-head">
+        <h2 class="panel-title ui-panel-title">Leaderboard</h2>
         <div class="status" id="tableStatus"></div>
       </div>
-      <div class="table-wrap">
-        <table id="leadersTable">
+      <div class="table-wrap ui-table-wrap">
+        <table class="ui-table" id="leadersTable">
           <thead></thead>
           <tbody></tbody>
         </table>
@@ -534,10 +537,10 @@
       const categories = allCategories();
 
       tierTabs.innerHTML = tiers.map((tier) =>
-        `<button class="tab-btn${tier.slug === state.tier ? " active" : ""}" type="button" data-tier="${escapeHtml(tier.slug)}">${escapeHtml(tier.title)}</button>`
+        `<button class="tab-btn ui-tab${tier.slug === state.tier ? " active" : ""}" type="button" data-tier="${escapeHtml(tier.slug)}" aria-selected="${tier.slug === state.tier}">${escapeHtml(tier.title)}</button>`
       ).join("");
       categoryTabs.innerHTML = categories.map((category) =>
-        `<button class="tab-btn${category.slug === state.category ? " active" : ""}" type="button" data-category="${escapeHtml(category.slug)}">${escapeHtml(category.title)}</button>`
+        `<button class="tab-btn ui-tab${category.slug === state.category ? " active" : ""}" type="button" data-category="${escapeHtml(category.slug)}" aria-selected="${category.slug === state.category}">${escapeHtml(category.title)}</button>`
       ).join("");
 
       tierTabs.querySelectorAll("[data-tier]").forEach((button) => {
@@ -604,7 +607,7 @@
       document.getElementById("podiumTitle").textContent = `${currentCategoryTitle()} Leaders`;
       document.getElementById("podiumStatus").textContent = currentTierTitle();
       if (!top.length) {
-        root.innerHTML = `<div class="empty">No leaders match the current filters.</div>`;
+        root.innerHTML = `<div class="empty ui-state">No leaders match the current filters.</div>`;
         return;
       }
       root.innerHTML = top.map((row) => {
@@ -648,7 +651,7 @@
       </tr>`;
 
       if (!rows.length) {
-        tbody.innerHTML = `<tr><td colspan="9"><div class="empty">No leaders match the current filters.</div></td></tr>`;
+        tbody.innerHTML = `<tr><td colspan="9"><div class="empty ui-state">No leaders match the current filters.</div></td></tr>`;
       } else {
         tbody.innerHTML = rows.map((row) => {
           const player = row.playerMeta || {};
@@ -729,8 +732,8 @@
         bindControls();
         render();
       } catch (error) {
-        document.getElementById("leaderPodium").innerHTML = `<div class="empty">Could not load unified league leaders.</div>`;
-        document.querySelector("#leadersTable tbody").innerHTML = `<tr><td colspan="9"><div class="empty">Could not load leaders data.</div></td></tr>`;
+        document.getElementById("leaderPodium").innerHTML = `<div class="empty ui-state ui-state--error">Could not load unified league leaders.</div>`;
+        document.querySelector("#leadersTable tbody").innerHTML = `<tr><td colspan="9"><div class="empty ui-state ui-state--error">Could not load leaders data.</div></td></tr>`;
       }
     }
 

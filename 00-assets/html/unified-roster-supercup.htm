@@ -6,18 +6,22 @@
   <title>Super Cup Roster</title>
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
+  <script src="../js/unified-ui.js"></script>
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
   <style>
     :root {
-      --team-color: #111b36;
-      --team-color-2: #1d3666;
-      --ink: #111318;
+      --team-color: var(--ui-navy);
+      --team-color-2: var(--ui-blue);
+      --ui-team: var(--team-color);
+      --ui-team-secondary: var(--team-color-2);
+      --ink: var(--ui-ink);
       --paper: #f7f9fc;
-      --card: #ffffff;
-      --line: #d9d2c2;
-      --muted: #5a5246;
-      --font-sans: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --card: var(--ui-card);
+      --line: var(--ui-line);
+      --muted: var(--ui-muted);
+      --font-sans: var(--ui-font);
       --font-serif: "Tiempos Headline", "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
     }
     * { box-sizing: border-box; }
@@ -1048,8 +1052,8 @@
     }
   </style>
 </head>
-<body>
-  <main class="shell">
+<body class="ui-page">
+  <main class="shell ui-shell">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="../../index.htm" target="_top">League</a>
       <span>/</span>
@@ -1057,7 +1061,7 @@
       <span>/</span>
       <span class="breadcrumbs-current" id="crumbTeamName">Team</span>
     </nav>
-    <section class="hero">
+    <section class="hero ui-identity-banner">
       <div id="teamLogoSlot"></div>
       <div>
         <h1 class="team-name" id="teamName">Loading Team</h1>
@@ -1066,27 +1070,27 @@
         <div class="hero-pills" id="heroInjuryPills"></div>
       </div>
       <div class="hero-actions">
-        <select id="teamPicker" class="team-picker"></select>
-        <button class="btn-link" id="copyTeamLink" type="button">Copy Team Link</button>
-        <a class="btn-link" id="backToDash" href="../../00-SuperCup/standings.htm">Back To Standings</a>
+        <select id="teamPicker" class="team-picker ui-select"></select>
+        <button class="btn-link ui-button" id="copyTeamLink" type="button">Copy Team Link</button>
+        <a class="btn-link ui-button" id="backToDash" href="../../00-SuperCup/standings.htm">Back To Standings</a>
       </div>
     </section>
 
     <section class="gm-layout">
       <section class="top-modules">
-        <section class="panel schedule-panel">
-        <div class="panel-head">
-          <h2 class="panel-title">Season Schedule</h2>
-          <div class="status" id="scheduleStatus"></div>
+        <section class="panel ui-panel schedule-panel">
+        <div class="panel-head ui-panel-head">
+          <h2 class="panel-title ui-panel-title">Season Schedule</h2>
+          <div class="status ui-panel-note" id="scheduleStatus"></div>
         </div>
         <div class="schedule-head">
-          <button class="month-nav" id="prevMonth" type="button">&lt;</button>
+          <button class="month-nav ui-button" id="prevMonth" type="button">&lt;</button>
           <div class="month-title" id="monthTitle">Month</div>
-          <button class="month-nav" id="nextMonth" type="button">&gt;</button>
+          <button class="month-nav ui-button" id="nextMonth" type="button">&gt;</button>
         </div>
         <div class="schedule-view-toggle" aria-label="Schedule view">
-          <button class="schedule-view-btn active" type="button" data-schedule-view="calendar">Calendar</button>
-          <button class="schedule-view-btn" type="button" data-schedule-view="list">List</button>
+          <button class="schedule-view-btn ui-tab active" type="button" data-schedule-view="calendar">Calendar</button>
+          <button class="schedule-view-btn ui-tab" type="button" data-schedule-view="list">List</button>
         </div>
         <div class="calendar" id="scheduleCalendar">
           <div class="weekday-grid" id="weekdayRow"></div>
@@ -1099,56 +1103,56 @@
         <div class="schedule-list" id="scheduleList" hidden></div>
         </section>
 
-        <section class="panel">
-        <div class="panel-head">
-          <h2 class="panel-title">Season Info</h2>
+        <section class="panel ui-panel">
+        <div class="panel-head ui-panel-head">
+          <h2 class="panel-title ui-panel-title">Season Info</h2>
         </div>
-        <div class="table-wrap season-info-scroll">
-          <table class="data-table" id="seasonInfoTable"></table>
+        <div class="table-wrap ui-table-wrap season-info-scroll">
+          <table class="data-table ui-table" id="seasonInfoTable"></table>
         </div>
         </section>
       </section>
 
-      <aside class="panel gm-dashboard-panel">
-        <div class="panel-head">
-          <h2 class="panel-title">GM Dashboard</h2>
-          <div class="status">Roster office</div>
+      <aside class="panel ui-panel gm-dashboard-panel">
+        <div class="panel-head ui-panel-head">
+          <h2 class="panel-title ui-panel-title">GM Dashboard</h2>
+          <div class="status ui-panel-note">Roster office</div>
         </div>
         <div class="gm-dashboard-grid" id="gmDashboardBody"></div>
       </aside>
     </section>
 
-    <section class="panel roster-data-panel">
-      <div class="panel-head">
-        <h2 class="panel-title">Player Table</h2>
+    <section class="panel ui-panel roster-data-panel">
+      <div class="panel-head ui-panel-head">
+        <h2 class="panel-title ui-panel-title">Player Table</h2>
         <div class="panel-head-end">
           <div class="column-preset-wrap" aria-label="Column layout">
             <span class="preset-label">Cols</span>
-            <button type="button" class="preset-btn" data-preset="full">Full</button>
-            <button type="button" class="preset-btn" data-preset="essential">Ess.</button>
+            <button type="button" class="preset-btn ui-button" data-preset="full">Full</button>
+            <button type="button" class="preset-btn ui-button" data-preset="essential">Ess.</button>
           </div>
-          <div class="tabs" id="playerTabs"></div>
+          <div class="tabs ui-tabs" id="playerTabs"></div>
         </div>
       </div>
-      <div class="table-wrap roster-table-scroll">
-        <table class="data-table" id="playerTable"></table>
+      <div class="table-wrap ui-table-wrap roster-table-scroll">
+        <table class="data-table ui-table ui-table--sticky-first" id="playerTable"></table>
       </div>
     </section>
 
-    <section class="panel roster-data-panel">
-      <div class="panel-head">
-        <h2 class="panel-title">Stats Table</h2>
+    <section class="panel ui-panel roster-data-panel">
+      <div class="panel-head ui-panel-head">
+        <h2 class="panel-title ui-panel-title">Stats Table</h2>
         <div class="panel-head-end">
           <div class="column-preset-wrap" aria-label="Column layout">
             <span class="preset-label">Cols</span>
-            <button type="button" class="preset-btn" data-preset="full">Full</button>
-            <button type="button" class="preset-btn" data-preset="essential">Ess.</button>
+            <button type="button" class="preset-btn ui-button" data-preset="full">Full</button>
+            <button type="button" class="preset-btn ui-button" data-preset="essential">Ess.</button>
           </div>
-          <div class="tabs" id="statsTabs"></div>
+          <div class="tabs ui-tabs" id="statsTabs"></div>
         </div>
       </div>
-      <div class="table-wrap roster-table-scroll">
-        <table class="data-table" id="statsTable"></table>
+      <div class="table-wrap ui-table-wrap roster-table-scroll">
+        <table class="data-table ui-table ui-table--sticky-first" id="statsTable"></table>
       </div>
     </section>
   </main>
@@ -1569,11 +1573,11 @@
     function ratingTierClass(value) {
       const n = Number(value);
       if (!Number.isFinite(n)) return "";
-      if (n >= 151) return "rating-purple";
-      if (n >= 115) return "rating-blue";
-      if (n >= 100) return "rating-green";
-      if (n >= 80) return "rating-yellow";
-      return "rating-orange";
+      if (n >= 151) return "rating-purple ui-rating--purple";
+      if (n >= 115) return "rating-blue ui-rating--blue";
+      if (n >= 100) return "rating-green ui-rating--green";
+      if (n >= 80) return "rating-yellow ui-rating--yellow";
+      return "rating-orange ui-rating--orange";
     }
 
     function rosterRatingCell(cell, value) {
@@ -1750,7 +1754,7 @@
 
     function renderTabs(containerId, items, activeId, onClick) {
       const root = document.getElementById(containerId);
-      root.innerHTML = items.map((it) => `<button type="button" class="tab-btn${it.id === activeId || it === activeId ? " active" : ""}" data-id="${it.id || it}">${it.label || it}</button>`).join("");
+      root.innerHTML = items.map((it) => `<button type="button" class="tab-btn ui-tab${it.id === activeId || it === activeId ? " active" : ""}" data-id="${it.id || it}" aria-selected="${it.id === activeId || it === activeId}">${it.label || it}</button>`).join("");
       root.querySelectorAll(".tab-btn").forEach((btn) => btn.addEventListener("click", () => onClick(btn.dataset.id)));
     }
 

@@ -6,22 +6,26 @@
   <title>Super Cup Player</title>
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
+  <script src="../js/unified-ui.js"></script>
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
   <style>
     :root {
-      --team-color: #111b36;
-      --team-color-2: #1d3666;
-      --ink: #202124;
-      --muted: #5f6368;
-      --paper: #f6f7f9;
-      --card: #ffffff;
-      --line: #d8dee7;
-      --soft: #eef2f6;
-      --good: #198754;
-      --warn: #b7791f;
-      --bad: #b42318;
-      --font-sans: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --team-color: var(--ui-navy);
+      --team-color-2: var(--ui-blue);
+      --ui-team: var(--team-color);
+      --ui-team-secondary: var(--team-color-2);
+      --ink: var(--ui-ink);
+      --muted: var(--ui-muted);
+      --paper: var(--ui-paper);
+      --card: var(--ui-card);
+      --line: var(--ui-line);
+      --soft: var(--ui-soft);
+      --good: var(--ui-good);
+      --warn: var(--ui-warn);
+      --bad: var(--ui-bad);
+      --font-sans: var(--ui-font);
     }
     * { box-sizing: border-box; }
     html {
@@ -152,7 +156,7 @@
     .btn-link:hover { border-color: var(--team-color); text-decoration: none; }
     .player-header {
       display: grid;
-      grid-template-columns: 78px minmax(0, 1fr) auto;
+      grid-template-columns: 88px minmax(0, 1fr) auto;
       gap: 0.8rem;
       align-items: center;
       border: 1px solid var(--line);
@@ -806,23 +810,9 @@
     }
   </style>
 </head>
-<body>
-  <div class="shell">
-    <div class="topbar">
-      <div class="player-search" id="playerSearchWrap">
-        <input class="player-search-input" id="playerSearchInput" type="search" autocomplete="off" spellcheck="false" aria-label="Search players" aria-controls="playerSearchResults" aria-expanded="false">
-        <div class="player-search-results" id="playerSearchResults" role="listbox" hidden></div>
-      </div>
-      <nav class="nav-actions" aria-label="Player navigation">
-        <a class="btn-link" id="teamLink" href="../../00-SuperCup/standings.htm">Team Page</a>
-        <button class="btn-link" id="copyPlayerLink" type="button">Copy Player Link</button>
-        <button class="btn-link" id="copyTeamLink" type="button" hidden>Copy Team Link</button>
-        <a class="btn-link" id="classicLink" href="#">Classic Page</a>
-        <a class="btn-link" href="../../00-SuperCup/standings.htm">Standings</a>
-      </nav>
-    </div>
-
-    <header class="player-header">
+<body class="ui-page">
+  <div class="shell ui-shell">
+    <header class="player-header ui-identity-banner">
       <div id="teamLogoSlot"></div>
       <div>
         <div class="player-title">
@@ -831,57 +821,62 @@
         </div>
         <div class="meta-line" id="playerMeta">Loading player data</div>
         <div class="tag-row" id="heroPills"></div>
-        <div class="player-media-tags" id="heroMediaTags"></div>
       </div>
-      <div class="header-statline" id="headerStatline"></div>
+      <div class="header-side">
+        <nav class="nav-actions player-header-actions" aria-label="Player navigation">
+          <button class="btn-link ui-button" id="copyPlayerLink" type="button">Copy Player Link</button>
+          <button class="btn-link ui-button" id="copyTeamLink" type="button" hidden>Copy Team Link</button>
+        </nav>
+        <div class="header-statline" id="headerStatline"></div>
+      </div>
     </header>
 
     <main class="layout">
-      <section class="panel layout-ratings">
-        <div class="panel-head">
-          <h2 class="panel-title">Ratings</h2>
-          <div class="note">Current rating / potential grade</div>
+      <section class="panel ui-panel layout-ratings">
+        <div class="panel-head ui-panel-head">
+          <h2 class="panel-title ui-panel-title">Ratings</h2>
+          <div class="note ui-panel-note">Current rating / potential grade</div>
         </div>
         <div class="ratings-board" id="ratingsBoard"></div>
       </section>
 
       <div class="layout-left">
         <aside class="layout-sidebar">
-          <section class="panel">
-            <div class="panel-head">
-              <h2 class="panel-title">Contract</h2>
-              <div class="note" id="contractNote"></div>
+          <section class="panel ui-panel">
+            <div class="panel-head ui-panel-head">
+              <h2 class="panel-title ui-panel-title">Contract</h2>
+              <div class="note ui-panel-note" id="contractNote"></div>
             </div>
             <table class="contract-table" id="contractTable"></table>
           </section>
         </aside>
-        <section class="panel layout-player-articles" id="playerArticlesPanel">
-          <div class="panel-head">
-            <h2 class="panel-title">ESL Media</h2>
-            <div class="note" id="playerArticlesNote">Tags &amp; mentions</div>
+        <section class="panel ui-panel layout-player-articles" id="playerArticlesPanel">
+          <div class="panel-head ui-panel-head">
+            <h2 class="panel-title ui-panel-title">ESL Media</h2>
+            <div class="note ui-panel-note" id="playerArticlesNote">Tags &amp; mentions</div>
           </div>
           <div class="media-mentions-body" id="playerArticlesList"></div>
         </section>
       </div>
 
-      <section class="panel stats-panel layout-stats">
-        <div class="panel-head">
-          <h2 class="panel-title">Stats</h2>
-          <div class="note" id="snapshotNote">Best available season row</div>
+      <section class="panel ui-panel stats-panel layout-stats">
+        <div class="panel-head ui-panel-head">
+          <h2 class="panel-title ui-panel-title">Stats</h2>
+          <div class="note ui-panel-note" id="snapshotNote">Best available season row</div>
         </div>
-        <div class="panel-head">
-          <div class="tabs" id="statsTabs"></div>
+        <div class="panel-head ui-panel-head">
+          <div class="tabs ui-tabs" id="statsTabs"></div>
         </div>
-        <div class="table-wrap">
-          <table class="data-table" id="statsTable"></table>
+        <div class="table-wrap ui-table-wrap">
+          <table class="data-table ui-table" id="statsTable"></table>
         </div>
         <div class="gamelog-panel" id="gamelogPanel">
-          <div class="panel-head">
-            <h2 class="panel-title">Game Logs</h2>
-            <div class="note" id="gamelogNote">Recent games</div>
+          <div class="panel-head ui-panel-head">
+            <h2 class="panel-title ui-panel-title">Game Logs</h2>
+            <div class="note ui-panel-note" id="gamelogNote">Recent games</div>
           </div>
-          <div class="table-wrap gamelog-wrap">
-            <table class="data-table gamelog-table" id="gamelogTable"></table>
+          <div class="table-wrap ui-table-wrap gamelog-wrap">
+            <table class="data-table ui-table gamelog-table" id="gamelogTable"></table>
           </div>
         </div>
       </section>
@@ -897,7 +892,8 @@
       playerStats: "../../00-build/database/supercup/player_stats.json",
       playerGamelogs: "../../00-build/database/supercup/player_gamelogs.json",
       injuries: "../../00-build/database/supercup/injuries.json",
-      standings: "../../00-build/database/supercup/standings.json"
+      standings: "../../00-build/database/supercup/standings.json",
+      playerPhotos: "../../00-build/database/player_photos.json"
     };
     const PLAYER_VIEWPORT = "width=device-width, initial-scale=1.0";
     let parentViewportMeta = null;
@@ -961,6 +957,7 @@
       playerGamelogs: [],
       injuries: [],
       standings: [],
+      playerPhotos: {},
       teamDirectory: [],
       current: null,
       currentStats: null,
@@ -1000,6 +997,13 @@
     function playerIdFromUrl(url) {
       const match = String(url || "").match(/player(\d+)\.htm/i);
       return match ? `player${match[1]}` : "";
+    }
+
+    function basketballReferenceHref(player) {
+      const playerId = player?.playerId || playerIdFromUrl(player?.url);
+      const sourceId = String(state.playerPhotos?.[playerId]?.sourceId || "").toLowerCase();
+      if (!/^[a-z]{5,8}\d{2}$/.test(sourceId)) return "";
+      return `https://www.basketball-reference.com/players/${sourceId[0]}/${sourceId}.html`;
     }
 
     function classicHref(url) {
@@ -1157,8 +1161,46 @@
         .catch(() => {});
     }
 
-    function renderLogo(teamName) {
+    function renderLogo(teamName, teamHref) {
       const slot = document.getElementById("teamLogoSlot");
+      slot.innerHTML = "";
+      const playerId = state.current?.playerId || playerIdFromUrl(state.current?.url);
+      const photo = state.playerPhotos?.[playerId];
+      if (photo?.url) {
+        const art = document.createElement("div");
+        art.className = "player-identity-art";
+        const portrait = document.createElement("img");
+        portrait.className = "player-portrait";
+        portrait.alt = `${state.current?.name || "Player"} headshot`;
+        portrait.src = photo.url;
+        portrait.decoding = "async";
+        portrait.referrerPolicy = "no-referrer";
+        portrait.addEventListener("error", () => renderTeamLogo(slot, teamName, teamHref));
+        art.appendChild(portrait);
+        renderTeamBadge(art, teamName, teamHref);
+        slot.appendChild(art);
+        return;
+      }
+      renderTeamLogo(slot, teamName, teamHref);
+    }
+
+    function renderTeamBadge(holder, teamName, teamHref) {
+      if (!teamName || ["FA", "Draft"].includes(teamName)) return;
+      const link = document.createElement("a");
+      link.className = "player-team-badge-link";
+      link.href = teamHref;
+      link.setAttribute("aria-label", `Back to ${teamName} roster`);
+      link.title = `Back to ${teamName}`;
+      const badge = document.createElement("img");
+      badge.className = "player-team-badge";
+      badge.alt = `${teamName} logo`;
+      badge.src = `../../00-assets/photos/${TEAM_LOGOS[teamName] || (slugify(teamName) + ".jpg")}`;
+      badge.addEventListener("error", () => link.remove());
+      link.appendChild(badge);
+      holder.appendChild(link);
+    }
+
+    function renderTeamLogo(slot, teamName, teamHref) {
       slot.innerHTML = "";
       if (!teamName || ["FA", "Draft"].includes(teamName)) {
         const fallback = document.createElement("div");
@@ -1171,13 +1213,19 @@
       img.className = "logo";
       img.alt = `${teamName} logo`;
       img.src = `../../00-assets/photos/${TEAM_LOGOS[teamName] || (slugify(teamName) + ".jpg")}`;
+      const link = document.createElement("a");
+      link.className = "team-logo-link";
+      link.href = teamHref;
+      link.setAttribute("aria-label", `Back to ${teamName} roster`);
+      link.title = `Back to ${teamName}`;
       img.addEventListener("error", () => {
         const fallback = document.createElement("div");
         fallback.className = "logo-fallback";
         fallback.textContent = initials(teamName);
-        slot.replaceChildren(fallback);
+        link.replaceChildren(fallback);
       });
-      slot.appendChild(img);
+      link.appendChild(img);
+      slot.appendChild(link);
     }
 
     function skillTags(player) {
@@ -1311,22 +1359,18 @@
         p.experience
       ].filter(Boolean);
       document.getElementById("playerName").textContent = p.name || "Unknown Player";
-      document.getElementById("playerMeta").innerHTML = meta.map((item) => `<span>${item}</span>`).join("");
+      const bbrefHref = basketballReferenceHref(p);
+      document.getElementById("playerMeta").innerHTML = [
+        ...meta.map((item) => `<span>${item}</span>`),
+        bbrefHref ? `<a class="player-meta-link" href="${bbrefHref}" target="_blank" rel="noopener noreferrer" aria-label="Open ${escapeHtml(p.name)} on Basketball Reference">BBRef</a>` : ""
+      ].filter(Boolean).join("");
       document.title = `${p.name || "Super Cup Player"} - Super Cup Player`;
       document.getElementById("heroPills").innerHTML = [
-        p.overall ? `<span class="rating-chip primary ${ratingTierClass(p.overall)}">OVR ${p.overall}</span>` : "",
-        p.potential ? `<span class="rating-chip primary ${ratingTierClass(p.potential)}">POT ${p.potential}</span>` : "",
+        p.overall ? (window.ESLUnifiedUI ? ESLUnifiedUI.ratingBadge(p.overall, `OVR ${p.overall}`) : `<span class="rating-chip primary ${ratingTierClass(p.overall)}">OVR ${p.overall}</span>`) : "",
+        p.potential ? (window.ESLUnifiedUI ? ESLUnifiedUI.ratingBadge(p.potential, `POT ${p.potential}`) : `<span class="rating-chip primary ${ratingTierClass(p.potential)}">POT ${p.potential}</span>`) : "",
         p.currentSalaryText ? `<span class="info-chip">${p.currentSalaryText}</span>` : "",
         injury ? `<span class="info-chip injury-chip">${injury.injury} | ${injury.length}d</span>` : ""
       ].filter(Boolean).join("");
-      const curatedTags = Array.isArray(p.mediaTags) ? p.mediaTags.map((t) => clean(t)).filter(Boolean) : [];
-      const slug = normalizeName(p.name || "");
-      const mediaChips = curatedTags.length
-        ? curatedTags.map((t) => `<span class="media-tag-chip" title="ESL Media match tag">${escapeHtml(t)}</span>`).join("")
-        : slug
-          ? `<span class="media-tag-chip media-tag-chip--auto" title="Default catalog tag for ESL Media playerTags">${escapeHtml(slug)}</span>`
-          : "";
-      document.getElementById("heroMediaTags").innerHTML = mediaChips;
       document.getElementById("skillRow").innerHTML = skillTags(p).map(([label, title]) =>
         `<span class="skill-chip" title="${title}">${label}</span>`
       ).join("");
@@ -1335,21 +1379,17 @@
         ["STL", row.stl], ["BLK", row.blk], ["MIN", row.min]
       ].map(([label, value]) => `<div class="head-stat"><span class="head-stat-value">${fmt(value)}</span><span class="head-stat-label">${label}</span></div>`).join("");
       document.getElementById("snapshotNote").textContent = row.season ? `${row.season} season row` : "No season averages found";
-      document.getElementById("classicLink").href = classicHref(p.url);
-      const teamLink = document.getElementById("teamLink");
-      teamLink.href = team ? `./unified-roster-supercup.htm?file=${encodeURIComponent(team.rosterFile)}` : "../../00-SuperCup/standings.htm";
-      teamLink.textContent = team ? "Back To Team" : "Standings";
+      const teamHref = team ? `./unified-roster-supercup.htm?file=${encodeURIComponent(team.rosterFile)}` : "../../00-SuperCup/standings.htm";
       const copyPlayerLink = document.getElementById("copyPlayerLink");
       if (copyPlayerLink) {
         copyPlayerLink.onclick = () => copyText(window.location.href, copyPlayerLink);
       }
       const copyTeamLink = document.getElementById("copyTeamLink");
       if (copyTeamLink) {
-        const teamHref = team ? `./unified-roster-supercup.htm?file=${encodeURIComponent(team.rosterFile)}` : "../../00-SuperCup/standings.htm";
         copyTeamLink.hidden = !team;
         copyTeamLink.onclick = () => copyText(absoluteHref(teamHref), copyTeamLink);
       }
-      renderLogo(teamName);
+      renderLogo(teamName, teamHref);
       setTeamColors(team);
     }
 
@@ -1406,7 +1446,7 @@
       const section = stats && stats[state.activeTab];
       table.classList.toggle("is-highs", state.activeTab === "career_highs");
       if (!section || !Array.isArray(section.headers) || !Array.isArray(section.rows) || !section.headers.length) {
-        table.innerHTML = `<tbody><tr><td><div class="empty">No table data for this section</div></td></tr></tbody>`;
+        table.innerHTML = `<tbody><tr><td><div class="empty ui-state">No table data for this section</div></td></tr></tbody>`;
         return;
       }
       const used = {};
@@ -1425,7 +1465,7 @@
       const record = findGamelogsFor(state.current);
       const section = record && record.gameLogs;
       if (!section || !Array.isArray(section.headers) || !section.headers.length) {
-        table.innerHTML = `<tbody><tr><td><div class="empty">No game log data</div></td></tr></tbody>`;
+        table.innerHTML = `<tbody><tr><td><div class="empty ui-state">No game log data</div></td></tr></tbody>`;
         if (note) note.textContent = "No games logged";
         return;
       }
@@ -1523,7 +1563,7 @@
       const root = document.getElementById("playerArticlesList");
       const note = document.getElementById("playerArticlesNote");
       if (!root) return;
-      root.innerHTML = `<div class="empty">Loading ESL Media...</div>`;
+      root.innerHTML = `<div class="empty ui-state ui-state--loading">Loading ESL Media...</div>`;
       if (note) note.textContent = "Loading catalog";
       const articles = await loadEslMediaArticles();
       const player = state.current;
@@ -1540,7 +1580,7 @@
       }
       if (!matches.length) {
         root.innerHTML =
-          `<div class="empty">No ESL Media pieces match this player's media tags or name in this catalog yet.</div>${browse}`;
+          `<div class="empty ui-state">No ESL Media pieces match this player's media tags or name in this catalog yet.</div>${browse}`;
         return;
       }
       root.innerHTML =
@@ -1567,7 +1607,7 @@
         state.activeTab = tabs[0] ? tabs[0].id : "season_averages";
       }
       root.innerHTML = tabs.map((tab) =>
-        `<button type="button" class="tab-btn${tab.id === state.activeTab ? " active" : ""}" data-tab="${tab.id}">${tab.label}</button>`
+        `<button type="button" class="tab-btn ui-tab${tab.id === state.activeTab ? " active" : ""}" data-tab="${tab.id}" aria-selected="${tab.id === state.activeTab}">${tab.label}</button>`
       ).join("");
       root.querySelectorAll(".tab-btn").forEach((btn) => btn.addEventListener("click", () => {
         state.activeTab = btn.dataset.tab;
@@ -1679,16 +1719,25 @@
         } catch (error) {
           playerGamelogsData = { players: [] };
         }
+        let playerPhotosData = { players: {} };
+        try {
+          const playerPhotosRes = await fetch(DATA_URLS.playerPhotos);
+          if (playerPhotosRes.ok) {
+            playerPhotosData = await playerPhotosRes.json();
+          }
+        } catch (error) {
+          playerPhotosData = { players: {} };
+        }
         state.players = Array.isArray(playersData) ? playersData : [];
         state.playerStats = Array.isArray(playerStatsData.players) ? playerStatsData.players : [];
         state.playerGamelogs = Array.isArray(playerGamelogsData.players) ? playerGamelogsData.players : [];
         state.injuries = Array.isArray(injuriesData.injuries) ? injuriesData.injuries : [];
         state.standings = Array.isArray(standingsData.sections) ? standingsData.sections : [];
+        state.playerPhotos = playerPhotosData?.players || {};
         state.teamDirectory = window.SupercupRosterDataService.buildTeamDirectory(state.standings);
         state.current = findCurrentPlayer();
         if (!state.current) throw new Error("No player found");
         state.currentStats = findStatsFor(state.current);
-        renderPicker();
         renderHero();
         renderPlayerDetails();
         renderTabs();

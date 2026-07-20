@@ -6,10 +6,12 @@
   <title>Unified Team Leaders</title>
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
+  <script src="../js/unified-ui.js"></script>
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
   <style>
-    :root { --team-color:#111b36; --ink:#202124; --paper:#f6f7f9; --card:#fff; --line:#d8dee7; --muted:#5f6368; --good:#15803d; --bad:#b91c1c; --font-sans:"Graphik","Helvetica Neue",Helvetica,Arial,sans-serif; }
+    :root { --team-color:var(--ui-navy); --ui-team:var(--team-color); --ink:var(--ui-ink); --paper:var(--ui-paper); --card:var(--ui-card); --line:var(--ui-line); --muted:var(--ui-muted); --good:var(--ui-good); --bad:var(--ui-bad); --font-sans:var(--ui-font); }
     * { box-sizing:border-box; }
     body { margin:0; padding:.85rem; background:var(--paper); color:var(--ink); font-family:var(--font-sans); }
     .shell { display:grid; gap:.75rem; max-width:1280px; width:min(1280px,100%); }
@@ -48,23 +50,23 @@
     @media(max-width:860px){ body{padding:.55rem}.topbar{grid-template-columns:1fr}.filters{justify-content:stretch}.search-input,.filter-select{width:100%}.leader-grid{grid-template-columns:1fr}.breadcrumbs{font-size:.58rem;letter-spacing:.08em;padding:.34rem .42rem} }
   </style>
 </head>
-<body>
-  <main class="shell">
+<body class="ui-page">
+  <main class="shell ui-shell">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="../../index.htm" target="_top">League</a><span>/</span><a href="./league%20dashboard.htm">Dashboard</a><span>/</span><span class="breadcrumbs-current">Team Leaders</span>
     </nav>
-    <section class="topbar">
-      <input class="search-input" id="leaderSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Search team">
+    <section class="topbar ui-panel">
+      <input class="search-input ui-input" id="leaderSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Search team">
       <div class="filters">
-        <select class="filter-select" id="viewFilter"><option value="team">Team Stat</option><option value="opponent">Opponent Stat</option><option value="margin">Margin</option></select>
+        <select class="filter-select ui-select" id="viewFilter"><option value="team">Team Stat</option><option value="opponent">Opponent Stat</option><option value="margin">Margin</option></select>
       </div>
-      <div class="tabs" id="tierTabs" aria-label="Tier tabs"></div>
-      <div class="tabs" id="statTabs" aria-label="Stat tabs"></div>
+      <div class="tabs ui-tabs" id="tierTabs" aria-label="Tier tabs"></div>
+      <div class="tabs ui-tabs" id="statTabs" aria-label="Stat tabs"></div>
     </section>
-    <section class="panel">
-      <div class="panel-head"><h1 class="panel-title" id="panelTitle">Team Leaders</h1><div class="status" id="tableStatus"></div></div>
+    <section class="panel ui-panel">
+      <div class="panel-head ui-panel-head"><h1 class="panel-title ui-panel-title" id="panelTitle">Team Leaders</h1><div class="status" id="tableStatus"></div></div>
       <div class="leader-grid" id="leaderCards"></div>
-      <div class="table-wrap"><table id="leadersTable"><thead></thead><tbody></tbody></table></div>
+      <div class="table-wrap ui-table-wrap"><table class="ui-table" id="leadersTable"><thead></thead><tbody></tbody></table></div>
     </section>
   </main>
   <script>
@@ -129,10 +131,10 @@
     function renderTabs() {
       const tierRoot = document.getElementById("tierTabs");
       const tiers = [{ slug:"all", title:"All Tiers" }].concat(state.standings.map((s) => ({ slug:s.slug, title:tierTitle(s.title) })));
-      tierRoot.innerHTML = tiers.map((tier) => `<button class="tab-btn${tier.slug === state.tier ? " active" : ""}" type="button" data-tier="${escapeHtml(tier.slug)}">${escapeHtml(tier.title)}</button>`).join("");
+      tierRoot.innerHTML = tiers.map((tier) => `<button class="tab-btn ui-tab${tier.slug === state.tier ? " active" : ""}" type="button" data-tier="${escapeHtml(tier.slug)}" aria-selected="${tier.slug === state.tier}">${escapeHtml(tier.title)}</button>`).join("");
       tierRoot.querySelectorAll("[data-tier]").forEach((btn) => btn.addEventListener("click", () => { state.tier = btn.dataset.tier; render(); }));
       const statRoot = document.getElementById("statTabs");
-      statRoot.innerHTML = statList().map((stat) => `<button class="tab-btn${stat.key === state.stat ? " active" : ""}" type="button" data-stat="${escapeHtml(stat.key)}">${escapeHtml(stat.label)}</button>`).join("");
+      statRoot.innerHTML = statList().map((stat) => `<button class="tab-btn ui-tab${stat.key === state.stat ? " active" : ""}" type="button" data-stat="${escapeHtml(stat.key)}" aria-selected="${stat.key === state.stat}">${escapeHtml(stat.label)}</button>`).join("");
       statRoot.querySelectorAll("[data-stat]").forEach((btn) => btn.addEventListener("click", () => { state.stat = btn.dataset.stat; render(); }));
     }
     function renderCards(rows) {

@@ -6,22 +6,26 @@
   <title>Unified Player</title>
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
+  <script src="../js/unified-ui.js"></script>
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
   <style>
     :root {
-      --team-color: #111b36;
-      --team-color-2: #1d3666;
-      --ink: #202124;
-      --muted: #5f6368;
-      --paper: #f6f7f9;
-      --card: #ffffff;
-      --line: #d8dee7;
-      --soft: #eef2f6;
-      --good: #198754;
-      --warn: #b7791f;
-      --bad: #b42318;
-      --font-sans: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --team-color: var(--ui-navy);
+      --team-color-2: var(--ui-blue);
+      --ui-team: var(--team-color);
+      --ui-team-secondary: var(--team-color-2);
+      --ink: var(--ui-ink);
+      --muted: var(--ui-muted);
+      --paper: var(--ui-paper);
+      --card: var(--ui-card);
+      --line: var(--ui-line);
+      --soft: var(--ui-soft);
+      --good: var(--ui-good);
+      --warn: var(--ui-warn);
+      --bad: var(--ui-bad);
+      --font-sans: var(--ui-font);
     }
     * { box-sizing: border-box; }
     html {
@@ -1219,9 +1223,9 @@
     }
   </style>
 </head>
-<body>
-  <div class="shell">
-    <header class="player-header">
+<body class="ui-page">
+  <div class="shell ui-shell">
+    <header class="player-header ui-identity-banner">
       <div id="teamLogoSlot"></div>
       <div>
         <div class="player-title">
@@ -1233,9 +1237,9 @@
       </div>
       <div class="header-side">
         <nav class="nav-actions player-header-actions" aria-label="Player navigation">
-          <button class="btn-link" id="copyPlayerLink" type="button">Copy Player Link</button>
-          <button class="btn-link" id="copyTeamLink" type="button" hidden>Copy Team Link</button>
-          <a class="btn-link" id="compareLink" href="./player-compare.htm">Compare</a>
+          <button class="btn-link ui-button" id="copyPlayerLink" type="button">Copy Player Link</button>
+          <button class="btn-link ui-button" id="copyTeamLink" type="button" hidden>Copy Team Link</button>
+          <a class="btn-link ui-button" id="compareLink" href="./player-compare.htm">Compare</a>
         </nav>
         <div class="header-statline" id="headerStatline"></div>
         <div class="hero-awards" id="heroAwards" aria-label="Career highlights" hidden></div>
@@ -1243,80 +1247,80 @@
     </header>
 
     <main class="layout">
-      <section class="panel layout-ratings">
-        <div class="panel-head">
-          <h2 class="panel-title">Ratings</h2>
-          <div class="note">Current rating / potential grade</div>
+      <section class="panel ui-panel layout-ratings">
+        <div class="panel-head ui-panel-head">
+          <h2 class="panel-title ui-panel-title">Ratings</h2>
+          <div class="note ui-panel-note">Current rating / potential grade</div>
         </div>
         <div class="ratings-board" id="ratingsBoard"></div>
       </section>
 
       <div class="layout-left">
         <aside class="layout-sidebar">
-          <section class="panel">
-            <div class="panel-head">
-              <h2 class="panel-title">Contract</h2>
-              <div class="note" id="contractNote"></div>
+          <section class="panel ui-panel">
+            <div class="panel-head ui-panel-head">
+              <h2 class="panel-title ui-panel-title">Contract</h2>
+              <div class="note ui-panel-note" id="contractNote"></div>
             </div>
             <table class="contract-table" id="contractTable"></table>
           </section>
         </aside>
-        <section class="panel layout-player-articles" id="playerArticlesPanel">
-          <div class="panel-head">
-            <h2 class="panel-title">ESL Media</h2>
-            <div class="note" id="playerArticlesNote">Tags &amp; mentions</div>
+        <section class="panel ui-panel layout-player-articles" id="playerArticlesPanel">
+          <div class="panel-head ui-panel-head">
+            <h2 class="panel-title ui-panel-title">ESL Media</h2>
+            <div class="note ui-panel-note" id="playerArticlesNote">Tags &amp; mentions</div>
           </div>
           <div class="media-mentions-body" id="playerArticlesList"></div>
         </section>
-        <section class="panel layout-analyst" id="analystPanel">
-          <div class="panel-head">
-            <h2 class="panel-title">Analyst Report</h2>
-            <div class="note" id="analystNote">Live profile</div>
+        <section class="panel ui-panel layout-analyst" id="analystPanel">
+          <div class="panel-head ui-panel-head">
+            <h2 class="panel-title ui-panel-title">Analyst Report</h2>
+            <div class="note ui-panel-note" id="analystNote">Live profile</div>
           </div>
           <div class="analyst-report" id="analystReport"></div>
         </section>
       </div>
 
-      <section class="panel stats-panel layout-stats">
-        <div class="panel-head">
-          <h2 class="panel-title">Stats</h2>
-          <div class="note" id="snapshotNote">Best available season row</div>
+      <section class="panel ui-panel stats-panel layout-stats">
+        <div class="panel-head ui-panel-head">
+          <h2 class="panel-title ui-panel-title">Stats</h2>
+          <div class="note ui-panel-note" id="snapshotNote">Best available season row</div>
         </div>
-        <div class="panel-head">
-          <div class="tabs" id="statsTabs"></div>
+        <div class="panel-head ui-panel-head">
+          <div class="tabs ui-tabs" id="statsTabs"></div>
         </div>
-        <div class="table-wrap">
-          <table class="data-table" id="statsTable"></table>
+        <div class="table-wrap ui-table-wrap">
+          <table class="data-table ui-table" id="statsTable"></table>
         </div>
         <div class="gamelog-panel" id="gamelogPanel">
-          <div class="panel-head">
-            <h2 class="panel-title">Game Logs</h2>
-            <div class="note" id="gamelogNote">Recent games</div>
+          <div class="panel-head ui-panel-head">
+            <h2 class="panel-title ui-panel-title">Game Logs</h2>
+            <div class="note ui-panel-note" id="gamelogNote">Recent games</div>
           </div>
-          <div class="table-wrap gamelog-wrap">
-            <table class="data-table gamelog-table" id="gamelogTable"></table>
+          <div class="table-wrap ui-table-wrap gamelog-wrap">
+            <table class="data-table ui-table gamelog-table" id="gamelogTable"></table>
           </div>
         </div>
         <div class="history-panel" id="awardsPanel">
-          <div class="panel-head">
-            <h2 class="panel-title">Awards &amp; Achievements</h2>
-            <div class="note" id="awardsNote">Career honors</div>
+          <div class="panel-head ui-panel-head">
+            <h2 class="panel-title ui-panel-title">Awards &amp; Achievements</h2>
+            <div class="note ui-panel-note" id="awardsNote">Career honors</div>
           </div>
           <div class="accolades-wrap" id="awardsAccolades"></div>
         </div>
         <div class="history-panel" id="transactionsPanel">
-          <div class="panel-head">
-            <h2 class="panel-title">Transactions</h2>
-            <div class="note" id="transactionsNote">Player movement</div>
+          <div class="panel-head ui-panel-head">
+            <h2 class="panel-title ui-panel-title">Transactions</h2>
+            <div class="note ui-panel-note" id="transactionsNote">Player movement</div>
           </div>
-          <div class="table-wrap history-wrap">
-            <table class="data-table history-table" id="transactionsTable"></table>
+          <div class="table-wrap ui-table-wrap history-wrap">
+            <table class="data-table ui-table history-table" id="transactionsTable"></table>
           </div>
         </div>
         <div class="history-panel" id="timelinePanel">
-          <div class="panel-head">
-            <h2 class="panel-title">Career Timeline</h2>
-            <div class="note" id="timelineNote">Season path</div>
+          <div class="panel-head ui-panel-head">
+            <h2 class="panel-title ui-panel-title">Career Timeline</h2>
+            <div class="note ui-panel-note" id="timelineNote">Season path</div>
           </div>
           <div class="timeline" id="careerTimeline"></div>
         </div>
@@ -2203,8 +2207,8 @@
       ].filter(Boolean).join("");
       document.title = `${p.name || "Unified Player"} - Unified Player`;
       document.getElementById("heroPills").innerHTML = [
-        p.overall ? `<span class="rating-chip primary ${ratingTierClass(p.overall)}">OVR ${p.overall}</span>` : "",
-        p.potential ? `<span class="rating-chip primary ${ratingTierClass(p.potential)}">POT ${p.potential}</span>` : "",
+        p.overall ? (window.ESLUnifiedUI ? ESLUnifiedUI.ratingBadge(p.overall, `OVR ${p.overall}`) : `<span class="rating-chip primary ${ratingTierClass(p.overall)}">OVR ${p.overall}</span>`) : "",
+        p.potential ? (window.ESLUnifiedUI ? ESLUnifiedUI.ratingBadge(p.potential, `POT ${p.potential}`) : `<span class="rating-chip primary ${ratingTierClass(p.potential)}">POT ${p.potential}</span>`) : "",
         intakeAssignment ? `<a class="info-chip intake-team-chip" href="${intakeHref}" title="View ${escapeHtml(intakeAssignment.team)} youth intake">INTAKE · ${escapeHtml(intakeAssignment.team)}</a>` : "",
         p.currentSalaryText ? `<span class="info-chip">${p.currentSalaryText}</span>` : "",
         injury ? `<span class="info-chip injury-chip">${injury.injury} | ${injury.length}d</span>` : ""
@@ -2301,7 +2305,7 @@
       const section = stats && stats[state.activeTab];
       table.classList.toggle("is-highs", state.activeTab === "career_highs");
       if (!section || !Array.isArray(section.headers) || !Array.isArray(section.rows) || !section.headers.length) {
-        table.innerHTML = `<tbody><tr><td><div class="empty">No table data for this section</div></td></tr></tbody>`;
+        table.innerHTML = `<tbody><tr><td><div class="empty ui-state">No table data for this section</div></td></tr></tbody>`;
         return;
       }
       const used = {};
@@ -2320,7 +2324,7 @@
       const record = findGamelogsFor(state.current);
       const section = record && record.gameLogs;
       if (!section || !Array.isArray(section.headers) || !section.headers.length) {
-        table.innerHTML = `<tbody><tr><td><div class="empty">No game log data</div></td></tr></tbody>`;
+        table.innerHTML = `<tbody><tr><td><div class="empty ui-state">No game log data</div></td></tr></tbody>`;
         if (note) note.textContent = "No games logged";
         return;
       }
@@ -2350,7 +2354,7 @@
         note.textContent = safeRows.length ? `${safeRows.length} row${safeRows.length === 1 ? "" : "s"}` : "No records";
       }
       if (!safeRows.length) {
-        table.innerHTML = `<tbody><tr><td><div class="empty">${escapeHtml(emptyText)}</div></td></tr></tbody>`;
+        table.innerHTML = `<tbody><tr><td><div class="empty ui-state">${escapeHtml(emptyText)}</div></td></tr></tbody>`;
         return;
       }
       const head = `<thead><tr>${columns.map((column) => `<th>${escapeHtml(column.label)}</th>`).join("")}</tr></thead>`;
@@ -2635,7 +2639,7 @@
       if (!root) return;
       root.innerHTML = totalHtml || seasonHtml
         ? `${totalHtml}${seasonHtml ? `<div class="accolade-season-grid">${seasonHtml}</div>` : ""}`
-        : `<div class="empty">No awards or achievements</div>`;
+        : `<div class="empty ui-state">No awards or achievements</div>`;
     }
 
     function renderAwardsAndTransactions() {
@@ -2707,7 +2711,7 @@
       }
       if (!root) return;
       if (!seasons.length) {
-        root.innerHTML = `<div class="empty">No season timeline data</div>`;
+        root.innerHTML = `<div class="empty ui-state">No season timeline data</div>`;
         return;
       }
       root.innerHTML = seasons.map((row) => {
@@ -2802,7 +2806,7 @@
       const root = document.getElementById("playerArticlesList");
       const note = document.getElementById("playerArticlesNote");
       if (!root) return;
-      root.innerHTML = `<div class="empty">Loading ESL Media...</div>`;
+      root.innerHTML = `<div class="empty ui-state ui-state--loading">Loading ESL Media...</div>`;
       if (note) note.textContent = "Loading catalog";
       const articles = await loadEslMediaArticles();
       const player = state.current;
@@ -2819,7 +2823,7 @@
       }
       if (!matches.length) {
         root.innerHTML =
-          `<div class="empty">No ESL Media pieces match this player's media tags or name in this catalog yet.</div>${browse}`;
+          `<div class="empty ui-state">No ESL Media pieces match this player's media tags or name in this catalog yet.</div>${browse}`;
         return;
       }
       root.innerHTML =
@@ -2846,7 +2850,7 @@
         state.activeTab = tabs[0] ? tabs[0].id : "season_averages";
       }
       root.innerHTML = tabs.map((tab) =>
-        `<button type="button" class="tab-btn${tab.id === state.activeTab ? " active" : ""}" data-tab="${tab.id}">${tab.label}</button>`
+        `<button type="button" class="tab-btn ui-tab${tab.id === state.activeTab ? " active" : ""}" data-tab="${tab.id}" aria-selected="${tab.id === state.activeTab}">${tab.label}</button>`
       ).join("");
       root.querySelectorAll(".tab-btn").forEach((btn) => btn.addEventListener("click", () => {
         state.activeTab = btn.dataset.tab;

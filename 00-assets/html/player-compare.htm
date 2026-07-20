@@ -7,23 +7,27 @@
   <link rel="icon" type="image/png" href="../../00-build/database/favicon.png">
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
+  <script src="../js/unified-ui.js"></script>
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
   <script src="../js/player-compare.js" defer></script>
   <style>
     :root {
-      --team-color: #111b36;
-      --team-color-2: #1d3666;
-      --ink: #202124;
-      --muted: #5f6368;
-      --paper: #f6f7f9;
-      --card: #ffffff;
-      --line: #d8dee7;
-      --soft: #eef2f6;
+      --team-color: var(--ui-navy);
+      --team-color-2: var(--ui-blue);
+      --ui-team: var(--team-color);
+      --ui-team-secondary: var(--team-color-2);
+      --ink: var(--ui-ink);
+      --muted: var(--ui-muted);
+      --paper: var(--ui-paper);
+      --card: var(--ui-card);
+      --line: var(--ui-line);
+      --soft: var(--ui-soft);
       --best: #e8f5ec;
       --best-line: #86c597;
-      --bad: #b42318;
-      --font-sans: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --bad: var(--ui-bad);
+      --font-sans: var(--ui-font);
     }
 
     * { box-sizing: border-box; }
@@ -565,42 +569,42 @@
     }
   </style>
 </head>
-<body>
-  <main class="compare-shell">
-    <header class="compare-hero">
+<body class="ui-page">
+  <main class="compare-shell ui-shell">
+    <header class="compare-hero ui-identity-banner">
       <div>
         <h1 class="compare-title">Player Compare</h1>
         <p class="compare-subtitle">Compare up to four live league players across ratings, current-season production, shooting, and efficiency.</p>
       </div>
       <nav class="hero-actions" aria-label="Compare navigation">
-        <a class="btn-link" href="./league%20dashboard.htm">Dashboard</a>
-        <a class="btn-link" href="../../index.htm" target="_top">League Home</a>
+        <a class="btn-link ui-button" href="./league%20dashboard.htm">Dashboard</a>
+        <a class="btn-link ui-button" href="../../index.htm" target="_top">League Home</a>
       </nav>
     </header>
 
-    <section class="topbar" id="slotControls" aria-label="Player selectors"></section>
+    <section class="topbar ui-panel" id="slotControls" aria-label="Player selectors"></section>
     <section class="compare-cards" id="playerCards"></section>
-    <nav class="compare-tabs" id="compareTabs" aria-label="Compare sections"></nav>
+    <nav class="compare-tabs ui-tabs" id="compareTabs" aria-label="Compare sections"></nav>
 
-    <section class="panel compare-section" id="section-ratings">
-      <div class="panel-head">
-        <h2 class="panel-title">Ratings</h2>
+    <section class="panel ui-panel compare-section" id="section-ratings">
+      <div class="panel-head ui-panel-head">
+        <h2 class="panel-title ui-panel-title">Ratings</h2>
         <div class="note">Best value highlighted</div>
       </div>
       <div id="ratingsTable"></div>
     </section>
 
-    <section class="panel compare-section" id="section-potential">
-      <div class="panel-head">
-        <h2 class="panel-title">Potential Grades</h2>
+    <section class="panel ui-panel compare-section" id="section-potential">
+      <div class="panel-head ui-panel-head">
+        <h2 class="panel-title ui-panel-title">Potential Grades</h2>
         <div class="note">Letter grades by rating</div>
       </div>
       <div id="potentialTable"></div>
     </section>
 
-    <section class="panel compare-section" id="section-current">
-      <div class="panel-head">
-        <h2 class="panel-title">Stats / Shooting / Efficiency</h2>
+    <section class="panel ui-panel compare-section" id="section-current">
+      <div class="panel-head ui-panel-head">
+        <h2 class="panel-title ui-panel-title">Stats / Shooting / Efficiency</h2>
         <div class="note">Latest numeric season row</div>
       </div>
       <div id="statsCards"></div>

@@ -6,10 +6,12 @@
   <title>Unified Standings</title>
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
+  <script src="../js/unified-ui.js"></script>
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
   <style>
-    :root { --team-color:#111b36; --ink:#202124; --paper:#f6f7f9; --card:#fff; --line:#d8dee7; --muted:#5f6368; --good:#15803d; --bad:#b91c1c; --font-sans:"Graphik","Helvetica Neue",Helvetica,Arial,sans-serif; }
+    :root { --team-color:var(--ui-navy); --ui-team:var(--team-color); --ink:var(--ui-ink); --paper:var(--ui-paper); --card:var(--ui-card); --line:var(--ui-line); --muted:var(--ui-muted); --good:var(--ui-good); --bad:var(--ui-bad); --font-sans:var(--ui-font); }
     * { box-sizing:border-box; }
     body { margin:0; padding:.85rem; background:var(--paper); color:var(--ink); font-family:var(--font-sans); }
     .shell { display:grid; gap:.75rem; max-width:1280px; width:min(1280px,100%); }
@@ -51,28 +53,28 @@
     @media(max-width:860px){ body{padding:.55rem}.topbar{grid-template-columns:1fr}.filters{justify-content:stretch}.search-input,.filter-select{width:100%}.form-grid{grid-template-columns:1fr}.breadcrumbs{font-size:.58rem;letter-spacing:.08em;padding:.34rem .42rem} }
   </style>
 </head>
-<body>
-  <main class="shell">
+<body class="ui-page">
+  <main class="shell ui-shell">
     <nav class="breadcrumbs" aria-label="Breadcrumb">
       <a href="../../index.htm" target="_top">League</a><span>/</span><a href="./league%20dashboard.htm">Dashboard</a><span>/</span><span class="breadcrumbs-current">Standings</span>
     </nav>
-    <section class="topbar">
-      <input class="search-input" id="standingsSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Search team">
+    <section class="topbar ui-panel">
+      <input class="search-input ui-input" id="standingsSearch" type="search" autocomplete="off" spellcheck="false" placeholder="Search team">
       <div class="filters">
-        <select class="filter-select" id="sortPreset" aria-label="Sort preset">
+        <select class="filter-select ui-select" id="sortPreset" aria-label="Sort preset">
           <option value="standing">League Order</option>
           <option value="wins">Most Wins</option>
           <option value="diff">Best Diff</option>
           <option value="last10">Best Last 10</option>
         </select>
       </div>
-      <div class="tabs" id="tierTabs" aria-label="Tier tabs"></div>
+      <div class="tabs ui-tabs" id="tierTabs" aria-label="Tier tabs"></div>
     </section>
-    <section class="panel">
-      <div class="panel-head"><h1 class="panel-title">Standings</h1><div class="status" id="tableStatus"></div></div>
+    <section class="panel ui-panel">
+      <div class="panel-head ui-panel-head"><h1 class="panel-title ui-panel-title">Standings</h1><div class="status" id="tableStatus"></div></div>
       <div class="form-grid" id="summaryCards"></div>
-      <div class="table-wrap">
-        <table id="standingsTable"><thead></thead><tbody></tbody></table>
+      <div class="table-wrap ui-table-wrap">
+        <table class="ui-table" id="standingsTable"><thead></thead><tbody></tbody></table>
       </div>
     </section>
   </main>
@@ -203,7 +205,7 @@
     function renderTabs() {
       const root = document.getElementById("tierTabs");
       const tiers = state.sections.map((s) => ({ slug:s.slug, title:tierTitle(s.title) }));
-      root.innerHTML = tiers.map((tier) => `<button class="tab-btn${tier.slug === state.tier ? " active" : ""}" type="button" data-tier="${escapeHtml(tier.slug)}">${escapeHtml(tier.title)}</button>`).join("");
+      root.innerHTML = tiers.map((tier) => `<button class="tab-btn ui-tab${tier.slug === state.tier ? " active" : ""}" type="button" data-tier="${escapeHtml(tier.slug)}" aria-selected="${tier.slug === state.tier}">${escapeHtml(tier.title)}</button>`).join("");
       root.querySelectorAll("[data-tier]").forEach((btn) => btn.addEventListener("click", () => { state.tier = btn.dataset.tier; render(); }));
     }
     function renderSummary(rows) {

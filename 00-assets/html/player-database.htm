@@ -7,15 +7,17 @@
   <link rel="icon" type="image/png" href="../../00-build/database/favicon.png">
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
+  <script src="../js/unified-ui.js"></script>
   <script src="../js/player-database.js" defer></script>
   <style>
     :root {
-      --db-navy: #111b36; --db-blue: #1d3666; --db-ink: #202124;
-      --db-muted: #5f6368; --db-paper: #f6f7f9; --db-card: #fff;
-      --db-line: #d8dee7; --db-soft: #eef2f6; --db-gold: #c7952d;
-      --db-font: "Graphik", "Helvetica Neue", Helvetica, Arial, sans-serif;
+      --db-navy: var(--ui-navy); --db-blue: var(--ui-blue); --db-ink: var(--ui-ink);
+      --db-muted: var(--ui-muted); --db-paper: var(--ui-paper); --db-card: var(--ui-card);
+      --db-line: var(--ui-line); --db-soft: var(--ui-soft); --db-gold: var(--ui-gold);
+      --db-font: var(--ui-font);
     }
     * { box-sizing: border-box; }
     body { background: var(--db-paper); color: var(--db-ink); font-family: var(--db-font); font-size: 14px; margin: 0; padding: .85rem; }
@@ -71,45 +73,45 @@
     [hidden] { display: none !important; }
     @media (max-width: 950px) { .db-controls { grid-template-columns: repeat(3, minmax(0, 1fr)); } .db-search { grid-column: span 2; } .db-table-wrap { height: auto; max-height: min(70vh, 760px); } }
     @media (max-width: 620px) { body { padding: .45rem; } .db-shell { max-width: calc(100vw - .9rem); } .db-controls { grid-template-columns: repeat(2, minmax(0, 1fr)); } .db-search { grid-column: 1 / -1; } .db-reset-wrap { align-items: stretch; } .db-reset-wrap .db-button { width: 100%; } }
-    html[data-theme="dark"] { --db-ink: #e8ebf2; --db-muted: #aeb6c5; --db-paper: #101521; --db-card: #182031; --db-line: #354057; --db-soft: #253049; }
+    html[data-theme="dark"] { --db-ink: var(--ui-ink); --db-muted: var(--ui-muted); --db-paper: var(--ui-paper); --db-card: var(--ui-card); --db-line: var(--ui-line); --db-soft: var(--ui-soft); }
     html[data-theme="dark"] .db-button, html[data-theme="dark"] .db-input, html[data-theme="dark"] .db-select { background: #182031; color: var(--db-ink); }
     html[data-theme="dark"] .db-table tbody tr:nth-child(even) td { background: #151d2c; }
     html[data-theme="dark"] .db-table tbody tr:hover td { background: #202e48; }
     html[data-theme="dark"] .db-note { background: #382e17; color: #f1d286; }
   </style>
 </head>
-<body>
-  <main class="db-shell">
-    <section class="db-panel" aria-label="Player database">
+<body class="ui-page">
+  <main class="db-shell ui-shell">
+    <section class="db-panel ui-panel" aria-label="Player database">
       <div class="db-controls">
-        <label class="db-field db-search"><span class="db-label">Player search</span><input class="db-input" id="playerSearch" type="search" autocomplete="off" placeholder="Search by player name"></label>
-        <label class="db-field"><span class="db-label">Status</span><select class="db-select" id="statusFilter"><option value="all">All statuses</option><option value="rostered">Rostered</option><option value="free_agent">Free agents</option></select></label>
-        <label class="db-field"><span class="db-label">Team</span><select class="db-select" id="teamFilter"><option value="all">All teams</option></select></label>
-        <label class="db-field"><span class="db-label">Position</span><select class="db-select" id="positionFilter"><option value="all">All positions</option></select></label>
-        <label class="db-field"><span class="db-label">Season</span><select class="db-select" id="seasonFilter"></select></label>
-        <div class="db-reset-wrap"><button class="db-button" id="exportCsv" type="button">Export CSV</button><button class="db-button" id="resetFilters" type="button">Reset</button></div>
+        <label class="db-field db-search ui-field"><span class="db-label ui-label">Player search</span><input class="db-input ui-input" id="playerSearch" type="search" autocomplete="off" placeholder="Search by player name"></label>
+        <label class="db-field ui-field"><span class="db-label ui-label">Status</span><select class="db-select ui-select" id="statusFilter"><option value="all">All statuses</option><option value="rostered">Rostered</option><option value="free_agent">Free agents</option></select></label>
+        <label class="db-field ui-field"><span class="db-label ui-label">Team</span><select class="db-select ui-select" id="teamFilter"><option value="all">All teams</option></select></label>
+        <label class="db-field ui-field"><span class="db-label ui-label">Position</span><select class="db-select ui-select" id="positionFilter"><option value="all">All positions</option></select></label>
+        <label class="db-field ui-field"><span class="db-label ui-label">Season</span><select class="db-select ui-select" id="seasonFilter"></select></label>
+        <div class="db-reset-wrap"><button class="db-button ui-button" id="exportCsv" type="button">Export CSV</button><button class="db-button ui-button" id="resetFilters" type="button">Reset</button></div>
       </div>
 
-      <div class="db-tabs" role="tablist" aria-label="Player database views">
-        <button class="db-tab" id="tab-attributes" role="tab" aria-selected="true" aria-controls="databaseTable" data-tab="attributes" type="button">Attributes</button>
-        <button class="db-tab" id="tab-potential" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="potential" type="button">Potential</button>
-        <button class="db-tab" id="tab-contracts" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="contracts" type="button">Contracts</button>
-        <button class="db-tab" id="tab-regular" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="regular" type="button">Regular Stats</button>
-        <button class="db-tab" id="tab-advanced" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="advanced" type="button">Advanced Stats</button>
+      <div class="db-tabs ui-tabs" role="tablist" aria-label="Player database views">
+        <button class="db-tab ui-tab" id="tab-attributes" role="tab" aria-selected="true" aria-controls="databaseTable" data-tab="attributes" type="button">Attributes</button>
+        <button class="db-tab ui-tab" id="tab-potential" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="potential" type="button">Potential</button>
+        <button class="db-tab ui-tab" id="tab-contracts" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="contracts" type="button">Contracts</button>
+        <button class="db-tab ui-tab" id="tab-regular" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="regular" type="button">Regular Stats</button>
+        <button class="db-tab ui-tab" id="tab-advanced" role="tab" aria-selected="false" aria-controls="databaseTable" data-tab="advanced" type="button">Advanced Stats</button>
       </div>
 
       <div class="db-meta" aria-live="polite">
         <div class="db-summary" id="resultSummary">Loading player database…</div>
         <div class="db-note" id="seasonNote" hidden></div>
       </div>
-      <div class="db-table-wrap" id="databaseTable" role="tabpanel" aria-labelledby="tab-attributes" tabindex="0">
-        <table class="db-table" id="playerTable"><thead></thead><tbody><tr><td class="db-empty">Loading…</td></tr></tbody></table>
+      <div class="db-table-wrap ui-table-wrap" id="databaseTable" role="tabpanel" aria-labelledby="tab-attributes" tabindex="0">
+        <table class="db-table ui-table ui-table--sticky-first" id="playerTable"><thead></thead><tbody><tr><td class="db-empty ui-state ui-state--loading">Loading…</td></tr></tbody></table>
       </div>
       <div class="db-pagination">
-        <label class="db-field"><span class="db-label">Rows</span><select class="db-select db-page-size" id="pageSize"><option value="50">50</option><option value="100" selected>100</option><option value="200">200</option></select></label>
-        <button class="db-button" id="previousPage" type="button">Previous</button>
+        <label class="db-field ui-field"><span class="db-label ui-label">Rows</span><select class="db-select db-page-size ui-select" id="pageSize"><option value="50">50</option><option value="100" selected>100</option><option value="200">200</option></select></label>
+        <button class="db-button ui-button" id="previousPage" type="button">Previous</button>
         <span class="db-page-info" id="pageInfo">Page 1 of 1</span>
-        <button class="db-button" id="nextPage" type="button">Next</button>
+        <button class="db-button ui-button" id="nextPage" type="button">Next</button>
       </div>
     </section>
   </main>

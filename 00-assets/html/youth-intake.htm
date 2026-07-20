@@ -6,67 +6,123 @@
   <title>Youth Intake</title>
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
+  <script src="../js/unified-ui.js?v=team-abbreviations-1"></script>
   <style>
-    :root { --ink:#0f0f0f; --blue:#111b36; --paper:#f4f2ec; --card:#fff; --line:#ddd5c6; --muted:#6a5f4d; --font-sans:"Graphik","Helvetica Neue",Helvetica,Arial,sans-serif; --font-serif:"Tiempos Headline","Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif; }
-    body { margin:0; padding:1rem; background:var(--paper); color:var(--ink); font-family:var(--font-sans); overflow-x:auto; }
-    .shell { width:min(1280px,100%); margin:0; display:grid; gap:.9rem; }
-    .header { display:grid; grid-template-columns:1fr auto; gap:.7rem; align-items:end; border:1px solid var(--blue); border-top:4px solid var(--blue); background:#fff; padding:.75rem .9rem; }
-    .kicker { margin:0 0 .15rem; font-size:.65rem; letter-spacing:.16em; text-transform:uppercase; color:var(--blue); font-weight:700; }
-    .title { margin:0; font-family:var(--font-serif); font-size:1.55rem; }
-    .sub { margin:.16rem 0 0; color:var(--muted); font-size:.84rem; }
-    .controls { display:flex; gap:.45rem; align-items:center; }
-    .team-picker,.btn { font:inherit; border:1px solid #c4cde3; background:#fff; color:#111; padding:.42rem .52rem; min-width:220px; }
-    .btn { min-width:0; color:var(--blue); text-decoration:none; background:#eef2fb; border-color:#b8c6eb; font-size:.75rem; letter-spacing:.08em; text-transform:uppercase; font-weight:700; }
-    .panel { border:1px solid var(--line); background:var(--card); padding:.8rem; }
-    .table-wrap { max-width:none; overflow:visible; padding-bottom:.2rem; }
-    .panel-head { display:flex; justify-content:space-between; align-items:baseline; border-bottom:2px solid var(--blue); margin-bottom:.6rem; padding-bottom:.4rem; gap:.6rem; }
-    .panel-title { margin:0; font-size:.74rem; letter-spacing:.18em; text-transform:uppercase; color:var(--blue); }
-    .panel-note { margin:0; font-size:.65rem; letter-spacing:.11em; text-transform:uppercase; color:var(--muted); }
-    .tabs { display:flex; gap:.35rem; margin-bottom:.5rem; }
-    .tab { border:1px solid #c4cde3; background:#eef2fb; color:var(--blue); padding:.3rem .5rem; font-size:.66rem; letter-spacing:.1em; text-transform:uppercase; cursor:pointer; font-weight:700; }
-    .tab.active { background:var(--blue); border-color:var(--blue); color:#fff; }
-    .table { width:max-content; min-width:1500px; border-collapse:collapse; font-size:.83rem; }
-    .table th,.table td { border-bottom:1px solid var(--line); padding:.44rem .34rem; white-space:nowrap; text-align:right; }
-    .table th,.table td { min-width:58px; }
-    .table th { font-size:.62rem; letter-spacing:.11em; text-transform:uppercase; color:var(--muted); cursor:pointer; user-select:none; }
-    .table th.sort-asc::after { content:" ^"; font-size:.58rem; color:var(--blue); }
-    .table th.sort-desc::after { content:" v"; font-size:.58rem; color:var(--blue); }
-    .table th:first-child,.table td:first-child { text-align:left; padding-left:0; min-width:150px; width:150px; }
-    .table th:nth-child(2),.table td:nth-child(2) { text-align:left; min-width:96px; width:96px; }
-    .table td:first-child { font-family:var(--font-serif); font-size:.98rem; }
-    .table th.col-name,.table td.col-name { min-width:150px; width:150px; }
-    .table th.col-team,.table td.col-team { min-width:96px; width:96px; }
-    .table th.col-pos,.table td.col-pos { min-width:52px; width:52px; }
-    .table th.col-age,.table td.col-age { min-width:44px; width:44px; }
-    .table th.col-height,.table td.col-height { min-width:54px; width:54px; }
-    .table th.col-weight,.table td.col-weight { min-width:56px; width:56px; }
-    .table th.col-uniform,.table td.col-uniform { min-width:42px; width:42px; }
-    .table th.col-stat,.table td.col-stat { min-width:48px; width:48px; }
-    .table a { color:inherit; text-decoration:none; }
-    .table a:hover { color:var(--blue); text-decoration:underline; }
-    .status { font-size:.72rem; color:var(--muted); }
+    :root {
+      --ink:var(--ui-ink); --blue:var(--ui-navy); --blue-2:var(--ui-blue); --paper:var(--ui-paper);
+      --card:var(--ui-card); --line:var(--ui-line); --soft:var(--ui-soft); --muted:var(--ui-muted);
+      --gold:var(--ui-gold); --font-sans:var(--ui-font);
+    }
+    * { box-sizing:border-box; }
+    body { margin:0; padding:.85rem; background:var(--paper); color:var(--ink); font-family:var(--font-sans); font-size:14px; }
+    button,select { font:inherit; }
+    .shell { width:min(1600px,calc(100vw - 1.7rem)); min-width:0; display:grid; gap:.75rem; }
+    .header { display:grid; grid-template-columns:minmax(0,1fr) auto; gap:1rem; align-items:center; border:1px solid var(--line); border-left:5px solid var(--blue); background:var(--card); padding:.8rem .9rem; }
+    .identity { display:flex; align-items:center; gap:.75rem; min-width:0; }
+    .team-mark { width:58px; height:58px; flex:0 0 58px; border:1px solid var(--line); background:var(--soft); display:grid; place-items:center; overflow:hidden; color:var(--blue); font-size:.82rem; font-weight:950; letter-spacing:.04em; }
+    .team-mark img { display:block; width:48px; height:48px; object-fit:contain; }
+    .identity-copy { min-width:0; }
+    .kicker { margin:0 0 .16rem; color:var(--blue-2); font-size:.66rem; font-weight:900; letter-spacing:.14em; text-transform:uppercase; }
+    .title { margin:0; color:var(--ink); font-size:1.55rem; font-weight:900; letter-spacing:-.025em; line-height:1.05; }
+    .sub { margin:.25rem 0 0; color:var(--muted); font-size:.79rem; font-weight:700; }
+    .controls { display:flex; gap:.45rem; align-items:end; }
+    .control-field { display:grid; gap:.22rem; min-width:220px; }
+    .control-label { color:var(--muted); font-size:.66rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase; }
+    .team-picker,.btn { min-height:36px; border:1px solid var(--line); border-radius:0; background:#fff; color:var(--ink); padding:.42rem .52rem; }
+    .team-picker:focus { border-color:var(--blue-2); outline:2px solid rgba(29,54,102,.13); }
+    .btn { display:inline-flex; align-items:center; justify-content:center; color:var(--blue); text-decoration:none; font-size:.73rem; font-weight:850; white-space:nowrap; }
+    .btn:hover,.btn:focus-visible { border-color:var(--blue); text-decoration:none; }
+    .panel { min-width:0; border:1px solid var(--line); background:var(--card); padding:.7rem; }
+    .panel-head { display:flex; justify-content:space-between; align-items:center; gap:.6rem; min-height:34px; border-bottom:1px solid var(--line); margin:-.1rem 0 .55rem; padding:.15rem 0 .55rem; }
+    .panel-title { margin:0; color:var(--blue); font-size:.72rem; font-weight:950; letter-spacing:.12em; text-transform:uppercase; }
+    .panel-note { margin:0; border-left:3px solid var(--gold); background:#fff7df; color:#6b4c0b; padding:.3rem .45rem; font-size:.68rem; font-weight:850; }
+    .tabs { display:flex; gap:.15rem; border-bottom:1px solid var(--line); margin-bottom:.55rem; overflow-x:auto; }
+    .tab { flex:0 0 auto; border:0; border-bottom:3px solid transparent; background:transparent; color:var(--muted); padding:.55rem .7rem .48rem; font-size:.76rem; font-weight:900; cursor:pointer; }
+    .tab:hover { color:var(--blue); }
+    .tab.active { border-bottom-color:var(--blue); color:var(--blue); }
+    .tab:focus-visible { outline:2px solid var(--blue-2); outline-offset:-2px; }
+    .table-wrap { max-height:calc(100vh - 236px); min-height:360px; overflow:auto; border:1px solid var(--line); position:relative; }
+    .table { width:max-content; min-width:100%; margin:0; border-collapse:separate; border-spacing:0; table-layout:auto; font-size:.78rem; }
+    .table th,.table td { height:34px; min-width:54px; border-bottom:1px solid var(--line); border-right:1px solid #edf0f4; background:var(--card); padding:.34rem .42rem; white-space:nowrap; text-align:right; }
+    .table th { position:sticky; top:0; z-index:3; background:var(--blue); color:#fff; font-size:.66rem; font-weight:900; letter-spacing:.035em; text-transform:uppercase; cursor:pointer; user-select:none; }
+    .table th:hover { background:var(--blue-2); }
+    .table th.sort-asc::after { content:" ▲"; font-size:.52rem; }
+    .table th.sort-desc::after { content:" ▼"; font-size:.52rem; }
+    .table tbody tr:nth-child(even) td { background:#fafbfc; }
+    .table tbody tr:hover td { background:#eef4ff; }
+    .table th.col-name,.table td.col-name { position:sticky; left:0; z-index:2; min-width:190px; width:190px; max-width:190px; text-align:left; }
+    .table th.col-name { z-index:5; background:var(--blue); }
+    .table tbody tr:nth-child(even) td.col-name { background:#fafbfc; }
+    .table tbody tr:hover td.col-name { background:#eef4ff; }
+    .table th.col-team,.table td.col-team { min-width:68px; text-align:left; }
+    .table th.col-pos,.table td.col-pos { min-width:48px; }
+    .table th.col-age,.table td.col-age { min-width:44px; }
+    .table th.col-height,.table td.col-height { min-width:54px; }
+    .table th.col-weight,.table td.col-weight { min-width:56px; }
+    .table th.col-uniform,.table td.col-uniform { min-width:42px; }
+    .table th.col-stat,.table td.col-stat { min-width:48px; }
+    .player-link { display:block; max-width:174px; overflow:hidden; color:var(--blue-2); font-weight:850; text-decoration:none; text-overflow:ellipsis; }
+    .player-link:hover { text-decoration:underline; }
+    .rating,.grade,.team-chip { display:inline-flex; align-items:center; justify-content:center; min-width:30px; padding:.15rem .3rem; font-weight:900; }
+    .rating { border:1px solid transparent; color:#fff; }
+    .rating-purple { background:#7e22ce; border-color:#7e22ce; }
+    .rating-blue { background:#1d4ed8; border-color:#1d4ed8; }
+    .rating-green { background:#15803d; border-color:#15803d; }
+    .rating-yellow { background:#facc15; border-color:#eab308; color:#1f2937; }
+    .rating-orange { background:#f97316; border-color:#ea580c; }
+    .grade { background:var(--soft); color:var(--ink); text-transform:uppercase; }
+    .grade-a { background:#dcf3e3; color:#146b31; }
+    .grade-b { background:#e4f0ff; color:#175ba8; }
+    .grade-c { background:#fff3cd; color:#765600; }
+    .grade-d,.grade-e,.grade-f { background:#fde5e3; color:#a12a20; }
+    .team-chip { justify-content:flex-start; min-width:0; background:var(--soft); color:var(--blue); }
+    .empty-row { color:var(--muted); padding:2rem !important; text-align:center !important; }
+    html[data-theme="dark"] { --ink:var(--ui-ink); --muted:var(--ui-muted); --paper:var(--ui-paper); --card:var(--ui-card); --line:var(--ui-line); --soft:var(--ui-soft); }
+    html[data-theme="dark"] .team-picker,html[data-theme="dark"] .btn { background:var(--card); color:var(--ink); }
+    html[data-theme="dark"] .table tbody tr:nth-child(even) td,html[data-theme="dark"] .table tbody tr:nth-child(even) td.col-name { background:#151d2c; }
+    html[data-theme="dark"] .table tbody tr:hover td,html[data-theme="dark"] .table tbody tr:hover td.col-name { background:#202e48; }
+    html[data-theme="dark"] .panel-note { background:#382e17; color:#f1d286; }
+    @media (max-width:760px) {
+      body { padding:.45rem; }
+      .shell { width:calc(100vw - .9rem); }
+      .header { grid-template-columns:1fr; align-items:stretch; }
+      .controls { align-items:stretch; }
+      .control-field { min-width:0; flex:1; }
+      .table-wrap { max-height:calc(100vh - 292px); }
+    }
+    @media (max-width:480px) {
+      .team-mark { width:48px; height:48px; flex-basis:48px; }
+      .team-mark img { width:40px; height:40px; }
+      .title { font-size:1.25rem; }
+      .controls { display:grid; grid-template-columns:1fr auto; }
+      .table th.col-name,.table td.col-name { min-width:160px; width:160px; max-width:160px; }
+    }
   </style>
 </head>
-<body>
-  <main class="shell">
-    <header class="header">
-      <div>
-        <p class="kicker">League Pipeline</p>
-        <h1 class="title" id="teamTitle">Youth Intake</h1>
-        <p class="sub" id="teamSub">Loading intake data</p>
+<body class="ui-page">
+  <main class="shell ui-shell">
+    <header class="header ui-identity-banner">
+      <div class="identity ui-identity">
+        <div class="team-mark ui-identity-mark" id="teamMark" aria-hidden="true">ESL</div>
+        <div class="identity-copy ui-identity-copy">
+          <p class="kicker ui-kicker">Scouting · League Pipeline</p>
+          <h1 class="title ui-title" id="teamTitle">Youth Intake</h1>
+          <p class="sub ui-subtitle" id="teamSub">Loading intake data</p>
+        </div>
       </div>
-      <div class="controls">
-        <select id="teamPicker" class="team-picker"></select>
-        <a href="./league%20dashboard.htm" class="btn">Back To Dashboard</a>
+      <div class="controls ui-actions">
+        <label class="control-field ui-field"><span class="control-label ui-label">Team view</span><select id="teamPicker" class="team-picker ui-select"></select></label>
+        <a href="./player-database.htm" class="btn ui-button">Player Database</a>
       </div>
     </header>
 
-    <section class="panel">
-      <div class="panel-head">
-        <h2 class="panel-title">Current Intake Class</h2>
-        <p class="panel-note" id="statusText">Loading</p>
+    <section class="panel ui-panel">
+      <div class="panel-head ui-panel-head">
+        <h2 class="panel-title ui-panel-title">Current Intake Class</h2>
+        <p class="panel-note ui-panel-note" id="statusText">Loading</p>
       </div>
       <div id="tableRoot"></div>
     </section>
@@ -77,6 +133,17 @@
       intake: "../../00-build/database/youth_intake.json"
     };
 
+    const TEAM_LOGOS = {
+      "AC Milan": "acmilan.jpg", "AFC Richmond": "richmond.jpg", "Ajax": "ajax.jpg",
+      "Aston Villa": "astonvilla.jpg", "Atletico Madrid": "atletico.jpg", "Barcelona": "barcelona.jpg",
+      "Bayern Munich": "bayern.jpg", "Benfica": "benfica.jpg", "Brighton": "brighton.jpg",
+      "Chelsea": "chelsea.jpg", "Crystal Palace": "crystalpalace.jpg", "FL Fart": "flfart.jpg",
+      "Inter Milan": "intermilan.jpg", "Juventus": "juventus.jpg", "Manchester City": "manchestercity.jpg",
+      "Manchester United": "manutd.jpg", "Marseille": "marseille.jpg", "Monaco": "monaco.jpg",
+      "Paris Saint-Germain": "psg.jpg", "Real Madrid": "realmadrid.jpg", "Sheffield United": "sheffield.jpg",
+      "Sporting CP": "sportingcp.jpg", "Tottenham Hotspur": "tottenham.jpg", "Valencia": "valencia.jpg"
+    };
+
     const state = {
       teams: [],
       current: null,
@@ -85,8 +152,55 @@
       sortDir: "asc"
     };
 
+    const UI = window.ESLUnifiedUI;
+
     function normalizeName(v) {
       return String(v || "").toLowerCase().replace(/[0-9]+$/g, "").replace(/[^a-z0-9]/g, "");
+    }
+
+    const escapeHtml = UI.escapeHtml;
+
+    function initials(value) {
+      return String(value || "ESL").split(/\s+/).filter(Boolean).map((part) => part[0]).join("").slice(0, 3).toUpperCase();
+    }
+
+    function teamAbbreviation(value) {
+      const helper = UI && UI.teamAbbreviation;
+      const name = String(value || "").trim();
+      if (typeof helper === "function") return helper(name);
+      if (name === "FA") return "FA";
+      return initials(name) || "---";
+    }
+
+    function renderTeamMark(teamName) {
+      const root = document.getElementById("teamMark");
+      root.replaceChildren();
+      const isLeagueView = teamName === "__ALL__";
+      const imageSrc = isLeagueView
+        ? "../images/ESLcropped-removebg-preview.png"
+        : (TEAM_LOGOS[teamName] ? `../../00-assets/photos/${TEAM_LOGOS[teamName]}` : "");
+      if (!imageSrc) {
+        root.textContent = initials(teamName);
+        return;
+      }
+      const image = document.createElement("img");
+      image.alt = isLeagueView ? "European Superleague logo" : `${teamName} logo`;
+      image.src = imageSrc;
+      image.addEventListener("error", () => { root.textContent = isLeagueView ? "ESL" : initials(teamName); });
+      root.appendChild(image);
+    }
+
+    function renderCell(column, value) {
+      if (value === "" || value === null || value === undefined) return "-";
+      const key = String(column || "").toLowerCase();
+      if (key === "overall" || key === "potential") return UI.ratingBadge(value);
+      if (key === "tier") return UI.tierBadge(value);
+      if (key === "team") {
+        const fullName = String(value || "");
+        const abbreviation = teamAbbreviation(fullName);
+        return `<span class="team-chip" title="${escapeHtml(fullName)}" aria-label="${escapeHtml(fullName)}">${escapeHtml(abbreviation)}</span>`;
+      }
+      return escapeHtml(value);
     }
 
     function buildUnifiedPlayerHref(playerId) {
@@ -189,7 +303,7 @@
     }
 
     function columnClass(key, index) {
-      if (index === 0) return "col-name";
+      if (index === 0) return "col-name ui-sticky";
       const lower = String(key || "").toLowerCase();
       if (lower === "team") return "col-team";
       if (lower === "tier") return "col-stat";
@@ -228,12 +342,13 @@
       document.getElementById("teamTitle").textContent = team.team === "__ALL__" ? "All Teams Youth Intake" : `${team.team} Youth Intake`;
       document.getElementById("teamSub").textContent = team.team === "__ALL__"
         ? "League-wide intake class"
-        : `${team.tier || "Unassigned Tier"}${team.positionFocus ? `  -  Focus ${team.positionFocus}` : ""}`;
+        : `${team.tier || "Unassigned Tier"}${team.positionFocus ? ` · Focus ${team.positionFocus}` : ""}`;
       document.getElementById("statusText").textContent = `${rows.length} prospects`;
+      renderTeamMark(team.team);
 
-      const tabsHtml = `<div class="tabs">
-        <button type="button" class="tab${state.mode === "regular" ? " active" : ""}" data-mode="regular">Regular</button>
-        <button type="button" class="tab${state.mode === "potential" ? " active" : ""}" data-mode="potential">Potential</button>
+      const tabsHtml = `<div class="tabs ui-tabs" role="tablist" aria-label="Youth intake rating views">
+        <button type="button" role="tab" class="tab ui-tab${state.mode === "regular" ? " active" : ""}" data-mode="regular" aria-selected="${state.mode === "regular"}">Current Ratings</button>
+        <button type="button" role="tab" class="tab ui-tab${state.mode === "potential" ? " active" : ""}" data-mode="potential" aria-selected="${state.mode === "potential"}">Potential Ratings</button>
       </div>`;
       const headerHtml = columns.map((c, i) => {
         const activeSort = String(c).toLowerCase() === String(state.sortKey || "").toLowerCase();
@@ -246,13 +361,13 @@
             const nameIndex = columns.findIndex((c) => c === "name");
             const name = String((nameIndex >= 0 ? row[nameIndex] : row[0]) || "");
             const href = buildUnifiedPlayerHref(row.playerId);
-            const nameHtml = href ? `<a href="${href}">${name}</a>` : name;
-            const cells = row.map((cell, idx) => `<td class="${columnClass(columns[idx], idx)}">${columns[idx] === "name" ? nameHtml : (cell === "" ? "-" : cell)}</td>`).join("");
+            const nameHtml = href ? `<a class="player-link" href="${href}">${escapeHtml(name)}</a>` : `<span class="player-link">${escapeHtml(name)}</span>`;
+            const cells = row.map((cell, idx) => `<td class="${columnClass(columns[idx], idx)}">${columns[idx] === "name" ? nameHtml : renderCell(columns[idx], cell)}</td>`).join("");
             return `<tr>${cells}</tr>`;
           }).join("")
-        : `<tr><td colspan="${columns.length}">No intake players for this team</td></tr>`;
+        : `<tr><td class="empty-row ui-state" colspan="${columns.length}">No intake players for this team</td></tr>`;
 
-      document.getElementById("tableRoot").innerHTML = `${tabsHtml}<div class="table-wrap"><table class="table"><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table></div>`;
+      document.getElementById("tableRoot").innerHTML = `${tabsHtml}<div class="table-wrap ui-table-wrap"><table class="table ui-table ui-table--sticky-first"><thead><tr>${headerHtml}</tr></thead><tbody>${bodyHtml}</tbody></table></div>`;
       document.querySelectorAll(".tab").forEach((btn) => {
         btn.addEventListener("click", () => {
           state.mode = btn.dataset.mode === "potential" ? "potential" : "regular";
@@ -276,7 +391,7 @@
 
     function bindPicker() {
       const picker = document.getElementById("teamPicker");
-      picker.innerHTML = state.teams.map((t) => `<option value="${t.team}" ${t.team === state.current.team ? "selected" : ""}>${t.team === "__ALL__" ? "All Teams" : t.team}</option>`).join("");
+      picker.innerHTML = state.teams.map((t) => `<option value="${escapeHtml(t.team)}" ${t.team === state.current.team ? "selected" : ""}>${t.team === "__ALL__" ? "All Teams" : escapeHtml(t.team)}</option>`).join("");
       picker.addEventListener("change", () => {
         const selected = state.teams.find((t) => t.team === picker.value);
         if (!selected) return;

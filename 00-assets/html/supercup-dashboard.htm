@@ -6,10 +6,12 @@
   <title>Super Cup Dashboard</title>
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
+  <script src="../js/unified-ui.js"></script>
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
   <style>
-    :root { --ink:#0f0f0f; --blue:#111b36; --paper:#f7f9fc; --card:#fff; --mid:#524633; --line:#ddd5c6; --green:#1f6d3d; --red:#9d1f1f; --font-sans:"Graphik","Helvetica Neue",Helvetica,Arial,sans-serif; --font-serif:"Tiempos Headline","Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif; }
+    :root { --ink:var(--ui-ink); --blue:var(--ui-navy); --ui-team:var(--blue); --paper:var(--ui-paper); --card:var(--ui-card); --mid:var(--ui-muted); --line:var(--ui-line); --green:var(--ui-good); --red:var(--ui-bad); --font-sans:var(--ui-font); --font-serif:var(--ui-font); }
     body.dashboard-page { margin:0; padding:1.1rem; background:var(--paper); color:var(--ink); font-family:var(--font-sans); overflow-x:hidden; }
     .dash-shell { width:min(1220px,100%); margin:0; display:grid; gap:1rem; }
     .dash-header { background:var(--card); border:1px solid var(--ink); border-top:4px solid var(--blue); box-shadow:4px 4px 0 rgba(17,27,54,.12); padding:.75rem 1rem .9rem; }
@@ -112,21 +114,21 @@
     }
   </style>
 </head>
-<body class="dashboard-page">
-  <div class="dash-shell">
-    <header class="dash-header">
+<body class="dashboard-page ui-page">
+  <div class="dash-shell ui-shell">
+    <header class="dash-header ui-identity-banner">
       <div class="kicker">Super Cup Intelligence Board</div>
       <div class="utility-grid">
         <div class="quick-links">
-          <a class="quick-link" href="../../00-SuperCup/standings.htm">Standings</a>
-          <a class="quick-link" href="../../00-SuperCup/schedule.htm">Schedule</a>
-          <a class="quick-link" href="../../00-SuperCup/leaders.htm">League Leaders</a>
-          <a class="quick-link" href="../../00-SuperCup/injuries.htm">Injuries</a>
-          <a class="quick-link" href="../../00-SuperCup/transactions.htm">Transactions</a>
+          <a class="quick-link ui-button" href="../../00-SuperCup/standings.htm">Standings</a>
+          <a class="quick-link ui-button" href="../../00-SuperCup/schedule.htm">Schedule</a>
+          <a class="quick-link ui-button" href="../../00-SuperCup/leaders.htm">League Leaders</a>
+          <a class="quick-link ui-button" href="../../00-SuperCup/injuries.htm">Injuries</a>
+          <a class="quick-link ui-button" href="../../00-SuperCup/transactions.htm">Transactions</a>
         </div>
         <div class="search-wrap">
-          <label class="search-label" for="globalSearchInput">Super Cup Player / Team Search</label>
-          <input id="globalSearchInput" class="search-input" type="search" placeholder="Search players or teams">
+          <label class="search-label ui-label" for="globalSearchInput">Super Cup Player / Team Search</label>
+          <input id="globalSearchInput" class="search-input ui-input" type="search" placeholder="Search players or teams">
           <div id="searchResults" class="search-results"></div>
         </div>
       </div>
@@ -134,43 +136,43 @@
 
     <section class="dash-main">
       <div class="dash-primary">
-      <div class="panel">
-        <div class="panel-head">
-          <h2 class="panel-title">Super Cup Table</h2>
+      <div class="panel ui-panel">
+        <div class="panel-head ui-panel-head">
+          <h2 class="panel-title ui-panel-title">Super Cup Table</h2>
           <div class="standings-head-actions">
             <div class="league-controls" id="leagueControls"></div>
             <div class="status-text" id="statusText">Loading dashboard data</div>
           </div>
         </div>
-        <table class="standings-table">
+        <table class="standings-table ui-table">
           <thead><tr><th>Seed</th><th>Team</th><th>W-L</th><th>GB</th><th>Diff</th><th>Streak</th></tr></thead>
           <tbody id="standingsBody"><tr><td colspan="6">Loading standings</td></tr></tbody>
         </table>
         <div class="standings-cards" id="standingsCards"></div>
 
-        <div class="panel-head" style="margin-top:.9rem;">
-          <h2 class="panel-title">Category Leaders</h2>
-          <div class="panel-note">Top performer across the cup</div>
+        <div class="panel-head ui-panel-head" style="margin-top:.9rem;">
+          <h2 class="panel-title ui-panel-title">Category Leaders</h2>
+          <div class="panel-note ui-panel-note">Top performer across the cup</div>
         </div>
         <div class="leaders-grid" id="leadersGrid"></div>
       </div>
-      <section class="panel dash-media">
-        <div class="panel-head"><h2 class="panel-title">From ESL Media</h2><div class="panel-note">Latest dispatches</div></div>
+      <section class="panel ui-panel dash-media">
+        <div class="panel-head ui-panel-head"><h2 class="panel-title ui-panel-title">From ESL Media</h2><div class="panel-note ui-panel-note">Latest dispatches</div></div>
         <div class="media-list" id="mediaList"><div class="media-card">Loading media</div></div>
       </section>
       </div>
 
       <div class="dash-side">
-        <section class="panel mobile-collapsible is-open">
-          <div class="panel-head"><h2 class="panel-title">Injury Watch</h2><button class="collapse-toggle" type="button">Hide</button><div class="panel-note">Longest current cup injuries</div></div>
+        <section class="panel ui-panel mobile-collapsible is-open">
+          <div class="panel-head ui-panel-head"><h2 class="panel-title ui-panel-title">Injury Watch</h2><button class="collapse-toggle ui-button" type="button">Hide</button><div class="panel-note ui-panel-note">Longest current cup injuries</div></div>
           <ul class="injury-list collapse-body" id="injuryList"><li class="injury-row">Loading injuries</li></ul>
         </section>
-        <section class="panel mobile-collapsible">
-          <div class="panel-head"><h2 class="panel-title">Top Players</h2><button class="collapse-toggle" type="button">Show</button><div class="panel-note">Points leaderboard</div></div>
+        <section class="panel ui-panel mobile-collapsible">
+          <div class="panel-head ui-panel-head"><h2 class="panel-title ui-panel-title">Top Players</h2><button class="collapse-toggle ui-button" type="button">Show</button><div class="panel-note ui-panel-note">Points leaderboard</div></div>
           <ul class="top-players-list collapse-body" id="topPlayersList"><li class="top-player-row"><span>Loading top players</span><span class="top-player-value">--</span></li></ul>
         </section>
-        <section class="panel mobile-collapsible">
-          <div class="panel-head"><h2 class="panel-title">Cap Room Leaders</h2><button class="collapse-toggle" type="button">Show</button><div class="panel-note" id="capLabel">Super Cup field</div></div>
+        <section class="panel ui-panel mobile-collapsible">
+          <div class="panel-head ui-panel-head"><h2 class="panel-title ui-panel-title">Cap Room Leaders</h2><button class="collapse-toggle ui-button" type="button">Show</button><div class="panel-note ui-panel-note" id="capLabel">Super Cup field</div></div>
           <ul class="top-players-list collapse-body" id="capList"><li class="top-player-row"><span>Loading cap report</span><span class="top-player-value">--</span></li></ul>
         </section>
       </div>
