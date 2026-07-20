@@ -6,12 +6,12 @@
   },
   "counts": {
     "players": 1329,
-    "matched": 592,
-    "unmatched": 737,
-    "ambiguous": 3,
+    "matched": 605,
+    "unmatched": 724,
+    "ambiguous": 0,
     "name": 572,
     "nameAndAge": 8,
-    "overrides": 12,
+    "overrides": 25,
     "belowMinimumOverall": 723
   },
   "players": {
@@ -459,6 +459,12 @@
       "sourceName": "John Douglas",
       "match": "name"
     },
+    "player1121": {
+      "url": "https://i.imgur.com/ockYrUL.png",
+      "sourceId": "rayja01",
+      "sourceName": "James Ray",
+      "match": "player-id-override"
+    },
     "player1122": {
       "url": "https://www.thedraftreview.com/history/drafted1980/images/carl-nicks.jpg",
       "sourceId": "nicksca01",
@@ -518,6 +524,12 @@
       "sourceId": "lambejo01",
       "sourceName": "John Lambert",
       "match": "name"
+    },
+    "player1132": {
+      "url": "https://www.thedraftreview.com/history/drafted1980/images/charles-whitney.jpg",
+      "sourceId": "whitnha02",
+      "sourceName": "Hawkeye Whitney",
+      "match": "player-id-override"
     },
     "player1133": {
       "url": "https://www.thedraftreview.com/history/drafted1981/images/alex-bradley.jpg",
@@ -668,6 +680,12 @@
       "sourceId": "reevebr01",
       "sourceName": "Bryant Reeves",
       "match": "name"
+    },
+    "player1317": {
+      "url": "https://www.thedraftreview.com/history/drafted1982/images/charles-pittman.jpg",
+      "sourceId": "pittmch01",
+      "sourceName": "Charles Pittman",
+      "match": "player-id-override"
     },
     "player1318": {
       "url": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3882.png",
@@ -1053,6 +1071,12 @@
       "sourceName": "Xavier McDaniel",
       "match": "name"
     },
+    "player239": {
+      "url": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4400.png&w=350&h=254",
+      "sourceId": "johnsch03",
+      "sourceName": "Chris Johnson",
+      "match": "player-id-override"
+    },
     "player240": {
       "url": "https://www.basketball-reference.com/req/202005142/images/players/greenac01.jpg",
       "sourceId": "greenac01",
@@ -1419,6 +1443,12 @@
       "sourceName": "Tim Thomas",
       "match": "name"
     },
+    "player355": {
+      "url": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/1708.png&w=350&h=254",
+      "sourceId": "dunlemi02",
+      "sourceName": "Mike Dunleavy",
+      "match": "player-id-override"
+    },
     "player356": {
       "url": "https://cdn.nba.com/headshots/nba/latest/260x190/1626224.png",
       "sourceId": "osmande01",
@@ -1478,6 +1508,12 @@
       "sourceId": "thomppa01",
       "sourceName": "Paul Thompson",
       "match": "name"
+    },
+    "player368": {
+      "url": "https://cdn.nba.com/headshots/nba/latest/260x190/1630529.png",
+      "sourceId": "joneshe01",
+      "sourceName": "Herbert Jones",
+      "match": "player-id-override"
     },
     "player370": {
       "url": "https://i.imgur.com/aPglEfN.jpeg",
@@ -1851,6 +1887,12 @@
       "sourceName": "Hubert Davis",
       "match": "name"
     },
+    "player441": {
+      "url": "https://i.imgur.com/AykqXDD.png",
+      "sourceId": "stoudam01",
+      "sourceName": "Amar'e Stoudemire",
+      "match": "player-id-override"
+    },
     "player443": {
       "url": "https://i.imgur.com/RWIOCkD.png",
       "sourceId": "tucketr01",
@@ -2012,6 +2054,12 @@
       "sourceId": "richapo01",
       "sourceName": "Pooh Richardson",
       "match": "name"
+    },
+    "player558": {
+      "url": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/3046453.png",
+      "sourceId": "favervi01",
+      "sourceName": "Vítor Luiz Faverani",
+      "match": "player-id-override"
     },
     "player559": {
       "url": "https://a.espncdn.com/combiner/i?img=/i/headshots/nba/players/full/4263.png&w=350&h=254",
@@ -2534,6 +2582,12 @@
       "sourceId": "dunlemi01",
       "sourceName": "Mike Dunleavy",
       "match": "name-and-age"
+    },
+    "player739": {
+      "url": "https://thedraftreview.com/history/drafted1977/images/eddie-johnson.jpg",
+      "sourceId": "johnsed02",
+      "sourceName": "Eddie Johnson",
+      "match": "player-id-override"
     },
     "player740": {
       "url": "https://www.basketball-reference.com/req/202005261/images/players/rambiku01.jpg",
@@ -3267,6 +3321,12 @@
       "sourceName": "Phil Smith",
       "match": "name"
     },
+    "player917": {
+      "url": "https://i.imgur.com/1c4JI7r.png",
+      "sourceId": "gudmupe01",
+      "sourceName": "Pétur Guðmundsson",
+      "match": "player-id-override"
+    },
     "player918": {
       "url": "https://www.legendsofbasketball.com/wp-content/uploads/2012/02/mike-glenn.jpg",
       "sourceId": "glennmi01",
@@ -3289,6 +3349,12 @@
       "url": "https://www.thedraftreview.com/history/drafted1981/images/sam-williams.jpg",
       "sourceId": "willisa02",
       "sourceName": "Sam Williams",
+      "match": "player-id-override"
+    },
+    "player922": {
+      "url": "https://www.thedraftreview.com/history/drafted1977/images/joe-hassett.jpg",
+      "sourceId": "hassejo01",
+      "sourceName": "Joe Hassett",
       "match": "player-id-override"
     },
     "player923": {
@@ -3399,6 +3465,12 @@
       "sourceName": "Charlie Criss",
       "match": "name"
     },
+    "player942": {
+      "url": "https://www.thedraftreview.com/history/drafted1978/images/geoff-crompton.jpg",
+      "sourceId": "crompge01",
+      "sourceName": "Geoff Crompton",
+      "match": "player-id-override"
+    },
     "player943": {
       "url": "https://www.nasljerseys.com/images/2017/Knights%2081-82%20Head%20Ron%20Davis%201.jpg",
       "sourceId": "davisro01",
@@ -3482,6 +3554,12 @@
       "sourceId": "johnscl02",
       "sourceName": "Clay Johnson",
       "match": "name"
+    },
+    "player958": {
+      "url": "https://i.imgur.com/4WdfocX.jpeg",
+      "sourceId": "verhope01",
+      "sourceName": "Pete Verhoeven",
+      "match": "player-id-override"
     },
     "player959": {
       "url": "https://www.thedraftreview.com/history/drafted1977/images/toby-knight.jpg",
@@ -3569,23 +3647,9 @@
     }
   },
   "review": {
-    "ambiguousNames": [
-      "Chris Johnson",
-      "Eddie Johnson",
-      "Mike Dunleavy"
-    ],
+    "ambiguousNames": [],
     "unmatchedNames": [
-      "Amare Stoudemire",
-      "Charles Whitney",
-      "Charlie Pittman",
-      "Herb Jones",
-      "James Earl Ray",
-      "Jeffrey Crompton",
-      "Joey Hassett",
-      "Kameron McGusty",
-      "Peter Verhoeven",
-      "Petur Gudmundsson",
-      "Vitor Faverani"
+      "Kameron McGusty"
     ]
   }
 }

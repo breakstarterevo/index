@@ -119,7 +119,7 @@
       width: 72px;
       height: 96px;
     }
-    .player-team-badge {
+    .player-team-badge-link {
       position: absolute;
       right: -7px;
       bottom: -5px;
@@ -129,7 +129,24 @@
       outline: 1px solid var(--line);
       border-radius: 3px;
       background: #fff;
+      display: block;
+    }
+    .player-team-badge {
+      width: 100%;
+      height: 100%;
       object-fit: cover;
+      display: block;
+    }
+    .player-team-badge-link:hover,
+    .player-team-badge-link:focus-visible,
+    .team-logo-link:hover,
+    .team-logo-link:focus-visible {
+      outline: 2px solid var(--team-color);
+      outline-offset: 2px;
+    }
+    .team-logo-link {
+      display: inline-block;
+      line-height: 0;
     }
     .logo-fallback {
       display: grid;
@@ -172,6 +189,120 @@
       align-items: center;
     }
     .tag-row { margin-top: 0.42rem; }
+    .hero-awards {
+      position: relative;
+      box-sizing: border-box;
+      display: grid;
+      grid-template-columns: repeat(5, max-content);
+      grid-auto-rows: 31px;
+      gap: 0.28rem;
+      align-items: center;
+      justify-content: flex-end;
+    }
+    .hero-awards.has-more { padding-right: 32px; }
+    .hero-award-more {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      width: 27px;
+      height: 31px;
+      padding: 0;
+      border: 1px solid var(--line);
+      border-bottom: 3px solid var(--team-color);
+      border-radius: 3px;
+      background: var(--soft);
+      color: var(--team-color);
+      display: grid;
+      place-items: center;
+      font-size: 0.62rem;
+      font-family: inherit;
+      font-weight: 950;
+      cursor: pointer;
+      text-decoration: none;
+      transform: translateY(-50%);
+    }
+    .hero-award-more:hover,
+    .hero-award-more:focus-visible {
+      border-color: var(--team-color);
+      outline: 1px solid var(--team-color);
+      outline-offset: 1px;
+      text-decoration: none;
+    }
+    .hero-awards.is-expanded .hero-award-more {
+      top: 0;
+      transform: none;
+    }
+    .hero-award-extra[hidden] { display: none; }
+    .hero-award-badge {
+      --award-color: #a96f08;
+      position: relative;
+      height: 31px;
+      min-width: 42px;
+      padding: 0 0.38rem 0 0.25rem;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.22rem;
+      border: 1px solid var(--line);
+      border-bottom: 3px solid var(--award-color);
+      border-radius: 3px;
+      background: #fff;
+      color: var(--ink);
+      text-decoration: none;
+    }
+    .hero-award-badge:hover {
+      border-color: var(--award-color);
+      text-decoration: none;
+    }
+    .hero-award-badge--championship { --award-color: #a96f08; }
+    .hero-award-badge--mvp { --award-color: #b43a32; }
+    .hero-award-badge--defense { --award-color: #286a58; }
+    .hero-award-badge--league { --award-color: var(--team-color); }
+    .hero-award-art {
+      width: 18px;
+      height: 18px;
+      display: grid;
+      place-items: center;
+      color: var(--award-color);
+    }
+    .hero-award-art svg { width: 18px; height: 18px; display: block; }
+    .hero-award-abbr {
+      color: var(--ink);
+      font-size: 0.61rem;
+      font-weight: 950;
+      letter-spacing: 0.055em;
+      line-height: 1;
+      white-space: nowrap;
+    }
+    .hero-award-label {
+      display: grid;
+      gap: 0.08rem;
+      line-height: 1;
+    }
+    .hero-award-league {
+      color: var(--award-color);
+      font-size: 0.46rem;
+      font-weight: 950;
+      letter-spacing: 0.09em;
+      white-space: nowrap;
+    }
+    .hero-award-count {
+      position: absolute;
+      top: -6px;
+      right: -6px;
+      min-width: 15px;
+      height: 15px;
+      padding: 0 3px;
+      border: 1px solid #fff;
+      border-radius: 8px;
+      background: var(--award-color);
+      color: #fff;
+      display: grid;
+      place-items: center;
+      font-size: 0.54rem;
+      font-weight: 950;
+      line-height: 1;
+    }
     .rating-chip,
     .skill-chip,
     .info-chip {
@@ -609,32 +740,6 @@
     .media-mentions-all:hover {
       text-decoration: underline;
     }
-    .player-media-tags {
-      align-items: center;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.28rem;
-      margin-top: 0.38rem;
-    }
-    .player-media-tags:empty {
-      display: none;
-    }
-    .media-tag-chip {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      color: var(--muted);
-      font-size: 0.62rem;
-      font-weight: 800;
-      letter-spacing: 0.06em;
-      padding: 0.12rem 0.38rem;
-      text-transform: uppercase;
-    }
-    .media-tag-chip--auto {
-      background: var(--soft);
-      color: var(--ink);
-      font-weight: 750;
-    }
     .analyst-report {
       display: grid;
       gap: 0.65rem;
@@ -1035,6 +1140,9 @@
       .header-side {
         justify-items: stretch;
       }
+      .hero-awards {
+        justify-content: flex-start;
+      }
       .nav-actions {
         justify-content: flex-start;
       }
@@ -1057,6 +1165,28 @@
     @media (max-width: 620px) {
       body { padding: 0.5rem 0.55rem; }
       .shell { gap: 0.55rem; }
+      .hero-awards {
+        width: 100%;
+        grid-template-columns: repeat(5, minmax(0, 1fr));
+        gap: 0.18rem;
+      }
+      .hero-award-badge {
+        width: 100%;
+        min-width: 0;
+        padding: 0 0.1rem;
+        gap: 0.1rem;
+      }
+      .hero-award-art,
+      .hero-award-art svg {
+        width: 15px;
+        height: 15px;
+      }
+      .hero-award-abbr {
+        font-size: 0.52rem;
+        letter-spacing: 0.02em;
+      }
+      .hero-award-league { font-size: 0.4rem; }
+      .hero-award-count { right: -3px; }
       .rating-personality-grid { grid-template-columns: 1fr; }
       .nav-actions {
         display: grid;
@@ -1088,18 +1218,15 @@
         </div>
         <div class="meta-line" id="playerMeta">Loading player data</div>
         <div class="tag-row" id="heroPills"></div>
-        <div class="player-media-tags" id="heroMediaTags"></div>
       </div>
       <div class="header-side">
         <nav class="nav-actions player-header-actions" aria-label="Player navigation">
-          <a class="btn-link" id="teamLink" href="./league%20dashboard.htm">Team Page</a>
           <button class="btn-link" id="copyPlayerLink" type="button">Copy Player Link</button>
           <button class="btn-link" id="copyTeamLink" type="button" hidden>Copy Team Link</button>
           <a class="btn-link" id="compareLink" href="./player-compare.htm">Compare</a>
-          <a class="btn-link" id="classicLink" href="#">Classic Page</a>
-          <a class="btn-link" href="./league%20dashboard.htm">Dashboard</a>
         </nav>
         <div class="header-statline" id="headerStatline"></div>
+        <div class="hero-awards" id="heroAwards" aria-label="Career highlights" hidden></div>
       </div>
     </header>
 
@@ -1331,11 +1458,6 @@
 
     function normalizeIdentityName(value) {
       return clean(value).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
-    }
-
-    function classicHref(url) {
-      const cleanUrl = String(url || "").replace(/^(\.\/|\.\.\/)+/, "");
-      return cleanUrl ? `../../${cleanUrl}` : "#";
     }
 
     function absoluteHref(href) {
@@ -1835,7 +1957,7 @@
         .catch(() => {});
     }
 
-    function renderLogo(teamName) {
+    function renderLogo(teamName, teamHref) {
       const slot = document.getElementById("teamLogoSlot");
       slot.innerHTML = "";
       const playerId = state.current?.playerId || playerIdFromUrl(state.current?.url);
@@ -1849,26 +1971,32 @@
         portrait.src = photo.url;
         portrait.decoding = "async";
         portrait.referrerPolicy = "no-referrer";
-        portrait.addEventListener("error", () => renderTeamLogo(slot, teamName));
+        portrait.addEventListener("error", () => renderTeamLogo(slot, teamName, teamHref));
         art.appendChild(portrait);
-        renderTeamBadge(art, teamName);
+        renderTeamBadge(art, teamName, teamHref);
         slot.appendChild(art);
         return;
       }
-      renderTeamLogo(slot, teamName);
+      renderTeamLogo(slot, teamName, teamHref);
     }
 
-    function renderTeamBadge(holder, teamName) {
+    function renderTeamBadge(holder, teamName, teamHref) {
       if (!teamName || ["FA", "Draft"].includes(teamName)) return;
+      const link = document.createElement("a");
+      link.className = "player-team-badge-link";
+      link.href = teamHref;
+      link.setAttribute("aria-label", `Back to ${teamName} roster`);
+      link.title = `Back to ${teamName}`;
       const badge = document.createElement("img");
       badge.className = "player-team-badge";
       badge.alt = `${teamName} logo`;
       badge.src = `../../00-assets/photos/${TEAM_LOGOS[teamName] || (slugify(teamName) + ".jpg")}`;
-      badge.addEventListener("error", () => badge.remove());
-      holder.appendChild(badge);
+      badge.addEventListener("error", () => link.remove());
+      link.appendChild(badge);
+      holder.appendChild(link);
     }
 
-    function renderTeamLogo(slot, teamName) {
+    function renderTeamLogo(slot, teamName, teamHref) {
       slot.innerHTML = "";
       if (!teamName || ["FA", "Draft"].includes(teamName)) {
         const fallback = document.createElement("div");
@@ -1881,13 +2009,19 @@
       img.className = "logo";
       img.alt = `${teamName} logo`;
       img.src = `../../00-assets/photos/${TEAM_LOGOS[teamName] || (slugify(teamName) + ".jpg")}`;
+      const link = document.createElement("a");
+      link.className = "team-logo-link";
+      link.href = teamHref;
+      link.setAttribute("aria-label", `Back to ${teamName} roster`);
+      link.title = `Back to ${teamName}`;
       img.addEventListener("error", () => {
         const fallback = document.createElement("div");
         fallback.className = "logo-fallback";
         fallback.textContent = initials(teamName);
-        slot.replaceChildren(fallback);
+        link.replaceChildren(fallback);
       });
-      slot.appendChild(img);
+      link.appendChild(img);
+      slot.appendChild(link);
     }
 
     function skillTags(player) {
@@ -2034,14 +2168,7 @@
         p.currentSalaryText ? `<span class="info-chip">${p.currentSalaryText}</span>` : "",
         injury ? `<span class="info-chip injury-chip">${injury.injury} | ${injury.length}d</span>` : ""
       ].filter(Boolean).join("");
-      const curatedTags = Array.isArray(p.mediaTags) ? p.mediaTags.map((t) => clean(t)).filter(Boolean) : [];
-      const slug = normalizeName(p.name || "");
-      const mediaChips = curatedTags.length
-        ? curatedTags.map((t) => `<span class="media-tag-chip" title="ESL Media match tag">${escapeHtml(t)}</span>`).join("")
-        : slug
-          ? `<span class="media-tag-chip media-tag-chip--auto" title="Default catalog tag for ESL Media playerTags">${escapeHtml(slug)}</span>`
-          : "";
-      document.getElementById("heroMediaTags").innerHTML = mediaChips;
+      renderHeroAwards();
       document.getElementById("skillRow").innerHTML = skillTags(p).map(([label, title]) =>
         `<span class="skill-chip" title="${title}">${label}</span>`
       ).join("");
@@ -2050,15 +2177,11 @@
         ["STL", row.stl], ["BLK", row.blk], ["MIN", row.min]
       ].map(([label, value]) => `<div class="head-stat"><span class="head-stat-value">${fmt(value)}</span><span class="head-stat-label">${label}</span></div>`).join("");
       document.getElementById("snapshotNote").textContent = row.season ? `${row.season} season row` : "No season averages found";
-      document.getElementById("classicLink").href = classicHref(p.url);
       const compareLink = document.getElementById("compareLink");
       if (compareLink) {
         const compareId = playerIdFromUrl(p.url);
         compareLink.href = compareId ? `./player-compare.htm?p1=${encodeURIComponent(compareId)}` : "./player-compare.htm";
       }
-      const teamLink = document.getElementById("teamLink");
-      teamLink.href = team ? `./unified-roster.htm?file=${encodeURIComponent(team.rosterFile)}` : "./league%20dashboard.htm";
-      teamLink.textContent = team ? "Back To Team" : "Dashboard";
       const teamHref = team ? `./unified-roster.htm?file=${encodeURIComponent(team.rosterFile)}` : "./league%20dashboard.htm";
       const copyPlayerLink = document.getElementById("copyPlayerLink");
       if (copyPlayerLink) {
@@ -2078,7 +2201,7 @@
       if (crumbPlayerName) {
         crumbPlayerName.textContent = p.name || "Player";
       }
-      renderLogo(teamName);
+      renderLogo(teamName, teamHref);
       setTeamColors(team);
     }
 
@@ -2200,6 +2323,182 @@
 
     function cleanAccoladeLabel(label) {
       return clean(label).replace(/\s*\|\s*$/, "");
+    }
+
+    function heroAwardIcon(kind) {
+      if (kind === "championship") {
+        return `<svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M10 4h12v4h5v4c0 5-3 8-8 9v3h5v4H8v-4h5v-3c-5-1-8-4-8-9V8h5V4Zm0 8H8c0 2 1 4 3 5l-1-5Zm12 0-1 5c2-1 3-3 3-5h-2Z"/></svg>`;
+      }
+      if (kind === "defense") {
+        return `<svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="M16 3 27 7v8c0 7-4 11-11 14C9 26 5 22 5 15V7l11-4Zm0 5-6 2v5c0 4 2 7 6 9 4-2 6-5 6-9v-5l-6-2Z"/><path fill="currentColor" d="m13 16 2 2 5-6 2 2-7 8-4-4 2-2Z"/></svg>`;
+      }
+      if (kind === "mvp") {
+        return `<svg viewBox="0 0 32 32" aria-hidden="true"><path fill="currentColor" d="m16 3 3.7 7.5 8.3 1.2-6 5.8 1.4 8.2L16 21.8l-7.4 3.9 1.4-8.2-6-5.8 8.3-1.2L16 3Z"/></svg>`;
+      }
+      return `<svg viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="14" r="10" fill="currentColor"/><path fill="currentColor" d="m10 21-2 8 8-4 8 4-2-8-6 3-6-3Z"/><path fill="#fff" d="m16 8 1.8 3.7 4.2.6-3 2.9.7 4.1-3.7-2-3.7 2 .7-4.1-3-2.9 4.2-.6L16 8Z"/></svg>`;
+    }
+
+    function heroAwardKind(label) {
+      const key = normalizeAccoladeKey(label);
+      if (isLeagueChampionship(label)) return "championship";
+      if (/defensive|defense/.test(key)) return "defense";
+      if (/mvp|player of the year/.test(key)) return "mvp";
+      return "league";
+    }
+
+    function isLeagueChampionship(label) {
+      const key = normalizeAccoladeKey(label);
+      return /^(champion|championships?)$/.test(key) || /league basketball champion/.test(key);
+    }
+
+    function heroAwardPriority(label) {
+      const key = normalizeAccoladeKey(label);
+      if (isLeagueChampionship(label)) return 0;
+      if (/defensive player of the year/.test(key)) return 2;
+      if (/rookie of the year/.test(key)) return 3;
+      if (/all-star game mvp/.test(key)) return 9;
+      if (/rookie game mvp/.test(key)) return 16;
+      if (/most valuable|\bmvp\b|player of the year/.test(key)) return 1;
+      if (/all-league first/.test(key)) return 4;
+      if (/all-league second/.test(key)) return 5;
+      if (/all-defensive first/.test(key)) return 6;
+      if (/all-league third/.test(key)) return 7;
+      if (/all-defensive second/.test(key)) return 8;
+      if (/all-star/.test(key)) return 10;
+      if (/scoring leader|assists leader|rebounds leader|steals leader|blocks leader/.test(key)) return 11;
+      if (/most improved player|sixth man of the year/.test(key)) return 12;
+      if (/all-rookie first/.test(key)) return 13;
+      if (/all-rookie second/.test(key)) return 14;
+      if (/3-point shootout champion|slam-dunk contest champion/.test(key)) return 15;
+      if (/rookie game participant/.test(key)) return 17;
+      if (/player of the month/.test(key)) return 18;
+      if (/player of the week/.test(key)) return 19;
+      if (/player of the game/.test(key)) return 20;
+      return 15;
+    }
+
+    function heroAwardIdentity(label) {
+      const cleanLabel = cleanAccoladeLabel(label).replace(/^(CLB|ELB|ECL)\s+/i, "").trim();
+      const key = normalizeAccoladeKey(cleanLabel);
+      if (/all-star game mvp/.test(key)) return { key: "all-star-game-mvp", label: "All-Star Game MVP" };
+      if (/^all-star(?: appearances?)?$/.test(key)) return { key: "all-star", label: "All-Star" };
+      if (isLeagueChampionship(cleanLabel)) return { key: "championship", label: "Champion" };
+      return { key, label: cleanLabel };
+    }
+
+    function heroAwardLeague(label) {
+      const value = cleanAccoladeLabel(label);
+      const prefix = value.match(/^(CLB|ELB|ECL)\s+/i);
+      if (prefix) return prefix[1].toUpperCase();
+      if (/champions league basketball/i.test(value)) return "CLB";
+      if (/europa league basketball/i.test(value)) return "ELB";
+      if (/conference league basketball/i.test(value)) return "ECL";
+      return "";
+    }
+
+    function heroAwardAbbreviation(label) {
+      const key = normalizeAccoladeKey(label);
+      if (isLeagueChampionship(label)) return "CHAMP";
+      if (/3-point shootout champion/.test(key)) return "3PT";
+      if (/slam-dunk contest champion/.test(key)) return "DUNK";
+      if (/rookie game mvp/.test(key)) return "RG MVP";
+      if (/all-star game mvp/.test(key)) return "ASG MVP";
+      if (/defensive player of the year/.test(key)) return "DPOY";
+      if (/rookie of the year/.test(key)) return "ROY";
+      if (/most valuable|\bmvp\b|player of the year/.test(key)) return "MVP";
+      if (/all-league first/.test(key)) return "ALL-1";
+      if (/all-league second/.test(key)) return "ALL-2";
+      if (/all-league third/.test(key)) return "ALL-3";
+      if (/all-defensive first/.test(key)) return "DEF-1";
+      if (/all-defensive second/.test(key)) return "DEF-2";
+      if (/all-rookie first/.test(key)) return "ROOK-1";
+      if (/all-rookie second/.test(key)) return "ROOK-2";
+      if (/all-star/.test(key)) return "AS";
+      if (/most improved player/.test(key)) return "MIP";
+      if (/sixth man of the year/.test(key)) return "6MOY";
+      if (/rookie game participant/.test(key)) return "RG";
+      if (/scoring leader/.test(key)) return "PTS";
+      if (/assists leader/.test(key)) return "AST";
+      if (/rebounds leader/.test(key)) return "REB";
+      if (/steals leader/.test(key)) return "STL";
+      if (/blocks leader/.test(key)) return "BLK";
+      if (/player of the month/.test(key)) return "POTM";
+      if (/player of the week/.test(key)) return "POTW";
+      if (/player of the game/.test(key)) return "POTG";
+      return clean(label).split(/\s+/).map((word) => word[0] || "").join("").slice(0, 6).toUpperCase();
+    }
+
+    function renderHeroAwards() {
+      const root = document.getElementById("heroAwards");
+      if (!root) return;
+      const rows = Array.isArray(state.current && state.current.awards) ? state.current.awards : [];
+      const honors = new Map();
+
+      rows.forEach((item) => {
+        const season = clean(item && item.season);
+        let label = cleanAccoladeLabel(item && (item.label || item.award || item.name || item));
+        if (!label) return;
+        const league = heroAwardLeague(item && (item.award || item.name || item.label || item));
+        let count = Number(item && item.count) || 0;
+        if (season.toLowerCase() === "total" || item.isTotal) {
+          const total = parseAccoladeTotal(item.award || label);
+          label = total.label || label;
+          count = Number(total.count || count || 1);
+        } else {
+          label = label.replace(/^(CLB|ELB|ECL)\s+/i, "").trim();
+          count = 1;
+        }
+        const identity = heroAwardIdentity(label);
+        const current = honors.get(identity.key);
+        if (!current) {
+          honors.set(identity.key, { label: identity.label, count, isTotal: season.toLowerCase() === "total" || Boolean(item.isTotal), leagues: new Set(league ? [league] : []) });
+        } else if (season.toLowerCase() === "total" || item.isTotal) {
+          current.label = identity.label;
+          current.count = Math.max(current.count, count);
+          current.isTotal = true;
+        } else if (!current.isTotal) {
+          current.count += 1;
+        }
+        if (current && league) current.leagues.add(league);
+      });
+
+      const rankedHonors = Array.from(honors.values())
+        .sort((a, b) => heroAwardPriority(a.label) - heroAwardPriority(b.label) || b.count - a.count || a.label.localeCompare(b.label));
+      const highlights = rankedHonors.slice(0, 5);
+      const remainingHonors = rankedHonors.slice(5);
+      const remainingCount = remainingHonors.length;
+
+      root.hidden = highlights.length === 0;
+      root.classList.toggle("has-more", remainingCount > 0);
+      const badgeHtml = rankedHonors.map((item, index) => {
+        const kind = heroAwardKind(item.label);
+        const countLabel = item.count > 1 ? `${item.count}×` : "";
+        const abbreviation = heroAwardAbbreviation(item.label);
+        const leagues = Array.from(item.leagues || []).sort().join("/");
+        const accessibleLabel = `${item.label}${leagues ? `, ${leagues}` : ""}${item.count > 1 ? `, ${item.count} times` : ""}. View full awards history`;
+        const isExtra = index >= highlights.length;
+        return `<a class="hero-award-badge hero-award-badge--${kind}${isExtra ? " hero-award-extra" : ""}" href="#awardsPanel" title="${escapeHtml(accessibleLabel)}" aria-label="${escapeHtml(accessibleLabel)}"${isExtra ? " hidden" : ""}>
+          <span class="hero-award-art">${heroAwardIcon(kind)}</span>
+          <span class="hero-award-label" aria-hidden="true"><span class="hero-award-abbr">${escapeHtml(abbreviation)}</span>${leagues ? `<span class="hero-award-league">${escapeHtml(leagues)}</span>` : ""}</span>
+          ${countLabel ? `<span class="hero-award-count">${escapeHtml(countLabel)}</span>` : ""}
+        </a>`;
+      }).join("");
+      const moreHtml = remainingCount
+        ? `<button class="hero-award-more" type="button" title="Show ${remainingCount} more award type${remainingCount === 1 ? "" : "s"}" aria-label="Show ${remainingCount} more award type${remainingCount === 1 ? "" : "s"}" aria-expanded="false">+${remainingCount}</button>`
+        : "";
+      root.innerHTML = `${badgeHtml}${moreHtml}`;
+
+      const moreButton = root.querySelector(".hero-award-more");
+      if (moreButton) {
+        moreButton.onclick = () => {
+          const expanded = root.classList.toggle("is-expanded");
+          root.querySelectorAll(".hero-award-extra").forEach((badge) => { badge.hidden = !expanded; });
+          moreButton.textContent = expanded ? "−" : `+${remainingCount}`;
+          moreButton.title = expanded ? "Show fewer awards" : `Show ${remainingCount} more award type${remainingCount === 1 ? "" : "s"}`;
+          moreButton.setAttribute("aria-label", moreButton.title);
+          moreButton.setAttribute("aria-expanded", String(expanded));
+        };
+      }
     }
 
     function parseAccoladeTotal(label) {
