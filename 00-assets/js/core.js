@@ -10,6 +10,7 @@
     eslMedia: toSitePath("00-eslmedia/homepage.html"),
     eslMediaLogo: toSitePath("00-eslmedia/content/article images/ESLM.png"),
     eslReference: toSitePath("00-assets/html/history/index.htm"),
+    futurePlayerPool: toSitePath("00-assets/html/history/future-pool.htm"),
     depthCharts: toSitePath("00-assets/html/depthcharts.htm"),
     camps: toSitePath("00-assets/html/camps.htm"),
     faWarRoom: toSitePath("00-assets/html/fa-war-room.htm"),

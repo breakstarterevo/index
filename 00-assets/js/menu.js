@@ -413,6 +413,7 @@
         title: "Season",
         links: [
           { label: "Youth Intake", href: core.paths.youthIntake },
+          { label: "Future Player Pool", href: core.paths.futurePlayerPool },
           { label: "Awards", href: "awards.htm" },
           { label: "Season Awards", href: "seasonawards.htm" },
           { label: "Past Champs", href: "champs.htm" }
@@ -475,6 +476,7 @@
             title: group.title,
             links: (group.links || []).filter(function (link) {
               return link.label !== "Youth Intake" &&
+                link.label !== "Future Player Pool" &&
                 link.label !== "Playoff Standings" &&
                 link.label !== "Past Champs";
             }),
