@@ -331,6 +331,18 @@
     .rating-chip.rating-orange { background: #f97316; border-color: #ea580c; color: #fff; }
     .rating-chip.good { color: var(--good); }
     .rating-chip.warn { color: var(--warn); }
+    .intake-team-chip {
+      border-color: color-mix(in srgb, var(--team-color) 42%, var(--line));
+      background: color-mix(in srgb, var(--team-color) 9%, #fff);
+      color: var(--team-color);
+      text-decoration: none;
+      letter-spacing: 0.025em;
+    }
+    .intake-team-chip:hover,
+    .intake-team-chip:focus-visible {
+      border-color: var(--team-color);
+      background: color-mix(in srgb, var(--team-color) 15%, #fff);
+    }
     .injury-chip {
       background: #fff1f0;
       border-color: #ffc9c4;
@@ -1323,7 +1335,8 @@
       injuries: "../../00-build/database/injuries.json",
       standings: "../../00-build/database/standings.json",
       playerHistory: "../../00-build/history/player_index.json",
-      playerPhotos: "../../00-build/database/player_photos.json"
+      playerPhotos: "../../00-build/database/player_photos.json",
+      youthIntake: "../../00-build/database/youth_intake.json"
     };
     const PLAYER_VIEWPORT = "width=device-width, initial-scale=1.0";
     let parentViewportMeta = null;
@@ -1403,6 +1416,7 @@
       standings: [],
       playerHistory: null,
       playerPhotos: {},
+      youthIntake: [],
       teamDirectory: [],
       current: null,
       currentStats: null,
@@ -1581,6 +1595,23 @@
       const teamKey = clean(player && player.team);
       const teamLabel = clean(player && player.teamLabel);
       return state.teamDirectory.find((t) => t.teamId === teamKey || t.teamName === teamLabel) || null;
+    }
+
+    function findIntakeAssignment(player) {
+      if (normalizeName(player && (player.teamLabel || player.team)) !== "draft") return null;
+      const playerId = clean(player && player.playerId) || playerIdFromUrl(player && player.url);
+      const nameKey = normalizeName(player && player.name);
+      const nameMatches = [];
+      for (const team of state.youthIntake) {
+        for (const prospect of Array.isArray(team && team.intakePlayers) ? team.intakePlayers : []) {
+          const prospectId = clean(prospect && prospect.playerId);
+          if (playerId && prospectId && prospectId === playerId) return { team: team.team, prospect };
+          if (nameKey && normalizeName(prospect && prospect.name) === nameKey) {
+            nameMatches.push({ team: team.team, prospect });
+          }
+        }
+      }
+      return nameMatches.length === 1 ? nameMatches[0] : null;
     }
 
     function findInjury(player) {
@@ -2143,10 +2174,19 @@
 
     function renderHero() {
       const p = state.current;
-      const team = findTeam(p);
+      const currentTeam = findTeam(p);
+      const intakeAssignment = findIntakeAssignment(p);
+      const intakeTeam = intakeAssignment
+        ? state.teamDirectory.find((entry) => normalizeName(entry.teamName) === normalizeName(intakeAssignment.team)) || null
+        : null;
+      const team = currentTeam || intakeTeam;
       const injury = findInjury(p);
       const row = bestCurrentRow();
       const teamName = p.teamLabel || p.team || "Unknown Team";
+      const visualTeamName = intakeTeam ? intakeTeam.teamName : teamName;
+      const intakeHref = intakeAssignment
+        ? `./youth-intake.htm?team=${encodeURIComponent(intakeAssignment.team)}`
+        : "";
       const meta = [
         teamName,
         p.pos,
@@ -2165,6 +2205,7 @@
       document.getElementById("heroPills").innerHTML = [
         p.overall ? `<span class="rating-chip primary ${ratingTierClass(p.overall)}">OVR ${p.overall}</span>` : "",
         p.potential ? `<span class="rating-chip primary ${ratingTierClass(p.potential)}">POT ${p.potential}</span>` : "",
+        intakeAssignment ? `<a class="info-chip intake-team-chip" href="${intakeHref}" title="View ${escapeHtml(intakeAssignment.team)} youth intake">INTAKE · ${escapeHtml(intakeAssignment.team)}</a>` : "",
         p.currentSalaryText ? `<span class="info-chip">${p.currentSalaryText}</span>` : "",
         injury ? `<span class="info-chip injury-chip">${injury.injury} | ${injury.length}d</span>` : ""
       ].filter(Boolean).join("");
@@ -2201,7 +2242,7 @@
       if (crumbPlayerName) {
         crumbPlayerName.textContent = p.name || "Player";
       }
-      renderLogo(teamName, teamHref);
+      renderLogo(visualTeamName, teamHref);
       setTeamColors(team);
     }
 
@@ -2936,6 +2977,15 @@
         } catch (error) {
           playerPhotosData = { players: {} };
         }
+        let youthIntakeData = { teams: [] };
+        try {
+          const youthIntakeRes = await fetch(DATA_URLS.youthIntake);
+          if (youthIntakeRes.ok) {
+            youthIntakeData = await youthIntakeRes.json();
+          }
+        } catch (error) {
+          youthIntakeData = { teams: [] };
+        }
         state.players = Array.isArray(playersData) ? playersData : [];
         state.playerStats = Array.isArray(playerStatsData.players) ? playerStatsData.players : [];
         state.playerGamelogs = Array.isArray(playerGamelogsData.players) ? playerGamelogsData.players : [];
@@ -2943,6 +2993,7 @@
         state.standings = Array.isArray(standingsData.sections) ? standingsData.sections : [];
         state.playerHistory = playerHistoryData;
         state.playerPhotos = playerPhotosData?.players || {};
+        state.youthIntake = Array.isArray(youthIntakeData.teams) ? youthIntakeData.teams : [];
         state.teamDirectory = window.UnifiedRosterDataService.buildTeamDirectory(state.standings);
         state.current = findCurrentPlayer();
         if (!state.current) throw new Error("No player found");
