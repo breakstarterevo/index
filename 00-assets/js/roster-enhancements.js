@@ -479,9 +479,96 @@
     });
   }
 
+  function classicScheduleDate(value) {
+    var match = String(value || "").replace(/\u00a0/g, " ").trim().match(/^(\d{1,2})\/(\d{1,2})\/(\d{2}|\d{4})$/);
+    var year;
+
+    if (!match) {
+      return "";
+    }
+
+    year = Number(match[3]);
+    if (year < 100) {
+      year += year >= 70 ? 1900 : 2000;
+    }
+
+    return Number(match[1]) + "/" + Number(match[2]) + "/" + year;
+  }
+
+  function enhanceClassicRosterSchedule() {
+    var currentRosterMatch;
+    var currentRosterId;
+
+    if (!core.isRosterPage() || !core.paths || !core.paths.matchPreview) {
+      return;
+    }
+
+    currentRosterMatch = String(window.location.pathname || "").match(/roster\d+/i);
+    currentRosterId = currentRosterMatch ? currentRosterMatch[0].toLowerCase() : "";
+    if (!currentRosterId) {
+      return;
+    }
+
+    Array.prototype.slice.call(document.querySelectorAll("table")).forEach(function (table) {
+      var titleCell = table.querySelector("tr:first-child td.tableheader");
+      var title = titleCell ? String(titleCell.textContent || "").replace(/\u00a0/g, " ").trim() : "";
+      var headerRow;
+      var headers;
+      var indexes = {};
+
+      if (!/^Season Schedule$/i.test(title)) {
+        return;
+      }
+
+      headerRow = getDirectHeaderRow(table);
+      headers = headerRow ? Array.prototype.slice.call(headerRow.children) : [];
+      headers.forEach(function (cell, index) {
+        var label = String(cell.textContent || "").replace(/\u00a0/g, " ").trim().toLowerCase();
+        if (label.indexOf("date") === 0) indexes.date = index;
+        else if (label.indexOf("opponent") === 0) indexes.opponent = index;
+        else if (label.indexOf("score") === 0) indexes.score = index;
+      });
+
+      if (indexes.date === undefined || indexes.opponent === undefined || indexes.score === undefined) {
+        return;
+      }
+
+      Array.prototype.slice.call(table.querySelectorAll("tr.row1, tr.row2")).forEach(function (row) {
+        var dateCell = row.children[indexes.date];
+        var opponentCell = row.children[indexes.opponent];
+        var scoreCell = row.children[indexes.score];
+        var opponentLink = opponentCell && opponentCell.querySelector('a[href*="roster"]');
+        var opponentMatch = opponentLink ? String(opponentLink.getAttribute("href") || "").match(/roster\d+/i) : null;
+        var opponentRosterId = opponentMatch ? opponentMatch[0].toLowerCase() : "";
+        var date = classicScheduleDate(dateCell ? dateCell.textContent : "");
+        var isAway = /^\s*at\b/i.test(String(opponentCell ? opponentCell.textContent : "").replace(/\u00a0/g, " "));
+        var params;
+        var link;
+
+        if (!scoreCell || scoreCell.querySelector("a") || String(scoreCell.textContent || "").replace(/\u00a0/g, " ").trim() || !date || !opponentRosterId) {
+          return;
+        }
+
+        params = new URLSearchParams();
+        params.set("date", date);
+        params.set("away", isAway ? currentRosterId : opponentRosterId);
+        params.set("home", isAway ? opponentRosterId : currentRosterId);
+
+        link = document.createElement("a");
+        link.className = "linkmain classic-schedule-preview-link";
+        link.href = core.paths.matchPreview + "?" + params.toString();
+        link.textContent = "Preview";
+        link.title = "Open match preview";
+        scoreCell.textContent = "";
+        scoreCell.appendChild(link);
+      });
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     initPlayerRatings();
     initRosterRatings();
     enhanceRosterStickyTables();
+    enhanceClassicRosterSchedule();
   });
 })();

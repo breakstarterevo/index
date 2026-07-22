@@ -31,7 +31,7 @@ FEATURE_JS_FILENAMES = [
     "00-assets/js/search.js",
     "00-assets/js/roster-enhancements.js",
 ]
-ROSTER_ENHANCEMENTS_VERSION = "id-player-ratings-1"
+ROSTER_ENHANCEMENTS_VERSION = "classic-schedule-preview-2"
 INDEX_JS_FILENAME = "00-assets/js/index.js"
 INDEX_JS_VERSION = "ticker-date-order-2"
 FAVICON_FILE = "00-build/database/favicon.png"
@@ -92,11 +92,13 @@ def inject_file(filepath, dry_run, target_root):
 
     roster_index = FEATURE_JS_FILENAMES.index("00-assets/js/roster-enhancements.js")
     roster_rel = feature_js_rels[roster_index]
-    old_roster_tag = f'<script src="{roster_rel}" defer></script>'
     versioned_roster_tag = feature_js_tags[roster_index]
-    replaced_roster_tag = old_roster_tag in html and versioned_roster_tag not in html
-    if replaced_roster_tag:
-        html = html.replace(old_roster_tag, versioned_roster_tag, 1)
+    roster_tag_pattern = re.compile(rf'<script src="{re.escape(roster_rel)}(?:\?v=[^"]+)?" defer></script>')
+    current_roster_tag = roster_tag_pattern.search(html)
+    replaced_roster_tag = False
+    if current_roster_tag and current_roster_tag.group(0) != versioned_roster_tag:
+        html = html[:current_roster_tag.start()] + versioned_roster_tag + html[current_roster_tag.end():]
+        replaced_roster_tag = True
 
     already_css = CSS_FILENAME in html or css_rel in html
     already_theme_preload = THEME_PRELOAD_FILENAME in html or theme_preload_rel in html

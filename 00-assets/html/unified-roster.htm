@@ -1854,12 +1854,22 @@
       return days.flatMap((d) => (d.games || []).filter((g) => g.homeTeam === teamId || g.awayTeam === teamId).map((g) => ({ ...g, dateObj: parseScheduleDate(d.date), date: d.date })));
     }
 
+    function isCompletedScheduleGame(game) {
+      if (!game) return false;
+      if (String(game.status || "").toLowerCase() === "completed") return true;
+      const homeScore = game.homeScore;
+      const awayScore = game.awayScore;
+      return homeScore !== null && homeScore !== undefined && String(homeScore).trim() !== "" &&
+        awayScore !== null && awayScore !== undefined && String(awayScore).trim() !== "" &&
+        Number.isFinite(Number(homeScore)) && Number.isFinite(Number(awayScore));
+    }
+
     function renderTeamFormStrip() {
       const root = document.getElementById("teamFormStrip");
       if (!root || !state.current) return;
       const teamId = state.current.teamId;
       const games = collectTeamGames(teamId)
-        .filter((g) => g.dateObj && Number.isFinite(Number(g.homeScore)) && Number.isFinite(Number(g.awayScore)))
+        .filter((g) => g.dateObj && isCompletedScheduleGame(g))
         .sort((a, b) => a.dateObj - b.dateObj)
         .slice(-10);
       if (!games.length) {
@@ -1929,7 +1939,7 @@
       const teamId = state.current.teamId;
       const rows = games.map((g) => {
         const isHome = g.homeTeam === teamId;
-        const isCompleted = Number.isFinite(Number(g.homeScore)) && Number.isFinite(Number(g.awayScore));
+        const isCompleted = isCompletedScheduleGame(g);
         const oppName = isHome ? g.awayTeamName : g.homeTeamName;
         const myScore = isHome ? g.homeScore : g.awayScore;
         const oppScore = isHome ? g.awayScore : g.homeScore;
@@ -1986,9 +1996,7 @@
       games.sort((a, b) => a.dateObj - b.dateObj);
       renderScheduleList(games);
       if (!state.monthCursor) {
-        const completedGames = games.filter((g) =>
-          Number.isFinite(Number(g.homeScore)) && Number.isFinite(Number(g.awayScore))
-        );
+        const completedGames = games.filter(isCompletedScheduleGame);
         if (completedGames.length) {
           const anchor = completedGames[completedGames.length - 1];
           state.monthCursor = new Date(anchor.dateObj.getFullYear(), anchor.dateObj.getMonth(), 1);
@@ -2025,7 +2033,7 @@
         if (dayGames.length) {
           const firstGame = dayGames[0];
           const isHomeGame = firstGame.homeTeam === teamId;
-          const isCompleted = Number.isFinite(Number(firstGame.homeScore)) && Number.isFinite(Number(firstGame.awayScore));
+          const isCompleted = isCompletedScheduleGame(firstGame);
           if (isCompleted) {
             const isWin = firstGame.winner === teamId;
             const myScore = firstGame.homeTeam === teamId ? firstGame.homeScore : firstGame.awayScore;
@@ -2043,7 +2051,7 @@
         }
         const logosHtml = dayGames.slice(0, 2).map((g) => {
           const isHome = g.homeTeam === teamId;
-          const isCompleted = Number.isFinite(Number(g.homeScore)) && Number.isFinite(Number(g.awayScore));
+          const isCompleted = isCompletedScheduleGame(g);
           const oppName = isHome ? g.awayTeamName : g.homeTeamName;
           return scheduleOpponentLogo(oppName, isCompleted ? scheduleBoxHref(g) : matchPreviewHref(g), isCompleted ? "box" : "preview");
         }).join("");
