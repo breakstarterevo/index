@@ -26,6 +26,98 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
+  // Season 4 Sim 1 - November 1984 package
+  {
+    file: "articles/season_4_sim_1_month_in_review.html",
+    title: "November 1984 Review: Richmond Set The Temperature",
+    category: "Recap",
+    desk: "Analysis",
+    sortKey: "2026-07-22-07",
+    tag: "Month in Review",
+    author: "Graham Trent",
+    meta: "Season 4 - Sim 1",
+    blurb: "Richmond imposed order on Tier 1, PSG made promotion look practical, and Tier 3 answered with the league's most crowded race.",
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Benfica", "Chelsea", "Inter Milan", "Manchester City", "Manchester United", "Marseille", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur"],
+    playerTags: ["Kelly Tripucka", "Michael Cooper", "Tom Chambers"]
+  },
+  {
+    file: "articles/season_4_sim_1_mvp_race.html",
+    title: "November 1984 MVP Race: Chambers Changes The Tier 1 Ballot",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-22-06",
+    tag: "MVP Race",
+    author: "Damon Cross",
+    meta: "Season 4 - Sim 1",
+    blurb: "Tom Chambers, Kelly Tripucka and Paul Pierce lead the first three-tier MVP ballots of the 1984 season.",
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Brighton", "Chelsea", "Manchester City", "Marseille", "Monaco", "Paris Saint-Germain", "Sheffield United", "Sporting CP", "Valencia"],
+    playerTags: ["Andre Drummond", "B.J. Armstrong", "Bernard King", "Chris Bosh", "Isiah Thomas", "Joe Barry Carroll", "Johnny Moore", "Kelly Tripucka", "Kiki Vandeweghe", "Larry Nance", "Otis Birdsong", "Paul Pierce", "Rickey Green", "Robert Parish", "Sidney Moncrief", "Steve Johnson", "Tom Chambers"]
+  },
+  {
+    file: "articles/season_4_sim_1_stock_up_stock_down.html",
+    title: "November 1984 Stock Report: Richmond And PSG Broke Away",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-22-05",
+    tag: "Stock Report",
+    author: "Damon Cross",
+    meta: "Season 4 - Sim 1",
+    blurb: "Richmond, PSG and Inter rise after forceful November runs, while Sporting, Manchester United and Juventus face harsher questions.",
+    teams: ["AFC Richmond", "Inter Milan", "Juventus", "Manchester United", "Paris Saint-Germain", "Sporting CP"],
+    playerTags: ["Chris Bosh", "Kelly Tripucka"]
+  },
+  {
+    file: "articles/season_4_sim_1_promotion_relegation_watch.html",
+    title: "November 1984 Race Watch: Nobody Has Room To Breathe",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-22-04",
+    tag: "Race Watch",
+    author: "Nina Vale",
+    meta: "Season 4 - Sim 1",
+    blurb: "Chelsea and Benfica occupy Tier 1's bottom two, Real hold the second promotion place, and Barcelona have four pursuers.",
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    playerTags: []
+  },
+  {
+    file: "articles/season_4_sim_1_tier_1_power_rankings.html",
+    title: "November 1984 Tier 1 Power Rankings: Richmond Own The First Month",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-22-03",
+    tag: "Tier 1 Rankings",
+    author: "Nina Vale",
+    meta: "Season 4 - Sim 1",
+    blurb: "Richmond are the division's only trustworthy front-runner as Milan recover and the relegation fight forms beneath them.",
+    teams: ["AC Milan", "AFC Richmond", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart"],
+    playerTags: ["Bernard King", "Bill Laimbeer", "Darrell Griffith", "Jim Paxson", "Kiki Vandeweghe", "Larry Drew", "Michael Cooper", "Moses Malone"]
+  },
+  {
+    file: "articles/season_4_sim_1_tier_2_power_rankings.html",
+    title: "November 1984 Tier 2 Power Rankings: PSG Turned Promotion Into A Chase",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-22-02",
+    tag: "Tier 2 Rankings",
+    author: "Nina Vale",
+    meta: "Season 4 - Sim 1",
+    blurb: "PSG own the best profile, Real Madrid hold second, and Aston Villa have made the promotion gap uncomfortably small.",
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Juventus", "Marseille", "Paris Saint-Germain", "Real Madrid", "Sheffield United"],
+    playerTags: ["Andre Iguodala", "Bill Cartwright", "Dennis Johnson", "Gerald Henderson", "Kelly Tripucka", "Larry Nance", "Robert Parish", "Sidney Moncrief"]
+  },
+  {
+    file: "articles/season_4_sim_1_tier_3_power_rankings.html",
+    title: "November 1984 Tier 3 Power Rankings: Barcelona Lead A Five-Team Sprint",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-22-01",
+    tag: "Tier 3 Rankings",
+    author: "Nina Vale",
+    meta: "Season 4 - Sim 1",
+    blurb: "Barcelona hold first place, but Tottenham, Inter, Monaco and Manchester City have turned promotion into a crowded sprint.",
+    teams: ["Barcelona", "Inter Milan", "Manchester City", "Manchester United", "Monaco", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Andre Drummond", "Chris Bosh", "Doug Christie", "Isiah Thomas", "Josh Richardson", "Kirk Hinrich", "Paul Pierce", "World B. Free"]
+  },
   // 1984 offseason - after FA2 package
   {
     file: "articles/1984_offseason_board_after_fa2.html",
