@@ -381,6 +381,7 @@
         links: [
           { label: "Standings", href: "standings.htm" },
           { label: "Schedule", href: "schedule.htm" },
+          { label: "Match Preview", href: core.paths.matchPreview },
           { label: "League Leaders", href: "leaders.htm" },
           { label: "Team Leaders", href: "teamleaders.htm" },
           { label: "Supercup Index", href: core.paths.supercupIndex, className: "league-menu-link--accent", target: "_top" },

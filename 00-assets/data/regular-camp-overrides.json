@@ -1,0 +1,10 @@
+{
+  "_instructions": [
+    "Manually record career Regular Camps used as a whole number from 0 to 3.",
+    "Prefer byPlayerId because names can change or collide. byName is a fallback.",
+    "Unlisted players automatically count as 0 camps used."
+  ],
+  "careerLimit": 3,
+  "byPlayerId": {},
+  "byName": {}
+}

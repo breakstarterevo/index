@@ -25,6 +25,7 @@ SCRIPTS = [
     (os.path.join(BUILD_DIR, "ensure_settings_page.py"), "Ensuring league settings page exists"),
     (os.path.join(BUILD_DIR, "inject_css_js.py"),      "Injecting CSS/JS links into all HTML files"),
     (os.path.join(BUILD_DIR, "validate_media_site.py"), "Validating ESL Media publish surfaces"),
+    (os.path.join(BUILD_DIR, "build_camp_tracker_json.py"), "Building career camp tracker JSON"),
 ]
 
 def progress_bar(index, total, width=24):

@@ -8,7 +8,9 @@
   var tickerAutoFrame = 0;
   var tickerAutoPosition = 0;
   var tickerFavoriteOnly = false;
+  var tickerPreviewMode = false;
   var tickerCompletedGames = [];
+  var tickerScheduledGames = [];
 
   function isSuperCupIndexPage() {
     return /(?:\/|\\)00-supercup(?:\/|\\)index\.htm$/i.test(window.location.pathname);
@@ -119,19 +121,24 @@
       ".site-ticker.is-dragging { cursor: grabbing; user-select: none; }",
       ".site-ticker-track { align-items: stretch; display: flex; min-width: max-content; }",
       ".site-ticker-filter { align-items: center; background: rgba(255, 255, 255, .08); border: 1px solid rgba(255, 255, 255, .24); border-radius: 7px; color: #ffffff; cursor: pointer; display: flex; font: 900 9px/1 Inter, Tahoma, Arial, sans-serif; height: 28px; justify-content: center; padding: 0 7px; position: absolute; right: 7px; text-transform: uppercase; top: 50%; transform: translateY(-50%); z-index: 31; }",
+      ".site-ticker-filter[hidden] { display: none; }",
       ".site-ticker-filter:hover { background: rgba(142, 197, 255, .18); border-color: rgba(142, 197, 255, .54); color: #8ec5ff; }",
       ".site-ticker-filter.is-active { background: #1d5ea8; border-color: #8ec5ff; color: #ffffff; }",
-      ".site-ticker-label { align-items: center; border-right: 1px solid #d8e1ee; color: #1d4f91; display: flex; flex: 0 0 auto; font: 900 10px/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: .12em; padding: 0 12px; text-transform: uppercase; }",
+      ".site-ticker-label { align-items: center; align-self: stretch; background: #f7f9fc; border: 0; border-right: 1px solid #d8e1ee; color: #1d4f91; cursor: pointer; display: flex; flex: 0 0 auto; font: 900 10px/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: .12em; padding: 0 12px; text-transform: uppercase; }",
+      ".site-ticker-label:hover, .site-ticker-label:focus-visible { background: #edf5ff; outline: 0; }",
+      ".site-ticker-label:disabled { cursor: default; opacity: 1; }",
       ".site-score-card { align-items: center; background: #f7f9fc; border-right: 1px solid #d8e1ee; color: #111827; cursor: pointer; display: grid; flex: 0 0 auto; gap: 4px; grid-template-columns: 39px 20px 39px; height: 100%; justify-content: center; min-width: 108px; padding: 3px 7px 2px; text-decoration: none; }",
       ".site-score-card:hover { background: #edf5ff; }",
       ".site-score-team { align-items: center; display: grid; gap: 1px; grid-template-rows: 20px 11px 18px; justify-items: center; min-width: 0; }",
       ".site-score-logo { border-radius: 50%; display: block; height: 19px; object-fit: cover; width: 19px; }",
-      ".site-score-abbr { color: #5b6472; font: 900 10px/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: .04em; text-align: center; text-transform: uppercase; }",
+      ".site-score-abbr { color: #5b6472; font: 900 11px/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: .04em; text-align: center; text-transform: uppercase; }",
       ".site-score-pts { color: #111827; font: 950 18px/1 Inter, Tahoma, Arial, sans-serif; text-align: center; }",
       ".site-score-team.is-winner .site-score-pts { color: #1d5ea8; }",
       ".site-score-mid { align-items: center; color: #7b8492; display: grid; gap: 2px; grid-template-rows: 9px 12px; justify-items: center; min-width: 0; }",
       ".site-score-date { font: 950 8px/1 Inter, Tahoma, Arial, sans-serif; letter-spacing: .02em; text-align: center; }",
       ".site-score-sep { font: 900 14px/1 Inter, Tahoma, Arial, sans-serif; text-align: center; }",
+      ".site-score-card--preview .site-score-team { grid-template-rows: 20px 18px; }",
+      ".site-score-card--preview .site-score-sep { color: #1d5ea8; font-size: 16px; }",
       ".site-ticker-empty { align-items: center; color: #5b6472; display: flex; font: 800 12px/1 Inter, Tahoma, Arial, sans-serif; padding: 0 14px; }",
       ".site-shell-search { align-items: center; background: #f7f9fc; box-shadow: inset 0 -1px 0 rgba(17, 27, 54, 0.18); display: flex; gap: 8px; min-width: 0; padding: 0 12px; position: relative; }",
       ".site-shell-search-status { align-items: center; background: #edf5ff; border: 1px solid #c9d3e1; border-radius: 7px; color: #1d4f91; display: flex; flex: 0 0 auto; font: 950 10px/1 Inter, Tahoma, Arial, sans-serif; height: 34px; letter-spacing: .08em; padding: 0 9px; text-transform: uppercase; white-space: nowrap; }",
@@ -150,6 +157,8 @@
       "html.league-theme-dark .site-score-abbr, html.league-theme-dark .site-score-mid, html.league-theme-dark .site-ticker-empty { color: #a9b6c8; }",
       "html.league-theme-dark .site-score-pts { color: #edf4ff; }",
       "html.league-theme-dark .site-score-team.is-winner .site-score-pts, html.league-theme-dark .site-ticker-label { color: #8ec5ff; }",
+      "html.league-theme-dark .site-ticker-label { background: #0d1118; }",
+      "html.league-theme-dark .site-ticker-label:hover, html.league-theme-dark .site-ticker-label:focus-visible { background: #151b25; }",
       "html.league-theme-dark .site-ticker-filter { background: rgba(255, 255, 255, .08); border-color: rgba(148, 163, 184, .34); color: #ffffff; }",
       "html.league-theme-dark .site-ticker-filter:hover { background: rgba(142, 197, 255, .18); color: #8ec5ff; }",
       "html.league-theme-dark .site-ticker-filter.is-active { background: #1d5ea8; border-color: #8ec5ff; color: #ffffff; }",
@@ -282,7 +291,7 @@
       : getCorePath("leagueLogo", "00-assets/images/ESLcropped-removebg-preview.png");
     logo.alt = isSuperCup ? "ESL Super Cup" : "ESL";
     ticker.className = "site-ticker";
-    ticker.setAttribute("aria-label", "Latest scores");
+    ticker.setAttribute("aria-label", "Latest scores and upcoming previews");
     tickerFilter.className = "site-ticker-filter";
     tickerFilter.id = "siteTickerFilter";
     tickerFilter.type = "button";
@@ -748,6 +757,36 @@
     ].join("");
   }
 
+  function makePreviewCard(game) {
+    var away = getTeamTickerData(game.awayTeamName);
+    var home = getTeamTickerData(game.homeTeamName);
+    var params = new URLSearchParams();
+    var href;
+    var dateText = formatTickerGameDate(game.date);
+
+    params.set("date", game.date || "");
+    params.set("away", game.awayTeam || "");
+    params.set("home", game.homeTeam || "");
+    href = getCorePath("matchPreview", "00-assets/html/match-preview.htm") + "?" + params.toString();
+
+    function teamHtml(team) {
+      return [
+        '<span class="site-score-team">',
+        '<img class="site-score-logo" src="' + escapeHtml(team.img) + '" alt="" onerror="this.hidden=true">',
+        '<span class="site-score-abbr">' + escapeHtml(team.abbr) + "</span>",
+        "</span>"
+      ].join("");
+    }
+
+    return [
+      '<a class="site-score-card site-score-card--preview" href="' + escapeHtml(href) + '" target="data" title="Preview ' + escapeHtml(game.awayTeamName + " at " + game.homeTeamName) + '">',
+      teamHtml(away),
+      '<span class="site-score-mid"><span class="site-score-date">' + escapeHtml(dateText) + '</span><span class="site-score-sep">@</span></span>',
+      teamHtml(home),
+      "</a>"
+    ].join("");
+  }
+
   function formatTickerGameDate(value) {
     var match = String(value || "").match(/^(\d{1,2})\/(\d{1,2})\/\d{2,4}$/);
     var month;
@@ -813,10 +852,28 @@
     });
   }
 
+  function comingMonthGames(scheduledGames, completedGames) {
+    var latestCompletedTime = (completedGames || []).reduce(function (latest, game) {
+      return Math.max(latest, Number(game && game._tickerTime) || 0);
+    }, 0);
+    var future = (scheduledGames || []).filter(function (game) {
+      return (Number(game && game._tickerTime) || 0) > latestCompletedTime;
+    }).slice().sort(function (a, b) {
+      return a._tickerTime - b._tickerTime || a._tickerOrder - b._tickerOrder;
+    });
+    var monthKey = future.length ? gameMonthKey(future[0]) : "";
+
+    return monthKey ? future.filter(function (game) {
+      return gameMonthKey(game) === monthKey;
+    }) : [];
+  }
+
   function getTickerGamesToRender() {
     var games;
 
-    games = latestMonthGames(tickerCompletedGames);
+    games = tickerPreviewMode
+      ? comingMonthGames(tickerScheduledGames, tickerCompletedGames)
+      : latestMonthGames(tickerCompletedGames);
 
     if (!tickerFavoriteOnly) {
       return games;
@@ -836,8 +893,23 @@
     button.classList.toggle("is-active", tickerFavoriteOnly);
     button.setAttribute("aria-pressed", String(tickerFavoriteOnly));
     button.title = favoriteTeam
-      ? "Show only " + favoriteTeam + " scores"
+      ? "Show only " + favoriteTeam + (tickerPreviewMode ? " previews" : " scores")
       : "Set a favorite team in settings";
+    button.setAttribute("aria-label", favoriteTeam
+      ? "Show only " + favoriteTeam + (tickerPreviewMode ? " previews" : " scores")
+      : "Set a favorite team in settings");
+
+  }
+
+  function makeTickerModeButton() {
+    var isSuperCup = isSuperCupIndexPage();
+    var label = tickerPreviewMode ? "Preview" : "Final";
+    var action = tickerPreviewMode ? "Show latest completed scores" : "Show upcoming previews";
+
+    return '<button class="site-ticker-label site-ticker-mode" type="button" aria-pressed="' +
+      String(tickerPreviewMode) + '" aria-label="' + escapeHtml(isSuperCup ? "Final scores" : action) +
+      '" title="' + escapeHtml(isSuperCup ? "Final scores" : action) + '"' +
+      (isSuperCup ? " disabled" : "") + ">" + label + "</button>";
   }
 
   function renderCurrentTickerGames() {
@@ -862,6 +934,7 @@
       updateTickerFilterButton();
       renderCurrentTickerGames();
     });
+
   }
 
   function stopScoreTickerAuto() {
@@ -880,9 +953,10 @@
 
     function tick(time) {
       var elapsed = lastTime ? time - lastTime : 16;
+      var hoverPaused = ticker.matches && ticker.matches(":hover");
 
       lastTime = time;
-      if (ticker.dataset.userDragging !== "true" && loopWidth > 0) {
+      if (ticker.dataset.userDragging !== "true" && ticker.dataset.hoverPaused !== "true" && !hoverPaused && loopWidth > 0) {
         tickerAutoPosition += elapsed * 0.035;
         if (tickerAutoPosition >= loopWidth) {
           tickerAutoPosition -= loopWidth;
@@ -909,9 +983,20 @@
     }
 
     ticker.dataset.scrubBound = "true";
+    ticker.addEventListener("mouseenter", function () {
+      ticker.dataset.hoverPaused = "true";
+    });
+    ticker.addEventListener("mouseleave", function () {
+      ticker.dataset.hoverPaused = "false";
+      tickerAutoPosition = ticker.scrollLeft || 0;
+    });
 
     ticker.addEventListener("pointerdown", function (event) {
       if (event.button !== undefined && event.button !== 0) {
+        return;
+      }
+
+      if (event.target && event.target.closest && event.target.closest(".site-ticker-mode")) {
         return;
       }
 
@@ -987,6 +1072,7 @@
       }
     });
     ticker.addEventListener("click", function (event) {
+      var modeButton = event.target && event.target.closest ? event.target.closest(".site-ticker-mode") : null;
       var scoreLink = event.target && event.target.closest ? event.target.closest(".site-score-card") : null;
       var dataFrame;
 
@@ -997,11 +1083,20 @@
         return;
       }
 
+      if (modeButton && !modeButton.disabled) {
+        event.preventDefault();
+        event.stopPropagation();
+        tickerPreviewMode = !tickerPreviewMode;
+        updateTickerFilterButton();
+        renderCurrentTickerGames();
+        return;
+      }
+
       if (scoreLink) {
-        dataFrame = window.frames && window.frames.data;
+        dataFrame = document.querySelector('iframe[name="data"]');
         if (dataFrame) {
           event.preventDefault();
-          dataFrame.location.href = scoreLink.getAttribute("href");
+          dataFrame.src = scoreLink.getAttribute("href");
         }
       }
     }, true);
@@ -1030,24 +1125,26 @@
 
     updateTickerFilterButton();
     bindTickerFilterButton();
+    bindScoreTickerScrub(track.parentNode);
 
     if (!games.length) {
       stopScoreTickerAuto();
-      track.innerHTML = '<span class="site-ticker-empty">' + escapeHtml(
+      track.innerHTML = makeTickerModeButton() + '<span class="site-ticker-empty">' + escapeHtml(
         tickerFavoriteOnly
-          ? (getFavoriteTeamName() ? "No favorite team scores yet" : "Set a favorite team in settings")
-          : "Scores unavailable"
+          ? (getFavoriteTeamName()
+            ? (tickerPreviewMode ? "No upcoming games for your favorite team" : "No completed games for your favorite team")
+            : "Set a favorite team in settings")
+          : (tickerPreviewMode ? "No upcoming games in the coming schedule month" : "No completed games available")
       ) + "</span>";
       return;
     }
 
-    cards = games.map(makeScoreCard).join("");
-    segment = '<span class="site-ticker-label">Final</span>' + cards;
+    cards = games.map(tickerPreviewMode ? makePreviewCard : makeScoreCard).join("");
+    segment = makeTickerModeButton() + cards;
     track.className = "site-ticker-track";
     track.style.removeProperty("--ticker-duration");
     track.innerHTML = segment;
     track.parentNode.scrollLeft = 0;
-    bindScoreTickerScrub(track.parentNode);
     stopScoreTickerAuto();
 
     function maybeScrollTicker() {
@@ -1075,6 +1172,7 @@
     loadJson("schedule.json")
       .then(function (schedule) {
         var completedGames = [];
+        var scheduledGames = [];
         var order = 0;
         var scheduleDates = [];
 
@@ -1090,16 +1188,18 @@
             var time = parseScheduleDate(day.date);
 
             (day.games || []).forEach(function (game) {
-              if (game.status !== "completed" || !(game.boxscoreUrl || game.boxscoreFile)) {
-                return;
-              }
-
-              completedGames.push({
+              var entry = {
                 game: game,
                 date: day.date,
                 time: time,
                 order: order
-              });
+              };
+
+              if (game.status === "completed" && (game.boxscoreUrl || game.boxscoreFile)) {
+                completedGames.push(entry);
+              } else if (game.status === "scheduled" && game.awayTeam && game.homeTeam) {
+                scheduledGames.push(entry);
+              }
               order += 1;
             });
           });
@@ -1108,8 +1208,18 @@
         completedGames.sort(function (a, b) {
           return b.time - a.time || b.order - a.order;
         });
+        scheduledGames.sort(function (a, b) {
+          return a.time - b.time || a.order - b.order;
+        });
 
         tickerCompletedGames = completedGames.map(function (entry) {
+          return Object.assign({}, entry.game, {
+            date: entry.date,
+            _tickerTime: entry.time,
+            _tickerOrder: entry.order
+          });
+        });
+        tickerScheduledGames = scheduledGames.map(function (entry) {
           return Object.assign({}, entry.game, {
             date: entry.date,
             _tickerTime: entry.time,
@@ -1120,6 +1230,7 @@
       })
       .catch(function () {
         tickerCompletedGames = [];
+        tickerScheduledGames = [];
         renderScoreTicker([]);
       });
   }
@@ -1142,6 +1253,7 @@
       { type: "Page", name: "Standings", meta: "Classic standings", href: "standings.htm", aliases: "table records clb elb ecl" },
       { type: "Page", name: "Unified Standings", meta: "Modern league table", href: getCorePath("unifiedStandings", "00-assets/html/unified-standings.htm"), aliases: "table records promotion relegation" },
       { type: "Page", name: "Schedule", meta: "Games and box scores", href: "schedule.htm", aliases: "fixtures games scores boxes results" },
+      { type: "Page", name: "Match Preview", meta: "Upcoming matchup comparisons", href: getCorePath("matchPreview", "00-assets/html/match-preview.htm"), aliases: "preview upcoming games matchup favorite edge" },
       { type: "Page", name: "League Leaders", meta: "Classic stat leaders", href: "leaders.htm", aliases: "stats points rebounds assists blocks steals" },
       { type: "Page", name: "Unified Leaders", meta: "Modern stat leaders", href: getCorePath("unifiedLeaders", "00-assets/html/unified-leaders.htm"), aliases: "stats player rankings points rebounds assists" },
       { type: "Page", name: "League Dashboard", meta: "League overview", href: getCorePath("leagueDashboard", "00-assets/html/league%20dashboard.htm"), aliases: "home overview dashboard hub" },

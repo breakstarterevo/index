@@ -693,6 +693,17 @@
       color: #111;
       line-height: 1;
     }
+    .mini-logo-preview-link {
+      display: inline-flex;
+      border-radius: 3px;
+      line-height: 0;
+      text-decoration: none;
+    }
+    .mini-logo-preview-link:hover,
+    .mini-logo-preview-link:focus-visible {
+      outline: 2px solid var(--team-color);
+      outline-offset: 1px;
+    }
     .legend {
       margin-top: 0.5rem;
       display: flex;
@@ -731,6 +742,16 @@
     .schedule-list-row:last-child { border-bottom: 0; }
     .schedule-list-row.home { background: #eaf5ff; }
     .schedule-list-row.away { background: #fff0f0; }
+    .schedule-list-row.preview-link {
+      color: inherit;
+      text-decoration: none;
+    }
+    .schedule-list-row.preview-link:hover,
+    .schedule-list-row.preview-link:focus-visible {
+      box-shadow: inset 4px 0 0 var(--team-color);
+      filter: brightness(0.98);
+      outline: 0;
+    }
     .schedule-list-date {
       font-size: 0.72rem;
       font-weight: 800;
@@ -1870,12 +1891,27 @@
       return boxHref ? `../../${boxHref}` : "";
     }
 
-    function scheduleOpponentLogo(oppName) {
+    function matchPreviewHref(game) {
+      if (!game || !game.date || !game.awayTeam || !game.homeTeam) return "";
+      const params = new URLSearchParams();
+      params.set("date", game.date);
+      params.set("away", game.awayTeam);
+      params.set("home", game.homeTeam);
+      return `./match-preview.htm?${params.toString()}`;
+    }
+
+    function scheduleOpponentLogo(oppName, gameHref, linkKind) {
       const logoFile = TEAM_LOGOS[oppName];
+      let logoHtml;
+      const isBoxScore = linkKind === "box";
       if (logoFile) {
-        return `<img class="mini-logo" src="../../00-assets/photos/${logoFile}" alt="${oppName}">`;
+        logoHtml = `<img class="mini-logo" src="../../00-assets/photos/${logoFile}" alt="${oppName}">`;
+      } else {
+        logoHtml = `<span class="mini-logo-fallback">${initials(oppName)}</span>`;
       }
-      return `<span class="mini-logo-fallback">${initials(oppName)}</span>`;
+      return gameHref
+        ? `<a class="mini-logo-preview-link" href="${gameHref}" title="${isBoxScore ? "Open box score against" : "Preview matchup against"} ${escapeHtml(oppName)}" aria-label="${isBoxScore ? "Open box score against" : "Preview matchup against"} ${escapeHtml(oppName)}">${logoHtml}</a>`
+        : logoHtml;
     }
 
     function syncScheduleViewControls() {
@@ -1899,9 +1935,12 @@
         const oppScore = isHome ? g.awayScore : g.homeScore;
         const boxHref = scheduleBoxHref(g);
         const dateText = g.dateObj.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
-        const resultText = isCompleted ? `${g.winner === teamId ? "W" : "L"} ${myScore}-${oppScore}` : "TBD";
+        const previewHref = isCompleted ? "" : matchPreviewHref(g);
+        const resultText = isCompleted ? `${g.winner === teamId ? "W" : "L"} ${myScore}-${oppScore}` : "Preview";
         const resultHtml = boxHref && isCompleted ? `<a href="${boxHref}">${resultText}</a>` : resultText;
-        return `<div class="schedule-list-row ${isHome ? "home" : "away"}"><div class="schedule-list-date">${dateText}</div><div class="schedule-list-ha">${isHome ? "Home" : "Away"}</div><div class="schedule-list-opponent">${scheduleOpponentLogo(oppName)}<span>${oppName}</span></div><div class="schedule-list-result">${resultHtml}</div></div>`;
+        const tag = previewHref ? "a" : "div";
+        const href = previewHref ? ` href="${previewHref}"` : "";
+        return `<${tag} class="schedule-list-row ${isHome ? "home" : "away"}${previewHref ? " preview-link" : ""}"${href}><div class="schedule-list-date">${dateText}</div><div class="schedule-list-ha">${isHome ? "Home" : "Away"}</div><div class="schedule-list-opponent">${scheduleOpponentLogo(oppName)}<span>${oppName}</span></div><div class="schedule-list-result">${resultHtml}</div></${tag}>`;
       });
       document.getElementById("scheduleList").innerHTML = rows.join("");
     }
@@ -2004,8 +2043,9 @@
         }
         const logosHtml = dayGames.slice(0, 2).map((g) => {
           const isHome = g.homeTeam === teamId;
+          const isCompleted = Number.isFinite(Number(g.homeScore)) && Number.isFinite(Number(g.awayScore));
           const oppName = isHome ? g.awayTeamName : g.homeTeamName;
-          return scheduleOpponentLogo(oppName);
+          return scheduleOpponentLogo(oppName, isCompleted ? scheduleBoxHref(g) : matchPreviewHref(g), isCompleted ? "box" : "preview");
         }).join("");
         cells.push(`<div class="day-cell ${inMonth ? "" : "out"}"><div class="day-num ${numClass}">${numText}</div><div class="mini-logo-row">${logosHtml}</div></div>`);
       }

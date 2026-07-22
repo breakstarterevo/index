@@ -4,7 +4,7 @@
   var PLAYERS_PATH = "../../00-build/database/players.json";
   var TEAMS_PATH = "../../00-build/database/teams.json";
   var INJURIES_PATH = "../../00-build/database/injuries.json";
-  var TRACKER_CSV = "https://docs.google.com/spreadsheets/d/1ZCa_G7E9h6Z7Yf6gdFCBL9Aj4nhi92Um2rxb0rgDYew/gviz/tq?tqx=out:csv";
+  var CAMP_TRACKER_PATH = "../../00-build/database/camp_tracker.json";
   var STORAGE_KEY = "esl-camps-planner:v1";
   var SETTINGS_KEY = "leagueSiteSettings";
 
@@ -254,143 +254,26 @@
     link.setAttribute("aria-label", team && team.name ? "Open " + team.name + " team page" : "Open selected team page");
   }
 
-  function parseCsv(text) {
-    var rows = [];
-    var row = [];
-    var value = "";
-    var inQuotes = false;
-    var index;
-    var character;
-    var next;
-
-    for (index = 0; index < String(text || "").length; index += 1) {
-      character = text[index];
-      next = text[index + 1];
-
-      if (inQuotes) {
-        if (character === '"' && next === '"') {
-          value += '"';
-          index += 1;
-        } else if (character === '"') {
-          inQuotes = false;
-        } else {
-          value += character;
-        }
-      } else if (character === '"') {
-        inQuotes = true;
-      } else if (character === ",") {
-        row.push(value);
-        value = "";
-      } else if (character === "\n") {
-        row.push(value);
-        rows.push(row);
-        row = [];
-        value = "";
-      } else if (character !== "\r") {
-        value += character;
-      }
-    }
-
-    if (value || row.length) {
-      row.push(value);
-      rows.push(row);
-    }
-
-    return rows;
-  }
-
   function loadTracker() {
-    return fetch(TRACKER_CSV, { cache: "no-store" })
-      .then(function (response) {
-        if (!response.ok) throw new Error("Career tracker could not be loaded.");
-        return response.text();
-      })
-      .then(function (text) {
-        var rows = parseCsv(text);
-        var headers = rows.shift() || [];
-        var nameIndex = headers.findIndex(function (header) { return clean(header).toLowerCase() === "name"; });
-        var regularIndex = headers.findIndex(function (header) { return clean(header).toLowerCase() === "reg camp"; });
-        var rehabIndex = headers.findIndex(function (header) { return clean(header).toLowerCase() === "rehab camp"; });
-
-        if (nameIndex < 0) throw new Error("Career tracker is missing a Name column.");
-
-        rows.forEach(function (row) {
-          var name = clean(row[nameIndex]);
+    return loadJson(CAMP_TRACKER_PATH)
+      .then(function (payload) {
+        var players = payload && payload.players && typeof payload.players === "object" ? payload.players : {};
+        Object.keys(players).forEach(function (playerId) {
+          var record = players[playerId] || {};
+          var name = clean(record.name || record.sourceName);
           if (!name) return;
-          state.tracker.set(normalizeName(name), {
+          state.tracker.set(String(record.playerId || playerId), {
             name: name,
-            regular: regularIndex >= 0 ? numberValue(row[regularIndex]) : 0,
-            rehab: rehabIndex >= 0 ? numberValue(row[rehabIndex]) : 0
+            playerId: playerId,
+            regular: numberValue(record.regular),
+            rehab: numberValue(record.rehab)
           });
         });
         state.trackerLoaded = true;
       })
       .catch(function (error) {
-        return loadTrackerJsonp().catch(function () {
-          state.trackerError = error && error.message ? error.message : "Career tracker could not be loaded.";
-        });
+        state.trackerError = error && error.message ? error.message : "Built career tracker could not be loaded.";
       });
-  }
-
-  function loadTrackerJsonp() {
-    return new Promise(function (resolve, reject) {
-      var callbackName = "__campTrackerJsonp" + Date.now() + Math.floor(Math.random() * 10000);
-      var script = document.createElement("script");
-      var url = TRACKER_CSV.replace("tqx=out:csv", "tqx=responseHandler:" + callbackName);
-
-      window[callbackName] = function (payload) {
-        try {
-          parseTrackerTable(payload && payload.table);
-          state.trackerLoaded = true;
-          cleanup();
-          resolve();
-        } catch (error) {
-          cleanup();
-          reject(error);
-        }
-      };
-
-      function cleanup() {
-        delete window[callbackName];
-        script.remove();
-      }
-
-      script.src = url;
-      script.async = true;
-      script.addEventListener("error", function () {
-        cleanup();
-        reject(new Error("Career tracker JSONP load failed."));
-      });
-      document.head.appendChild(script);
-    });
-  }
-
-  function cellValue(cell) {
-    if (!cell) return "";
-    if (cell.v != null) return cell.v;
-    if (cell.f != null) return cell.f;
-    return "";
-  }
-
-  function parseTrackerTable(table) {
-    var columns = table && Array.isArray(table.cols) ? table.cols : [];
-    var rows = table && Array.isArray(table.rows) ? table.rows : [];
-    var nameIndex = columns.findIndex(function (column) { return clean(column.label).toLowerCase() === "name"; });
-    var regularIndex = columns.findIndex(function (column) { return clean(column.label).toLowerCase() === "reg camp"; });
-    var rehabIndex = columns.findIndex(function (column) { return clean(column.label).toLowerCase() === "rehab camp"; });
-
-    if (nameIndex < 0) throw new Error("Career tracker is missing a Name column.");
-
-    rows.forEach(function (row) {
-      var cells = row && Array.isArray(row.c) ? row.c : [];
-      var name = clean(cellValue(cells[nameIndex]));
-      if (!name) return;
-      state.tracker.set(normalizeName(name), {
-        name: name,
-        regular: regularIndex >= 0 ? numberValue(cellValue(cells[regularIndex])) : 0,
-        rehab: rehabIndex >= 0 ? numberValue(cellValue(cells[rehabIndex])) : 0
-      });
-    });
   }
 
   function teamPlayers() {
@@ -418,7 +301,7 @@
   }
 
   function trackerFor(player) {
-    return state.tracker.get(normalizeName(player && player.name)) || { regular: 0, rehab: 0 };
+    return state.tracker.get(playerKey(player)) || { regular: 0, rehab: 0 };
   }
 
   function isPlayerInjured(player) {
@@ -751,7 +634,13 @@
   function renderPlayerPicker() {
     var players = teamPlayers();
     byId("playerSelect").innerHTML = players.map(function (player, index) {
-      var meta = [player.pos, player.age ? "Age " + player.age : "", player.overall ? "OVR " + player.overall : ""].filter(Boolean).join(" | ");
+      var campsUsed = trackerFor(player).regular;
+      var meta = [
+        player.pos,
+        player.age ? "Age " + player.age : "",
+        player.overall ? "OVR " + player.overall : "",
+        "CAMP " + campsUsed + "/" + REGULAR_CAREER_LIMIT
+      ].filter(Boolean).join(" | ");
       return option(playerKey(player), player.name + (meta ? " - " + meta : ""), index === 0);
     }).join("");
     byId("formStatus").textContent = players.length ? players.length + " roster players" : "No players found";

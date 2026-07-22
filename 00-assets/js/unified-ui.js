@@ -44,6 +44,17 @@
     "Free Agents": "FA", "Draft": "DRF"
   };
 
+  var TEAM_COLORS = {
+    "AC Milan": "#B50909", "AFC Richmond": "#021E73", "Ajax": "#D2122E",
+    "Aston Villa": "#670E36", "Atletico Madrid": "#CB3524", "Barcelona": "#A60042",
+    "Bayern Munich": "#DC052D", "Benfica": "#E41E26", "Brighton": "#0057B8",
+    "Chelsea": "#034694", "Crystal Palace": "#1B458F", "FL Fart": "#D72B2B",
+    "Inter Milan": "#0055A0", "Juventus": "#000000", "Manchester City": "#6CABDD",
+    "Manchester United": "#D9020D", "Marseille": "#099FFF", "Monaco": "#CE1126",
+    "Paris Saint-Germain": "#00093F", "Real Madrid": "#004996", "Sheffield United": "#000000",
+    "Sporting CP": "#008056", "Tottenham Hotspur": "#132257", "Valencia": "#F57710"
+  };
+
   function teamAbbreviation(value) {
     var name = String(value || "").trim();
     if (!name) { return "---"; }
@@ -52,6 +63,10 @@
     return name.split(/\s+/).filter(Boolean).map(function (part) {
       return part.charAt(0);
     }).join("").slice(0, 3).toUpperCase() || "---";
+  }
+
+  function teamColor(value, fallback) {
+    return TEAM_COLORS[String(value || "").trim()] || fallback || "#111b36";
   }
 
   function setTeamColor(primary, secondary) {
@@ -66,6 +81,7 @@
     tierBadge: tierBadge,
     statusBadge: statusBadge,
     teamAbbreviation: teamAbbreviation,
+    teamColor: teamColor,
     setTeamColor: setTeamColor
   });
 }());

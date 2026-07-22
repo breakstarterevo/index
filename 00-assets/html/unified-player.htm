@@ -347,6 +347,37 @@
       border-color: var(--team-color);
       background: color-mix(in srgb, var(--team-color) 15%, #fff);
     }
+    .regular-camp-chip {
+      border-color: #d49a24;
+      background: #fff8e5;
+      color: #75500a;
+      cursor: help;
+      letter-spacing: 0.015em;
+      min-height: 20px;
+      padding: 0.1rem 0.3rem;
+      font-size: 0.65rem;
+    }
+    .regular-camp-chip--missing,
+    .regular-camp-chip--invalid {
+      border-style: dashed;
+      background: #fffaf0;
+      color: #8a5b00;
+    }
+    .regular-camp-chip--tracked {
+      border-color: var(--line);
+      background: var(--soft);
+      color: var(--ink);
+    }
+    .regular-camp-chip--max {
+      border-color: #b42318;
+      background: #fff1f0;
+      color: #9f1d14;
+    }
+    .regular-camp-warning {
+      margin-left: 0.22rem;
+      font-size: 0.68rem;
+      line-height: 1;
+    }
     .injury-chip {
       background: #fff1f0;
       border-color: #ffc9c4;
@@ -1238,7 +1269,6 @@
       <div class="header-side">
         <nav class="nav-actions player-header-actions" aria-label="Player navigation">
           <button class="btn-link ui-button" id="copyPlayerLink" type="button">Copy Player Link</button>
-          <button class="btn-link ui-button" id="copyTeamLink" type="button" hidden>Copy Team Link</button>
           <a class="btn-link ui-button" id="compareLink" href="./player-compare.htm">Compare</a>
         </nav>
         <div class="header-statline" id="headerStatline"></div>
@@ -1340,7 +1370,9 @@
       standings: "../../00-build/database/standings.json",
       playerHistory: "../../00-build/history/player_index.json",
       playerPhotos: "../../00-build/database/player_photos.json",
-      youthIntake: "../../00-build/database/youth_intake.json"
+      youthIntake: "../../00-build/database/youth_intake.json",
+      campTracker: "../../00-build/database/camp_tracker.json",
+      regularCampOverrides: "../data/regular-camp-overrides.json"
     };
     const PLAYER_VIEWPORT = "width=device-width, initial-scale=1.0";
     let parentViewportMeta = null;
@@ -1421,6 +1453,8 @@
       playerHistory: null,
       playerPhotos: {},
       youthIntake: [],
+      campTracker: { careerLimits: { regular: 3 }, players: {}, issues: [] },
+      regularCampOverrides: { careerLimit: 3, byPlayerId: {}, byName: {} },
       teamDirectory: [],
       current: null,
       currentStats: null,
@@ -1472,6 +1506,52 @@
       const sourceId = String(state.playerPhotos?.[playerId]?.sourceId || "").toLowerCase();
       if (!/^[a-z]{5,8}\d{2}$/.test(sourceId)) return "";
       return `https://www.basketball-reference.com/players/${sourceId[0]}/${sourceId}.html`;
+    }
+
+    function regularCampChip(player) {
+      const overrides = state.regularCampOverrides || {};
+      const tracker = state.campTracker || {};
+      const configuredLimit = Number(overrides.careerLimit || tracker.careerLimits?.regular);
+      const limit = Number.isInteger(configuredLimit) && configuredLimit > 0 ? configuredLimit : 3;
+      const playerId = clean(player?.playerId) || playerIdFromUrl(player?.url);
+      const byPlayerId = overrides.byPlayerId && typeof overrides.byPlayerId === "object" ? overrides.byPlayerId : {};
+      const byName = overrides.byName && typeof overrides.byName === "object" ? overrides.byName : {};
+      let record = playerId ? byPlayerId[playerId] : undefined;
+      let sourceType = record === undefined ? "" : "manual";
+
+      if (record === undefined) {
+        const nameKey = normalizeName(player?.name);
+        const matchingName = Object.keys(byName).find((name) => normalizeName(name) === nameKey);
+        if (matchingName) {
+          record = byName[matchingName];
+          sourceType = "manual";
+        }
+      }
+
+      if (record === undefined && playerId && tracker.players && typeof tracker.players === "object") {
+        record = tracker.players[playerId];
+        if (record !== undefined) sourceType = "tracker";
+      }
+
+      if (record === undefined) {
+        return `<span class="info-chip regular-camp-chip regular-camp-chip--tracked" title="Career Regular Camps used: 0 of ${limit}. Players without a camp record automatically count as 0 used.">CAMP 0/${limit}</span>`;
+      }
+
+      const rawValue = record && typeof record === "object" ? record.regular : record;
+      const value = Number(rawValue);
+      if (!Number.isInteger(value) || value < 0 || value > limit) {
+        return `<span class="info-chip regular-camp-chip regular-camp-chip--invalid" title="This player's manual Regular Camp override is invalid. Enter a whole number from 0 to ${limit}.">CAMP !/${limit}<span class="regular-camp-warning" aria-hidden="true">&#9888;</span></span>`;
+      }
+
+      const note = record && typeof record === "object" && record.note ? ` ${clean(record.note)}` : "";
+      const maxed = value >= limit;
+      const label = `CAMP ${value}/${limit}`;
+      const isManual = sourceType === "manual";
+      const maxNote = maxed ? " Career maximum reached." : "";
+      const title = isManual
+        ? `Manual career Regular Camp override: ${value} of ${limit} used.${maxNote}${note} Verify this count before assigning another camp.`
+        : `Career Regular Camps used: ${value} of ${limit}.${maxNote} Matched to this player during the site build.`;
+      return `<span class="info-chip regular-camp-chip${sourceType === "tracker" ? " regular-camp-chip--tracked" : ""}${maxed ? " regular-camp-chip--max" : ""}" title="${escapeHtml(title)}">${label}${isManual ? '<span class="regular-camp-warning" aria-hidden="true">&#9888;</span>' : ""}</span>`;
     }
 
     function normalizeIdentityName(value) {
@@ -2211,6 +2291,7 @@
         p.potential ? (window.ESLUnifiedUI ? ESLUnifiedUI.ratingBadge(p.potential, `POT ${p.potential}`) : `<span class="rating-chip primary ${ratingTierClass(p.potential)}">POT ${p.potential}</span>`) : "",
         intakeAssignment ? `<a class="info-chip intake-team-chip" href="${intakeHref}" title="View ${escapeHtml(intakeAssignment.team)} youth intake">INTAKE · ${escapeHtml(intakeAssignment.team)}</a>` : "",
         p.currentSalaryText ? `<span class="info-chip">${p.currentSalaryText}</span>` : "",
+        regularCampChip(p),
         injury ? `<span class="info-chip injury-chip">${injury.injury} | ${injury.length}d</span>` : ""
       ].filter(Boolean).join("");
       renderHeroAwards();
@@ -2231,11 +2312,6 @@
       const copyPlayerLink = document.getElementById("copyPlayerLink");
       if (copyPlayerLink) {
         copyPlayerLink.onclick = () => copyText(window.location.href, copyPlayerLink);
-      }
-      const copyTeamLink = document.getElementById("copyTeamLink");
-      if (copyTeamLink) {
-        copyTeamLink.hidden = !team;
-        copyTeamLink.onclick = () => copyText(absoluteHref(teamHref), copyTeamLink);
       }
       const crumbTeamLink = document.getElementById("crumbTeamLink");
       const crumbPlayerName = document.getElementById("crumbPlayerName");
@@ -2990,6 +3066,24 @@
         } catch (error) {
           youthIntakeData = { teams: [] };
         }
+        let regularCampOverridesData = { careerLimit: 3, byPlayerId: {}, byName: {} };
+        try {
+          const regularCampOverridesRes = await fetch(`${DATA_URLS.regularCampOverrides}?v=${Date.now()}`, { cache: "no-store" });
+          if (regularCampOverridesRes.ok) {
+            regularCampOverridesData = await regularCampOverridesRes.json();
+          }
+        } catch (error) {
+          regularCampOverridesData = { careerLimit: 3, byPlayerId: {}, byName: {} };
+        }
+        let campTrackerData = { careerLimits: { regular: 3 }, players: {}, issues: [] };
+        try {
+          const campTrackerRes = await fetch(`${DATA_URLS.campTracker}?v=${Date.now()}`, { cache: "no-store" });
+          if (campTrackerRes.ok) {
+            campTrackerData = await campTrackerRes.json();
+          }
+        } catch (error) {
+          campTrackerData = { careerLimits: { regular: 3 }, players: {}, issues: [] };
+        }
         state.players = Array.isArray(playersData) ? playersData : [];
         state.playerStats = Array.isArray(playerStatsData.players) ? playerStatsData.players : [];
         state.playerGamelogs = Array.isArray(playerGamelogsData.players) ? playerGamelogsData.players : [];
@@ -2998,6 +3092,12 @@
         state.playerHistory = playerHistoryData;
         state.playerPhotos = playerPhotosData?.players || {};
         state.youthIntake = Array.isArray(youthIntakeData.teams) ? youthIntakeData.teams : [];
+        state.campTracker = campTrackerData && typeof campTrackerData === "object"
+          ? campTrackerData
+          : { careerLimits: { regular: 3 }, players: {}, issues: [] };
+        state.regularCampOverrides = regularCampOverridesData && typeof regularCampOverridesData === "object"
+          ? regularCampOverridesData
+          : { careerLimit: 3, byPlayerId: {}, byName: {} };
         state.teamDirectory = window.UnifiedRosterDataService.buildTeamDirectory(state.standings);
         state.current = findCurrentPlayer();
         if (!state.current) throw new Error("No player found");
