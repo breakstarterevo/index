@@ -248,6 +248,82 @@
     return healthy.reduce(function (sum, player) { return sum + numberValue(player.overall); }, 0) / healthy.length;
   }
 
+  function daysUntilGame(game) {
+    var latestCompleted = state.allGames.filter(function (candidate) {
+      return candidate.status === "completed" && candidate.time;
+    }).reduce(function (latest, candidate) {
+      return Math.max(latest, candidate.time);
+    }, 0);
+    return latestCompleted && game.time ? Math.max(0, Math.ceil((game.time - latestCompleted) / 86400000)) : 0;
+  }
+
+  function isInjuredForGame(player, teamId, game) {
+    var daysAhead = daysUntilGame(game);
+    return injuriesFor(teamId).some(function (injury) {
+      var remaining;
+      if (normalize(injury.name) !== normalize(player.name)) return false;
+      remaining = Number(injury.length);
+      return !Number.isFinite(remaining) || remaining > daysAhead;
+    });
+  }
+
+  function bbgmTeamOvr(teamId, game) {
+    var ratings = playersFor(teamId).filter(function (player) {
+      return !isInjuredForGame(player, teamId, game) && Number.isFinite(Number(player.overall));
+    }).sort(function (left, right) {
+      return numberValue(right.overall) - numberValue(left.overall);
+    }).slice(0, 10).map(function (player) {
+      return numberValue(player.overall) / 2;
+    });
+    var predictedMargin = -102.98;
+    var index;
+
+    if (!ratings.length) return null;
+    while (ratings.length < 10) ratings.push(0);
+    for (index = 0; index < 10; index += 1) {
+      predictedMargin += 0.3334 * Math.exp(-0.1609 * index) * ratings[index];
+    }
+    return Math.round((predictedMargin * 50) / 15 + 50);
+  }
+
+  function roundLine(value) {
+    return Math.max(0.5, Math.round(Math.abs(value) - 0.5) + 0.5);
+  }
+
+  function projectedLine(game) {
+    var awayOvr = bbgmTeamOvr(game.awayTeam, game);
+    var homeOvr = bbgmTeamOvr(game.homeTeam, game);
+    var awayDiff = Number(standingFor(game.awayTeam).diff);
+    var homeDiff = Number(standingFor(game.homeTeam).diff);
+    var hasPerformance = Number.isFinite(awayDiff) && Number.isFinite(homeDiff);
+    var homeAdvantage = game.neutralSite ? 0 : 3.3504;
+    var rosterMargin;
+    var performanceMargin;
+    var neutralMargin;
+    var homeMargin;
+    var favorite;
+    var spread;
+
+    if (awayOvr == null || homeOvr == null) return null;
+    rosterMargin = 0.3 * (homeOvr - awayOvr);
+    performanceMargin = hasPerformance ? homeDiff - awayDiff : null;
+    neutralMargin = hasPerformance ? 0.7 * rosterMargin + 0.3 * performanceMargin : rosterMargin;
+    homeMargin = neutralMargin + homeAdvantage;
+    favorite = homeMargin >= 0 ? "home" : "away";
+    spread = roundLine(homeMargin);
+    return {
+      label: teamAbbr(teamName(game, favorite)) + " -" + spread.toFixed(1),
+      favorite: favorite,
+      spread: spread,
+      awayOvr: awayOvr,
+      homeOvr: homeOvr,
+      awayDiff: awayDiff,
+      homeDiff: homeDiff,
+      hasPerformance: hasPerformance,
+      homeAdvantage: homeAdvantage
+    };
+  }
+
   function completedBefore(game, teamId) {
     var id = rosterId(teamId);
     return state.allGames.filter(function (candidate) {
@@ -311,13 +387,6 @@
     return score;
   }
 
-  function edgeDetails(game, score) {
-    var difference = Math.abs(score.away - score.home);
-    var side = score.away === score.home ? "tie" : (score.away > score.home ? "away" : "home");
-    var label = difference === 0 ? "Toss-up" : (difference === 1 ? "Slight Edge" : (difference === 2 ? "Moderate Edge" : "Strong Edge"));
-    return { side: side, label: label, team: side === "tie" ? "" : teamName(game, side) };
-  }
-
   function renderTeamHero(game, side) {
     var id = rosterId(game[side + "Team"]);
     var name = teamName(game, side);
@@ -332,9 +401,9 @@
       '<div class="preview-team-meta">' + esc([standing.league, standing.streak, Number.isFinite(Number(standing.diff)) ? "Diff " + (Number(standing.diff) > 0 ? "+" : "") + standing.diff : ""].filter(Boolean).join(" · ")) + "</div>";
   }
 
-  function renderHero(game, score) {
-    var edge = edgeDetails(game, score);
-    var edgeNode = byId("projectedEdge");
+  function renderHero(game) {
+    var line = projectedLine(game);
+    var lineNode = byId("projectedLine");
     var awayHero = byId("awayTeamHero");
     var homeHero = byId("homeTeamHero");
     var awayColor = teamColor(teamName(game, "away"), "#1d3666");
@@ -347,9 +416,8 @@
     homeHero.innerHTML = renderTeamHero(game, "home");
     byId("matchCompetition").textContent = (game.sectionTitle || "ESL") + " Match Preview";
     byId("matchDate").textContent = game.dateObj ? game.dateObj.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric", year: "numeric" }) : game.date;
-    edgeNode.className = "preview-edge" + (edge.side === "away" ? " is-away" : (edge.side === "home" ? " is-home" : ""));
-    edgeNode.textContent = edge.team ? edge.team + " · " + edge.label : edge.label;
-    byId("edgeScore").textContent = fmt(score.away, 1) + "–" + fmt(score.home, 1) + " category score";
+    lineNode.textContent = line ? line.label : "Unavailable";
+    lineNode.title = line ? "ESL model: 70% healthy-roster strength, 30% season point differential" : "Healthy roster ratings unavailable";
     document.title = teamName(game, "away") + " @ " + teamName(game, "home") + " - Match Preview";
   }
 
@@ -463,13 +531,12 @@
   function renderSelected(replaceUrl) {
     var game = state.upcoming[state.selectedIndex];
     var rows;
-    var score;
     if (!game) return;
     if (replaceUrl) syncUrl(game, true);
     rows = comparisonRows(game);
-    score = scoreComparisons(rows);
+    scoreComparisons(rows);
     renderPicker();
-    renderHero(game, score);
+    renderHero(game);
     renderComparison(game, rows);
     renderPlayers(game);
     renderForm(game);
