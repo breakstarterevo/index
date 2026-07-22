@@ -6,22 +6,22 @@
       "title": "CLB Standings",
       "teams": [
         {
-          "name": "Crystal Palace",
-          "wins": 0,
-          "losses": 0,
-          "streak": "-"
-        },
-        {
-          "name": "Bayern Munich",
-          "wins": 0,
-          "losses": 0,
-          "streak": "-"
+          "name": "AFC Richmond",
+          "wins": 7,
+          "losses": 1,
+          "streak": "W5"
         },
         {
           "name": "AC Milan",
-          "wins": 0,
-          "losses": 0,
-          "streak": "-"
+          "wins": 5,
+          "losses": 4,
+          "streak": "W1"
+        },
+        {
+          "name": "Brighton",
+          "wins": 5,
+          "losses": 4,
+          "streak": "W2"
         }
       ]
     },
@@ -29,22 +29,22 @@
       "title": "ELB Standings",
       "teams": [
         {
+          "name": "Paris Saint-Germain",
+          "wins": 6,
+          "losses": 1,
+          "streak": "W2"
+        },
+        {
           "name": "Real Madrid",
-          "wins": 0,
-          "losses": 0,
-          "streak": "-"
+          "wins": 5,
+          "losses": 2,
+          "streak": "L1"
         },
         {
-          "name": "Atletico Madrid",
-          "wins": 0,
-          "losses": 0,
-          "streak": "-"
-        },
-        {
-          "name": "Juventus",
-          "wins": 0,
-          "losses": 0,
-          "streak": "-"
+          "name": "Aston Villa",
+          "wins": 5,
+          "losses": 3,
+          "streak": "W3"
         }
       ]
     },
@@ -52,25 +52,56 @@
       "title": "ECL Standings",
       "teams": [
         {
-          "name": "Manchester United",
-          "wins": 0,
-          "losses": 0,
-          "streak": "-"
-        },
-        {
-          "name": "Monaco",
-          "wins": 0,
-          "losses": 0,
-          "streak": "-"
+          "name": "Barcelona",
+          "wins": 6,
+          "losses": 2,
+          "streak": "L1"
         },
         {
           "name": "Tottenham Hotspur",
-          "wins": 0,
-          "losses": 0,
-          "streak": "-"
+          "wins": 5,
+          "losses": 2,
+          "streak": "W2"
+        },
+        {
+          "name": "Manchester City",
+          "wins": 5,
+          "losses": 3,
+          "streak": "W1"
         }
       ]
     }
   ],
-  "leaders": []
+  "leaders": [
+    {
+      "category": "Minutes",
+      "player": "Rickey Green",
+      "team": "Chelsea",
+      "value": "41.1"
+    },
+    {
+      "category": "Points",
+      "player": "Kiki Vandeweghe",
+      "team": "Brighton",
+      "value": "38.2"
+    },
+    {
+      "category": "Rebounds",
+      "player": "Moses Malone",
+      "team": "Benfica",
+      "value": "12.0"
+    },
+    {
+      "category": "Assists",
+      "player": "Rickey Green",
+      "team": "Chelsea",
+      "value": "11.7"
+    },
+    {
+      "category": "Steals",
+      "player": "Rickey Green",
+      "team": "Chelsea",
+      "value": "3.8"
+    }
+  ]
 }

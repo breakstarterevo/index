@@ -1,4 +1,71 @@
 {
     "source": "injuries.htm",
-    "injuries": []
+    "injuries": [
+        {
+            "pos": "C",
+            "name": "Jalen Duren",
+            "url": "",
+            "team": "roster24",
+            "teamName": "Barcelona",
+            "rosterUrl": "./rosters/roster24.htm",
+            "length": "75",
+            "injury": "Broken Leg",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "C",
+            "name": "Moses Malone",
+            "url": "",
+            "team": "roster13",
+            "teamName": "Benfica",
+            "rosterUrl": "./rosters/roster13.htm",
+            "length": "9",
+            "injury": "Concussion",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "SG",
+            "name": "Coby White",
+            "url": "",
+            "team": "roster16",
+            "teamName": "Sheffield United",
+            "rosterUrl": "./rosters/roster16.htm",
+            "length": "5",
+            "injury": "Strained Back",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PF",
+            "name": "Cam Whitmore",
+            "url": "",
+            "team": "roster11",
+            "teamName": "Atletico Madrid",
+            "rosterUrl": "./rosters/roster11.htm",
+            "length": "5",
+            "injury": "Sprained Ankle",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "C",
+            "name": "Darryl Dawkins",
+            "url": "",
+            "team": "roster13",
+            "teamName": "Benfica",
+            "rosterUrl": "./rosters/roster13.htm",
+            "length": "2",
+            "injury": "Stiff Neck",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "C",
+            "name": "James Donaldson",
+            "url": "",
+            "team": "roster11",
+            "teamName": "Atletico Madrid",
+            "rosterUrl": "./rosters/roster11.htm",
+            "length": "1",
+            "injury": "Blurred Vision",
+            "rowClass": "row2"
+        }
+    ]
 }
