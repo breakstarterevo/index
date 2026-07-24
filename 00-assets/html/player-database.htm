@@ -11,7 +11,7 @@
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
   <script src="../js/unified-ui.js"></script>
-  <script src="../js/player-database.js" defer></script>
+  <script src="../js/player-database.js?v=potential-fa-2" defer></script>
   <style>
     :root {
       --db-navy: var(--ui-navy); --db-blue: var(--ui-blue); --db-ink: var(--ui-ink);
@@ -85,7 +85,7 @@
     <section class="db-panel ui-panel" aria-label="Player database">
       <div class="db-controls">
         <label class="db-field db-search ui-field"><span class="db-label ui-label">Player search</span><input class="db-input ui-input" id="playerSearch" type="search" autocomplete="off" placeholder="Search by player name"></label>
-        <label class="db-field ui-field"><span class="db-label ui-label">Status</span><select class="db-select ui-select" id="statusFilter"><option value="all">All statuses</option><option value="rostered">Rostered</option><option value="free_agent">Free agents</option></select></label>
+        <label class="db-field ui-field"><span class="db-label ui-label">Status</span><select class="db-select ui-select" id="statusFilter"><option value="all">All statuses</option><option value="rostered">Rostered</option><option value="free_agent">Free agents</option><option value="potential_fa">Potential FAs</option></select></label>
         <label class="db-field ui-field"><span class="db-label ui-label">Team</span><select class="db-select ui-select" id="teamFilter"><option value="all">All teams</option></select></label>
         <label class="db-field ui-field"><span class="db-label ui-label">Position</span><select class="db-select ui-select" id="positionFilter"><option value="all">All positions</option></select></label>
         <label class="db-field ui-field"><span class="db-label ui-label">Season</span><select class="db-select ui-select" id="seasonFilter"></select></label>

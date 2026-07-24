@@ -1,6 +1,10 @@
 (function () {
   "use strict";
 
+  var IS_MATCH_CENTRE = /\/match-centre\.htm$/i.test(window.location.pathname);
+  var START_PARAMS = new URLSearchParams(window.location.search);
+  if (IS_MATCH_CENTRE && START_PARAMS.get("game")) return;
+
   var DATA = {
     schedule: "../../00-build/database/schedule.json",
     standings: "../../00-build/database/standings.json",
@@ -24,6 +28,7 @@
   var state = {
     allGames: [],
     upcoming: [],
+    completed: [],
     selectedIndex: -1,
     dateOrder: "dmy",
     standings: new Map(),
@@ -32,7 +37,16 @@
     players: [],
     playerStats: new Map(),
     injuries: [],
-    photos: {}
+    photos: {},
+    favoriteTeamId: "",
+    comingMonth: "",
+    latestCompletedMonth: "",
+    landingFilters: {
+      team: "all",
+      competition: "all",
+      month: "",
+      resultsMonth: ""
+    }
   };
 
   function byId(id) { return document.getElementById(id); }
@@ -189,19 +203,39 @@
   }
 
   function gameKey(game) { return [game.date, rosterId(game.awayTeam), rosterId(game.homeTeam)].join("|").toLowerCase(); }
+  function boxGameId(game) {
+    var match = clean(game && (game.boxscoreFile || game.boxscoreUrl)).match(/box\d+-\d+/i);
+    return match ? match[0].toLowerCase() : "";
+  }
   function previewHref(game) {
     var params = new URLSearchParams();
     params.set("date", game.date || "");
     params.set("away", rosterId(game.awayTeam));
     params.set("home", rosterId(game.homeTeam));
-    return "./match-preview.htm?" + params.toString();
+    return "./match-centre.htm?" + params.toString();
+  }
+  function gameHref(game) {
+    var boxId = boxGameId(game);
+    return game && game.status === "completed" && boxId
+      ? "./match-centre.htm?game=" + encodeURIComponent(boxId)
+      : previewHref(game);
+  }
+
+  function routeRequest() {
+    var params = new URLSearchParams(window.location.search);
+    var date = params.get("date") || "";
+    var away = rosterId(params.get("away"));
+    var home = rosterId(params.get("home"));
+    var present = [date, away, home].filter(Boolean).length;
+    if (!present) return { mode: "landing", invalid: params.get("notice") === "unavailable" };
+    if (present < 3) return { mode: "landing", invalid: true };
+    return { mode: "detail", key: [date, away, home].join("|").toLowerCase() };
   }
 
   function resolveSelectedIndex() {
-    var params = new URLSearchParams(window.location.search);
-    var requested = [params.get("date") || "", rosterId(params.get("away")), rosterId(params.get("home"))].join("|").toLowerCase();
-    var index = state.upcoming.findIndex(function (game) { return gameKey(game) === requested; });
-    return index >= 0 ? index : 0;
+    var request = routeRequest();
+    if (request.mode !== "detail") return -1;
+    return state.upcoming.findIndex(function (game) { return gameKey(game) === request.key; });
   }
 
   function syncUrl(game, replace) {
@@ -218,7 +252,8 @@
   }
   function boxHref(game) {
     var href = clean(game.boxscoreUrl || (game.boxscoreFile ? "./boxes/" + game.boxscoreFile : "")).replace(/^\.\/+/, "");
-    return href ? "../../" + href : "";
+    var match = href.match(/box\d+-\d+/i);
+    return match ? "./match-centre.htm?game=" + encodeURIComponent(match[0].toLowerCase()) : (href ? "../../" + href : "");
   }
   function logoPath(name) { return "../../00-assets/photos/" + (TEAM_LOGOS[name] || normalize(name) + ".jpg"); }
 
@@ -324,6 +359,321 @@
     };
   }
 
+  function monthKey(game) {
+    if (!game || !game.dateObj) return "";
+    return game.dateObj.getFullYear() + "-" + String(game.dateObj.getMonth() + 1).padStart(2, "0");
+  }
+
+  function monthLabel(key) {
+    var match = String(key || "").match(/^(\d{4})-(\d{2})$/);
+    if (!match) return "All upcoming";
+    return new Date(Number(match[1]), Number(match[2]) - 1, 1)
+      .toLocaleDateString(undefined, { month: "long", year: "numeric" });
+  }
+
+  function formatGameDate(game, includeYear) {
+    if (!game || !game.dateObj) return clean(game && game.date);
+    return game.dateObj.toLocaleDateString(undefined, {
+      weekday: "short",
+      month: "short",
+      day: "numeric",
+      year: includeYear ? "numeric" : undefined
+    });
+  }
+
+  function teamRecord(teamId) {
+    var standing = standingFor(teamId);
+    return Number.isFinite(Number(standing.wins)) ? standing.wins + "-" + standing.losses : "—";
+  }
+
+  function favoriteTeamId() {
+    var settings = window.LeagueSiteCore && LeagueSiteCore.getSettings ? LeagueSiteCore.getSettings() : {};
+    var favorite = normalize(settings.favoriteTeam);
+    var found = "";
+    if (!favorite) return "";
+    state.teams.forEach(function (team, id) {
+      if (!found && normalize(team && team.name) === favorite) found = id;
+    });
+    if (found) return found;
+    state.upcoming.some(function (game) {
+      if (normalize(teamName(game, "away")) === favorite) found = rosterId(game.awayTeam);
+      if (normalize(teamName(game, "home")) === favorite) found = rosterId(game.homeTeam);
+      return Boolean(found);
+    });
+    return found;
+  }
+
+  function teamIsInGame(game, teamId) {
+    var id = rosterId(teamId);
+    return rosterId(game && game.awayTeam) === id || rosterId(game && game.homeTeam) === id;
+  }
+
+  function landingLogo(name, imageClass, fallbackClass) {
+    return '<img class="' + imageClass + '" src="' + esc(logoPath(name)) + '" alt="' + esc(name) + ' logo" onerror="this.hidden=true;this.nextElementSibling.hidden=false">' +
+      '<span class="' + fallbackClass + '" hidden>' + esc(initials(name)) + "</span>";
+  }
+
+  function renderFeaturedTeam(game, side) {
+    var id = rosterId(game[side + "Team"]);
+    var name = teamName(game, side);
+    return '<div class="preview-featured-team" style="--feature-color:' + esc(teamColor(name, "#111b36")) + '">' +
+      landingLogo(name, "preview-featured-logo", "preview-featured-logo-fallback") +
+      '<h3 class="preview-featured-name">' + esc(name) + '</h3>' +
+      '<div class="preview-featured-record">' + esc(teamRecord(id)) + "</div></div>";
+  }
+
+  function renderFeatured(game, isFavorite) {
+    var line;
+    if (!game) {
+      byId("featuredMatch").innerHTML = '<div class="ui-state preview-landing-empty">No upcoming scheduled games were found.</div>';
+      return;
+    }
+    line = projectedLine(game);
+    byId("featuredTitle").textContent = isFavorite ? "Your Next Match" : "Next Match";
+    byId("featuredNote").textContent = isFavorite ? "Favorite team" : "Earliest scheduled game";
+    byId("featuredMatch").innerHTML = '<article class="preview-featured">' +
+      renderFeaturedTeam(game, "away") +
+      '<div class="preview-featured-centre"><span class="preview-featured-competition">' + esc(game.sectionTitle || "ESL") + '</span>' +
+      '<time class="preview-featured-date">' + esc(formatGameDate(game, true)) + '</time>' +
+      '<span class="preview-featured-at" aria-hidden="true">@</span>' +
+      '<span class="preview-featured-line">' + esc(line ? line.label : "Line unavailable") + '</span>' +
+      '<a class="ui-button preview-featured-action" href="' + esc(previewHref(game)) + '">Open Full Preview</a></div>' +
+      renderFeaturedTeam(game, "home") + "</article>";
+  }
+
+  function renderLandingCard(game) {
+    var awayName = teamName(game, "away");
+    var homeName = teamName(game, "home");
+    var awayId = rosterId(game.awayTeam);
+    var homeId = rosterId(game.homeTeam);
+    var awayInjuries = injuriesFor(awayId).length;
+    var homeInjuries = injuriesFor(homeId).length;
+    var line = projectedLine(game);
+
+    function side(name, id, injuryCount) {
+      return '<span class="preview-card-team" style="--card-color:' + esc(teamColor(name, "#111b36")) + '">' +
+        landingLogo(name, "preview-card-logo", "preview-card-logo-fallback") +
+        '<span class="preview-card-abbr">' + esc(teamAbbr(name)) + '</span>' +
+        '<span class="preview-card-record">' + esc(teamRecord(id)) + '</span>' +
+        '<span class="preview-card-injuries' + (injuryCount ? " has-injuries" : "") + '">' + injuryCount + " OUT</span></span>";
+    }
+
+    return '<a class="preview-landing-card" href="' + esc(previewHref(game)) + '" aria-label="Preview ' + esc(awayName + " at " + homeName) + '">' +
+      side(awayName, awayId, awayInjuries) +
+      '<span class="preview-card-centre"><time class="preview-card-date">' + esc(formatGameDate(game, false)) + '</time>' +
+      '<span class="preview-card-at">@</span><span class="preview-card-line">' + esc(line ? line.label : "No line") + "</span></span>" +
+      side(homeName, homeId, homeInjuries) + "</a>";
+  }
+
+  function renderResultCard(game) {
+    var awayName = teamName(game, "away");
+    var homeName = teamName(game, "home");
+    var awayWinner = rosterId(game.winner) === rosterId(game.awayTeam);
+    var homeWinner = rosterId(game.winner) === rosterId(game.homeTeam);
+
+    function side(name, score, winner) {
+      return '<span class="match-centre-result-team' + (winner ? " is-winner" : "") +
+        '" style="--result-color:' + esc(teamColor(name, "#111b36")) + '">' +
+        landingLogo(name, "match-centre-result-logo", "match-centre-result-logo-fallback") +
+        '<span class="match-centre-result-name">' + esc(name) + '</span>' +
+        '<strong class="match-centre-result-score">' + esc(score == null ? "—" : score) + "</strong></span>";
+    }
+
+    return '<a class="match-centre-result-card" href="' + esc(gameHref(game)) +
+      '" aria-label="Open final score for ' + esc(awayName + " at " + homeName) + '">' +
+      side(awayName, game.awayScore, awayWinner) +
+      '<span class="match-centre-result-centre"><span class="match-centre-result-final">Final</span>' +
+      '<time class="match-centre-result-date">' + esc(formatGameDate(game, false)) + '</time>' +
+      '<span class="match-centre-result-competition">' + esc(game.sectionTitle || "ESL") + "</span></span>" +
+      side(homeName, game.homeScore, homeWinner) + "</a>";
+  }
+
+  function renderMyTeam() {
+    var panel = byId("myTeamPanel");
+    var games;
+    if (!state.favoriteTeamId) {
+      panel.hidden = true;
+      return;
+    }
+    games = state.upcoming.filter(function (game) { return teamIsInGame(game, state.favoriteTeamId); }).slice(0, 3);
+    if (!games.length) {
+      panel.hidden = true;
+      return;
+    }
+    panel.hidden = false;
+    byId("myTeamTitle").textContent = (state.teams.get(state.favoriteTeamId) || {}).name
+      ? (state.teams.get(state.favoriteTeamId).name + " Upcoming")
+      : "My Team Upcoming";
+    byId("myTeamGames").innerHTML = games.map(renderLandingCard).join("");
+  }
+
+  function populateLandingFilters() {
+    var teams = new Map();
+    var competitions = new Map();
+    var upcomingMonths = new Set();
+    var completedMonths = new Set();
+    state.allGames.forEach(function (game) {
+      teams.set(rosterId(game.awayTeam), teamName(game, "away"));
+      teams.set(rosterId(game.homeTeam), teamName(game, "home"));
+      competitions.set(game.sectionSlug || normalize(game.sectionTitle), game.sectionTitle || "ESL");
+      if (game.status === "completed") completedMonths.add(monthKey(game));
+      else upcomingMonths.add(monthKey(game));
+    });
+    byId("teamFilter").innerHTML = '<option value="all">All teams</option>' +
+      Array.from(teams.entries()).sort(function (a, b) { return a[1].localeCompare(b[1]); }).map(function (entry) {
+        return '<option value="' + esc(entry[0]) + '">' + esc(entry[1]) + "</option>";
+      }).join("");
+    byId("competitionFilter").innerHTML = '<option value="all">All competitions</option>' +
+      Array.from(competitions.entries()).map(function (entry) {
+        return '<option value="' + esc(entry[0]) + '">' + esc(entry[1]) + "</option>";
+      }).join("");
+    byId("monthFilter").innerHTML = '<option value="all">All upcoming</option>' +
+      Array.from(upcomingMonths).filter(Boolean).sort().map(function (key) {
+        return '<option value="' + esc(key) + '">' + esc(monthLabel(key)) + "</option>";
+      }).join("");
+    if (byId("resultsMonthFilter")) {
+      byId("resultsMonthFilter").innerHTML = '<option value="all">All results</option>' +
+        Array.from(completedMonths).filter(Boolean).sort().reverse().map(function (key) {
+          return '<option value="' + esc(key) + '">' + esc(monthLabel(key)) + "</option>";
+        }).join("");
+    }
+    state.landingFilters.team = state.favoriteTeamId || "all";
+    state.landingFilters.competition = "all";
+    state.landingFilters.month = state.comingMonth || "all";
+    state.landingFilters.resultsMonth = state.latestCompletedMonth || "all";
+    byId("teamFilter").value = state.landingFilters.team;
+    byId("competitionFilter").value = "all";
+    byId("monthFilter").value = state.landingFilters.month;
+    if (byId("resultsMonthFilter")) byId("resultsMonthFilter").value = state.landingFilters.resultsMonth;
+  }
+
+  function filteredLandingGames() {
+    return state.upcoming.filter(function (game) {
+      return (state.landingFilters.team === "all" || teamIsInGame(game, state.landingFilters.team)) &&
+        (state.landingFilters.competition === "all" || (game.sectionSlug || normalize(game.sectionTitle)) === state.landingFilters.competition) &&
+        (state.landingFilters.month === "all" || monthKey(game) === state.landingFilters.month);
+    });
+  }
+
+  function renderUpcomingGames() {
+    var games = filteredLandingGames();
+    var groups = new Map();
+    games.forEach(function (game) {
+      if (!groups.has(game.date)) groups.set(game.date, []);
+      groups.get(game.date).push(game);
+    });
+    byId("upcomingSummary").textContent = games.length + (games.length === 1 ? " game" : " games") +
+      (state.landingFilters.month === "all" ? " upcoming" : " in " + monthLabel(state.landingFilters.month));
+    byId("upcomingGames").innerHTML = games.length ? Array.from(groups.entries()).map(function (entry) {
+      var first = entry[1][0];
+      return '<section class="preview-date-group"><h3 class="preview-date-heading">' + esc(formatGameDate(first, true)) + '</h3>' +
+        '<div class="preview-match-grid">' + entry[1].map(renderLandingCard).join("") + "</div></section>";
+    }).join("") : '<div class="ui-state preview-landing-empty">No upcoming games match these filters.</div>';
+  }
+
+  function filteredResultGames() {
+    return state.completed.filter(function (game) {
+      return (state.landingFilters.team === "all" || teamIsInGame(game, state.landingFilters.team)) &&
+        (state.landingFilters.competition === "all" || (game.sectionSlug || normalize(game.sectionTitle)) === state.landingFilters.competition) &&
+        (state.landingFilters.resultsMonth === "all" || monthKey(game) === state.landingFilters.resultsMonth);
+    });
+  }
+
+  function renderRecentResults() {
+    var root = byId("recentResults");
+    var games;
+    if (!root) return;
+    games = filteredResultGames();
+    byId("resultsSummary").textContent = games.length + (games.length === 1 ? " final" : " finals") +
+      (state.landingFilters.resultsMonth === "all" ? "" : " in " + monthLabel(state.landingFilters.resultsMonth));
+    root.innerHTML = games.length
+      ? games.slice().reverse().map(renderResultCard).join("")
+      : '<div class="ui-state preview-landing-empty">No completed games match these filters.</div>';
+  }
+
+  function renderLandingLists() {
+    renderUpcomingGames();
+    renderRecentResults();
+    if (byId("filterSummary")) {
+      byId("filterSummary").textContent = state.landingFilters.team === "all"
+        ? "All teams"
+        : ((state.teams.get(state.landingFilters.team) || {}).name || "Favorite team");
+    }
+    if (byId("allTeamsFilter")) byId("allTeamsFilter").hidden = state.landingFilters.team === "all";
+    if (byId("favoriteFilter")) {
+      byId("favoriteFilter").hidden = !state.favoriteTeamId || state.landingFilters.team === state.favoriteTeamId;
+    }
+  }
+
+  function bindLandingEvents() {
+    byId("teamFilter").addEventListener("change", function () {
+      state.landingFilters.team = this.value;
+      renderLandingLists();
+    });
+    byId("competitionFilter").addEventListener("change", function () {
+      state.landingFilters.competition = this.value;
+      renderLandingLists();
+    });
+    byId("monthFilter").addEventListener("change", function () {
+      state.landingFilters.month = this.value;
+      renderLandingLists();
+    });
+    if (byId("resultsMonthFilter")) byId("resultsMonthFilter").addEventListener("change", function () {
+      state.landingFilters.resultsMonth = this.value;
+      renderLandingLists();
+    });
+    byId("resetFilters").addEventListener("click", function () {
+      state.landingFilters = {
+        team: state.favoriteTeamId || "all",
+        competition: "all",
+        month: state.comingMonth || "all",
+        resultsMonth: state.latestCompletedMonth || "all"
+      };
+      byId("teamFilter").value = state.landingFilters.team;
+      byId("competitionFilter").value = "all";
+      byId("monthFilter").value = state.landingFilters.month;
+      if (byId("resultsMonthFilter")) byId("resultsMonthFilter").value = state.landingFilters.resultsMonth;
+      renderLandingLists();
+    });
+    byId("favoriteFilter").addEventListener("click", function () {
+      if (!state.favoriteTeamId) return;
+      state.landingFilters.team = state.favoriteTeamId;
+      byId("teamFilter").value = state.favoriteTeamId;
+      renderLandingLists();
+    });
+    if (byId("allTeamsFilter")) byId("allTeamsFilter").addEventListener("click", function () {
+      state.landingFilters.team = "all";
+      byId("teamFilter").value = "all";
+      renderLandingLists();
+    });
+  }
+
+  function renderLanding(invalidRoute) {
+    var favoriteGames;
+    var featured;
+    var notice = byId("landingNotice");
+    if (byId("boxscoreView")) byId("boxscoreView").hidden = true;
+    byId("detailView").hidden = true;
+    byId("landingView").hidden = false;
+    document.title = IS_MATCH_CENTRE ? "Match Centre - ESL" : "Match Preview - ESL";
+    notice.hidden = !invalidRoute;
+    notice.textContent = invalidRoute ? "Matchup unavailable. Choose a game below." : "";
+    if (invalidRoute) window.history.replaceState({}, "", IS_MATCH_CENTRE ? "./match-centre.htm" : "./match-preview.htm");
+    state.favoriteTeamId = favoriteTeamId();
+    favoriteGames = state.favoriteTeamId
+      ? state.upcoming.filter(function (game) { return teamIsInGame(game, state.favoriteTeamId); })
+      : [];
+    featured = favoriteGames[0] || state.upcoming[0] || null;
+    renderFeatured(featured, Boolean(favoriteGames.length));
+    if (state.favoriteTeamId && !favoriteGames.length && featured) {
+      byId("featuredNote").textContent = "No remaining favorite-team games · league next";
+    }
+    if (!IS_MATCH_CENTRE) renderMyTeam();
+    populateLandingFilters();
+    renderLandingLists();
+    bindLandingEvents();
+  }
+
   function completedBefore(game, teamId) {
     var id = rosterId(teamId);
     return state.allGames.filter(function (candidate) {
@@ -418,7 +768,8 @@
     byId("matchDate").textContent = game.dateObj ? game.dateObj.toLocaleDateString(undefined, { weekday: "short", month: "short", day: "numeric", year: "numeric" }) : game.date;
     lineNode.textContent = line ? line.label : "Unavailable";
     lineNode.title = line ? "ESL model: 70% healthy-roster strength, 30% season point differential" : "Healthy roster ratings unavailable";
-    document.title = teamName(game, "away") + " @ " + teamName(game, "home") + " - Match Preview";
+    document.title = teamName(game, "away") + " @ " + teamName(game, "home") +
+      (IS_MATCH_CENTRE ? " - Match Centre" : " - Match Preview");
   }
 
   function renderComparison(game, rows) {
@@ -519,19 +870,27 @@
 
   function renderPicker() {
     var picker = byId("matchPicker");
+    var selectedGame = state.upcoming[state.selectedIndex];
+    var timelineIndex = selectedGame ? state.allGames.findIndex(function (game) {
+      return gameKey(game) === gameKey(selectedGame);
+    }) : -1;
     if (picker) {
       picker.innerHTML = state.upcoming.map(function (game, index) {
         return '<option value="' + index + '"' + (index === state.selectedIndex ? " selected" : "") + '>' + esc(game.date + " · " + teamName(game, "away") + " @ " + teamName(game, "home")) + "</option>";
       }).join("");
     }
-    byId("previousGame").disabled = state.selectedIndex <= 0;
-    byId("nextGame").disabled = state.selectedIndex < 0 || state.selectedIndex >= state.upcoming.length - 1;
+    byId("previousGame").disabled = timelineIndex <= 0;
+    byId("nextGame").disabled = timelineIndex < 0 || timelineIndex >= state.allGames.length - 1;
   }
 
   function renderSelected(replaceUrl) {
     var game = state.upcoming[state.selectedIndex];
     var rows;
     if (!game) return;
+    byId("landingView").hidden = true;
+    byId("detailView").hidden = false;
+    byId("matchHero").hidden = false;
+    byId("previewError").hidden = true;
     if (replaceUrl) syncUrl(game, true);
     rows = comparisonRows(game);
     scoreComparisons(rows);
@@ -551,18 +910,38 @@
     renderSelected(false);
   }
 
+  function navigateTimeline(delta) {
+    var selected = state.upcoming[state.selectedIndex];
+    var timelineIndex;
+    var target;
+    var upcomingIndex;
+    if (!selected) return;
+    timelineIndex = state.allGames.findIndex(function (game) { return gameKey(game) === gameKey(selected); });
+    target = state.allGames[timelineIndex + delta];
+    if (!target) return;
+    if (target.status === "completed") {
+      window.location.href = gameHref(target);
+      return;
+    }
+    upcomingIndex = state.upcoming.findIndex(function (game) { return gameKey(game) === gameKey(target); });
+    if (upcomingIndex >= 0) selectIndex(upcomingIndex, true);
+  }
+
   function bindEvents() {
     var picker = byId("matchPicker");
     if (picker) picker.addEventListener("change", function () { selectIndex(Number(picker.value), true); });
-    byId("previousGame").addEventListener("click", function () { selectIndex(state.selectedIndex - 1, true); });
-    byId("nextGame").addEventListener("click", function () { selectIndex(state.selectedIndex + 1, true); });
+    byId("previousGame").addEventListener("click", function () { navigateTimeline(-1); });
+    byId("nextGame").addEventListener("click", function () { navigateTimeline(1); });
     window.addEventListener("popstate", function () {
       state.selectedIndex = resolveSelectedIndex();
-      renderSelected(false);
+      if (state.selectedIndex >= 0) renderSelected(false);
+      else window.location.reload();
     });
   }
 
   function showError(message) {
+    byId("landingView").hidden = true;
+    byId("detailView").hidden = false;
     byId("previewError").hidden = false;
     byId("previewError").textContent = message;
     byId("comparisonBoard").innerHTML = '<div class="ui-state ui-state--error">' + esc(message) + "</div>";
@@ -571,10 +950,16 @@
     byId("nextGame").disabled = true;
   }
 
+  var initialRequest = routeRequest();
   Promise.all([
-    loadJson(DATA.schedule), loadJson(DATA.standings), loadJson(DATA.teamStats, { teams: [] }),
-    loadJson(DATA.teams, []), loadJson(DATA.players), loadJson(DATA.playerStats, { players: [] }),
-    loadJson(DATA.injuries, { injuries: [] }), loadJson(DATA.photos, { players: {} })
+    loadJson(DATA.schedule),
+    loadJson(DATA.standings),
+    initialRequest.mode === "detail" ? loadJson(DATA.teamStats, { teams: [] }) : Promise.resolve({ teams: [] }),
+    loadJson(DATA.teams, []),
+    loadJson(DATA.players),
+    initialRequest.mode === "detail" ? loadJson(DATA.playerStats, { players: [] }) : Promise.resolve({ players: [] }),
+    loadJson(DATA.injuries, { injuries: [] }),
+    initialRequest.mode === "detail" ? loadJson(DATA.photos, { players: {} }) : Promise.resolve({ players: {} })
   ]).then(function (results) {
     var data = { schedule: results[0], standings: results[1], teamStats: results[2], teams: results[3], players: results[4], playerStats: results[5], injuries: results[6], photos: results[7] };
     var dates = (data.schedule.sections || []).flatMap(function (section) { return (section.days || []).map(function (day) { return day.date; }); });
@@ -582,10 +967,33 @@
     buildLookups(data);
     state.allGames = flattenGames(data.schedule);
     state.upcoming = getUpcoming(state.allGames);
-    if (!state.upcoming.length) { showError("No upcoming scheduled games were found."); return; }
+    state.completed = state.allGames.filter(function (game) {
+      return game.status === "completed" && game.awayTeam && game.homeTeam;
+    });
+    state.comingMonth = state.upcoming.length ? monthKey(state.upcoming[0]) : "";
+    state.latestCompletedMonth = state.completed.length ? monthKey(state.completed[state.completed.length - 1]) : "";
+    if (initialRequest.mode !== "detail") {
+      renderLanding(initialRequest.invalid);
+      return;
+    }
+    if (IS_MATCH_CENTRE) {
+      var requestedGame = state.allGames.find(function (game) { return gameKey(game) === initialRequest.key; });
+      if (requestedGame && requestedGame.status === "completed") {
+        if (boxGameId(requestedGame)) {
+          window.location.replace(gameHref(requestedGame));
+          return;
+        }
+        renderLanding(true);
+        return;
+      }
+    }
     state.selectedIndex = resolveSelectedIndex();
+    if (state.selectedIndex < 0) {
+      renderLanding(true);
+      return;
+    }
     bindEvents();
-    renderSelected(true);
+    renderSelected(false);
   }).catch(function (error) {
     showError(error && error.message ? error.message : "Unable to load match preview data.");
   });

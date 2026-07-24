@@ -4,10 +4,234 @@
   --preview-gold: #c7952d;
 }
 
+html.league-theme-dark {
+  --ui-ink: #e8ebf2;
+  --ui-muted: #aeb6c5;
+  --ui-paper: #101521;
+  --ui-card: #182031;
+  --ui-line: #354057;
+  --ui-soft: #253049;
+}
+
 .preview-shell {
   max-width: 1420px;
   gap: .7rem;
 }
+
+.preview-landing,
+.preview-detail {
+  display: grid;
+  gap: .7rem;
+}
+.preview-landing[hidden],
+.preview-detail[hidden] { display: none; }
+
+.preview-route-notice { margin: 0; }
+
+.preview-landing-panel {
+  overflow: hidden;
+  border-top: 3px solid var(--ui-team);
+}
+.preview-landing-panel-head {
+  min-height: 42px;
+  padding: .6rem .72rem;
+}
+.preview-landing-panel-head > div:first-child { min-width: 0; }
+.preview-filter-actions { display: flex; gap: .35rem; }
+
+.preview-featured {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(180px, .55fr) minmax(0, 1fr);
+  min-height: 190px;
+}
+.preview-featured-team {
+  position: relative;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: .35rem;
+  min-width: 0;
+  padding: 1rem;
+  overflow: hidden;
+  background: var(--feature-color, #111b36);
+  color: #fff;
+  text-align: center;
+}
+.preview-featured-team:first-child {
+  background: var(--feature-color, #111b36);
+}
+.preview-featured-team:last-child {
+  background: var(--feature-color, #111b36);
+}
+.preview-featured-team::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(255,255,255,.1), transparent 48%);
+  pointer-events: none;
+}
+.preview-featured-logo,
+.preview-featured-logo-fallback {
+  position: relative;
+  z-index: 1;
+  width: 68px;
+  height: 68px;
+  object-fit: contain;
+}
+.preview-featured-logo-fallback {
+  display: grid;
+  place-items: center;
+  border: 1px solid currentColor;
+  background: rgba(255,255,255,.12);
+  font-weight: 950;
+}
+.preview-featured-name {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  color: inherit;
+  font-size: clamp(1.1rem, 2vw, 1.7rem);
+  font-weight: 950;
+  line-height: 1;
+}
+.preview-featured-record {
+  position: relative;
+  z-index: 1;
+  color: rgba(255,255,255,.78);
+  font-size: .7rem;
+  font-weight: 850;
+}
+.preview-featured-centre {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: .38rem;
+  min-width: 0;
+  padding: .85rem;
+  background: var(--ui-card);
+  text-align: center;
+}
+.preview-featured-competition,
+.preview-featured-date {
+  color: var(--ui-muted);
+  font-size: .61rem;
+  font-weight: 900;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+.preview-featured-at {
+  color: var(--preview-gold);
+  font-family: Georgia, serif;
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: .8;
+}
+.preview-featured-line {
+  border: 1px solid var(--ui-team);
+  background: var(--ui-team);
+  color: #fff;
+  padding: .3rem .5rem;
+  font-size: .85rem;
+  font-weight: 950;
+}
+.preview-featured-action { margin-top: .1rem; text-decoration: none; }
+
+.preview-my-team-games {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .5rem;
+  padding: .68rem;
+}
+.preview-filters {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: .55rem;
+  padding: .68rem;
+  border-bottom: 1px solid var(--ui-line);
+  background: var(--ui-soft);
+}
+.preview-upcoming-groups {
+  display: grid;
+  gap: .75rem;
+  padding: .68rem;
+}
+.preview-date-group { display: grid; gap: .4rem; }
+.preview-date-heading {
+  margin: 0;
+  border-bottom: 1px solid var(--ui-line);
+  padding: 0 0 .3rem;
+  color: var(--ui-muted);
+  font-size: .63rem;
+  font-weight: 950;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+.preview-match-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: .5rem;
+}
+.preview-landing-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 78px minmax(0, 1fr);
+  min-width: 0;
+  min-height: 96px;
+  border: 1px solid var(--ui-line);
+  background: var(--ui-card);
+  color: var(--ui-ink);
+  text-decoration: none;
+  transition: border-color .15s ease, transform .15s ease;
+}
+.preview-landing-card:hover {
+  border-color: var(--ui-team);
+  transform: translateY(-1px);
+}
+.preview-landing-card:focus-visible {
+  outline: 2px solid var(--ui-team);
+  outline-offset: 2px;
+}
+.preview-card-team {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: .2rem;
+  min-width: 0;
+  border-top: 4px solid var(--card-color, #111b36);
+  padding: .42rem .25rem;
+  text-align: center;
+}
+.preview-card-logo,
+.preview-card-logo-fallback {
+  width: 34px;
+  height: 34px;
+  object-fit: contain;
+}
+.preview-card-logo-fallback {
+  display: grid;
+  place-items: center;
+  background: var(--ui-soft);
+  color: var(--card-color, var(--ui-team));
+  font-size: .62rem;
+  font-weight: 950;
+}
+.preview-card-abbr { font-size: .78rem; font-weight: 950; }
+.preview-card-record,
+.preview-card-injuries { color: var(--ui-muted); font-size: .53rem; font-weight: 800; }
+.preview-card-injuries.has-injuries { color: var(--ui-bad); }
+.preview-card-centre {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: .18rem;
+  border-right: 1px solid var(--ui-line);
+  border-left: 1px solid var(--ui-line);
+  padding: .35rem .2rem;
+  text-align: center;
+}
+.preview-card-date { color: var(--ui-muted); font-size: .54rem; font-weight: 850; }
+.preview-card-at { color: var(--preview-gold); font-family: Georgia, serif; font-size: 1rem; font-weight: 900; }
+.preview-card-line { color: var(--ui-team); font-size: .62rem; font-weight: 950; }
+.preview-landing-empty { padding: 1.25rem; text-align: center; }
 
 .preview-hero {
   display: grid;
@@ -49,11 +273,11 @@
 
 .preview-team--away {
   --preview-team-color: var(--preview-away);
-  background: linear-gradient(90deg, var(--preview-team-color, #111b36), #06080f);
+  background: var(--preview-team-color, #111b36);
 }
 .preview-team--home {
   --preview-team-color: var(--preview-home);
-  background: linear-gradient(90deg, #06080f, var(--preview-team-color, #111b36));
+  background: var(--preview-team-color, #111b36);
 }
 .preview-team::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(135deg, rgba(255,255,255,.08), transparent 48%); }
 
@@ -173,6 +397,8 @@
 .preview-empty { color: var(--ui-muted); font-size: .7rem; }
 
 @media (max-width: 900px) {
+  .preview-match-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .preview-my-team-games { grid-template-columns: 1fr; }
   .preview-player-grid { grid-template-columns: 1fr; }
   .preview-player-top { grid-template-columns: 52px minmax(0, 1fr); }
   .preview-player-photo,
@@ -180,6 +406,18 @@
 }
 
 @media (max-width: 680px) {
+  .preview-featured { grid-template-columns: 1fr 92px 1fr; min-height: 170px; }
+  .preview-featured-team { padding: .65rem .25rem; }
+  .preview-featured-logo,
+  .preview-featured-logo-fallback { width: 48px; height: 48px; }
+  .preview-featured-name { font-size: .92rem; }
+  .preview-featured-centre { padding: .55rem .2rem; }
+  .preview-featured-competition { display: none; }
+  .preview-featured-date { font-size: .52rem; }
+  .preview-featured-line { padding: .25rem .3rem; font-size: .68rem; }
+  .preview-featured-action { padding-right: .28rem; padding-left: .28rem; font-size: .6rem; }
+  .preview-filters { grid-template-columns: 1fr; }
+  .preview-match-grid { grid-template-columns: 1fr; }
   .preview-hero { grid-template-columns: 32px 1fr 86px 1fr 32px; min-height: 190px; }
   .preview-match-arrow { font-size: .9rem; }
   .preview-team { padding: .7rem .35rem; }
@@ -201,7 +439,12 @@
   .preview-comparison-row > div { padding: .38rem .25rem; }
 }
 
-html[data-theme="dark"] .preview-versus { background: var(--ui-card); }
+html[data-theme="dark"] .preview-versus,
+html.league-theme-dark .preview-versus { background: var(--ui-card); }
+html.league-theme-dark a.preview-landing-card { color: var(--ui-ink); }
 html[data-theme="dark"] .preview-player-card,
 html[data-theme="dark"] .preview-form-team,
-html[data-theme="dark"] .preview-injury-team { background: var(--ui-card); }
+html[data-theme="dark"] .preview-injury-team,
+html.league-theme-dark .preview-player-card,
+html.league-theme-dark .preview-form-team,
+html.league-theme-dark .preview-injury-team { background: var(--ui-card); }

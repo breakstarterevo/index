@@ -735,7 +735,10 @@
     var away = getTeamTickerData(game.awayTeamName);
     var home = getTeamTickerData(game.homeTeamName);
     var awayWins = Number(game.awayScore) > Number(game.homeScore);
-    var href = String(game.boxscoreUrl || ("./boxes/" + game.boxscoreFile)).replace(/^\.\//, "");
+    var boxId = String(game.boxscoreFile || game.boxscoreUrl || "").match(/box\d+-\d+/i);
+    var href = boxId
+      ? getCorePath("matchCentre", "00-assets/html/match-centre.htm") + "?game=" + encodeURIComponent(boxId[0].toLowerCase())
+      : String(game.boxscoreUrl || ("./boxes/" + game.boxscoreFile)).replace(/^\.\//, "");
     var dateText = formatTickerGameDate(game.date);
 
     function teamHtml(team, score, isWinner) {
@@ -767,7 +770,7 @@
     params.set("date", game.date || "");
     params.set("away", game.awayTeam || "");
     params.set("home", game.homeTeam || "");
-    href = getCorePath("matchPreview", "00-assets/html/match-preview.htm") + "?" + params.toString();
+    href = getCorePath("matchCentre", "00-assets/html/match-centre.htm") + "?" + params.toString();
 
     function teamHtml(team) {
       return [
@@ -1253,7 +1256,7 @@
       { type: "Page", name: "Standings", meta: "Classic standings", href: "standings.htm", aliases: "table records clb elb ecl" },
       { type: "Page", name: "Unified Standings", meta: "Modern league table", href: getCorePath("unifiedStandings", "00-assets/html/unified-standings.htm"), aliases: "table records promotion relegation" },
       { type: "Page", name: "Schedule", meta: "Games and box scores", href: "schedule.htm", aliases: "fixtures games scores boxes results" },
-      { type: "Page", name: "Match Preview", meta: "Upcoming matchup comparisons", href: getCorePath("matchPreview", "00-assets/html/match-preview.htm"), aliases: "preview upcoming games matchup favorite edge" },
+      { type: "Page", name: "Match Centre", meta: "Upcoming matchups and completed box scores", href: getCorePath("matchCentre", "00-assets/html/match-centre.htm"), aliases: "preview upcoming matchup favorite edge final scores results games player stats boxscore" },
       { type: "Page", name: "League Leaders", meta: "Classic stat leaders", href: "leaders.htm", aliases: "stats points rebounds assists blocks steals" },
       { type: "Page", name: "Unified Leaders", meta: "Modern stat leaders", href: getCorePath("unifiedLeaders", "00-assets/html/unified-leaders.htm"), aliases: "stats player rankings points rebounds assists" },
       { type: "Page", name: "League Dashboard", meta: "League overview", href: getCorePath("leagueDashboard", "00-assets/html/league%20dashboard.htm"), aliases: "home overview dashboard hub" },

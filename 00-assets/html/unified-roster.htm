@@ -1898,7 +1898,8 @@
 
     function scheduleBoxHref(game) {
       const boxHref = String(game.boxscoreUrl || "").replace(/^\.\/+/, "");
-      return boxHref ? `../../${boxHref}` : "";
+      const boxId = boxHref.match(/box\d+-\d+/i);
+      return boxId ? `./match-centre.htm?game=${encodeURIComponent(boxId[0].toLowerCase())}` : (boxHref ? `../../${boxHref}` : "");
     }
 
     function matchPreviewHref(game) {
@@ -1907,7 +1908,7 @@
       params.set("date", game.date);
       params.set("away", game.awayTeam);
       params.set("home", game.homeTeam);
-      return `./match-preview.htm?${params.toString()}`;
+      return `./match-centre.htm?${params.toString()}`;
     }
 
     function scheduleOpponentLogo(oppName, gameHref, linkKind) {

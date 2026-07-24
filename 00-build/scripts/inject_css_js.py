@@ -31,9 +31,12 @@ FEATURE_JS_FILENAMES = [
     "00-assets/js/search.js",
     "00-assets/js/roster-enhancements.js",
 ]
-ROSTER_ENHANCEMENTS_VERSION = "classic-schedule-preview-2"
+ROSTER_ENHANCEMENTS_VERSION = "match-centre-1"
+MENU_VERSION = "match-centre-1"
+LEGACY_PAGE_ENHANCEMENTS_VERSION = "match-centre-1"
+MENU_FRAME_VERSION = "match-centre-1"
 INDEX_JS_FILENAME = "00-assets/js/index.js"
-INDEX_JS_VERSION = "ticker-date-order-2"
+INDEX_JS_VERSION = "match-centre-1"
 FAVICON_FILE = "00-build/database/favicon.png"
 MOBILE_INDEX_VIEWPORT_TAG = '<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0, user-scalable=yes">'
 SKIP_DIRS = {"00-build", "00-assets", "00-eslmedia", "00-SuperCup"}
@@ -81,6 +84,10 @@ def inject_file(filepath, dry_run, target_root):
     feature_js_tags = [
         f'<script src="{feature_rel}?v={ROSTER_ENHANCEMENTS_VERSION}" defer></script>'
         if filename == "00-assets/js/roster-enhancements.js"
+        else f'<script src="{feature_rel}?v={MENU_VERSION}" defer></script>'
+        if filename == "00-assets/js/menu.js"
+        else f'<script src="{feature_rel}?v={LEGACY_PAGE_ENHANCEMENTS_VERSION}" defer></script>'
+        if filename == "00-assets/js/legacy-page-enhancements.js"
         else f'<script src="{feature_rel}" defer></script>'
         for filename, feature_rel in zip(FEATURE_JS_FILENAMES, feature_js_rels)
     ]
@@ -99,6 +106,26 @@ def inject_file(filepath, dry_run, target_root):
     if current_roster_tag and current_roster_tag.group(0) != versioned_roster_tag:
         html = html[:current_roster_tag.start()] + versioned_roster_tag + html[current_roster_tag.end():]
         replaced_roster_tag = True
+
+    menu_index = FEATURE_JS_FILENAMES.index("00-assets/js/menu.js")
+    menu_rel = feature_js_rels[menu_index]
+    versioned_menu_tag = feature_js_tags[menu_index]
+    menu_tag_pattern = re.compile(rf'<script src="{re.escape(menu_rel)}(?:\?v=[^"]+)?" defer></script>')
+    current_menu_tag = menu_tag_pattern.search(html)
+    replaced_menu_tag = False
+    if current_menu_tag and current_menu_tag.group(0) != versioned_menu_tag:
+        html = html[:current_menu_tag.start()] + versioned_menu_tag + html[current_menu_tag.end():]
+        replaced_menu_tag = True
+
+    legacy_index = FEATURE_JS_FILENAMES.index("00-assets/js/legacy-page-enhancements.js")
+    legacy_rel = feature_js_rels[legacy_index]
+    versioned_legacy_tag = feature_js_tags[legacy_index]
+    legacy_tag_pattern = re.compile(rf'<script src="{re.escape(legacy_rel)}(?:\?v=[^"]+)?" defer></script>')
+    current_legacy_tag = legacy_tag_pattern.search(html)
+    replaced_legacy_tag = False
+    if current_legacy_tag and current_legacy_tag.group(0) != versioned_legacy_tag:
+        html = html[:current_legacy_tag.start()] + versioned_legacy_tag + html[current_legacy_tag.end():]
+        replaced_legacy_tag = True
 
     already_css = CSS_FILENAME in html or css_rel in html
     already_theme_preload = THEME_PRELOAD_FILENAME in html or theme_preload_rel in html
@@ -122,8 +149,20 @@ def inject_file(filepath, dry_run, target_root):
         html = html[:current_index_tag.start()] + versioned_index_tag + html[current_index_tag.end():]
         replaced_index_tag = True
 
+    menu_frame_pattern = re.compile(
+        r'(<FRAME\s+name=Options\s+src=menu\.htm)(?:\?v=[^ >]+)?',
+        re.IGNORECASE,
+    )
+    versioned_menu_frame = rf'\1?v={MENU_FRAME_VERSION}'
+    replaced_menu_frame = False
+    if is_target_root_index:
+        next_html, menu_frame_replacements = menu_frame_pattern.subn(versioned_menu_frame, html, count=1)
+        if menu_frame_replacements and next_html != html:
+            html = next_html
+            replaced_menu_frame = True
+
     needs_index_js = is_target_root_index
-    if already_css and already_theme_preload and already_js and already_feature_js and already_favicon and already_viewport and not should_replace_viewport and not replaced_roster_tag and not replaced_index_tag and (not needs_index_js or already_index_js):
+    if already_css and already_theme_preload and already_js and already_feature_js and already_favicon and already_viewport and not should_replace_viewport and not replaced_roster_tag and not replaced_menu_tag and not replaced_legacy_tag and not replaced_index_tag and not replaced_menu_frame and (not needs_index_js or already_index_js):
         return "skipped"
 
     inject = ""

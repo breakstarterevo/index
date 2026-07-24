@@ -68,12 +68,19 @@ team_stats.json
 standings.json
 schedule.json
 game_results.json
+box_scores.json
 capreport.json
 injuries.json
 freeagents.json
 leaders.json
 awards.json
 ```
+
+`box_scores.json` is rebuilt from completed games in `schedule.htm` and their
+matching `boxes/*.htm` files. It includes quarter/overtime scores, both team
+totals, every player stat line, shooting percentages, and Player of the Game.
+The unified renderer is `00-assets/html/unified-box-score.htm?game=box77-5`;
+opening it without a game parameter shows the latest completed result.
 
 Player-photo source snapshots are deliberately not refreshed during an ordinary
 build. To update them from the upstream Basketball GM files, run:

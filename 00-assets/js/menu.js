@@ -386,7 +386,7 @@
           { label: "Supercup Index", href: core.paths.supercupIndex, className: "league-menu-link--accent", target: "_top" },
           { label: "Supercup KO", href: core.paths.supercupKnockout, className: "league-menu-link--accent" },
           { label: "Transactions", href: "transactions.htm" },
-          { label: "Match Preview", href: core.paths.matchPreview }
+          { label: "Match Centre", href: core.paths.matchCentre || "00-assets/html/match-centre.htm" }
         ]
       },
       {
@@ -394,8 +394,8 @@
         links: [
           { label: "Injuries", href: "injuries.htm" },
           { label: "Cap Report", href: "capreport.htm" },
-          { label: "Free Agents", href: "freeagents.htm" },
-          { label: "Potential FAs", href: "potentialfreeagents.htm" }
+          { label: "Free Agents", href: core.paths.playerDatabase + "?status=free_agent" },
+          { label: "Potential FAs", href: core.paths.playerDatabase + "?status=potential_fa" }
         ]
       },
       {

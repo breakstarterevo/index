@@ -233,6 +233,29 @@
     });
   }
 
+  function enhanceClassicBoxScoreLinks() {
+    var boxScorePath;
+    if (!core.paths || /(?:\/|\\)00-supercup(?:\/|\\)/i.test(window.location.pathname)) {
+      return;
+    }
+    boxScorePath = core.paths.unifiedBoxScore ||
+      String(core.paths.mainIndex || "/index.htm").replace(/index\.htm(?:\?.*)?$/i, "") + "00-assets/html/match-centre.htm";
+
+    Array.prototype.slice.call(document.querySelectorAll('a[href*="boxes/box"]')).forEach(function (link) {
+      var href = String(link.getAttribute("href") || "");
+      var match;
+      if (/00-supercup/i.test(href)) {
+        return;
+      }
+      match = href.match(/box\d+-\d+/i);
+      if (!match) {
+        return;
+      }
+      link.href = boxScorePath + "?game=" + encodeURIComponent(match[0].toLowerCase());
+      link.title = link.title || "Open unified box score";
+    });
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
     markClassicPage();
 
@@ -249,6 +272,7 @@
     markTransactionsPage();
     markSchedulePage();
     enhanceStandingsRaceRows();
+    enhanceClassicBoxScoreLinks();
     enhanceClassicTeamHeader();
     applyRosterHeaderPhoto();
   });

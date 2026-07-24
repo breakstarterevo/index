@@ -14,6 +14,7 @@ PROJECT_ROOT = os.path.dirname(BUILD_DIR)
 DATABASE_DIR = os.path.join(BUILD_DIR, "database")
 ROSTERS_DIR = os.path.normpath(os.path.join(PROJECT_ROOT, "rosters"))
 PLAYERS_DIR = os.path.normpath(os.path.join(PROJECT_ROOT, "players"))
+BOXES_DIR = os.path.normpath(os.path.join(PROJECT_ROOT, "boxes"))
 PLAYERS_OUT = os.path.join(DATABASE_DIR, "players.json")
 PLAYER_STATS_OUT = os.path.join(DATABASE_DIR, "player_stats.json")
 PLAYER_GAMELOGS_OUT = os.path.join(DATABASE_DIR, "player_gamelogs.json")
@@ -26,6 +27,7 @@ SCHEDULE_OUT = os.path.join(DATABASE_DIR, "schedule.json")
 FREE_AGENTS_OUT = os.path.join(DATABASE_DIR, "freeagents.json")
 LEADERS_OUT = os.path.join(DATABASE_DIR, "leaders.json")
 GAME_RESULTS_OUT = os.path.join(DATABASE_DIR, "game_results.json")
+BOX_SCORES_OUT = os.path.join(DATABASE_DIR, "box_scores.json")
 AWARDS_OUT = os.path.join(DATABASE_DIR, "awards.json")
 SEASON_AWARDS_OUT = os.path.join(DATABASE_DIR, "season_awards.json")
 STANDINGS_PATH = os.path.normpath(os.path.join(PROJECT_ROOT, "standings.htm"))
@@ -1913,6 +1915,317 @@ def build_game_results(schedule_sections):
 
     return results
 
+
+def parse_box_integer(value):
+    text = strip_tags(value)
+    if not text:
+        return None
+
+    try:
+        return int(text)
+    except ValueError:
+        return None
+
+
+def parse_box_decimal(value):
+    text = strip_tags(value)
+    if not text:
+        return None
+
+    try:
+        return float(text)
+    except ValueError:
+        return None
+
+
+def parse_made_attempted(value):
+    text = strip_tags(value)
+    match = re.fullmatch(r"(-?\d+)\s*-\s*(-?\d+)", text)
+    if not match:
+        return None, None
+    return int(match.group(1)), int(match.group(2))
+
+
+def parse_box_team_table(table_html):
+    title_match = re.search(
+        r"<td[^>]*class=tableheader[^>]*>(.*?)</td>",
+        table_html,
+        re.IGNORECASE | re.DOTALL,
+    )
+    team_name = strip_tags(title_match.group(1)) if title_match else ""
+    if not re.search(r"<td[^>]*class=(?:awayheader|homeheader)[^>]*>\s*&?nbsp;?\s*Player", table_html, re.IGNORECASE):
+        return None
+
+    players = []
+    totals = None
+    percentages = None
+    found_totals = False
+    row_matches = re.finditer(
+        r"<tr\b[^>]*>(.*?)(?=<tr\b|</table>)",
+        table_html,
+        re.IGNORECASE | re.DOTALL,
+    )
+
+    for row_match in row_matches:
+        row_html = row_match.group(1)
+        cells = re.findall(r"<td\b[^>]*>(.*?)</td>", row_html, re.IGNORECASE | re.DOTALL)
+        if len(cells) < 15:
+            continue
+
+        first_cell = strip_tags(cells[0])
+        if first_cell == "Totals":
+            fgm, fga = parse_made_attempted(cells[3])
+            three_pm, three_pa = parse_made_attempted(cells[4])
+            ftm, fta = parse_made_attempted(cells[5])
+            totals = {
+                "fgm": fgm,
+                "fga": fga,
+                "threePm": three_pm,
+                "threePa": three_pa,
+                "ftm": ftm,
+                "fta": fta,
+                "orb": parse_box_integer(cells[6]),
+                "reb": parse_box_integer(cells[7]),
+                "ast": parse_box_integer(cells[8]),
+                "stl": parse_box_integer(cells[9]),
+                "blk": parse_box_integer(cells[10]),
+                "to": parse_box_integer(cells[11]),
+                "pf": parse_box_integer(cells[12]),
+                "pts": parse_box_integer(cells[14]),
+            }
+            found_totals = True
+            continue
+
+        if found_totals and percentages is None:
+            percentages = {
+                "fgPct": parse_box_decimal(cells[3]),
+                "threePct": parse_box_decimal(cells[4]),
+                "ftPct": parse_box_decimal(cells[5]),
+            }
+            continue
+
+        player_match = re.search(
+            r"href=(?:[\"']?)\.\./players/(player\d+)\.htm(?:[\"']?)[^>]*>(.*?)</a>",
+            cells[0],
+            re.IGNORECASE | re.DOTALL,
+        )
+        if not player_match:
+            continue
+
+        fgm, fga = parse_made_attempted(cells[3])
+        three_pm, three_pa = parse_made_attempted(cells[4])
+        ftm, fta = parse_made_attempted(cells[5])
+        players.append(
+            {
+                "playerId": player_match.group(1).lower(),
+                "name": strip_tags(player_match.group(2)),
+                "pos": strip_tags(cells[1]),
+                "min": parse_box_integer(cells[2]),
+                "fgm": fgm,
+                "fga": fga,
+                "threePm": three_pm,
+                "threePa": three_pa,
+                "ftm": ftm,
+                "fta": fta,
+                "orb": parse_box_integer(cells[6]),
+                "reb": parse_box_integer(cells[7]),
+                "ast": parse_box_integer(cells[8]),
+                "stl": parse_box_integer(cells[9]),
+                "blk": parse_box_integer(cells[10]),
+                "to": parse_box_integer(cells[11]),
+                "pf": parse_box_integer(cells[12]),
+                "plusMinus": parse_box_integer(cells[13]),
+                "pts": parse_box_integer(cells[14]),
+            }
+        )
+
+    if not players or not totals:
+        return None
+
+    return {
+        "name": team_name,
+        "players": players,
+        "totals": totals,
+        "percentages": percentages or {"fgPct": None, "threePct": None, "ftPct": None},
+    }
+
+
+def parse_box_scoreboard(html):
+    table_match = re.search(r"<table\b[^>]*>(.*?)</table>", html, re.IGNORECASE | re.DOTALL)
+    if not table_match:
+        return []
+
+    table_html = table_match.group(1)
+    header_cells = re.findall(
+        r"<td[^>]*class=header[^>]*>(.*?)</td>",
+        table_html,
+        re.IGNORECASE | re.DOTALL,
+    )
+    header_labels = [strip_tags(cell) for cell in header_cells]
+    period_labels = header_labels[1:-1] if len(header_labels) >= 3 else []
+    teams = []
+
+    for row_match in re.finditer(
+        r"<tr\b[^>]*>(.*?)(?=<tr\b|$)",
+        table_html,
+        re.IGNORECASE | re.DOTALL,
+    ):
+        row_html = row_match.group(1)
+        roster_match = re.search(
+            r"href=(?:[\"']?)\.\./rosters/(roster\d+)\.htm(?:[\"']?)[^>]*>(.*?)</a>",
+            row_html,
+            re.IGNORECASE | re.DOTALL,
+        )
+        if not roster_match:
+            continue
+
+        score_cells = re.findall(
+            r"<td[^>]*class=tdrow\d+[^>]*>(.*?)</td>",
+            row_html,
+            re.IGNORECASE | re.DOTALL,
+        )
+        score_values = [parse_box_integer(cell) for cell in score_cells[1:]]
+        if not score_values:
+            continue
+
+        periods = [
+            {"label": label, "points": score_values[index] if index < len(score_values) - 1 else None}
+            for index, label in enumerate(period_labels)
+        ]
+        teams.append(
+            {
+                "teamId": roster_match.group(1).lower(),
+                "name": strip_tags(roster_match.group(2)),
+                "periods": periods,
+                "score": score_values[-1],
+            }
+        )
+
+    return teams
+
+
+def parse_box_score(html, result):
+    scoreboard_teams = parse_box_scoreboard(html)
+    team_tables = []
+    for table_match in re.finditer(r"<table\b[^>]*>.*?</table>", html, re.IGNORECASE | re.DOTALL):
+        parsed_table = parse_box_team_table(table_match.group(0))
+        if parsed_table:
+            team_tables.append(parsed_table)
+
+    if len(scoreboard_teams) != 2 or len(team_tables) != 2:
+        return None, "expected two scoreboard teams and two team-stat tables"
+
+    tables_by_name = {normalize_name(table["name"]): table for table in team_tables}
+    for team in scoreboard_teams:
+        stat_table = tables_by_name.get(normalize_name(team["name"]))
+        if not stat_table:
+            return None, f"could not match the {team['name']} stat table"
+        team.update(
+            {
+                "players": stat_table["players"],
+                "totals": stat_table["totals"],
+                "percentages": stat_table["percentages"],
+            }
+        )
+
+    teams_by_id = {team["teamId"]: team for team in scoreboard_teams}
+    away = teams_by_id.get(result.get("awayTeam"))
+    home = teams_by_id.get(result.get("homeTeam"))
+    if not away or not home:
+        return None, "scoreboard teams do not match the schedule record"
+
+    player_of_game = None
+    player_of_game_match = re.search(
+        r"Player of the Game.*?href=(?:[\"']?)\.\./players/(player\d+)\.htm(?:[\"']?)[^>]*>(.*?)</a>",
+        html,
+        re.IGNORECASE | re.DOTALL,
+    )
+    if player_of_game_match:
+        player_of_game = {
+            "playerId": player_of_game_match.group(1).lower(),
+            "name": strip_tags(player_of_game_match.group(2)),
+        }
+
+    game_id = os.path.splitext(result.get("boxscoreFile", ""))[0]
+    game = {
+        "gameId": game_id,
+        "date": result.get("date", ""),
+        "section": result.get("section", ""),
+        "sectionSlug": result.get("sectionSlug", ""),
+        "boxscoreFile": result.get("boxscoreFile", ""),
+        "boxscoreUrl": result.get("boxscoreUrl", ""),
+        "away": away,
+        "home": home,
+        "winner": result.get("winner", ""),
+        "margin": result.get("margin", ""),
+        "playerOfGame": player_of_game,
+    }
+    return game, ""
+
+
+def validate_box_score(game, result):
+    warnings = []
+    for side in ("away", "home"):
+        team = game[side]
+        expected_score = result.get(f"{side}Score")
+        if team["score"] != expected_score:
+            warnings.append(f"{side} score is {team['score']}; schedule says {expected_score}")
+
+        period_points = [period["points"] for period in team["periods"]]
+        if all(points is not None for points in period_points) and sum(period_points) != team["score"]:
+            warnings.append(f"{team['name']} period points do not add to {team['score']}")
+
+        totals_points = team["totals"].get("pts")
+        if totals_points != team["score"]:
+            warnings.append(f"{team['name']} totals row has {totals_points} points; score is {team['score']}")
+
+        player_points = sum(player.get("pts") or 0 for player in team["players"])
+        if player_points != team["score"]:
+            warnings.append(f"{team['name']} player points add to {player_points}; score is {team['score']}")
+
+    return warnings
+
+
+def build_box_scores(game_results):
+    games = []
+    warnings = []
+
+    for result in game_results:
+        boxscore_file = result.get("boxscoreFile", "")
+        if not boxscore_file:
+            warnings.append(f"{result.get('date', 'Unknown date')}: completed game has no box-score file")
+            continue
+
+        boxscore_path = os.path.join(BOXES_DIR, os.path.basename(boxscore_file))
+        if not os.path.exists(boxscore_path):
+            warnings.append(f"{boxscore_file}: source file is missing")
+            continue
+
+        with open(boxscore_path, "r", encoding="latin-1") as handle:
+            html = handle.read()
+
+        game, parse_error = parse_box_score(html, result)
+        if not game:
+            warnings.append(f"{boxscore_file}: {parse_error}")
+            continue
+
+        for warning in validate_box_score(game, result):
+            warnings.append(f"{boxscore_file}: {warning}")
+        games.append(game)
+
+    return {
+        "source": "boxes/*.htm",
+        "gameCount": len(games),
+        "games": games,
+        "validation": {
+            "referencedGameCount": len(game_results),
+            "parsedGameCount": len(games),
+            "warningCount": len(warnings),
+            "warnings": warnings,
+        },
+    }
+
+
 def main():
     os.makedirs(DATABASE_DIR, exist_ok=True)
 
@@ -2088,6 +2401,14 @@ def main():
 
     atomic_dump_json(GAME_RESULTS_OUT, game_results_data, indent=4)
 
+    box_scores_data = build_box_scores(game_results_data["results"])
+    atomic_dump_json(
+        BOX_SCORES_OUT,
+        box_scores_data,
+        ensure_ascii=False,
+        separators=(",", ":"),
+    )
+
     free_agents_data = {
         "source": os.path.basename(FREE_AGENTS_PATH),
         "players": parse_free_agents(free_agents_html, ratings, last_team_lookup),
@@ -2155,6 +2476,10 @@ def main():
     print(f"Final count: {len(injuries_data['injuries'])} injuries saved to {INJURIES_OUT}")
     print(f"Final count: {len(schedule_data['sections'])} schedule sections saved to {SCHEDULE_OUT}")
     print(f"Final count: {len(game_results_data['results'])} game results saved to {GAME_RESULTS_OUT}")
+    print(
+        f"Final count: {box_scores_data['gameCount']} box scores saved to {BOX_SCORES_OUT} "
+        f"({box_scores_data['validation']['warningCount']} validation warnings)"
+    )
     print(f"Final count: {len(free_agents_data['players'])} free agents saved to {FREE_AGENTS_OUT}")
     print(f"Final count: {len(leaders_data['sections'])} leader sections saved to {LEADERS_OUT}")
     if awards_section_count:

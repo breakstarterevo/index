@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.35, maximum-scale=5.0, user-scalable=yes">
+  <title>Box Score</title>
+  <script>
+    window.location.replace("./match-centre.htm" + window.location.search + window.location.hash);
+  </script>
+  <link rel="icon" type="image/png" href="../../00-build/database/favicon.png">
+  <script src="../js/theme-preload.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
+  <link rel="stylesheet" href="../css/unified-box-score.css?v=8">
+  <script src="../js/core.js" defer></script>
+  <script src="../js/settings.js" defer></script>
+  <script src="../js/unified-ui.js?v=team-palette-2" defer></script>
+  <script src="../js/unified-box-score.js?v=3" defer></script>
+</head>
+<body class="ui-page">
+  <main class="ui-shell boxscore-shell">
+    <div class="ui-state ui-state--error boxscore-route-notice" id="routeNotice" hidden></div>
+
+    <div class="boxscore-scoreboard">
+      <section class="boxscore-hero" id="boxscoreHero" aria-label="Final score">
+        <button class="boxscore-arrow boxscore-arrow--previous" id="previousGame" type="button" aria-label="Previous completed game">&larr;</button>
+        <div class="boxscore-team boxscore-team--away" id="awayHero"></div>
+        <div class="boxscore-final">
+          <div class="boxscore-final-meta">
+            <span class="boxscore-final-label" id="finalLabel">Final</span>
+            <span class="boxscore-competition" id="competition">ESL</span>
+            <time class="boxscore-date" id="gameDate">Loading</time>
+          </div>
+          <div class="boxscore-final-foot">
+            <span class="boxscore-margin" id="gameMargin"></span>
+            <a class="boxscore-classic-link" id="classicBoxLink" href="#" hidden>Classic box</a>
+          </div>
+        </div>
+        <div class="boxscore-team boxscore-team--home" id="homeHero"></div>
+        <button class="boxscore-arrow boxscore-arrow--next" id="nextGame" type="button" aria-label="Next completed game">&rarr;</button>
+      </section>
+
+      <section class="ui-panel boxscore-period-panel" aria-label="Score by quarter">
+        <div class="boxscore-period-wrap" id="periodScore">
+          <div class="ui-state ui-state--loading">Loading scores</div>
+        </div>
+      </section>
+    </div>
+
+    <div class="boxscore-summary-grid">
+      <section class="ui-panel boxscore-potg-panel">
+        <div class="ui-panel-head boxscore-panel-head">
+          <h2 class="ui-panel-title">Player of the Game</h2>
+          <p class="ui-panel-note" id="potgTeam"></p>
+        </div>
+        <div id="playerOfGame"></div>
+      </section>
+
+      <section class="ui-panel boxscore-comparison-panel">
+        <div class="ui-panel-head boxscore-panel-head">
+          <h2 class="ui-panel-title">Team Comparison</h2>
+          <p class="ui-panel-note">Game totals</p>
+        </div>
+        <div class="boxscore-comparison" id="teamComparison"></div>
+      </section>
+    </div>
+
+    <section class="ui-panel boxscore-team-panel" id="teamTablePanel">
+      <div class="ui-panel-head boxscore-panel-head">
+        <div class="boxscore-team-table-heading">
+          <h2 class="ui-panel-title" id="teamTableTitle">Team Box Score</h2>
+          <p class="ui-panel-note" id="teamShooting"></p>
+        </div>
+        <div class="boxscore-team-tabs" role="tablist" aria-label="Select team box score">
+          <button class="boxscore-team-tab" id="awayTableTab" type="button" role="tab" aria-selected="true" data-team-side="away">Away</button>
+          <button class="boxscore-team-tab" id="homeTableTab" type="button" role="tab" aria-selected="false" data-team-side="home">Home</button>
+        </div>
+      </div>
+      <div id="teamTable" role="tabpanel" aria-labelledby="awayTableTab"></div>
+    </section>
+
+    <div class="ui-state ui-state--error" id="boxscoreError" hidden></div>
+  </main>
+</body>
+</html>

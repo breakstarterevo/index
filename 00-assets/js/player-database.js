@@ -287,11 +287,23 @@
     return direction === "asc" ? result : -result;
   }
 
+  function isPotentialFreeAgent(player) {
+    var selectedSnapshot = snapshot(state.season === "career" ? manifest.currentSnapshot : state.season);
+    var statYear = Number(selectedSnapshot && selectedSnapshot.statYear);
+    var nextYear;
+
+    if (!isFinite(statYear) || player.status !== "rostered") { return false; }
+    nextYear = String(statYear + 1);
+    return !(player.contracts || []).some(function (contract) {
+      return String(contract.year) === nextYear && (number(contract.salary) || 0) > 0;
+    });
+  }
+
   function filteredAndSorted(players, columns) {
     var query = state.query.trim().toLowerCase();
     var filtered = players.filter(function (player) {
       return (!query || String(player.name || "").toLowerCase().indexOf(query) >= 0) &&
-        (state.status === "all" || player.status === state.status) &&
+        (state.status === "all" || (state.status === "potential_fa" ? isPotentialFreeAgent(player) : player.status === state.status)) &&
         (state.team === "all" || player.team === state.team) &&
         (state.position === "all" || player.pos === state.position);
     });

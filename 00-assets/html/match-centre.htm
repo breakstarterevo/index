@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.35, maximum-scale=5.0, user-scalable=yes">
+  <title>Match Centre</title>
+  <link rel="icon" type="image/png" href="../../00-build/database/favicon.png">
+  <script src="../js/theme-preload.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
+  <link rel="stylesheet" href="../css/match-preview.css?v=match-centre-2">
+  <link rel="stylesheet" href="../css/unified-box-score.css?v=match-centre-2">
+  <link rel="stylesheet" href="../css/match-centre.css?v=3">
+  <script src="../js/core.js?v=match-centre-2" defer></script>
+  <script src="../js/settings.js" defer></script>
+  <script src="../js/unified-ui.js?v=team-palette-2" defer></script>
+  <script src="../js/match-preview.js?v=match-centre-2" defer></script>
+  <script src="../js/unified-box-score.js?v=match-centre-2" defer></script>
+</head>
+<body class="ui-page match-centre-page">
+  <main class="ui-shell preview-shell boxscore-shell match-centre-shell">
+    <div class="preview-landing" id="landingView" hidden>
+      <div class="ui-state ui-state--error preview-route-notice" id="landingNotice" hidden></div>
+
+      <section class="ui-panel preview-landing-panel">
+        <div class="ui-panel-head preview-landing-panel-head">
+          <h2 class="ui-panel-title" id="featuredTitle">Next Match</h2>
+          <p class="ui-panel-note" id="featuredNote">Earliest scheduled game</p>
+        </div>
+        <div id="featuredMatch">
+          <div class="ui-state ui-state--loading">Loading featured matchup</div>
+        </div>
+      </section>
+
+      <section class="ui-panel preview-landing-panel" id="myTeamPanel" hidden>
+        <div class="ui-panel-head preview-landing-panel-head">
+          <h2 class="ui-panel-title" id="myTeamTitle">My Team Upcoming</h2>
+          <p class="ui-panel-note">Next three games</p>
+        </div>
+        <div class="preview-my-team-games" id="myTeamGames"></div>
+      </section>
+
+      <section class="ui-panel preview-landing-panel match-centre-filter-panel">
+        <div class="ui-panel-head preview-landing-panel-head">
+          <div>
+            <h2 class="ui-panel-title">Match Filters</h2>
+            <p class="ui-panel-note" id="filterSummary">League-wide games</p>
+          </div>
+          <div class="preview-filter-actions">
+            <button class="ui-button" id="favoriteFilter" type="button" hidden>My Team</button>
+            <button class="ui-button" id="allTeamsFilter" type="button" hidden>All Teams</button>
+            <button class="ui-button" id="resetFilters" type="button">Reset</button>
+          </div>
+        </div>
+        <div class="preview-filters" aria-label="Match Centre filters">
+          <label class="ui-field">
+            <span class="ui-label">Team</span>
+            <select class="ui-select" id="teamFilter"><option value="all">All teams</option></select>
+          </label>
+          <label class="ui-field">
+            <span class="ui-label">Competition</span>
+            <select class="ui-select" id="competitionFilter"><option value="all">All competitions</option></select>
+          </label>
+        </div>
+      </section>
+
+      <div class="match-centre-board">
+        <section class="ui-panel preview-landing-panel">
+          <div class="ui-panel-head preview-landing-panel-head">
+            <div>
+              <h2 class="ui-panel-title">Upcoming Games</h2>
+              <p class="ui-panel-note" id="upcomingSummary">Coming schedule month</p>
+            </div>
+            <label class="ui-field match-centre-month-field">
+              <span class="ui-label">Month</span>
+              <select class="ui-select" id="monthFilter"></select>
+            </label>
+          </div>
+          <div class="preview-upcoming-groups" id="upcomingGames"></div>
+        </section>
+
+        <section class="ui-panel preview-landing-panel">
+          <div class="ui-panel-head preview-landing-panel-head">
+            <div>
+              <h2 class="ui-panel-title">Recent Results</h2>
+              <p class="ui-panel-note" id="resultsSummary">Latest completed month</p>
+            </div>
+            <label class="ui-field match-centre-month-field">
+              <span class="ui-label">Month</span>
+              <select class="ui-select" id="resultsMonthFilter"></select>
+            </label>
+          </div>
+          <div class="match-centre-results" id="recentResults"></div>
+        </section>
+      </div>
+    </div>
+
+    <div class="preview-detail" id="detailView" hidden>
+      <section class="preview-hero" id="matchHero" aria-label="Match preview">
+        <button class="preview-match-arrow preview-match-arrow--previous" id="previousGame" type="button" aria-label="Previous game">&larr;</button>
+        <div class="preview-team preview-team--away" id="awayTeamHero"></div>
+        <div class="preview-versus">
+          <p class="preview-kicker" id="matchCompetition">ESL Match Preview</p>
+          <time class="preview-date" id="matchDate">Loading</time>
+          <span class="preview-at" aria-hidden="true">@</span>
+          <span class="preview-line-label">Projected Line</span>
+          <div class="preview-line" id="projectedLine">Calculating line</div>
+        </div>
+        <div class="preview-team preview-team--home" id="homeTeamHero"></div>
+        <button class="preview-match-arrow preview-match-arrow--next" id="nextGame" type="button" aria-label="Next game">&rarr;</button>
+      </section>
+
+      <section class="ui-panel ui-panel--padded preview-comparison-panel">
+        <div class="ui-panel-head">
+          <h2 class="ui-panel-title">Matchup Comparison</h2>
+          <p class="ui-panel-note">Eight-category edge model</p>
+        </div>
+        <div class="preview-comparison" id="comparisonBoard">
+          <div class="ui-state ui-state--loading">Loading matchup data</div>
+        </div>
+      </section>
+
+      <div class="preview-two-column">
+        <section class="ui-panel ui-panel--padded">
+          <div class="ui-panel-head">
+            <h2 class="ui-panel-title" id="awayPlayersTitle">Away Key Players</h2>
+            <p class="ui-panel-note">Current season</p>
+          </div>
+          <div class="preview-player-grid" id="awayPlayers"></div>
+        </section>
+        <section class="ui-panel ui-panel--padded">
+          <div class="ui-panel-head">
+            <h2 class="ui-panel-title" id="homePlayersTitle">Home Key Players</h2>
+            <p class="ui-panel-note">Current season</p>
+          </div>
+          <div class="preview-player-grid" id="homePlayers"></div>
+        </section>
+      </div>
+
+      <div class="preview-two-column">
+        <section class="ui-panel ui-panel--padded">
+          <div class="ui-panel-head">
+            <h2 class="ui-panel-title">Recent Form</h2>
+            <p class="ui-panel-note">Last five before tipoff</p>
+          </div>
+          <div class="preview-form-teams" id="formBoard"></div>
+        </section>
+        <section class="ui-panel ui-panel--padded">
+          <div class="ui-panel-head">
+            <h2 class="ui-panel-title">Head-to-Head</h2>
+            <p class="ui-panel-note" id="headToHeadSummary">Current season</p>
+          </div>
+          <div class="preview-history" id="headToHeadList"></div>
+        </section>
+      </div>
+
+      <section class="ui-panel ui-panel--padded">
+        <div class="ui-panel-head">
+          <h2 class="ui-panel-title">Availability Report</h2>
+          <p class="ui-panel-note">Current injury feed</p>
+        </div>
+        <div class="preview-injuries" id="injuryBoard"></div>
+      </section>
+
+      <div class="ui-state ui-state--error" id="previewError" hidden></div>
+    </div>
+
+    <div class="match-centre-boxscore" id="boxscoreView" hidden>
+      <div class="ui-state ui-state--error boxscore-route-notice" id="routeNotice" hidden></div>
+
+      <div class="boxscore-scoreboard">
+        <section class="boxscore-hero" id="boxscoreHero" aria-label="Final score">
+          <button class="boxscore-arrow boxscore-arrow--previous" id="boxPreviousGame" type="button" aria-label="Previous game">&larr;</button>
+          <div class="boxscore-team boxscore-team--away" id="awayHero"></div>
+          <div class="boxscore-final">
+            <div class="boxscore-final-meta">
+              <span class="boxscore-final-label" id="finalLabel">Final</span>
+              <span class="boxscore-competition" id="competition">ESL</span>
+              <time class="boxscore-date" id="gameDate">Loading</time>
+            </div>
+            <div class="boxscore-final-foot">
+              <span class="boxscore-margin" id="gameMargin"></span>
+              <a class="boxscore-classic-link" id="classicBoxLink" href="#" hidden>Classic box</a>
+            </div>
+          </div>
+          <div class="boxscore-team boxscore-team--home" id="homeHero"></div>
+          <button class="boxscore-arrow boxscore-arrow--next" id="boxNextGame" type="button" aria-label="Next game">&rarr;</button>
+        </section>
+
+        <section class="ui-panel boxscore-period-panel" aria-label="Score by quarter">
+          <div class="boxscore-period-wrap" id="periodScore">
+            <div class="ui-state ui-state--loading">Loading scores</div>
+          </div>
+        </section>
+      </div>
+
+      <div class="boxscore-summary-grid">
+        <section class="ui-panel boxscore-potg-panel">
+          <div class="ui-panel-head boxscore-panel-head">
+            <h2 class="ui-panel-title">Player of the Game</h2>
+            <p class="ui-panel-note" id="potgTeam"></p>
+          </div>
+          <div id="playerOfGame"></div>
+        </section>
+
+        <section class="ui-panel boxscore-comparison-panel">
+          <div class="ui-panel-head boxscore-panel-head">
+            <h2 class="ui-panel-title">Team Comparison</h2>
+            <p class="ui-panel-note">Game totals</p>
+          </div>
+          <div class="boxscore-comparison" id="teamComparison"></div>
+        </section>
+      </div>
+
+      <section class="ui-panel boxscore-team-panel" id="teamTablePanel">
+        <div class="ui-panel-head boxscore-panel-head">
+          <div class="boxscore-team-table-heading">
+            <h2 class="ui-panel-title" id="teamTableTitle">Team Box Score</h2>
+            <p class="ui-panel-note" id="teamShooting"></p>
+          </div>
+          <div class="boxscore-team-tabs" role="tablist" aria-label="Select team box score">
+            <button class="boxscore-team-tab" id="awayTableTab" type="button" role="tab" aria-selected="true" data-team-side="away">Away</button>
+            <button class="boxscore-team-tab" id="homeTableTab" type="button" role="tab" aria-selected="false" data-team-side="home">Home</button>
+          </div>
+        </div>
+        <div id="teamTable" role="tabpanel" aria-labelledby="awayTableTab"></div>
+      </section>
+
+      <div class="ui-state ui-state--error" id="boxscoreError" hidden></div>
+    </div>
+  </main>
+</body>
+</html>
