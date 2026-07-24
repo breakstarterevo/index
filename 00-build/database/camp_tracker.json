@@ -2,7 +2,7 @@
   "source": {
     "type": "google_sheets_csv",
     "url": "https://docs.google.com/spreadsheets/d/1ZCa_G7E9h6Z7Yf6gdFCBL9Aj4nhi92Um2rxb0rgDYew/gviz/tq?tqx=out:csv",
-    "fetchedAtUtc": "2026-07-22T11:52:45.584991+00:00"
+    "fetchedAtUtc": "2026-07-24T00:59:58.696064+00:00"
   },
   "careerLimits": {
     "regular": 3,
@@ -338,6 +338,13 @@
       "regular": 1,
       "rehab": 0
     },
+    "player719": {
+      "playerId": "player719",
+      "name": "Herb Williams",
+      "sourceName": "Herb Williams",
+      "regular": 1,
+      "rehab": 0
+    },
     "player721": {
       "playerId": "player721",
       "name": "Dan Roundfield",
@@ -577,22 +584,12 @@
       "rehab": 0
     }
   },
-  "issues": [
-    {
-      "type": "player_not_in_database",
-      "severity": "warning",
-      "name": "Herb Wiliams",
-      "row": 35,
-      "message": "Herb Wiliams is in the camp tracker but was not found in players.json."
-    }
-  ],
+  "issues": [],
   "summary": {
     "trackerNames": 82,
-    "matchedPlayers": 81,
-    "flaggedNames": 1,
-    "totalIssues": 1,
-    "issueCounts": {
-      "player_not_in_database": 1
-    }
+    "matchedPlayers": 82,
+    "flaggedNames": 0,
+    "totalIssues": 0,
+    "issueCounts": {}
   }
 }
