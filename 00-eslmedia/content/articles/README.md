@@ -295,7 +295,8 @@ For every power rankings article:
 - make the order meaningfully different from standings when form, margin, injury context, schedule context, or tier pressure justify it
 - include visible movement for every team, such as `STAYED NO. 1`, `UP 2 FROM NO. 5`, or `DOWN 1 FROM NO. 3`
 - include a compact meta line with record, latest-month form, point differential or streak, and the main player/context hook
-- write each team capsule as reason, concern, and next trigger, not a stat recap
+- make the reason, concern, and next pressure point clear inside natural prose rather than forcing the same mini-field template onto every team
+- vary capsule length, rhythm, and analytical lens; do not repeat a `Reason / Concern / Next trigger` grid across the entire board
 - use tier-specific stakes: Tier 1 credibility/survival, Tier 2 promotion/relegation pressure, Tier 3 one-promotion urgency
 - include a short board notes block after the rankings with labels like `Control Team`, `Biggest Riser`, `Trust Problem`, and `Panic Team`
 - end by looking forward to what would change the next board

@@ -140,6 +140,67 @@ body.media-article {
   text-transform: uppercase;
 }
 
+.ballot {
+  border: 2px solid #0f0f0f;
+  background: #f7f9fd;
+  margin: 1.2rem 0 1.6rem;
+}
+
+.ballot-head {
+  background: #0f0f0f;
+  color: #fff;
+  font-size: 0.72rem;
+  font-weight: 900;
+  letter-spacing: 0.18em;
+  padding: 0.65rem 1rem;
+  text-transform: uppercase;
+}
+
+.ballot-list {
+  list-style: none;
+  margin: 0;
+  padding: 0.4rem 1rem 1rem;
+}
+
+.ballot-item {
+  border-bottom: 1px solid rgba(15, 15, 15, 0.16);
+  padding: 0.82rem 0;
+}
+
+.ballot-item:last-child {
+  border-bottom: 0;
+}
+
+.ballot .rank {
+  color: #111b36;
+  display: inline-block;
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  font-weight: 900;
+  width: 2.2rem;
+}
+
+.ballot .name {
+  font-family: var(--font-serif);
+  font-size: 1.12rem;
+  font-weight: 900;
+}
+
+.ballot .meta {
+  color: #4c4c4c;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  margin: 0.25rem 0 0.35rem;
+  text-transform: uppercase;
+}
+
+.ballot .note {
+  color: #222;
+  font-size: 0.93rem;
+  line-height: 1.6;
+}
+
 .ranking-board {
   border: 2px solid #0f0f0f;
   background: #f7f9fd;

@@ -2,10 +2,20 @@ import os
 import re
 import json
 import subprocess
+import time
 from html import unescape
 from html.parser import HTMLParser
 
 from atomic_write import atomic_dump_json
+
+SCRIPT_STARTED = time.perf_counter()
+PROGRESS_INTERVAL_SECONDS = 5.0
+
+
+def progress(message):
+    elapsed = time.perf_counter() - SCRIPT_STARTED
+    print(f"  [database +{elapsed:5.1f}s] {message}", flush=True)
+
 
 # 1. PATH SETUP
 ROOT = os.path.dirname(os.path.abspath(__file__))
@@ -2189,8 +2199,15 @@ def validate_box_score(game, result):
 def build_box_scores(game_results):
     games = []
     warnings = []
+    total = len(game_results)
+    last_progress = time.perf_counter()
 
-    for result in game_results:
+    for index, result in enumerate(game_results, start=1):
+        now = time.perf_counter()
+        if now - last_progress >= PROGRESS_INTERVAL_SECONDS:
+            progress(f"Box scores: {index - 1}/{total} checked")
+            last_progress = now
+
         boxscore_file = result.get("boxscoreFile", "")
         if not boxscore_file:
             warnings.append(f"{result.get('date', 'Unknown date')}: completed game has no box-score file")
@@ -2213,6 +2230,11 @@ def build_box_scores(game_results):
             warnings.append(f"{boxscore_file}: {warning}")
         games.append(game)
 
+        now = time.perf_counter()
+        if index == total or now - last_progress >= PROGRESS_INTERVAL_SECONDS:
+            progress(f"Box scores: {index}/{total} checked")
+            last_progress = now
+
     return {
         "source": "boxes/*.htm",
         "gameCount": len(games),
@@ -2228,6 +2250,7 @@ def build_box_scores(game_results):
 
 def main():
     os.makedirs(DATABASE_DIR, exist_ok=True)
+    progress("Checking source files")
 
     if not os.path.exists(ROSTERS_DIR):
         print(f"Error: {ROSTERS_DIR} not found.")
@@ -2261,6 +2284,7 @@ def main():
         print(f"Error: {LEADERS_PATH} not found.")
         return
 
+    progress("Loading OVR/POT ratings")
     ratings = load_mdb_ratings()
     all_teams = []
     all_team_stats = []
@@ -2268,6 +2292,7 @@ def main():
     contract_entries = []
     contract_years = []
     roster_files = [f for f in os.listdir(ROSTERS_DIR) if f.lower().endswith((".htm", ".html"))]
+    progress(f"Parsing {len(roster_files)} roster pages")
 
     for file in roster_files:
         path = os.path.join(ROSTERS_DIR, file)
@@ -2284,6 +2309,7 @@ def main():
             if year not in contract_years:
                 contract_years.append(year)
 
+    progress(f"Roster pages complete; found {len(all_teams)} teams")
     team_lookup = build_team_lookup(all_teams)
     all_players = []
     all_player_stats = []
@@ -2292,8 +2318,10 @@ def main():
         f for f in os.listdir(PLAYERS_DIR)
         if f.lower().endswith((".htm", ".html"))
     )
+    progress(f"Parsing {len(player_files)} player pages")
+    last_player_progress = time.perf_counter()
 
-    for file in player_files:
+    for index, file in enumerate(player_files, start=1):
         path = os.path.join(PLAYERS_DIR, file)
         with open(path, "r", encoding="latin-1") as f:
             html = f.read()
@@ -2305,6 +2333,12 @@ def main():
             all_player_stats.append(player_stats)
             all_player_gamelogs.append(player_gamelogs)
 
+        now = time.perf_counter()
+        if index == len(player_files) or now - last_player_progress >= PROGRESS_INTERVAL_SECONDS:
+            progress(f"Player pages: {index}/{len(player_files)} checked")
+            last_player_progress = now
+
+    progress("Enriching players with teams, potential grades, and contracts")
     with open(FREE_AGENTS_PATH, "r", encoding="latin-1") as f:
         free_agents_html = f.read()
 
@@ -2326,6 +2360,7 @@ def main():
     all_player_stats.sort(key=lambda player: player["name"])
     all_player_gamelogs.sort(key=lambda player: player["name"])
 
+    progress("Writing player, statistics, and game-log feeds")
     atomic_dump_json(PLAYERS_OUT, all_players, separators=(",", ":"))
 
     player_stats_data = {
@@ -2354,6 +2389,7 @@ def main():
 
     atomic_dump_json(TEAMS_OUT, all_teams, indent=4)
 
+    progress("Parsing standings, cap report, injuries, and schedule")
     with open(STANDINGS_PATH, "r", encoding="latin-1") as f:
         standings_html = f.read()
 
@@ -2401,6 +2437,7 @@ def main():
 
     atomic_dump_json(GAME_RESULTS_OUT, game_results_data, indent=4)
 
+    progress(f"Parsing {len(game_results_data['results'])} completed box scores")
     box_scores_data = build_box_scores(game_results_data["results"])
     atomic_dump_json(
         BOX_SCORES_OUT,
@@ -2409,6 +2446,7 @@ def main():
         separators=(",", ":"),
     )
 
+    progress("Parsing free agents, leaders, and awards")
     free_agents_data = {
         "source": os.path.basename(FREE_AGENTS_PATH),
         "players": parse_free_agents(free_agents_html, ratings, last_team_lookup),
@@ -2484,6 +2522,7 @@ def main():
     print(f"Final count: {len(leaders_data['sections'])} leader sections saved to {LEADERS_OUT}")
     if awards_section_count:
         print(f"Final count: {awards_count} awards across {awards_section_count} sections saved to {AWARDS_OUT}")
+    progress("Database JSON build complete")
 
 if __name__ == "__main__":
     main()

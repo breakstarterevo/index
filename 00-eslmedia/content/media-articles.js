@@ -26,6 +26,98 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
+  // Season 4 Sim 2 - December 1984 package
+  {
+    file: "articles/season_4_sim_2_month_in_review.html",
+    title: "December 1984 Review: Real Madrid Stole The Month",
+    category: "Recap",
+    desk: "Analysis",
+    sortKey: "2026-07-25-07",
+    tag: "Month in Review",
+    author: "Graham Trent",
+    meta: "Season 4 - Sim 2",
+    blurb: "Real Madrid's perfect run, Richmond's continued control and Tier 3's three-team promotion fight defined December.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Barcelona", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Tottenham Hotspur"],
+    playerTags: ["Kelly Tripucka", "Larry Nance", "Paul Pierce", "Sidney Moncrief", "World B. Free"]
+  },
+  {
+    file: "articles/season_4_sim_2_mvp_race.html",
+    title: "December 1984 MVP Race: Winning Breaks The Scoring Tie",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-25-06",
+    tag: "MVP Race",
+    author: "Damon Cross",
+    meta: "Season 4 - Sim 2",
+    blurb: "Tom Chambers, Kelly Tripucka and Paul Pierce retain three crowded ballots as team context separates elite scorers.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Brighton", "Chelsea", "Inter Milan", "Monaco", "Paris Saint-Germain", "Real Madrid", "Valencia"],
+    playerTags: ["Andre Drummond", "Cliff Robinson", "Isiah Thomas", "Jim Paxson", "Joe Barry Carroll", "Johnny Moore", "Kelly Tripucka", "Kiki Vandeweghe", "Larry Nance", "Magic Johnson", "Otis Birdsong", "Paul Pierce", "Sidney Moncrief", "Tom Chambers", "World B. Free"]
+  },
+  {
+    file: "articles/season_4_sim_2_stock_up_stock_down.html",
+    title: "December 1984 Stock Report: Real Madrid Bought The Whole Month",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-25-05",
+    tag: "Stock Report",
+    author: "Damon Cross",
+    meta: "Season 4 - Sim 2",
+    blurb: "Real Madrid, Inter and Benfica rise while Aston Villa, Crystal Palace and Manchester City lose ground.",
+    teams: ["AFC Richmond", "Aston Villa", "Barcelona", "Benfica", "Crystal Palace", "Inter Milan", "Manchester City", "Manchester United", "Paris Saint-Germain", "Real Madrid"],
+    playerTags: ["Darrell Griffith", "Larry Nance", "Moses Malone", "Sidney Moncrief", "World B. Free"]
+  },
+  {
+    file: "articles/season_4_sim_2_promotion_relegation_watch.html",
+    title: "December 1984 Race Watch: The Lines Have Started To Bite",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-07-25-04",
+    tag: "Race Watch",
+    author: "Nina Vale",
+    meta: "Season 4 - Sim 2",
+    blurb: "Chelsea and Benfica remain in danger, Real and PSG control promotion, and Barcelona lead a three-team Tier 3 chase.",
+    teams: ["AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Chelsea", "Crystal Palace", "Inter Milan", "Juventus", "Marseille", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Moses Malone", "Paul Pierce"]
+  },
+  {
+    file: "articles/season_4_sim_2_tier_1_power_rankings.html",
+    title: "December 1984 Tier 1 Power Rankings: Richmond Still Have No Peer",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-25-03",
+    tag: "Tier 1 Rankings",
+    author: "Nina Vale",
+    meta: "Season 4 - Sim 2",
+    blurb: "Richmond remain untouchable while Chelsea and FL Fart complicate the middle of the Tier 1 trust board.",
+    teams: ["AC Milan", "AFC Richmond", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart"],
+    playerTags: ["Bernard King", "Bill Laimbeer", "Darrell Griffith", "Jim Paxson", "Kiki Vandeweghe", "Larry Drew", "Michael Cooper", "Moses Malone"]
+  },
+  {
+    file: "articles/season_4_sim_2_tier_2_power_rankings.html",
+    title: "December 1984 Tier 2 Power Rankings: Real Madrid Break The Board Open",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-25-02",
+    tag: "Tier 2 Rankings",
+    author: "Nina Vale",
+    meta: "Season 4 - Sim 2",
+    blurb: "Real Madrid's perfect month dislodges PSG, Ajax rises and Aston Villa collapses down the Tier 2 board.",
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Juventus", "Marseille", "Paris Saint-Germain", "Real Madrid", "Sheffield United"],
+    playerTags: ["Andre Iguodala", "Bill Cartwright", "Dennis Johnson", "Gerald Henderson", "Johnny Moore", "Kelly Tripucka", "Larry Nance", "Robert Parish", "Sidney Moncrief", "Steve Johnson"]
+  },
+  {
+    file: "articles/season_4_sim_2_tier_3_power_rankings.html",
+    title: "December 1984 Tier 3 Power Rankings: Barcelona Lead, Inter Look Stronger",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-07-25-01",
+    tag: "Tier 3 Rankings",
+    author: "Nina Vale",
+    meta: "Season 4 - Sim 2",
+    blurb: "Barcelona own first place, Inter own the strongest margin and Tottenham keep surviving the evidence.",
+    teams: ["Barcelona", "Inter Milan", "Manchester City", "Manchester United", "Monaco", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Andre Drummond", "Chris Bosh", "Doug Christie", "Isiah Thomas", "Josh Richardson", "Kirk Hinrich", "Paul Pierce", "World B. Free"]
+  },
   // Season 4 Sim 1 - November 1984 package
   {
     file: "articles/season_4_sim_1_month_in_review.html",
