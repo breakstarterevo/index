@@ -7,21 +7,21 @@
       "teams": [
         {
           "name": "AFC Richmond",
-          "wins": 13,
-          "losses": 4,
-          "streak": "W3"
-        },
-        {
-          "name": "AC Milan",
-          "wins": 10,
+          "wins": 18,
           "losses": 6,
           "streak": "W1"
         },
         {
-          "name": "FL Fart",
-          "wins": 8,
-          "losses": 7,
+          "name": "Brighton",
+          "wins": 15,
+          "losses": 9,
           "streak": "L1"
+        },
+        {
+          "name": "AC Milan",
+          "wins": 15,
+          "losses": 10,
+          "streak": "W1"
         }
       ]
     },
@@ -29,21 +29,21 @@
       "title": "ELB Standings",
       "teams": [
         {
-          "name": "Real Madrid",
-          "wins": 13,
-          "losses": 2,
-          "streak": "W8"
+          "name": "Paris Saint-Germain",
+          "wins": 20,
+          "losses": 3,
+          "streak": "W11"
         },
         {
-          "name": "Paris Saint-Germain",
-          "wins": 12,
-          "losses": 3,
-          "streak": "W3"
+          "name": "Real Madrid",
+          "wins": 16,
+          "losses": 6,
+          "streak": "L4"
         },
         {
           "name": "Ajax",
-          "wins": 10,
-          "losses": 8,
+          "wins": 13,
+          "losses": 10,
           "streak": "L1"
         }
       ]
@@ -52,22 +52,22 @@
       "title": "ECL Standings",
       "teams": [
         {
-          "name": "Barcelona",
-          "wins": 11,
-          "losses": 5,
-          "streak": "W4"
-        },
-        {
-          "name": "Tottenham Hotspur",
-          "wins": 10,
-          "losses": 5,
-          "streak": "W3"
-        },
-        {
           "name": "Inter Milan",
-          "wins": 10,
-          "losses": 6,
-          "streak": "W2"
+          "wins": 15,
+          "losses": 8,
+          "streak": "W5"
+        },
+        {
+          "name": "Barcelona",
+          "wins": 14,
+          "losses": 10,
+          "streak": "L1"
+        },
+        {
+          "name": "Valencia",
+          "wins": 13,
+          "losses": 10,
+          "streak": "W1"
         }
       ]
     }
@@ -75,7 +75,7 @@
   "leaders": [
     {
       "category": "Minutes",
-      "player": "Norm Nixon",
+      "player": "Jim Paxson",
       "team": "Chelsea",
       "value": "41.4"
     },
@@ -83,25 +83,25 @@
       "category": "Points",
       "player": "Kiki Vandeweghe",
       "team": "Brighton",
-      "value": "36.6"
+      "value": "38.6"
     },
     {
       "category": "Rebounds",
       "player": "Moses Malone",
       "team": "Benfica",
-      "value": "11.0"
+      "value": "10.3"
     },
     {
       "category": "Assists",
       "player": "Rickey Green",
       "team": "Chelsea",
-      "value": "10.7"
+      "value": "10.5"
     },
     {
       "category": "Steals",
       "player": "Rickey Green",
       "team": "Chelsea",
-      "value": "3.5"
+      "value": "3.1"
     }
   ]
 }
