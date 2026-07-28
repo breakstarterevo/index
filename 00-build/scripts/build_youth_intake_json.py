@@ -254,17 +254,17 @@ def _find_sheet(sheets, desired_name):
 
 
 def _find_database_sheets(sheets):
-    # Sheet8 is the maintained full player database. Prefer it exclusively so
+    # DATABASE is the maintained full player database. Prefer it exclusively so
     # partial/derived tabs cannot overwrite its attributes or POT values.
-    primary_name, primary_rows = _find_sheet(sheets, "Sheet8")
+    primary_name, primary_rows = _find_sheet(sheets, "DATABASE")
     if primary_name:
         return [(primary_name, primary_rows)]
 
     # Retain the older multi-sheet discovery for backward compatibility with
-    # workbooks created before the full Sheet8 database was introduced.
+    # workbooks that do not contain the DATABASE sheet.
     found = []
     seen = set()
-    for desired_name in ("Current Intake", "DATABASE", "DATATBASE", "UNIQUE DB", "TIER 1", "TIER 2", "TIER 3"):
+    for desired_name in ("Sheet8", "Current Intake", "DATATBASE", "UNIQUE DB", "TIER 1", "TIER 2", "TIER 3"):
         sheet_name, rows = _find_sheet(sheets, desired_name)
         key = _normalize_key(sheet_name)
         if sheet_name and key not in seen:
