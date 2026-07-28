@@ -19,7 +19,7 @@ SCRIPTS = [
     (os.path.join(BUILD_DIR, "build_player_photos_json.py"), "Building player photo mapping"),
     (os.path.join(BUILD_DIR, "build_player_database_json.py"), "Building season-aware player database feeds"),
     (os.path.join(BUILD_DIR, "build_discord_json.py"), "Building compact Discord lookup JSON files"),
-    (os.path.join(BUILD_DIR, "build_youth_intake_json.py"), "Building youth intake JSON from spreadsheet"),
+    (os.path.join(BUILD_DIR, "build_youth_intake_json.py"), "Building youth intake JSON"),
     (os.path.join(BUILD_DIR, "build_monthly_jsons.py"), "Building monthly media JSON files"),
     (os.path.join(BUILD_DIR, "build_media_package_prompts.py"), "Building monthly editorial prompt package"),
     (os.path.join(BUILD_DIR, "ensure_settings_page.py"), "Ensuring league settings page exists"),

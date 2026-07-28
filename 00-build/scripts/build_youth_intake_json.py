@@ -16,6 +16,7 @@ PROJECT_ROOT = os.path.dirname(BUILD_DIR)
 XLSX_PATH = os.path.join(PROJECT_ROOT, "00-assets", "spreadsheet", "Youth Intake.xlsx")
 OUTPUT_PATH = os.path.join(BUILD_DIR, "database", "youth_intake.json")
 PLAYERS_PATH = os.path.join(BUILD_DIR, "database", "players.json")
+APP_SOURCE_PATH = os.path.join(BUILD_DIR, "sources", "youth-intake", "current.json")
 
 TEAM_ALIASES = {
     "arsenal": "Sheffield United",
@@ -600,23 +601,97 @@ def build_youth_intake_payload(xlsx_path: str, rating_lookup=None, sheets=None):
     }
 
 
+def build_app_youth_intake_payload(app_source, rating_lookup=None):
+    """Build the public feed from a locked simulator publication."""
+    rating_lookup = rating_lookup or {}
+    teams = []
+    for source_team in app_source.get("teams", []):
+        team_name = str(source_team.get("team", "") or "").strip()
+        intake_players = []
+        for source_player in source_team.get("intakePlayers", []):
+            player = dict(source_player)
+            player["name"] = str(
+                player.get("name")
+                or f"{player.get('FirstName', '')} {player.get('LastName', '')}"
+            ).strip()
+            enriched = _enrich_intake_player(player, team_name, rating_lookup)
+            if not enriched.get("potential"):
+                enriched["potential"] = _parse_overall(enriched.get("POT", ""))
+            intake_players.append(enriched)
+
+        division = str(source_team.get("division", "") or source_team.get("tier", "")).strip()
+        teams.append({
+            "team": team_name,
+            "gm": str(source_team.get("gm", "") or "").strip(),
+            "tierRaw": str(source_team.get("divisionLabel", "") or division),
+            "tier": division,
+            "division": division,
+            "divisionLabel": str(source_team.get("divisionLabel", "") or ""),
+            "wins": source_team.get("wins", 0),
+            "losses": source_team.get("losses", 0),
+            "record": str(source_team.get("record", "") or ""),
+            "positionFocus": str(source_team.get("positionFocus", "") or ""),
+            "intakePlayers": intake_players,
+        })
+
+    relative_source = os.path.relpath(APP_SOURCE_PATH, PROJECT_ROOT).replace("\\", "/")
+    return {
+        "schemaVersion": app_source.get("schemaVersion", 1),
+        "rulesVersion": app_source.get("rulesVersion", ""),
+        "source": relative_source,
+        "sourceType": "commissioner-app",
+        "season": app_source.get("season", ""),
+        "status": "published",
+        "seed": app_source.get("seed", ""),
+        "generatedAt": app_source.get("generatedAt", ""),
+        "publishedAt": app_source.get("publishedAt", ""),
+        "draftHash": app_source.get("draftHash", ""),
+        "focusPolicy": app_source.get("focusPolicy", {}),
+        "allocationOrder": app_source.get("allocationOrder", []),
+        "revealOrder": app_source.get("revealOrder", []),
+        "audit": app_source.get("audit", []),
+        "inputHashes": app_source.get("inputHashes", {}),
+        "teams": teams,
+        "counts": {
+            "teams": len(teams),
+            "prospects": sum(len(team["intakePlayers"]) for team in teams),
+            "CLB": sum(len(team["intakePlayers"]) for team in teams if team["division"] == "CLB"),
+            "ELB": sum(len(team["intakePlayers"]) for team in teams if team["division"] == "ELB"),
+            "ECL": sum(len(team["intakePlayers"]) for team in teams if team["division"] == "ECL"),
+        },
+    }
+
+
 def main():
     dry_run = "--dry-run" in sys.argv[1:]
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
-    if not os.path.exists(XLSX_PATH):
-        print(f"Error: spreadsheet not found at {XLSX_PATH}")
-        return 1
-
     ratings = _load_player_ratings(PLAYERS_PATH)
-    sheets = _xlsx_sheet_rows(XLSX_PATH)
-    payload = build_youth_intake_payload(XLSX_PATH, ratings, sheets=sheets)
+    if os.path.exists(APP_SOURCE_PATH):
+        try:
+            with open(APP_SOURCE_PATH, "r", encoding="utf-8") as source:
+                app_source = json.load(source)
+            payload = build_app_youth_intake_payload(app_source, ratings)
+            source_label = "commissioner app source"
+        except (OSError, json.JSONDecodeError) as error:
+            print(f"Error: could not read commissioner app source: {error}")
+            return 1
+    else:
+        if not os.path.exists(XLSX_PATH):
+            print(f"Error: spreadsheet not found at {XLSX_PATH}")
+            return 1
+        sheets = _xlsx_sheet_rows(XLSX_PATH)
+        payload = build_youth_intake_payload(XLSX_PATH, ratings, sheets=sheets)
+        source_label = "legacy spreadsheet"
 
     if not dry_run:
         atomic_dump_json(OUTPUT_PATH, payload, indent=2, ensure_ascii=False)
 
     prefix = "[dry-run] Would write" if dry_run else "Wrote"
-    print(f"{prefix} {OUTPUT_PATH} ({payload.get('counts', {}).get('teams', 0)} teams)")
+    print(
+        f"{prefix} {OUTPUT_PATH} "
+        f"({payload.get('counts', {}).get('teams', 0)} teams, {source_label})"
+    )
     return 0
 
 

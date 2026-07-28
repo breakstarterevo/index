@@ -1,0 +1,91 @@
+{
+  "schemaVersion": 1,
+  "rulesVersion": "2026.1",
+  "expectedProspects": 72,
+  "focusChanceBasisPoints": 4000,
+  "randomBranchExcludesFocus": true,
+  "divisionSlots": {
+    "CLB": [
+      {
+        "id": "guaranteed-b",
+        "label": "Guaranteed B",
+        "type": "guaranteed",
+        "tierWeights": {
+          "B": 1
+        }
+      },
+      {
+        "id": "guaranteed-c",
+        "label": "Guaranteed C",
+        "type": "guaranteed",
+        "tierWeights": {
+          "C": 1
+        }
+      }
+    ],
+    "ELB": [
+      {
+        "id": "guaranteed-b",
+        "label": "Guaranteed B",
+        "type": "guaranteed",
+        "tierWeights": {
+          "B": 1
+        }
+      },
+      {
+        "id": "guaranteed-c",
+        "label": "Guaranteed C",
+        "type": "guaranteed",
+        "tierWeights": {
+          "C": 1
+        }
+      },
+      {
+        "id": "wildcard-1",
+        "label": "Europa Wildcard",
+        "type": "wildcard",
+        "tierWeights": {
+          "A": 25,
+          "B": 25,
+          "D": 50
+        }
+      }
+    ],
+    "ECL": [
+      {
+        "id": "guaranteed-b",
+        "label": "Guaranteed B",
+        "type": "guaranteed",
+        "tierWeights": {
+          "B": 1
+        }
+      },
+      {
+        "id": "guaranteed-c",
+        "label": "Guaranteed C",
+        "type": "guaranteed",
+        "tierWeights": {
+          "C": 1
+        }
+      },
+      {
+        "id": "wildcard-1",
+        "label": "Conference Wildcard B/D",
+        "type": "wildcard",
+        "tierWeights": {
+          "B": 50,
+          "D": 50
+        }
+      },
+      {
+        "id": "wildcard-2",
+        "label": "Conference Wildcard A/D",
+        "type": "wildcard",
+        "tierWeights": {
+          "A": 50,
+          "D": 50
+        }
+      }
+    ]
+  }
+}

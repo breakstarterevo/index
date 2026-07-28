@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Youth Intake Commissioner</title>
+  <script src="../js/theme-preload.js"></script>
+  <link rel="stylesheet" href="../css/styles.css">
+  <link rel="stylesheet" href="../css/unified-components.css">
+  <link rel="stylesheet" href="../css/youth-intake-simulator.css?v=5">
+  <script src="../js/core.js" defer></script>
+  <script src="../js/settings.js" defer></script>
+  <script src="../js/youth-intake-simulator.js?v=4" defer></script>
+</head>
+<body class="yi-app ui-page">
+  <main class="yi-shell">
+    <header class="yi-hero">
+      <div>
+        <p class="yi-kicker">European Superleague · Commissioner Control</p>
+        <h1>Youth Intake Simulator</h1>
+        <p class="yi-subtitle">Configure the academies, run one audited league draw, reveal it on stream, then publish.</p>
+      </div>
+      <div class="yi-hero-actions">
+        <span class="yi-status" id="appStatus">Connecting</span>
+        <a class="yi-button yi-button--quiet" href="./youth-intake.htm" target="_blank" rel="noopener">Public results</a>
+      </div>
+    </header>
+
+    <section class="yi-summary" aria-label="Intake status">
+      <article class="yi-summary-card"><span>Eligible pool</span><strong id="poolTotal">—</strong><small id="poolDetail">Loading</small></article>
+      <article class="yi-summary-card"><span>League slots</span><strong>72</strong><small>16 CLB · 24 ELB · 32 ECL</small></article>
+      <article class="yi-summary-card"><span>Focus policy</span><strong>40%</strong><small>Exact focus · 60% excludes focus</small></article>
+      <article class="yi-summary-card"><span>Official state</span><strong id="officialState">None</strong><small id="officialDetail">Ready for setup</small></article>
+    </section>
+
+    <section class="yi-panel" id="setupPanel">
+      <div class="yi-panel-head">
+        <div>
+          <p class="yi-section-label">Step 1</p>
+          <h2>League setup</h2>
+        </div>
+        <div class="yi-toolbar">
+          <label class="yi-field yi-field--season">
+            <span>Season</span>
+            <input id="seasonInput" type="text" autocomplete="off" spellcheck="false">
+          </label>
+          <button class="yi-button yi-button--quiet" id="refreshPoolButton" type="button">Refresh prospect pool</button>
+          <button class="yi-button" id="saveConfigButton" type="button">Save setup</button>
+        </div>
+      </div>
+      <div class="yi-rule-strip" id="validationStrip" role="status"></div>
+      <div class="yi-table-wrap yi-config-wrap">
+        <table class="yi-table yi-config-table">
+          <thead><tr><th>Division</th><th>Team</th><th>Record</th><th>GM</th><th>Academy Focus</th></tr></thead>
+          <tbody id="configRows"></tbody>
+        </table>
+      </div>
+      <div class="yi-runbar">
+        <div>
+          <strong>Simulation controls</strong>
+          <span>Test draws are disposable. The official seed is generated once and persisted immediately.</span>
+        </div>
+        <div class="yi-toolbar">
+          <button class="yi-button yi-button--quiet" id="testDrawButton" type="button">Run test draw</button>
+          <button class="yi-button yi-button--primary" id="officialDrawButton" type="button">Generate official draw</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="yi-panel" id="reviewPanel" hidden>
+      <div class="yi-panel-head">
+        <div>
+          <p class="yi-section-label">Steps 2–4</p>
+          <h2 id="reviewTitle">Draw review</h2>
+          <p class="yi-panel-copy" id="reviewMeta"></p>
+        </div>
+        <div class="yi-toolbar">
+          <button class="yi-button yi-button--broadcast" id="revealButton" type="button">Open broadcast reveal</button>
+          <button class="yi-button yi-button--quiet" id="exportCsvButton" type="button" hidden>Export FBB3 CSVs</button>
+          <button class="yi-button yi-button--danger" id="voidButton" type="button" hidden>Void draft</button>
+          <button class="yi-button yi-button--primary" id="publishButton" type="button" hidden>Lock &amp; publish</button>
+        </div>
+      </div>
+      <div class="yi-review-controls">
+        <label class="yi-field"><span>Division</span><select id="divisionFilter"><option value="">All divisions</option></select></label>
+        <label class="yi-field"><span>Team</span><select id="teamFilter"><option value="">All teams</option></select></label>
+        <span class="yi-review-count" id="reviewCount"></span>
+      </div>
+      <div class="yi-table-wrap yi-review-wrap">
+        <table class="yi-table yi-review-table">
+          <thead>
+            <tr>
+              <th><button class="yi-sort-button" type="button" data-sort="team">Team</button></th>
+              <th><button class="yi-sort-button" type="button" data-sort="division">Div</button></th>
+              <th><button class="yi-sort-button" type="button" data-sort="record">Record</button></th>
+              <th><button class="yi-sort-button" type="button" data-sort="slot">Slot</button></th>
+              <th><button class="yi-sort-button" type="button" data-sort="tier">Tier</button></th>
+              <th><button class="yi-sort-button" type="button" data-sort="focus">Focus</button></th>
+              <th><button class="yi-sort-button" type="button" data-sort="player">Player</button></th>
+              <th><button class="yi-sort-button" type="button" data-sort="position">Pos</button></th>
+              <th><button class="yi-sort-button" type="button" data-sort="age">Age</button></th>
+              <th><button class="yi-sort-button" type="button" data-sort="potential">POT</button></th>
+              <th>Audit</th>
+            </tr>
+          </thead>
+          <tbody id="reviewRows"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div class="yi-reveal" id="revealOverlay" hidden aria-live="polite">
+    <div class="yi-reveal-stage" id="revealStage"></div>
+    <div class="yi-reveal-controls">
+      <span id="revealProgress">0 / 0</span>
+      <button type="button" data-reveal-action="previous">Previous team</button>
+      <button type="button" data-reveal-action="autoplay">Autoplay</button>
+      <button type="button" data-reveal-action="next">Next team</button>
+      <button type="button" data-reveal-action="fullscreen">Fullscreen</button>
+      <button type="button" data-reveal-action="skip">Skip reveal</button>
+    </div>
+  </div>
+
+  <div class="yi-toast" id="toast" hidden role="status"></div>
+</body>
+</html>
