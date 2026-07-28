@@ -29,7 +29,7 @@
     .title { margin:0; color:var(--ink); font-size:1.55rem; font-weight:900; letter-spacing:-.025em; line-height:1.05; }
     .sub { margin:.25rem 0 0; color:var(--muted); font-size:.79rem; font-weight:700; }
     .controls { display:flex; gap:.45rem; align-items:end; }
-    .control-field { display:grid; gap:.22rem; min-width:220px; }
+    .control-field { display:grid; gap:.22rem; min-width:170px; }
     .control-label { color:var(--muted); font-size:.66rem; font-weight:900; letter-spacing:.06em; text-transform:uppercase; }
     .team-picker,.btn { min-height:36px; border:1px solid var(--line); border-radius:0; background:#fff; color:var(--ink); padding:.42rem .52rem; }
     .team-picker:focus { border-color:var(--blue-2); outline:2px solid rgba(29,54,102,.13); }
@@ -87,7 +87,7 @@
     html[data-theme="dark"] .panel-note { background:#382e17; color:#f1d286; }
     @media (max-width:760px) {
       body { padding:.45rem; }
-      .shell { width:calc(100vw - .9rem); }
+      .shell { width:100%; }
       .header { grid-template-columns:1fr; align-items:stretch; }
       .controls { align-items:stretch; }
       .control-field { min-width:0; flex:1; }
@@ -97,7 +97,8 @@
       .team-mark { width:48px; height:48px; flex-basis:48px; }
       .team-mark img { width:40px; height:40px; }
       .title { font-size:1.25rem; }
-      .controls { display:grid; grid-template-columns:1fr auto; }
+      .controls { display:grid; grid-template-columns:1fr 1fr; }
+      .controls .btn { grid-column:1 / -1; }
       .table th.col-name,.table td.col-name { min-width:160px; width:160px; max-width:160px; }
     }
   </style>
@@ -114,6 +115,7 @@
         </div>
       </div>
       <div class="controls ui-actions">
+        <label class="control-field ui-field"><span class="control-label ui-label">Division</span><select id="divisionPicker" class="team-picker ui-select"></select></label>
         <label class="control-field ui-field"><span class="control-label ui-label">Team view</span><select id="teamPicker" class="team-picker ui-select"></select></label>
         <a href="./player-database.htm" class="btn ui-button">Player Database</a>
       </div>
@@ -147,6 +149,8 @@
     const state = {
       teams: [],
       current: null,
+      meta: {},
+      division: "",
       mode: "potential",
       sortKey: "name",
       sortDir: "asc"
@@ -229,9 +233,10 @@
       const common = ["Position", "Age", ...ratings];
       const regular = ["InsideScoring", "JumpShot", "FtShot", "3pShot", "3pUsage", "Handling", "Passing", "PostDefense", "PerimeterDefense", "Stealing", "Blocking", "OReb", "DReb", "Fouling", "Strength", "Quickness", "Jumping", "Stamina", "InjuryAvoidance"];
       const potential = ["PotInside", "PotJumpShot", "PotFtShot", "Pot3pShot", "3pUsage", "PotHandling", "PotPassing", "PotPostDefense", "PotPerimeterDefense", "PotStealing", "PotBlocking", "PotOReb", "PotDReb", "Fouling", "Strength", "Quickness", "Jumping", "Stamina", "InjuryAvoidance"];
-      const columns = ["name", ...(includeTeamColumn ? ["team"] : []), "tier", ...common, ...(state.mode === "potential" ? potential : regular)];
+      const columns = ["name", ...(includeTeamColumn ? ["team"] : []), "slotLabel", "tier", "focusOutcome", ...common, ...(state.mode === "potential" ? potential : regular)];
       const rows = players.map((p) => {
-        const row = columns.map((c) => c === "name" ? p.name : (p[c] ?? ""));
+        const displayPlayer = { ...p, tier: p.selectedTier || p.tier || "" };
+        const row = columns.map((c) => c === "name" ? displayPlayer.name : (displayPlayer[c] ?? ""));
         row.playerId = p.playerId || "";
         return row;
       });
@@ -260,6 +265,8 @@
       if (String(key || "").toLowerCase() === "team") return "Team";
       const map = {
         tier: "Tier",
+        slotLabel: "Slot",
+        focusOutcome: "Focus",
         overall: "OVR",
         potential: "POT",
         Height: "HT",
@@ -306,6 +313,7 @@
       if (index === 0) return "col-name ui-sticky";
       const lower = String(key || "").toLowerCase();
       if (lower === "team") return "col-team";
+      if (lower === "slotlabel" || lower === "focusoutcome") return "col-team";
       if (lower === "tier") return "col-stat";
       if (lower === "position") return "col-pos";
       if (lower === "age") return "col-age";
@@ -324,6 +332,7 @@
         includeTeamColumn = true;
         detailed = state.teams
           .filter((t) => t.team !== "__ALL__" && normalizeName(t.team) !== "team")
+          .filter((t) => !state.division || (t.division || t.tier) === state.division)
           .flatMap((t) => (Array.isArray(t.intakePlayers) ? t.intakePlayers : []).map((entry) => {
             const name = String((entry && entry.name) || "").trim();
             return { ...entry, name, team: t.team };
@@ -339,10 +348,14 @@
       const columns = built.columns;
       const rows = sortRows(columns, built.rows);
 
+      const publicationContext = [state.meta.season, state.meta.seed ? `Seed ${String(state.meta.seed).slice(0, 12)}` : ""].filter(Boolean).join(" / ");
       document.getElementById("teamTitle").textContent = team.team === "__ALL__" ? "All Teams Youth Intake" : `${team.team} Youth Intake`;
       document.getElementById("teamSub").textContent = team.team === "__ALL__"
-        ? "League-wide intake class"
+        ? `${state.division ? `${state.division} / ` : ""}League-wide intake class${publicationContext ? ` / ${publicationContext}` : ""}`
         : `${team.tier || "Unassigned Tier"}${team.positionFocus ? ` · Focus ${team.positionFocus}` : ""}`;
+      if (publicationContext && team.team !== "__ALL__") {
+        document.getElementById("teamSub").textContent += ` / ${publicationContext}`;
+      }
       document.getElementById("statusText").textContent = `${rows.length} prospects`;
       renderTeamMark(team.team);
 
@@ -389,7 +402,7 @@
       });
     }
 
-    function bindPicker() {
+    function bindPickers() {
       const picker = document.getElementById("teamPicker");
       picker.innerHTML = state.teams.map((t) => `<option value="${escapeHtml(t.team)}" ${t.team === state.current.team ? "selected" : ""}>${t.team === "__ALL__" ? "All Teams" : escapeHtml(t.team)}</option>`).join("");
       picker.addEventListener("change", () => {
@@ -403,11 +416,32 @@
         }
         window.location.search = params.toString();
       });
+      const divisionPicker = document.getElementById("divisionPicker");
+      const divisionOptions = [
+        ["", "All divisions"],
+        ["CLB", "Champions League"],
+        ["ELB", "Europa League"],
+        ["ECL", "Conference League"]
+      ];
+      divisionPicker.innerHTML = divisionOptions.map(([value, label]) =>
+        `<option value="${value}"${value === state.division ? " selected" : ""}>${label}</option>`
+      ).join("");
+      divisionPicker.addEventListener("change", () => {
+        state.division = divisionPicker.value;
+        if (state.current && state.current.team !== "__ALL__") {
+          state.current = state.teams[0];
+          picker.value = "__ALL__";
+        }
+        renderCurrentTeam();
+      });
     }
 
     async function init() {
       try {
         const intakeData = await loadJson(URLS.intake);
+        state.meta = intakeData || {};
+        const requestedDivision = String(q("division") || "").toUpperCase();
+        state.division = ["CLB", "ELB", "ECL"].includes(requestedDivision) ? requestedDivision : "";
         state.teams = Array.isArray(intakeData.teams)
           ? intakeData.teams
               .filter((t) => normalizeName(t && t.team) !== "team")
@@ -418,7 +452,7 @@
         state.current = findTeamFromQuery();
         if (!q("team")) state.current = state.teams[0] || state.current;
         if (!state.current) throw new Error("No teams in intake file");
-        bindPicker();
+        bindPickers();
         renderCurrentTeam();
       } catch (err) {
         document.getElementById("teamTitle").textContent = "Youth Intake unavailable";
