@@ -8,8 +8,52 @@
             "team": "roster24",
             "teamName": "Barcelona",
             "rosterUrl": "./rosters/roster24.htm",
-            "length": "285",
+            "length": "257",
             "injury": "Ruptured Achilles",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "C",
+            "name": "Andre Drummond",
+            "url": "",
+            "team": "roster20",
+            "teamName": "Monaco",
+            "rosterUrl": "./rosters/roster20.htm",
+            "length": "242",
+            "injury": "Ruptured Achilles",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "SF",
+            "name": "Robert Reid",
+            "url": "",
+            "team": "roster11",
+            "teamName": "Atletico Madrid",
+            "rosterUrl": "./rosters/roster11.htm",
+            "length": "41",
+            "injury": "Torn Ligament",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "SF",
+            "name": "Jim Paxson",
+            "url": "",
+            "team": "roster17",
+            "teamName": "Chelsea",
+            "rosterUrl": "./rosters/roster17.htm",
+            "length": "38",
+            "injury": "Broken Ankle",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "C",
+            "name": "Trayce Jackson-Davis",
+            "url": "",
+            "team": "roster23",
+            "teamName": "Sporting CP",
+            "rosterUrl": "./rosters/roster23.htm",
+            "length": "30",
+            "injury": "Stress Fracture",
             "rowClass": "row1"
         },
         {
@@ -19,7 +63,7 @@
             "team": "roster18",
             "teamName": "Ajax",
             "rosterUrl": "./rosters/roster18.htm",
-            "length": "54",
+            "length": "26",
             "injury": "Plantar Fasciitis",
             "rowClass": "row2"
         },
@@ -30,8 +74,30 @@
             "team": "roster18",
             "teamName": "Ajax",
             "rosterUrl": "./rosters/roster18.htm",
-            "length": "48",
+            "length": "20",
             "injury": "Torn Ligament",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PF",
+            "name": "Alvan Adams",
+            "url": "",
+            "team": "roster17",
+            "teamName": "Chelsea",
+            "rosterUrl": "./rosters/roster17.htm",
+            "length": "19",
+            "injury": "Broken Foot",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "C",
+            "name": "Jeff Ruland",
+            "url": "",
+            "team": "roster27",
+            "teamName": "FL Fart",
+            "rosterUrl": "./rosters/roster27.htm",
+            "length": "11",
+            "injury": "Patellar Tendanitis",
             "rowClass": "row1"
         },
         {
@@ -41,108 +107,31 @@
             "team": "roster12",
             "teamName": "AFC Richmond",
             "rosterUrl": "./rosters/roster12.htm",
-            "length": "36",
+            "length": "8",
             "injury": "Broken Arm",
             "rowClass": "row2"
         },
         {
             "pos": "C",
-            "name": "Mike Gminski",
-            "url": "",
-            "team": "roster21",
-            "teamName": "Paris Saint-Germain",
-            "rosterUrl": "./rosters/roster21.htm",
-            "length": "27",
-            "injury": "Broken Foot",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "PF",
-            "name": "Willie Cauley-Stein",
+            "name": "Eddy Curry",
             "url": "",
             "team": "roster28",
             "teamName": "Manchester City",
             "rosterUrl": "./rosters/roster28.htm",
-            "length": "19",
-            "injury": "Concussion",
-            "rowClass": "row2"
+            "length": "5",
+            "injury": "Inflamed Appendix",
+            "rowClass": "row1"
         },
         {
             "pos": "C",
-            "name": "Jalen Duren",
+            "name": "Alton Lister",
             "url": "",
-            "team": "roster24",
-            "teamName": "Barcelona",
-            "rosterUrl": "./rosters/roster24.htm",
-            "length": "13",
-            "injury": "Broken Leg",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "SG",
-            "name": "Gilbert Arenas",
-            "url": "",
-            "team": "roster23",
-            "teamName": "Sporting CP",
-            "rosterUrl": "./rosters/roster23.htm",
-            "length": "9",
-            "injury": "Patellar Tendanitis",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SF",
-            "name": "Louis Orr",
-            "url": "",
-            "team": "roster7",
-            "teamName": "Bayern Munich",
-            "rosterUrl": "./rosters/roster7.htm",
-            "length": "9",
-            "injury": "Dislocated Shoulder",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "PG",
-            "name": "Eric Gordon",
-            "url": "",
-            "team": "roster10",
-            "teamName": "Brighton",
-            "rosterUrl": "./rosters/roster10.htm",
-            "length": "7",
-            "injury": "Broken Foot",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SF",
-            "name": "Mike McGee",
-            "url": "",
-            "team": "roster13",
-            "teamName": "Benfica",
-            "rosterUrl": "./rosters/roster13.htm",
-            "length": "3",
-            "injury": "Broken Finger",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "PF",
-            "name": "Bobby Jones",
-            "url": "",
-            "team": "roster10",
-            "teamName": "Brighton",
-            "rosterUrl": "./rosters/roster10.htm",
+            "team": "roster5",
+            "teamName": "Manchester United",
+            "rosterUrl": "./rosters/roster5.htm",
             "length": "2",
-            "injury": "Sprained Ankle",
+            "injury": "Jammed Finger",
             "rowClass": "row2"
-        },
-        {
-            "pos": "SF",
-            "name": "Kelly Tripucka",
-            "url": "",
-            "team": "roster21",
-            "teamName": "Paris Saint-Germain",
-            "rosterUrl": "./rosters/roster21.htm",
-            "length": "1",
-            "injury": "Sprained Knee",
-            "rowClass": "row1"
         }
     ]
 }
