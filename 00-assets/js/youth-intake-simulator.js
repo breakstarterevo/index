@@ -334,12 +334,42 @@
     return '<span class="yi-class-rating"><b>' + label + '</b> ' +
       escapeHtml(current) + '<i>→</i>' + escapeHtml(potential) + "</span>";
   }
+  var REVEAL_SKILLS = [
+    {label:"INS",current:"InsideScoring",potential:"PotInside"},
+    {label:"JPS",current:"JumpShot",potential:"PotJumpShot"},
+    {label:"FT",current:"FtShot",potential:"PotFtShot"},
+    {label:"3PT",current:"3pShot",potential:"Pot3pShot"},
+    {label:"HND",current:"Handling",potential:"PotHandling"},
+    {label:"PAS",current:"Passing",potential:"PotPassing"},
+    {label:"PST D",current:"PostDefense",potential:"PotPostDefense"},
+    {label:"PER D",current:"PerimeterDefense",potential:"PotPerimeterDefense"},
+    {label:"STL",current:"Stealing",potential:"PotStealing"},
+    {label:"BLK",current:"Blocking",potential:"PotBlocking"},
+    {label:"OREB",current:"OReb",potential:"PotOReb"},
+    {label:"DREB",current:"DReb",potential:"PotDReb"}
+  ];
+  function bestRevealSkills(player, limit) {
+    return REVEAL_SKILLS.filter(function (skill) {
+      return Number.isFinite(Number(player[skill.current])) ||
+        Number.isFinite(Number(player[skill.potential]));
+    }).sort(function (left, right) {
+      var leftPotential = Number(player[left.potential]);
+      var rightPotential = Number(player[right.potential]);
+      var leftCurrent = Number(player[left.current]);
+      var rightCurrent = Number(player[right.current]);
+      if (!Number.isFinite(leftPotential)) leftPotential = leftCurrent;
+      if (!Number.isFinite(rightPotential)) rightPotential = rightCurrent;
+      if (!Number.isFinite(leftCurrent)) leftCurrent = -1;
+      if (!Number.isFinite(rightCurrent)) rightCurrent = -1;
+      return rightPotential - leftPotential ||
+        rightCurrent - leftCurrent ||
+        left.label.localeCompare(right.label);
+    }).slice(0,limit);
+  }
   function revealProspect(player, team) {
     var tier = String(player.selectedTier || player.tier || "").toLowerCase();
     var wildcard = player.slotType === "wildcard";
-    var usePostDefense = player.Position === "PF" || player.Position === "C";
-    var defenseCurrent = usePostDefense ? "PostDefense" : "PerimeterDefense";
-    var defensePotential = usePostDefense ? "PotPostDefense" : "PotPerimeterDefense";
+    var bestSkills = bestRevealSkills(player,5);
     return '<section class="yi-class-prospect">' +
       '<div class="yi-class-prospect-head">' +
         '<div><span class="yi-class-slot">' + escapeHtml(player.slotLabel) + '</span>' +
@@ -349,11 +379,9 @@
       '<p class="yi-class-meta">' + escapeHtml(player.Position) + " / Age " + escapeHtml(player.Age) +
         " / " + escapeHtml(formatHeight(player.Height)) + " / POT " + escapeHtml(player.POT) + "</p>" +
       '<div class="yi-class-ratings">' +
-        compactRatingPair(player,"INS","InsideScoring","PotInside") +
-        compactRatingPair(player,"JPS","JumpShot","PotJumpShot") +
-        compactRatingPair(player,"3PT","3pShot","Pot3pShot") +
-        compactRatingPair(player,"HND","Handling","PotHandling") +
-        compactRatingPair(player,"DEF",defenseCurrent,defensePotential) +
+        bestSkills.map(function (skill) {
+          return compactRatingPair(player,skill.label,skill.current,skill.potential);
+        }).join("") +
       "</div>" +
       '<p class="yi-class-roll">' +
         (wildcard ? "Wildcard: Tier " + escapeHtml(player.selectedTier) : "Guaranteed Tier " + escapeHtml(player.selectedTier)) +
