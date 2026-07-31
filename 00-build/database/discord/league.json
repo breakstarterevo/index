@@ -7,20 +7,20 @@
       "teams": [
         {
           "name": "AFC Richmond",
-          "wins": 23,
-          "losses": 6,
-          "streak": "W6"
-        },
-        {
-          "name": "Brighton",
-          "wins": 17,
-          "losses": 13,
-          "streak": "L1"
+          "wins": 29,
+          "losses": 8,
+          "streak": "W3"
         },
         {
           "name": "AC Milan",
-          "wins": 16,
-          "losses": 14,
+          "wins": 22,
+          "losses": 15,
+          "streak": "W3"
+        },
+        {
+          "name": "Brighton",
+          "wins": 22,
+          "losses": 16,
           "streak": "W1"
         }
       ]
@@ -30,21 +30,21 @@
       "teams": [
         {
           "name": "Paris Saint-Germain",
-          "wins": 25,
-          "losses": 6,
-          "streak": "W1"
+          "wins": 31,
+          "losses": 7,
+          "streak": "L1"
         },
         {
           "name": "Real Madrid",
-          "wins": 22,
-          "losses": 6,
-          "streak": "W6"
+          "wins": 26,
+          "losses": 11,
+          "streak": "W2"
         },
         {
           "name": "Ajax",
-          "wins": 17,
-          "losses": 12,
-          "streak": "L1"
+          "wins": 21,
+          "losses": 15,
+          "streak": "W1"
         }
       ]
     },
@@ -53,21 +53,21 @@
       "teams": [
         {
           "name": "Inter Milan",
-          "wins": 21,
-          "losses": 9,
-          "streak": "W5"
-        },
-        {
-          "name": "Barcelona",
-          "wins": 18,
-          "losses": 12,
+          "wins": 25,
+          "losses": 13,
           "streak": "W1"
         },
         {
-          "name": "Valencia",
-          "wins": 16,
-          "losses": 12,
+          "name": "Barcelona",
+          "wins": 23,
+          "losses": 14,
           "streak": "L2"
+        },
+        {
+          "name": "Valencia",
+          "wins": 20,
+          "losses": 16,
+          "streak": "W2"
         }
       ]
     }
@@ -77,31 +77,31 @@
       "category": "Minutes",
       "player": "Michael Cooper",
       "team": "AFC Richmond",
-      "value": "41.4"
+      "value": "41.5"
     },
     {
       "category": "Points",
       "player": "Kiki Vandeweghe",
       "team": "Brighton",
-      "value": "39.1"
+      "value": "37.5"
     },
     {
       "category": "Rebounds",
       "player": "Moses Malone",
       "team": "Benfica",
-      "value": "10.3"
+      "value": "10.4"
     },
     {
       "category": "Assists",
       "player": "Rickey Green",
       "team": "Chelsea",
-      "value": "10.7"
+      "value": "10.6"
     },
     {
       "category": "Steals",
       "player": "Rickey Green",
       "team": "Chelsea",
-      "value": "3.1"
+      "value": "2.9"
     }
   ]
 }

@@ -16,10 +16,30 @@ PROJECT_ROOT = os.path.dirname(BUILD_DIR)
 XLSX_PATH = os.path.join(PROJECT_ROOT, "00-assets", "spreadsheet", "Youth Intake.xlsx")
 OUTPUT_PATH = os.path.join(BUILD_DIR, "database", "youth_intake.json")
 PLAYERS_PATH = os.path.join(BUILD_DIR, "database", "players.json")
+INTAKE_PLAYERS_PATH = os.path.join(BUILD_DIR, "database", "youth_intake_players.json")
 APP_SOURCE_PATH = os.path.join(BUILD_DIR, "sources", "youth-intake", "current.json")
 
 TEAM_ALIASES = {
     "arsenal": "Sheffield United",
+}
+
+CURRENT_RATING_FIELDS = {
+    "InsideScoring": "Ins",
+    "JumpShot": "Jps",
+    "FtShot": "Fts",
+    "3pShot": "3ps",
+    "Handling": "Hnd",
+    "Passing": "Pas",
+    "PostDefense": "Psd",
+    "PerimeterDefense": "Prd",
+    "Stealing": "Stl",
+    "Blocking": "Blk",
+    "OReb": "Orb",
+    "DReb": "Drb",
+    "Strength": "Str",
+    "Quickness": "Qkn",
+    "Jumping": "Jmp",
+    "Stamina": "Sta",
 }
 
 
@@ -118,6 +138,11 @@ def _load_player_ratings(path: str):
     return lookup
 
 
+def _unique_named_player(player_name, player_lookup):
+    candidates = player_lookup.get(_normalize_key(player_name), [])
+    return dict(candidates[0]) if len(candidates) == 1 else {}
+
+
 def _rated_player_for_intake(player, team_name, rating_lookup):
     candidates = rating_lookup.get(_normalize_key(player.get("name", "")), [])
     if not candidates:
@@ -142,6 +167,14 @@ def _rated_player_for_intake(player, team_name, rating_lookup):
     if team_matches:
         return team_matches[0]
 
+    draft_matches = [
+        candidate
+        for candidate in candidates
+        if _normalize_key(candidate.get("teamLabel", candidate.get("team", ""))) == "draft"
+    ]
+    if len(draft_matches) == 1:
+        return draft_matches[0]
+
     age_matches = [
         candidate
         for candidate in candidates
@@ -157,6 +190,14 @@ def _rated_player_for_intake(player, team_name, rating_lookup):
 def _enrich_intake_player(player, team_name, rating_lookup):
     enriched = dict(player)
     rated_player = _rated_player_for_intake(enriched, team_name, rating_lookup)
+    for intake_field, rating_field in CURRENT_RATING_FIELDS.items():
+        value = rated_player.get(rating_field, "")
+        if value != "" and value is not None:
+            enriched[intake_field] = value
+    for intake_field, rating_field in (("Position", "pos"), ("Age", "age")):
+        value = rated_player.get(rating_field, "")
+        if value != "" and value is not None:
+            enriched[intake_field] = value
     enriched["playerId"] = rated_player.get("playerId", "") or _player_id_from_url(rated_player.get("url", ""))
     enriched["overall"] = _parse_overall(rated_player.get("overall", ""))
     enriched["potential"] = _parse_overall(enriched.get("POT", "") or rated_player.get("potential", ""))
@@ -530,7 +571,12 @@ def _build_intake_map(rows, known_team_names=None):
     return intake_by_team
 
 
-def build_youth_intake_payload(xlsx_path: str, rating_lookup=None, sheets=None):
+def build_youth_intake_payload(
+    xlsx_path: str,
+    rating_lookup=None,
+    sheets=None,
+    prospect_lookup=None,
+):
     sheets = sheets if sheets is not None else _xlsx_sheet_rows(xlsx_path)
     intake_sheet_name, intake_rows = _find_sheet(sheets, "INTAKE list")
     focus_sheet_name, focus_rows = _find_sheet(sheets, "Position focus")
@@ -550,6 +596,7 @@ def build_youth_intake_payload(xlsx_path: str, rating_lookup=None, sheets=None):
 
     teams = []
     rating_lookup = rating_lookup or {}
+    prospect_lookup = prospect_lookup or {}
     for team_key in sorted(all_team_names):
         focus_info = focus_map.get(team_key, {})
         team_name = focus_info.get("team") or _first_non_empty([name for name in intake_map.keys() if _normalize_key(name) == team_key]) or team_key
@@ -562,7 +609,13 @@ def build_youth_intake_payload(xlsx_path: str, rating_lookup=None, sheets=None):
 
         intake_players = []
         for player_name in intake_names:
-            db_data = player_lookup.get(_normalize_key(player_name), {})
+            # The maintained database removes prospects after they are selected.
+            # Prefer the preserved pre-draft snapshot so their original potential
+            # ratings survive and same-name players still resolve correctly.
+            db_data = (
+                _unique_named_player(player_name, prospect_lookup)
+                or player_lookup.get(_normalize_key(player_name), {})
+            )
             if db_data:
                 intake_players.append(_enrich_intake_player(db_data, team_name, rating_lookup))
             else:
@@ -667,6 +720,7 @@ def main():
     os.makedirs(os.path.dirname(OUTPUT_PATH), exist_ok=True)
 
     ratings = _load_player_ratings(PLAYERS_PATH)
+    prospects = _load_player_ratings(INTAKE_PLAYERS_PATH)
     if os.path.exists(APP_SOURCE_PATH):
         try:
             with open(APP_SOURCE_PATH, "r", encoding="utf-8") as source:
@@ -681,7 +735,12 @@ def main():
             print(f"Error: spreadsheet not found at {XLSX_PATH}")
             return 1
         sheets = _xlsx_sheet_rows(XLSX_PATH)
-        payload = build_youth_intake_payload(XLSX_PATH, ratings, sheets=sheets)
+        payload = build_youth_intake_payload(
+            XLSX_PATH,
+            ratings,
+            sheets=sheets,
+            prospect_lookup=prospects,
+        )
         source_label = "legacy spreadsheet"
 
     if not dry_run:

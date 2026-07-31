@@ -8,7 +8,7 @@
             "team": "roster24",
             "teamName": "Barcelona",
             "rosterUrl": "./rosters/roster24.htm",
-            "length": "257",
+            "length": "227",
             "injury": "Ruptured Achilles",
             "rowClass": "row1"
         },
@@ -19,7 +19,7 @@
             "team": "roster20",
             "teamName": "Monaco",
             "rosterUrl": "./rosters/roster20.htm",
-            "length": "242",
+            "length": "212",
             "injury": "Ruptured Achilles",
             "rowClass": "row2"
         },
@@ -30,7 +30,7 @@
             "team": "roster11",
             "teamName": "Atletico Madrid",
             "rosterUrl": "./rosters/roster11.htm",
-            "length": "41",
+            "length": "11",
             "injury": "Torn Ligament",
             "rowClass": "row1"
         },
@@ -41,97 +41,20 @@
             "team": "roster17",
             "teamName": "Chelsea",
             "rosterUrl": "./rosters/roster17.htm",
-            "length": "38",
+            "length": "8",
             "injury": "Broken Ankle",
             "rowClass": "row2"
         },
         {
-            "pos": "C",
-            "name": "Trayce Jackson-Davis",
-            "url": "",
-            "team": "roster23",
-            "teamName": "Sporting CP",
-            "rosterUrl": "./rosters/roster23.htm",
-            "length": "30",
-            "injury": "Stress Fracture",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "SF",
-            "name": "Cliff Robinson",
-            "url": "",
-            "team": "roster18",
-            "teamName": "Ajax",
-            "rosterUrl": "./rosters/roster18.htm",
-            "length": "26",
-            "injury": "Plantar Fasciitis",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SG",
-            "name": "Jared Butler",
-            "url": "",
-            "team": "roster18",
-            "teamName": "Ajax",
-            "rosterUrl": "./rosters/roster18.htm",
-            "length": "20",
-            "injury": "Torn Ligament",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "PF",
-            "name": "Alvan Adams",
-            "url": "",
-            "team": "roster17",
-            "teamName": "Chelsea",
-            "rosterUrl": "./rosters/roster17.htm",
-            "length": "19",
-            "injury": "Broken Foot",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "C",
-            "name": "Jeff Ruland",
-            "url": "",
-            "team": "roster27",
-            "teamName": "FL Fart",
-            "rosterUrl": "./rosters/roster27.htm",
-            "length": "11",
-            "injury": "Patellar Tendanitis",
-            "rowClass": "row1"
-        },
-        {
             "pos": "PG",
-            "name": "Michael Adams",
+            "name": "Mike Bibby",
             "url": "",
-            "team": "roster12",
-            "teamName": "AFC Richmond",
-            "rosterUrl": "./rosters/roster12.htm",
-            "length": "8",
-            "injury": "Broken Arm",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "C",
-            "name": "Eddy Curry",
-            "url": "",
-            "team": "roster28",
-            "teamName": "Manchester City",
-            "rosterUrl": "./rosters/roster28.htm",
-            "length": "5",
+            "team": "roster26",
+            "teamName": "Inter Milan",
+            "rosterUrl": "./rosters/roster26.htm",
+            "length": "6",
             "injury": "Inflamed Appendix",
             "rowClass": "row1"
-        },
-        {
-            "pos": "C",
-            "name": "Alton Lister",
-            "url": "",
-            "team": "roster5",
-            "teamName": "Manchester United",
-            "rosterUrl": "./rosters/roster5.htm",
-            "length": "2",
-            "injury": "Jammed Finger",
-            "rowClass": "row2"
         }
     ]
 }

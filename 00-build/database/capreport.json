@@ -200,6 +200,23 @@
                 },
                 {
                     "pick": 4,
+                    "team": "Ajax",
+                    "rosterUrl": "./rosters/roster18.htm",
+                    "rosterFile": "roster18.htm",
+                    "salary": 65888796.0,
+                    "salaryText": "$65,888,796",
+                    "capRoom": 4111204.0,
+                    "capRoomText": "$4,111,204",
+                    "budgetRoom": 34111204.0,
+                    "budgetRoomText": "$34,111,204",
+                    "midException": -0.0,
+                    "midExceptionText": "($0)",
+                    "lowException": -0.0,
+                    "lowExceptionText": "($0)",
+                    "rowClass": "row2"
+                },
+                {
+                    "pick": 5,
                     "team": "Atletico Madrid",
                     "rosterUrl": "./rosters/roster11.htm",
                     "rosterFile": "roster11.htm",
@@ -213,10 +230,10 @@
                     "midExceptionText": "($0)",
                     "lowException": -0.0,
                     "lowExceptionText": "($0)",
-                    "rowClass": "row2"
+                    "rowClass": "row1"
                 },
                 {
-                    "pick": 5,
+                    "pick": 6,
                     "team": "Real Madrid",
                     "rosterUrl": "./rosters/roster8.htm",
                     "rosterFile": "roster8.htm",
@@ -230,10 +247,10 @@
                     "midExceptionText": "($0)",
                     "lowException": -0.0,
                     "lowExceptionText": "($0)",
-                    "rowClass": "row1"
+                    "rowClass": "row2"
                 },
                 {
-                    "pick": 6,
+                    "pick": 7,
                     "team": "Marseille",
                     "rosterUrl": "./rosters/roster15.htm",
                     "rosterFile": "roster15.htm",
@@ -247,10 +264,10 @@
                     "midExceptionText": "($0)",
                     "lowException": -0.0,
                     "lowExceptionText": "($0)",
-                    "rowClass": "row2"
+                    "rowClass": "row1"
                 },
                 {
-                    "pick": 7,
+                    "pick": 8,
                     "team": "Paris Saint-Germain",
                     "rosterUrl": "./rosters/roster21.htm",
                     "rosterFile": "roster21.htm",
@@ -260,23 +277,6 @@
                     "capRoomText": "$10,834",
                     "budgetRoom": 130010834.0,
                     "budgetRoomText": "$130,010,834",
-                    "midException": -0.0,
-                    "midExceptionText": "($0)",
-                    "lowException": -0.0,
-                    "lowExceptionText": "($0)",
-                    "rowClass": "row1"
-                },
-                {
-                    "pick": 8,
-                    "team": "Ajax",
-                    "rosterUrl": "./rosters/roster18.htm",
-                    "rosterFile": "roster18.htm",
-                    "salary": 70179780.0,
-                    "salaryText": "$70,179,780",
-                    "capRoom": -179780.0,
-                    "capRoomText": "($179,780)",
-                    "budgetRoom": 29820220.0,
-                    "budgetRoomText": "$29,820,220",
                     "midException": -0.0,
                     "midExceptionText": "($0)",
                     "lowException": -0.0,
