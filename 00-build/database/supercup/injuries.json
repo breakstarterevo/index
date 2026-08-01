@@ -1,38 +1,4 @@
 {
     "source": "injuries.htm",
-    "injuries": [
-        {
-            "pos": "SF",
-            "name": "Brian Winters",
-            "url": "",
-            "team": "roster18",
-            "teamName": "Inter Milan",
-            "rosterUrl": "./rosters/roster18.htm",
-            "length": "47",
-            "injury": "Ruptured Achilles",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "PF",
-            "name": "Dan Roundfield",
-            "url": "",
-            "team": "roster24",
-            "teamName": "Real Madrid",
-            "rosterUrl": "./rosters/roster24.htm",
-            "length": "24",
-            "injury": "Broken Foot",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SF",
-            "name": "Robert Reid",
-            "url": "",
-            "team": "roster20",
-            "teamName": "Manchester United",
-            "rosterUrl": "./rosters/roster20.htm",
-            "length": "3",
-            "injury": "Sprained Ankle",
-            "rowClass": "row1"
-        }
-    ]
+    "injuries": []
 }
