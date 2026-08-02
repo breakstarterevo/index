@@ -29,6 +29,7 @@ def configure_supercup_paths():
 
     league_builder.ROSTERS_DIR = os.path.normpath(os.path.join(SUPERCUP_ROOT, "rosters"))
     league_builder.PLAYERS_DIR = os.path.normpath(os.path.join(SUPERCUP_ROOT, "players"))
+    league_builder.BOXES_DIR = os.path.normpath(os.path.join(SUPERCUP_ROOT, "boxes"))
 
     league_builder.PLAYERS_OUT = os.path.join(SUPERCUP_DATABASE_DIR, "players.json")
     league_builder.PLAYER_STATS_OUT = os.path.join(SUPERCUP_DATABASE_DIR, "player_stats.json")
@@ -42,7 +43,9 @@ def configure_supercup_paths():
     league_builder.FREE_AGENTS_OUT = os.path.join(SUPERCUP_DATABASE_DIR, "freeagents.json")
     league_builder.LEADERS_OUT = os.path.join(SUPERCUP_DATABASE_DIR, "leaders.json")
     league_builder.GAME_RESULTS_OUT = os.path.join(SUPERCUP_DATABASE_DIR, "game_results.json")
+    league_builder.BOX_SCORES_OUT = os.path.join(SUPERCUP_DATABASE_DIR, "box_scores.json")
     league_builder.AWARDS_OUT = os.path.join(SUPERCUP_DATABASE_DIR, "awards.json")
+    league_builder.SEASON_AWARDS_OUT = os.path.join(SUPERCUP_DATABASE_DIR, "season_awards.json")
 
     league_builder.STANDINGS_PATH = os.path.normpath(os.path.join(SUPERCUP_ROOT, "standings.htm"))
     league_builder.CAPREPORT_PATH = os.path.normpath(os.path.join(SUPERCUP_ROOT, "capreport.htm"))
@@ -52,6 +55,7 @@ def configure_supercup_paths():
     league_builder.DRAFT_PATH = os.path.normpath(os.path.join(SUPERCUP_ROOT, "draft.htm"))
     league_builder.LEADERS_PATH = os.path.normpath(os.path.join(SUPERCUP_ROOT, "leaders.htm"))
     league_builder.AWARDS_PATH = os.path.normpath(os.path.join(SUPERCUP_ROOT, "awards.htm"))
+    league_builder.SEASON_AWARDS_PATH = os.path.normpath(os.path.join(SUPERCUP_ROOT, "seasonawards.htm"))
     league_builder.MDB_PATH = os.path.normpath(os.path.join(SUPERCUP_ROOT, "LeagueOutput.mdb"))
 
 

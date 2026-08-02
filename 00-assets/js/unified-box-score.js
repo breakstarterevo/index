@@ -78,6 +78,9 @@
     return gameId(params.get("game") || params.get("file") || params.get("box"));
   }
   if (IS_MATCH_CENTRE && !currentRouteId()) return;
+  if (IS_MATCH_CENTRE && "scrollRestoration" in window.history) {
+    window.history.scrollRestoration = "manual";
+  }
   function gameHref(game) {
     return "./match-centre.htm?game=" + encodeURIComponent(game.gameId);
   }
@@ -481,7 +484,11 @@
       byId("boxscoreView").hidden = false;
       byId("landingView").hidden = true;
       byId("detailView").hidden = true;
+      window.scrollTo(0, 0);
     }
+    document.querySelector(".boxscore-scoreboard").hidden = false;
+    document.querySelector(".boxscore-summary-grid").hidden = false;
+    byId("teamTablePanel").hidden = false;
     byId("boxscoreError").hidden = true;
     byId("boxscoreHero").hidden = false;
     if (replaceUrl) window.history.replaceState({}, "", gameHref(game));
@@ -530,6 +537,15 @@
     notice.textContent = state.invalidRoute ? "That box score is unavailable. Showing the latest completed game." : "";
   }
   function showError(message) {
+    if (IS_MATCH_CENTRE) {
+      byId("boxscoreView").hidden = false;
+      byId("landingView").hidden = true;
+      byId("detailView").hidden = true;
+      window.scrollTo(0, 0);
+    }
+    document.querySelector(".boxscore-scoreboard").hidden = true;
+    document.querySelector(".boxscore-summary-grid").hidden = true;
+    byId("teamTablePanel").hidden = true;
     byId("boxscoreHero").hidden = true;
     byId("boxscoreError").hidden = false;
     byId("boxscoreError").textContent = message;

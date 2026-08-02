@@ -148,6 +148,12 @@
 .ui-rating--green { background: #15803d; border-color: #15803d; }
 .ui-rating--yellow { background: #facc15; border-color: #eab308; color: #1f2937; }
 .ui-rating--orange { background: #f97316; border-color: #ea580c; }
+/* Keep rating cells coloured when table striping or row hover is active. */
+.ui-table tbody tr td.ui-rating--purple { background: #7e22ce; border-color: #7e22ce; color: #fff; }
+.ui-table tbody tr td.ui-rating--blue { background: #1d4ed8; border-color: #1d4ed8; color: #fff; }
+.ui-table tbody tr td.ui-rating--green { background: #15803d; border-color: #15803d; color: #fff; }
+.ui-table tbody tr td.ui-rating--yellow { background: #facc15; border-color: #eab308; color: #1f2937; }
+.ui-table tbody tr td.ui-rating--orange { background: #f97316; border-color: #ea580c; color: #fff; }
 .ui-tier { background: var(--ui-soft); color: var(--ui-ink); text-transform: uppercase; }
 .ui-tier--a { background: #dcf3e3; color: #146b31; }
 .ui-tier--b { background: #e4f0ff; color: #175ba8; }
