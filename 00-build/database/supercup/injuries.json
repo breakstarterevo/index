@@ -1,4 +1,27 @@
 {
     "source": "injuries.htm",
-    "injuries": []
+    "injuries": [
+        {
+            "pos": "C",
+            "name": "Jalen Duren",
+            "url": "",
+            "team": "roster10",
+            "teamName": "Barcelona",
+            "rosterUrl": "./rosters/roster10.htm",
+            "length": "11",
+            "injury": "Dislocated Shoulder",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "PG",
+            "name": "Darnell Valentine",
+            "url": "",
+            "team": "roster10",
+            "teamName": "Barcelona",
+            "rosterUrl": "./rosters/roster10.htm",
+            "length": "6",
+            "injury": "Sprained Knee",
+            "rowClass": "row2"
+        }
+    ]
 }
