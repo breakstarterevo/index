@@ -10,6 +10,57 @@
                     "slug": "player-of-the-week",
                     "awards": [
                         {
+                            "date": "04/14/1985",
+                            "pos": "PG",
+                            "player": "Reggie Theus",
+                            "playerUrl": "./players/player708.htm",
+                            "playerFile": "player708.htm",
+                            "team": "roster6",
+                            "teamName": "Crystal Palace",
+                            "teamUrl": "./rosters/roster6.htm",
+                            "teamFile": "roster6.htm",
+                            "ppg": 25.0,
+                            "rpg": 7.0,
+                            "apg": 12.5,
+                            "spg": 4.5,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "04/07/1985",
+                            "pos": "PG",
+                            "player": "Magic Johnson",
+                            "playerUrl": "./players/player698.htm",
+                            "playerFile": "player698.htm",
+                            "team": "roster12",
+                            "teamName": "AFC Richmond",
+                            "teamUrl": "./rosters/roster12.htm",
+                            "teamFile": "roster12.htm",
+                            "ppg": 18.5,
+                            "rpg": 6.5,
+                            "apg": 8.5,
+                            "spg": 3.5,
+                            "bpg": 1.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "03/31/1985",
+                            "pos": "PF",
+                            "player": "Kevin McHale",
+                            "playerUrl": "./players/player717.htm",
+                            "playerFile": "player717.htm",
+                            "team": "roster7",
+                            "teamName": "Bayern Munich",
+                            "teamUrl": "./rosters/roster7.htm",
+                            "teamFile": "roster7.htm",
+                            "ppg": 33.5,
+                            "rpg": 7.0,
+                            "apg": 3.0,
+                            "spg": 0.5,
+                            "bpg": 2.5,
+                            "rowClass": "row1"
+                        },
+                        {
                             "date": "03/24/1985",
                             "pos": "PF",
                             "player": "Joe Barry Carroll",
@@ -24,7 +75,7 @@
                             "apg": 0.5,
                             "spg": 0.5,
                             "bpg": 2.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "03/17/1985",
@@ -41,7 +92,7 @@
                             "apg": 3.0,
                             "spg": 1.0,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "03/10/1985",
@@ -58,7 +109,7 @@
                             "apg": 3.0,
                             "spg": 4.0,
                             "bpg": 1.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "03/03/1985",
@@ -75,7 +126,7 @@
                             "apg": 5.0,
                             "spg": 1.3,
                             "bpg": 0.3,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "02/24/1985",
@@ -92,7 +143,7 @@
                             "apg": 5.0,
                             "spg": 1.0,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "02/17/1985",
@@ -109,7 +160,7 @@
                             "apg": 3.0,
                             "spg": 0.0,
                             "bpg": 3.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "02/10/1985",
@@ -126,7 +177,7 @@
                             "apg": 3.0,
                             "spg": 0.0,
                             "bpg": 1.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "02/03/1985",
@@ -143,7 +194,7 @@
                             "apg": 6.0,
                             "spg": 1.0,
                             "bpg": 1.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "01/27/1985",
@@ -160,7 +211,7 @@
                             "apg": 4.0,
                             "spg": 0.0,
                             "bpg": 4.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "01/20/1985",
@@ -177,7 +228,7 @@
                             "apg": 4.5,
                             "spg": 1.5,
                             "bpg": 0.5,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "01/13/1985",
@@ -194,7 +245,7 @@
                             "apg": 2.0,
                             "spg": 0.0,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "01/06/1985",
@@ -211,7 +262,7 @@
                             "apg": 4.0,
                             "spg": 1.0,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/30/1984",
@@ -228,7 +279,7 @@
                             "apg": 10.5,
                             "spg": 4.0,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/23/1984",
@@ -245,7 +296,7 @@
                             "apg": 5.0,
                             "spg": 1.5,
                             "bpg": 1.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/16/1984",
@@ -262,7 +313,7 @@
                             "apg": 3.5,
                             "spg": 0.0,
                             "bpg": 2.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/09/1984",
@@ -279,7 +330,7 @@
                             "apg": 9.5,
                             "spg": 1.5,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/02/1984",
@@ -296,7 +347,7 @@
                             "apg": 3.5,
                             "spg": 0.0,
                             "bpg": 0.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/25/1984",
@@ -313,7 +364,7 @@
                             "apg": 2.0,
                             "spg": 1.5,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/18/1984",
@@ -330,7 +381,7 @@
                             "apg": 2.3,
                             "spg": 0.0,
                             "bpg": 0.7,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/11/1984",
@@ -347,7 +398,7 @@
                             "apg": 5.0,
                             "spg": 0.5,
                             "bpg": 1.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/04/1984",
@@ -364,7 +415,7 @@
                             "apg": 5.7,
                             "spg": 1.7,
                             "bpg": 0.3,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 },
@@ -372,6 +423,40 @@
                     "title": "Player of the Month",
                     "slug": "player-of-the-month",
                     "awards": [
+                        {
+                            "date": "April",
+                            "pos": "PF",
+                            "player": "Alex English",
+                            "playerUrl": "./players/player711.htm",
+                            "playerFile": "player711.htm",
+                            "team": "roster6",
+                            "teamName": "Crystal Palace",
+                            "teamUrl": "./rosters/roster6.htm",
+                            "teamFile": "roster6.htm",
+                            "ppg": 29.2,
+                            "rpg": 6.3,
+                            "apg": 4.2,
+                            "spg": 0.3,
+                            "bpg": 0.8,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "March",
+                            "pos": "SG",
+                            "player": "Kiki Vandeweghe",
+                            "playerUrl": "./players/player701.htm",
+                            "playerFile": "player701.htm",
+                            "team": "roster10",
+                            "teamName": "Brighton",
+                            "teamUrl": "./rosters/roster10.htm",
+                            "teamFile": "roster10.htm",
+                            "ppg": 31.5,
+                            "rpg": 7.1,
+                            "apg": 4.6,
+                            "spg": 0.6,
+                            "bpg": 0.5,
+                            "rowClass": "row2"
+                        },
                         {
                             "date": "February",
                             "pos": "SG",
@@ -446,6 +531,40 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "April",
+                            "pos": "PF",
+                            "player": "Alex English",
+                            "playerUrl": "./players/player711.htm",
+                            "playerFile": "player711.htm",
+                            "team": "roster6",
+                            "teamName": "Crystal Palace",
+                            "teamUrl": "./rosters/roster6.htm",
+                            "teamFile": "roster6.htm",
+                            "ppg": 29.2,
+                            "rpg": 6.3,
+                            "apg": 4.2,
+                            "spg": 0.3,
+                            "bpg": 0.8,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "March",
+                            "pos": "SG",
+                            "player": "Kiki Vandeweghe",
+                            "playerUrl": "./players/player701.htm",
+                            "playerFile": "player701.htm",
+                            "team": "roster10",
+                            "teamName": "Brighton",
+                            "teamUrl": "./rosters/roster10.htm",
+                            "teamFile": "roster10.htm",
+                            "ppg": 31.5,
+                            "rpg": 7.1,
+                            "apg": 4.6,
+                            "spg": 0.6,
+                            "bpg": 0.5,
+                            "rowClass": "row2"
+                        },
                         {
                             "date": "February",
                             "pos": "SG",
@@ -527,6 +646,57 @@
                     "slug": "player-of-the-week",
                     "awards": [
                         {
+                            "date": "04/14/1985",
+                            "pos": "C",
+                            "player": "Larry Nance",
+                            "playerUrl": "./players/player880.htm",
+                            "playerFile": "player880.htm",
+                            "team": "roster19",
+                            "teamName": "Aston Villa",
+                            "teamUrl": "./rosters/roster19.htm",
+                            "teamFile": "roster19.htm",
+                            "ppg": 38.5,
+                            "rpg": 13.0,
+                            "apg": 5.0,
+                            "spg": 2.0,
+                            "bpg": 2.5,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "04/07/1985",
+                            "pos": "C",
+                            "player": "James Edwards",
+                            "playerUrl": "./players/player893.htm",
+                            "playerFile": "player893.htm",
+                            "team": "roster18",
+                            "teamName": "Ajax",
+                            "teamUrl": "./rosters/roster18.htm",
+                            "teamFile": "roster18.htm",
+                            "ppg": 27.5,
+                            "rpg": 10.5,
+                            "apg": 5.5,
+                            "spg": 0.5,
+                            "bpg": 3.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "03/31/1985",
+                            "pos": "C",
+                            "player": "Larry Nance",
+                            "playerUrl": "./players/player880.htm",
+                            "playerFile": "player880.htm",
+                            "team": "roster19",
+                            "teamName": "Aston Villa",
+                            "teamUrl": "./rosters/roster19.htm",
+                            "teamFile": "roster19.htm",
+                            "ppg": 36.7,
+                            "rpg": 8.0,
+                            "apg": 2.0,
+                            "spg": 1.7,
+                            "bpg": 2.3,
+                            "rowClass": "row1"
+                        },
+                        {
                             "date": "03/24/1985",
                             "pos": "C",
                             "player": "Larry Nance",
@@ -541,7 +711,7 @@
                             "apg": 3.0,
                             "spg": 2.0,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "03/17/1985",
@@ -558,7 +728,7 @@
                             "apg": 1.5,
                             "spg": 1.5,
                             "bpg": 2.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "03/10/1985",
@@ -575,7 +745,7 @@
                             "apg": 5.0,
                             "spg": 1.0,
                             "bpg": 7.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "03/03/1985",
@@ -592,7 +762,7 @@
                             "apg": 15.0,
                             "spg": 5.0,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "02/24/1985",
@@ -609,7 +779,7 @@
                             "apg": 3.5,
                             "spg": 0.0,
                             "bpg": 5.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "02/17/1985",
@@ -626,7 +796,7 @@
                             "apg": 5.0,
                             "spg": 0.5,
                             "bpg": 0.5,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "02/10/1985",
@@ -643,7 +813,7 @@
                             "apg": 7.5,
                             "spg": 2.5,
                             "bpg": 0.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "02/03/1985",
@@ -660,7 +830,7 @@
                             "apg": 6.0,
                             "spg": 2.0,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "01/27/1985",
@@ -677,7 +847,7 @@
                             "apg": 3.0,
                             "spg": 2.0,
                             "bpg": 2.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "01/20/1985",
@@ -694,7 +864,7 @@
                             "apg": 7.5,
                             "spg": 1.0,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "01/13/1985",
@@ -711,7 +881,7 @@
                             "apg": 3.0,
                             "spg": 4.0,
                             "bpg": 3.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "01/06/1985",
@@ -728,7 +898,7 @@
                             "apg": 4.0,
                             "spg": 2.0,
                             "bpg": 0.5,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/30/1984",
@@ -745,7 +915,7 @@
                             "apg": 3.0,
                             "spg": 0.0,
                             "bpg": 2.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/23/1984",
@@ -762,7 +932,7 @@
                             "apg": 2.0,
                             "spg": 2.0,
                             "bpg": 3.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/16/1984",
@@ -779,7 +949,7 @@
                             "apg": 7.0,
                             "spg": 1.0,
                             "bpg": 1.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/09/1984",
@@ -796,7 +966,7 @@
                             "apg": 4.0,
                             "spg": 2.5,
                             "bpg": 4.5,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/02/1984",
@@ -813,7 +983,7 @@
                             "apg": 3.5,
                             "spg": 2.0,
                             "bpg": 2.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/25/1984",
@@ -830,7 +1000,7 @@
                             "apg": 3.0,
                             "spg": 0.5,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/18/1984",
@@ -847,7 +1017,7 @@
                             "apg": 3.0,
                             "spg": 1.0,
                             "bpg": 1.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/11/1984",
@@ -864,7 +1034,7 @@
                             "apg": 4.5,
                             "spg": 0.0,
                             "bpg": 2.5,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/04/1984",
@@ -881,7 +1051,7 @@
                             "apg": 4.3,
                             "spg": 0.7,
                             "bpg": 0.3,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 },
@@ -889,6 +1059,40 @@
                     "title": "Player of the Month",
                     "slug": "player-of-the-month",
                     "awards": [
+                        {
+                            "date": "April",
+                            "pos": "C",
+                            "player": "Larry Nance",
+                            "playerUrl": "./players/player880.htm",
+                            "playerFile": "player880.htm",
+                            "team": "roster19",
+                            "teamName": "Aston Villa",
+                            "teamUrl": "./rosters/roster19.htm",
+                            "teamFile": "roster19.htm",
+                            "ppg": 39.6,
+                            "rpg": 11.4,
+                            "apg": 5.4,
+                            "spg": 1.2,
+                            "bpg": 2.2,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "March",
+                            "pos": "C",
+                            "player": "Larry Nance",
+                            "playerUrl": "./players/player880.htm",
+                            "playerFile": "player880.htm",
+                            "team": "roster19",
+                            "teamName": "Aston Villa",
+                            "teamUrl": "./rosters/roster19.htm",
+                            "teamFile": "roster19.htm",
+                            "ppg": 43.0,
+                            "rpg": 10.8,
+                            "apg": 3.1,
+                            "spg": 1.6,
+                            "bpg": 4.0,
+                            "rowClass": "row2"
+                        },
                         {
                             "date": "February",
                             "pos": "SF",
@@ -963,6 +1167,40 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "April",
+                            "pos": "PF",
+                            "player": "Armen Gilliam",
+                            "playerUrl": "./players/player1369.htm",
+                            "playerFile": "player1369.htm",
+                            "team": "roster18",
+                            "teamName": "Ajax",
+                            "teamUrl": "./rosters/roster18.htm",
+                            "teamFile": "roster18.htm",
+                            "ppg": 18.0,
+                            "rpg": 10.5,
+                            "apg": 2.7,
+                            "spg": 1.3,
+                            "bpg": 1.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "March",
+                            "pos": "C",
+                            "player": "Mike Gminski",
+                            "playerUrl": "./players/player722.htm",
+                            "playerFile": "player722.htm",
+                            "team": "roster21",
+                            "teamName": "Paris Saint-Germain",
+                            "teamUrl": "./rosters/roster21.htm",
+                            "teamFile": "roster21.htm",
+                            "ppg": 19.7,
+                            "rpg": 8.6,
+                            "apg": 2.1,
+                            "spg": 0.7,
+                            "bpg": 4.9,
+                            "rowClass": "row2"
+                        },
                         {
                             "date": "February",
                             "pos": "PF",
@@ -1044,6 +1282,57 @@
                     "slug": "player-of-the-week",
                     "awards": [
                         {
+                            "date": "04/14/1985",
+                            "pos": "PG",
+                            "player": "Darnell Valentine",
+                            "playerUrl": "./players/player1056.htm",
+                            "playerFile": "player1056.htm",
+                            "team": "roster24",
+                            "teamName": "Barcelona",
+                            "teamUrl": "./rosters/roster24.htm",
+                            "teamFile": "roster24.htm",
+                            "ppg": 34.0,
+                            "rpg": 3.0,
+                            "apg": 14.0,
+                            "spg": 5.0,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "04/07/1985",
+                            "pos": "SG",
+                            "player": "Hubert Davis",
+                            "playerUrl": "./players/player440.htm",
+                            "playerFile": "player440.htm",
+                            "team": "roster22",
+                            "teamName": "Tottenham Hotspur",
+                            "teamUrl": "./rosters/roster22.htm",
+                            "teamFile": "roster22.htm",
+                            "ppg": 31.0,
+                            "rpg": 4.5,
+                            "apg": 5.0,
+                            "spg": 0.5,
+                            "bpg": 0.5,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "03/31/1985",
+                            "pos": "PF",
+                            "player": "David West",
+                            "playerUrl": "./players/player262.htm",
+                            "playerFile": "player262.htm",
+                            "team": "roster26",
+                            "teamName": "Inter Milan",
+                            "teamUrl": "./rosters/roster26.htm",
+                            "teamFile": "roster26.htm",
+                            "ppg": 22.0,
+                            "rpg": 14.5,
+                            "apg": 2.5,
+                            "spg": 1.0,
+                            "bpg": 2.0,
+                            "rowClass": "row1"
+                        },
+                        {
                             "date": "03/24/1985",
                             "pos": "SF",
                             "player": "Paul Pierce",
@@ -1058,7 +1347,7 @@
                             "apg": 2.5,
                             "spg": 1.0,
                             "bpg": 2.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "03/17/1985",
@@ -1075,7 +1364,7 @@
                             "apg": 4.5,
                             "spg": 0.0,
                             "bpg": 2.5,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "03/10/1985",
@@ -1092,7 +1381,7 @@
                             "apg": 1.5,
                             "spg": 0.5,
                             "bpg": 0.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "03/03/1985",
@@ -1109,7 +1398,7 @@
                             "apg": 4.5,
                             "spg": 2.0,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "02/24/1985",
@@ -1126,7 +1415,7 @@
                             "apg": 3.3,
                             "spg": 0.7,
                             "bpg": 2.3,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "02/17/1985",
@@ -1143,7 +1432,7 @@
                             "apg": 3.5,
                             "spg": 0.5,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "02/10/1985",
@@ -1160,7 +1449,7 @@
                             "apg": 3.3,
                             "spg": 1.3,
                             "bpg": 0.7,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "02/03/1985",
@@ -1177,7 +1466,7 @@
                             "apg": 10.3,
                             "spg": 2.3,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "01/27/1985",
@@ -1194,7 +1483,7 @@
                             "apg": 3.0,
                             "spg": 1.5,
                             "bpg": 0.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "01/20/1985",
@@ -1211,7 +1500,7 @@
                             "apg": 5.0,
                             "spg": 1.5,
                             "bpg": 1.5,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "01/13/1985",
@@ -1228,7 +1517,7 @@
                             "apg": 3.0,
                             "spg": 0.5,
                             "bpg": 0.5,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "01/06/1985",
@@ -1245,7 +1534,7 @@
                             "apg": 5.0,
                             "spg": 0.5,
                             "bpg": 2.5,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/30/1984",
@@ -1262,7 +1551,7 @@
                             "apg": 6.5,
                             "spg": 2.5,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/23/1984",
@@ -1279,7 +1568,7 @@
                             "apg": 3.0,
                             "spg": 1.3,
                             "bpg": 1.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/16/1984",
@@ -1296,7 +1585,7 @@
                             "apg": 4.0,
                             "spg": 0.0,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "12/09/1984",
@@ -1313,7 +1602,7 @@
                             "apg": 4.7,
                             "spg": 2.7,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "12/02/1984",
@@ -1330,7 +1619,7 @@
                             "apg": 2.7,
                             "spg": 0.0,
                             "bpg": 0.7,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/25/1984",
@@ -1347,7 +1636,7 @@
                             "apg": 5.0,
                             "spg": 2.5,
                             "bpg": 2.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/18/1984",
@@ -1364,7 +1653,7 @@
                             "apg": 2.5,
                             "spg": 0.5,
                             "bpg": 1.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "11/11/1984",
@@ -1381,7 +1670,7 @@
                             "apg": 2.5,
                             "spg": 1.0,
                             "bpg": 0.5,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "11/04/1984",
@@ -1398,7 +1687,7 @@
                             "apg": 2.5,
                             "spg": 4.0,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 },
@@ -1406,6 +1695,40 @@
                     "title": "Player of the Month",
                     "slug": "player-of-the-month",
                     "awards": [
+                        {
+                            "date": "April",
+                            "pos": "PG",
+                            "player": "Darnell Valentine",
+                            "playerUrl": "./players/player1056.htm",
+                            "playerFile": "player1056.htm",
+                            "team": "roster24",
+                            "teamName": "Barcelona",
+                            "teamUrl": "./rosters/roster24.htm",
+                            "teamFile": "roster24.htm",
+                            "ppg": 21.6,
+                            "rpg": 2.8,
+                            "apg": 15.0,
+                            "spg": 4.0,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "March",
+                            "pos": "C",
+                            "player": "Eddy Curry",
+                            "playerUrl": "./players/player252.htm",
+                            "playerFile": "player252.htm",
+                            "team": "roster28",
+                            "teamName": "Manchester City",
+                            "teamUrl": "./rosters/roster28.htm",
+                            "teamFile": "roster28.htm",
+                            "ppg": 22.6,
+                            "rpg": 9.0,
+                            "apg": 2.1,
+                            "spg": 0.0,
+                            "bpg": 1.3,
+                            "rowClass": "row2"
+                        },
                         {
                             "date": "February",
                             "pos": "PF",
@@ -1480,6 +1803,40 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "April",
+                            "pos": "PF",
+                            "player": "Otis Thorpe",
+                            "playerUrl": "./players/player178.htm",
+                            "playerFile": "player178.htm",
+                            "team": "roster25",
+                            "teamName": "Valencia",
+                            "teamUrl": "./rosters/roster25.htm",
+                            "teamFile": "roster25.htm",
+                            "ppg": 23.5,
+                            "rpg": 8.2,
+                            "apg": 1.5,
+                            "spg": 0.7,
+                            "bpg": 0.8,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "March",
+                            "pos": "PF",
+                            "player": "Otis Thorpe",
+                            "playerUrl": "./players/player178.htm",
+                            "playerFile": "player178.htm",
+                            "team": "roster25",
+                            "teamName": "Valencia",
+                            "teamUrl": "./rosters/roster25.htm",
+                            "teamFile": "roster25.htm",
+                            "ppg": 20.1,
+                            "rpg": 6.0,
+                            "apg": 1.5,
+                            "spg": 0.5,
+                            "bpg": 0.1,
+                            "rowClass": "row2"
+                        },
                         {
                             "date": "February",
                             "pos": "PG",
