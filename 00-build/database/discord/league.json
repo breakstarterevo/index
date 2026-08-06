@@ -6,22 +6,22 @@
       "title": "CLB Standings",
       "teams": [
         {
-          "name": "AFC Richmond",
-          "wins": 31,
-          "losses": 11,
-          "streak": "W1"
+          "name": "Crystal Palace",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
+        },
+        {
+          "name": "Real Madrid",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         },
         {
           "name": "AC Milan",
-          "wins": 26,
-          "losses": 16,
-          "streak": "W4"
-        },
-        {
-          "name": "Brighton",
-          "wins": 23,
-          "losses": 19,
-          "streak": "L1"
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         }
       ]
     },
@@ -29,22 +29,22 @@
       "title": "ELB Standings",
       "teams": [
         {
-          "name": "Paris Saint-Germain",
-          "wins": 34,
-          "losses": 8,
-          "streak": "W1"
+          "name": "Bayern Munich",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         },
         {
-          "name": "Real Madrid",
-          "wins": 31,
-          "losses": 11,
-          "streak": "W7"
+          "name": "Atletico Madrid",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         },
         {
-          "name": "Ajax",
-          "wins": 24,
-          "losses": 18,
-          "streak": "W1"
+          "name": "Marseille",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         }
       ]
     },
@@ -52,56 +52,25 @@
       "title": "ECL Standings",
       "teams": [
         {
-          "name": "Inter Milan",
-          "wins": 27,
-          "losses": 15,
-          "streak": "W2"
+          "name": "Manchester United",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         },
         {
-          "name": "Barcelona",
-          "wins": 26,
-          "losses": 16,
-          "streak": "W1"
+          "name": "Juventus",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         },
         {
-          "name": "Valencia",
-          "wins": 24,
-          "losses": 18,
-          "streak": "L1"
+          "name": "Monaco",
+          "wins": 0,
+          "losses": 0,
+          "streak": "-"
         }
       ]
     }
   ],
-  "leaders": [
-    {
-      "category": "Minutes",
-      "player": "Michael Cooper",
-      "team": "AFC Richmond",
-      "value": "41.2"
-    },
-    {
-      "category": "Points",
-      "player": "Kiki Vandeweghe",
-      "team": "Brighton",
-      "value": "37.8"
-    },
-    {
-      "category": "Rebounds",
-      "player": "Moses Malone",
-      "team": "Benfica",
-      "value": "10.4"
-    },
-    {
-      "category": "Assists",
-      "player": "Rickey Green",
-      "team": "Chelsea",
-      "value": "10.5"
-    },
-    {
-      "category": "Steals",
-      "player": "Rickey Green",
-      "team": "Chelsea",
-      "value": "3.0"
-    }
-  ]
+  "leaders": []
 }

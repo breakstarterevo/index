@@ -6,10 +6,127 @@
     "tiers": {
         "Tier 1": [
             {
+                "team": "Real Madrid",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 2,
+                "rosterUrl": "./rosters/roster8.htm",
+                "rosterFile": "roster8.htm",
+                "standingsLast10": "8-2",
+                "wins": 5,
+                "losses": 0,
+                "games": 5,
+                "pointsFor": 647,
+                "pointsAgainst": 491,
+                "pointDiff": 156,
+                "avgMargin": 31.2,
+                "streak": "W5",
+                "recentResults": [
+                    {
+                        "date": "4/3/1985",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 36,
+                        "score": "@Real Madrid 122, Marseille 86",
+                        "boxscoreUrl": "./boxes/box170-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1985",
+                        "opponent": "Atletico Madrid",
+                        "result": "W",
+                        "margin": 9,
+                        "score": "@Real Madrid 129, Atletico Madrid 120",
+                        "boxscoreUrl": "./boxes/box176-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1985",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 51,
+                        "score": "@Real Madrid 126, Sheffield United 75",
+                        "boxscoreUrl": "./boxes/box180-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1985",
+                        "opponent": "Ajax",
+                        "result": "W",
+                        "margin": 35,
+                        "score": "@Real Madrid 131, Ajax 96",
+                        "boxscoreUrl": "./boxes/box184-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1985",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 25,
+                        "score": "@Real Madrid 139, Marseille 114",
+                        "boxscoreUrl": "./boxes/box185-6.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/13/1985",
+                    "opponent": "Sheffield United",
+                    "result": "W",
+                    "margin": 51,
+                    "score": "@Real Madrid 126, Sheffield United 75",
+                    "boxscoreUrl": "./boxes/box180-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": null,
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/3/1985",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 36,
+                        "score": "@Real Madrid 122, Marseille 86",
+                        "boxscoreUrl": "./boxes/box170-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/13/1985",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 51,
+                        "score": "@Real Madrid 126, Sheffield United 75",
+                        "boxscoreUrl": "./boxes/box180-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1985",
+                        "opponent": "Ajax",
+                        "result": "W",
+                        "margin": 35,
+                        "score": "@Real Madrid 131, Ajax 96",
+                        "boxscoreUrl": "./boxes/box184-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1985",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 25,
+                        "score": "@Real Madrid 139, Marseille 114",
+                        "boxscoreUrl": "./boxes/box185-6.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "5-0",
+                "closeGameCount": 0,
+                "last3": "WWW"
+            },
+            {
                 "team": "Benfica",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 5,
+                "standingRank": 6,
                 "rosterUrl": "./rosters/roster13.htm",
                 "rosterFile": "roster13.htm",
                 "standingsLast10": "5-5",
@@ -118,7 +235,7 @@
                 "team": "Crystal Palace",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 4,
+                "standingRank": 1,
                 "rosterUrl": "./rosters/roster6.htm",
                 "rosterFile": "roster6.htm",
                 "standingsLast10": "6-4",
@@ -244,7 +361,7 @@
                 "team": "AC Milan",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 2,
+                "standingRank": 3,
                 "rosterUrl": "./rosters/roster9.htm",
                 "rosterFile": "roster9.htm",
                 "standingsLast10": "8-2",
@@ -368,10 +485,127 @@
                 "last3": "WWW"
             },
             {
+                "team": "Paris Saint-Germain",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 8,
+                "rosterUrl": "./rosters/roster21.htm",
+                "rosterFile": "roster21.htm",
+                "standingsLast10": "8-2",
+                "wins": 3,
+                "losses": 1,
+                "games": 4,
+                "pointsFor": 464,
+                "pointsAgainst": 420,
+                "pointDiff": 44,
+                "avgMargin": 11.0,
+                "streak": "W1",
+                "recentResults": [
+                    {
+                        "date": "4/5/1985",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 24,
+                        "score": "Paris Saint-Germain 126, @Juventus 102",
+                        "boxscoreUrl": "./boxes/box172-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1985",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "Paris Saint-Germain 109, @Juventus 92",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1985",
+                        "opponent": "Atletico Madrid",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "@Atletico Madrid 114, Paris Saint-Germain 112",
+                        "boxscoreUrl": "./boxes/box182-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1985",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "@Paris Saint-Germain 117, Sheffield United 112",
+                        "boxscoreUrl": "./boxes/box185-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/5/1985",
+                    "opponent": "Juventus",
+                    "result": "W",
+                    "margin": 24,
+                    "score": "Paris Saint-Germain 126, @Juventus 102",
+                    "boxscoreUrl": "./boxes/box172-3.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/15/1985",
+                    "opponent": "Atletico Madrid",
+                    "result": "L",
+                    "margin": 2,
+                    "score": "@Atletico Madrid 114, Paris Saint-Germain 112",
+                    "boxscoreUrl": "./boxes/box182-2.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/15/1985",
+                        "opponent": "Atletico Madrid",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "@Atletico Madrid 114, Paris Saint-Germain 112",
+                        "boxscoreUrl": "./boxes/box182-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1985",
+                        "opponent": "Sheffield United",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "@Paris Saint-Germain 117, Sheffield United 112",
+                        "boxscoreUrl": "./boxes/box185-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/5/1985",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 24,
+                        "score": "Paris Saint-Germain 126, @Juventus 102",
+                        "boxscoreUrl": "./boxes/box172-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1985",
+                        "opponent": "Juventus",
+                        "result": "W",
+                        "margin": 17,
+                        "score": "Paris Saint-Germain 109, @Juventus 92",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "3-1",
+                "closeGameCount": 2,
+                "last3": "WLW"
+            },
+            {
                 "team": "AFC Richmond",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 1,
+                "standingRank": 5,
                 "rosterUrl": "./rosters/roster12.htm",
                 "rosterFile": "roster12.htm",
                 "standingsLast10": "6-4",
@@ -495,90 +729,10 @@
                 "last3": "LLW"
             },
             {
-                "team": "Bayern Munich",
-                "tier": "Tier 1",
-                "tierShort": "T1",
-                "standingRank": 8,
-                "rosterUrl": "./rosters/roster7.htm",
-                "rosterFile": "roster7.htm",
-                "standingsLast10": "2-8",
-                "wins": 2,
-                "losses": 1,
-                "games": 3,
-                "pointsFor": 360,
-                "pointsAgainst": 370,
-                "pointDiff": -10,
-                "avgMargin": -3.33,
-                "streak": "L1",
-                "recentResults": [
-                    {
-                        "date": "4/5/1985",
-                        "opponent": "FL Fart",
-                        "result": "W",
-                        "margin": 13,
-                        "score": "@Bayern Munich 134, FL Fart 121",
-                        "boxscoreUrl": "./boxes/box172-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/12/1985",
-                        "opponent": "Chelsea",
-                        "result": "W",
-                        "margin": 8,
-                        "score": "Bayern Munich 126, @Chelsea 118",
-                        "boxscoreUrl": "./boxes/box179-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/18/1985",
-                        "opponent": "Benfica",
-                        "result": "L",
-                        "margin": 31,
-                        "score": "@Benfica 131, Bayern Munich 100",
-                        "boxscoreUrl": "./boxes/box185-1.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "4/5/1985",
-                    "opponent": "FL Fart",
-                    "result": "W",
-                    "margin": 13,
-                    "score": "@Bayern Munich 134, FL Fart 121",
-                    "boxscoreUrl": "./boxes/box172-2.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": {
-                    "date": "4/18/1985",
-                    "opponent": "Benfica",
-                    "result": "L",
-                    "margin": 31,
-                    "score": "@Benfica 131, Bayern Munich 100",
-                    "boxscoreUrl": "./boxes/box185-1.htm",
-                    "section": "Regular Season"
-                },
-                "closeGames": [],
-                "blowoutWins": [],
-                "blowoutLosses": [
-                    {
-                        "date": "4/18/1985",
-                        "opponent": "Benfica",
-                        "result": "L",
-                        "margin": 31,
-                        "score": "@Benfica 131, Bayern Munich 100",
-                        "boxscoreUrl": "./boxes/box185-1.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "record": "2-1",
-                "closeGameCount": 0,
-                "last3": "WWL"
-            },
-            {
                 "team": "Brighton",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 3,
+                "standingRank": 4,
                 "rosterUrl": "./rosters/roster10.htm",
                 "rosterFile": "roster10.htm",
                 "standingsLast10": "5-5",
@@ -696,7 +850,7 @@
                 "team": "Chelsea",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 6,
+                "standingRank": 7,
                 "rosterUrl": "./rosters/roster17.htm",
                 "rosterFile": "roster17.htm",
                 "standingsLast10": "4-6",
@@ -780,357 +934,14 @@
                 "record": "1-3",
                 "closeGameCount": 0,
                 "last3": "WLL"
-            },
-            {
-                "team": "FL Fart",
-                "tier": "Tier 1",
-                "tierShort": "T1",
-                "standingRank": 7,
-                "rosterUrl": "./rosters/roster27.htm",
-                "rosterFile": "roster27.htm",
-                "standingsLast10": "2-8",
-                "wins": 0,
-                "losses": 5,
-                "games": 5,
-                "pointsFor": 622,
-                "pointsAgainst": 700,
-                "pointDiff": -78,
-                "avgMargin": -15.6,
-                "streak": "L5",
-                "recentResults": [
-                    {
-                        "date": "4/1/1985",
-                        "opponent": "Crystal Palace",
-                        "result": "L",
-                        "margin": 13,
-                        "score": "Crystal Palace 115, @FL Fart 102",
-                        "boxscoreUrl": "./boxes/box168-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/5/1985",
-                        "opponent": "Bayern Munich",
-                        "result": "L",
-                        "margin": 13,
-                        "score": "@Bayern Munich 134, FL Fart 121",
-                        "boxscoreUrl": "./boxes/box172-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/10/1985",
-                        "opponent": "Crystal Palace",
-                        "result": "L",
-                        "margin": 3,
-                        "score": "@Crystal Palace 181, FL Fart 178",
-                        "boxscoreUrl": "./boxes/box177-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/14/1985",
-                        "opponent": "Brighton",
-                        "result": "L",
-                        "margin": 25,
-                        "score": "@Brighton 137, FL Fart 112",
-                        "boxscoreUrl": "./boxes/box181-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/18/1985",
-                        "opponent": "AC Milan",
-                        "result": "L",
-                        "margin": 24,
-                        "score": "@AC Milan 133, FL Fart 109",
-                        "boxscoreUrl": "./boxes/box185-2.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": null,
-                "worstLoss": {
-                    "date": "4/14/1985",
-                    "opponent": "Brighton",
-                    "result": "L",
-                    "margin": 25,
-                    "score": "@Brighton 137, FL Fart 112",
-                    "boxscoreUrl": "./boxes/box181-1.htm",
-                    "section": "Regular Season"
-                },
-                "closeGames": [
-                    {
-                        "date": "4/10/1985",
-                        "opponent": "Crystal Palace",
-                        "result": "L",
-                        "margin": 3,
-                        "score": "@Crystal Palace 181, FL Fart 178",
-                        "boxscoreUrl": "./boxes/box177-1.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutWins": [],
-                "blowoutLosses": [
-                    {
-                        "date": "4/14/1985",
-                        "opponent": "Brighton",
-                        "result": "L",
-                        "margin": 25,
-                        "score": "@Brighton 137, FL Fart 112",
-                        "boxscoreUrl": "./boxes/box181-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/18/1985",
-                        "opponent": "AC Milan",
-                        "result": "L",
-                        "margin": 24,
-                        "score": "@AC Milan 133, FL Fart 109",
-                        "boxscoreUrl": "./boxes/box185-2.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "record": "0-5",
-                "closeGameCount": 1,
-                "last3": "LLL"
             }
         ],
         "Tier 2": [
             {
-                "team": "Real Madrid",
-                "tier": "Tier 2",
-                "tierShort": "T2",
-                "standingRank": 2,
-                "rosterUrl": "./rosters/roster8.htm",
-                "rosterFile": "roster8.htm",
-                "standingsLast10": "8-2",
-                "wins": 5,
-                "losses": 0,
-                "games": 5,
-                "pointsFor": 647,
-                "pointsAgainst": 491,
-                "pointDiff": 156,
-                "avgMargin": 31.2,
-                "streak": "W5",
-                "recentResults": [
-                    {
-                        "date": "4/3/1985",
-                        "opponent": "Marseille",
-                        "result": "W",
-                        "margin": 36,
-                        "score": "@Real Madrid 122, Marseille 86",
-                        "boxscoreUrl": "./boxes/box170-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/9/1985",
-                        "opponent": "Atletico Madrid",
-                        "result": "W",
-                        "margin": 9,
-                        "score": "@Real Madrid 129, Atletico Madrid 120",
-                        "boxscoreUrl": "./boxes/box176-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/13/1985",
-                        "opponent": "Sheffield United",
-                        "result": "W",
-                        "margin": 51,
-                        "score": "@Real Madrid 126, Sheffield United 75",
-                        "boxscoreUrl": "./boxes/box180-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/17/1985",
-                        "opponent": "Ajax",
-                        "result": "W",
-                        "margin": 35,
-                        "score": "@Real Madrid 131, Ajax 96",
-                        "boxscoreUrl": "./boxes/box184-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/18/1985",
-                        "opponent": "Marseille",
-                        "result": "W",
-                        "margin": 25,
-                        "score": "@Real Madrid 139, Marseille 114",
-                        "boxscoreUrl": "./boxes/box185-6.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "4/13/1985",
-                    "opponent": "Sheffield United",
-                    "result": "W",
-                    "margin": 51,
-                    "score": "@Real Madrid 126, Sheffield United 75",
-                    "boxscoreUrl": "./boxes/box180-2.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": null,
-                "closeGames": [],
-                "blowoutWins": [
-                    {
-                        "date": "4/3/1985",
-                        "opponent": "Marseille",
-                        "result": "W",
-                        "margin": 36,
-                        "score": "@Real Madrid 122, Marseille 86",
-                        "boxscoreUrl": "./boxes/box170-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/13/1985",
-                        "opponent": "Sheffield United",
-                        "result": "W",
-                        "margin": 51,
-                        "score": "@Real Madrid 126, Sheffield United 75",
-                        "boxscoreUrl": "./boxes/box180-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/17/1985",
-                        "opponent": "Ajax",
-                        "result": "W",
-                        "margin": 35,
-                        "score": "@Real Madrid 131, Ajax 96",
-                        "boxscoreUrl": "./boxes/box184-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/18/1985",
-                        "opponent": "Marseille",
-                        "result": "W",
-                        "margin": 25,
-                        "score": "@Real Madrid 139, Marseille 114",
-                        "boxscoreUrl": "./boxes/box185-6.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutLosses": [],
-                "record": "5-0",
-                "closeGameCount": 0,
-                "last3": "WWW"
-            },
-            {
-                "team": "Paris Saint-Germain",
-                "tier": "Tier 2",
-                "tierShort": "T2",
-                "standingRank": 1,
-                "rosterUrl": "./rosters/roster21.htm",
-                "rosterFile": "roster21.htm",
-                "standingsLast10": "8-2",
-                "wins": 3,
-                "losses": 1,
-                "games": 4,
-                "pointsFor": 464,
-                "pointsAgainst": 420,
-                "pointDiff": 44,
-                "avgMargin": 11.0,
-                "streak": "W1",
-                "recentResults": [
-                    {
-                        "date": "4/5/1985",
-                        "opponent": "Juventus",
-                        "result": "W",
-                        "margin": 24,
-                        "score": "Paris Saint-Germain 126, @Juventus 102",
-                        "boxscoreUrl": "./boxes/box172-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/10/1985",
-                        "opponent": "Juventus",
-                        "result": "W",
-                        "margin": 17,
-                        "score": "Paris Saint-Germain 109, @Juventus 92",
-                        "boxscoreUrl": "./boxes/box177-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/15/1985",
-                        "opponent": "Atletico Madrid",
-                        "result": "L",
-                        "margin": 2,
-                        "score": "@Atletico Madrid 114, Paris Saint-Germain 112",
-                        "boxscoreUrl": "./boxes/box182-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/18/1985",
-                        "opponent": "Sheffield United",
-                        "result": "W",
-                        "margin": 5,
-                        "score": "@Paris Saint-Germain 117, Sheffield United 112",
-                        "boxscoreUrl": "./boxes/box185-5.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "4/5/1985",
-                    "opponent": "Juventus",
-                    "result": "W",
-                    "margin": 24,
-                    "score": "Paris Saint-Germain 126, @Juventus 102",
-                    "boxscoreUrl": "./boxes/box172-3.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": {
-                    "date": "4/15/1985",
-                    "opponent": "Atletico Madrid",
-                    "result": "L",
-                    "margin": 2,
-                    "score": "@Atletico Madrid 114, Paris Saint-Germain 112",
-                    "boxscoreUrl": "./boxes/box182-2.htm",
-                    "section": "Regular Season"
-                },
-                "closeGames": [
-                    {
-                        "date": "4/15/1985",
-                        "opponent": "Atletico Madrid",
-                        "result": "L",
-                        "margin": 2,
-                        "score": "@Atletico Madrid 114, Paris Saint-Germain 112",
-                        "boxscoreUrl": "./boxes/box182-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/18/1985",
-                        "opponent": "Sheffield United",
-                        "result": "W",
-                        "margin": 5,
-                        "score": "@Paris Saint-Germain 117, Sheffield United 112",
-                        "boxscoreUrl": "./boxes/box185-5.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutWins": [
-                    {
-                        "date": "4/5/1985",
-                        "opponent": "Juventus",
-                        "result": "W",
-                        "margin": 24,
-                        "score": "Paris Saint-Germain 126, @Juventus 102",
-                        "boxscoreUrl": "./boxes/box172-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/10/1985",
-                        "opponent": "Juventus",
-                        "result": "W",
-                        "margin": 17,
-                        "score": "Paris Saint-Germain 109, @Juventus 92",
-                        "boxscoreUrl": "./boxes/box177-2.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutLosses": [],
-                "record": "3-1",
-                "closeGameCount": 2,
-                "last3": "WLW"
-            },
-            {
                 "team": "Aston Villa",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 4,
+                "standingRank": 6,
                 "rosterUrl": "./rosters/roster19.htm",
                 "rosterFile": "roster19.htm",
                 "standingsLast10": "6-4",
@@ -1266,7 +1077,7 @@
                 "team": "Ajax",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 3,
+                "standingRank": 5,
                 "rosterUrl": "./rosters/roster18.htm",
                 "rosterFile": "roster18.htm",
                 "standingsLast10": "5-5",
@@ -1408,10 +1219,199 @@
                 "last3": "LLW"
             },
             {
-                "team": "Atletico Madrid",
+                "team": "Bayern Munich",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 1,
+                "rosterUrl": "./rosters/roster7.htm",
+                "rosterFile": "roster7.htm",
+                "standingsLast10": "2-8",
+                "wins": 2,
+                "losses": 1,
+                "games": 3,
+                "pointsFor": 360,
+                "pointsAgainst": 370,
+                "pointDiff": -10,
+                "avgMargin": -3.33,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/5/1985",
+                        "opponent": "FL Fart",
+                        "result": "W",
+                        "margin": 13,
+                        "score": "@Bayern Munich 134, FL Fart 121",
+                        "boxscoreUrl": "./boxes/box172-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1985",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 8,
+                        "score": "Bayern Munich 126, @Chelsea 118",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1985",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 31,
+                        "score": "@Benfica 131, Bayern Munich 100",
+                        "boxscoreUrl": "./boxes/box185-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/5/1985",
+                    "opponent": "FL Fart",
+                    "result": "W",
+                    "margin": 13,
+                    "score": "@Bayern Munich 134, FL Fart 121",
+                    "boxscoreUrl": "./boxes/box172-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/18/1985",
+                    "opponent": "Benfica",
+                    "result": "L",
+                    "margin": 31,
+                    "score": "@Benfica 131, Bayern Munich 100",
+                    "boxscoreUrl": "./boxes/box185-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/18/1985",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 31,
+                        "score": "@Benfica 131, Bayern Munich 100",
+                        "boxscoreUrl": "./boxes/box185-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "2-1",
+                "closeGameCount": 0,
+                "last3": "WWL"
+            },
+            {
+                "team": "Inter Milan",
                 "tier": "Tier 2",
                 "tierShort": "T2",
                 "standingRank": 7,
+                "rosterUrl": "./rosters/roster26.htm",
+                "rosterFile": "roster26.htm",
+                "standingsLast10": "5-5",
+                "wins": 2,
+                "losses": 2,
+                "games": 4,
+                "pointsFor": 391,
+                "pointsAgainst": 408,
+                "pointDiff": -17,
+                "avgMargin": -4.25,
+                "streak": "W2",
+                "recentResults": [
+                    {
+                        "date": "4/3/1985",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "Barcelona 108, @Inter Milan 106",
+                        "boxscoreUrl": "./boxes/box170-4.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/7/1985",
+                        "opponent": "Valencia",
+                        "result": "L",
+                        "margin": 37,
+                        "score": "@Valencia 113, Inter Milan 76",
+                        "boxscoreUrl": "./boxes/box174-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1985",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 6,
+                        "score": "@Inter Milan 99, Manchester United 93",
+                        "boxscoreUrl": "./boxes/box178-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1985",
+                        "opponent": "Manchester City",
+                        "result": "W",
+                        "margin": 16,
+                        "score": "Inter Milan 110, @Manchester City 94",
+                        "boxscoreUrl": "./boxes/box185-11.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/18/1985",
+                    "opponent": "Manchester City",
+                    "result": "W",
+                    "margin": 16,
+                    "score": "Inter Milan 110, @Manchester City 94",
+                    "boxscoreUrl": "./boxes/box185-11.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/7/1985",
+                    "opponent": "Valencia",
+                    "result": "L",
+                    "margin": 37,
+                    "score": "@Valencia 113, Inter Milan 76",
+                    "boxscoreUrl": "./boxes/box174-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/3/1985",
+                        "opponent": "Barcelona",
+                        "result": "L",
+                        "margin": 2,
+                        "score": "Barcelona 108, @Inter Milan 106",
+                        "boxscoreUrl": "./boxes/box170-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/18/1985",
+                        "opponent": "Manchester City",
+                        "result": "W",
+                        "margin": 16,
+                        "score": "Inter Milan 110, @Manchester City 94",
+                        "boxscoreUrl": "./boxes/box185-11.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/7/1985",
+                        "opponent": "Valencia",
+                        "result": "L",
+                        "margin": 37,
+                        "score": "@Valencia 113, Inter Milan 76",
+                        "boxscoreUrl": "./boxes/box174-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "2-2",
+                "closeGameCount": 1,
+                "last3": "LWW"
+            },
+            {
+                "team": "Atletico Madrid",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 2,
                 "rosterUrl": "./rosters/roster11.htm",
                 "rosterFile": "roster11.htm",
                 "standingsLast10": "4-6",
@@ -1516,118 +1516,10 @@
                 "last3": "LWW"
             },
             {
-                "team": "Juventus",
-                "tier": "Tier 2",
-                "tierShort": "T2",
-                "standingRank": 8,
-                "rosterUrl": "./rosters/roster14.htm",
-                "rosterFile": "roster14.htm",
-                "standingsLast10": "2-8",
-                "wins": 1,
-                "losses": 3,
-                "games": 4,
-                "pointsFor": 429,
-                "pointsAgainst": 473,
-                "pointDiff": -44,
-                "avgMargin": -11.0,
-                "streak": "L1",
-                "recentResults": [
-                    {
-                        "date": "4/5/1985",
-                        "opponent": "Paris Saint-Germain",
-                        "result": "L",
-                        "margin": 24,
-                        "score": "Paris Saint-Germain 126, @Juventus 102",
-                        "boxscoreUrl": "./boxes/box172-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/10/1985",
-                        "opponent": "Paris Saint-Germain",
-                        "result": "L",
-                        "margin": 17,
-                        "score": "Paris Saint-Germain 109, @Juventus 92",
-                        "boxscoreUrl": "./boxes/box177-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/14/1985",
-                        "opponent": "Marseille",
-                        "result": "W",
-                        "margin": 5,
-                        "score": "@Juventus 111, Marseille 106",
-                        "boxscoreUrl": "./boxes/box181-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/18/1985",
-                        "opponent": "Ajax",
-                        "result": "L",
-                        "margin": 8,
-                        "score": "Ajax 132, @Juventus 124",
-                        "boxscoreUrl": "./boxes/box185-7.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "4/14/1985",
-                    "opponent": "Marseille",
-                    "result": "W",
-                    "margin": 5,
-                    "score": "@Juventus 111, Marseille 106",
-                    "boxscoreUrl": "./boxes/box181-2.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": {
-                    "date": "4/5/1985",
-                    "opponent": "Paris Saint-Germain",
-                    "result": "L",
-                    "margin": 24,
-                    "score": "Paris Saint-Germain 126, @Juventus 102",
-                    "boxscoreUrl": "./boxes/box172-3.htm",
-                    "section": "Regular Season"
-                },
-                "closeGames": [
-                    {
-                        "date": "4/14/1985",
-                        "opponent": "Marseille",
-                        "result": "W",
-                        "margin": 5,
-                        "score": "@Juventus 111, Marseille 106",
-                        "boxscoreUrl": "./boxes/box181-2.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutWins": [],
-                "blowoutLosses": [
-                    {
-                        "date": "4/5/1985",
-                        "opponent": "Paris Saint-Germain",
-                        "result": "L",
-                        "margin": 24,
-                        "score": "Paris Saint-Germain 126, @Juventus 102",
-                        "boxscoreUrl": "./boxes/box172-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/10/1985",
-                        "opponent": "Paris Saint-Germain",
-                        "result": "L",
-                        "margin": 17,
-                        "score": "Paris Saint-Germain 109, @Juventus 92",
-                        "boxscoreUrl": "./boxes/box177-2.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "record": "1-3",
-                "closeGameCount": 1,
-                "last3": "LWL"
-            },
-            {
                 "team": "Marseille",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 6,
+                "standingRank": 3,
                 "rosterUrl": "./rosters/roster15.htm",
                 "rosterFile": "roster15.htm",
                 "standingsLast10": "3-7",
@@ -1763,7 +1655,7 @@
                 "team": "Sheffield United",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 5,
+                "standingRank": 4,
                 "rosterUrl": "./rosters/roster16.htm",
                 "rosterFile": "roster16.htm",
                 "standingsLast10": "4-6",
@@ -1894,6 +1786,115 @@
                 "record": "1-4",
                 "closeGameCount": 1,
                 "last3": "LLL"
+            },
+            {
+                "team": "FL Fart",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 8,
+                "rosterUrl": "./rosters/roster27.htm",
+                "rosterFile": "roster27.htm",
+                "standingsLast10": "2-8",
+                "wins": 0,
+                "losses": 5,
+                "games": 5,
+                "pointsFor": 622,
+                "pointsAgainst": 700,
+                "pointDiff": -78,
+                "avgMargin": -15.6,
+                "streak": "L5",
+                "recentResults": [
+                    {
+                        "date": "4/1/1985",
+                        "opponent": "Crystal Palace",
+                        "result": "L",
+                        "margin": 13,
+                        "score": "Crystal Palace 115, @FL Fart 102",
+                        "boxscoreUrl": "./boxes/box168-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/5/1985",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 13,
+                        "score": "@Bayern Munich 134, FL Fart 121",
+                        "boxscoreUrl": "./boxes/box172-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1985",
+                        "opponent": "Crystal Palace",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Crystal Palace 181, FL Fart 178",
+                        "boxscoreUrl": "./boxes/box177-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1985",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 25,
+                        "score": "@Brighton 137, FL Fart 112",
+                        "boxscoreUrl": "./boxes/box181-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1985",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 24,
+                        "score": "@AC Milan 133, FL Fart 109",
+                        "boxscoreUrl": "./boxes/box185-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": null,
+                "worstLoss": {
+                    "date": "4/14/1985",
+                    "opponent": "Brighton",
+                    "result": "L",
+                    "margin": 25,
+                    "score": "@Brighton 137, FL Fart 112",
+                    "boxscoreUrl": "./boxes/box181-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/10/1985",
+                        "opponent": "Crystal Palace",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Crystal Palace 181, FL Fart 178",
+                        "boxscoreUrl": "./boxes/box177-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/14/1985",
+                        "opponent": "Brighton",
+                        "result": "L",
+                        "margin": 25,
+                        "score": "@Brighton 137, FL Fart 112",
+                        "boxscoreUrl": "./boxes/box181-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1985",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 24,
+                        "score": "@AC Milan 133, FL Fart 109",
+                        "boxscoreUrl": "./boxes/box185-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "0-5",
+                "closeGameCount": 1,
+                "last3": "LLL"
             }
         ],
         "Tier 3": [
@@ -1901,7 +1902,7 @@
                 "team": "Tottenham Hotspur",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 5,
+                "standingRank": 4,
                 "rosterUrl": "./rosters/roster22.htm",
                 "rosterFile": "roster22.htm",
                 "standingsLast10": "7-3",
@@ -2028,7 +2029,7 @@
                 "team": "Valencia",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 3,
+                "standingRank": 7,
                 "rosterUrl": "./rosters/roster25.htm",
                 "rosterFile": "roster25.htm",
                 "standingsLast10": "6-4",
@@ -2163,7 +2164,7 @@
                 "team": "Barcelona",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 2,
+                "standingRank": 6,
                 "rosterUrl": "./rosters/roster24.htm",
                 "rosterFile": "roster24.htm",
                 "standingsLast10": "6-4",
@@ -2280,7 +2281,7 @@
                 "team": "Sporting CP",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 4,
+                "standingRank": 5,
                 "rosterUrl": "./rosters/roster23.htm",
                 "rosterFile": "roster23.htm",
                 "standingsLast10": "6-4",
@@ -2369,7 +2370,7 @@
                 "team": "Manchester City",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 7,
+                "standingRank": 8,
                 "rosterUrl": "./rosters/roster28.htm",
                 "rosterFile": "roster28.htm",
                 "standingsLast10": "5-5",
@@ -2474,119 +2475,10 @@
                 "last3": "LWL"
             },
             {
-                "team": "Inter Milan",
-                "tier": "Tier 3",
-                "tierShort": "T3",
-                "standingRank": 1,
-                "rosterUrl": "./rosters/roster26.htm",
-                "rosterFile": "roster26.htm",
-                "standingsLast10": "5-5",
-                "wins": 2,
-                "losses": 2,
-                "games": 4,
-                "pointsFor": 391,
-                "pointsAgainst": 408,
-                "pointDiff": -17,
-                "avgMargin": -4.25,
-                "streak": "W2",
-                "recentResults": [
-                    {
-                        "date": "4/3/1985",
-                        "opponent": "Barcelona",
-                        "result": "L",
-                        "margin": 2,
-                        "score": "Barcelona 108, @Inter Milan 106",
-                        "boxscoreUrl": "./boxes/box170-4.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/7/1985",
-                        "opponent": "Valencia",
-                        "result": "L",
-                        "margin": 37,
-                        "score": "@Valencia 113, Inter Milan 76",
-                        "boxscoreUrl": "./boxes/box174-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/11/1985",
-                        "opponent": "Manchester United",
-                        "result": "W",
-                        "margin": 6,
-                        "score": "@Inter Milan 99, Manchester United 93",
-                        "boxscoreUrl": "./boxes/box178-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "4/18/1985",
-                        "opponent": "Manchester City",
-                        "result": "W",
-                        "margin": 16,
-                        "score": "Inter Milan 110, @Manchester City 94",
-                        "boxscoreUrl": "./boxes/box185-11.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "4/18/1985",
-                    "opponent": "Manchester City",
-                    "result": "W",
-                    "margin": 16,
-                    "score": "Inter Milan 110, @Manchester City 94",
-                    "boxscoreUrl": "./boxes/box185-11.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": {
-                    "date": "4/7/1985",
-                    "opponent": "Valencia",
-                    "result": "L",
-                    "margin": 37,
-                    "score": "@Valencia 113, Inter Milan 76",
-                    "boxscoreUrl": "./boxes/box174-3.htm",
-                    "section": "Regular Season"
-                },
-                "closeGames": [
-                    {
-                        "date": "4/3/1985",
-                        "opponent": "Barcelona",
-                        "result": "L",
-                        "margin": 2,
-                        "score": "Barcelona 108, @Inter Milan 106",
-                        "boxscoreUrl": "./boxes/box170-4.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutWins": [
-                    {
-                        "date": "4/18/1985",
-                        "opponent": "Manchester City",
-                        "result": "W",
-                        "margin": 16,
-                        "score": "Inter Milan 110, @Manchester City 94",
-                        "boxscoreUrl": "./boxes/box185-11.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutLosses": [
-                    {
-                        "date": "4/7/1985",
-                        "opponent": "Valencia",
-                        "result": "L",
-                        "margin": 37,
-                        "score": "@Valencia 113, Inter Milan 76",
-                        "boxscoreUrl": "./boxes/box174-3.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "record": "2-2",
-                "closeGameCount": 1,
-                "last3": "LWW"
-            },
-            {
                 "team": "Monaco",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 6,
+                "standingRank": 3,
                 "rosterUrl": "./rosters/roster20.htm",
                 "rosterFile": "roster20.htm",
                 "standingsLast10": "7-3",
@@ -2700,10 +2592,118 @@
                 "last3": "WLL"
             },
             {
+                "team": "Juventus",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 2,
+                "rosterUrl": "./rosters/roster14.htm",
+                "rosterFile": "roster14.htm",
+                "standingsLast10": "2-8",
+                "wins": 1,
+                "losses": 3,
+                "games": 4,
+                "pointsFor": 429,
+                "pointsAgainst": 473,
+                "pointDiff": -44,
+                "avgMargin": -11.0,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/5/1985",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 24,
+                        "score": "Paris Saint-Germain 126, @Juventus 102",
+                        "boxscoreUrl": "./boxes/box172-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1985",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "Paris Saint-Germain 109, @Juventus 92",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/14/1985",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "@Juventus 111, Marseille 106",
+                        "boxscoreUrl": "./boxes/box181-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/18/1985",
+                        "opponent": "Ajax",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "Ajax 132, @Juventus 124",
+                        "boxscoreUrl": "./boxes/box185-7.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/14/1985",
+                    "opponent": "Marseille",
+                    "result": "W",
+                    "margin": 5,
+                    "score": "@Juventus 111, Marseille 106",
+                    "boxscoreUrl": "./boxes/box181-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/5/1985",
+                    "opponent": "Paris Saint-Germain",
+                    "result": "L",
+                    "margin": 24,
+                    "score": "Paris Saint-Germain 126, @Juventus 102",
+                    "boxscoreUrl": "./boxes/box172-3.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/14/1985",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 5,
+                        "score": "@Juventus 111, Marseille 106",
+                        "boxscoreUrl": "./boxes/box181-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [
+                    {
+                        "date": "4/5/1985",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 24,
+                        "score": "Paris Saint-Germain 126, @Juventus 102",
+                        "boxscoreUrl": "./boxes/box172-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1985",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "Paris Saint-Germain 109, @Juventus 92",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "1-3",
+                "closeGameCount": 1,
+                "last3": "LWL"
+            },
+            {
                 "team": "Manchester United",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 8,
+                "standingRank": 1,
                 "rosterUrl": "./rosters/roster5.htm",
                 "rosterFile": "roster5.htm",
                 "standingsLast10": "1-9",

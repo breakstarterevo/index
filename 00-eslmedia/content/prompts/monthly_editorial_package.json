@@ -71,6 +71,126 @@
                 ],
                 "teamPool": [
                     {
+                        "team": "Paris Saint-Germain",
+                        "overall": {
+                            "record": "34-8",
+                            "streak": "W1",
+                            "last3": "WLW",
+                            "avgMargin": 15.83,
+                            "pointDiff": 665,
+                            "bestWin": {
+                                "date": "1/28/1985",
+                                "opponent": "Sheffield United",
+                                "result": "W",
+                                "margin": 50,
+                                "score": "@Paris Saint-Germain 151, Sheffield United 101",
+                                "boxscoreUrl": "./boxes/box105-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "2/6/1985",
+                                "opponent": "Real Madrid",
+                                "result": "L",
+                                "margin": 15,
+                                "score": "@Real Madrid 127, Paris Saint-Germain 112",
+                                "boxscoreUrl": "./boxes/box114-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 9
+                        },
+                        "latestSim": {
+                            "record": "3-1",
+                            "streak": "W1",
+                            "last3": "WLW",
+                            "avgMargin": 11.0,
+                            "pointDiff": 44,
+                            "bestWin": {
+                                "date": "4/5/1985",
+                                "opponent": "Juventus",
+                                "result": "W",
+                                "margin": 24,
+                                "score": "Paris Saint-Germain 126, @Juventus 102",
+                                "boxscoreUrl": "./boxes/box172-3.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "4/15/1985",
+                                "opponent": "Atletico Madrid",
+                                "result": "L",
+                                "margin": 2,
+                                "score": "@Atletico Madrid 114, Paris Saint-Germain 112",
+                                "boxscoreUrl": "./boxes/box182-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 2
+                        },
+                        "rosterUrl": "./rosters/roster21.htm",
+                        "starPlayer": {
+                            "name": "Mike Gminski",
+                            "url": "../players/player722.htm",
+                            "pos": "C",
+                            "age": "23",
+                            "overall": "135",
+                            "potential": "138"
+                        }
+                    },
+                    {
+                        "team": "Real Madrid",
+                        "overall": {
+                            "record": "31-11",
+                            "streak": "W7",
+                            "last3": "WWW",
+                            "avgMargin": 13.9,
+                            "pointDiff": 584,
+                            "bestWin": {
+                                "date": "4/13/1985",
+                                "opponent": "Sheffield United",
+                                "result": "W",
+                                "margin": 51,
+                                "score": "@Real Madrid 126, Sheffield United 75",
+                                "boxscoreUrl": "./boxes/box180-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "3/21/1985",
+                                "opponent": "Paris Saint-Germain",
+                                "result": "L",
+                                "margin": 22,
+                                "score": "@Paris Saint-Germain 132, Real Madrid 110",
+                                "boxscoreUrl": "./boxes/box157-4.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 5
+                        },
+                        "latestSim": {
+                            "record": "5-0",
+                            "streak": "W5",
+                            "last3": "WWW",
+                            "avgMargin": 31.2,
+                            "pointDiff": 156,
+                            "bestWin": {
+                                "date": "4/13/1985",
+                                "opponent": "Sheffield United",
+                                "result": "W",
+                                "margin": 51,
+                                "score": "@Real Madrid 126, Sheffield United 75",
+                                "boxscoreUrl": "./boxes/box180-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": null,
+                            "closeGameCount": 0
+                        },
+                        "rosterUrl": "./rosters/roster8.htm",
+                        "starPlayer": {
+                            "name": "Andrew Toney",
+                            "url": "../players/player709.htm",
+                            "pos": "PG",
+                            "age": "24",
+                            "overall": "131",
+                            "potential": "131"
+                        }
+                    },
+                    {
                         "team": "AFC Richmond",
                         "overall": {
                             "record": "31-11",
@@ -193,7 +313,7 @@
                             "name": "Bill Laimbeer",
                             "url": "../players/player874.htm",
                             "pos": "C",
-                            "age": "25",
+                            "age": "26",
                             "overall": "151",
                             "potential": "151"
                         }
@@ -318,11 +438,11 @@
                         },
                         "rosterUrl": "./rosters/roster6.htm",
                         "starPlayer": {
-                            "name": "Darrell Griffith",
-                            "url": "../players/player703.htm",
-                            "pos": "SG",
-                            "age": "24",
-                            "overall": "149",
+                            "name": "Reggie Theus",
+                            "url": "../players/player708.htm",
+                            "pos": "PG",
+                            "age": "25",
+                            "overall": "144",
                             "potential": "149"
                         }
                     },
@@ -441,129 +561,9 @@
                             "name": "Jim Paxson",
                             "url": "../players/player875.htm",
                             "pos": "SF",
-                            "age": "25",
+                            "age": "26",
                             "overall": "141",
                             "potential": "142"
-                        }
-                    },
-                    {
-                        "team": "FL Fart",
-                        "overall": {
-                            "record": "16-26",
-                            "streak": "L6",
-                            "last3": "LLL",
-                            "avgMargin": -6.86,
-                            "pointDiff": -288,
-                            "bestWin": {
-                                "date": "1/12/1985",
-                                "opponent": "Bayern Munich",
-                                "result": "W",
-                                "margin": 23,
-                                "score": "@FL Fart 137, Bayern Munich 114",
-                                "boxscoreUrl": "./boxes/box89-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "2/27/1985",
-                                "opponent": "Crystal Palace",
-                                "result": "L",
-                                "margin": 34,
-                                "score": "@Crystal Palace 136, FL Fart 102",
-                                "boxscoreUrl": "./boxes/box135-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 14
-                        },
-                        "latestSim": {
-                            "record": "0-5",
-                            "streak": "L5",
-                            "last3": "LLL",
-                            "avgMargin": -15.6,
-                            "pointDiff": -78,
-                            "bestWin": null,
-                            "worstLoss": {
-                                "date": "4/14/1985",
-                                "opponent": "Brighton",
-                                "result": "L",
-                                "margin": 25,
-                                "score": "@Brighton 137, FL Fart 112",
-                                "boxscoreUrl": "./boxes/box181-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 1
-                        },
-                        "rosterUrl": "./rosters/roster27.htm",
-                        "starPlayer": {
-                            "name": "Larry Drew",
-                            "url": "../players/player1053.htm",
-                            "pos": "PG",
-                            "age": "25",
-                            "overall": "139",
-                            "potential": "140"
-                        }
-                    },
-                    {
-                        "team": "Bayern Munich",
-                        "overall": {
-                            "record": "14-28",
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": -7.29,
-                            "pointDiff": -306,
-                            "bestWin": {
-                                "date": "2/26/1985",
-                                "opponent": "Brighton",
-                                "result": "W",
-                                "margin": 19,
-                                "score": "@Bayern Munich 114, Brighton 95",
-                                "boxscoreUrl": "./boxes/box134-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "2/4/1985",
-                                "opponent": "Benfica",
-                                "result": "L",
-                                "margin": 48,
-                                "score": "@Benfica 130, Bayern Munich 82",
-                                "boxscoreUrl": "./boxes/box112-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 15
-                        },
-                        "latestSim": {
-                            "record": "2-1",
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": -3.33,
-                            "pointDiff": -10,
-                            "bestWin": {
-                                "date": "4/5/1985",
-                                "opponent": "FL Fart",
-                                "result": "W",
-                                "margin": 13,
-                                "score": "@Bayern Munich 134, FL Fart 121",
-                                "boxscoreUrl": "./boxes/box172-2.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/18/1985",
-                                "opponent": "Benfica",
-                                "result": "L",
-                                "margin": 31,
-                                "score": "@Benfica 131, Bayern Munich 100",
-                                "boxscoreUrl": "./boxes/box185-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 0
-                        },
-                        "rosterUrl": "./rosters/roster7.htm",
-                        "starPlayer": {
-                            "name": "Bernard King",
-                            "url": "../players/player713.htm",
-                            "pos": "SF",
-                            "age": "25",
-                            "overall": "128",
-                            "potential": "128"
                         }
                     }
                 ]
@@ -625,123 +625,67 @@
                 ],
                 "teamPool": [
                     {
-                        "team": "Paris Saint-Germain",
+                        "team": "Inter Milan",
                         "overall": {
-                            "record": "34-8",
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 15.83,
-                            "pointDiff": 665,
+                            "record": "27-15",
+                            "streak": "W2",
+                            "last3": "LWW",
+                            "avgMargin": 4.98,
+                            "pointDiff": 209,
                             "bestWin": {
-                                "date": "1/28/1985",
-                                "opponent": "Sheffield United",
+                                "date": "11/28/1984",
+                                "opponent": "Sporting CP",
                                 "result": "W",
-                                "margin": 50,
-                                "score": "@Paris Saint-Germain 151, Sheffield United 101",
-                                "boxscoreUrl": "./boxes/box105-2.htm",
+                                "margin": 41,
+                                "score": "Inter Milan 116, @Sporting CP 75",
+                                "boxscoreUrl": "./boxes/box44-7.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "2/6/1985",
-                                "opponent": "Real Madrid",
+                                "date": "4/7/1985",
+                                "opponent": "Valencia",
                                 "result": "L",
-                                "margin": 15,
-                                "score": "@Real Madrid 127, Paris Saint-Germain 112",
-                                "boxscoreUrl": "./boxes/box114-2.htm",
+                                "margin": 37,
+                                "score": "@Valencia 113, Inter Milan 76",
+                                "boxscoreUrl": "./boxes/box174-3.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 9
+                            "closeGameCount": 7
                         },
                         "latestSim": {
-                            "record": "3-1",
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 11.0,
-                            "pointDiff": 44,
+                            "record": "2-2",
+                            "streak": "W2",
+                            "last3": "LWW",
+                            "avgMargin": -4.25,
+                            "pointDiff": -17,
                             "bestWin": {
-                                "date": "4/5/1985",
-                                "opponent": "Juventus",
+                                "date": "4/18/1985",
+                                "opponent": "Manchester City",
                                 "result": "W",
-                                "margin": 24,
-                                "score": "Paris Saint-Germain 126, @Juventus 102",
-                                "boxscoreUrl": "./boxes/box172-3.htm",
+                                "margin": 16,
+                                "score": "Inter Milan 110, @Manchester City 94",
+                                "boxscoreUrl": "./boxes/box185-11.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "4/15/1985",
-                                "opponent": "Atletico Madrid",
+                                "date": "4/7/1985",
+                                "opponent": "Valencia",
                                 "result": "L",
-                                "margin": 2,
-                                "score": "@Atletico Madrid 114, Paris Saint-Germain 112",
-                                "boxscoreUrl": "./boxes/box182-2.htm",
+                                "margin": 37,
+                                "score": "@Valencia 113, Inter Milan 76",
+                                "boxscoreUrl": "./boxes/box174-3.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 2
+                            "closeGameCount": 1
                         },
-                        "rosterUrl": "./rosters/roster21.htm",
+                        "rosterUrl": "./rosters/roster26.htm",
                         "starPlayer": {
-                            "name": "Kelly Tripucka",
-                            "url": "../players/player1049.htm",
-                            "pos": "SF",
-                            "age": "24",
-                            "overall": "159",
-                            "potential": "164"
-                        }
-                    },
-                    {
-                        "team": "Real Madrid",
-                        "overall": {
-                            "record": "31-11",
-                            "streak": "W7",
-                            "last3": "WWW",
-                            "avgMargin": 13.9,
-                            "pointDiff": 584,
-                            "bestWin": {
-                                "date": "4/13/1985",
-                                "opponent": "Sheffield United",
-                                "result": "W",
-                                "margin": 51,
-                                "score": "@Real Madrid 126, Sheffield United 75",
-                                "boxscoreUrl": "./boxes/box180-2.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "3/21/1985",
-                                "opponent": "Paris Saint-Germain",
-                                "result": "L",
-                                "margin": 22,
-                                "score": "@Paris Saint-Germain 132, Real Madrid 110",
-                                "boxscoreUrl": "./boxes/box157-4.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 5
-                        },
-                        "latestSim": {
-                            "record": "5-0",
-                            "streak": "W5",
-                            "last3": "WWW",
-                            "avgMargin": 31.2,
-                            "pointDiff": 156,
-                            "bestWin": {
-                                "date": "4/13/1985",
-                                "opponent": "Sheffield United",
-                                "result": "W",
-                                "margin": 51,
-                                "score": "@Real Madrid 126, Sheffield United 75",
-                                "boxscoreUrl": "./boxes/box180-2.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": null,
-                            "closeGameCount": 0
-                        },
-                        "rosterUrl": "./rosters/roster8.htm",
-                        "starPlayer": {
-                            "name": "Sidney Moncrief",
-                            "url": "../players/player699.htm",
-                            "pos": "SG",
+                            "name": "David West",
+                            "url": "../players/player262.htm",
+                            "pos": "PF",
                             "age": "25",
-                            "overall": "156",
-                            "potential": "157"
+                            "overall": "113",
+                            "potential": "122"
                         }
                     },
                     {
@@ -864,12 +808,12 @@
                         },
                         "rosterUrl": "./rosters/roster19.htm",
                         "starPlayer": {
-                            "name": "Larry Nance",
-                            "url": "../players/player880.htm",
-                            "pos": "C",
+                            "name": "Xavier McDaniel",
+                            "url": "../players/player238.htm",
+                            "pos": "PF",
                             "age": "24",
-                            "overall": "129",
-                            "potential": "130"
+                            "overall": "125",
+                            "potential": "125"
                         }
                     },
                     {
@@ -928,12 +872,12 @@
                         },
                         "rosterUrl": "./rosters/roster16.htm",
                         "starPlayer": {
-                            "name": "Bill Cartwright",
-                            "url": "../players/player887.htm",
-                            "pos": "C",
-                            "age": "25",
-                            "overall": "121",
-                            "potential": "121"
+                            "name": "Steve Johnson",
+                            "url": "../players/player897.htm",
+                            "pos": "PF",
+                            "age": "24",
+                            "overall": "116",
+                            "potential": "116"
                         }
                     },
                     {
@@ -1001,66 +945,122 @@
                         }
                     },
                     {
-                        "team": "Juventus",
+                        "team": "FL Fart",
                         "overall": {
-                            "record": "13-29",
-                            "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -7.05,
-                            "pointDiff": -296,
+                            "record": "16-26",
+                            "streak": "L6",
+                            "last3": "LLL",
+                            "avgMargin": -6.86,
+                            "pointDiff": -288,
                             "bestWin": {
-                                "date": "2/7/1985",
-                                "opponent": "Atletico Madrid",
+                                "date": "1/12/1985",
+                                "opponent": "Bayern Munich",
                                 "result": "W",
-                                "margin": 49,
-                                "score": "@Juventus 134, Atletico Madrid 85",
-                                "boxscoreUrl": "./boxes/box115-1.htm",
+                                "margin": 23,
+                                "score": "@FL Fart 137, Bayern Munich 114",
+                                "boxscoreUrl": "./boxes/box89-1.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "11/9/1984",
-                                "opponent": "Paris Saint-Germain",
+                                "date": "2/27/1985",
+                                "opponent": "Crystal Palace",
                                 "result": "L",
-                                "margin": 37,
-                                "score": "@Paris Saint-Germain 142, Juventus 105",
-                                "boxscoreUrl": "./boxes/box25-2.htm",
+                                "margin": 34,
+                                "score": "@Crystal Palace 136, FL Fart 102",
+                                "boxscoreUrl": "./boxes/box135-1.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 9
+                            "closeGameCount": 14
                         },
                         "latestSim": {
-                            "record": "1-3",
-                            "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -11.0,
-                            "pointDiff": -44,
-                            "bestWin": {
-                                "date": "4/14/1985",
-                                "opponent": "Marseille",
-                                "result": "W",
-                                "margin": 5,
-                                "score": "@Juventus 111, Marseille 106",
-                                "boxscoreUrl": "./boxes/box181-2.htm",
-                                "section": "Regular Season"
-                            },
+                            "record": "0-5",
+                            "streak": "L5",
+                            "last3": "LLL",
+                            "avgMargin": -15.6,
+                            "pointDiff": -78,
+                            "bestWin": null,
                             "worstLoss": {
-                                "date": "4/5/1985",
-                                "opponent": "Paris Saint-Germain",
+                                "date": "4/14/1985",
+                                "opponent": "Brighton",
                                 "result": "L",
-                                "margin": 24,
-                                "score": "Paris Saint-Germain 126, @Juventus 102",
-                                "boxscoreUrl": "./boxes/box172-3.htm",
+                                "margin": 25,
+                                "score": "@Brighton 137, FL Fart 112",
+                                "boxscoreUrl": "./boxes/box181-1.htm",
                                 "section": "Regular Season"
                             },
                             "closeGameCount": 1
                         },
-                        "rosterUrl": "./rosters/roster14.htm",
+                        "rosterUrl": "./rosters/roster27.htm",
                         "starPlayer": {
-                            "name": "Gerald Henderson",
-                            "url": "../players/player890.htm",
+                            "name": "Larry Drew",
+                            "url": "../players/player1053.htm",
                             "pos": "PG",
-                            "age": "27",
-                            "overall": "122",
+                            "age": "25",
+                            "overall": "139",
+                            "potential": "140"
+                        }
+                    },
+                    {
+                        "team": "Bayern Munich",
+                        "overall": {
+                            "record": "14-28",
+                            "streak": "L1",
+                            "last3": "WWL",
+                            "avgMargin": -7.29,
+                            "pointDiff": -306,
+                            "bestWin": {
+                                "date": "2/26/1985",
+                                "opponent": "Brighton",
+                                "result": "W",
+                                "margin": 19,
+                                "score": "@Bayern Munich 114, Brighton 95",
+                                "boxscoreUrl": "./boxes/box134-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "2/4/1985",
+                                "opponent": "Benfica",
+                                "result": "L",
+                                "margin": 48,
+                                "score": "@Benfica 130, Bayern Munich 82",
+                                "boxscoreUrl": "./boxes/box112-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 15
+                        },
+                        "latestSim": {
+                            "record": "2-1",
+                            "streak": "L1",
+                            "last3": "WWL",
+                            "avgMargin": -3.33,
+                            "pointDiff": -10,
+                            "bestWin": {
+                                "date": "4/5/1985",
+                                "opponent": "FL Fart",
+                                "result": "W",
+                                "margin": 13,
+                                "score": "@Bayern Munich 134, FL Fart 121",
+                                "boxscoreUrl": "./boxes/box172-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "4/18/1985",
+                                "opponent": "Benfica",
+                                "result": "L",
+                                "margin": 31,
+                                "score": "@Benfica 131, Bayern Munich 100",
+                                "boxscoreUrl": "./boxes/box185-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 0
+                        },
+                        "rosterUrl": "./rosters/roster7.htm",
+                        "starPlayer": {
+                            "name": "Mike Woodson",
+                            "url": "../players/player720.htm",
+                            "pos": "SG",
+                            "age": "25",
+                            "overall": "123",
                             "potential": "123"
                         }
                     },
@@ -1187,70 +1187,6 @@
                 ],
                 "teamPool": [
                     {
-                        "team": "Inter Milan",
-                        "overall": {
-                            "record": "27-15",
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": 4.98,
-                            "pointDiff": 209,
-                            "bestWin": {
-                                "date": "11/28/1984",
-                                "opponent": "Sporting CP",
-                                "result": "W",
-                                "margin": 41,
-                                "score": "Inter Milan 116, @Sporting CP 75",
-                                "boxscoreUrl": "./boxes/box44-7.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/7/1985",
-                                "opponent": "Valencia",
-                                "result": "L",
-                                "margin": 37,
-                                "score": "@Valencia 113, Inter Milan 76",
-                                "boxscoreUrl": "./boxes/box174-3.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 7
-                        },
-                        "latestSim": {
-                            "record": "2-2",
-                            "streak": "W2",
-                            "last3": "LWW",
-                            "avgMargin": -4.25,
-                            "pointDiff": -17,
-                            "bestWin": {
-                                "date": "4/18/1985",
-                                "opponent": "Manchester City",
-                                "result": "W",
-                                "margin": 16,
-                                "score": "Inter Milan 110, @Manchester City 94",
-                                "boxscoreUrl": "./boxes/box185-11.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "4/7/1985",
-                                "opponent": "Valencia",
-                                "result": "L",
-                                "margin": 37,
-                                "score": "@Valencia 113, Inter Milan 76",
-                                "boxscoreUrl": "./boxes/box174-3.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 1
-                        },
-                        "rosterUrl": "./rosters/roster26.htm",
-                        "starPlayer": {
-                            "name": "World B. Free",
-                            "url": "../players/player1048.htm",
-                            "pos": "SG",
-                            "age": "28",
-                            "overall": "141",
-                            "potential": "141"
-                        }
-                    },
-                    {
                         "team": "Barcelona",
                         "overall": {
                             "record": "26-16",
@@ -1373,7 +1309,7 @@
                             "name": "Isiah Thomas",
                             "url": "../players/player1047.htm",
                             "pos": "PG",
-                            "age": "21",
+                            "age": "22",
                             "overall": "115",
                             "potential": "115"
                         }
@@ -1434,12 +1370,12 @@
                         },
                         "rosterUrl": "./rosters/roster23.htm",
                         "starPlayer": {
-                            "name": "Chris Bosh",
-                            "url": "../players/player622.htm",
-                            "pos": "PF",
+                            "name": "Jim Jackson",
+                            "url": "../players/player419.htm",
+                            "pos": "SG",
                             "age": "21",
-                            "overall": "118",
-                            "potential": "140"
+                            "overall": "121",
+                            "potential": "142"
                         }
                     },
                     {
@@ -1501,7 +1437,7 @@
                             "name": "Doug Christie",
                             "url": "../players/player243.htm",
                             "pos": "SF",
-                            "age": "23",
+                            "age": "24",
                             "overall": "130",
                             "potential": "141"
                         }
@@ -1635,6 +1571,70 @@
                         }
                     },
                     {
+                        "team": "Juventus",
+                        "overall": {
+                            "record": "13-29",
+                            "streak": "L1",
+                            "last3": "LWL",
+                            "avgMargin": -7.05,
+                            "pointDiff": -296,
+                            "bestWin": {
+                                "date": "2/7/1985",
+                                "opponent": "Atletico Madrid",
+                                "result": "W",
+                                "margin": 49,
+                                "score": "@Juventus 134, Atletico Madrid 85",
+                                "boxscoreUrl": "./boxes/box115-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "11/9/1984",
+                                "opponent": "Paris Saint-Germain",
+                                "result": "L",
+                                "margin": 37,
+                                "score": "@Paris Saint-Germain 142, Juventus 105",
+                                "boxscoreUrl": "./boxes/box25-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 9
+                        },
+                        "latestSim": {
+                            "record": "1-3",
+                            "streak": "L1",
+                            "last3": "LWL",
+                            "avgMargin": -11.0,
+                            "pointDiff": -44,
+                            "bestWin": {
+                                "date": "4/14/1985",
+                                "opponent": "Marseille",
+                                "result": "W",
+                                "margin": 5,
+                                "score": "@Juventus 111, Marseille 106",
+                                "boxscoreUrl": "./boxes/box181-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "4/5/1985",
+                                "opponent": "Paris Saint-Germain",
+                                "result": "L",
+                                "margin": 24,
+                                "score": "Paris Saint-Germain 126, @Juventus 102",
+                                "boxscoreUrl": "./boxes/box172-3.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 1
+                        },
+                        "rosterUrl": "./rosters/roster14.htm",
+                        "starPlayer": {
+                            "name": "Larry Smith",
+                            "url": "../players/player1061.htm",
+                            "pos": "PF",
+                            "age": "25",
+                            "overall": "119",
+                            "potential": "119"
+                        }
+                    },
+                    {
                         "team": "Manchester United",
                         "overall": {
                             "record": "9-33",
@@ -1744,25 +1744,13 @@
                     "tier": "Tier 1",
                     "type": "relegation",
                     "slots": 2,
-                    "lineTeam": "Chelsea",
+                    "lineTeam": "Brighton",
                     "lineRecord": "1-3",
                     "entries": [
                         {
-                            "team": "FL Fart",
-                            "record": "0-5",
-                            "standingRank": 7,
-                            "streak": "L5",
-                            "last3": "LLL",
-                            "avgMargin": -15.6,
-                            "pointDiff": -78,
-                            "gapToLine": -1,
-                            "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster27.htm"
-                        },
-                        {
                             "team": "Chelsea",
                             "record": "1-3",
-                            "standingRank": 6,
+                            "standingRank": 7,
                             "streak": "L2",
                             "last3": "WLL",
                             "avgMargin": -9.5,
@@ -1774,7 +1762,7 @@
                         {
                             "team": "Brighton",
                             "record": "1-3",
-                            "standingRank": 3,
+                            "standingRank": 4,
                             "streak": "L1",
                             "last3": "LWL",
                             "avgMargin": -4.5,
@@ -1784,16 +1772,28 @@
                             "rosterUrl": "./rosters/roster10.htm"
                         },
                         {
-                            "team": "Bayern Munich",
-                            "record": "2-1",
-                            "standingRank": 8,
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": -3.33,
-                            "pointDiff": -10,
+                            "team": "AFC Richmond",
+                            "record": "2-3",
+                            "standingRank": 5,
+                            "streak": "W1",
+                            "last3": "LLW",
+                            "avgMargin": -0.4,
+                            "pointDiff": -2,
                             "gapToLine": 1,
                             "status": "above_safety",
-                            "rosterUrl": "./rosters/roster7.htm"
+                            "rosterUrl": "./rosters/roster12.htm"
+                        },
+                        {
+                            "team": "Paris Saint-Germain",
+                            "record": "3-1",
+                            "standingRank": 8,
+                            "streak": "W1",
+                            "last3": "WLW",
+                            "avgMargin": 11.0,
+                            "pointDiff": 44,
+                            "gapToLine": 2,
+                            "status": "above_safety",
+                            "rosterUrl": "./rosters/roster21.htm"
                         }
                     ]
                 },
@@ -1802,37 +1802,13 @@
                     "tier": "Tier 2",
                     "type": "promotion",
                     "slots": 2,
-                    "lineTeam": "Paris Saint-Germain",
-                    "lineRecord": "3-1",
+                    "lineTeam": "Ajax",
+                    "lineRecord": "3-3",
                     "entries": [
-                        {
-                            "team": "Real Madrid",
-                            "record": "5-0",
-                            "standingRank": 2,
-                            "streak": "W5",
-                            "last3": "WWW",
-                            "avgMargin": 31.2,
-                            "pointDiff": 156,
-                            "gapToLine": -2,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster8.htm"
-                        },
-                        {
-                            "team": "Paris Saint-Germain",
-                            "record": "3-1",
-                            "standingRank": 1,
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 11.0,
-                            "pointDiff": 44,
-                            "gapToLine": 0,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster21.htm"
-                        },
                         {
                             "team": "Aston Villa",
                             "record": "3-2",
-                            "standingRank": 4,
+                            "standingRank": 6,
                             "streak": "L1",
                             "last3": "WWL",
                             "avgMargin": 6.6,
@@ -1844,7 +1820,7 @@
                         {
                             "team": "Ajax",
                             "record": "3-3",
-                            "standingRank": 3,
+                            "standingRank": 5,
                             "streak": "W1",
                             "last3": "LLW",
                             "avgMargin": -1.83,
@@ -1852,6 +1828,30 @@
                             "gapToLine": 0,
                             "status": "on_or_above_line",
                             "rosterUrl": "./rosters/roster18.htm"
+                        },
+                        {
+                            "team": "Bayern Munich",
+                            "record": "2-1",
+                            "standingRank": 1,
+                            "streak": "L1",
+                            "last3": "WWL",
+                            "avgMargin": -3.33,
+                            "pointDiff": -10,
+                            "gapToLine": 1,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster7.htm"
+                        },
+                        {
+                            "team": "Inter Milan",
+                            "record": "2-2",
+                            "standingRank": 7,
+                            "streak": "W2",
+                            "last3": "LWW",
+                            "avgMargin": -4.25,
+                            "pointDiff": -17,
+                            "gapToLine": 1,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster26.htm"
                         }
                     ]
                 },
@@ -1860,44 +1860,44 @@
                     "tier": "Tier 2",
                     "type": "relegation",
                     "slots": 1,
-                    "lineTeam": "Sheffield United",
-                    "lineRecord": "1-4",
+                    "lineTeam": "FL Fart",
+                    "lineRecord": "0-5",
                     "entries": [
+                        {
+                            "team": "FL Fart",
+                            "record": "0-5",
+                            "standingRank": 8,
+                            "streak": "L5",
+                            "last3": "LLL",
+                            "avgMargin": -15.6,
+                            "pointDiff": -78,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
+                            "rosterUrl": "./rosters/roster27.htm"
+                        },
                         {
                             "team": "Sheffield United",
                             "record": "1-4",
-                            "standingRank": 5,
+                            "standingRank": 4,
                             "streak": "L4",
                             "last3": "LLL",
                             "avgMargin": -21.0,
                             "pointDiff": -105,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
+                            "gapToLine": 1,
+                            "status": "above_safety",
                             "rosterUrl": "./rosters/roster16.htm"
                         },
                         {
                             "team": "Marseille",
                             "record": "1-4",
-                            "standingRank": 6,
+                            "standingRank": 3,
                             "streak": "L2",
                             "last3": "WLL",
                             "avgMargin": -9.4,
                             "pointDiff": -47,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
+                            "gapToLine": 1,
+                            "status": "above_safety",
                             "rosterUrl": "./rosters/roster15.htm"
-                        },
-                        {
-                            "team": "Juventus",
-                            "record": "1-3",
-                            "standingRank": 8,
-                            "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -11.0,
-                            "pointDiff": -44,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster14.htm"
                         }
                     ]
                 },
@@ -1912,7 +1912,7 @@
                         {
                             "team": "Tottenham Hotspur",
                             "record": "5-1",
-                            "standingRank": 5,
+                            "standingRank": 4,
                             "streak": "W5",
                             "last3": "WWW",
                             "avgMargin": 4.67,
@@ -1924,7 +1924,7 @@
                         {
                             "team": "Valencia",
                             "record": "4-2",
-                            "standingRank": 3,
+                            "standingRank": 7,
                             "streak": "L1",
                             "last3": "WWL",
                             "avgMargin": 10.17,
@@ -1936,7 +1936,7 @@
                         {
                             "team": "Barcelona",
                             "record": "3-2",
-                            "standingRank": 2,
+                            "standingRank": 6,
                             "streak": "W1",
                             "last3": "LLW",
                             "avgMargin": 7.8,
@@ -1954,25 +1954,13 @@
                     "tier": "Tier 1",
                     "type": "relegation",
                     "slots": 2,
-                    "lineTeam": "Chelsea",
+                    "lineTeam": "Brighton",
                     "lineRecord": "1-3",
                     "entries": [
                         {
-                            "team": "FL Fart",
-                            "record": "0-5",
-                            "standingRank": 7,
-                            "streak": "L5",
-                            "last3": "LLL",
-                            "avgMargin": -15.6,
-                            "pointDiff": -78,
-                            "gapToLine": -1,
-                            "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster27.htm"
-                        },
-                        {
                             "team": "Chelsea",
                             "record": "1-3",
-                            "standingRank": 6,
+                            "standingRank": 7,
                             "streak": "L2",
                             "last3": "WLL",
                             "avgMargin": -9.5,
@@ -1984,7 +1972,7 @@
                         {
                             "team": "Brighton",
                             "record": "1-3",
-                            "standingRank": 3,
+                            "standingRank": 4,
                             "streak": "L1",
                             "last3": "LWL",
                             "avgMargin": -4.5,
@@ -1994,16 +1982,28 @@
                             "rosterUrl": "./rosters/roster10.htm"
                         },
                         {
-                            "team": "Bayern Munich",
-                            "record": "2-1",
-                            "standingRank": 8,
-                            "streak": "L1",
-                            "last3": "WWL",
-                            "avgMargin": -3.33,
-                            "pointDiff": -10,
+                            "team": "AFC Richmond",
+                            "record": "2-3",
+                            "standingRank": 5,
+                            "streak": "W1",
+                            "last3": "LLW",
+                            "avgMargin": -0.4,
+                            "pointDiff": -2,
                             "gapToLine": 1,
                             "status": "above_safety",
-                            "rosterUrl": "./rosters/roster7.htm"
+                            "rosterUrl": "./rosters/roster12.htm"
+                        },
+                        {
+                            "team": "Paris Saint-Germain",
+                            "record": "3-1",
+                            "standingRank": 8,
+                            "streak": "W1",
+                            "last3": "WLW",
+                            "avgMargin": 11.0,
+                            "pointDiff": 44,
+                            "gapToLine": 2,
+                            "status": "above_safety",
+                            "rosterUrl": "./rosters/roster21.htm"
                         }
                     ]
                 },
@@ -2012,37 +2012,13 @@
                     "tier": "Tier 2",
                     "type": "promotion",
                     "slots": 2,
-                    "lineTeam": "Paris Saint-Germain",
-                    "lineRecord": "3-1",
+                    "lineTeam": "Ajax",
+                    "lineRecord": "3-3",
                     "entries": [
-                        {
-                            "team": "Real Madrid",
-                            "record": "5-0",
-                            "standingRank": 2,
-                            "streak": "W5",
-                            "last3": "WWW",
-                            "avgMargin": 31.2,
-                            "pointDiff": 156,
-                            "gapToLine": -2,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster8.htm"
-                        },
-                        {
-                            "team": "Paris Saint-Germain",
-                            "record": "3-1",
-                            "standingRank": 1,
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 11.0,
-                            "pointDiff": 44,
-                            "gapToLine": 0,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster21.htm"
-                        },
                         {
                             "team": "Aston Villa",
                             "record": "3-2",
-                            "standingRank": 4,
+                            "standingRank": 6,
                             "streak": "L1",
                             "last3": "WWL",
                             "avgMargin": 6.6,
@@ -2054,7 +2030,7 @@
                         {
                             "team": "Ajax",
                             "record": "3-3",
-                            "standingRank": 3,
+                            "standingRank": 5,
                             "streak": "W1",
                             "last3": "LLW",
                             "avgMargin": -1.83,
@@ -2062,6 +2038,30 @@
                             "gapToLine": 0,
                             "status": "on_or_above_line",
                             "rosterUrl": "./rosters/roster18.htm"
+                        },
+                        {
+                            "team": "Bayern Munich",
+                            "record": "2-1",
+                            "standingRank": 1,
+                            "streak": "L1",
+                            "last3": "WWL",
+                            "avgMargin": -3.33,
+                            "pointDiff": -10,
+                            "gapToLine": 1,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster7.htm"
+                        },
+                        {
+                            "team": "Inter Milan",
+                            "record": "2-2",
+                            "standingRank": 7,
+                            "streak": "W2",
+                            "last3": "LWW",
+                            "avgMargin": -4.25,
+                            "pointDiff": -17,
+                            "gapToLine": 1,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster26.htm"
                         }
                     ]
                 },
@@ -2070,44 +2070,44 @@
                     "tier": "Tier 2",
                     "type": "relegation",
                     "slots": 1,
-                    "lineTeam": "Sheffield United",
-                    "lineRecord": "1-4",
+                    "lineTeam": "FL Fart",
+                    "lineRecord": "0-5",
                     "entries": [
+                        {
+                            "team": "FL Fart",
+                            "record": "0-5",
+                            "standingRank": 8,
+                            "streak": "L5",
+                            "last3": "LLL",
+                            "avgMargin": -15.6,
+                            "pointDiff": -78,
+                            "gapToLine": 0,
+                            "status": "on_or_below_line",
+                            "rosterUrl": "./rosters/roster27.htm"
+                        },
                         {
                             "team": "Sheffield United",
                             "record": "1-4",
-                            "standingRank": 5,
+                            "standingRank": 4,
                             "streak": "L4",
                             "last3": "LLL",
                             "avgMargin": -21.0,
                             "pointDiff": -105,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
+                            "gapToLine": 1,
+                            "status": "above_safety",
                             "rosterUrl": "./rosters/roster16.htm"
                         },
                         {
                             "team": "Marseille",
                             "record": "1-4",
-                            "standingRank": 6,
+                            "standingRank": 3,
                             "streak": "L2",
                             "last3": "WLL",
                             "avgMargin": -9.4,
                             "pointDiff": -47,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
+                            "gapToLine": 1,
+                            "status": "above_safety",
                             "rosterUrl": "./rosters/roster15.htm"
-                        },
-                        {
-                            "team": "Juventus",
-                            "record": "1-3",
-                            "standingRank": 8,
-                            "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -11.0,
-                            "pointDiff": -44,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster14.htm"
                         }
                     ]
                 },
@@ -2122,7 +2122,7 @@
                         {
                             "team": "Tottenham Hotspur",
                             "record": "5-1",
-                            "standingRank": 5,
+                            "standingRank": 4,
                             "streak": "W5",
                             "last3": "WWW",
                             "avgMargin": 4.67,
@@ -2134,7 +2134,7 @@
                         {
                             "team": "Valencia",
                             "record": "4-2",
-                            "standingRank": 3,
+                            "standingRank": 7,
                             "streak": "L1",
                             "last3": "WWL",
                             "avgMargin": 10.17,
@@ -2146,7 +2146,7 @@
                         {
                             "team": "Barcelona",
                             "record": "3-2",
-                            "standingRank": 2,
+                            "standingRank": 6,
                             "streak": "W1",
                             "last3": "LLW",
                             "avgMargin": 7.8,
@@ -2194,8 +2194,8 @@
             "stockUpPool": [
                 {
                     "team": "Real Madrid",
-                    "tier": "Tier 2",
-                    "tierShort": "T2",
+                    "tier": "Tier 1",
+                    "tierShort": "T1",
                     "standingRank": 2,
                     "rosterUrl": "./rosters/roster8.htm",
                     "rosterFile": "roster8.htm",
@@ -2313,7 +2313,7 @@
                     "team": "Tottenham Hotspur",
                     "tier": "Tier 3",
                     "tierShort": "T3",
-                    "standingRank": 5,
+                    "standingRank": 4,
                     "rosterUrl": "./rosters/roster22.htm",
                     "rosterFile": "roster22.htm",
                     "standingsLast10": "7-3",
@@ -2440,7 +2440,7 @@
                     "team": "Benfica",
                     "tier": "Tier 1",
                     "tierShort": "T1",
-                    "standingRank": 5,
+                    "standingRank": 6,
                     "rosterUrl": "./rosters/roster13.htm",
                     "rosterFile": "roster13.htm",
                     "standingsLast10": "5-5",
@@ -2549,9 +2549,9 @@
             "stockDownPool": [
                 {
                     "team": "FL Fart",
-                    "tier": "Tier 1",
-                    "tierShort": "T1",
-                    "standingRank": 7,
+                    "tier": "Tier 2",
+                    "tierShort": "T2",
+                    "standingRank": 8,
                     "rosterUrl": "./rosters/roster27.htm",
                     "rosterFile": "roster27.htm",
                     "standingsLast10": "2-8",
@@ -2660,7 +2660,7 @@
                     "team": "Manchester United",
                     "tier": "Tier 3",
                     "tierShort": "T3",
-                    "standingRank": 8,
+                    "standingRank": 1,
                     "rosterUrl": "./rosters/roster5.htm",
                     "rosterFile": "roster5.htm",
                     "standingsLast10": "1-9",
@@ -2750,7 +2750,7 @@
                     "team": "Sheffield United",
                     "tier": "Tier 2",
                     "tierShort": "T2",
-                    "standingRank": 5,
+                    "standingRank": 4,
                     "rosterUrl": "./rosters/roster16.htm",
                     "rosterFile": "roster16.htm",
                     "standingsLast10": "4-6",
@@ -2934,7 +2934,7 @@
                     "type": "game",
                     "title": "Biggest Blowout of the Month",
                     "summary": "Real Madrid beat Sheffield United by 51, the biggest margin of the sim.",
-                    "tier": "Tier 2",
+                    "tier": "Tier 1",
                     "importance": 121,
                     "data": {
                         "section": "Regular Season",
@@ -2961,7 +2961,7 @@
                     "type": "team_trend",
                     "title": "Hottest Team of the Month",
                     "summary": "Real Madrid posted the strongest month at 5-0 and closed on a W5 run.",
-                    "tier": "Tier 2",
+                    "tier": "Tier 1",
                     "importance": 88,
                     "data": {
                         "team": "Real Madrid",
@@ -3012,7 +3012,7 @@
                     "type": "team_trend",
                     "title": "Coldest Team of the Month",
                     "summary": "FL Fart had the roughest month at 0-5 and now carries a L5 slide.",
-                    "tier": "Tier 1",
+                    "tier": "Tier 2",
                     "importance": 84,
                     "data": {
                         "team": "FL Fart",
@@ -3035,27 +3035,27 @@
                     "id": "upset-of-the-month",
                     "type": "game",
                     "title": "Upset of the Month",
-                    "summary": "Atletico Madrid landed the sharpest upset of the sim by beating Paris Saint-Germain.",
-                    "tier": "Tier 2",
+                    "summary": "Valencia landed the sharpest upset of the sim by beating Manchester United.",
+                    "tier": "Tier 3",
                     "importance": 82,
                     "data": {
                         "section": "Regular Season",
                         "sectionSlug": "regular-season",
                         "date": "4/15/1985",
-                        "matchupText": "@Atletico Madrid 114, Paris Saint-Germain 112",
-                        "boxscoreUrl": "./boxes/box182-2.htm",
-                        "boxscoreFile": "box182-2.htm",
-                        "homeTeam": "roster11",
-                        "homeTeamName": "Atletico Madrid",
-                        "homeScore": 114,
-                        "awayTeam": "roster21",
-                        "awayTeamName": "Paris Saint-Germain",
-                        "awayScore": 112,
-                        "winner": "roster11",
-                        "winnerName": "Atletico Madrid",
-                        "loser": "roster21",
-                        "loserName": "Paris Saint-Germain",
-                        "margin": 2
+                        "matchupText": "@Valencia 129, Manchester United 114",
+                        "boxscoreUrl": "./boxes/box182-3.htm",
+                        "boxscoreFile": "box182-3.htm",
+                        "homeTeam": "roster25",
+                        "homeTeamName": "Valencia",
+                        "homeScore": 129,
+                        "awayTeam": "roster5",
+                        "awayTeamName": "Manchester United",
+                        "awayScore": 114,
+                        "winner": "roster25",
+                        "winnerName": "Valencia",
+                        "loser": "roster5",
+                        "loserName": "Manchester United",
+                        "margin": 15
                     }
                 }
             ],
@@ -3066,7 +3066,7 @@
                         "name": "Bill Laimbeer",
                         "url": "../players/player874.htm",
                         "pos": "C",
-                        "age": "25",
+                        "age": "26",
                         "overall": "151",
                         "potential": "151"
                     }
@@ -3096,12 +3096,12 @@
                 {
                     "team": "Aston Villa",
                     "starPlayer": {
-                        "name": "Larry Nance",
-                        "url": "../players/player880.htm",
-                        "pos": "C",
+                        "name": "Xavier McDaniel",
+                        "url": "../players/player238.htm",
+                        "pos": "PF",
                         "age": "24",
-                        "overall": "129",
-                        "potential": "130"
+                        "overall": "125",
+                        "potential": "125"
                     }
                 },
                 {
@@ -3129,12 +3129,12 @@
                 {
                     "team": "Bayern Munich",
                     "starPlayer": {
-                        "name": "Bernard King",
-                        "url": "../players/player713.htm",
-                        "pos": "SF",
+                        "name": "Mike Woodson",
+                        "url": "../players/player720.htm",
+                        "pos": "SG",
                         "age": "25",
-                        "overall": "128",
-                        "potential": "128"
+                        "overall": "123",
+                        "potential": "123"
                     }
                 },
                 {
@@ -3165,7 +3165,7 @@
                         "name": "Jim Paxson",
                         "url": "../players/player875.htm",
                         "pos": "SF",
-                        "age": "25",
+                        "age": "26",
                         "overall": "141",
                         "potential": "142"
                     }
@@ -3173,11 +3173,11 @@
                 {
                     "team": "Crystal Palace",
                     "starPlayer": {
-                        "name": "Darrell Griffith",
-                        "url": "../players/player703.htm",
-                        "pos": "SG",
-                        "age": "24",
-                        "overall": "149",
+                        "name": "Reggie Theus",
+                        "url": "../players/player708.htm",
+                        "pos": "PG",
+                        "age": "25",
+                        "overall": "144",
                         "potential": "149"
                     }
                 },
@@ -3195,23 +3195,23 @@
                 {
                     "team": "Inter Milan",
                     "starPlayer": {
-                        "name": "World B. Free",
-                        "url": "../players/player1048.htm",
-                        "pos": "SG",
-                        "age": "28",
-                        "overall": "141",
-                        "potential": "141"
+                        "name": "David West",
+                        "url": "../players/player262.htm",
+                        "pos": "PF",
+                        "age": "25",
+                        "overall": "113",
+                        "potential": "122"
                     }
                 },
                 {
                     "team": "Juventus",
                     "starPlayer": {
-                        "name": "Gerald Henderson",
-                        "url": "../players/player890.htm",
-                        "pos": "PG",
-                        "age": "27",
-                        "overall": "122",
-                        "potential": "123"
+                        "name": "Larry Smith",
+                        "url": "../players/player1061.htm",
+                        "pos": "PF",
+                        "age": "25",
+                        "overall": "119",
+                        "potential": "119"
                     }
                 },
                 {
@@ -3261,45 +3261,45 @@
                 {
                     "team": "Paris Saint-Germain",
                     "starPlayer": {
-                        "name": "Kelly Tripucka",
-                        "url": "../players/player1049.htm",
-                        "pos": "SF",
-                        "age": "24",
-                        "overall": "159",
-                        "potential": "164"
+                        "name": "Mike Gminski",
+                        "url": "../players/player722.htm",
+                        "pos": "C",
+                        "age": "23",
+                        "overall": "135",
+                        "potential": "138"
                     }
                 },
                 {
                     "team": "Real Madrid",
                     "starPlayer": {
-                        "name": "Sidney Moncrief",
-                        "url": "../players/player699.htm",
-                        "pos": "SG",
-                        "age": "25",
-                        "overall": "156",
-                        "potential": "157"
+                        "name": "Andrew Toney",
+                        "url": "../players/player709.htm",
+                        "pos": "PG",
+                        "age": "24",
+                        "overall": "131",
+                        "potential": "131"
                     }
                 },
                 {
                     "team": "Sheffield United",
                     "starPlayer": {
-                        "name": "Bill Cartwright",
-                        "url": "../players/player887.htm",
-                        "pos": "C",
-                        "age": "25",
-                        "overall": "121",
-                        "potential": "121"
+                        "name": "Steve Johnson",
+                        "url": "../players/player897.htm",
+                        "pos": "PF",
+                        "age": "24",
+                        "overall": "116",
+                        "potential": "116"
                     }
                 },
                 {
                     "team": "Sporting CP",
                     "starPlayer": {
-                        "name": "Chris Bosh",
-                        "url": "../players/player622.htm",
-                        "pos": "PF",
+                        "name": "Jim Jackson",
+                        "url": "../players/player419.htm",
+                        "pos": "SG",
                         "age": "21",
-                        "overall": "118",
-                        "potential": "140"
+                        "overall": "121",
+                        "potential": "142"
                     }
                 },
                 {
@@ -3308,7 +3308,7 @@
                         "name": "Doug Christie",
                         "url": "../players/player243.htm",
                         "pos": "SF",
-                        "age": "23",
+                        "age": "24",
                         "overall": "130",
                         "potential": "141"
                     }
@@ -3319,7 +3319,7 @@
                         "name": "Isiah Thomas",
                         "url": "../players/player1047.htm",
                         "pos": "PG",
-                        "age": "21",
+                        "age": "22",
                         "overall": "115",
                         "potential": "115"
                     }
@@ -3399,8 +3399,8 @@
                             "usage": 37.7
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 95.44
+                        "leaderboardPresence": false,
+                        "candidateScore": 91.44
                     },
                     {
                         "name": "Moses Malone",
@@ -3429,8 +3429,8 @@
                             "usage": 29.5
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 82.5
+                        "leaderboardPresence": false,
+                        "candidateScore": 78.5
                     },
                     {
                         "name": "Joe Barry Carroll",
@@ -3459,8 +3459,8 @@
                             "usage": 30.6
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 79.58
+                        "leaderboardPresence": false,
+                        "candidateScore": 75.58
                     },
                     {
                         "name": "Tom Chambers",
@@ -3489,38 +3489,8 @@
                             "usage": 35.0
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 79.35
-                    },
-                    {
-                        "name": "Bernard King",
-                        "team": "roster7",
-                        "teamName": "Bayern Munich",
-                        "pos": "SF",
-                        "url": "../players/player713.htm",
-                        "overall": "128",
-                        "season": {
-                            "games": 42,
-                            "minutes": 37.8,
-                            "points": 29.5,
-                            "rebounds": 6.3,
-                            "assists": 4.1,
-                            "steals": 0.9,
-                            "blocks": 0.3,
-                            "fgPct": 0.546,
-                            "ftPct": 0.698,
-                            "threePct": 0.0
-                        },
-                        "efficiency": {
-                            "per": 19.9,
-                            "ewa": 7.4,
-                            "plusMinus": -5.3,
-                            "tsPct": 0.593,
-                            "usage": 31.3
-                        },
-                        "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 70.36
+                        "leaderboardPresence": false,
+                        "candidateScore": 75.35
                     },
                     {
                         "name": "Alex English",
@@ -3553,6 +3523,66 @@
                         "candidateScore": 66.49
                     },
                     {
+                        "name": "Bernard King",
+                        "team": "roster21",
+                        "teamName": "Paris Saint-Germain",
+                        "pos": "SF",
+                        "url": "../players/player713.htm",
+                        "overall": "128",
+                        "season": {
+                            "games": 42,
+                            "minutes": 37.8,
+                            "points": 29.5,
+                            "rebounds": 6.3,
+                            "assists": 4.1,
+                            "steals": 0.9,
+                            "blocks": 0.3,
+                            "fgPct": 0.546,
+                            "ftPct": 0.698,
+                            "threePct": 0.0
+                        },
+                        "efficiency": {
+                            "per": 19.9,
+                            "ewa": 7.4,
+                            "plusMinus": -5.3,
+                            "tsPct": 0.593,
+                            "usage": 31.3
+                        },
+                        "awardWinner": true,
+                        "leaderboardPresence": false,
+                        "candidateScore": 66.36
+                    },
+                    {
+                        "name": "Kevin McHale",
+                        "team": "roster7",
+                        "teamName": "Bayern Munich",
+                        "pos": "PF",
+                        "url": "../players/player717.htm",
+                        "overall": "119",
+                        "season": {
+                            "games": 42,
+                            "minutes": 38.0,
+                            "points": 27.0,
+                            "rebounds": 8.0,
+                            "assists": 2.6,
+                            "steals": 0.4,
+                            "blocks": 1.7,
+                            "fgPct": 0.509,
+                            "ftPct": 0.784,
+                            "threePct": 0.172
+                        },
+                        "efficiency": {
+                            "per": 19.0,
+                            "ewa": 5.9,
+                            "plusMinus": -5.0,
+                            "tsPct": 0.582,
+                            "usage": 28.0
+                        },
+                        "awardWinner": true,
+                        "leaderboardPresence": false,
+                        "candidateScore": 62.12
+                    },
+                    {
                         "name": "Jim Paxson",
                         "team": "roster17",
                         "teamName": "Chelsea",
@@ -3579,45 +3609,15 @@
                             "usage": 29.6
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 64.9
-                    },
-                    {
-                        "name": "Magic Johnson",
-                        "team": "roster12",
-                        "teamName": "AFC Richmond",
-                        "pos": "PG",
-                        "url": "../players/player698.htm",
-                        "overall": "140",
-                        "season": {
-                            "games": 42,
-                            "minutes": 35.1,
-                            "points": 18.0,
-                            "rebounds": 5.3,
-                            "assists": 8.8,
-                            "steals": 1.7,
-                            "blocks": 0.3,
-                            "fgPct": 0.611,
-                            "ftPct": 0.853,
-                            "threePct": 0.314
-                        },
-                        "efficiency": {
-                            "per": 21.6,
-                            "ewa": 7.8,
-                            "plusMinus": 10.8,
-                            "tsPct": 0.694,
-                            "usage": 22.4
-                        },
-                        "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 63.87
+                        "leaderboardPresence": false,
+                        "candidateScore": 60.9
                     }
                 ],
                 "Tier 2": [
                     {
                         "name": "Larry Nance",
-                        "team": "roster19",
-                        "teamName": "Aston Villa",
+                        "team": "FA",
+                        "teamName": "FA",
                         "pos": "C",
                         "url": "../players/player880.htm",
                         "overall": "129",
@@ -3641,8 +3641,8 @@
                             "usage": 33.5
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 110.34
+                        "leaderboardPresence": false,
+                        "candidateScore": 106.34
                     },
                     {
                         "name": "Steve Johnson",
@@ -3671,13 +3671,13 @@
                             "usage": 32.4
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 86.22
+                        "leaderboardPresence": false,
+                        "candidateScore": 82.22
                     },
                     {
                         "name": "Sidney Moncrief",
-                        "team": "roster8",
-                        "teamName": "Real Madrid",
+                        "team": "FA",
+                        "teamName": "FA",
                         "pos": "SG",
                         "url": "../players/player699.htm",
                         "overall": "156",
@@ -3701,8 +3701,8 @@
                             "usage": 32.6
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 82.28
+                        "leaderboardPresence": false,
+                        "candidateScore": 78.28
                     },
                     {
                         "name": "Robert Parish",
@@ -3731,13 +3731,13 @@
                             "usage": 27.5
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 79.42
+                        "leaderboardPresence": false,
+                        "candidateScore": 75.42
                     },
                     {
                         "name": "Kelly Tripucka",
-                        "team": "roster21",
-                        "teamName": "Paris Saint-Germain",
+                        "team": "FA",
+                        "teamName": "FA",
                         "pos": "SF",
                         "url": "../players/player1049.htm",
                         "overall": "159",
@@ -3761,13 +3761,13 @@
                             "usage": 31.4
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 77.05
+                        "leaderboardPresence": false,
+                        "candidateScore": 73.05
                     },
                     {
                         "name": "Johnny Moore",
-                        "team": "roster11",
-                        "teamName": "Atletico Madrid",
+                        "team": "FA",
+                        "teamName": "FA",
                         "pos": "PG",
                         "url": "../players/player727.htm",
                         "overall": "125",
@@ -3791,8 +3791,8 @@
                             "usage": 25.7
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 70.67
+                        "leaderboardPresence": false,
+                        "candidateScore": 66.67
                     },
                     {
                         "name": "Xavier McDaniel",
@@ -3851,8 +3851,8 @@
                             "usage": 18.9
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 62.93
+                        "leaderboardPresence": false,
+                        "candidateScore": 58.93
                     }
                 ],
                 "Tier 3": [
@@ -3883,8 +3883,8 @@
                             "usage": 25.1
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 78.43
+                        "leaderboardPresence": false,
+                        "candidateScore": 74.43
                     },
                     {
                         "name": "Paul Pierce",
@@ -3913,8 +3913,8 @@
                             "usage": 23.5
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 73.37
+                        "leaderboardPresence": false,
+                        "candidateScore": 69.37
                     },
                     {
                         "name": "Otis Birdsong",
@@ -3943,13 +3943,13 @@
                             "usage": 29.3
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 64.01
+                        "leaderboardPresence": false,
+                        "candidateScore": 60.01
                     },
                     {
                         "name": "Lewis Lloyd",
-                        "team": "roster23",
-                        "teamName": "Sporting CP",
+                        "team": "FA",
+                        "teamName": "FA",
                         "pos": "PG",
                         "url": "../players/player902.htm",
                         "overall": "111",
@@ -3973,8 +3973,8 @@
                             "usage": 28.5
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 63.58
+                        "leaderboardPresence": false,
+                        "candidateScore": 59.58
                     },
                     {
                         "name": "Andre Drummond",
@@ -4003,68 +4003,8 @@
                             "usage": 23.1
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 62.22
-                    },
-                    {
-                        "name": "Darnell Valentine",
-                        "team": "roster24",
-                        "teamName": "Barcelona",
-                        "pos": "PG",
-                        "url": "../players/player1056.htm",
-                        "overall": "119",
-                        "season": {
-                            "games": 42,
-                            "minutes": 41.9,
-                            "points": 15.8,
-                            "rebounds": 4.1,
-                            "assists": 12.4,
-                            "steals": 3.0,
-                            "blocks": 0.1,
-                            "fgPct": 0.468,
-                            "ftPct": 0.74,
-                            "threePct": 0.283
-                        },
-                        "efficiency": {
-                            "per": 17.9,
-                            "ewa": 6.1,
-                            "plusMinus": 3.1,
-                            "tsPct": 0.542,
-                            "usage": 20.0
-                        },
-                        "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 60.67
-                    },
-                    {
-                        "name": "Kirk Hinrich",
-                        "team": "roster28",
-                        "teamName": "Manchester City",
-                        "pos": "PG",
-                        "url": "../players/player636.htm",
-                        "overall": "120",
-                        "season": {
-                            "games": 42,
-                            "minutes": 33.3,
-                            "points": 16.5,
-                            "rebounds": 2.6,
-                            "assists": 9.3,
-                            "steals": 1.5,
-                            "blocks": 0.1,
-                            "fgPct": 0.47,
-                            "ftPct": 0.789,
-                            "threePct": 0.446
-                        },
-                        "efficiency": {
-                            "per": 20.3,
-                            "ewa": 6.5,
-                            "plusMinus": -1.0,
-                            "tsPct": 0.612,
-                            "usage": 23.2
-                        },
-                        "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 57.3
+                        "leaderboardPresence": false,
+                        "candidateScore": 58.22
                     },
                     {
                         "name": "Eddy Curry",
@@ -4095,6 +4035,66 @@
                         "awardWinner": true,
                         "leaderboardPresence": false,
                         "candidateScore": 57.09
+                    },
+                    {
+                        "name": "Darnell Valentine",
+                        "team": "roster24",
+                        "teamName": "Barcelona",
+                        "pos": "PG",
+                        "url": "../players/player1056.htm",
+                        "overall": "119",
+                        "season": {
+                            "games": 42,
+                            "minutes": 41.9,
+                            "points": 15.8,
+                            "rebounds": 4.1,
+                            "assists": 12.4,
+                            "steals": 3.0,
+                            "blocks": 0.1,
+                            "fgPct": 0.468,
+                            "ftPct": 0.74,
+                            "threePct": 0.283
+                        },
+                        "efficiency": {
+                            "per": 17.9,
+                            "ewa": 6.1,
+                            "plusMinus": 3.1,
+                            "tsPct": 0.542,
+                            "usage": 20.0
+                        },
+                        "awardWinner": true,
+                        "leaderboardPresence": false,
+                        "candidateScore": 56.67
+                    },
+                    {
+                        "name": "Kirk Hinrich",
+                        "team": "roster28",
+                        "teamName": "Manchester City",
+                        "pos": "PG",
+                        "url": "../players/player636.htm",
+                        "overall": "120",
+                        "season": {
+                            "games": 42,
+                            "minutes": 33.3,
+                            "points": 16.5,
+                            "rebounds": 2.6,
+                            "assists": 9.3,
+                            "steals": 1.5,
+                            "blocks": 0.1,
+                            "fgPct": 0.47,
+                            "ftPct": 0.789,
+                            "threePct": 0.446
+                        },
+                        "efficiency": {
+                            "per": 20.3,
+                            "ewa": 6.5,
+                            "plusMinus": -1.0,
+                            "tsPct": 0.612,
+                            "usage": 23.2
+                        },
+                        "awardWinner": true,
+                        "leaderboardPresence": false,
+                        "candidateScore": 53.3
                     }
                 ]
             },
