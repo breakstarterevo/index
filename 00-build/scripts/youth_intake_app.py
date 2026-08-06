@@ -459,6 +459,102 @@ def publish_draft(requested_hash):
     }
 
 
+def _publication_player(publication, requested_key):
+    requested_key = str(requested_key or "").strip()
+    matches = []
+    for team, player in selected_players(publication):
+        key = str(player.get("prospectKey") or prospect_key(player)).strip()
+        if key == requested_key:
+            matches.append((team, player, key))
+    if not requested_key:
+        raise SimulationError("Choose a youth prospect before recording a rights trade.")
+    if not matches:
+        raise SimulationError("That prospect is not present in the current published intake.")
+    if len(matches) != 1:
+        raise SimulationError("That prospect key is not unique in the current published intake.")
+    return matches[0]
+
+
+def current_rights_team(publication, requested_key, intake_team):
+    owner = str(intake_team or "").strip()
+    requested_key = str(requested_key or "").strip()
+    for transfer in publication.get("rightsTransfers", []):
+        if str(transfer.get("prospectKey", "")).strip() == requested_key:
+            owner = str(transfer.get("toTeam", "") or owner).strip()
+    return owner
+
+
+def transfer_rights(payload):
+    publication = read_json(CURRENT_SOURCE_PATH)
+    if not publication or publication.get("status") != "published":
+        raise SimulationError("Publish an official intake before recording rights trades.")
+
+    requested_revision = payload.get("expectedRevision")
+    current_revision = int(publication.get("rightsRevision", 0) or 0)
+    if requested_revision is not None and int(requested_revision) != current_revision:
+        raise SimulationError("Youth-rights data changed. Reload the commissioner app and try again.")
+
+    team, player, key = _publication_player(publication, payload.get("prospectKey"))
+    teams_by_name = {
+        normalize_name(entry.get("team")): str(entry.get("team", "")).strip()
+        for entry in publication.get("teams", [])
+        if str(entry.get("team", "")).strip()
+    }
+    destination = teams_by_name.get(normalize_name(payload.get("toTeam")))
+    if not destination:
+        raise SimulationError("Choose a valid destination team from the published intake.")
+
+    note = str(payload.get("note", "") or "").strip()
+    if not note:
+        raise SimulationError("A trade note or reference is required.")
+    if len(note) > 240:
+        raise SimulationError("The trade note must be 240 characters or fewer.")
+
+    intake_team = str(team.get("team", "") or "").strip()
+    current_owner = current_rights_team(publication, key, intake_team)
+    if normalize_name(destination) == normalize_name(current_owner):
+        raise SimulationError(f"{destination} already owns the rights to {player.get('name', 'that prospect')}.")
+
+    traded_at = utc_now()
+    revision = current_revision + 1
+    transfer = {
+        "revision": revision,
+        "prospectKey": key,
+        "playerName": str(player.get("name", "") or "").strip(),
+        "intakeTeam": intake_team,
+        "fromTeam": current_owner,
+        "toTeam": destination,
+        "tradedAt": traded_at,
+        "note": note,
+    }
+    transfer["transactionId"] = f"rights-{revision:04d}-{canonical_hash(transfer)[:12]}"
+
+    publication.setdefault("rightsTransfers", []).append(transfer)
+    publication["schemaVersion"] = max(2, int(publication.get("schemaVersion", 1) or 1))
+    publication["rightsRevision"] = revision
+    publication["rightsUpdatedAt"] = traded_at
+    publication["rightsHash"] = canonical_hash({
+        "season": publication.get("season", ""),
+        "revision": revision,
+        "transfers": publication["rightsTransfers"],
+    })
+
+    write_json(CURRENT_SOURCE_PATH, publication)
+    season = safe_season_slug(publication.get("season"))
+    season_path = SEASONS_DIR / f"{season}.json"
+    season_publication = read_json(season_path)
+    if season_publication and season_publication.get("draftHash") == publication.get("draftHash"):
+        write_json(season_path, publication)
+
+    ratings = _load_player_ratings(str(PLAYERS_PATH))
+    write_json(PUBLIC_INTAKE_PATH, build_app_youth_intake_payload(publication, ratings))
+    return {
+        "publication": publication,
+        "transfer": transfer,
+        "publicPath": str(PUBLIC_INTAKE_PATH.relative_to(PROJECT_ROOT)).replace("\\", "/"),
+    }
+
+
 def refresh_pool():
     if DRAFT_PATH.exists():
         raise SimulationError("Void or publish the active draft before refreshing the prospect pool.")
@@ -569,6 +665,8 @@ class YouthIntakeHandler(SimpleHTTPRequestHandler):
                 result = void_draft(body.get("reason"))
             elif parsed.path == "/api/youth-intake/publish":
                 result = publish_draft(body.get("draftHash"))
+            elif parsed.path == "/api/youth-intake/rights/transfer":
+                result = transfer_rights(body)
             elif parsed.path == "/api/youth-intake/pool/refresh":
                 result = refresh_pool()
             else:

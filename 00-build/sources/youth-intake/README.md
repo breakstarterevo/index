@@ -14,6 +14,16 @@ Closing the terminal stops the app.
 - `current.json` points the public builder at the latest published season.
 - `used-prospects.json` permanently reserves prospects after publication.
 
+## Post-intake rights trades
+
+After an intake is published, use the **Youth rights register** in the commissioner
+app to record a prospect-rights trade. The app keeps the original team and draw
+hash unchanged, appends an audited `rightsTransfers` entry to `current.json`,
+mirrors it into the published season source, and rebuilds the public intake feed.
+Each public prospect exposes both `intakeTeam` and the derived current
+`rightsTeam`. A trade note/reference is required, and stale app sessions are
+blocked by the rights revision number.
+
 The future-player ratings pool remains `00-build/database/future_players.json`.
 Use **Refresh Prospect Pool** in the app to rebuild it from the preferred
 `Database` worksheet in `00-assets/spreadsheet/Youth Intake.xlsx`.

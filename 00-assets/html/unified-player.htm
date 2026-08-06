@@ -1689,9 +1689,9 @@
       for (const team of state.youthIntake) {
         for (const prospect of Array.isArray(team && team.intakePlayers) ? team.intakePlayers : []) {
           const prospectId = clean(prospect && prospect.playerId);
-          if (playerId && prospectId && prospectId === playerId) return { team: team.team, prospect };
+          if (playerId && prospectId && prospectId === playerId) return { team: team.team, rightsTeam: prospect.rightsTeam || team.team, prospect };
           if (nameKey && normalizeName(prospect && prospect.name) === nameKey) {
-            nameMatches.push({ team: team.team, prospect });
+            nameMatches.push({ team: team.team, rightsTeam: prospect.rightsTeam || team.team, prospect });
           }
         }
       }
@@ -2263,11 +2263,14 @@
       const intakeTeam = intakeAssignment
         ? state.teamDirectory.find((entry) => normalizeName(entry.teamName) === normalizeName(intakeAssignment.team)) || null
         : null;
-      const team = currentTeam || intakeTeam;
+      const rightsTeam = intakeAssignment
+        ? state.teamDirectory.find((entry) => normalizeName(entry.teamName) === normalizeName(intakeAssignment.rightsTeam || intakeAssignment.team)) || null
+        : null;
+      const team = currentTeam || rightsTeam || intakeTeam;
       const injury = findInjury(p);
       const row = bestCurrentRow();
       const teamName = p.teamLabel || p.team || "Unknown Team";
-      const visualTeamName = intakeTeam ? intakeTeam.teamName : teamName;
+      const visualTeamName = rightsTeam ? rightsTeam.teamName : (intakeTeam ? intakeTeam.teamName : teamName);
       const intakeHref = intakeAssignment
         ? `./youth-intake.htm?team=${encodeURIComponent(intakeAssignment.team)}`
         : "";
@@ -2290,6 +2293,9 @@
         p.overall ? (window.ESLUnifiedUI ? ESLUnifiedUI.ratingBadge(p.overall, `OVR ${p.overall}`) : `<span class="rating-chip primary ${ratingTierClass(p.overall)}">OVR ${p.overall}</span>`) : "",
         p.potential ? (window.ESLUnifiedUI ? ESLUnifiedUI.ratingBadge(p.potential, `POT ${p.potential}`) : `<span class="rating-chip primary ${ratingTierClass(p.potential)}">POT ${p.potential}</span>`) : "",
         intakeAssignment ? `<a class="info-chip intake-team-chip" href="${intakeHref}" title="View ${escapeHtml(intakeAssignment.team)} youth intake">INTAKE · ${escapeHtml(intakeAssignment.team)}</a>` : "",
+        intakeAssignment && normalizeName(intakeAssignment.rightsTeam) !== normalizeName(intakeAssignment.team)
+          ? `<span class="info-chip intake-team-chip" title="Current youth-rights owner">RIGHTS · ${escapeHtml(intakeAssignment.rightsTeam)}</span>`
+          : "",
         p.currentSalaryText ? `<span class="info-chip">${p.currentSalaryText}</span>` : "",
         regularCampChip(p),
         injury ? `<span class="info-chip injury-chip">${injury.injury} | ${injury.length}d</span>` : ""

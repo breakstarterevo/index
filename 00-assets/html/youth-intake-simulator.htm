@@ -7,10 +7,10 @@
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/unified-components.css">
-  <link rel="stylesheet" href="../css/youth-intake-simulator.css?v=5">
+  <link rel="stylesheet" href="../css/youth-intake-simulator.css?v=6">
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
-  <script src="../js/youth-intake-simulator.js?v=5" defer></script>
+  <script src="../js/youth-intake-simulator.js?v=6" defer></script>
 </head>
 <body class="yi-app ui-page">
   <main class="yi-shell">
@@ -91,6 +91,7 @@
           <thead>
             <tr>
               <th><button class="yi-sort-button" type="button" data-sort="team">Team</button></th>
+              <th><button class="yi-sort-button" type="button" data-sort="rights">Rights</button></th>
               <th><button class="yi-sort-button" type="button" data-sort="division">Div</button></th>
               <th><button class="yi-sort-button" type="button" data-sort="record">Record</button></th>
               <th><button class="yi-sort-button" type="button" data-sort="slot">Slot</button></th>
@@ -106,6 +107,29 @@
           <tbody id="reviewRows"></tbody>
         </table>
       </div>
+      <section class="yi-rights" id="rightsPanel" hidden aria-labelledby="rightsTitle">
+        <div class="yi-rights-head">
+          <div>
+            <p class="yi-section-label">Post-publication</p>
+            <h3 id="rightsTitle">Youth rights register</h3>
+            <p>Record ownership changes without rewriting the audited intake assignment.</p>
+          </div>
+          <span class="yi-rights-revision" id="rightsRevision">Revision 0</span>
+        </div>
+        <div class="yi-rights-form">
+          <label class="yi-field yi-field--wide"><span>Prospect</span><select id="rightsPlayer"></select></label>
+          <label class="yi-field"><span>Current owner</span><output id="rightsCurrentOwner">—</output></label>
+          <label class="yi-field"><span>New owner</span><select id="rightsDestination"></select></label>
+          <label class="yi-field yi-field--wide"><span>Trade note / reference</span><input id="rightsNote" type="text" maxlength="240" autocomplete="off" placeholder="e.g. Trade 14, future consideration"></label>
+          <button class="yi-button yi-button--primary" id="recordRightsButton" type="button">Record transfer</button>
+        </div>
+        <div class="yi-table-wrap yi-rights-history-wrap">
+          <table class="yi-table yi-rights-history">
+            <thead><tr><th>Rev</th><th>Player</th><th>From</th><th>To</th><th>Recorded</th><th>Note</th></tr></thead>
+            <tbody id="rightsHistory"></tbody>
+          </table>
+        </div>
+      </section>
     </section>
   </main>
 

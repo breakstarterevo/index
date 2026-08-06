@@ -199,7 +199,7 @@
       const key = String(column || "").toLowerCase();
       if (key === "overall" || key === "potential") return UI.ratingBadge(value);
       if (key === "tier") return UI.tierBadge(value);
-      if (key === "team") {
+      if (key === "team" || key === "intaketeam" || key === "rightsteam") {
         const fullName = String(value || "");
         const abbreviation = teamAbbreviation(fullName);
         return `<span class="team-chip" title="${escapeHtml(fullName)}" aria-label="${escapeHtml(fullName)}">${escapeHtml(abbreviation)}</span>`;
@@ -233,7 +233,7 @@
       const common = ["Position", "Age", ...ratings];
       const regular = ["InsideScoring", "JumpShot", "FtShot", "3pShot", "3pUsage", "Handling", "Passing", "PostDefense", "PerimeterDefense", "Stealing", "Blocking", "OReb", "DReb", "Fouling", "Strength", "Quickness", "Jumping", "Stamina", "InjuryAvoidance"];
       const potential = ["PotInside", "PotJumpShot", "PotFtShot", "Pot3pShot", "3pUsage", "PotHandling", "PotPassing", "PotPostDefense", "PotPerimeterDefense", "PotStealing", "PotBlocking", "PotOReb", "PotDReb", "Fouling", "Strength", "Quickness", "Jumping", "Stamina", "InjuryAvoidance"];
-      const columns = ["name", ...(includeTeamColumn ? ["team"] : []), "slotLabel", "tier", "focusOutcome", ...common, ...(state.mode === "potential" ? potential : regular)];
+      const columns = ["name", ...(includeTeamColumn ? ["team"] : []), "rightsTeam", "slotLabel", "tier", "focusOutcome", ...common, ...(state.mode === "potential" ? potential : regular)];
       const rows = players.map((p) => {
         const displayPlayer = { ...p, tier: p.selectedTier || p.tier || "" };
         const row = columns.map((c) => c === "name" ? displayPlayer.name : (displayPlayer[c] ?? ""));
@@ -263,6 +263,7 @@
     function shortHeader(key, index) {
       if (index === 0) return "Name";
       if (String(key || "").toLowerCase() === "team") return "Team";
+      if (String(key || "").toLowerCase() === "rightsteam") return "Rights";
       const map = {
         tier: "Tier",
         slotLabel: "Slot",
@@ -335,13 +336,13 @@
           .filter((t) => !state.division || (t.division || t.tier) === state.division)
           .flatMap((t) => (Array.isArray(t.intakePlayers) ? t.intakePlayers : []).map((entry) => {
             const name = String((entry && entry.name) || "").trim();
-            return { ...entry, name, team: t.team };
+            return { ...entry, name, team: t.team, rightsTeam: entry.rightsTeam || t.team };
           }));
       } else {
         const intake = Array.isArray(team.intakePlayers) ? team.intakePlayers : [];
         detailed = intake.map((entry) => {
           const name = String((entry && entry.name) || "").trim();
-          return { ...entry, name };
+          return { ...entry, name, rightsTeam: entry.rightsTeam || team.team };
         });
       }
       const built = buildTableRows(detailed, includeTeamColumn);

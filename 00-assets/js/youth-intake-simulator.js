@@ -202,6 +202,73 @@
       });
     });
   }
+  function rightsTeamFor(result, intakeTeam, prospectKey) {
+    var owner = String(intakeTeam || "");
+    (result.rightsTransfers || []).forEach(function (transfer) {
+      if (String(transfer.prospectKey || "") === String(prospectKey || "")) {
+        owner = String(transfer.toTeam || owner);
+      }
+    });
+    return owner;
+  }
+  function selectedRightsEntry() {
+    if (!state.result) return null;
+    var key = el("rightsPlayer").value;
+    return allPlayers(state.result).find(function (entry) {
+      return String(entry.player.prospectKey || "") === key;
+    }) || null;
+  }
+  function syncRightsForm() {
+    var entry = selectedRightsEntry();
+    if (!entry) {
+      el("rightsCurrentOwner").textContent = "—";
+      el("rightsDestination").innerHTML = "";
+      return;
+    }
+    var currentOwner = rightsTeamFor(state.result,entry.team.team,entry.player.prospectKey);
+    el("rightsCurrentOwner").textContent = currentOwner;
+    var previousDestination = el("rightsDestination").value;
+    var teams = (state.result.teams || []).map(function (team) { return team.team; }).sort(function (a,b) {
+      return a.localeCompare(b);
+    }).filter(function (team) { return team !== currentOwner; });
+    el("rightsDestination").innerHTML = teams.map(function (team) {
+      return '<option value="' + escapeHtml(team) + '">' + escapeHtml(team) + "</option>";
+    }).join("");
+    if (teams.indexOf(previousDestination) !== -1) el("rightsDestination").value = previousDestination;
+  }
+  function renderRights(result) {
+    var published = result.status === "published";
+    el("rightsPanel").hidden = !published;
+    if (!published) return;
+
+    var revision = Number(result.rightsRevision || 0);
+    el("rightsRevision").textContent = "Revision " + revision;
+    var previousPlayer = el("rightsPlayer").value;
+    var players = allPlayers(result).slice().sort(function (a,b) {
+      return String(a.player.name || "").localeCompare(String(b.player.name || ""),undefined,{sensitivity:"base"});
+    });
+    el("rightsPlayer").innerHTML = players.map(function (entry) {
+      return '<option value="' + escapeHtml(entry.player.prospectKey) + '">' +
+        escapeHtml(entry.player.name) + " — intake: " + escapeHtml(entry.team.team) + "</option>";
+    }).join("");
+    if (players.some(function (entry) { return String(entry.player.prospectKey || "") === previousPlayer; })) {
+      el("rightsPlayer").value = previousPlayer;
+    }
+    syncRightsForm();
+
+    var transfers = (result.rightsTransfers || []).slice().reverse();
+    el("rightsHistory").innerHTML = transfers.length ? transfers.map(function (transfer) {
+      var recorded = String(transfer.tradedAt || "").replace("T"," ").replace("Z"," UTC");
+      return "<tr>" +
+        "<td>" + escapeHtml(transfer.revision) + "</td>" +
+        "<td><strong>" + escapeHtml(transfer.playerName) + "</strong></td>" +
+        "<td>" + escapeHtml(transfer.fromTeam) + "</td>" +
+        "<td><strong>" + escapeHtml(transfer.toTeam) + "</strong></td>" +
+        "<td>" + escapeHtml(recorded) + "</td>" +
+        "<td>" + escapeHtml(transfer.note) + "</td>" +
+      "</tr>";
+    }).join("") : '<tr><td colspan="6">No post-intake rights transfers recorded.</td></tr>';
+  }
   function renderFilters(result) {
     var divisions = Array.from(new Set((result.teams || []).map(function (team) { return team.division; })));
     el("divisionFilter").innerHTML = '<option value="">All divisions</option>' + divisions.map(function (division) {
@@ -229,6 +296,7 @@
     var values = {
       allocation:Number(player.allocationIndex || 0),
       team:String(team.team || ""),
+      rights:rightsTeamFor(state.result,team.team,player.prospectKey),
       division:String(team.division || ""),
       record:Number(team.pct || 0),
       slot:compactSlot(team,player),
@@ -280,8 +348,10 @@
     el("reviewRows").innerHTML = entries.map(function (entry) {
       var team = entry.team;
       var player = entry.player;
+      var rightsTeam = rightsTeamFor(result,team.team,player.prospectKey);
       return "<tr>" +
         "<td><strong>" + escapeHtml(team.team) + "</strong></td>" +
+        "<td>" + (rightsTeam === team.team ? escapeHtml(rightsTeam) : "<strong>" + escapeHtml(rightsTeam) + "</strong>") + "</td>" +
         "<td>" + escapeHtml(team.division) + "</td>" +
         "<td>" + escapeHtml(team.record) + "</td>" +
         '<td><span class="yi-slot" title="' + escapeHtml(player.slotLabel) + '">' + escapeHtml(compactSlot(team,player)) + "</span></td>" +
@@ -317,6 +387,7 @@
     el("exportCsvButton").hidden = result.status !== "draft" && result.status !== "published";
     renderFilters(result);
     renderReviewRows();
+    renderRights(result);
     if (scrollToReview !== false) el("reviewPanel").scrollIntoView({behavior:"smooth",block:"start"});
   }
 
@@ -520,6 +591,32 @@
     finally { setBusy(false); }
   }
 
+  async function recordRightsTransfer() {
+    if (!state.result || state.result.status !== "published") return;
+    var entry = selectedRightsEntry();
+    var destination = el("rightsDestination").value;
+    var note = el("rightsNote").value.trim();
+    if (!entry || !destination) { toast("Choose a prospect and destination team.",true); return; }
+    if (!note) { toast("Add a trade note or reference.",true); return; }
+    var currentOwner = rightsTeamFor(state.result,entry.team.team,entry.player.prospectKey);
+    if (!confirm("Transfer " + entry.player.name + " rights from " + currentOwner + " to " + destination + "?")) return;
+    setBusy(true,"Recording rights trade");
+    try {
+      var result = await api("/api/youth-intake/rights/transfer",{
+        prospectKey:entry.player.prospectKey,
+        toTeam:destination,
+        note:note,
+        expectedRevision:Number(state.result.rightsRevision || 0)
+      });
+      state.result = result.publication;
+      if (state.bootstrap) state.bootstrap.currentPublished = result.publication;
+      el("rightsNote").value = "";
+      renderResult(false);
+      toast("Recorded " + result.transfer.playerName + " rights to " + result.transfer.toTeam + ".");
+    } catch (error) { toast(error.message,true); }
+    finally { setBusy(false); }
+  }
+
   function bind() {
     el("saveConfigButton").addEventListener("click",function () {
       setBusy(true,"Saving");
@@ -532,6 +629,8 @@
     el("exportCsvButton").addEventListener("click",exportFbb3Csvs);
     el("publishButton").addEventListener("click",publishOfficial);
     el("voidButton").addEventListener("click",voidOfficial);
+    el("rightsPlayer").addEventListener("change",syncRightsForm);
+    el("recordRightsButton").addEventListener("click",recordRightsTransfer);
     el("divisionFilter").addEventListener("change",function () {
       state.filters.division = this.value;
       state.filters.team = "";

@@ -9,11 +9,46 @@ sys.path.insert(0, str(SCRIPTS))
 
 from build_youth_intake_json import (  # noqa: E402
     _enrich_intake_player,
+    build_app_youth_intake_payload,
     build_youth_intake_payload,
 )
 
 
 class YouthIntakeJsonTests(unittest.TestCase):
+    def test_app_payload_derives_current_rights_without_moving_intake_team(self):
+        source = {
+            "schemaVersion": 2,
+            "season": "season-9",
+            "status": "published",
+            "rightsRevision": 1,
+            "rightsHash": "rights-hash",
+            "rightsTransfers": [{
+                "prospectKey": "prospect-1",
+                "fromTeam": "AC Milan",
+                "toTeam": "Chelsea",
+            }],
+            "teams": [{
+                "team": "AC Milan",
+                "division": "CLB",
+                "intakePlayers": [{
+                    "prospectKey": "prospect-1",
+                    "name": "Test Prospect",
+                    "Position": "PG",
+                    "POT": 120,
+                }],
+            }],
+        }
+
+        payload = build_app_youth_intake_payload(source, {})
+        player = payload["teams"][0]["intakePlayers"][0]
+
+        self.assertEqual(payload["rightsRevision"], 1)
+        self.assertEqual(payload["rightsHash"], "rights-hash")
+        self.assertEqual(payload["rightsTransfers"], source["rightsTransfers"])
+        self.assertEqual(payload["teams"][0]["team"], "AC Milan")
+        self.assertEqual(player["intakeTeam"], "AC Milan")
+        self.assertEqual(player["rightsTeam"], "Chelsea")
+
     def test_live_ratings_replace_current_fields_but_preserve_potential_fields(self):
         intake_player = {
             "name": "Mike Dunleavy",

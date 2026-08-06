@@ -657,6 +657,19 @@ def build_youth_intake_payload(
 def build_app_youth_intake_payload(app_source, rating_lookup=None):
     """Build the public feed from a locked simulator publication."""
     rating_lookup = rating_lookup or {}
+    rights_by_prospect = {}
+    for source_team in app_source.get("teams", []):
+        team_name = str(source_team.get("team", "") or "").strip()
+        for source_player in source_team.get("intakePlayers", []):
+            key = str(source_player.get("prospectKey", "") or "").strip()
+            if key:
+                rights_by_prospect[key] = team_name
+    for transfer in app_source.get("rightsTransfers", []):
+        key = str(transfer.get("prospectKey", "") or "").strip()
+        destination = str(transfer.get("toTeam", "") or "").strip()
+        if key and destination and key in rights_by_prospect:
+            rights_by_prospect[key] = destination
+
     teams = []
     for source_team in app_source.get("teams", []):
         team_name = str(source_team.get("team", "") or "").strip()
@@ -668,6 +681,9 @@ def build_app_youth_intake_payload(app_source, rating_lookup=None):
                 or f"{player.get('FirstName', '')} {player.get('LastName', '')}"
             ).strip()
             enriched = _enrich_intake_player(player, team_name, rating_lookup)
+            prospect_key_value = str(enriched.get("prospectKey", "") or "").strip()
+            enriched["intakeTeam"] = team_name
+            enriched["rightsTeam"] = rights_by_prospect.get(prospect_key_value, team_name)
             if not enriched.get("potential"):
                 enriched["potential"] = _parse_overall(enriched.get("POT", ""))
             intake_players.append(enriched)
@@ -699,6 +715,11 @@ def build_app_youth_intake_payload(app_source, rating_lookup=None):
         "generatedAt": app_source.get("generatedAt", ""),
         "publishedAt": app_source.get("publishedAt", ""),
         "draftHash": app_source.get("draftHash", ""),
+        "publicationHash": app_source.get("publicationHash", ""),
+        "rightsRevision": int(app_source.get("rightsRevision", 0) or 0),
+        "rightsUpdatedAt": app_source.get("rightsUpdatedAt", ""),
+        "rightsHash": app_source.get("rightsHash", ""),
+        "rightsTransfers": list(app_source.get("rightsTransfers", [])),
         "focusPolicy": app_source.get("focusPolicy", {}),
         "allocationOrder": app_source.get("allocationOrder", []),
         "revealOrder": app_source.get("revealOrder", []),

@@ -241,6 +241,77 @@ class YouthIntakeAppStateTests(unittest.TestCase):
         ledger = json.loads(self.paths["USED_PATH"].read_text(encoding="utf-8"))
         self.assertEqual(len(ledger["players"]), 72)
 
+    def test_published_rights_trade_preserves_draw_and_updates_public_feed(self):
+        draft = app.create_official_draft({"season": "season-9"})
+        published = app.publish_draft(draft["draftHash"])["publication"]
+        intake_team = published["teams"][0]
+        player = intake_team["intakePlayers"][0]
+        destination = published["teams"][1]["team"]
+
+        result = app.transfer_rights({
+            "prospectKey": player["prospectKey"],
+            "toTeam": destination,
+            "note": "Trade 14: future consideration",
+            "expectedRevision": 0,
+        })
+
+        current = json.loads(self.paths["CURRENT_SOURCE_PATH"].read_text(encoding="utf-8"))
+        public = json.loads(self.paths["PUBLIC_INTAKE_PATH"].read_text(encoding="utf-8"))
+        season = json.loads((self.paths["SEASONS_DIR"] / "season-9.json").read_text(encoding="utf-8"))
+        public_player = next(
+            prospect
+            for team in public["teams"]
+            for prospect in team["intakePlayers"]
+            if prospect.get("prospectKey") == player["prospectKey"]
+        )
+
+        self.assertEqual(current["draftHash"], draft["draftHash"])
+        self.assertEqual(current["publicationHash"], published["publicationHash"])
+        self.assertEqual(current["rightsRevision"], 1)
+        self.assertEqual(current["rightsTransfers"][0]["fromTeam"], intake_team["team"])
+        self.assertEqual(current["rightsTransfers"][0]["toTeam"], destination)
+        self.assertEqual(season["rightsHash"], current["rightsHash"])
+        self.assertEqual(public_player["intakeTeam"], intake_team["team"])
+        self.assertEqual(public_player["rightsTeam"], destination)
+        self.assertEqual(result["transfer"]["transactionId"], current["rightsTransfers"][0]["transactionId"])
+
+    def test_rights_trade_rejects_same_owner_and_stale_revision(self):
+        draft = app.create_official_draft({"season": "season-9"})
+        published = app.publish_draft(draft["draftHash"])["publication"]
+        intake_team = published["teams"][0]
+        player = intake_team["intakePlayers"][0]
+        destination = published["teams"][1]["team"]
+
+        with self.assertRaisesRegex(SimulationError, "already owns"):
+            app.transfer_rights({
+                "prospectKey": player["prospectKey"],
+                "toTeam": intake_team["team"],
+                "note": "No-op",
+                "expectedRevision": 0,
+            })
+
+        app.transfer_rights({
+            "prospectKey": player["prospectKey"],
+            "toTeam": destination,
+            "note": "First trade",
+            "expectedRevision": 0,
+        })
+        with self.assertRaisesRegex(SimulationError, "Reload"):
+            app.transfer_rights({
+                "prospectKey": player["prospectKey"],
+                "toTeam": intake_team["team"],
+                "note": "Stale browser",
+                "expectedRevision": 0,
+            })
+        returned = app.transfer_rights({
+            "prospectKey": player["prospectKey"],
+            "toTeam": intake_team["team"],
+            "note": "Rights returned",
+            "expectedRevision": 1,
+        })
+        self.assertEqual(returned["transfer"]["fromTeam"], destination)
+        self.assertEqual(returned["publication"]["rightsRevision"], 2)
+
     def test_fbb3_export_uses_draw_divisions_and_zero_rated_fillers(self):
         draft = app.create_official_draft({"season": "season-9"})
         archive_bytes, archive_name = app.build_fbb3_export(draft)
