@@ -1,0 +1,107 @@
+{
+  "name": "European Super League",
+  "url": "https://eurosuperleague.github.io/index/index.htm",
+  "sections": [
+    {
+      "title": "CLB Standings",
+      "teams": [
+        {
+          "name": "AFC Richmond",
+          "wins": 31,
+          "losses": 11,
+          "streak": "W1"
+        },
+        {
+          "name": "AC Milan",
+          "wins": 26,
+          "losses": 16,
+          "streak": "W4"
+        },
+        {
+          "name": "Brighton",
+          "wins": 23,
+          "losses": 19,
+          "streak": "L1"
+        }
+      ]
+    },
+    {
+      "title": "ELB Standings",
+      "teams": [
+        {
+          "name": "Paris Saint-Germain",
+          "wins": 34,
+          "losses": 8,
+          "streak": "W1"
+        },
+        {
+          "name": "Real Madrid",
+          "wins": 31,
+          "losses": 11,
+          "streak": "W7"
+        },
+        {
+          "name": "Ajax",
+          "wins": 24,
+          "losses": 18,
+          "streak": "W1"
+        }
+      ]
+    },
+    {
+      "title": "ECL Standings",
+      "teams": [
+        {
+          "name": "Inter Milan",
+          "wins": 27,
+          "losses": 15,
+          "streak": "W2"
+        },
+        {
+          "name": "Barcelona",
+          "wins": 26,
+          "losses": 16,
+          "streak": "W1"
+        },
+        {
+          "name": "Valencia",
+          "wins": 24,
+          "losses": 18,
+          "streak": "L1"
+        }
+      ]
+    }
+  ],
+  "leaders": [
+    {
+      "category": "Minutes",
+      "player": "Michael Cooper",
+      "team": "AFC Richmond",
+      "value": "41.2"
+    },
+    {
+      "category": "Points",
+      "player": "Kiki Vandeweghe",
+      "team": "Brighton",
+      "value": "37.8"
+    },
+    {
+      "category": "Rebounds",
+      "player": "Moses Malone",
+      "team": "Benfica",
+      "value": "10.4"
+    },
+    {
+      "category": "Assists",
+      "player": "Rickey Green",
+      "team": "Chelsea",
+      "value": "10.5"
+    },
+    {
+      "category": "Steals",
+      "player": "Rickey Green",
+      "team": "Chelsea",
+      "value": "3.0"
+    }
+  ]
+}
