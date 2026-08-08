@@ -1,8 +1,18 @@
 (function () {
+  var superCupBoxMatch = window.location.pathname.match(/\/00-SuperCup\/boxes\/(box\d+-\d+)\.htm$/i);
+  var routeParams = new URLSearchParams(window.location.search);
   var root = document.documentElement;
   var rawSettings;
   var settings;
   var theme;
+
+  if (superCupBoxMatch && routeParams.get("classic") !== "1") {
+    window.location.replace(
+      "../../00-assets/html/unified-box-score.htm?competition=supercup&game=" +
+      encodeURIComponent(superCupBoxMatch[1].toLowerCase())
+    );
+    return;
+  }
 
   try {
     rawSettings = window.localStorage && window.localStorage.getItem("leagueSiteSettings");

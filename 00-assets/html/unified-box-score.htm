@@ -5,7 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=0.35, maximum-scale=5.0, user-scalable=yes">
   <title>Box Score</title>
   <script>
-    window.location.replace("./match-centre.htm" + window.location.search + window.location.hash);
+    if (new URLSearchParams(window.location.search).get("competition") !== "supercup") {
+      window.location.replace("./match-centre.htm" + window.location.search + window.location.hash);
+    }
   </script>
   <link rel="icon" type="image/png" href="../../00-build/database/favicon.png">
   <script src="../js/theme-preload.js"></script>
@@ -15,7 +17,7 @@
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
   <script src="../js/unified-ui.js?v=team-palette-2" defer></script>
-  <script src="../js/unified-box-score.js?v=3" defer></script>
+  <script src="../js/unified-box-score.js?v=supercup-1" defer></script>
 </head>
 <body class="ui-page">
   <main class="ui-shell boxscore-shell">

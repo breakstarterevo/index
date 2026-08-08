@@ -1,11 +1,17 @@
 (function () {
   "use strict";
 
+  var ROUTE_PARAMS = new URLSearchParams(window.location.search);
   var IS_MATCH_CENTRE = /\/match-centre\.htm$/i.test(window.location.pathname);
+  var IS_SUPERCUP = !IS_MATCH_CENTRE && ROUTE_PARAMS.get("competition") === "supercup";
   var DATA = {
-    boxScores: "../../00-build/database/box_scores.json",
+    boxScores: IS_SUPERCUP
+      ? "../../00-build/database/supercup/box_scores.json"
+      : "../../00-build/database/box_scores.json",
     photos: "../../00-build/database/player_photos.json",
-    schedule: "../../00-build/database/schedule.json"
+    schedule: IS_SUPERCUP
+      ? "../../00-build/database/supercup/schedule.json"
+      : "../../00-build/database/schedule.json"
   };
   var TEAM_LOGOS = {
     "AC Milan": "acmilan.jpg", "AFC Richmond": "richmond.jpg", "Ajax": "ajax.jpg",
@@ -64,24 +70,28 @@
     return "../../00-assets/photos/" + (TEAM_LOGOS[name] || normalize(name) + ".jpg");
   }
   function rosterHref(teamId) {
-    return "./unified-roster.htm?file=" + encodeURIComponent(clean(teamId) + ".htm");
+    return (IS_SUPERCUP ? "./unified-roster-supercup.htm?file=" : "./unified-roster.htm?file=") +
+      encodeURIComponent(clean(teamId) + ".htm");
   }
   function playerHref(playerId) {
-    return "./unified-player.htm?id=" + encodeURIComponent(clean(playerId));
+    return (IS_SUPERCUP ? "./unified-player-supercup.htm?id=" : "./unified-player.htm?id=") +
+      encodeURIComponent(clean(playerId));
   }
   function gameId(value) {
     var match = clean(value).match(/box\d+-\d+/i);
     return match ? match[0].toLowerCase() : "";
   }
   function currentRouteId() {
-    var params = new URLSearchParams(window.location.search);
-    return gameId(params.get("game") || params.get("file") || params.get("box"));
+    return gameId(ROUTE_PARAMS.get("game") || ROUTE_PARAMS.get("file") || ROUTE_PARAMS.get("box"));
   }
   if (IS_MATCH_CENTRE && !currentRouteId()) return;
   if (IS_MATCH_CENTRE && "scrollRestoration" in window.history) {
     window.history.scrollRestoration = "manual";
   }
   function gameHref(game) {
+    if (IS_SUPERCUP) {
+      return "./unified-box-score.htm?competition=supercup&game=" + encodeURIComponent(game.gameId);
+    }
     return "./match-centre.htm?game=" + encodeURIComponent(game.gameId);
   }
 
@@ -235,7 +245,7 @@
     byId("gameDate").textContent = formatDate(game.date);
     byId("gameMargin").textContent = winner.name + " by " + game.margin;
     document.title = game.away.name + " " + game.away.score + ", " + game.home.name + " " + game.home.score +
-      (IS_MATCH_CENTRE ? " - Match Centre" : " - Box Score");
+      (IS_MATCH_CENTRE ? " - Match Centre" : (IS_SUPERCUP ? " - Super Cup Box Score" : " - Box Score"));
   }
 
   function renderPeriods(game) {
@@ -497,7 +507,8 @@
     renderComparison(game);
     renderPlayerOfGame(game);
     renderTeamTable(game, state.activeTeamSide);
-    classicLink.href = "../../boxes/" + encodeURIComponent(game.boxscoreFile);
+    classicLink.href = (IS_SUPERCUP ? "../../00-SuperCup/boxes/" : "../../boxes/") +
+      encodeURIComponent(game.boxscoreFile) + (IS_SUPERCUP ? "?classic=1" : "");
     classicLink.hidden = !game.boxscoreFile;
     updateNavigation();
   }
