@@ -737,7 +737,10 @@
     var awayWins = Number(game.awayScore) > Number(game.homeScore);
     var boxId = String(game.boxscoreFile || game.boxscoreUrl || "").match(/box\d+-\d+/i);
     var href = boxId
-      ? getCorePath("matchCentre", "00-assets/html/match-centre.htm") + "?game=" + encodeURIComponent(boxId[0].toLowerCase())
+      ? (isSuperCupIndexPage()
+        ? getRepoScopedPath("00-assets/html/unified-box-score.htm") + "?competition=supercup&game="
+        : getCorePath("matchCentre", "00-assets/html/match-centre.htm") + "?game=") +
+        encodeURIComponent(boxId[0].toLowerCase())
       : String(game.boxscoreUrl || ("./boxes/" + game.boxscoreFile)).replace(/^\.\//, "");
     var dateText = formatTickerGameDate(game.date);
 
