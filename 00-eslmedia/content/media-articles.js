@@ -26,6 +26,46 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
+  // 1985 offseason - after FA1 package
+  {
+    file: "articles/1985_fa1_market_reset.html",
+    title: "After FA1, The Biggest Contracts Stayed Home And The Stars Stayed Available",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-08-10-03",
+    tag: "FA1 Review",
+    author: "Damon Cross",
+    meta: "1985 Offseason - After FA1",
+    blurb: "FA1 secured seven franchise incumbents and sent Mark Aguirre to Chelsea, yet Griffith, Gervin, Bird and Free remain available for FA2.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Benfica", "Brighton", "Chelsea", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Real Madrid", "Sheffield United"],
+    playerTags: ["Allen Leavell", "Buck Williams", "Cliff Robinson", "Darrell Griffith", "George Gervin", "Greg Ballard", "Jack Sikma", "James Bailey", "Jim Paxson", "Johnny Moore", "Kelly Tripucka", "Larry Bird", "Larry Nance", "Magic Johnson", "Mark Aguirre", "Sidney Moncrief", "World B. Free"]
+  },
+  {
+    file: "articles/1985_offseason_board_after_fa1.html",
+    title: "After FA1, Four Stars Still Control The 1985 Offseason Board",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-08-10-02",
+    tag: "Offseason Board",
+    author: "Nina Vale",
+    meta: "1985 Offseason - After FA1",
+    blurb: "Nine opening-round contracts changed the roster map, but Griffith, Gervin, Bird and Free leave the remaining star tier intact.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP"],
+    playerTags: ["Allen Leavell", "Bill Cartwright", "Buck Williams", "Cliff Robinson", "Darrell Griffith", "George Gervin", "Gerald Henderson", "Greg Ballard", "Jack Sikma", "James Bailey", "Johnny Moore", "John Long", "Kelly Tripucka", "Larry Bird", "Larry Nance", "Magic Johnson", "Mark Aguirre", "Norm Nixon", "Rickey Green", "Robert Reid", "Sidney Moncrief", "World B. Free"]
+  },
+  {
+    file: "articles/1985_cap_space_power_rankings_after_fa1.html",
+    title: "After FA1 Cap Space Power Rankings: Inter Milan Can Dictate What Comes Next",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-08-10-01",
+    tag: "Cap Rankings",
+    author: "Nina Vale",
+    meta: "1985 Offseason - After FA1",
+    blurb: "Inter Milan leads the post-FA1 leverage board ahead of AC Milan as the largest remaining cap positions meet urgent roster needs.",
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Brighton", "Chelsea", "Inter Milan", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP", "Tottenham Hotspur"],
+    playerTags: ["Allen Leavell", "Bill Cartwright", "Darrell Griffith", "Eddie Johnson", "George Gervin", "Gerald Henderson", "Greg Ballard", "Jack Sikma", "Kelly Tripucka", "Larry Bird", "Larry Nance", "Magic Johnson", "Mark Aguirre", "Norm Nixon", "Rickey Green", "Robert Reid", "Sidney Moncrief", "World B. Free"]
+  },
   // Season 4 Sim 2 - December 1984 package
   {
     file: "articles/season_4_sim_2_month_in_review.html",
