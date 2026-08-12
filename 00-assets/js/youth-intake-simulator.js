@@ -395,7 +395,9 @@
     var byTeam = new Map((result.teams || []).map(function (team) { return [team.team,team]; }));
     return (result.revealOrder || []).map(function (teamName) {
       return byTeam.get(teamName);
-    }).filter(Boolean).map(function (team) {
+    }).filter(Boolean).sort(function (left,right) {
+      return left.team.localeCompare(right.team,undefined,{sensitivity:"base"});
+    }).map(function (team) {
       return {type:"team",team:team};
     });
   }

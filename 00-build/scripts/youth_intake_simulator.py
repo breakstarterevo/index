@@ -18,7 +18,6 @@ DIVISION_LABELS = {
     "ELB": "Europa League",
     "ECL": "Conference League",
 }
-REVEAL_DIVISION_ORDER = ("ECL", "ELB", "CLB")
 
 
 class SimulationError(ValueError):
@@ -223,12 +222,8 @@ def build_slots(teams, rules):
 
 
 def _team_reveal_order(teams):
-    order = []
-    for division in REVEAL_DIVISION_ORDER:
-        division_teams = [team for team in teams if team["division"] == division]
-        division_teams.sort(key=lambda team: (team["pct"], team["wins"], team["team"].lower()))
-        order.extend(team["team"] for team in division_teams)
-    return order
+    ordered_teams = sorted(teams, key=lambda team: str(team.get("team", "")).casefold())
+    return [team["team"] for team in ordered_teams]
 
 
 def _slot_order(slot_key):

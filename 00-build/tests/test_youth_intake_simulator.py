@@ -79,6 +79,11 @@ class YouthIntakeSimulatorTests(unittest.TestCase):
         ]
         self.assertEqual(len(names), len(set(names)))
 
+    def test_reveal_order_is_alphabetical_by_team(self):
+        result = self.simulate("alphabetical-reveal")
+        expected = sorted((team["team"] for team in result["teams"]), key=str.casefold)
+        self.assertEqual(result["revealOrder"], expected)
+
     def test_deterministic_selection_and_slot_shuffle(self):
         first = self.simulate("replay-seed")
         second = self.simulate("replay-seed")
