@@ -33,9 +33,18 @@ def load_json(path):
 
 
 def infer_game_date_format(values):
-    """Infer one date order for a whole export, never per individual date."""
+    """Infer one ambiguous day/month order for a whole export.
+
+    Year-first ISO-style values are intentionally ignored here because they
+    are unambiguous and are parsed directly by ``parse_game_date``. Keeping a
+    single inferred order for day-first/month-first exports prevents an
+    ambiguous value such as 03/04/1985 from being interpreted per row.
+    """
     for value in values:
-        parts = str(value or "").strip().split("/")
+        raw = str(value or "").strip()
+        if not raw or (len(raw) >= 4 and raw[:4].isdigit()):
+            continue
+        parts = raw.replace("-", "/").replace(".", "/").split("/")
         if len(parts) != 3:
             continue
         try:
@@ -52,10 +61,36 @@ def infer_game_date_format(values):
 
 
 def parse_game_date(value, date_format):
-    try:
-        return datetime.strptime(str(value or "").strip(), date_format)
-    except ValueError:
+    raw = str(value or "").strip()
+    if not raw:
         return None
+
+    # ISO dates and timestamps are unambiguous, including a trailing Z.
+    try:
+        parsed = datetime.fromisoformat(raw.replace("Z", "+00:00"))
+        return parsed.replace(tzinfo=None)
+    except ValueError:
+        pass
+
+    day_first = date_format.find("%d") < date_format.find("%m")
+    first, second = ("%d", "%m") if day_first else ("%m", "%d")
+    candidates = [
+        f"{first}/{second}/%Y",
+        f"{first}-{second}-%Y",
+        f"{first}.{second}.%Y",
+        "%Y/%m/%d",
+        "%Y.%m.%d",
+        "%d %b %Y",
+        "%d %B %Y",
+        "%b %d %Y",
+        "%B %d %Y",
+    ]
+    for candidate in candidates:
+        try:
+            return datetime.strptime(raw, candidate)
+        except ValueError:
+            continue
+    return None
 
 
 def is_preseason_game(game):

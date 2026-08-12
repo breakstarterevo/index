@@ -137,14 +137,27 @@
     return order || "dmy";
   }
 
+  function localDate(year, month, day) {
+    var date = new Date(year, month - 1, day);
+    return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day ? date : null;
+  }
+
   function parseDate(value) {
-    var match = String(value || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+    var text = String(value || "").trim();
+    var iso = text.match(/^(\d{4})-(\d{1,2})-(\d{1,2})(?:[T\s].*)?$/);
+    var match;
     var day;
     var month;
-    if (!match) return null;
+    var parsed;
+    if (iso) return localDate(Number(iso[1]), Number(iso[2]), Number(iso[3]));
+    match = text.match(/^(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{4})$/);
+    if (!match) {
+      parsed = new Date(text);
+      return Number.isNaN(parsed.getTime()) ? null : localDate(parsed.getFullYear(), parsed.getMonth() + 1, parsed.getDate());
+    }
     day = Number(state.dateOrder === "mdy" ? match[2] : match[1]);
     month = Number(state.dateOrder === "mdy" ? match[1] : match[2]);
-    return new Date(Number(match[3]), month - 1, day);
+    return localDate(Number(match[3]), month, day);
   }
 
   function flattenGames(schedule) {

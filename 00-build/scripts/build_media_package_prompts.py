@@ -669,7 +669,8 @@ def main():
     leaders = load_json(LEADERS_PATH)
     awards = load_json(AWARDS_PATH) if os.path.exists(AWARDS_PATH) else {"source": "", "sections": []}
 
-    period_label = latest_sim_results.get("period", {}).get("label", "Latest Sim")
+    period = latest_sim_results.get("period") or {}
+    period_label = period.get("label", "Latest Sim")
     team_star_lookup = build_team_star_lookup(teams)
     include_preseason = is_preseason_package(latest_sim_results)
 
@@ -682,7 +683,7 @@ def main():
             "../../00-build/database/monthly/monthly_storylines.json",
             "../../00-build/database/teams.json",
         ],
-        "period": latest_sim_results.get("period", {}),
+        "period": period,
         "package": {
             "powerRankings": build_power_rankings(overall_team_form, monthly_team_form, period_label, team_star_lookup, include_preseason),
             "promotionRelegationWatch": build_race_watch(tier_race_snapshot, period_label, include_preseason),

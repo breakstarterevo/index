@@ -52,15 +52,27 @@
     return players.reduce((sum, player) => sum + (Number(player.currentSalary) || 0), 0);
   }
 
+  function localDate(year, month, day) {
+    const date = new Date(year, month - 1, day);
+    return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day ? date : null;
+  }
+
   function parseDate(value) {
-    const m = clean(value).match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-    if (!m) return null;
-    const first = Number(m[1]);
-    const second = Number(m[2]);
-    const year = Number(m[3]);
-    if (first > 12) return new Date(year, second - 1, first);
-    if (second > 12) return new Date(year, first - 1, second);
-    return new Date(year, first - 1, second);
+    const text = clean(value);
+    const iso = text.match(/^(\d{4})-(\d{1,2})-(\d{1,2})(?:[T\s].*)?$/);
+    if (iso) return localDate(Number(iso[1]), Number(iso[2]), Number(iso[3]));
+    const legacy = text.match(/^(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{4})$/);
+    if (legacy) {
+      const first = Number(legacy[1]);
+      const second = Number(legacy[2]);
+      const year = Number(legacy[3]);
+      if (first > 12) return localDate(year, second, first);
+      return localDate(year, first, second);
+    }
+    const parsed = new Date(text);
+    return Number.isNaN(parsed.getTime())
+      ? null
+      : localDate(parsed.getFullYear(), parsed.getMonth() + 1, parsed.getDate());
   }
 
   function repoRootPrefix() {

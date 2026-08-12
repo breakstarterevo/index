@@ -1383,7 +1383,7 @@
     function inferScheduleDateOrder(values) {
       let order = "";
       (values || []).some((value) => {
-        const match = String(value || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
+        const match = String(value || "").match(/^(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{4})$/);
         if (!match) return false;
         const first = Number(match[1]);
         const second = Number(match[2]);
@@ -1402,12 +1402,27 @@
       return order || "dmy";
     }
 
+    function localScheduleDate(year, month, day) {
+      const date = new Date(year, month - 1, day);
+      return date.getFullYear() === year && date.getMonth() === month - 1 && date.getDate() === day
+        ? date
+        : null;
+    }
+
     function parseScheduleDate(v) {
-      const m = String(v || "").match(/^(\d{1,2})\/(\d{1,2})\/(\d{4})$/);
-      if (!m) return null;
-      const day = Number(scheduleDateOrder === "mdy" ? m[2] : m[1]);
-      const month = Number(scheduleDateOrder === "mdy" ? m[1] : m[2]);
-      return new Date(Number(m[3]), month - 1, day);
+      const value = String(v || "").trim();
+      const iso = value.match(/^(\d{4})-(\d{1,2})-(\d{1,2})(?:[T\s].*)?$/);
+      if (iso) return localScheduleDate(Number(iso[1]), Number(iso[2]), Number(iso[3]));
+      const legacy = value.match(/^(\d{1,2})[\/.\-](\d{1,2})[\/.\-](\d{4})$/);
+      if (legacy) {
+        const day = Number(scheduleDateOrder === "mdy" ? legacy[2] : legacy[1]);
+        const month = Number(scheduleDateOrder === "mdy" ? legacy[1] : legacy[2]);
+        return localScheduleDate(Number(legacy[3]), month, day);
+      }
+      const parsed = new Date(value);
+      return Number.isNaN(parsed.getTime())
+        ? null
+        : localScheduleDate(parsed.getFullYear(), parsed.getMonth() + 1, parsed.getDate());
     }
 
     function buildTeamLogo(teamName) {
