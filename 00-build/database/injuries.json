@@ -1,27 +1,4 @@
 {
     "source": "injuries.htm",
-    "injuries": [
-        {
-            "pos": "PF",
-            "name": "Kenny Carr",
-            "url": "",
-            "team": "",
-            "teamName": "",
-            "rosterUrl": "",
-            "length": "104",
-            "injury": "Ruptured Achilles",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "C",
-            "name": "Andre Drummond",
-            "url": "",
-            "team": "roster20",
-            "teamName": "Monaco",
-            "rosterUrl": "./rosters/roster20.htm",
-            "length": "89",
-            "injury": "Ruptured Achilles",
-            "rowClass": "row2"
-        }
-    ]
+    "injuries": []
 }
