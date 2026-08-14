@@ -26,6 +26,85 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
+  // 1985 training camp and preseason package
+  {
+    file: "articles/1985_preseason_steve_johnson_sheffield.html",
+    title: "Steve Johnson Scored 40 A Night. Sheffield Lost Every Game.",
+    category: "Feature",
+    desk: "Analysis",
+    sortKey: "2026-08-14-06",
+    tag: "Preseason Feature",
+    author: "Damon Cross",
+    meta: "1985 Preseason - Sheffield United",
+    blurb: "Steve Johnson averaged 39.5 points and 12.2 rebounds while Sheffield went 0-6, turning the preseason's best individual line into a structural indictment.",
+    teams: ["Ajax", "Aston Villa", "Marseille", "Sheffield United"],
+    playerTags: ["Andre Iguodala", "Bimbo Coles", "Cliff Robinson", "Larry Nance", "Maurice Cheeks", "Robert Parish", "Steve Johnson", "Xavier McDaniel"]
+  },
+  {
+    file: "articles/1985_preseason_clb_power_rankings.html",
+    title: "1985 CLB Preseason Power Rankings: Brighton Look Ready, Milan Look Late",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-08-14-05",
+    tag: "CLB Rankings",
+    author: "Nina Vale",
+    meta: "1985 Preseason - CLB",
+    blurb: "Brighton's two-way control leads Richmond and Palace, while AC Milan reaches opening night with one win and an urgent defensive problem.",
+    teams: ["AC Milan", "AFC Richmond", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "Paris Saint-Germain", "Real Madrid"],
+    playerTags: ["Alex English", "Allen Leavell", "Bill Laimbeer", "Buck Williams", "Chet Holmgren", "Chucky Atkins", "Dan Majerle", "Dan Roundfield", "Darrell Griffith", "Herb Williams", "Jack Sikma", "Jawann Oldham", "Jim Paxson", "Joe Barry Carroll", "John Lucas", "Kelly Tripucka", "Kiki Vandeweghe", "Kurt Nimphius", "Magic Johnson", "Mark Aguirre", "Michael Adams", "Mike Gminski", "Moses Malone", "Otis Birdsong", "Ray Williams", "Reggie Theus", "Rick Mahorn", "Rickey Green", "Rolando Blackman", "Sidney Moncrief", "Steve Nash", "Tom Chambers"]
+  },
+  {
+    file: "articles/1985_preseason_elb_power_rankings.html",
+    title: "1985 ELB Preseason Power Rankings: Ajax Own The Evidence",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-08-14-04",
+    tag: "ELB Rankings",
+    author: "Nina Vale",
+    meta: "1985 Preseason - ELB",
+    blurb: "Ajax combines the tier's best margin with a credible two-way structure, leaving Inter and FL Fart as the first challengers.",
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Bayern Munich", "FL Fart", "Inter Milan", "Marseille", "Sheffield United"],
+    playerTags: ["Andre Iguodala", "Bill Cartwright", "Bimbo Coles", "Cliff Robinson", "David Thompson", "Dennis Johnson", "George Gervin", "Gus Williams", "Jamaal Wilkes", "James Donaldson", "Jeff Ruland", "Johnny Moore", "Kevin McHale", "Kyle Lowry", "Larry Drew", "Larry Nance", "Maurice Cheeks", "Norm Nixon", "Robert Parish", "Steve Johnson", "Trae Young", "Tree Rollins", "Xavier McDaniel"]
+  },
+  {
+    file: "articles/1985_preseason_ecl_power_rankings.html",
+    title: "1985 ECL Preseason Power Rankings: Manchester City Turned Promise Into Pressure",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-08-14-03",
+    tag: "ECL Rankings",
+    author: "Nina Vale",
+    meta: "1985 Preseason - ECL",
+    blurb: "Manchester City's dominant margin leads Barcelona and Valencia in an ECL field with only one promotion place and no room for a slow start.",
+    teams: ["Barcelona", "Juventus", "Manchester City", "Manchester United", "Monaco", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Alvin Robertson", "Andre Drummond", "Bernard King", "Bilal Coulibaly", "Darnell Valentine", "Dirk Nowitzki", "Eddy Curry", "Hubert Davis", "Isiah Thomas", "J.J. Redick", "Jalen Duren", "Jim Jackson", "Kurt Thomas", "Luol Deng", "Mike Conley", "Mike Dunleavy", "Otis Thorpe", "Paul Pierce", "Pervis Ellison", "Thaddeus Young", "Tony Parker", "Trayce Jackson-Davis"]
+  },
+  {
+    file: "articles/1985_camp_to_court.html",
+    title: "Camp-To-Court: The Risers Who Made The Gains Real",
+    category: "Scouting",
+    desk: "Scouting",
+    sortKey: "2026-08-14-02",
+    tag: "Development",
+    author: "Graham Trent",
+    meta: "1985 Preseason - Scouting",
+    blurb: "Pierce, Drummond, Iguodala and several less obvious camp risers converted development gains into clear jobs and repeatable preseason production.",
+    teams: ["Ajax", "Barcelona", "Brighton", "Crystal Palace", "Manchester City", "Monaco", "Real Madrid", "Sheffield United", "Valencia"],
+    playerTags: ["Alex English", "Allen Leavell", "Alvin Robertson", "Andre Drummond", "Andre Iguodala", "Bernard King", "Cliff Robinson", "Darrell Griffith", "Isiah Thomas", "Jack Sikma", "Kiki Vandeweghe", "Kurt Nimphius", "Luol Deng", "Maurice Cheeks", "Otis Thorpe", "Paul Pierce", "Pervis Ellison", "Reggie Theus", "Rickey Green", "Rolando Blackman", "Steve Johnson"]
+  },
+  {
+    file: "articles/1985_training_camp_report.html",
+    title: "Training Camp Rewrote The Board: Pierce Rose, Laimbeer Fell",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-08-14-01",
+    tag: "Training Camp",
+    author: "Nina Vale",
+    meta: "1985 Preseason - Training Camp",
+    blurb: "The development cycle elevated Pierce, Drummond and a new group of contenders while forcing several established stars into smaller realities.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Barcelona", "Brighton", "Chelsea", "Crystal Palace", "Monaco", "Paris Saint-Germain", "Valencia"],
+    playerTags: ["Alex English", "Alvin Robertson", "Andre Drummond", "Andre Iguodala", "Bernard King", "Bill Laimbeer", "Chet Holmgren", "Cliff Robinson", "Dan Majerle", "Darrell Griffith", "Herb Williams", "Isiah Thomas", "Jack Sikma", "Joe Barry Carroll", "Kelly Tripucka", "Kiki Vandeweghe", "Kurt Nimphius", "Magic Johnson", "Maurice Cheeks", "Michael Adams", "Otis Birdsong", "Otis Thorpe", "Paul Pierce", "Pervis Ellison", "Reggie Theus", "Rolando Blackman", "Steve Nash", "Tom Chambers"]
+  },
   // 1985 offseason - after FA1 package
   {
     file: "articles/1985_fa1_market_reset.html",

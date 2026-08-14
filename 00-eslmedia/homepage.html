@@ -984,16 +984,12 @@
       <div class="ticker-inner">
         <span class="ticker-label">Top Story</span>
         <div class="ticker-track">
-          <div class="ticker-item">February file: AFC Richmond went 6-0 and closed Tier 1 down</div>
-          <div class="ticker-item">PSG went 8-1 and beat Inter by 30 in the Tier 3 race</div>
-          <div class="ticker-item">Crystal Palace and Brighton still hold Tier 2 promotion</div>
-          <div class="ticker-item">Stock up: Richmond, PSG, Ajax. Stock down: Sporting, Marseille, Atletico</div>
-          <div class="ticker-item">After FA1: Sidney Moncrief lands the round's largest deal at $143.75 million</div>
-          <div class="ticker-item">Chelsea signs Mark Aguirre for $86 million over four years</div>
-          <div class="ticker-item">Magic Johnson, Kelly Tripucka and Larry Nance stay with their clubs</div>
-          <div class="ticker-item">Inter Milan leads the post-FA1 cap board with $32.88 million in room</div>
-          <div class="ticker-item">Darrell Griffith, George Gervin, Larry Bird and World B. Free remain available</div>
-          <div class="ticker-item">After FA1: Sidney Moncrief lands the round's largest deal at $143.75 million</div>
+          <div class="ticker-item">Steve Johnson averaged 39.5 points while Sheffield United went 0-6</div>
+          <div class="ticker-item">Brighton leads the first CLB trust board after a 4-1 preseason</div>
+          <div class="ticker-item">Ajax owns ELB's best evidence with a plus-15.5 average margin</div>
+          <div class="ticker-item">Manchester City posted the preseason's best margin at plus-18.7</div>
+          <div class="ticker-item">Paul Pierce, Andre Drummond and Andre Iguodala made their camp gains real</div>
+          <div class="ticker-item">Steve Johnson averaged 39.5 points while Sheffield United went 0-6</div>
         </div>
       </div>
     </div>
@@ -1003,19 +999,19 @@
         <article class="lead-story">
           <div class="lead-media">
             <div class="lead-media-side">
-              <div class="lead-media-stat">91</div>
-              <div class="lead-media-label">December games</div>
+              <div class="lead-media-stat">39.5</div>
+              <div class="lead-media-label">Johnson PPG</div>
               <div class="lead-media-rule"></div>
-              <div class="lead-media-label">Season 4 - Sim 2</div>
+              <div class="lead-media-label">1985 Preseason</div>
             </div>
           </div>
-          <div class="story-tag" id="homepageLeadTag">Lead Story - Month In Review</div>
-  <h1 class="lead-headline"><a id="homepageLeadLink" href="content/articles/season_4_sim_2_month_in_review.html">December 1984 Review: Real Madrid Stole The Month</a></h1>
-          <p class="lead-dek" id="homepageLeadDek">Real Madrid's perfect run, Richmond's continued control and Tier 3's three-team promotion fight defined December.</p>
+          <div class="story-tag" id="homepageLeadTag">Lead Story - Preseason Feature</div>
+  <h1 class="lead-headline"><a id="homepageLeadLink" href="content/articles/1985_preseason_steve_johnson_sheffield.html">Steve Johnson Scored 40 A Night. Sheffield Lost Every Game.</a></h1>
+          <p class="lead-dek" id="homepageLeadDek">Steve Johnson averaged 39.5 points and 12.2 rebounds while Sheffield went 0-6, turning the preseason's best individual line into a structural indictment.</p>
           <div class="story-meta">
-            <span id="homepageLeadAuthor">Graham Trent</span>
-            <span id="homepageLeadMeta">Season 4 - Sim 2</span>
-            <span id="homepageLeadDateline">December Review</span>
+            <span id="homepageLeadAuthor">Damon Cross</span>
+            <span id="homepageLeadMeta">1985 Preseason - Sheffield United</span>
+            <span id="homepageLeadDateline">2026-08-14-06</span>
           </div>
         </article>
 
@@ -1023,7 +1019,7 @@
           <section class="rail-stack">
             <div class="rail-label">
               <span>Power Boards</span>
-              <span id="homepagePowerCount">7 Stories</span>
+              <span id="homepagePowerCount">6 Stories</span>
             </div>
             <div id="homepagePowerBoard"></div>
           </section>
@@ -1124,8 +1120,7 @@
       const sorted = getSortedArticles();
       if (!sorted.length) return;
 
-      const monthInReviewLead = sorted.find((article) => String(article.tag || "").toLowerCase() === "month in review");
-      const lead = monthInReviewLead || sorted[0];
+      const lead = sorted[0];
       const rest = sorted.filter((article) => article.file !== lead.file);
       const leadLink = document.getElementById("homepageLeadLink");
       const leadTag = document.getElementById("homepageLeadTag");
@@ -1148,7 +1143,7 @@
       if (leadMeta) leadMeta.textContent = lead.meta || lead.desk || "Front Page";
       if (leadDateline) leadDateline.textContent = lead.sortKey || "Current Edition";
 
-      const power = rest.slice(0, 6);
+      const power = sorted.slice(0, 6);
       const powerRoot = document.getElementById("homepagePowerBoard");
       const powerCount = document.getElementById("homepagePowerCount");
       if (powerRoot) {
