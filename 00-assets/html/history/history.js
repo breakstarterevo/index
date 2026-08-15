@@ -82,6 +82,8 @@
     currentReady: null
   };
 
+  const HIDDEN_PLAYER_NAMES = new Set(["vincent askew"]);
+
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
   const params = () => new URLSearchParams(window.location.search);
@@ -203,6 +205,16 @@
         fetchJson(`${HISTORY_ROOT}index.json`, { seasons: [] }),
         fetchJson(`${HISTORY_ROOT}player_index.json`, { identities: [], seasonMaps: {} })
       ]);
+      const hiddenKeys = new Set((state.playerIndex.identities || [])
+        .filter((identity) => HIDDEN_PLAYER_NAMES.has(String(identity.name || "").trim().toLowerCase()))
+        .map((identity) => identity.key));
+      state.playerIndex.identities = (state.playerIndex.identities || [])
+        .filter((identity) => !hiddenKeys.has(identity.key));
+      Object.values(state.playerIndex.seasonMaps || {}).forEach((seasonMap) => {
+        Object.keys(seasonMap || {}).forEach((playerFile) => {
+          if (hiddenKeys.has(seasonMap[playerFile])) delete seasonMap[playerFile];
+        });
+      });
       renderTopbar();
     })();
     return state.coreReady;

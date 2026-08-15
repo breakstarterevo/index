@@ -123,6 +123,7 @@
       align-items: center;
       background: var(--card);
       color: var(--blue);
+      cursor: pointer;
       display: inline-flex;
       font-size: .76rem;
       font-weight: 850;
@@ -131,6 +132,16 @@
       padding: .4rem .58rem;
       text-decoration: none;
       text-transform: none;
+    }
+
+    .tc-button:hover {
+      background: var(--ui-soft);
+      border-color: var(--blue);
+    }
+
+    .tc-button:disabled {
+      cursor: not-allowed;
+      opacity: .52;
     }
 
     .tc-panel {
@@ -303,6 +314,7 @@
       width: 70px;
     }
 
+    .tc-table .col-camp { min-width: 82px; }
     .tc-table .col-pos { min-width: 38px; }
     .tc-table .col-age { min-width: 38px; }
     .tc-table .col-rating { min-width: 47px; }
@@ -419,9 +431,13 @@
       <div>
         <p class="tc-kicker ui-kicker">Player Development</p>
         <h1 class="tc-title ui-title">Training Camp Changes</h1>
-        <p class="tc-subtitle ui-subtitle">Current ratings compared with the pre-camp player snapshot. Positive movement is green; regression is red.</p>
+        <p class="tc-subtitle ui-subtitle" id="viewSubtitle">Current ratings compared with the pre-camp player snapshot. Positive movement is green; regression is red.</p>
       </div>
       <div class="tc-controls">
+        <label class="tc-control">
+          <span class="tc-label">Training Camp</span>
+          <select class="tc-select" id="campPicker" aria-label="Choose training camp"></select>
+        </label>
         <label class="tc-control">
           <span class="tc-label">Team View</span>
           <select class="tc-select" id="teamPicker" aria-label="Choose team"></select>
@@ -435,6 +451,7 @@
             <option value="all">All</option>
           </select>
         </label>
+        <button class="tc-button" id="exportCsv" type="button" disabled title="Export every row in the active camp and team filter">Export CSV</button>
         <a class="tc-button" href="./league%20dashboard.htm">Back To Dashboard</a>
       </div>
     </header>
@@ -455,6 +472,8 @@
 
       var CURRENT_URL = "../../00-build/database/players.json";
       var PREVIOUS_URL = "../../00-build/database/PreTC/players.json";
+      var HISTORY_ROOT = "../../00-build/history/";
+      var HISTORY_INDEX_URL = HISTORY_ROOT + "index.json";
       var SKILLS = [
         { key: "Ins", label: "Ins" }, { key: "Jps", label: "Jps" },
         { key: "Fts", label: "Fts" }, { key: "3ps", label: "3ps" },
@@ -470,7 +489,21 @@
         { key: "potential", label: "Pot" }
       ];
       var MINIMUM_OVR = 50;
-      var state = { rows: [], team: "__ALL__", rowLimit: 50, sort: "team", direction: "asc", colorByTeam: {}, colorRequest: 0 };
+      var state = {
+        rows: [],
+        team: "__ALL__",
+        rowLimit: 50,
+        sort: "team",
+        direction: "asc",
+        view: "current",
+        viewLabel: "Current TC",
+        camps: [],
+        campById: {},
+        cache: {},
+        loadRequest: 0,
+        colorByTeam: {},
+        colorRequest: 0
+      };
 
       function esc(value) {
         return String(value == null ? "" : value)
@@ -489,7 +522,21 @@
         return String(player && (player.url || player.name) || "").toLowerCase();
       }
 
-      function playerHref(player) {
+      function playerFile(player) {
+        var match = String(player && (player.url || player.playerId) || "").match(/(player\d+)(?:\.htm)?/i);
+        return match ? match[1].toLowerCase() + ".htm" : "";
+      }
+
+      function mappedIdentity(player, keyMap) {
+        var file = playerFile(player);
+        return keyMap && file && keyMap[file] ? String(keyMap[file]) : playerId(player);
+      }
+
+      function playerHref(row) {
+        var player = row.player;
+        if (row.historical && row.identityKey && !/^\.\.\/players\//i.test(row.identityKey)) {
+          return "./history/player.htm?key=" + encodeURIComponent(row.identityKey);
+        }
         var match = String(player.url || "").match(/player(\d+)\.htm/i);
         return match ? "./unified-player.htm?id=player" + encodeURIComponent(match[1]) : "";
       }
@@ -529,14 +576,17 @@
         return Math.abs(delta) >= 3 ? tone + " delta--strong" : tone;
       }
 
-      function calculateRows(current, previous) {
+      function calculateRows(current, previous, config) {
+        var currentKeys = config.currentKeys || null;
+        var previousKeys = config.previousKeys || null;
         var priorById = new Map(previous.map(function (player) {
-          return [playerId(player), player];
+          return [mappedIdentity(player, previousKeys), player];
         }));
 
         return current.map(function (player) {
           if (valueOf(player, "overall") < MINIMUM_OVR) return null;
-          var prior = priorById.get(playerId(player));
+          var identityKey = mappedIdentity(player, currentKeys);
+          var prior = priorById.get(identityKey);
           if (!prior) return null;
           var deltas = {};
           SKILLS.concat(KEY_RATINGS).forEach(function (column) {
@@ -549,7 +599,17 @@
           var total = SKILLS.reduce(function (sum, column) {
             return sum + deltas[column.key];
           }, 0);
-          return { player: player, prior: prior, deltas: deltas, total: total };
+          return {
+            player: player,
+            prior: prior,
+            deltas: deltas,
+            total: total,
+            identityKey: identityKey,
+            campId: config.id,
+            campLabel: config.label,
+            campSort: config.sortOrder,
+            historical: Boolean(config.historical)
+          };
         }).filter(Boolean);
       }
 
@@ -562,7 +622,7 @@
 
       function compareName(left, right) {
         var team = String(left.player.teamLabel || "").localeCompare(String(right.player.teamLabel || ""));
-        return team || String(left.player.name || "").localeCompare(String(right.player.name || ""));
+        return team || String(left.player.name || "").localeCompare(String(right.player.name || "")) || (right.campSort - left.campSort);
       }
 
       function compareText(left, right, key) {
@@ -573,6 +633,7 @@
         return rows.slice().sort(function (left, right) {
           var direction = state.direction === "asc" ? 1 : -1;
           if (state.sort === "player") return direction * String(left.player.name || "").localeCompare(String(right.player.name || ""), undefined, { sensitivity: "base" });
+          if (state.sort === "camp") return direction * (left.campSort - right.campSort) || compareName(left, right);
           if (state.sort === "pos") return direction * compareText(left, right, "pos") || compareName(left, right);
           if (state.sort === "age") return direction * (valueOf(left.player, "age") - valueOf(right.player, "age")) || compareName(left, right);
           if (state.sort === "net") return direction * (left.total - right.total) || compareName(left, right);
@@ -671,8 +732,14 @@
         var improved = rows.filter(function (row) { return row.total > 0; }).length;
         var declined = rows.filter(function (row) { return row.total < 0; }).length;
         var total = rows.reduce(function (sum, row) { return sum + row.total; }, 0);
+        var uniquePlayers = new Set(rows.map(function (row) { return row.identityKey || playerId(row.player); })).size;
+        var firstLabel = state.view === "all-time" ? "Camp Entries" : "Players Changed";
+        var uniqueChip = state.view === "all-time"
+          ? '<div class="tc-chip"><span>Unique Players</span><strong>' + uniquePlayers + "</strong></div>"
+          : "";
         document.getElementById("summary").innerHTML =
-          '<div class="tc-chip"><span>Players Changed</span><strong>' + rows.length + "</strong></div>" +
+          '<div class="tc-chip"><span>' + firstLabel + '</span><strong>' + rows.length + "</strong></div>" +
+          uniqueChip +
           '<div class="tc-chip tc-chip--positive"><span>Net Improvers</span><strong>' + improved + "</strong></div>" +
           '<div class="tc-chip tc-chip--negative"><span>Net Decliners</span><strong>' + declined + "</strong></div>" +
           '<div class="tc-chip ' + (total < 0 ? "tc-chip--negative" : "tc-chip--positive") + '"><span>Total Skill Delta</span><strong>' + esc(formatDelta(total) || "0") + "</strong></div>";
@@ -689,13 +756,15 @@
           var keyClass = column.key === "overall" ? " col-key" : "";
           return sortHeader(column.label, column.key, "col-rating" + keyClass);
         }).join("");
+        var showCamp = state.view === "all-time";
         var body = rows.map(function (row) {
           var player = row.player;
           var ratings = SKILLS.concat(KEY_RATINGS).map(function (column) {
             return renderRatingDelta(row, column);
           }).join("");
           return "<tr>" +
-            '<td class="col-player ui-sticky">' + linkMarkup(playerHref(player), "tc-player", player.name) + "</td>" +
+            '<td class="col-player ui-sticky">' + linkMarkup(playerHref(row), "tc-player", player.name) + "</td>" +
+            (showCamp ? '<td class="col-camp">' + esc(row.campLabel) + "</td>" : "") +
             '<td class="col-team">' + teamMarkup(player) + "</td>" +
             '<td class="col-pos">' + esc(player.pos || "") + "</td>" +
             '<td class="col-age">' + esc(player.age || "") + "</td>" +
@@ -705,7 +774,7 @@
         }).join("");
 
         root.innerHTML = '<table class="tc-table ui-table ui-table--sticky-first"><thead><tr>' +
-          sortHeader("Player", "player", "col-player ui-sticky") + sortHeader("Team", "team", "col-team") + sortHeader("Pos", "pos", "col-pos") + sortHeader("Age", "age", "col-age") +
+          sortHeader("Player", "player", "col-player ui-sticky") + (showCamp ? sortHeader("Camp", "camp", "col-camp") : "") + sortHeader("Team", "team", "col-team") + sortHeader("Pos", "pos", "col-pos") + sortHeader("Age", "age", "col-age") +
           heads +
           sortHeader("Net", "net", "col-net") + "</tr></thead><tbody>" + body + "</tbody></table>";
         bindSortHeaders();
@@ -716,18 +785,20 @@
         var displayedRows = state.rowLimit === "all" ? rows : rows.slice(0, state.rowLimit);
         var picker = document.getElementById("teamPicker");
         var selectedLabel = picker.options[picker.selectedIndex] ? picker.options[picker.selectedIndex].textContent : "All Teams";
-        document.getElementById("viewTitle").textContent = selectedLabel + " Rating Movement";
+        document.getElementById("viewTitle").textContent = selectedLabel + " · " + state.viewLabel;
         document.getElementById("statusText").textContent = displayedRows.length === rows.length
-          ? rows.length + " players changed"
-          : "Showing " + displayedRows.length + " of " + rows.length + " players changed";
+          ? rows.length + (state.view === "all-time" ? " player-camp entries" : " players changed")
+          : "Showing " + displayedRows.length + " of " + rows.length + (state.view === "all-time" ? " player-camp entries" : " players changed");
         renderSummary(rows);
         renderTable(displayedRows);
         setTableHeaderColor();
       }
 
-      function initializePicker(players) {
+      function refreshTeamPicker(rows) {
         var picker = document.getElementById("teamPicker");
-        var teams = Array.from(new Map(players.map(function (player) {
+        var previousSelection = state.team;
+        var teams = Array.from(new Map(rows.map(function (row) {
+          var player = row.player;
           return [player.team, player.teamLabel || player.team || "Free Agents"];
         })).entries()).sort(function (a, b) {
           return String(a[1]).localeCompare(String(b[1]));
@@ -735,6 +806,13 @@
         picker.innerHTML = '<option value="__ALL__">All Teams</option>' + teams.map(function (team) {
           return '<option value="' + esc(team[0]) + '">' + esc(team[1]) + "</option>";
         }).join("");
+        var canPreserve = teams.some(function (team) { return team[0] === previousSelection; });
+        state.team = canPreserve ? previousSelection : "__ALL__";
+        picker.value = state.team;
+      }
+
+      function initializeTeamPicker() {
+        var picker = document.getElementById("teamPicker");
         picker.addEventListener("change", function () {
           state.team = picker.value;
           render();
@@ -749,24 +827,203 @@
         });
       }
 
-      Promise.all([
-        fetch(CURRENT_URL, { cache: "no-store" }).then(function (response) {
-          if (!response.ok) throw new Error("Current player ratings could not be loaded.");
+      function fetchJson(url, message) {
+        return fetch(url, { cache: "no-store" }).then(function (response) {
+          if (!response.ok) throw new Error(message || ("Could not load " + url));
           return response.json();
-        }),
-        fetch(PREVIOUS_URL, { cache: "no-store" }).then(function (response) {
-          if (!response.ok) throw new Error("Previous snapshot was not found in database/PreTC/players.json.");
-          return response.json();
-        })
-      ]).then(function (data) {
-        state.rows = calculateRows(data[0], data[1]);
-        initializePicker(data[0]);
+        });
+      }
+
+      function seasonNumber(season) {
+        var match = String(season || "").match(/\d+/);
+        return match ? Number(match[0]) : 0;
+      }
+
+      function transitionLabel(previousSeason, currentSeason) {
+        return "S" + seasonNumber(previousSeason) + "-S" + seasonNumber(currentSeason);
+      }
+
+      function buildCampConfigs(historyIndex) {
+        var seasons = Array.isArray(historyIndex && historyIndex.seasons) ? historyIndex.seasons : [];
+        var latestSeasonNumber = seasons.reduce(function (latest, season) {
+          return Math.max(latest, seasonNumber(season.season));
+        }, 0);
+        var currentLabel = latestSeasonNumber
+          ? "S" + latestSeasonNumber + "-S" + (latestSeasonNumber + 1)
+          : "Current TC";
+        var current = {
+          id: "current",
+          label: currentLabel,
+          description: currentLabel + " ratings compared with the saved pre-camp snapshot.",
+          currentUrl: CURRENT_URL,
+          previousUrl: PREVIOUS_URL,
+          sortOrder: latestSeasonNumber + 1 || 1,
+          historical: false
+        };
+        var historical = [];
+        for (var index = seasons.length - 1; index >= 1; index -= 1) {
+          var target = seasons[index];
+          var previous = seasons[index - 1];
+          var base = HISTORY_ROOT + target.season + "/database/";
+          var previousBase = HISTORY_ROOT + previous.season + "/database/";
+          historical.push({
+            id: "history-" + target.season,
+            label: transitionLabel(previous.season, target.season),
+            description: transitionLabel(previous.season, target.season) + " training-camp movement.",
+            currentUrl: base + "players.json",
+            previousUrl: previousBase + "players.json",
+            currentKeysUrl: base + "player_history_keys.json",
+            previousKeysUrl: previousBase + "player_history_keys.json",
+            sortOrder: index + 1,
+            historical: true
+          });
+        }
+        var allTime = {
+          id: "all-time",
+          label: "All-Time TCs",
+          description: "Every recorded training camp combined. Each row is one player in one camp.",
+          sortOrder: 999,
+          historical: true
+        };
+        state.camps = [current, allTime].concat(historical);
+        state.campById = {};
+        state.camps.forEach(function (camp) { state.campById[camp.id] = camp; });
+      }
+
+      function populateCampPicker() {
+        var picker = document.getElementById("campPicker");
+        picker.innerHTML = state.camps.map(function (camp) {
+          return '<option value="' + esc(camp.id) + '">' + esc(camp.label) + "</option>";
+        }).join("");
+        picker.value = state.view;
+        picker.addEventListener("change", function () {
+          loadView(picker.value);
+        });
+      }
+
+      function loadCamp(config) {
+        if (state.cache[config.id]) return Promise.resolve(state.cache[config.id]);
+        var requests = [
+          fetchJson(config.currentUrl, config.label + " current snapshot could not be loaded."),
+          fetchJson(config.previousUrl, config.label + " previous snapshot could not be loaded.")
+        ];
+        if (config.currentKeysUrl && config.previousKeysUrl) {
+          requests.push(fetchJson(config.currentKeysUrl, config.label + " identity map could not be loaded."));
+          requests.push(fetchJson(config.previousKeysUrl, config.label + " previous identity map could not be loaded."));
+        }
+        return Promise.all(requests).then(function (data) {
+          var rows = calculateRows(data[0], data[1], {
+            id: config.id,
+            label: config.label,
+            sortOrder: config.sortOrder,
+            historical: config.historical,
+            currentKeys: data[2] && data[2].keys ? data[2].keys : null,
+            previousKeys: data[3] && data[3].keys ? data[3].keys : null
+          });
+          state.cache[config.id] = rows;
+          return rows;
+        });
+      }
+
+      function setLoading(isLoading) {
+        document.getElementById("campPicker").disabled = isLoading;
+        document.getElementById("teamPicker").disabled = isLoading;
+        document.getElementById("exportCsv").disabled = isLoading || !state.rows.length;
+        if (isLoading) document.getElementById("statusText").textContent = "Loading rating snapshots";
+      }
+
+      function loadView(viewId) {
+        var config = state.campById[viewId] || state.campById.current;
+        var request = ++state.loadRequest;
+        setLoading(true);
+        var rowsPromise;
+        if (config.id === "all-time") {
+          rowsPromise = Promise.all(state.camps.filter(function (camp) {
+            return camp.id !== "all-time";
+          }).map(loadCamp)).then(function (groups) {
+            return groups.reduce(function (rows, group) { return rows.concat(group); }, []);
+          });
+        } else {
+          rowsPromise = loadCamp(config);
+        }
+        rowsPromise.then(function (rows) {
+          if (request !== state.loadRequest) return;
+          state.view = config.id;
+          state.viewLabel = config.label;
+          state.rows = rows;
+          document.getElementById("campPicker").value = config.id;
+          document.getElementById("viewSubtitle").textContent = config.description + " Positive movement is green; regression is red.";
+          refreshTeamPicker(rows);
+          setLoading(false);
+          render();
+        }).catch(function (error) {
+          if (request !== state.loadRequest) return;
+          setLoading(false);
+          document.getElementById("statusText").textContent = "Unable to load";
+          document.getElementById("tableRoot").innerHTML = '<div class="tc-empty">' + esc(error.message || "Unable to load rating snapshots.") + "</div>";
+        });
+      }
+
+      function csvCell(value) {
+        var text = String(value == null ? "" : value);
+        return /[",\r\n]/.test(text) ? '"' + text.replace(/"/g, '""') + '"' : text;
+      }
+
+      function fileSlug(value) {
+        return String(value || "training-camp").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-|-$/g, "");
+      }
+
+      function exportCsv() {
+        var rows = visibleRows();
+        if (!rows.length) return;
+        var headers = ["Camp", "Player", "Team", "Position", "Age", "OVR Before", "OVR After", "OVR Delta", "POT Before", "POT After", "POT Delta"]
+          .concat(SKILLS.map(function (column) { return column.label + " Delta"; }))
+          .concat(["Net Skill Delta"]);
+        var lines = [headers.map(csvCell).join(",")];
+        rows.forEach(function (row) {
+          var values = [
+            row.campLabel,
+            row.player.name || "",
+            row.player.teamLabel || row.player.team || "",
+            row.player.pos || "",
+            row.player.age || "",
+            valueOf(row.prior, "overall"),
+            valueOf(row.player, "overall"),
+            row.deltas.overall,
+            valueOf(row.prior, "potential"),
+            valueOf(row.player, "potential"),
+            row.deltas.potential
+          ].concat(SKILLS.map(function (column) { return row.deltas[column.key]; })).concat([row.total]);
+          lines.push(values.map(csvCell).join(","));
+        });
+        var blob = new Blob(["\uFEFF" + lines.join("\r\n")], { type: "text/csv;charset=utf-8" });
+        var url = URL.createObjectURL(blob);
+        var link = document.createElement("a");
+        var teamLabel = state.team === "__ALL__" ? "all-teams" : fileSlug(document.getElementById("teamPicker").selectedOptions[0].textContent);
+        link.href = url;
+        link.download = "training-camp-" + fileSlug(state.viewLabel) + "-" + teamLabel + ".csv";
+        document.body.appendChild(link);
+        link.click();
+        link.remove();
+        window.setTimeout(function () { URL.revokeObjectURL(url); }, 1000);
+        document.getElementById("statusText").textContent = "Exported " + rows.length + " filtered rows";
+      }
+
+      function initialize() {
+        initializeTeamPicker();
         initializeRowLimit();
-        render();
-      }).catch(function (error) {
-        document.getElementById("statusText").textContent = "Unable to load";
-        document.getElementById("tableRoot").innerHTML = '<div class="tc-empty">' + esc(error.message || "Unable to load rating snapshots.") + "</div>";
-      });
+        document.getElementById("exportCsv").addEventListener("click", exportCsv);
+        fetchJson(HISTORY_INDEX_URL, "Historical season index could not be loaded.").then(function (historyIndex) {
+          buildCampConfigs(historyIndex);
+          populateCampPicker();
+          loadView("current");
+        }).catch(function (error) {
+          document.getElementById("statusText").textContent = "Unable to load";
+          document.getElementById("tableRoot").innerHTML = '<div class="tc-empty">' + esc(error.message || "Unable to load training-camp history.") + "</div>";
+        });
+      }
+
+      initialize();
     }());
   </script>
 </body>
