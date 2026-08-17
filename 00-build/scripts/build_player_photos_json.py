@@ -95,6 +95,20 @@ def normalize_photo_url(value):
     return url if url.startswith("https://") else ""
 
 
+def parse_override(value):
+    if isinstance(value, dict):
+        return {
+            "sourceId": str(value.get("sourceId") or "").strip(),
+            "sourceName": str(value.get("sourceName") or "").strip(),
+            "url": normalize_photo_url(value.get("url")),
+        }
+    return {
+        "sourceId": str(value or "").strip(),
+        "sourceName": "",
+        "url": "",
+    }
+
+
 def select_candidate(player, candidates, records, league_year):
     if len(candidates) == 1:
         return candidates[0], "name"
@@ -140,17 +154,18 @@ def build_feed(players, photo_urls, template, overrides):
             counts["below-minimum-overall"] += 1
             continue
 
-        source_id = overrides["byPlayerId"].get(player_id)
-        match_method = "player-id-override" if source_id else ""
-        if not source_id:
-            source_id = overrides["byName"].get(normalized_name)
-            match_method = "name-override" if source_id else ""
-        if not source_id:
+        override = parse_override(overrides["byPlayerId"].get(player_id))
+        match_method = "player-id-override" if override["sourceId"] or override["url"] else ""
+        if not match_method:
+            override = parse_override(overrides["byName"].get(normalized_name))
+            match_method = "name-override" if override["sourceId"] or override["url"] else ""
+        source_id = override["sourceId"]
+        if not source_id and not override["url"]:
             source_id, match_method = select_candidate(
                 player, candidates_by_name.get(normalized_name, []), records, league_year
             )
 
-        url = normalize_photo_url(photo_urls.get(source_id)) if source_id else ""
+        url = override["url"] or (normalize_photo_url(photo_urls.get(source_id)) if source_id else "")
         if not url:
             counts[match_method or "unmatched"] += 1
             if match_method == "ambiguous":
@@ -163,7 +178,7 @@ def build_feed(players, photo_urls, template, overrides):
         matches[player_id] = {
             "url": url,
             "sourceId": source_id,
-            "sourceName": record.get("name", player_name),
+            "sourceName": override["sourceName"] or record.get("name", player_name),
             "match": match_method,
         }
         counts["matched"] += 1
