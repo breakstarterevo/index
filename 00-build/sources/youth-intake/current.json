@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "rulesVersion": "2026.1",
   "season": "season-5",
   "status": "published",
@@ -6810,5 +6810,76 @@
     "exclusions": "5cbac18c85b2d3018d0d16f4d5e0d9357732107fd716020e3bafc3e2f5670888"
   },
   "publishedAt": "2026-08-17T01:21:53Z",
-  "publicationHash": "f1440648d817cade69c45deef7c900eb7e41a65c3a526f934cdc30662d2c3466"
+  "publicationHash": "f1440648d817cade69c45deef7c900eb7e41a65c3a526f934cdc30662d2c3466",
+  "rightsTransfers": [
+    {
+      "revision": 1,
+      "prospectKey": "garytrentjr|36178|77",
+      "playerName": "Gary Trent Jr.",
+      "intakeTeam": "Chelsea",
+      "fromTeam": "Chelsea",
+      "toTeam": "AFC Richmond",
+      "tradedAt": "2026-08-17T04:02:38Z",
+      "note": "trade",
+      "transactionId": "rights-0001-ef43d08ad6e0"
+    },
+    {
+      "revision": 2,
+      "prospectKey": "jaredrhoden|36368|78",
+      "playerName": "Jared Rhoden",
+      "intakeTeam": "AFC Richmond",
+      "fromTeam": "AFC Richmond",
+      "toTeam": "AC Milan",
+      "tradedAt": "2026-08-17T04:02:53Z",
+      "note": "trade",
+      "transactionId": "rights-0002-6226335c1da7"
+    },
+    {
+      "revision": 3,
+      "prospectKey": "donyellmarshall|26802|81",
+      "playerName": "Donyell Marshall",
+      "intakeTeam": "Tottenham Hotspur",
+      "fromTeam": "Tottenham Hotspur",
+      "toTeam": "Paris Saint-Germain",
+      "tradedAt": "2026-08-17T04:03:19Z",
+      "note": "trade",
+      "transactionId": "rights-0003-9a6cb052d3aa"
+    },
+    {
+      "revision": 4,
+      "prospectKey": "donyellmarshall|26802|81",
+      "playerName": "Donyell Marshall",
+      "intakeTeam": "Tottenham Hotspur",
+      "fromTeam": "Paris Saint-Germain",
+      "toTeam": "Tottenham Hotspur",
+      "tradedAt": "2026-08-17T04:05:23Z",
+      "note": "trade",
+      "transactionId": "rights-0004-52edbfa3d4dc"
+    },
+    {
+      "revision": 5,
+      "prospectKey": "donyellmarshall|26802|81",
+      "playerName": "Donyell Marshall",
+      "intakeTeam": "Tottenham Hotspur",
+      "fromTeam": "Tottenham Hotspur",
+      "toTeam": "Paris Saint-Germain",
+      "tradedAt": "2026-08-18T09:03:03Z",
+      "note": "trade",
+      "transactionId": "rights-0005-e4abab74ebe4"
+    },
+    {
+      "revision": 6,
+      "prospectKey": "juandixon|28772|75",
+      "playerName": "Juan Dixon",
+      "intakeTeam": "Manchester United",
+      "fromTeam": "Manchester United",
+      "toTeam": "Chelsea",
+      "tradedAt": "2026-08-18T09:03:44Z",
+      "note": "trade",
+      "transactionId": "rights-0006-de510886e154"
+    }
+  ],
+  "rightsRevision": 6,
+  "rightsUpdatedAt": "2026-08-18T09:03:44Z",
+  "rightsHash": "f0fb48ad7129fcf597c06f1bb1cfc789b6172d63054c6417859975164511f8b4"
 }
