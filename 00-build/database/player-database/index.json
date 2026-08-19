@@ -3,13 +3,13 @@
   "currentSnapshot": "current",
   "latestCompletedSnapshot": "season-4",
   "latestCompletedLabel": "1984-1985",
-  "currentHasStats": false,
+  "currentHasStats": true,
   "snapshots": [
     {
       "id": "current",
       "label": "Current",
       "path": "current.json",
-      "statYear": 1984
+      "statYear": 1985
     },
     {
       "id": "season-4",

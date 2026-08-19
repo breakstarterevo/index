@@ -1,4 +1,38 @@
 {
     "source": "injuries.htm",
-    "injuries": []
+    "injuries": [
+        {
+            "pos": "C",
+            "name": "Chet Holmgren",
+            "url": "",
+            "team": "roster17",
+            "teamName": "Chelsea",
+            "rosterUrl": "./rosters/roster17.htm",
+            "length": "51",
+            "injury": "Concussion",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "SG",
+            "name": "Jim Paxson",
+            "url": "",
+            "team": "roster17",
+            "teamName": "Chelsea",
+            "rosterUrl": "./rosters/roster17.htm",
+            "length": "50",
+            "injury": "Concussion",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "SG",
+            "name": "Mike Woodson",
+            "url": "",
+            "team": "roster7",
+            "teamName": "Bayern Munich",
+            "rosterUrl": "./rosters/roster7.htm",
+            "length": "25",
+            "injury": "Dislocated Shoulder",
+            "rowClass": "row1"
+        }
+    ]
 }
