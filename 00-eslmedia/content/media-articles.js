@@ -26,6 +26,98 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
+  // Season 5 Sim 1 - November 1985 package
+  {
+    file: "articles/season_5_sim_1_month_in_review.html",
+    title: "November 1985 Review: Barcelona's 52-Point Warning",
+    category: "Recap",
+    desk: "Analysis",
+    sortKey: "2026-08-19-07",
+    tag: "Month in Review",
+    author: "Graham Trent",
+    meta: "Season 5 - Sim 1",
+    blurb: "Barcelona delivered November's loudest result, Richmond found Tier 1 control, and Tier 2 produced a three-team promotion argument.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Manchester United", "Sheffield United", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Andre Iguodala", "Joe Barry Carroll", "Kiki Vandeweghe", "Larry Drew", "Michael Cooper", "Moses Malone", "Steve Johnson"]
+  },
+  {
+    file: "articles/season_5_sim_1_mvp_race.html",
+    title: "November 1985 MVP Race: Moses Malone Makes Winning The Tiebreaker",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-08-19-06",
+    tag: "MVP Race",
+    author: "Damon Cross",
+    meta: "Season 5 - Sim 1",
+    blurb: "Moses Malone, George Gervin and Bernard King lead the first three-tier MVP ballots as team results separate extraordinary stat lines.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Barcelona", "Benfica", "Brighton", "FL Fart", "Inter Milan", "Monaco", "Real Madrid", "Sheffield United", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Andre Drummond", "Andre Iguodala", "Bernard King", "Chris Bosh", "George Gervin", "Isiah Thomas", "Joe Barry Carroll", "Kiki Vandeweghe", "Larry Drew", "Larry Nance", "Moses Malone", "Sidney Moncrief", "Steve Johnson", "Steve Kerr", "Tom Chambers"]
+  },
+  {
+    file: "articles/season_5_sim_1_stock_up_stock_down.html",
+    title: "November 1985 Stock Report: FL Fart Rise, Manchester United Vanish",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-08-19-05",
+    tag: "Stock Report",
+    author: "Damon Cross",
+    meta: "Season 5 - Sim 1",
+    blurb: "FL Fart, Richmond and Benfica rise while Atletico, Bayern and Manchester United confront damaging first-month evidence.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Inter Milan", "Manchester United", "Sheffield United", "Tottenham Hotspur"],
+    playerTags: ["Johnny Moore", "Larry Drew", "Michael Cooper", "Moses Malone", "Tree Rollins"]
+  },
+  {
+    file: "articles/season_5_sim_1_promotion_relegation_watch.html",
+    title: "November 1985 Race Watch: The Lines Are Already Moving",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-08-19-04",
+    tag: "Race Watch",
+    author: "Nina Vale",
+    meta: "Season 5 - Sim 1",
+    blurb: "Milan and Palace occupy Tier 1's bottom two, Inter and Ajax hold the Tier 2 promotion places, and Barcelona lead a four-team chase.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Atletico Madrid", "Aston Villa", "Barcelona", "Bayern Munich", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Monaco", "Sheffield United", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    playerTags: []
+  },
+  {
+    file: "articles/season_5_sim_1_tier_1_power_rankings.html",
+    title: "November 1985 Tier 1 Power Rankings: Richmond Take Control",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-08-19-03",
+    tag: "Tier 1 Rankings",
+    author: "Nina Vale",
+    meta: "Season 5 - Sim 1",
+    blurb: "Richmond own the strongest full-season file, Benfica make the largest jump, and preseason favorite Brighton falls into the middle.",
+    teams: ["AC Milan", "AFC Richmond", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "Paris Saint-Germain", "Real Madrid"],
+    playerTags: ["Alex English", "Darrell Griffith", "Jim Paxson", "Joe Barry Carroll", "Kelly Tripucka", "Kiki Vandeweghe", "Michael Cooper", "Moses Malone", "Sidney Moncrief"]
+  },
+  {
+    file: "articles/season_5_sim_1_tier_2_power_rankings.html",
+    title: "November 1985 Tier 2 Power Rankings: FL Fart Win The Month, Inter Own The Line",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-08-19-02",
+    tag: "Tier 2 Rankings",
+    author: "Nina Vale",
+    meta: "Season 5 - Sim 1",
+    blurb: "FL Fart top the trust board, but Inter Milan and Ajax hold the promotion places in a three-team breakaway.",
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Bayern Munich", "FL Fart", "Inter Milan", "Marseille", "Sheffield United"],
+    playerTags: ["Andre Iguodala", "Johnny Moore", "Larry Drew", "Larry Nance", "Robert Parish", "Steve Johnson", "Tree Rollins", "World B. Free"]
+  },
+  {
+    file: "articles/season_5_sim_1_tier_3_power_rankings.html",
+    title: "November 1985 Tier 3 Power Rankings: Barcelona Turn One Place Into A Crowd",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-08-19-01",
+    tag: "Tier 3 Rankings",
+    author: "Nina Vale",
+    meta: "Season 5 - Sim 1",
+    blurb: "Barcelona lead the November trust board, with Valencia, Juventus and Tottenham packed behind the division's only promotion place.",
+    teams: ["Barcelona", "Juventus", "Manchester City", "Manchester United", "Monaco", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Andre Drummond", "Bernard King", "Brian Shaw", "Chris Bosh", "Hubert Davis", "Isiah Thomas", "J.J. Redick", "Larry Smith", "Luol Deng", "Paul Pierce", "Steve Kerr"]
+  },
   // 1985 training camp and preseason package
   {
     file: "articles/1985_preseason_steve_johnson_sheffield.html",
