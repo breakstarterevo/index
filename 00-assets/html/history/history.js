@@ -655,6 +655,7 @@
           <div class="history-nav-item"><a class="history-nav-link" href="players.htm">Players</a><div class="history-mega" id="megaPlayers"><div class="empty">Loading greats...</div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="teams.htm">Teams</a><div class="history-mega" id="megaTeams"><div class="empty">Loading teams...</div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="season.htm">Seasons</a><div class="history-mega" id="megaSeasons"></div></div>
+          <div class="history-nav-item"><a class="history-nav-link" href="story.htm">League Story</a><div class="history-mega"><div class="mega-line"><strong>Explore:</strong> <a href="story.htm#timeline">Timeline</a> | <a href="story.htm#dynasties">Dynasties &amp; Journeys</a> | <a href="story.htm#rivalries">Rivalries</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="leaders.htm">Leaders</a><div class="history-mega"><div class="mega-line"><strong>Leaderboards:</strong> <a href="leaders.htm">Player Leaders</a> | <a href="season.htm">Season Summaries</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="records.htm">Records</a><div class="history-mega"><div class="mega-line"><strong>All-Time:</strong> <a href="records.htm#career-records">Career Totals</a> | <a href="records.htm#game-highs">Single-Game Highs</a> | <a href="records.htm#franchise-records">Franchises</a></div><div class="mega-line"><strong>Database Sections:</strong> <a href="finance.htm">Finance</a> | <a href="finance.htm#cap-history">Cap History</a> | <a href="finance.htm#earnings">Player Earnings</a> | <a href="future-pool.htm">Future Pool</a> | <a href="future-pool.htm#potential-ratings">Potential Ratings</a></div></div></div>
           <div class="history-nav-item"><a class="history-nav-link" href="supercup.htm">Super Cup</a><div class="history-mega"><div class="mega-line"><strong>Cup Archive:</strong> <a href="supercup.htm#knockout">Knockout Bracket</a> | <a href="supercup.htm#group-stage">Group Stage</a> | <a href="supercup.htm#cup-leaders">Stat Leaders</a></div></div></div>
@@ -722,6 +723,7 @@
         { terms: ["players", "greats", "active", "retired"], label: "Player Directory", href: "players.htm" },
         { terms: ["teams", "clubs", "franchises"], label: "Team Directory", href: "teams.htm" },
         { terms: ["season", "standings", "champions", "promoted", "promotion", "relegated", "relegation"], label: "Season Summary", href: "season.htm" },
+        { terms: ["story", "timeline", "dynasty", "dynasties", "journey", "rivalry", "rivalries", "derby"], label: "League Story", href: "story.htm" },
         { terms: ["leaders", "leaderboard"], label: "Leaderboards", href: "leaders.htm" },
         { terms: ["records", "all time", "career", "highs", "mvp", "points", "rebounds", "assists", "championships", "awards"], label: "League Records", href: "records.htm" },
         { terms: ["finance", "salary", "cap", "payroll", "earnings", "contract"], label: "Finance History", href: "finance.htm" },
@@ -845,23 +847,128 @@
     return href ? `<a class="dashboard-card" href="${href}">${inner}</a>` : `<div class="dashboard-card">${inner}</div>`;
   }
 
-  function renderQuickLinks() {
-    return `
-      <div class="quick-link-grid">
-        <a href="players.htm"><span>Players</span><strong>All-time and active greats</strong></a>
-        <a href="teams.htm"><span>Teams</span><strong>Club histories and timelines</strong></a>
-        <a href="leaders.htm"><span>Leaders</span><strong>Filtered season leaderboards</strong></a>
-        <a href="records.htm"><span>Records</span><strong>Career totals, game highs and honours</strong></a>
-        <a href="finance.htm"><span>Finance</span><strong>Salary, cap and earnings history</strong></a>
-        <a href="future-pool.htm"><span>Future Pool</span><strong>Current and potential ratings</strong></a>
-        <a href="supercup.htm"><span>Super Cup</span><strong>Knockouts, groups and leaders</strong></a>
-        <a href="development-stats.htm"><span>Development Stats</span><strong>Classes, hit rates and development</strong></a>
-        <a href="compare.htm"><span>Compare</span><strong>Player and team head-to-heads</strong></a>
-      </div>`;
+  function storyTeam(team, file) {
+    if (!team) return `<span class="muted">Unavailable</span>`;
+    return teamMini(canonicalTeamName(team, file), file);
+  }
+
+  function storyPlayer(person, key) {
+    return key ? `<a href="player.htm?key=${encodeURIComponent(key)}">${esc(person)}</a>` : esc(person || "Unavailable");
+  }
+
+  function renderStoryPreview(stories) {
+    const latest = (stories.timeline || []).at(-1);
+    const era = (stories.eras || [])[0];
+    const rivalry = (stories.rivalries || [])[0];
+    if (!latest && !era && !rivalry) return "";
+    return `<section class="reference-section story-preview" aria-labelledby="story-preview-title">
+      <div class="section-heading-row"><div><div class="eyebrow">Across the archive</div><h2 id="story-preview-title">League Story</h2></div><a class="section-link" href="story.htm">Explore the full story</a></div>
+      <div class="dashboard-grid story-preview-grid">
+        ${dashboardCard("Latest Chapter", esc(latest?.label || "Archive"), `${latest?.championships?.length || 0} league champions${latest?.supercup?.team ? ` | Super Cup: ${esc(latest.supercup.team)}` : ""}`, "story.htm#timeline")}
+        ${dashboardCard("Leading Era", esc(era?.team || "Club eras"), `${esc(era?.classification || "Era")} | ${esc(era?.startLabel || "-")} to ${esc(era?.endLabel || "-")}`, "story.htm#dynasties")}
+        ${dashboardCard("Featured Rivalry", esc(rivalry?.name || "Rivalries"), `${rivalry?.combined?.games || 0} meetings${rivalry?.location ? ` | ${esc(rivalry.location)}` : ""}`, "story.htm#rivalries")}
+      </div>
+    </section>`;
+  }
+
+  function timelineMovement(rows, marker) {
+    if (!rows?.length) return `<span class="muted">None</span>`;
+    return rows.map((row) => `<span class="story-movement-item">${storyTeam(row.team, row.file)} ${movementBadge(marker)}</span>`).join("");
+  }
+
+  function renderTimelineSeason(season) {
+    const champions = (season.championships || []).map((champion) => `<div class="story-fact-row"><span>${esc(champion.tier)}</span><strong>${storyTeam(champion.champion, champion.championFile)}</strong><small>over ${storyTeam(champion.opponent, champion.opponentFile)}</small></div>`).join("");
+    const awards = (season.awards || []).filter((award) => award.tier === "CLB").slice(0, 5);
+    const leaders = (season.leaders || []).filter((leader) => leader.tier === "CLB").slice(0, 5);
+    return `<article class="story-season-card">
+      <div class="story-season-marker" aria-hidden="true"></div>
+      <header class="story-season-head">
+        <div><div class="eyebrow">Completed Season</div><h3>${esc(season.label)}</h3></div>
+        <a class="section-link" href="season.htm?season=${encodeURIComponent(season.season)}">Full season</a>
+      </header>
+      <div class="story-season-grid">
+        <section><h4>Champions</h4>${champions || `<div class="empty">Championship archive unavailable</div>`}
+          <div class="story-fact-row story-supercup-row"><span>SUPER CUP</span><strong>${storyTeam(season.supercup?.team, season.supercup?.file)}</strong>${season.supercup?.opponent ? `<small>over ${esc(season.supercup.opponent)}</small>` : ""}</div>
+        </section>
+        <section><h4>Season Honours</h4>${awards.map((award) => `<div class="story-fact-row"><span>${esc(award.award)}</span><strong>${storyPlayer(award.person, award.playerKey)}</strong><small>${esc(award.team)}</small></div>`).join("") || `<div class="empty">Major awards unavailable</div>`}</section>
+        <section><h4>CLB Leaders</h4>${leaders.map((leader) => `<div class="story-fact-row"><span>${esc(leader.category)}</span><strong>${storyPlayer(leader.player, leader.playerKey)}</strong><small>${esc(leader.value)} | ${esc(leader.team)}</small></div>`).join("") || `<div class="empty">Leader archive unavailable</div>`}</section>
+      </div>
+      <footer class="story-season-footer">
+        <div><strong>Best regular season</strong>${storyTeam(season.bestRegularSeason?.team, season.bestRegularSeason?.file)} <span>${esc(season.bestRegularSeason?.wins ?? "-")}-${esc(season.bestRegularSeason?.losses ?? "-")}</span></div>
+        <div><strong>Promoted</strong>${timelineMovement(season.promoted, "P")}</div>
+        <div><strong>Relegated</strong>${timelineMovement(season.relegated, "R")}</div>
+      </footer>
+    </article>`;
+  }
+
+  function renderEraCard(era, index) {
+    const tierPath = (era.seasons || []).map((season, seasonIndex) => `<span class="era-tier-node tier-${esc(String(season.tier || "").toLowerCase())}"><strong>${esc(season.tier)}</strong><small>${esc(season.label)}</small></span>${seasonIndex < era.seasons.length - 1 ? `<i aria-hidden="true">→</i>` : ""}`).join("");
+    const milestones = (era.milestones || []).map((milestone) => `<li>${esc(milestone)}</li>`).join("");
+    return `<article class="era-card">
+      <header><span class="story-rank">${index + 1}</span>${logoFor(era.team, era.file) ? `<img src="${logoFor(era.team, era.file)}" alt="">` : ""}<div><div class="eyebrow">${esc(era.classification)}</div><h3>${teamLink(era.file, era.team)}</h3><p>${esc(era.startLabel)}–${esc(era.endLabel)}</p></div></header>
+      <div class="era-summary"><span><strong>${esc(era.wins)}-${esc(era.losses)}</strong> record</span><span><strong>${esc(era.titleCount)}</strong> titles</span><span><strong>${esc(era.promotions)}</strong> promotions</span><span><strong>${percent(era.pct)}</strong> win rate</span></div>
+      <div class="era-tier-path" aria-label="Tier path">${tierPath}</div>
+      ${milestones ? `<ul class="era-milestones">${milestones}</ul>` : `<p class="muted">Sustained high finishes across this era.</p>`}
+    </article>`;
+  }
+
+  function rivalryGameText(game) {
+    if (!game?.team) return "Unavailable";
+    return `${esc(game.team)} ${esc(game.pointsFor)}-${esc(game.pointsAgainst)} ${esc(game.opponent)} <span class="muted">${esc(game.label || "")} ${esc(game.date || "")}</span>`;
+  }
+
+  function renderRivalryCard(rivalry, index) {
+    const left = rivalry.teams?.[0] || {};
+    const right = rivalry.teams?.[1] || {};
+    const home = rivalry.venueSplits?.home || {};
+    const away = rivalry.venueSplits?.away || {};
+    const seasonRows = (rivalry.seasons || []).map((season) => `<tr><td>${esc(season.label)}</td><td class="num">${esc(season.games)}</td><td>${esc(season.wins)}-${esc(season.losses)}</td><td class="num">${esc(season.leagueGames)}</td><td class="num">${esc(season.supercupGames)}</td><td class="num">${season.avgDiff > 0 ? "+" : ""}${esc(season.avgDiff)}</td></tr>`);
+    const gameRows = (rivalry.games || []).map((game) => {
+      const matchup = game.venue === "Away" ? `${game.team} @ ${game.opponent}` : `${game.opponent} @ ${game.team}`;
+      const score = game.venue === "Away" ? `${game.pointsFor}-${game.pointsAgainst}` : `${game.pointsAgainst}-${game.pointsFor}`;
+      return `<tr><td>${esc(game.label || seasonLabel(game.season))}</td><td>${esc(game.date || "-")}</td><td>${esc(game.competition)}</td><td>${esc(matchup)}</td><td class="num">${esc(score)}</td><td><strong>${esc(game.won ? game.team : game.opponent)}</strong></td></tr>`;
+    });
+    return `<article class="rivalry-card">
+      <header class="rivalry-head">
+        <span class="story-rank">${index + 1}</span>
+        <div class="rivalry-team">${logoFor(left.team, left.file) ? `<img src="${logoFor(left.team, left.file)}" alt="">` : ""}<strong>${teamLink(left.file, left.team)}</strong></div>
+        <div class="rivalry-title"><div class="eyebrow">${rivalry.manual ? "Named Rivalry" : "Archive Matchup"}</div><h3>${esc(rivalry.name)}</h3><div class="history-meta">${rivalry.featured ? `<span class="pill story-featured">Featured</span>` : ""}${rivalry.location ? `<span class="pill">${esc(rivalry.location)}</span>` : ""}</div></div>
+        <div class="rivalry-team">${logoFor(right.team, right.file) ? `<img src="${logoFor(right.team, right.file)}" alt="">` : ""}<strong>${teamLink(right.file, right.team)}</strong></div>
+      </header>
+      <div class="rivalry-summary"><span><strong>${esc(rivalry.combined?.games || 0)}</strong> meetings</span><span><strong>${esc(rivalry.combined?.wins || 0)}-${esc(rivalry.combined?.losses || 0)}</strong> ${esc(left.team)} record</span><span><strong>${esc(home.wins || 0)}-${esc(home.losses || 0)}</strong> vs ${esc(right.team)}</span><span><strong>${esc(away.wins || 0)}-${esc(away.losses || 0)}</strong> @ ${esc(right.team)}</span><span><strong>${esc(rivalry.combined?.avgDiff || 0)}</strong> avg margin</span><span><strong>${esc(rivalry.supercup?.games || 0)}</strong> Super Cup</span></div>
+      <details><summary>Season series, individual results and notable games</summary>
+        ${table(["Season", "Games", `${left.team} W-L`, "League", "Super Cup", "Avg Diff"], seasonRows, "No season splits available")}
+        <div class="rivalry-notables"><p><strong>Closest:</strong> ${rivalryGameText(rivalry.notableGames?.closest)}</p><p><strong>Highest scoring:</strong> ${rivalryGameText(rivalry.notableGames?.highestScoring)}</p><p><strong>Largest win:</strong> ${rivalry.notableGames?.largestWin?.margin ? `+${esc(rivalry.notableGames.largestWin.margin)} | ${esc(rivalry.notableGames.largestWin.score)} <span class="muted">${esc(rivalry.notableGames.largestWin.label || "")}</span>` : "Unavailable"}</p></div>
+        <h4 class="rivalry-results-heading">Every Archived Result</h4>
+        ${table(["Season", "Date", "Competition", "Matchup", "Score", "Winner"], gameRows, "No individual game results available")}
+      </details>
+    </article>`;
+  }
+
+  async function renderStory() {
+    const stories = await fetchJson(`${HISTORY_ROOT}history_stories.json`, { timeline: [], eras: [], rivalries: [], methodology: {} }, { cache: "no-store" });
+    const timeline = stories.timeline || [];
+    const eras = stories.eras || [];
+    const visibleEras = eras.slice(0, 2);
+    const rivalries = stories.rivalries || [];
+    const featuredRivalries = rivalries.filter((rivalry) => rivalry.featured);
+    const automaticRivalries = rivalries.filter((rivalry) => !rivalry.manual).slice(0, 5);
+    $("#history-app").innerHTML = `
+      <section class="history-hero story-hero"><div class="eyebrow">Completed seasons through ${esc(stories.throughLabel || seasonLabel(latestSeason()))}</div><h1>The Story of the ESL</h1><p>Every champion, climb, dominant era and defining matchup in the completed archive.</p><div class="history-meta"><span class="pill">${timeline.length} Seasons</span><span class="pill">${visibleEras.length} Featured Eras</span><span class="pill">${featuredRivalries.length} Featured Rivalries</span><span class="pill">Top ${automaticRivalries.length} Automatic Rivalries</span></div></section>
+      <nav class="story-anchor-nav" aria-label="League story sections"><a href="#timeline">Timeline</a><a href="#dynasties">Dynasties &amp; Journeys</a><a href="#rivalries">Rivalries</a></nav>
+      <section class="story-section" id="timeline"><div class="story-section-heading"><div><div class="eyebrow">Season by season</div><h2>League Timeline</h2></div><p>Completed seasons shown chronologically.</p></div><div class="story-timeline">${timeline.map(renderTimelineSeason).join("") || `<div class="empty">No completed seasons have been archived.</div>`}</div></section>
+      <section class="story-section" id="dynasties"><div class="story-section-heading"><div><div class="eyebrow">Winning and upward movement</div><h2>Dynasties &amp; Journeys</h2></div><p>${esc(stories.methodology?.era || "Ranked contiguous club eras.")}</p></div><div class="era-grid">${visibleEras.map(renderEraCard).join("") || `<div class="empty">No club era currently meets the qualification threshold.</div>`}</div></section>
+      <section class="story-section" id="rivalries"><div class="story-section-heading"><div><div class="eyebrow">Close, frequent and local</div><h2>Rivalries</h2></div><p>${esc(stories.methodology?.rivalry || "Ranked archived matchups.")}</p></div>
+        <div class="story-subsection-heading"><h3>Featured Rivalries</h3><span>${featuredRivalries.length} named matchups</span></div>
+        <div class="rivalry-list">${featuredRivalries.map(renderRivalryCard).join("") || `<div class="empty">No featured rivalries are configured.</div>`}</div>
+        <div class="story-subsection-heading"><h3>Top 5 Automatic Rivalries</h3><span>Ranked from archived results</span></div>
+        <div class="rivalry-list">${automaticRivalries.map(renderRivalryCard).join("") || `<div class="empty">No automatic rivalries currently meet the archive threshold.</div>`}</div>
+      </section>`;
   }
 
   async function renderIndex() {
     const season = await loadSeason(latestSeason(), ["standings", "leaders"]);
+    const stories = await fetchJson(`${HISTORY_ROOT}history_stories.json`, { timeline: [], eras: [], rivalries: [] });
     const facts = await dashboardFacts(season);
     const allTimeGreats = await rankedPlayers({ limit: 8 });
     const currentGreats = await rankedLatestSeasonPlayers({ limit: 8 });
@@ -872,7 +979,7 @@
         ${dashboardCard("Current Legend", facts.current?.key ? `<a href="player.htm?key=${encodeURIComponent(facts.current.key)}">${esc(facts.current.name || "No current player")}</a>` : esc(facts.current?.name || "No current player"), `${facts.current ? `${ratingChip("OVR", facts.current.overall)} ${esc(facts.current.team || "")} | ${esc(seasonLabel(facts.current.season))}` : "No current season players yet."}`)}
         ${dashboardCard("Movement Watch", "Promotion / Relegation", `${facts.promoted.map((team) => esc(team.team)).join(", ") || "No promotion spots"}${facts.relegated.length ? ` | Down: ${facts.relegated.map((team) => esc(team.team)).join(", ")}` : ""}`, "season.htm#standings")}
       </section>
-      ${renderQuickLinks()}
+      ${renderStoryPreview(stories)}
       <div class="history-grid main-rail">
         <div>
           <section class="reference-section"><h2>Latest Season Standings</h2>${renderStandings(season)}</section>
@@ -2478,6 +2585,7 @@
     if (file === "player.htm") return "player";
     if (file === "team.htm") return "team";
     if (file === "season.htm") return "season";
+    if (file === "story.htm") return "story";
     if (file === "leaders.htm") return "leaders";
     if (file === "records.htm") return "records";
     if (file === "finance.htm") return "finance";
@@ -2500,6 +2608,7 @@
     if (page === "player") await renderPlayer();
     if (page === "team") await renderTeam();
     if (page === "season") await renderSeason();
+    if (page === "story") await renderStory();
     if (page === "leaders") await renderLeaders();
     if (page === "records") await renderRecords();
     if (page === "finance") await renderFinance();

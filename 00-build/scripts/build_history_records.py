@@ -17,8 +17,13 @@ HISTORY_ROOT = ROOT / "00-build" / "history"
 OUTPUT_PATH = HISTORY_ROOT / "league_records.json"
 FINANCE_OUTPUT_PATH = HISTORY_ROOT / "finance_history.json"
 HEAD_TO_HEAD_OUTPUT_PATH = HISTORY_ROOT / "head_to_head.json"
+STORIES_OUTPUT_PATH = HISTORY_ROOT / "history_stories.json"
+RIVALRIES_SOURCE_PATH = ROOT / "00-build" / "sources" / "history" / "rivalries.json"
 PROFILE_DIR = HISTORY_ROOT / "player_profiles"
 CHAMPS_PATH = ROOT / "champs.htm"
+
+TIER_ORDER = {"CLB": 1, "ELB": 2, "ECL": 3}
+PRIMARY_LEADERS = ("points", "rebounds", "assists", "steals", "blocks")
 
 MAJOR_AWARDS = {
     "most valuable player": "MVP",
@@ -418,7 +423,15 @@ def team_name_key(value: object) -> str:
 
 
 def empty_matchup_record() -> dict:
-    return {"games": 0, "wins": 0, "losses": 0, "pointsFor": 0, "pointsAgainst": 0, "largestWin": {}}
+    return {
+        "games": 0,
+        "wins": 0,
+        "losses": 0,
+        "pointsFor": 0,
+        "pointsAgainst": 0,
+        "largestWin": {},
+        "results": [],
+    }
 
 
 def add_matchup_game(
@@ -457,6 +470,20 @@ def add_matchup_game(
         record["pointsFor"] += points_for
         record["pointsAgainst"] += points_against
         margin = points_for - points_against
+        record["results"].append(
+            {
+                "season": season_id,
+                "label": season_label,
+                "date": clean(game.get("date")),
+                "competition": "Super Cup" if competition == "supercup" else "League",
+                "venue": "Home" if team_name == home_name else "Away",
+                "team": team_name,
+                "opponent": opponent_name,
+                "pointsFor": points_for,
+                "pointsAgainst": points_against,
+                "won": won,
+            }
+        )
         if won and (not record["largestWin"] or margin > record["largestWin"].get("margin", -1)):
             record["largestWin"] = {
                 "margin": margin,
@@ -476,6 +503,63 @@ def finalized_matchup_record(record: dict) -> dict:
         "avgPointsAgainst": round(record.get("pointsAgainst", 0) / games, 1) if games else 0,
         "avgDiff": round((record.get("pointsFor", 0) - record.get("pointsAgainst", 0)) / games, 1) if games else 0,
     }
+
+
+def matchup_season_splits(results: list[dict]) -> list[dict]:
+    seasons: dict[str, dict] = {}
+    for game in results:
+        season_id = clean(game.get("season"))
+        item = seasons.setdefault(
+            season_id,
+            {
+                "season": season_id,
+                "label": clean(game.get("label")) or season_id,
+                "games": 0,
+                "wins": 0,
+                "losses": 0,
+                "pointsFor": 0,
+                "pointsAgainst": 0,
+                "leagueGames": 0,
+                "supercupGames": 0,
+            },
+        )
+        item["games"] += 1
+        item["wins"] += int(bool(game.get("won")))
+        item["losses"] += int(not game.get("won"))
+        item["pointsFor"] += numeric(game.get("pointsFor"))
+        item["pointsAgainst"] += numeric(game.get("pointsAgainst"))
+        if game.get("competition") == "Super Cup":
+            item["supercupGames"] += 1
+        else:
+            item["leagueGames"] += 1
+    for item in seasons.values():
+        item["avgDiff"] = round((item["pointsFor"] - item["pointsAgainst"]) / item["games"], 1) if item["games"] else 0
+    return sorted(seasons.values(), key=lambda item: season_number(item["season"]))
+
+
+def matchup_venue_splits(results: list[dict]) -> dict:
+    splits = {
+        "home": {"games": 0, "wins": 0, "losses": 0},
+        "away": {"games": 0, "wins": 0, "losses": 0},
+    }
+    for game in results:
+        key = "home" if clean(game.get("venue")).casefold() == "home" else "away"
+        splits[key]["games"] += 1
+        splits[key]["wins"] += int(bool(game.get("won")))
+        splits[key]["losses"] += int(not game.get("won"))
+    return splits
+
+
+def matchup_notable_games(results: list[dict], largest_win: dict) -> dict:
+    if not results:
+        return {"closest": {}, "highestScoring": {}, "largestWin": largest_win or {}}
+    closest = min(results, key=lambda game: (abs(numeric(game.get("pointsFor")) - numeric(game.get("pointsAgainst"))), clean(game.get("date"))))
+    highest = max(results, key=lambda game: numeric(game.get("pointsFor")) + numeric(game.get("pointsAgainst")))
+    return {"closest": closest, "highestScoring": highest, "largestWin": largest_win or {}}
+
+
+def public_matchup_record(record: dict) -> dict:
+    return {key: value for key, value in record.items() if key != "results"}
 
 
 def build_head_to_head(index: dict) -> dict:
@@ -503,6 +587,7 @@ def build_head_to_head(index: dict) -> dict:
                 add_matchup_game(matchups, game, "supercup", season_id, label)
 
     teams = {}
+    unique_matchups: dict[tuple[str, str], dict] = {}
     for team_key, opponent_map in matchups.items():
         if team_key not in team_files:
             continue
@@ -513,6 +598,7 @@ def build_head_to_head(index: dict) -> dict:
                 continue
             league = finalized_matchup_record(matchup["league"])
             supercup = finalized_matchup_record(matchup["supercup"])
+            combined_results = league.get("results", []) + supercup.get("results", [])
             combined = finalized_matchup_record(
                 {
                     "games": league["games"] + supercup["games"],
@@ -525,6 +611,7 @@ def build_head_to_head(index: dict) -> dict:
                         key=lambda item: item.get("margin", 0),
                         default={},
                     ),
+                    "results": combined_results,
                 }
             )
             if combined["largestWin"]:
@@ -532,13 +619,35 @@ def build_head_to_head(index: dict) -> dict:
                     "Super Cup" if combined["largestWin"] == supercup.get("largestWin") else "League"
                 )
             opponent_meta = team_files.get(opponent_key, {"team": matchup.get("opponent", opponent_key), "file": ""})
+            pair = tuple(sorted((team_meta.get("file", ""), opponent_meta.get("file", ""))))
+            if all(pair) and pair not in unique_matchups:
+                unique_matchups[pair] = {
+                    "id": "--".join(file_name(value).removesuffix(".htm") for value in pair),
+                    "teams": [team_meta, opponent_meta],
+                    "league": public_matchup_record(league),
+                    "supercup": public_matchup_record(supercup),
+                    "combined": public_matchup_record(combined),
+                    "venueSplits": matchup_venue_splits(combined_results),
+                    "seasons": matchup_season_splits(combined_results),
+                    "notableGames": matchup_notable_games(combined_results, combined.get("largestWin", {})),
+                    "games": sorted(
+                        combined_results,
+                        key=lambda game: (
+                            season_number(game.get("season")),
+                            clean(game.get("competition")),
+                            clean(game.get("date")),
+                        ),
+                    ),
+                }
             opponents.append(
                 {
                     "opponent": opponent_meta.get("team", matchup.get("opponent", "")),
                     "file": opponent_meta.get("file", ""),
-                    "league": league,
-                    "supercup": supercup,
-                    "combined": combined,
+                    "league": public_matchup_record(league),
+                    "supercup": public_matchup_record(supercup),
+                    "combined": public_matchup_record(combined),
+                    "seasons": matchup_season_splits(combined_results),
+                    "notableGames": matchup_notable_games(combined_results, combined.get("largestWin", {})),
                 }
             )
         teams[team_key] = {
@@ -546,11 +655,366 @@ def build_head_to_head(index: dict) -> dict:
             "opponents": sorted(opponents, key=lambda item: (-item["combined"]["games"], item["opponent"].casefold())),
         }
     latest = index.get("seasons", [])[-1] if index.get("seasons") else {}
+    unique_rows = list(unique_matchups.values())
     return {
-        "version": 1,
+        "version": 3,
         "generatedAtUtc": datetime.now(timezone.utc).isoformat(),
         "throughLabel": latest.get("label", latest.get("season", "")),
         "teams": teams,
+        "matchups": sorted(unique_rows, key=lambda item: (-item["combined"].get("games", 0), item["id"])),
+    }
+
+
+def tier_from_title(value: object) -> str:
+    text = clean(value).upper()
+    return next((tier for tier in TIER_ORDER if text.startswith(tier)), "")
+
+
+def movement_marker(tier: str, position: int, team_count: int) -> str:
+    if tier == "CLB" and position == 1:
+        return "C"
+    if tier == "ELB" and position <= 2:
+        return "P"
+    if tier == "ECL" and position == 1:
+        return "P"
+    if tier == "CLB" and position > max(0, team_count - 2):
+        return "R"
+    if tier == "ELB" and position == team_count:
+        return "R"
+    return ""
+
+
+def archived_team_seasons(index: dict) -> tuple[dict[str, list[dict]], dict[str, dict]]:
+    histories: dict[str, list[dict]] = defaultdict(list)
+    team_meta: dict[str, dict] = {}
+    for season in index.get("seasons", []):
+        season_id = clean(season.get("season"))
+        standings = read_json(HISTORY_ROOT / season_id / "database" / "standings.json", {"sections": []})
+        for section in standings.get("sections", []):
+            tier = tier_from_title(section.get("title"))
+            teams = section.get("teams", [])
+            for position, row in enumerate(teams, 1):
+                roster_file = file_name(row.get("rosterFile"))
+                if not roster_file:
+                    continue
+                snapshot = {
+                    "season": season_id,
+                    "label": clean(season.get("label")) or season_id,
+                    "team": clean(row.get("team")),
+                    "file": roster_file,
+                    "tier": tier,
+                    "position": position,
+                    "teamCount": len(teams),
+                    "wins": numeric(row.get("wins")),
+                    "losses": numeric(row.get("losses")),
+                    "pct": numeric(row.get("pct")),
+                    "diff": numeric(row.get("diff")),
+                    "movement": movement_marker(tier, position, len(teams)),
+                }
+                histories[roster_file].append(snapshot)
+                team_meta[roster_file] = {"team": snapshot["team"], "file": roster_file}
+    for rows in histories.values():
+        rows.sort(key=lambda item: season_number(item["season"]))
+    return histories, team_meta
+
+
+def season_key_from_championship(record: dict, index: dict) -> str:
+    year = clean(record.get("season"))
+    for season in index.get("seasons", []):
+        if clean(season.get("label")).startswith(year):
+            return clean(season.get("season"))
+    return ""
+
+
+def supercup_champion(database: Path, team_meta_by_name: dict[str, dict]) -> dict:
+    feed = read_json(database / "supercup" / "game_results.json", {"results": []})
+    playoff_games = [
+        game for game in feed.get("results", [])
+        if clean(game.get("section")).casefold() == "playoffs"
+    ]
+    if not playoff_games:
+        return {}
+    final = playoff_games[-1]
+    name = clean(final.get("winnerName"))
+    meta = team_meta_by_name.get(name.casefold(), {})
+    return {
+        "team": name,
+        "file": meta.get("file", ""),
+        "opponent": clean(final.get("loserName")),
+        "date": clean(final.get("date")),
+        "score": f"{numeric(final.get('homeScore'))}-{numeric(final.get('awayScore'))}",
+    }
+
+
+def timeline_records(index: dict, championships: list[dict], player_index: dict) -> list[dict]:
+    season_maps = player_index.get("seasonMaps", {})
+    championship_map: dict[str, list[dict]] = defaultdict(list)
+    for record in championships:
+        season_id = season_key_from_championship(record, index)
+        if season_id:
+            championship_map[season_id].append(record)
+    timeline = []
+    for season in index.get("seasons", []):
+        season_id = clean(season.get("season"))
+        label = clean(season.get("label")) or season_id
+        database = HISTORY_ROOT / season_id / "database"
+        standings = read_json(database / "standings.json", {"sections": []})
+        team_rows = []
+        for section in standings.get("sections", []):
+            tier = tier_from_title(section.get("title"))
+            teams = section.get("teams", [])
+            for position, row in enumerate(teams, 1):
+                team_rows.append(
+                    {
+                        "team": clean(row.get("team")),
+                        "file": file_name(row.get("rosterFile")),
+                        "tier": tier,
+                        "position": position,
+                        "wins": numeric(row.get("wins")),
+                        "losses": numeric(row.get("losses")),
+                        "pct": numeric(row.get("pct")),
+                        "diff": numeric(row.get("diff")),
+                        "movement": movement_marker(tier, position, len(teams)),
+                    }
+                )
+        team_by_name = {row["team"].casefold(): row for row in team_rows}
+        awards_feed = read_json(database / "season_awards.json", {"sections": []})
+        awards = []
+        for section in awards_feed.get("sections", []):
+            tier = tier_from_title(section.get("title"))
+            for award in section.get("awards", []):
+                short = MAJOR_AWARDS.get(clean(award.get("award")).casefold())
+                if not short:
+                    continue
+                awards.append(
+                    {
+                        "tier": tier,
+                        "award": short,
+                        "label": clean(award.get("award")),
+                        "person": clean(award.get("person")),
+                        "playerFile": file_name(award.get("personFile")),
+                        "playerKey": season_maps.get(season_id, {}).get(file_name(award.get("personFile")), ""),
+                        "team": clean(award.get("team")),
+                        "teamFile": file_name(award.get("teamFile")),
+                    }
+                )
+        leaders_feed = read_json(database / "leaders.json", {"sections": []})
+        leaders = []
+        for section in leaders_feed.get("sections", []):
+            tier = tier_from_title(section.get("title"))
+            for category in section.get("categories", []):
+                category_key = clean(category.get("title")).casefold()
+                if category_key not in PRIMARY_LEADERS or not category.get("leaders"):
+                    continue
+                leader = category["leaders"][0]
+                player_file = file_name(leader.get("playerFile"))
+                leaders.append(
+                    {
+                        "tier": tier,
+                        "category": clean(category.get("title")),
+                        "player": clean(leader.get("player")),
+                        "playerFile": player_file,
+                        "playerKey": season_maps.get(season_id, {}).get(player_file, ""),
+                        "team": clean(leader.get("teamName")),
+                        "teamFile": file_name(leader.get("teamFile")),
+                        "value": leader.get("valueText", leader.get("value", "")),
+                    }
+                )
+        best = min(team_rows, key=lambda row: (TIER_ORDER.get(row["tier"], 9), row["position"]), default={})
+        timeline.append(
+            {
+                "season": season_id,
+                "label": label,
+                "championships": sorted(championship_map.get(season_id, []), key=lambda row: TIER_ORDER.get(row.get("tier"), 9)),
+                "supercup": supercup_champion(database, team_by_name),
+                "bestRegularSeason": best,
+                "promoted": [row for row in team_rows if row["movement"] == "P"],
+                "relegated": [row for row in team_rows if row["movement"] == "R"],
+                "awards": awards,
+                "leaders": leaders,
+            }
+        )
+    return timeline
+
+
+def score_era_window(rows: list[dict], titles: list[dict]) -> dict:
+    season_ids = {row["season"] for row in rows}
+    window_titles = [title for title in titles if title.get("season") in season_ids]
+    clb_titles = sum(title.get("tier") == "CLB" for title in window_titles)
+    lower_titles = len(window_titles) - clb_titles
+    promotions = sum(row.get("movement") == "P" for row in rows)
+    relegations = sum(row.get("movement") == "R" for row in rows)
+    upward_moves = 0
+    for previous, current in zip(rows, rows[1:]):
+        upward_moves += max(0, TIER_ORDER.get(previous.get("tier"), 9) - TIER_ORDER.get(current.get("tier"), 9))
+    top_three = sum(row.get("tier") == "CLB" and row.get("position", 99) <= 3 for row in rows)
+    strong_seasons = sum(numeric(row.get("pct")) >= 0.6 for row in rows)
+    score = clb_titles * 10 + lower_titles * 5 + promotions * 8 + upward_moves * 5 + top_three * 3 + strong_seasons * 2 - relegations * 4
+    wins = sum(numeric(row.get("wins")) for row in rows)
+    losses = sum(numeric(row.get("losses")) for row in rows)
+    total_games = wins + losses
+    classification = "Dynasty" if len(window_titles) >= 2 or (clb_titles and top_three >= 3) else "Promotion Journey" if promotions or upward_moves else "Sustained Contender"
+    return {
+        "score": score,
+        "classification": classification,
+        "titles": window_titles,
+        "titleCount": len(window_titles),
+        "promotions": promotions,
+        "relegations": relegations,
+        "upwardMoves": upward_moves,
+        "topThreeFinishes": top_three,
+        "wins": wins,
+        "losses": losses,
+        "pct": round(wins / total_games, 3) if total_games else 0,
+    }
+
+
+def build_eras(index: dict, championships: list[dict]) -> list[dict]:
+    histories, _ = archived_team_seasons(index)
+    titles_by_team: dict[str, list[dict]] = defaultdict(list)
+    for title in championships:
+        season_id = season_key_from_championship(title, index)
+        roster_file = file_name(title.get("championFile"))
+        if season_id and roster_file:
+            titles_by_team[roster_file].append({**title, "season": season_id})
+    eras = []
+    for roster_file, history in histories.items():
+        candidates = []
+        max_length = min(5, len(history))
+        for length in range(2, max_length + 1):
+            for start in range(0, len(history) - length + 1):
+                window = history[start:start + length]
+                if any(season_number(b["season"]) - season_number(a["season"]) != 1 for a, b in zip(window, window[1:])):
+                    continue
+                result = score_era_window(window, titles_by_team.get(roster_file, []))
+                if result["score"] < 10 or not (result["titleCount"] or result["promotions"] or result["upwardMoves"]):
+                    continue
+                candidates.append((result, window))
+        if not candidates:
+            continue
+        result, window = max(candidates, key=lambda item: (item[0]["score"], item[0]["pct"], len(item[1])))
+        milestones = []
+        for row in window:
+            if row["movement"] == "P":
+                milestones.append(f"Promoted from {row['tier']} in {row['label']}")
+            if row["movement"] == "R":
+                milestones.append(f"Relegated from {row['tier']} in {row['label']}")
+        labels_by_season = {row["season"]: row["label"] for row in window}
+        milestones.extend(
+            f"Won {title['tier']} in {labels_by_season.get(title.get('season', ''), title.get('season', ''))}"
+            for title in result["titles"]
+        )
+        eras.append(
+            {
+                "id": f"{roster_file.removesuffix('.htm')}--{window[0]['season']}--{window[-1]['season']}",
+                "team": window[-1]["team"],
+                "file": roster_file,
+                "startSeason": window[0]["season"],
+                "endSeason": window[-1]["season"],
+                "startLabel": window[0]["label"],
+                "endLabel": window[-1]["label"],
+                "seasons": window,
+                "tierPath": [row["tier"] for row in window],
+                "milestones": milestones,
+                **result,
+            }
+        )
+    return sorted(eras, key=lambda item: (-item["score"], -item["pct"], item["team"].casefold()))[:12]
+
+
+def load_rivalry_registry(team_meta: dict[str, dict], path: Path = RIVALRIES_SOURCE_PATH) -> dict[tuple[str, str], dict]:
+    payload = read_json(path, {"version": 1, "rivalries": []})
+    if not isinstance(payload, dict) or not isinstance(payload.get("rivalries", []), list):
+        raise ValueError(f"{path.relative_to(ROOT)} must contain a rivalry list")
+    registry = {}
+    known = set(team_meta)
+    for position, entry in enumerate(payload.get("rivalries", []), 1):
+        if not isinstance(entry, dict):
+            raise ValueError(f"Rivalry entry {position} must be an object")
+        teams = entry.get("teams")
+        name = clean(entry.get("name"))
+        if not isinstance(teams, list) or len(teams) != 2 or teams[0] == teams[1]:
+            raise ValueError(f"Rivalry entry {position} must contain exactly two different team roster IDs")
+        pair = tuple(sorted(file_name(team) for team in teams))
+        unknown = [team for team in pair if team not in known]
+        if unknown:
+            raise ValueError(f"Rivalry entry {position} references unknown team(s): {', '.join(unknown)}")
+        if not name:
+            raise ValueError(f"Rivalry entry {position} is missing a name")
+        if pair in registry:
+            raise ValueError(f"Rivalry entry {position} duplicates the pair {' / '.join(pair)}")
+        registry[pair] = {
+            "name": name,
+            "location": clean(entry.get("location")),
+            "featured": bool(entry.get("featured")),
+        }
+    return registry
+
+
+def rivalry_score(matchup: dict, manual: dict | None = None) -> float:
+    combined = matchup.get("combined", {})
+    games = numeric(combined.get("games"))
+    if not games:
+        return 12 if manual else 0
+    wins = numeric(combined.get("wins"))
+    losses = numeric(combined.get("losses"))
+    frequency = min(games, 30)
+    balance = 12 * max(0, 1 - abs(wins - losses) / games)
+    margin = 10 * max(0, 1 - abs(numeric(combined.get("avgDiff"))) / 15)
+    supercup = min(numeric(matchup.get("supercup", {}).get("games")) * 2, 10)
+    manual_bonus = 8 if manual else 0
+    location_bonus = 4 if manual and manual.get("location") else 0
+    return round(frequency + balance + margin + supercup + manual_bonus + location_bonus, 2)
+
+
+def build_rivalries(head_to_head: dict, team_meta: dict[str, dict], registry_path: Path = RIVALRIES_SOURCE_PATH) -> list[dict]:
+    registry = load_rivalry_registry(team_meta, registry_path)
+    seen = set()
+    rivalries = []
+    for matchup in head_to_head.get("matchups", []):
+        files = tuple(sorted(file_name(team.get("file")) for team in matchup.get("teams", [])))
+        if len(files) != 2 or not all(files) or files in seen:
+            continue
+        seen.add(files)
+        manual = registry.get(files)
+        games = numeric(matchup.get("combined", {}).get("games"))
+        if games < 6 and not manual:
+            continue
+        teams = [
+            team_meta.get(file_name(team.get("file")), {"team": clean(team.get("team")), "file": file_name(team.get("file"))})
+            for team in matchup.get("teams", [])
+        ]
+        rivalries.append(
+            {
+                **matchup,
+                "id": "--".join(roster_file.removesuffix(".htm") for roster_file in files),
+                "teams": teams,
+                "name": manual.get("name") if manual else f"{teams[0]['team']} vs {teams[1]['team']}",
+                "location": manual.get("location", "") if manual else "",
+                "featured": bool(manual and manual.get("featured")),
+                "manual": bool(manual),
+                "score": rivalry_score(matchup, manual),
+            }
+        )
+    return sorted(rivalries, key=lambda item: (-int(item["featured"]), -item["score"], item["name"].casefold()))
+
+
+def build_history_stories(index: dict, player_index: dict, records: dict, head_to_head: dict, registry_path: Path = RIVALRIES_SOURCE_PATH) -> dict:
+    _, team_meta = archived_team_seasons(index)
+    championships = records.get("championships", [])
+    latest = index.get("seasons", [{}])[-1] if index.get("seasons") else {}
+    return {
+        "version": 1,
+        "generatedAtUtc": datetime.now(timezone.utc).isoformat(),
+        "throughSeason": latest.get("season", ""),
+        "throughLabel": latest.get("label", latest.get("season", "")),
+        "timeline": timeline_records(index, championships, player_index),
+        "eras": build_eras(index, championships),
+        "rivalries": build_rivalries(head_to_head, team_meta, registry_path),
+        "methodology": {
+            "era": "Best contiguous 2-5 season club window; titles, promotion and upward movement, top-tier finishes and winning seasons add value; relegation subtracts value.",
+            "rivalry": "At least six meetings unless manually listed; rank balances frequency, series parity, scoring margin, Super Cup meetings and manual/location bonuses.",
+        },
     }
 
 
@@ -582,6 +1046,8 @@ def main() -> int:
     atomic_dump_json(FINANCE_OUTPUT_PATH, finance, ensure_ascii=False, separators=(",", ":"))
     head_to_head = build_head_to_head(index)
     atomic_dump_json(HEAD_TO_HEAD_OUTPUT_PATH, head_to_head, ensure_ascii=False, separators=(",", ":"))
+    stories = build_history_stories(index, player_index, payload, head_to_head)
+    atomic_dump_json(STORIES_OUTPUT_PATH, stories, ensure_ascii=False, separators=(",", ":"))
     earnings_by_key = {item.get("key", ""): item for item in finance.get("earnings", [])}
     profile_count, bucket_counts = build_player_profiles(index, player_index, earnings_by_key)
     print(
@@ -596,6 +1062,10 @@ def main() -> int:
     print(
         f"History head-to-head: {len(head_to_head['teams'])} teams -> "
         f"{HEAD_TO_HEAD_OUTPUT_PATH.relative_to(ROOT)}"
+    )
+    print(
+        f"History stories: {len(stories['timeline'])} seasons, {len(stories['eras'])} eras, "
+        f"{len(stories['rivalries'])} rivalries -> {STORIES_OUTPUT_PATH.relative_to(ROOT)}"
     )
     return 0
 

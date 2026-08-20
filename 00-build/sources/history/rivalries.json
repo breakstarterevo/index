@@ -1,0 +1,47 @@
+{
+  "version": 1,
+  "rivalries": [
+    {
+      "teams": ["roster5.htm", "roster28.htm"],
+      "name": "Manchester Derby",
+      "location": "Manchester",
+      "featured": true
+    },
+    {
+      "teams": ["roster9.htm", "roster26.htm"],
+      "name": "Derby della Madonnina",
+      "location": "Milan",
+      "featured": true
+    },
+    {
+      "teams": ["roster8.htm", "roster11.htm"],
+      "name": "Madrid Derby",
+      "location": "Madrid",
+      "featured": true
+    },
+    {
+      "teams": ["roster23.htm", "roster22.htm"],
+      "name": "North London Derby",
+      "location": "North London",
+      "featured": true
+    },
+    {
+      "teams": ["roster10.htm", "roster6.htm"],
+      "name": "M23 Derby",
+      "location": "South London / Sussex",
+      "featured": true
+    },
+    {
+      "teams": ["roster24.htm", "roster8.htm"],
+      "name": "El Clásico",
+      "location": "Spain",
+      "featured": true
+    },
+    {
+      "teams": ["roster21.htm", "roster15.htm"],
+      "name": "Le Classique",
+      "location": "France",
+      "featured": true
+    }
+  ]
+}

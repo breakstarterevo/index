@@ -780,7 +780,6 @@ select, .small-input, .filter-bar input {
 }
 
 .dashboard-grid,
-.quick-link-grid,
 .team-directory-grid,
 .timeline-grid,
 .filter-bar {
@@ -798,7 +797,6 @@ select, .small-input, .filter-bar input {
 }
 
 .dashboard-card,
-.quick-link-grid a,
 .team-directory-card,
 .timeline-card {
   background: #fff;
@@ -810,14 +808,12 @@ select, .small-input, .filter-bar input {
 }
 
 .dashboard-card:hover,
-.quick-link-grid a:hover,
 .team-directory-card:hover {
   box-shadow: 0 6px 18px rgba(8, 24, 50, .12);
   text-decoration: none;
 }
 
-.dashboard-card-label,
-.quick-link-grid span {
+.dashboard-card-label {
   color: #9b0000;
   display: block;
   font-size: 11px;
@@ -880,16 +876,6 @@ select, .small-input, .filter-bar input {
 .supercup-champion-row td {
   background: #fff8dc;
   border-color: #d7bd64;
-}
-
-.quick-link-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  margin-bottom: 14px;
-}
-
-.quick-link-grid strong {
-  display: block;
-  line-height: 1.35;
 }
 
 .team-directory-grid {
@@ -1311,6 +1297,237 @@ select, .small-input, .filter-bar input {
 .muted { color: var(--hist-muted); }
 .empty { padding: 16px; color: var(--hist-muted); background: #f7f9fc; border: 1px dashed #c8d0dc; }
 
+.section-heading-row,
+.story-section-heading {
+  align-items: end;
+  display: flex;
+  gap: 18px;
+  justify-content: space-between;
+}
+
+.section-heading-row h2,
+.story-section-heading h2 { margin-bottom: 2px; }
+
+.story-preview { border-top: 3px solid var(--hist-gold); }
+.story-preview-grid { margin-top: 10px; }
+
+.story-hero {
+  background: #fff;
+  border-left-color: var(--hist-gold);
+  padding: 18px 20px;
+}
+
+.story-hero h1 { font-size: 36px; }
+.story-hero p { color: var(--hist-muted); margin: 5px 0 10px; }
+
+.story-anchor-nav {
+  background: #fff;
+  border: 1px solid var(--hist-line);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-bottom: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.story-anchor-nav a {
+  border-right: 1px solid var(--hist-line);
+  color: var(--hist-ink);
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: 1px;
+  padding: 10px 12px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.story-anchor-nav a:last-child { border-right: 0; }
+.story-anchor-nav a:hover { background: var(--hist-ink); color: #fff; text-decoration: none; }
+
+.story-section {
+  scroll-margin-top: 52px;
+  margin: 18px 0 28px;
+}
+
+.story-section-heading {
+  border-bottom: 3px solid var(--hist-ink);
+  margin-bottom: 12px;
+  padding: 0 2px 7px;
+}
+
+.story-section-heading h2 { color: var(--hist-ink); font-size: 25px; }
+.story-section-heading p { color: var(--hist-muted); font-size: 12px; margin: 0; max-width: 650px; text-align: right; }
+
+.story-timeline {
+  padding-left: 28px;
+  position: relative;
+}
+
+.story-timeline::before {
+  background: var(--hist-line);
+  bottom: 0;
+  content: "";
+  left: 8px;
+  position: absolute;
+  top: 0;
+  width: 3px;
+}
+
+.story-season-card,
+.era-card,
+.rivalry-card {
+  background: #fff;
+  border: 1px solid var(--hist-line);
+  border-top: 3px solid var(--hist-ink);
+  box-shadow: 2px 2px 0 rgba(8, 24, 50, .06);
+}
+
+.story-season-card {
+  margin-bottom: 14px;
+  padding: 14px;
+  position: relative;
+}
+
+.story-season-marker {
+  background: var(--hist-gold);
+  border: 3px solid #fff;
+  box-shadow: 0 0 0 2px var(--hist-gold);
+  height: 14px;
+  left: -27px;
+  position: absolute;
+  top: 22px;
+  width: 14px;
+}
+
+.story-season-head,
+.era-card header,
+.rivalry-head {
+  align-items: center;
+  display: flex;
+  gap: 12px;
+}
+
+.story-season-head { border-bottom: 1px solid var(--hist-line); justify-content: space-between; padding-bottom: 8px; }
+.story-season-head h3 { color: var(--hist-ink); font-size: 24px; margin: 2px 0; }
+
+.story-season-grid {
+  display: grid;
+  gap: 14px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  padding: 12px 0;
+}
+
+.story-season-grid section { border-right: 1px solid var(--hist-line); padding-right: 14px; }
+.story-season-grid section:last-child { border-right: 0; padding-right: 0; }
+.story-season-grid h4 { color: var(--hist-ink); font-size: 11px; letter-spacing: 1.4px; margin: 0 0 7px; text-transform: uppercase; }
+
+.story-fact-row {
+  align-items: center;
+  border-bottom: 1px solid #e8edf3;
+  display: grid;
+  font-size: 12px;
+  gap: 8px;
+  grid-template-columns: 65px minmax(0, 1fr) auto;
+  min-height: 30px;
+  padding: 4px 0;
+}
+
+.story-fact-row > span:first-child { color: var(--hist-muted); font-size: 10px; font-weight: 900; letter-spacing: .5px; }
+.story-fact-row small { color: var(--hist-muted); text-align: right; }
+.story-supercup-row { border-top: 2px solid #d7b35b; margin-top: 6px; }
+
+.story-season-footer {
+  background: var(--hist-soft);
+  border-top: 1px solid var(--hist-line);
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin: 0 -14px -14px;
+  padding: 9px 14px;
+}
+
+.story-season-footer > div { align-items: center; display: flex; flex-wrap: wrap; font-size: 11px; gap: 6px; }
+.story-season-footer > div > strong { color: var(--hist-muted); flex-basis: 100%; font-size: 9px; letter-spacing: 1px; text-transform: uppercase; }
+.story-movement-item { align-items: center; display: inline-flex; gap: 3px; }
+
+.era-grid { display: grid; gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.era-card { border-top-color: var(--hist-gold); padding: 13px; }
+.era-card { min-width: 0; overflow: hidden; width: 100%; }
+.era-card header img { height: 44px; object-fit: contain; width: 44px; }
+.era-card header h3 { font-size: 18px; margin: 2px 0; }
+.era-card header p { color: var(--hist-muted); margin: 0; }
+
+.story-rank {
+  align-items: center;
+  background: var(--hist-ink);
+  color: #fff;
+  display: inline-flex;
+  flex: 0 0 28px;
+  font-size: 12px;
+  font-weight: 900;
+  height: 28px;
+  justify-content: center;
+}
+
+.era-summary,
+.rivalry-summary {
+  background: var(--hist-soft);
+  border-bottom: 1px solid var(--hist-line);
+  border-top: 1px solid var(--hist-line);
+  display: grid;
+  gap: 1px;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 11px 0;
+}
+
+.era-summary span,
+.rivalry-summary span { font-size: 10px; padding: 7px; text-align: center; }
+.era-summary strong,
+.rivalry-summary strong { color: var(--hist-ink); display: block; font-size: 14px; }
+
+.era-tier-path { align-items: stretch; display: flex; gap: 5px; margin: 10px 0; overflow-x: auto; }
+.era-tier-path i { align-self: center; color: var(--hist-muted); font-style: normal; }
+.era-tier-node { border: 1px solid var(--hist-line); display: flex; flex: 1 0 82px; flex-direction: column; padding: 6px; text-align: center; }
+.era-tier-node strong { color: var(--hist-ink); font-size: 13px; }
+.era-tier-node small { color: var(--hist-muted); font-size: 9px; }
+.era-tier-node.tier-clb { border-top: 4px solid #a66400; }
+.era-tier-node.tier-elb { border-top: 4px solid #1d5d95; }
+.era-tier-node.tier-ecl { border-top: 4px solid #2f7d4b; }
+.era-milestones { color: var(--hist-muted); font-size: 11px; line-height: 1.5; margin: 8px 0 0; padding-left: 18px; }
+
+.rivalry-list { display: grid; gap: 10px; }
+.story-subsection-heading {
+  align-items: baseline;
+  border-bottom: 1px solid var(--hist-line);
+  display: flex;
+  justify-content: space-between;
+  margin: 16px 0 8px;
+  padding-bottom: 5px;
+}
+.story-subsection-heading:first-of-type { margin-top: 0; }
+.story-subsection-heading h3 { color: var(--hist-ink); font-size: 15px; margin: 0; text-transform: uppercase; }
+.story-subsection-heading span { color: var(--hist-muted); font-size: 11px; }
+.rivalry-card { padding: 12px; }
+.rivalry-card { min-width: 0; overflow: hidden; width: 100%; }
+.rivalry-head { display: grid; grid-template-columns: 28px minmax(150px, 1fr) minmax(230px, 1.25fr) minmax(150px, 1fr); }
+.rivalry-head > *,
+.rivalry-team,
+.rivalry-title { min-width: 0; }
+.rivalry-team { align-items: center; display: flex; gap: 8px; }
+.rivalry-team:last-child { flex-direction: row-reverse; text-align: right; }
+.rivalry-team img { height: 35px; object-fit: contain; width: 35px; }
+.rivalry-title { text-align: center; }
+.rivalry-title h3 { color: var(--hist-ink); font-size: 17px; margin: 2px 0; }
+.rivalry-title .history-meta { justify-content: center; }
+.story-featured { background: #fff1bf; border-color: #c78b00; color: #755000; }
+.rivalry-card details { border-top: 1px solid var(--hist-line); margin-top: 8px; padding-top: 8px; }
+.rivalry-card summary { color: #0645ad; cursor: pointer; font-size: 11px; font-weight: 900; letter-spacing: .5px; text-transform: uppercase; }
+.rivalry-card details .table-wrap { margin-top: 8px; }
+.rivalry-notables { background: var(--hist-soft); display: grid; gap: 10px; grid-template-columns: repeat(3, 1fr); margin-top: 8px; padding: 8px; }
+.rivalry-notables p { font-size: 11px; margin: 0; }
+.rivalry-results-heading { color: var(--hist-ink); font-size: 11px; letter-spacing: 1px; margin: 13px 0 5px; text-transform: uppercase; }
+
 @media (max-width: 850px) {
   .dashboard-grid.compact-summary { grid-template-columns: 1fr; }
   .history-brand-row { grid-template-columns: 1fr; padding: 8px 12px; }
@@ -1327,10 +1544,23 @@ select, .small-input, .filter-bar input {
   .history-grid.main-rail { grid-template-columns: 1fr; }
   .cup-bracket { grid-template-columns: 1fr; overflow: visible; }
   .dashboard-grid,
-  .quick-link-grid,
   .team-directory-grid,
   .timeline-grid,
   .filter-bar { grid-template-columns: 1fr; }
+  .story-anchor-nav { top: 0; }
+  .story-section { scroll-margin-top: 52px; }
+  .story-section-heading { align-items: start; flex-direction: column; gap: 4px; }
+  .story-section-heading p { text-align: left; }
+  .story-season-grid,
+  .story-season-footer,
+  .era-grid,
+  .rivalry-notables { grid-template-columns: 1fr; }
+  .story-season-grid section { border-bottom: 1px solid var(--hist-line); border-right: 0; padding: 0 0 10px; }
+  .rivalry-head { grid-template-columns: 28px 1fr 1fr; }
+  .rivalry-title { grid-column: 1 / -1; grid-row: 2; padding-top: 8px; }
+  .rivalry-team:last-child { flex-direction: row; text-align: left; }
+  .rivalry-team .team-mini { white-space: normal; }
+  .rivalry-summary { grid-template-columns: repeat(2, 1fr); }
   .table-tools {
     align-items: stretch;
     gap: 6px;
