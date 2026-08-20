@@ -123,7 +123,7 @@ class YouthIntakeJsonTests(unittest.TestCase):
 
         enriched = _enrich_intake_player(
             {"name": "Alvin Robertson", "tierRaw": "", "tier": ""},
-            "Monaco",
+            "Arsenal",
             {"alvinrobertson": [rated_player]},
         )
 

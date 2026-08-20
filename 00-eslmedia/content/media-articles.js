@@ -19,8 +19,8 @@ window.ESL_TEAM_LOGOS = {
   "Monaco": "monaco.jpg",
   "Paris Saint-Germain": "psg.jpg",
   "Real Madrid": "realmadrid.jpg",
-  "Sheffield United": "sheffield.jpg",
-  "Sporting CP": "sportingcp.jpg",
+  "AC Sparta Praha": "acspartapraha.png",
+  "Arsenal": "arsenal.png",
   "Tottenham Hotspur": "tottenham.jpg",
   "Valencia": "valencia.jpg"
 };
@@ -37,7 +37,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "Season 5 - Sim 1",
     blurb: "Barcelona delivered November's loudest result, Richmond found Tier 1 control, and Tier 2 produced a three-team promotion argument.",
-    teams: ["AC Milan", "AFC Richmond", "Ajax", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Manchester United", "Sheffield United", "Tottenham Hotspur", "Valencia"],
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Manchester United", "AC Sparta Praha", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Andre Iguodala", "Joe Barry Carroll", "Kiki Vandeweghe", "Larry Drew", "Michael Cooper", "Moses Malone", "Steve Johnson"]
   },
   {
@@ -50,7 +50,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Damon Cross",
     meta: "Season 5 - Sim 1",
     blurb: "Moses Malone, George Gervin and Bernard King lead the first three-tier MVP ballots as team results separate extraordinary stat lines.",
-    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Barcelona", "Benfica", "Brighton", "FL Fart", "Inter Milan", "Monaco", "Real Madrid", "Sheffield United", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Barcelona", "Benfica", "Brighton", "FL Fart", "Inter Milan", "Monaco", "Real Madrid", "AC Sparta Praha", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Andre Drummond", "Andre Iguodala", "Bernard King", "Chris Bosh", "George Gervin", "Isiah Thomas", "Joe Barry Carroll", "Kiki Vandeweghe", "Larry Drew", "Larry Nance", "Moses Malone", "Sidney Moncrief", "Steve Johnson", "Steve Kerr", "Tom Chambers"]
   },
   {
@@ -63,7 +63,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Damon Cross",
     meta: "Season 5 - Sim 1",
     blurb: "FL Fart, Richmond and Benfica rise while Atletico, Bayern and Manchester United confront damaging first-month evidence.",
-    teams: ["AC Milan", "AFC Richmond", "Ajax", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Inter Milan", "Manchester United", "Sheffield United", "Tottenham Hotspur"],
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Inter Milan", "Manchester United", "AC Sparta Praha", "Tottenham Hotspur"],
     playerTags: ["Johnny Moore", "Larry Drew", "Michael Cooper", "Moses Malone", "Tree Rollins"]
   },
   {
@@ -76,7 +76,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 5 - Sim 1",
     blurb: "Milan and Palace occupy Tier 1's bottom two, Inter and Ajax hold the Tier 2 promotion places, and Barcelona lead a four-team chase.",
-    teams: ["AC Milan", "AFC Richmond", "Ajax", "Atletico Madrid", "Aston Villa", "Barcelona", "Bayern Munich", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Monaco", "Sheffield United", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Atletico Madrid", "Aston Villa", "Barcelona", "Bayern Munich", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Monaco", "AC Sparta Praha", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: []
   },
   {
@@ -102,7 +102,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 5 - Sim 1",
     blurb: "FL Fart top the trust board, but Inter Milan and Ajax hold the promotion places in a three-team breakaway.",
-    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Bayern Munich", "FL Fart", "Inter Milan", "Marseille", "Sheffield United"],
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Bayern Munich", "FL Fart", "Inter Milan", "Marseille", "AC Sparta Praha"],
     playerTags: ["Andre Iguodala", "Johnny Moore", "Larry Drew", "Larry Nance", "Robert Parish", "Steve Johnson", "Tree Rollins", "World B. Free"]
   },
   {
@@ -115,21 +115,21 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 5 - Sim 1",
     blurb: "Barcelona lead the November trust board, with Valencia, Juventus and Tottenham packed behind the division's only promotion place.",
-    teams: ["Barcelona", "Juventus", "Manchester City", "Manchester United", "Monaco", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["Barcelona", "Juventus", "Manchester City", "Manchester United", "Monaco", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Andre Drummond", "Bernard King", "Brian Shaw", "Chris Bosh", "Hubert Davis", "Isiah Thomas", "J.J. Redick", "Larry Smith", "Luol Deng", "Paul Pierce", "Steve Kerr"]
   },
   // 1985 training camp and preseason package
   {
-    file: "articles/1985_preseason_steve_johnson_sheffield.html",
-    title: "Steve Johnson Scored 40 A Night. Sheffield Lost Every Game.",
+    file: "articles/1985_preseason_steve_johnson_ac_sparta_praha.html",
+    title: "Steve Johnson Scored 40 A Night. AC Sparta Praha Lost Every Game.",
     category: "Feature",
     desk: "Analysis",
     sortKey: "2026-08-14-06",
     tag: "Preseason Feature",
     author: "Damon Cross",
-    meta: "1985 Preseason - Sheffield United",
-    blurb: "Steve Johnson averaged 39.5 points and 12.2 rebounds while Sheffield went 0-6, turning the preseason's best individual line into a structural indictment.",
-    teams: ["Ajax", "Aston Villa", "Marseille", "Sheffield United"],
+    meta: "1985 Preseason - AC Sparta Praha",
+    blurb: "Steve Johnson averaged 39.5 points and 12.2 rebounds while AC Sparta Praha went 0-6, turning the preseason's best individual line into a structural indictment.",
+    teams: ["Ajax", "Aston Villa", "Marseille", "AC Sparta Praha"],
     playerTags: ["Andre Iguodala", "Bimbo Coles", "Cliff Robinson", "Larry Nance", "Maurice Cheeks", "Robert Parish", "Steve Johnson", "Xavier McDaniel"]
   },
   {
@@ -155,7 +155,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "1985 Preseason - ELB",
     blurb: "Ajax combines the tier's best margin with a credible two-way structure, leaving Inter and FL Fart as the first challengers.",
-    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Bayern Munich", "FL Fart", "Inter Milan", "Marseille", "Sheffield United"],
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Bayern Munich", "FL Fart", "Inter Milan", "Marseille", "AC Sparta Praha"],
     playerTags: ["Andre Iguodala", "Bill Cartwright", "Bimbo Coles", "Cliff Robinson", "David Thompson", "Dennis Johnson", "George Gervin", "Gus Williams", "Jamaal Wilkes", "James Donaldson", "Jeff Ruland", "Johnny Moore", "Kevin McHale", "Kyle Lowry", "Larry Drew", "Larry Nance", "Maurice Cheeks", "Norm Nixon", "Robert Parish", "Steve Johnson", "Trae Young", "Tree Rollins", "Xavier McDaniel"]
   },
   {
@@ -168,7 +168,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "1985 Preseason - ECL",
     blurb: "Manchester City's dominant margin leads Barcelona and Valencia in an ECL field with only one promotion place and no room for a slow start.",
-    teams: ["Barcelona", "Juventus", "Manchester City", "Manchester United", "Monaco", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["Barcelona", "Juventus", "Manchester City", "Manchester United", "Monaco", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Alvin Robertson", "Andre Drummond", "Bernard King", "Bilal Coulibaly", "Darnell Valentine", "Dirk Nowitzki", "Eddy Curry", "Hubert Davis", "Isiah Thomas", "J.J. Redick", "Jalen Duren", "Jim Jackson", "Kurt Thomas", "Luol Deng", "Mike Conley", "Mike Dunleavy", "Otis Thorpe", "Paul Pierce", "Pervis Ellison", "Thaddeus Young", "Tony Parker", "Trayce Jackson-Davis"]
   },
   {
@@ -181,7 +181,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "1985 Preseason - Scouting",
     blurb: "Pierce, Drummond, Iguodala and several less obvious camp risers converted development gains into clear jobs and repeatable preseason production.",
-    teams: ["Ajax", "Barcelona", "Brighton", "Crystal Palace", "Manchester City", "Monaco", "Real Madrid", "Sheffield United", "Valencia"],
+    teams: ["Ajax", "Barcelona", "Brighton", "Crystal Palace", "Manchester City", "Monaco", "Real Madrid", "AC Sparta Praha", "Valencia"],
     playerTags: ["Alex English", "Allen Leavell", "Alvin Robertson", "Andre Drummond", "Andre Iguodala", "Bernard King", "Cliff Robinson", "Darrell Griffith", "Isiah Thomas", "Jack Sikma", "Kiki Vandeweghe", "Kurt Nimphius", "Luol Deng", "Maurice Cheeks", "Otis Thorpe", "Paul Pierce", "Pervis Ellison", "Reggie Theus", "Rickey Green", "Rolando Blackman", "Steve Johnson"]
   },
   {
@@ -208,7 +208,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Damon Cross",
     meta: "1985 Offseason - After FA1",
     blurb: "FA1 secured seven franchise incumbents and sent Mark Aguirre to Chelsea, yet Griffith, Gervin, Bird and Free remain available for FA2.",
-    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Benfica", "Brighton", "Chelsea", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Real Madrid", "Sheffield United"],
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Benfica", "Brighton", "Chelsea", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha"],
     playerTags: ["Allen Leavell", "Buck Williams", "Cliff Robinson", "Darrell Griffith", "George Gervin", "Greg Ballard", "Jack Sikma", "James Bailey", "Jim Paxson", "Johnny Moore", "Kelly Tripucka", "Larry Bird", "Larry Nance", "Magic Johnson", "Mark Aguirre", "Sidney Moncrief", "World B. Free"]
   },
   {
@@ -221,7 +221,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "1985 Offseason - After FA1",
     blurb: "Nine opening-round contracts changed the roster map, but Griffith, Gervin, Bird and Free leave the remaining star tier intact.",
-    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP"],
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Monaco", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha", "Arsenal"],
     playerTags: ["Allen Leavell", "Bill Cartwright", "Buck Williams", "Cliff Robinson", "Darrell Griffith", "George Gervin", "Gerald Henderson", "Greg Ballard", "Jack Sikma", "James Bailey", "Johnny Moore", "John Long", "Kelly Tripucka", "Larry Bird", "Larry Nance", "Magic Johnson", "Mark Aguirre", "Norm Nixon", "Rickey Green", "Robert Reid", "Sidney Moncrief", "World B. Free"]
   },
   {
@@ -234,7 +234,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "1985 Offseason - After FA1",
     blurb: "Inter Milan leads the post-FA1 leverage board ahead of AC Milan as the largest remaining cap positions meet urgent roster needs.",
-    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Brighton", "Chelsea", "Inter Milan", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP", "Tottenham Hotspur"],
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Brighton", "Chelsea", "Inter Milan", "Monaco", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha", "Arsenal", "Tottenham Hotspur"],
     playerTags: ["Allen Leavell", "Bill Cartwright", "Darrell Griffith", "Eddie Johnson", "George Gervin", "Gerald Henderson", "Greg Ballard", "Jack Sikma", "Kelly Tripucka", "Larry Bird", "Larry Nance", "Magic Johnson", "Mark Aguirre", "Norm Nixon", "Rickey Green", "Robert Reid", "Sidney Moncrief", "World B. Free"]
   },
   // Season 4 Sim 2 - December 1984 package
@@ -248,7 +248,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "Season 4 - Sim 2",
     blurb: "Real Madrid's perfect run, Richmond's continued control and Tier 3's three-team promotion fight defined December.",
-    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Barcelona", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Tottenham Hotspur"],
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Barcelona", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha", "Tottenham Hotspur"],
     playerTags: ["Kelly Tripucka", "Larry Nance", "Paul Pierce", "Sidney Moncrief", "World B. Free"]
   },
   {
@@ -287,7 +287,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 4 - Sim 2",
     blurb: "Chelsea and Benfica remain in danger, Real and PSG control promotion, and Barcelona lead a three-team Tier 3 chase.",
-    teams: ["AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Chelsea", "Crystal Palace", "Inter Milan", "Juventus", "Marseille", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Tottenham Hotspur", "Valencia"],
+    teams: ["AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Chelsea", "Crystal Palace", "Inter Milan", "Juventus", "Marseille", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Moses Malone", "Paul Pierce"]
   },
   {
@@ -313,7 +313,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 4 - Sim 2",
     blurb: "Real Madrid's perfect month dislodges PSG, Ajax rises and Aston Villa collapses down the Tier 2 board.",
-    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Juventus", "Marseille", "Paris Saint-Germain", "Real Madrid", "Sheffield United"],
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Juventus", "Marseille", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha"],
     playerTags: ["Andre Iguodala", "Bill Cartwright", "Dennis Johnson", "Gerald Henderson", "Johnny Moore", "Kelly Tripucka", "Larry Nance", "Robert Parish", "Sidney Moncrief", "Steve Johnson"]
   },
   {
@@ -326,7 +326,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 4 - Sim 2",
     blurb: "Barcelona own first place, Inter own the strongest margin and Tottenham keep surviving the evidence.",
-    teams: ["Barcelona", "Inter Milan", "Manchester City", "Manchester United", "Monaco", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["Barcelona", "Inter Milan", "Manchester City", "Manchester United", "Monaco", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Andre Drummond", "Chris Bosh", "Doug Christie", "Isiah Thomas", "Josh Richardson", "Kirk Hinrich", "Paul Pierce", "World B. Free"]
   },
   // Season 4 Sim 1 - November 1984 package
@@ -340,7 +340,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "Season 4 - Sim 1",
     blurb: "Richmond imposed order on Tier 1, PSG made promotion look practical, and Tier 3 answered with the league's most crowded race.",
-    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Benfica", "Chelsea", "Inter Milan", "Manchester City", "Manchester United", "Marseille", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur"],
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Benfica", "Chelsea", "Inter Milan", "Manchester City", "Manchester United", "Marseille", "Paris Saint-Germain", "Arsenal", "Tottenham Hotspur"],
     playerTags: ["Kelly Tripucka", "Michael Cooper", "Tom Chambers"]
   },
   {
@@ -353,7 +353,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Damon Cross",
     meta: "Season 4 - Sim 1",
     blurb: "Tom Chambers, Kelly Tripucka and Paul Pierce lead the first three-tier MVP ballots of the 1984 season.",
-    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Brighton", "Chelsea", "Manchester City", "Marseille", "Monaco", "Paris Saint-Germain", "Sheffield United", "Sporting CP", "Valencia"],
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Brighton", "Chelsea", "Manchester City", "Marseille", "Monaco", "Paris Saint-Germain", "AC Sparta Praha", "Arsenal", "Valencia"],
     playerTags: ["Andre Drummond", "B.J. Armstrong", "Bernard King", "Chris Bosh", "Isiah Thomas", "Joe Barry Carroll", "Johnny Moore", "Kelly Tripucka", "Kiki Vandeweghe", "Larry Nance", "Otis Birdsong", "Paul Pierce", "Rickey Green", "Robert Parish", "Sidney Moncrief", "Steve Johnson", "Tom Chambers"]
   },
   {
@@ -366,7 +366,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Damon Cross",
     meta: "Season 4 - Sim 1",
     blurb: "Richmond, PSG and Inter rise after forceful November runs, while Sporting, Manchester United and Juventus face harsher questions.",
-    teams: ["AFC Richmond", "Inter Milan", "Juventus", "Manchester United", "Paris Saint-Germain", "Sporting CP"],
+    teams: ["AFC Richmond", "Inter Milan", "Juventus", "Manchester United", "Paris Saint-Germain", "Arsenal"],
     playerTags: ["Chris Bosh", "Kelly Tripucka"]
   },
   {
@@ -379,7 +379,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 4 - Sim 1",
     blurb: "Chelsea and Benfica occupy Tier 1's bottom two, Real hold the second promotion place, and Barcelona have four pursuers.",
-    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: []
   },
   {
@@ -405,7 +405,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 4 - Sim 1",
     blurb: "PSG own the best profile, Real Madrid hold second, and Aston Villa have made the promotion gap uncomfortably small.",
-    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Juventus", "Marseille", "Paris Saint-Germain", "Real Madrid", "Sheffield United"],
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Juventus", "Marseille", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha"],
     playerTags: ["Andre Iguodala", "Bill Cartwright", "Dennis Johnson", "Gerald Henderson", "Kelly Tripucka", "Larry Nance", "Robert Parish", "Sidney Moncrief"]
   },
   {
@@ -418,7 +418,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 4 - Sim 1",
     blurb: "Barcelona hold first place, but Tottenham, Inter, Monaco and Manchester City have turned promotion into a crowded sprint.",
-    teams: ["Barcelona", "Inter Milan", "Manchester City", "Manchester United", "Monaco", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["Barcelona", "Inter Milan", "Manchester City", "Manchester United", "Monaco", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Andre Drummond", "Chris Bosh", "Doug Christie", "Isiah Thomas", "Josh Richardson", "Kirk Hinrich", "Paul Pierce", "World B. Free"]
   },
   // 1984 offseason - after FA2 package
@@ -432,7 +432,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "1984 Offseason - After FA2",
     blurb: "Rickey Green leads a thinner post-FA2 board, with Larry Smith's upside and Billy Knight's wing scoring shaping the next market wave.",
-    teams: ["Aston Villa", "Chelsea", "Crystal Palace", "Sheffield United", "Sporting CP"],
+    teams: ["Aston Villa", "Chelsea", "Crystal Palace", "AC Sparta Praha", "Arsenal"],
     playerTags: ["Rickey Green", "Larry Smith", "Billy Knight", "Mike Dunleavy", "James Bailey", "Mike McGee", "Al Wood", "Mike O'Koren", "Michael Wiley", "Kent Benson"]
   },
   {
@@ -444,8 +444,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Cap Rankings",
     author: "Nina Vale",
     meta: "1984 Offseason - After FA2",
-    blurb: "Aston Villa's $31.97 million in room sets the post-FA2 leverage board, while Juventus, Sheffield United and Sporting CP retain meaningful choices.",
-    teams: ["Aston Villa", "Atletico Madrid", "Chelsea", "Inter Milan", "Juventus", "Real Madrid", "Sheffield United", "Sporting CP", "Valencia"],
+    blurb: "Aston Villa's $31.97 million in room sets the post-FA2 leverage board, while Juventus, AC Sparta Praha and Arsenal retain meaningful choices.",
+    teams: ["Aston Villa", "Atletico Madrid", "Chelsea", "Inter Milan", "Juventus", "Real Madrid", "AC Sparta Praha", "Arsenal", "Valencia"],
     playerTags: []
   },
   {
@@ -471,7 +471,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "1984 Offseason - After FA2",
     blurb: "Rickey Green is the last clear starter atop a remaining market built around Larry Smith's upside, Billy Knight's scoring and targeted depth.",
-    teams: ["Aston Villa", "Chelsea", "Crystal Palace", "Sheffield United", "Sporting CP"],
+    teams: ["Aston Villa", "Chelsea", "Crystal Palace", "AC Sparta Praha", "Arsenal"],
     playerTags: ["Rickey Green", "Larry Smith", "Billy Knight", "Mike Dunleavy", "James Bailey", "Mike McGee", "Al Wood", "Mike O'Koren", "Michael Wiley", "Kent Benson", "Ricky Sobers", "Johnny Davis"]
   },
   // Season 3 Sim 5 March package
@@ -485,7 +485,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "Season 3 - Sim 5",
     blurb: "AC Milan stretched their winning streak, AFC Richmond kept command, and March made the promotion and relegation races feel less theoretical.",
-    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Valencia"],
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha", "Valencia"],
     playerTags: ["George Gervin", "Joe Barry Carroll", "Kelly Tripucka"]
   },
   {
@@ -497,8 +497,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Supercup",
     author: "Nina Vale",
     meta: "Season 3 - Sim 5",
-    blurb: "A regular-season-only Supercup draw ranking weights tier first and record second, putting Sporting CP, Ajax and Inter Milan on the hardest roads.",
-    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    blurb: "A regular-season-only Supercup draw ranking weights tier first and record second, putting Arsenal, Ajax and Inter Milan on the hardest roads.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: []
   },
   {
@@ -524,7 +524,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 5",
     blurb: "AFC Richmond stay first in Tier 1 while AC Milan's 6-0 month creates the strongest chase case.",
-    teams: ["AC Milan", "AFC Richmond", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "Sheffield United"],
+    teams: ["AC Milan", "AFC Richmond", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "AC Sparta Praha"],
     playerTags: ["Bernard King", "George Gervin", "Larry Drew", "Moses Malone", "Norm Nixon", "Rickey Green", "Sidney Moncrief", "Tom Chambers"]
   },
   {
@@ -550,7 +550,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 5",
     blurb: "PSG stay first in Tier 3, but Inter Milan's W5 close and Monaco's strange winning month keep the promotion race alive.",
-    teams: ["Barcelona", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["Barcelona", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Chris Bosh", "Darryl Dawkins", "Isiah Thomas", "Kelly Tripucka", "Kirk Hinrich", "Otis Birdsong", "Purvis Short", "World B. Free"]
   },
   {
@@ -563,7 +563,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 5",
     blurb: "Brighton and Palace hold the Tier 2 promotion places, PSG lead Tier 3, and Real Madrid and Atletico Madrid sit under serious relegation pressure.",
-    teams: ["Aston Villa", "Atletico Madrid", "Bayern Munich", "Brighton", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester United", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United"],
+    teams: ["Aston Villa", "Atletico Madrid", "Bayern Munich", "Brighton", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester United", "Monaco", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha"],
     playerTags: []
   },
   {
@@ -590,7 +590,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "Season 3 - Sim 4",
     blurb: "AFC Richmond finished February unbeaten, PSG owned the loudest lower-tier month, and the promotion lines sharpened across the ESL.",
-    teams: ["AFC Richmond", "Ajax", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP", "Tottenham Hotspur"],
+    teams: ["AFC Richmond", "Ajax", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha", "Arsenal", "Tottenham Hotspur"],
     playerTags: ["Brad Davis", "Isiah Thomas", "Kelly Tripucka", "Magic Johnson", "Sidney Moncrief", "Tom Chambers"]
   },
   {
@@ -616,7 +616,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 4",
     blurb: "AFC Richmond stay first after an unbeaten February while Chelsea rise and Benfica lose trust.",
-    teams: ["AC Milan", "AFC Richmond", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "Sheffield United"],
+    teams: ["AC Milan", "AFC Richmond", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "AC Sparta Praha"],
     playerTags: ["Adrian Dantley", "Bernard King", "Jim Paxson", "Joe Barry Carroll", "Larry Bird", "Moses Malone", "Sidney Moncrief", "Tom Chambers"]
   },
   {
@@ -642,7 +642,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 4",
     blurb: "Paris Saint-Germain stay first after an 8-1 month, while Inter Milan and Barcelona remain the main chasers in Tier 3.",
-    teams: ["Barcelona", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["Barcelona", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Brad Davis", "Doug Christie", "Isiah Thomas", "Kelly Tripucka", "Kirk Hinrich", "Lewis Lloyd", "Otis Birdsong", "Paul Pierce", "Purvis Short", "World B. Free"]
   },
   {
@@ -655,7 +655,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 4",
     blurb: "PSG lead the ECL promotion race, Palace and Brighton hold Tier 2 promotion, and the relegation lines remain unforgiving.",
-    teams: ["Ajax", "Barcelona", "Bayern Munich", "Brighton", "Crystal Palace", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Paris Saint-Germain", "Real Madrid", "Sheffield United"],
+    teams: ["Ajax", "Barcelona", "Bayern Munich", "Brighton", "Crystal Palace", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha"],
     playerTags: ["Sidney Moncrief"]
   },
   {
@@ -667,8 +667,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Stock Report",
     author: "Damon Cross",
     meta: "Season 3 - Sim 4",
-    blurb: "AFC Richmond, PSG and Ajax rise after February, while Sporting CP, Marseille and Atletico Madrid take the sharpest hits.",
-    teams: ["AFC Richmond", "Ajax", "Atletico Madrid", "Inter Milan", "Manchester United", "Marseille", "Paris Saint-Germain", "Sporting CP"],
+    blurb: "AFC Richmond, PSG and Ajax rise after February, while Arsenal, Marseille and Atletico Madrid take the sharpest hits.",
+    teams: ["AFC Richmond", "Ajax", "Atletico Madrid", "Inter Milan", "Manchester United", "Marseille", "Paris Saint-Germain", "Arsenal"],
     playerTags: ["Brad Davis", "Cliff Robinson", "Kelly Tripucka", "Magic Johnson", "Robert Parish", "Tom Chambers"]
   },
   // Season 3 Sim 3 January package
@@ -695,7 +695,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Damon Cross",
     meta: "Season 3 - Sim 3",
     blurb: "Moses Malone, Kiki Vandeweghe and Kelly Tripucka lead the January MVP ladders as team context starts separating good numbers from winning value.",
-    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Inter Milan", "Juventus", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sporting CP"],
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Inter Milan", "Juventus", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Arsenal"],
     playerTags: ["Adrian Dantley", "Bernard King", "Brad Davis", "Cliff Robinson", "Isiah Thomas", "James Donaldson", "Jim Paxson", "Joe Barry Carroll", "Johnny Moore", "Kelly Tripucka", "Kiki Vandeweghe", "Larry Nance", "Lewis Lloyd", "Mark Aguirre", "Moses Malone", "Otis Birdsong", "Paul Pierce", "Purvis Short", "Robert Parish", "Rolando Blackman", "Sidney Moncrief", "Tom Chambers", "World B. Free"]
   },
   {
@@ -708,7 +708,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 3",
     blurb: "AFC Richmond remain first in Tier 1, but Benfica's January surge and AC Milan's steadiness make the top board tighter.",
-    teams: ["AFC Richmond", "AC Milan", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "Sheffield United"],
+    teams: ["AFC Richmond", "AC Milan", "Bayern Munich", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "AC Sparta Praha"],
     playerTags: ["Adrian Dantley", "Bernard King", "Jim Paxson", "Larry Bird", "Moses Malone", "Sidney Moncrief"]
   },
   {
@@ -734,7 +734,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 3",
     blurb: "Paris Saint-Germain stay first in Tier 3, but Inter Milan and Valencia made January's promotion race louder.",
-    teams: ["Barcelona", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["Barcelona", "Inter Milan", "Manchester City", "Monaco", "Paris Saint-Germain", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Brad Davis", "Isiah Thomas", "Kelly Tripucka", "Otis Birdsong", "Paul Pierce", "Purvis Short"]
   },
   {
@@ -747,7 +747,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 3",
     blurb: "PSG and Inter Milan are tied on the ECL promotion line, Brighton are only one game clear of Juventus, and the relegation races stay narrow.",
-    teams: ["Ajax", "Bayern Munich", "Brighton", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Valencia"],
+    teams: ["Ajax", "Bayern Munich", "Brighton", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha", "Valencia"],
     playerTags: []
   },
   {
@@ -800,7 +800,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 2",
     blurb: "AFC Richmond remain alone at the top of Tier 1, AC Milan move into the clearest chase slot, and Benfica lose ground after a 3-5 December.",
-    teams: ["AFC Richmond", "AC Milan", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "Sheffield United", "Bayern Munich"],
+    teams: ["AFC Richmond", "AC Milan", "Benfica", "Chelsea", "FL Fart", "Real Madrid", "AC Sparta Praha", "Bayern Munich"],
     playerTags: ["Adrian Dantley", "Bernard King", "Joe Barry Carroll", "Larry Drew", "Magic Johnson", "Sidney Moncrief", "Tom Chambers"]
   },
   {
@@ -826,7 +826,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 2",
     blurb: "Paris Saint-Germain go 7-0 in December and jump to the top of Tier 3, while Inter, Barcelona and Monaco chase the single promotion spot.",
-    teams: ["Paris Saint-Germain", "Inter Milan", "Barcelona", "Monaco", "Sporting CP", "Tottenham Hotspur", "Valencia", "Manchester City"],
+    teams: ["Paris Saint-Germain", "Inter Milan", "Barcelona", "Monaco", "Arsenal", "Tottenham Hotspur", "Valencia", "Manchester City"],
     playerTags: ["Brad Davis", "Kelly Tripucka", "Kirk Hinrich", "Otis Birdsong", "Purvis Short", "World B. Free"]
   },
   {
@@ -838,8 +838,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Promotion/Relegation",
     author: "Nina Vale",
     meta: "Season 3 - Sim 2",
-    blurb: "Crystal Palace and Brighton hold the Tier 2 promotion spots, PSG lead the Tier 3 race, and Bayern, Sheffield, Ajax and City remain under pressure.",
-    teams: ["Ajax", "Bayern Munich", "Brighton", "Crystal Palace", "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Paris Saint-Germain", "Sheffield United"],
+    blurb: "Crystal Palace and Brighton hold the Tier 2 promotion spots, PSG lead the Tier 3 race, and Bayern, AC Sparta Praha, Ajax and City remain under pressure.",
+    teams: ["Ajax", "Bayern Munich", "Brighton", "Crystal Palace", "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Paris Saint-Germain", "AC Sparta Praha"],
     playerTags: []
   },
   {
@@ -879,7 +879,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Damon Cross",
     meta: "Season 3 - Sim 1",
     blurb: "Joe Barry Carroll, Kiki Vandeweghe and Purvis Short headline the first November MVP ladders across the three ESL tiers.",
-    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "Inter Milan", "Juventus", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sporting CP", "Tottenham Hotspur"],
+    teams: ["AC Milan", "AFC Richmond", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "Inter Milan", "Juventus", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Arsenal", "Tottenham Hotspur"],
     playerTags: ["Adrian Dantley", "Bernard King", "Jim Paxson", "Joe Barry Carroll", "Kelly Tripucka", "Kiki Vandeweghe", "Larry Nance", "Lewis Lloyd", "Purvis Short", "Reggie Theus", "Robert Parish", "Rolando Blackman", "T.R. Dunn", "Tom Chambers", "World B. Free"]
   },
   {
@@ -892,7 +892,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 1",
     blurb: "AFC Richmond own the first full-season trust board at 7-0, while Benfica chase and Bayern fall into early danger.",
-    teams: ["AFC Richmond", "Benfica", "AC Milan", "Real Madrid", "Chelsea", "FL Fart", "Sheffield United", "Bayern Munich"],
+    teams: ["AFC Richmond", "Benfica", "AC Milan", "Real Madrid", "Chelsea", "FL Fart", "AC Sparta Praha", "Bayern Munich"],
     playerTags: ["Bernard King", "Jack Sikma", "Larry Bird", "Larry Drew", "Michael Cooper", "Moses Malone", "Rickey Green", "Sidney Moncrief"]
   },
   {
@@ -918,7 +918,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 1",
     blurb: "Barcelona lead a tight Tier 3 trust board, but Monaco, PSG and Inter are close enough to make one bad week costly.",
-    teams: ["Barcelona", "Monaco", "Paris Saint-Germain", "Inter Milan", "Sporting CP", "Valencia", "Tottenham Hotspur", "Manchester City"],
+    teams: ["Barcelona", "Monaco", "Paris Saint-Germain", "Inter Milan", "Arsenal", "Valencia", "Tottenham Hotspur", "Manchester City"],
     playerTags: ["Doug Christie", "Isiah Thomas", "Kelly Tripucka", "Kirk Hinrich", "Lewis Lloyd", "Paul Pierce", "Purvis Short", "World B. Free"]
   },
   {
@@ -931,7 +931,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Sim 1",
     blurb: "Palace and Brighton hold the Tier 2 promotion line, Barcelona lead a packed Tier 3 chase, and Tier 1 already has Bayern sweating.",
-    teams: ["Ajax", "Aston Villa", "Barcelona", "Bayern Munich", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Juventus", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Sheffield United"],
+    teams: ["Ajax", "Aston Villa", "Barcelona", "Bayern Munich", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Juventus", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "AC Sparta Praha"],
     playerTags: []
   },
   {
@@ -958,7 +958,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "Season 3 - Preseason Sim 1",
     blurb: "Benfica took the first Tier 1 chair, Crystal Palace owned the largest margin profile, and Tier 3 opened as a three-team argument.",
-    teams: ["Benfica", "AFC Richmond", "AC Milan", "Bayern Munich", "FL Fart", "Real Madrid", "Chelsea", "Sheffield United", "Crystal Palace", "Aston Villa", "Ajax", "Brighton", "Juventus", "Marseille", "Atletico Madrid", "Manchester United", "Inter Milan", "Barcelona", "Manchester City", "Paris Saint-Germain", "Valencia", "Sporting CP", "Tottenham Hotspur", "Monaco"],
+    teams: ["Benfica", "AFC Richmond", "AC Milan", "Bayern Munich", "FL Fart", "Real Madrid", "Chelsea", "AC Sparta Praha", "Crystal Palace", "Aston Villa", "Ajax", "Brighton", "Juventus", "Marseille", "Atletico Madrid", "Manchester United", "Inter Milan", "Barcelona", "Manchester City", "Paris Saint-Germain", "Valencia", "Arsenal", "Tottenham Hotspur", "Monaco"],
     playerTags: ["Adrian Dantley", "Calvin Natt", "Cliff Robinson", "Moses Malone"]
   },
   {
@@ -984,7 +984,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Preseason Sim 1",
     blurb: "Benfica open Season 3 with the cleanest Tier 1 record, while Richmond, Milan and Bayern keep the preseason board from becoming settled.",
-    teams: ["Benfica", "AFC Richmond", "AC Milan", "Bayern Munich", "FL Fart", "Real Madrid", "Chelsea", "Sheffield United"],
+    teams: ["Benfica", "AFC Richmond", "AC Milan", "Bayern Munich", "FL Fart", "Real Madrid", "Chelsea", "AC Sparta Praha"],
     playerTags: ["Andrew Toney", "Jack Sikma", "Joe Barry Carroll", "Kevin McHale", "Larry Drew", "Moses Malone", "Steve Johnson", "Tom Chambers"]
   },
   {
@@ -1010,7 +1010,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Preseason Sim 1",
     blurb: "Inter Milan lead the first Tier 3 board by the smallest useful margin, with Barcelona and Manchester City close enough to keep every result heavy.",
-    teams: ["Inter Milan", "Barcelona", "Manchester City", "Paris Saint-Germain", "Valencia", "Sporting CP", "Tottenham Hotspur", "Monaco"],
+    teams: ["Inter Milan", "Barcelona", "Manchester City", "Paris Saint-Germain", "Valencia", "Arsenal", "Tottenham Hotspur", "Monaco"],
     playerTags: ["Brad Davis", "Calvin Natt", "Darryl Dawkins", "Gilbert Arenas", "Greg Ballard", "Otis Birdsong", "Pervis Ellison", "Purvis Short"]
   },
   {
@@ -1023,7 +1023,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 3 - Preseason Sim 1",
     blurb: "The first Season 3 pressure map puts Palace and Villa on the Tier 2 promotion line, Inter narrowly ahead in Tier 3, and four Tier 1 clubs in early danger.",
-    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Manchester City", "Manchester United", "Marseille", "Real Madrid", "Sheffield United"],
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Manchester City", "Manchester United", "Marseille", "Real Madrid", "AC Sparta Praha"],
     playerTags: ["Alex English", "Andrew Toney", "Calvin Natt", "Cliff Robinson", "Dennis Johnson", "Greg Ballard", "Jack Sikma", "Kiki Vandeweghe", "Larry Drew", "Larry Nance", "Norm Nixon", "Otis Birdsong", "Robert Parish", "Steve Johnson"]
   },
   {
@@ -1035,8 +1035,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Stock Report",
     author: "Damon Cross",
     meta: "Season 3 - Preseason Sim 1",
-    blurb: "Crystal Palace, Benfica and Manchester City gained the most trust from the opening sim, while United, Monaco and Sheffield left repair work everywhere.",
-    teams: ["Crystal Palace", "Benfica", "Manchester City", "Manchester United", "Monaco", "Sheffield United"],
+    blurb: "Crystal Palace, Benfica and Manchester City gained the most trust from the opening sim, while United, Monaco and AC Sparta Praha left repair work everywhere.",
+    teams: ["Crystal Palace", "Benfica", "Manchester City", "Manchester United", "Monaco", "AC Sparta Praha"],
     playerTags: ["Alex English", "Calvin Natt", "Moses Malone", "Norm Nixon", "Purvis Short", "Steve Johnson"]
   },
   {
@@ -1088,7 +1088,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "February 1983",
     blurb: "Chelsea and Juventus hold the clearest promotion seats, while Manchester City made the Tier 3 line feel live. The relegation picture is messier: Bayern's bad month dragged quality near the Tier 1 trapdoor, and Ajax made the Tier 2 danger line painfully easy to read.",
-    teams: ["AFC Richmond", "Ajax", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Marseille", "Monaco", "Sheffield United", "Valencia"],
+    teams: ["AFC Richmond", "Ajax", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Marseille", "Monaco", "AC Sparta Praha", "Valencia"],
     playerTags: []
   },
   {
@@ -1100,8 +1100,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Power Rankings",
     author: "Nina Vale",
     meta: "February 1983",
-    blurb: "AFC Richmond still own the strongest full-season case, but February made the top of Tier 1 less comfortable. Bayern's ceiling remains dangerous despite a poor month, while Real Madrid and Sheffield United sit close enough to keep the board from becoming a Richmond procession.",
-    teams: ["AFC Richmond", "Bayern Munich", "Real Madrid", "Sheffield United", "AC Milan", "Atletico Madrid", "Benfica", "Crystal Palace"],
+    blurb: "AFC Richmond still own the strongest full-season case, but February made the top of Tier 1 less comfortable. Bayern's ceiling remains dangerous despite a poor month, while Real Madrid and AC Sparta Praha sit close enough to keep the board from becoming a Richmond procession.",
+    teams: ["AFC Richmond", "Bayern Munich", "Real Madrid", "AC Sparta Praha", "AC Milan", "Atletico Madrid", "Benfica", "Crystal Palace"],
     playerTags: ["Magic Johnson", "Bernard King", "Sidney Moncrief", "Rickey Green", "Larry Bird", "James Donaldson", "Moses Malone", "Darrell Griffith"]
   },
   {
@@ -1127,7 +1127,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "February 1983",
     blurb: "Aston Villa still hold the best season profile, but Manchester City's February surge made the Conference League race feel alive again. Paris Saint-Germain remain close enough to matter, and the one-promotion format now looks less like a coronation and more like a chase.",
-    teams: ["Aston Villa", "Manchester City", "Paris Saint-Germain", "Inter Milan", "Sporting CP", "Valencia", "Barcelona", "Tottenham Hotspur"],
+    teams: ["Aston Villa", "Manchester City", "Paris Saint-Germain", "Inter Milan", "Arsenal", "Valencia", "Barcelona", "Tottenham Hotspur"],
     playerTags: ["Bill Laimbeer", "Allen Leavell", "Kelly Tripucka", "World B. Free", "Buck Williams", "Isiah Thomas", "Otis Birdsong", "Darryl Dawkins"]
   },
   {
@@ -1140,7 +1140,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "January 1983",
     blurb: "Bayern Munich closed January on a six-game surge, Juventus revived Tier 2, and Manchester City pushed into the Tier 3 promotion fight.",
-    teams: ["Bayern Munich", "Atletico Madrid", "Real Madrid", "AFC Richmond", "Benfica", "Sheffield United", "Juventus", "Chelsea", "Marseille", "FL Fart", "Aston Villa", "Sporting CP", "Manchester City", "Paris Saint-Germain", "Valencia", "Crystal Palace"],
+    teams: ["Bayern Munich", "Atletico Madrid", "Real Madrid", "AFC Richmond", "Benfica", "AC Sparta Praha", "Juventus", "Chelsea", "Marseille", "FL Fart", "Aston Villa", "Arsenal", "Manchester City", "Paris Saint-Germain", "Valencia", "Crystal Palace"],
     playerTags: ["Bernard King", "Kareem Abdul-Jabbar", "Bill Laimbeer", "Joe Barry Carroll", "Moses Malone"]
   },
   {
@@ -1158,15 +1158,15 @@ window.ESL_MEDIA_ARTICLES = [
   },
   {
     file: "articles/january_1983_stock_up_stock_down.html",
-    title: "January Stock Report: Bayern, Juventus And Sheffield Buy The Room",
+    title: "January Stock Report: Bayern, Juventus And AC Sparta Praha Buy The Room",
     category: "Analysis",
     desk: "Analysis",
     sortKey: "2026-06-03-05",
     tag: "Stock Report",
     author: "Damon Cross",
     meta: "January 1983",
-    blurb: "Bayern Munich, Juventus and Sheffield United rose hard in January, while Valencia, Crystal Palace and Benfica made their problems impossible to ignore.",
-    teams: ["Bayern Munich", "Atletico Madrid", "Juventus", "FL Fart", "Sheffield United", "Valencia", "Barcelona", "Crystal Palace", "AFC Richmond", "Real Madrid", "AC Milan", "Benfica"],
+    blurb: "Bayern Munich, Juventus and AC Sparta Praha rose hard in January, while Valencia, Crystal Palace and Benfica made their problems impossible to ignore.",
+    teams: ["Bayern Munich", "Atletico Madrid", "Juventus", "FL Fart", "AC Sparta Praha", "Valencia", "Barcelona", "Crystal Palace", "AFC Richmond", "Real Madrid", "AC Milan", "Benfica"],
     playerTags: ["Bernard King", "Kareem Abdul-Jabbar", "Rickey Green", "Isiah Thomas", "Darrell Griffith", "Moses Malone"]
   },
   {
@@ -1179,7 +1179,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "January 1983",
     blurb: "AFC Richmond keep the Tier 1 lead on season-long form, but Bayern Munich's six-game run turns the top of the board into a real argument.",
-    teams: ["AFC Richmond", "Bayern Munich", "Sheffield United", "Real Madrid", "AC Milan", "Atletico Madrid", "Benfica", "Crystal Palace"],
+    teams: ["AFC Richmond", "Bayern Munich", "AC Sparta Praha", "Real Madrid", "AC Milan", "Atletico Madrid", "Benfica", "Crystal Palace"],
     playerTags: ["Magic Johnson", "Bernard King", "Rickey Green", "Sidney Moncrief", "Larry Bird", "James Donaldson", "Moses Malone", "Darrell Griffith"]
   },
   {
@@ -1205,7 +1205,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "January 1983",
     blurb: "Aston Villa keep the strongest Tier 3 resume, but Manchester City's 6-2 month and PSG's pressure make the one promotion seat feel live.",
-    teams: ["Aston Villa", "Sporting CP", "Manchester City", "Barcelona", "Paris Saint-Germain", "Inter Milan", "Valencia", "Tottenham Hotspur"],
+    teams: ["Aston Villa", "Arsenal", "Manchester City", "Barcelona", "Paris Saint-Germain", "Inter Milan", "Valencia", "Tottenham Hotspur"],
     playerTags: ["Bill Laimbeer", "Allen Leavell", "Calvin Natt", "Kelly Tripucka", "Joe Barry Carroll", "Buck Williams", "World B. Free", "Otis Birdsong", "Isiah Thomas", "Darryl Dawkins"]
   },
   {
@@ -1218,7 +1218,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "January 1983",
     blurb: "Juventus and Chelsea control the Tier 2 promotion picture, while Benfica, Palace, Monaco and Valencia carry the month's sharpest pressure.",
-    teams: ["Benfica", "Crystal Palace", "AC Milan", "Real Madrid", "Juventus", "Chelsea", "Marseille", "FL Fart", "Monaco", "Manchester United", "Brighton", "Manchester City", "Aston Villa", "Paris Saint-Germain", "Sporting CP", "Inter Milan", "Valencia"],
+    teams: ["Benfica", "Crystal Palace", "AC Milan", "Real Madrid", "Juventus", "Chelsea", "Marseille", "FL Fart", "Monaco", "Manchester United", "Brighton", "Manchester City", "Aston Villa", "Paris Saint-Germain", "Arsenal", "Inter Milan", "Valencia"],
     playerTags: ["Larry Bird", "Moses Malone"]
   },
   {
@@ -1231,7 +1231,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "November 1982",
     blurb: "Chelsea supplied the month's cleanest surge, Madrid claimed Tier 1 authority, and the first promotion and relegation lines became visible.",
-    teams: ["Chelsea", "Real Madrid", "Aston Villa", "Crystal Palace", "Valencia", "Juventus", "Monaco", "Manchester United", "FL Fart", "Brighton", "Atletico Madrid", "AC Milan", "AFC Richmond", "Benfica", "Sporting CP", "Inter Milan", "Paris Saint-Germain"],
+    teams: ["Chelsea", "Real Madrid", "Aston Villa", "Crystal Palace", "Valencia", "Juventus", "Monaco", "Manchester United", "FL Fart", "Brighton", "Atletico Madrid", "AC Milan", "AFC Richmond", "Benfica", "Arsenal", "Inter Milan", "Paris Saint-Germain"],
     playerTags: ["Jack Sikma", "Sidney Moncrief", "Larry Bird", "Moses Malone", "Joe Barry Carroll"]
   },
   {
@@ -1244,7 +1244,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Damon Cross",
     meta: "November 1982",
     blurb: "Moses Malone leads the first MVP board, with Robert Parish and Joe Barry Carroll setting the pace in the lower tiers.",
-    teams: ["Benfica", "AFC Richmond", "Atletico Madrid", "Bayern Munich", "Real Madrid", "Marseille", "Manchester United", "Brighton", "Ajax", "Chelsea", "Paris Saint-Germain", "Manchester City", "Sporting CP", "Barcelona", "Inter Milan"],
+    teams: ["Benfica", "AFC Richmond", "Atletico Madrid", "Bayern Munich", "Real Madrid", "Marseille", "Manchester United", "Brighton", "Ajax", "Chelsea", "Paris Saint-Germain", "Manchester City", "Arsenal", "Barcelona", "Inter Milan"],
     playerTags: ["Moses Malone", "Magic Johnson", "Adrian Dantley", "Bernard King", "Sidney Moncrief", "Robert Parish", "Jeff Ruland", "Kiki Vandeweghe", "Maurice Cheeks", "Jack Sikma", "Joe Barry Carroll", "Calvin Natt", "Buck Williams", "Jalen Duren", "World B. Free"]
   },
   {
@@ -1270,7 +1270,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "November 1982",
     blurb: "Real Madrid separate from the Champions League field, while Richmond hold second and the relegation line already has real heat.",
-    teams: ["Real Madrid", "AFC Richmond", "Sheffield United", "Benfica", "AC Milan", "Bayern Munich", "Atletico Madrid", "Crystal Palace"],
+    teams: ["Real Madrid", "AFC Richmond", "AC Sparta Praha", "Benfica", "AC Milan", "Bayern Munich", "Atletico Madrid", "Crystal Palace"],
     playerTags: ["Sidney Moncrief", "Magic Johnson", "Rickey Green", "Moses Malone", "Larry Bird", "Bernard King", "Kevin McHale", "James Donaldson", "Darrell Griffith"]
   },
   {
@@ -1295,8 +1295,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Power Rankings",
     author: "Nina Vale",
     meta: "November 1982",
-    blurb: "Aston Villa lead a tight Tier 3 promotion race, with Sporting CP, Inter Milan and Paris Saint-Germain close enough to matter immediately.",
-    teams: ["Aston Villa", "Sporting CP", "Inter Milan", "Paris Saint-Germain", "Barcelona", "Tottenham Hotspur", "Manchester City", "Valencia"],
+    blurb: "Aston Villa lead a tight Tier 3 promotion race, with Arsenal, Inter Milan and Paris Saint-Germain close enough to matter immediately.",
+    teams: ["Aston Villa", "Arsenal", "Inter Milan", "Paris Saint-Germain", "Barcelona", "Tottenham Hotspur", "Manchester City", "Valencia"],
     playerTags: ["Bill Laimbeer", "Buck Williams", "World B. Free", "Joe Barry Carroll", "Kelly Tripucka", "Otis Birdsong", "Jalen Duren", "Darryl Dawkins", "Calvin Natt", "Allen Leavell", "Isiah Thomas"]
   },
   {
@@ -1309,7 +1309,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "November 1982",
     blurb: "Chelsea and Brighton own the Tier 2 promotion places, while Atletico Madrid, Juventus and Aston Villa define the first pressure lines.",
-    teams: ["Crystal Palace", "Atletico Madrid", "Bayern Munich", "AC Milan", "Chelsea", "Brighton", "Marseille", "FL Fart", "Juventus", "Monaco", "Manchester United", "Aston Villa", "Sporting CP", "Inter Milan", "Paris Saint-Germain"],
+    teams: ["Crystal Palace", "Atletico Madrid", "Bayern Munich", "AC Milan", "Chelsea", "Brighton", "Marseille", "FL Fart", "Juventus", "Monaco", "Manchester United", "Aston Villa", "Arsenal", "Inter Milan", "Paris Saint-Germain"],
     playerTags: ["Larry Bird"]
   },
   {
@@ -1322,7 +1322,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "Season 2 - Preseason Sim 1",
     blurb: "Richmond's 5-1 opening is the clearest Tier 1 statement, while Real Madrid and AC Milan establish the early group most likely to press them.",
-    teams: ["AC Milan", "AFC Richmond", "Atletico Madrid", "Bayern Munich", "Benfica", "Crystal Palace", "Real Madrid", "Sheffield United"]
+    teams: ["AC Milan", "AFC Richmond", "Atletico Madrid", "Bayern Munich", "Benfica", "Crystal Palace", "Real Madrid", "AC Sparta Praha"]
   },
   {
     file: "articles/season_2_preseason_sim_1_tier_2_power_rankings.html",
@@ -1345,8 +1345,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Power Rankings",
     author: "Nina Vale",
     meta: "Season 2 - Preseason Sim 1",
-    blurb: "Aston Villa and Sporting CP both open 5-1, but Villa's overwhelming scoring margin makes the first Tier 3 ranking unusually decisive.",
-    teams: ["Aston Villa", "Barcelona", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur", "Valencia"]
+    blurb: "Aston Villa and Arsenal both open 5-1, but Villa's overwhelming scoring margin makes the first Tier 3 ranking unusually decisive.",
+    teams: ["Aston Villa", "Barcelona", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Arsenal", "Tottenham Hotspur", "Valencia"]
   },
   {
     file: "articles/season_2_preseason_sim_1_month_in_review.html",
@@ -1358,7 +1358,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "Season 2 - Preseason Sim 1",
     blurb: "Aston Villa crushed the opening examination, Richmond and Ajax looked ready immediately, and two winless starts made the preseason harder to dismiss.",
-    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Juventus", "Manchester City", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Sporting CP", "Tottenham Hotspur"]
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Juventus", "Manchester City", "Manchester United", "Marseille", "Monaco", "Paris Saint-Germain", "Real Madrid", "Arsenal", "Tottenham Hotspur"]
   },
   // Older manually maintained articles
   {
@@ -1375,7 +1375,7 @@ window.ESL_MEDIA_ARTICLES = [
       "AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona",
       "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart",
       "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Marseille",
-      "Monaco", "Paris Saint-Germain", "Real Madrid", "Sheffield United", "Sporting CP",
+      "Monaco", "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha", "Arsenal",
       "Tottenham Hotspur", "Valencia"
     ],
     playerTags: ["Darwin Cook", "James Donaldson", "Larry Drew", "Moses Malone", "Tree Rollins"]
@@ -1393,7 +1393,7 @@ window.ESL_MEDIA_ARTICLES = [
     teams: [
       "AC Milan", "AFC Richmond", "Atletico Madrid", "Barcelona", "Benfica", "Chelsea",
       "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Marseille",
-      "Paris Saint-Germain", "Real Madrid", "Sheffield United"
+      "Paris Saint-Germain", "Real Madrid", "AC Sparta Praha"
     ],
     playerTags: [
       "Adrian Dantley", "Calvin Natt", "David Thompson", "George Gervin", "Jack Sikma",
@@ -1411,8 +1411,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Stock Report",
     author: "Graham Trent",
     meta: "Monthly Stock Report",
-    blurb: "AC Milan, FL Fart, and PSG rise after strong March sims, while Sporting CP, Atletico Madrid, and Valencia lose ground.",
-    teams: ["AC Milan", "Atletico Madrid", "FL Fart", "Paris Saint-Germain", "Sporting CP", "Valencia"],
+    blurb: "AC Milan, FL Fart, and PSG rise after strong March sims, while Arsenal, Atletico Madrid, and Valencia lose ground.",
+    teams: ["AC Milan", "Atletico Madrid", "FL Fart", "Paris Saint-Germain", "Arsenal", "Valencia"],
     playerTags: ["David Thompson", "George Gervin", "Joe Barry Carroll", "Larry Bird"]
   },
   {
@@ -1442,7 +1442,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "March Edition",
     blurb: "FL Fart jump Inter, PSG and Manchester City rise, and Barcelona's uneven March reshapes the Tier 3 promotion board.",
-    teams: ["Barcelona", "FL Fart", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["Barcelona", "FL Fart", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Allen Leavell", "Buck Williams", "Calvin Natt", "David Thompson", "Joe Barry Carroll", "Kelly Tripucka", "World B. Free"]
   },
   {
@@ -1454,8 +1454,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Europa League",
     author: "Nina Vale",
     meta: "March Edition",
-    blurb: "Benfica stay first, Juventus and Marseille rise, and Sheffield's uneven March turns the Tier 2 promotion race tighter.",
-    teams: ["Ajax", "Aston Villa", "Benfica", "Chelsea", "Juventus", "Marseille", "Monaco", "Sheffield United"],
+    blurb: "Benfica stay first, Juventus and Marseille rise, and AC Sparta Praha's uneven March turns the Tier 2 promotion race tighter.",
+    teams: ["Ajax", "Aston Villa", "Benfica", "Chelsea", "Juventus", "Marseille", "Monaco", "AC Sparta Praha"],
     playerTags: ["Bill Laimbeer", "Cliff Robinson", "Jack Sikma", "Kareem Abdul-Jabbar", "Moses Malone", "Robert Parish", "Steve Johnson"]
   },
   {
@@ -1481,7 +1481,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "Monthly Review",
     blurb: "AC Milan surged, Chelsea delivered the month's biggest blowout, Aston Villa made noise, and FL Fart reclaimed the Tier 3 line.",
-    teams: ["AC Milan", "Aston Villa", "Atletico Madrid", "Barcelona", "Benfica", "Chelsea", "FL Fart", "Inter Milan", "Sheffield United", "Sporting CP"],
+    teams: ["AC Milan", "Aston Villa", "Atletico Madrid", "Barcelona", "Benfica", "Chelsea", "FL Fart", "Inter Milan", "AC Sparta Praha", "Arsenal"],
     playerTags: ["George Gervin", "Larry Bird", "Moses Malone"]
   },
   {
@@ -1497,7 +1497,7 @@ window.ESL_MEDIA_ARTICLES = [
     teams: [
       "AC Milan", "AFC Richmond", "Atletico Madrid", "Barcelona", "Benfica", "Bayern Munich",
       "Chelsea", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Paris Saint-Germain",
-      "Real Madrid", "Sheffield United", "Aston Villa"
+      "Real Madrid", "AC Sparta Praha", "Aston Villa"
     ],
     playerTags: [
       "Adrian Dantley", "Calvin Natt", "David Thompson", "Jack Sikma", "Joe Barry Carroll",
@@ -1514,8 +1514,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Stock Report",
     author: "Graham Trent",
     meta: "Monthly Stock Report",
-    blurb: "Benfica, Inter Milan, and FL Fart are February's three buys, while Aston Villa, Sporting CP, and Marseille spent the month proving how fast a table can turn.",
-    teams: ["Aston Villa", "Benfica", "FL Fart", "Inter Milan", "Marseille", "Sporting CP"],
+    blurb: "Benfica, Inter Milan, and FL Fart are February's three buys, while Aston Villa, Arsenal, and Marseille spent the month proving how fast a table can turn.",
+    teams: ["Aston Villa", "Benfica", "FL Fart", "Inter Milan", "Marseille", "Arsenal"],
     playerTags: ["Moses Malone", "World B. Free", "David Thompson"]
   },
   {
@@ -1527,10 +1527,10 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Race Watch",
     author: "Nina Vale",
     meta: "February Race Watch",
-    blurb: "Real Madrid sit on the Tier 1 line, Benfica and Sheffield United now control Tier 2 promotion pace, Marseille made the wrong race strange, and Tier 3 is still a three-team dead heat.",
+    blurb: "Real Madrid sit on the Tier 1 line, Benfica and AC Sparta Praha now control Tier 2 promotion pace, Marseille made the wrong race strange, and Tier 3 is still a three-team dead heat.",
     teams: [
       "AC Milan", "Ajax", "Aston Villa", "Barcelona", "Benfica", "Brighton", "Chelsea",
-      "FL Fart", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Real Madrid", "Sheffield United"
+      "FL Fart", "Inter Milan", "Juventus", "Manchester United", "Marseille", "Real Madrid", "AC Sparta Praha"
     ],
     playerTags: ["Sidney Moncrief", "Moses Malone", "Kelly Tripucka", "World B. Free"]
   },
@@ -1544,7 +1544,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "February Edition",
     blurb: "Inter Milan edge to the top of the Tier 3 board, but FL Fart and Barcelona remain fully live in the promotion race and Manchester City still hover as the dangerous maybe-team.",
-    teams: ["Barcelona", "FL Fart", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["Barcelona", "FL Fart", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Calvin Natt", "David Thompson", "Joe Barry Carroll", "Kelly Tripucka", "World B. Free"]
   },
   {
@@ -1556,8 +1556,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Europa League",
     author: "Nina Vale",
     meta: "February Edition",
-    blurb: "Benfica's 7-1 heater and Sheffield United's perfect 5-0 month separate them at the top, while Juventus rise and Marseille tumble into the board's biggest trust problem.",
-    teams: ["Ajax", "Aston Villa", "Benfica", "Chelsea", "Juventus", "Marseille", "Monaco", "Sheffield United"],
+    blurb: "Benfica's 7-1 heater and AC Sparta Praha's perfect 5-0 month separate them at the top, while Juventus rise and Marseille tumble into the board's biggest trust problem.",
+    teams: ["Ajax", "Aston Villa", "Benfica", "Chelsea", "Juventus", "Marseille", "Monaco", "AC Sparta Praha"],
     playerTags: ["Bill Laimbeer", "Jack Sikma", "Kareem Abdul-Jabbar", "Moses Malone", "Robert Parish", "Steve Johnson"]
   },
   {
@@ -1627,7 +1627,7 @@ window.ESL_MEDIA_ARTICLES = [
     teams: [
       "AC Milan", "AFC Richmond", "Atletico Madrid", "Barcelona", "Benfica", "Chelsea",
       "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Paris Saint-Germain",
-      "Real Madrid", "Sheffield United"
+      "Real Madrid", "AC Sparta Praha"
     ],
     playerTags: [
       "Adrian Dantley", "David Thompson", "Jack Sikma", "Joe Barry Carroll", "Kelly Tripucka",
@@ -1644,8 +1644,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Stock Report",
     author: "Graham Trent",
     meta: "Monthly Stock Report",
-    blurb: "Inter Milan, Real Madrid, and Sheffield United rose in January, while Tottenham Hotspur, Manchester United, and Valencia watched the month harden against them.",
-    teams: ["Inter Milan", "Real Madrid", "Sheffield United", "Tottenham Hotspur", "Manchester United", "Valencia"],
+    blurb: "Inter Milan, Real Madrid, and AC Sparta Praha rose in January, while Tottenham Hotspur, Manchester United, and Valencia watched the month harden against them.",
+    teams: ["Inter Milan", "Real Madrid", "AC Sparta Praha", "Tottenham Hotspur", "Manchester United", "Valencia"],
     playerTags: ["Sidney Moncrief", "Steve Johnson", "World B. Free"]
   },
   {
@@ -1660,7 +1660,7 @@ window.ESL_MEDIA_ARTICLES = [
     blurb: "Brighton hold the Tier 1 line, Chelsea cling to promotion, Marseille are somehow sweating the wrong race, and Inter Milan now lead the Tier 3 climb.",
     teams: [
       "AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Barcelona", "Benfica", "Brighton",
-      "Chelsea", "FL Fart", "Inter Milan", "Manchester United", "Marseille", "Monaco", "Sheffield United"
+      "Chelsea", "FL Fart", "Inter Milan", "Manchester United", "Marseille", "Monaco", "AC Sparta Praha"
     ],
     playerTags: []
   },
@@ -1674,7 +1674,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Nina Vale",
     meta: "January Edition",
     blurb: "Inter Milan took the clearest hold of Tier 3's promotion line, but FL Fart and Barcelona remain close enough to keep the race alive.",
-    teams: ["Barcelona", "FL Fart", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Sporting CP", "Tottenham Hotspur", "Valencia"],
+    teams: ["Barcelona", "FL Fart", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Arsenal", "Tottenham Hotspur", "Valencia"],
     playerTags: ["Buck Williams", "Calvin Natt", "Joe Barry Carroll", "Kelly Tripucka", "World B. Free"]
   },
   {
@@ -1686,8 +1686,8 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Europa League",
     author: "Nina Vale",
     meta: "January Edition",
-    blurb: "Marseille still own the best overall record, but Sheffield United, Benfica, and Chelsea made January feel far less orderly than the table suggested.",
-    teams: ["Ajax", "Aston Villa", "Benfica", "Chelsea", "Juventus", "Marseille", "Monaco", "Sheffield United"],
+    blurb: "Marseille still own the best overall record, but AC Sparta Praha, Benfica, and Chelsea made January feel far less orderly than the table suggested.",
+    teams: ["Ajax", "Aston Villa", "Benfica", "Chelsea", "Juventus", "Marseille", "Monaco", "AC Sparta Praha"],
     playerTags: ["Jack Sikma", "Kareem Abdul-Jabbar", "Moses Malone", "Robert Parish", "Steve Johnson"]
   },
   {
@@ -1713,7 +1713,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Graham Trent",
     meta: "Monthly Review",
     blurb: "AFC Richmond supplied the loudest scoreline, Inter Milan owned the best month, Crystal Palace changed the Tier 1 middle, and the race lines finally started to feel real.",
-    teams: ["AFC Richmond", "Brighton", "Real Madrid", "Crystal Palace", "AC Milan", "Inter Milan", "Tottenham Hotspur", "Marseille", "Sheffield United", "Chelsea", "Benfica", "Monaco"],
+    teams: ["AFC Richmond", "Brighton", "Real Madrid", "Crystal Palace", "AC Milan", "Inter Milan", "Tottenham Hotspur", "Marseille", "AC Sparta Praha", "Chelsea", "Benfica", "Monaco"],
     playerTags: ["Artis Gilmore", "Larry Bird", "Magic Johnson", "Sidney Moncrief", "World B. Free"]
   },
   {
@@ -1742,8 +1742,8 @@ window.ESL_MEDIA_ARTICLES = [
       "Marseille",
       "Paris Saint-Germain",
       "Real Madrid",
-      "Sheffield United",
-      "Sporting CP",
+      "AC Sparta Praha",
+      "Arsenal",
       "Valencia"
     ],
     playerTags: [
@@ -1790,7 +1790,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Inter Milan",
       "Manchester United",
       "Marseille",
-      "Sporting CP",
+      "Arsenal",
       "Tottenham Hotspur",
       "Valencia"
     ],
@@ -1838,7 +1838,7 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Race Watch",
     author: "Graham Trent",
     meta: "December Race Watch",
-    blurb: "Manchester United and Real Madrid sit in danger, Marseille controls Tier 2, and Sporting CP holds the crowded Tier 3 promotion line.",
+    blurb: "Manchester United and Real Madrid sit in danger, Marseille controls Tier 2, and Arsenal holds the crowded Tier 3 promotion line.",
     teams: [
       "Ajax",
       "Aston Villa",
@@ -1854,7 +1854,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Marseille",
       "Monaco",
       "Real Madrid",
-      "Sporting CP",
+      "Arsenal",
       "Valencia"
     ],
     playerTags: [
@@ -1881,7 +1881,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Inter Milan",
       "Manchester City",
       "Paris Saint-Germain",
-      "Sporting CP",
+      "Arsenal",
       "Tottenham Hotspur",
       "Valencia"
     ],
@@ -1905,7 +1905,7 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Europa League",
     author: "Nina Vale",
     meta: "December Edition",
-    blurb: "Marseille's 7-0 month jumps Sheffield United and turns the Tier 2 promotion chase into a pursuit.",
+    blurb: "Marseille's 7-0 month jumps AC Sparta Praha and turns the Tier 2 promotion chase into a pursuit.",
     teams: [
       "Ajax",
       "Aston Villa",
@@ -1914,7 +1914,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Juventus",
       "Marseille",
       "Monaco",
-      "Sheffield United"
+      "AC Sparta Praha"
     ],
     playerTags: [
       "Bill Laimbeer",
@@ -2021,7 +2021,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Marseille",
       "Paris Saint-Germain",
       "Real Madrid",
-      "Sheffield United"
+      "AC Sparta Praha"
     ],
     playerTags: [
       "Adrian Dantley",
@@ -2057,7 +2057,7 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Month In Review",
     author: "Graham Trent",
     meta: "Monthly Review",
-    blurb: "Sheffield surged, Aston Villa sank, Richmond led Tier 1, and the first regular-season pressure lines sharpened fast.",
+    blurb: "AC Sparta Praha surged, Aston Villa sank, Richmond led Tier 1, and the first regular-season pressure lines sharpened fast.",
     teams: [
       "AFC Richmond",
       "Aston Villa",
@@ -2066,21 +2066,21 @@ window.ESL_MEDIA_ARTICLES = [
       "Manchester City",
       "Marseille",
       "Monaco",
-      "Sheffield United",
+      "AC Sparta Praha",
       "Tottenham Hotspur"
     ],
     playerTags: ["Rickey Green"]
   },
   {
     file: "articles/november_1981_stock_up_stock_down.html",
-    title: "Stock Up, Stock Down: Sheffield and Villa define November",
+    title: "Stock Up, Stock Down: AC Sparta Praha and Villa define November",
     category: "Analysis",
     desk: "Analysis",
     sortKey: "2026-05-08-05",
     tag: "Stock Report",
     author: "Damon Cross",
     meta: "Monthly Stock Report",
-    blurb: "Sheffield United, Marseille, and AFC Richmond rise while Aston Villa, Monaco, and Manchester United wear the month's hardest falls.",
+    blurb: "AC Sparta Praha, Marseille, and AFC Richmond rise while Aston Villa, Monaco, and Manchester United wear the month's hardest falls.",
     teams: [
       "AFC Richmond",
       "Aston Villa",
@@ -2088,7 +2088,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Manchester United",
       "Marseille",
       "Monaco",
-      "Sheffield United"
+      "AC Sparta Praha"
     ],
     playerTags: ["Robert Parish"]
   },
@@ -2101,7 +2101,7 @@ window.ESL_MEDIA_ARTICLES = [
     tag: "Race Watch",
     author: "Graham Trent",
     meta: "November Race Watch",
-    blurb: "Manchester United, Crystal Palace, Sheffield United, Marseille, Barcelona, and Aston Villa define the current pressure map.",
+    blurb: "Manchester United, Crystal Palace, AC Sparta Praha, Marseille, Barcelona, and Aston Villa define the current pressure map.",
     teams: [
       "Ajax",
       "Aston Villa",
@@ -2116,7 +2116,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Manchester United",
       "Marseille",
       "Monaco",
-      "Sheffield United"
+      "AC Sparta Praha"
     ],
     playerTags: []
   },
@@ -2136,7 +2136,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Inter Milan",
       "Manchester City",
       "Paris Saint-Germain",
-      "Sporting CP",
+      "Arsenal",
       "Tottenham Hotspur",
       "Valencia"
     ],
@@ -2153,14 +2153,14 @@ window.ESL_MEDIA_ARTICLES = [
   },
   {
     file: "articles/november_1981_tier_2_power_rankings.html",
-    title: "Europa League Power Rankings: Sheffield grabs the top line",
+    title: "Europa League Power Rankings: AC Sparta Praha grabs the top line",
     category: "Analysis",
     desk: "Analysis",
     sortKey: "2026-05-08-02",
     tag: "Europa League",
     author: "Nina Vale",
     meta: "November Edition",
-    blurb: "Sheffield United and Marseille both hit 6-1, while Benfica and Chelsea keep the promotion race alive.",
+    blurb: "AC Sparta Praha and Marseille both hit 6-1, while Benfica and Chelsea keep the promotion race alive.",
     teams: [
       "Ajax",
       "Aston Villa",
@@ -2169,7 +2169,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Juventus",
       "Marseille",
       "Monaco",
-      "Sheffield United"
+      "AC Sparta Praha"
     ],
     playerTags: [
       "Bill Laimbeer",
@@ -2238,8 +2238,8 @@ window.ESL_MEDIA_ARTICLES = [
       "Manchester United",
       "Marseille",
       "Paris Saint-Germain",
-      "Sheffield United",
-      "Sporting CP",
+      "AC Sparta Praha",
+      "Arsenal",
       "Tottenham Hotspur",
       "Valencia"
     ],
@@ -2267,7 +2267,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Marseille",
       "Monaco",
       "Real Madrid",
-      "Sheffield United"
+      "AC Sparta Praha"
     ],
     playerTags: []
   },
@@ -2287,7 +2287,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Inter Milan",
       "Manchester City",
       "Paris Saint-Germain",
-      "Sporting CP",
+      "Arsenal",
       "Tottenham Hotspur",
       "Valencia"
     ],
@@ -2311,7 +2311,7 @@ window.ESL_MEDIA_ARTICLES = [
       "Juventus",
       "Marseille",
       "Monaco",
-      "Sheffield United"
+      "AC Sparta Praha"
     ],
     playerTags: ["Kareem Abdul-Jabbar"]
   },
@@ -2360,7 +2360,7 @@ window.ESL_MEDIA_ARTICLES = [
     author: "Damon Cross",
     meta: "Awards Preview",
     blurb: "Isiah Thomas headlines the Conference League awards board, with Alton Lister and a chaotic first team close behind.",
-    teams: ["FL Fart", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Sporting CP", "Valencia"],
+    teams: ["FL Fart", "Inter Milan", "Manchester City", "Paris Saint-Germain", "Arsenal", "Valencia"],
     playerTags: [
       "Allen Leavell",
       "Alton Lister",
@@ -2477,7 +2477,7 @@ window.ESL_MEDIA_ARTICLES = [
     "Crystal Palace": ["Palace"],
     "Inter Milan": ["Inter"],
     "Paris Saint-Germain": ["PSG"],
-    "Sporting CP": ["Sporting"],
+    "Arsenal": ["Sporting"],
     "Tottenham Hotspur": ["Tottenham", "Spurs"]
   };
 

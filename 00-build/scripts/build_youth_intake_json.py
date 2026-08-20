@@ -19,9 +19,7 @@ PLAYERS_PATH = os.path.join(BUILD_DIR, "database", "players.json")
 INTAKE_PLAYERS_PATH = os.path.join(BUILD_DIR, "database", "youth_intake_players.json")
 APP_SOURCE_PATH = os.path.join(BUILD_DIR, "sources", "youth-intake", "current.json")
 
-TEAM_ALIASES = {
-    "arsenal": "Sheffield United",
-}
+TEAM_ALIASES = {}
 
 CURRENT_RATING_FIELDS = {
     "InsideScoring": "Ins",

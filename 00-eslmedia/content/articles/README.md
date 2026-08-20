@@ -488,8 +488,8 @@ Team assignments:
 - `Monaco` - `Luc Riviera`
 - `Paris Saint-Germain` - `Nico Parc`
 - `Real Madrid` - `Sergio Crown`
-- `Sheffield United` - `Billy Bramall`
-- `Sporting CP` - `Nuno Greenroom`
+- `AC Sparta Praha` - `Billy Bramall`
+- `Arsenal` - `Nuno Greenroom`
 - `Tottenham Hotspur` - `Harry Northbank`
 - `Valencia` - `Mateo Mestalla`
 

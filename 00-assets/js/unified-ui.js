@@ -39,8 +39,8 @@
     "Chelsea": "CHE", "Crystal Palace": "CRY", "FL Fart": "FLF",
     "Inter Milan": "INT", "Juventus": "JUV", "Manchester City": "MCI",
     "Manchester United": "MUN", "Marseille": "MAR", "Monaco": "MON",
-    "Paris Saint-Germain": "PSG", "Real Madrid": "RMA", "Sheffield United": "SHU",
-    "Sporting CP": "SCP", "Tottenham Hotspur": "TOT", "Valencia": "VAL",
+    "Paris Saint-Germain": "PSG", "Real Madrid": "RMA", "AC Sparta Praha": "ACS",
+    "Arsenal": "ARS", "Tottenham Hotspur": "TOT", "Valencia": "VAL",
     "Free Agents": "FA", "Draft": "DRF"
   };
 
@@ -51,8 +51,8 @@
     "Chelsea": "#034694", "Crystal Palace": "#1B458F", "FL Fart": "#D72B2B",
     "Inter Milan": "#0055A0", "Juventus": "#000000", "Manchester City": "#6CABDD",
     "Manchester United": "#D9020D", "Marseille": "#099FFF", "Monaco": "#CE1126",
-    "Paris Saint-Germain": "#00093F", "Real Madrid": "#004996", "Sheffield United": "#000000",
-    "Sporting CP": "#008056", "Tottenham Hotspur": "#132257", "Valencia": "#F57710"
+    "Paris Saint-Germain": "#00093F", "Real Madrid": "#004996", "AC Sparta Praha": "#000000",
+    "Arsenal": "#DB0007", "Tottenham Hotspur": "#132257", "Valencia": "#F57710"
   };
 
   function teamAbbreviation(value) {

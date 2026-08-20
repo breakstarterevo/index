@@ -14,6 +14,20 @@
         }
     },
     {
+        "id": "roster16",
+        "name": "AC Sparta Praha",
+        "file": "roster16.htm",
+        "url": "../rosters/roster16.htm",
+        "starPlayer": {
+            "name": "Steve Johnson",
+            "url": "../players/player897.htm",
+            "pos": "C",
+            "age": "25",
+            "overall": "126",
+            "potential": "126"
+        }
+    },
+    {
         "id": "roster12",
         "name": "AFC Richmond",
         "file": "roster12.htm",
@@ -39,6 +53,20 @@
             "age": "21",
             "overall": "150",
             "potential": "174"
+        }
+    },
+    {
+        "id": "roster23",
+        "name": "Arsenal",
+        "file": "roster23.htm",
+        "url": "../rosters/roster23.htm",
+        "starPlayer": {
+            "name": "Chris Bosh",
+            "url": "../players/player622.htm",
+            "pos": "C",
+            "age": "21",
+            "overall": "129",
+            "potential": "141"
         }
     },
     {
@@ -277,34 +305,6 @@
             "age": "26",
             "overall": "157",
             "potential": "157"
-        }
-    },
-    {
-        "id": "roster16",
-        "name": "Sheffield United",
-        "file": "roster16.htm",
-        "url": "../rosters/roster16.htm",
-        "starPlayer": {
-            "name": "Steve Johnson",
-            "url": "../players/player897.htm",
-            "pos": "C",
-            "age": "25",
-            "overall": "126",
-            "potential": "126"
-        }
-    },
-    {
-        "id": "roster23",
-        "name": "Sporting CP",
-        "file": "roster23.htm",
-        "url": "../rosters/roster23.htm",
-        "starPlayer": {
-            "name": "Chris Bosh",
-            "url": "../players/player622.htm",
-            "pos": "C",
-            "age": "21",
-            "overall": "129",
-            "potential": "141"
         }
     },
     {

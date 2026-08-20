@@ -37,8 +37,8 @@ class LastTeamLookupTests(unittest.TestCase):
     def test_stat_team_uses_majority_current_roster_not_first_match(self):
         players = [
             player("Transferred Player", "player1", "roster13", "Benfica"),
-            player("Sporting Player One", "player2", "roster23", "Sporting CP"),
-            player("Sporting Player Two", "player3", "roster23", "Sporting CP"),
+            player("Sporting Player One", "player2", "roster23", "Arsenal"),
+            player("Sporting Player Two", "player3", "roster23", "Arsenal"),
         ]
         player_stats = [
             stats("Transferred Player", "player1", "SCP"),
@@ -50,7 +50,7 @@ class LastTeamLookupTests(unittest.TestCase):
 
         self.assertEqual(
             lookup["scp"],
-            {"lastTeamId": "roster23", "lastTeam": "Sporting CP"},
+            {"lastTeamId": "roster23", "lastTeam": "Arsenal"},
         )
 
     def test_duplicate_name_does_not_override_file_specific_stats(self):
@@ -63,7 +63,7 @@ class LastTeamLookupTests(unittest.TestCase):
             stats("Duplicate Player", "player2", "MON"),
         ]
         stat_team_lookup = {
-            "mon": {"lastTeamId": "roster20", "lastTeam": "Monaco"},
+            "mon": {"lastTeamId": "roster20", "lastTeam": "Arsenal"},
         }
 
         lookup = MODULE.build_last_team_lookup(players, player_stats, stat_team_lookup)
@@ -71,7 +71,7 @@ class LastTeamLookupTests(unittest.TestCase):
 
         self.assertEqual(players[0]["lastTeam"], "")
         self.assertEqual(players[0]["lastTeamId"], "")
-        self.assertEqual(players[1]["lastTeam"], "Monaco")
+        self.assertEqual(players[1]["lastTeam"], "Arsenal")
         self.assertEqual(players[1]["lastTeamId"], "roster20")
 
 

@@ -61,6 +61,67 @@
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster9"
   },
   {
+    "id": "roster16",
+    "name": "AC Sparta Praha",
+    "record": {
+      "wins": 4,
+      "losses": 5,
+      "pct": 0.444
+    },
+    "section": "ELB Standings",
+    "pf": 107.4,
+    "pa": 112.7,
+    "diff": -5.2,
+    "streak": "L3",
+    "last10": "4-6",
+    "starPlayer": {
+      "name": "Steve Johnson",
+      "url": "../players/player897.htm",
+      "pos": "C",
+      "age": "25",
+      "overall": "126",
+      "potential": "126"
+    },
+    "cap": {
+      "salary": "$48,089,117",
+      "room": "$21,910,883"
+    },
+    "strengths": [
+      {
+        "label": "Turnovers",
+        "value": 15.2,
+        "rank": 2
+      },
+      {
+        "label": "FT%",
+        "value": 0.759,
+        "rank": 3
+      },
+      {
+        "label": "3PT%",
+        "value": 0.388,
+        "rank": 4
+      },
+      {
+        "label": "Adjusted FG%",
+        "value": 0.533,
+        "rank": 4
+      }
+    ],
+    "injuries": [],
+    "recentGame": {
+      "date": "11/29/1985",
+      "text": "Aston Villa 110, @AC Sparta Praha 104",
+      "boxscoreFile": "box46-5.htm"
+    },
+    "nextGame": {
+      "date": "12/3/1985",
+      "text": "Inter Milan @ AC Sparta Praha",
+      "boxscoreFile": ""
+    },
+    "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster16"
+  },
+  {
     "id": "roster12",
     "name": "AFC Richmond",
     "record": {
@@ -183,6 +244,67 @@
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster18"
   },
   {
+    "id": "roster23",
+    "name": "Arsenal",
+    "record": {
+      "wins": 3,
+      "losses": 4,
+      "pct": 0.429
+    },
+    "section": "ECL Standings",
+    "pf": 120.4,
+    "pa": 121.0,
+    "diff": -0.6,
+    "streak": "W2",
+    "last10": "5-5",
+    "starPlayer": {
+      "name": "Chris Bosh",
+      "url": "../players/player622.htm",
+      "pos": "C",
+      "age": "21",
+      "overall": "129",
+      "potential": "141"
+    },
+    "cap": {
+      "salary": "$42,119,940",
+      "room": "$7,880,060"
+    },
+    "strengths": [
+      {
+        "label": "O.Rebounds",
+        "value": 15.7,
+        "rank": 1
+      },
+      {
+        "label": "Blocks",
+        "value": 6.4,
+        "rank": 1
+      },
+      {
+        "label": "Points",
+        "value": 120.4,
+        "rank": 2
+      },
+      {
+        "label": "Turnovers",
+        "value": 14.6,
+        "rank": 2
+      }
+    ],
+    "injuries": [],
+    "recentGame": {
+      "date": "11/24/1985",
+      "text": "@Arsenal 125, Valencia 121",
+      "boxscoreFile": "box41-2.htm"
+    },
+    "nextGame": {
+      "date": "12/1/1985",
+      "text": "Arsenal @ Monaco",
+      "boxscoreFile": ""
+    },
+    "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster23"
+  },
+  {
     "id": "roster19",
     "name": "Aston Villa",
     "record": {
@@ -233,7 +355,7 @@
     "injuries": [],
     "recentGame": {
       "date": "11/29/1985",
-      "text": "Aston Villa 110, @Sheffield United 104",
+      "text": "Aston Villa 110, @AC Sparta Praha 104",
       "boxscoreFile": "box46-5.htm"
     },
     "nextGame": {
@@ -802,7 +924,7 @@
     },
     "nextGame": {
       "date": "12/3/1985",
-      "text": "Inter Milan @ Sheffield United",
+      "text": "Inter Milan @ AC Sparta Praha",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster26"
@@ -1107,7 +1229,7 @@
     },
     "nextGame": {
       "date": "12/1/1985",
-      "text": "Sporting CP @ Monaco",
+      "text": "Arsenal @ Monaco",
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster20"
@@ -1233,128 +1355,6 @@
       "boxscoreFile": ""
     },
     "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster8"
-  },
-  {
-    "id": "roster16",
-    "name": "Sheffield United",
-    "record": {
-      "wins": 4,
-      "losses": 5,
-      "pct": 0.444
-    },
-    "section": "ELB Standings",
-    "pf": 107.4,
-    "pa": 112.7,
-    "diff": -5.2,
-    "streak": "L3",
-    "last10": "4-6",
-    "starPlayer": {
-      "name": "Steve Johnson",
-      "url": "../players/player897.htm",
-      "pos": "C",
-      "age": "25",
-      "overall": "126",
-      "potential": "126"
-    },
-    "cap": {
-      "salary": "$48,089,117",
-      "room": "$21,910,883"
-    },
-    "strengths": [
-      {
-        "label": "Turnovers",
-        "value": 15.2,
-        "rank": 2
-      },
-      {
-        "label": "FT%",
-        "value": 0.759,
-        "rank": 3
-      },
-      {
-        "label": "3PT%",
-        "value": 0.388,
-        "rank": 4
-      },
-      {
-        "label": "Adjusted FG%",
-        "value": 0.533,
-        "rank": 4
-      }
-    ],
-    "injuries": [],
-    "recentGame": {
-      "date": "11/29/1985",
-      "text": "Aston Villa 110, @Sheffield United 104",
-      "boxscoreFile": "box46-5.htm"
-    },
-    "nextGame": {
-      "date": "12/3/1985",
-      "text": "Inter Milan @ Sheffield United",
-      "boxscoreFile": ""
-    },
-    "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster16"
-  },
-  {
-    "id": "roster23",
-    "name": "Sporting CP",
-    "record": {
-      "wins": 3,
-      "losses": 4,
-      "pct": 0.429
-    },
-    "section": "ECL Standings",
-    "pf": 120.4,
-    "pa": 121.0,
-    "diff": -0.6,
-    "streak": "W2",
-    "last10": "5-5",
-    "starPlayer": {
-      "name": "Chris Bosh",
-      "url": "../players/player622.htm",
-      "pos": "C",
-      "age": "21",
-      "overall": "129",
-      "potential": "141"
-    },
-    "cap": {
-      "salary": "$42,119,940",
-      "room": "$7,880,060"
-    },
-    "strengths": [
-      {
-        "label": "O.Rebounds",
-        "value": 15.7,
-        "rank": 1
-      },
-      {
-        "label": "Blocks",
-        "value": 6.4,
-        "rank": 1
-      },
-      {
-        "label": "Points",
-        "value": 120.4,
-        "rank": 2
-      },
-      {
-        "label": "Turnovers",
-        "value": 14.6,
-        "rank": 2
-      }
-    ],
-    "injuries": [],
-    "recentGame": {
-      "date": "11/24/1985",
-      "text": "@Sporting CP 125, Valencia 121",
-      "boxscoreFile": "box41-2.htm"
-    },
-    "nextGame": {
-      "date": "12/1/1985",
-      "text": "Sporting CP @ Monaco",
-      "boxscoreFile": ""
-    },
-    "url": "https://eurosuperleague.github.io/index/00-assets/html/unified-roster.htm?id=roster23"
   },
   {
     "id": "roster22",

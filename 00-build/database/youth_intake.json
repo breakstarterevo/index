@@ -92,7 +92,7 @@
     "monaco:guaranteed-c",
     "valencia:guaranteed-c",
     "barcelona:wildcard-2",
-    "sportingcp:wildcard-2",
+    "arsenal:wildcard-2",
     "manchesterunited:guaranteed-b",
     "ajax:guaranteed-c",
     "crystalpalace:guaranteed-b",
@@ -109,10 +109,10 @@
     "parissaintgermain:guaranteed-b",
     "manchesterunited:guaranteed-c",
     "juventus:wildcard-1",
-    "sheffieldunited:wildcard-1",
+    "acspartapraha:wildcard-1",
     "manchestercity:wildcard-1",
-    "sportingcp:guaranteed-c",
-    "sportingcp:wildcard-1",
+    "arsenal:guaranteed-c",
+    "arsenal:wildcard-1",
     "manchestercity:wildcard-2",
     "brighton:guaranteed-b",
     "afcrichmond:guaranteed-b",
@@ -120,7 +120,7 @@
     "astonvilla:guaranteed-c",
     "manchestercity:guaranteed-c",
     "valencia:wildcard-1",
-    "sheffieldunited:guaranteed-c",
+    "acspartapraha:guaranteed-c",
     "astonvilla:guaranteed-b",
     "valencia:wildcard-2",
     "flfart:guaranteed-b",
@@ -129,9 +129,9 @@
     "benfica:guaranteed-b",
     "chelsea:guaranteed-c",
     "valencia:guaranteed-b",
-    "sportingcp:guaranteed-b",
+    "arsenal:guaranteed-b",
     "manchesterunited:wildcard-2",
-    "sheffieldunited:guaranteed-b",
+    "acspartapraha:guaranteed-b",
     "atleticomadrid:guaranteed-c",
     "marseille:guaranteed-b",
     "tottenhamhotspur:wildcard-2",
@@ -177,11 +177,11 @@
     "Manchester City",
     "Manchester United",
     "Marseille",
-    "Monaco",
+    "Arsenal",
     "Paris Saint-Germain",
     "Real Madrid",
-    "Sheffield United",
-    "Sporting CP",
+    "AC Sparta Praha",
+    "Arsenal",
     "Tottenham Hotspur",
     "Valencia"
   ],
@@ -335,11 +335,11 @@
     },
     {
       "allocationIndex": 7,
-      "slotId": "sportingcp:wildcard-2",
+      "slotId": "arsenal:wildcard-2",
       "slotKey": "wildcard-2",
       "slotLabel": "Conference Wildcard A/D",
       "slotType": "wildcard",
-      "team": "Sporting CP",
+      "team": "Arsenal",
       "division": "ECL",
       "tier": "A",
       "tierWeights": {
@@ -752,11 +752,11 @@
     },
     {
       "allocationIndex": 24,
-      "slotId": "sheffieldunited:wildcard-1",
+      "slotId": "acspartapraha:wildcard-1",
       "slotKey": "wildcard-1",
       "slotLabel": "Europa Wildcard",
       "slotType": "wildcard",
-      "team": "Sheffield United",
+      "team": "AC Sparta Praha",
       "division": "ELB",
       "tier": "A",
       "tierWeights": {
@@ -803,11 +803,11 @@
     },
     {
       "allocationIndex": 26,
-      "slotId": "sportingcp:guaranteed-c",
+      "slotId": "arsenal:guaranteed-c",
       "slotKey": "guaranteed-c",
       "slotLabel": "Guaranteed C",
       "slotType": "guaranteed",
-      "team": "Sporting CP",
+      "team": "Arsenal",
       "division": "ECL",
       "tier": "C",
       "tierWeights": {
@@ -827,11 +827,11 @@
     },
     {
       "allocationIndex": 27,
-      "slotId": "sportingcp:wildcard-1",
+      "slotId": "arsenal:wildcard-1",
       "slotKey": "wildcard-1",
       "slotLabel": "Conference Wildcard B/D",
       "slotType": "wildcard",
-      "team": "Sporting CP",
+      "team": "Arsenal",
       "division": "ECL",
       "tier": "D",
       "tierWeights": {
@@ -1024,11 +1024,11 @@
     },
     {
       "allocationIndex": 35,
-      "slotId": "sheffieldunited:guaranteed-c",
+      "slotId": "acspartapraha:guaranteed-c",
       "slotKey": "guaranteed-c",
       "slotLabel": "Guaranteed C",
       "slotType": "guaranteed",
-      "team": "Sheffield United",
+      "team": "AC Sparta Praha",
       "division": "ELB",
       "tier": "C",
       "tierWeights": {
@@ -1242,11 +1242,11 @@
     },
     {
       "allocationIndex": 44,
-      "slotId": "sportingcp:guaranteed-b",
+      "slotId": "arsenal:guaranteed-b",
       "slotKey": "guaranteed-b",
       "slotLabel": "Guaranteed B",
       "slotType": "guaranteed",
-      "team": "Sporting CP",
+      "team": "Arsenal",
       "division": "ECL",
       "tier": "B",
       "tierWeights": {
@@ -1291,11 +1291,11 @@
     },
     {
       "allocationIndex": 46,
-      "slotId": "sheffieldunited:guaranteed-b",
+      "slotId": "acspartapraha:guaranteed-b",
       "slotKey": "guaranteed-b",
       "slotLabel": "Guaranteed B",
       "slotType": "guaranteed",
-      "team": "Sheffield United",
+      "team": "AC Sparta Praha",
       "division": "ELB",
       "tier": "B",
       "tierWeights": {
@@ -3835,7 +3835,7 @@
       ]
     },
     {
-      "team": "Sheffield United",
+      "team": "AC Sparta Praha",
       "gm": "Villn",
       "tierRaw": "Europa League",
       "tier": "ELB",
@@ -3897,7 +3897,7 @@
           "tierRaw": "B",
           "tier": "B",
           "prospectKey": "darrickmartin|25998|71",
-          "slotId": "sheffieldunited:guaranteed-b",
+          "slotId": "acspartapraha:guaranteed-b",
           "slotKey": "guaranteed-b",
           "slotLabel": "Guaranteed B",
           "slotType": "guaranteed",
@@ -3912,8 +3912,8 @@
           "playerId": "player461",
           "overall": 93,
           "potential": 103,
-          "intakeTeam": "Sheffield United",
-          "rightsTeam": "Sheffield United"
+          "intakeTeam": "AC Sparta Praha",
+          "rightsTeam": "AC Sparta Praha"
         },
         {
           "name": "Todd Lichti",
@@ -3966,7 +3966,7 @@
           "tierRaw": "C",
           "tier": "C",
           "prospectKey": "toddlichti|24480|76",
-          "slotId": "sheffieldunited:guaranteed-c",
+          "slotId": "acspartapraha:guaranteed-c",
           "slotKey": "guaranteed-c",
           "slotLabel": "Guaranteed C",
           "slotType": "guaranteed",
@@ -3981,8 +3981,8 @@
           "playerId": "player462",
           "overall": 79,
           "potential": 87,
-          "intakeTeam": "Sheffield United",
-          "rightsTeam": "Sheffield United"
+          "intakeTeam": "AC Sparta Praha",
+          "rightsTeam": "AC Sparta Praha"
         },
         {
           "name": "Derrick Coleman",
@@ -4035,7 +4035,7 @@
           "tierRaw": "A",
           "tier": "A",
           "prospectKey": "derrickcoleman|24644|82",
-          "slotId": "sheffieldunited:wildcard-1",
+          "slotId": "acspartapraha:wildcard-1",
           "slotKey": "wildcard-1",
           "slotLabel": "Europa Wildcard",
           "slotType": "wildcard",
@@ -4050,8 +4050,8 @@
           "playerId": "player463",
           "overall": 118,
           "potential": 132,
-          "intakeTeam": "Sheffield United",
-          "rightsTeam": "Sheffield United"
+          "intakeTeam": "AC Sparta Praha",
+          "rightsTeam": "AC Sparta Praha"
         }
       ]
     },
@@ -6100,7 +6100,7 @@
       ]
     },
     {
-      "team": "Sporting CP",
+      "team": "Arsenal",
       "gm": "Pyritx",
       "tierRaw": "Conference League",
       "tier": "ECL",
@@ -6162,7 +6162,7 @@
           "tierRaw": "B",
           "tier": "B",
           "prospectKey": "desmondbane|35971|77",
-          "slotId": "sportingcp:guaranteed-b",
+          "slotId": "arsenal:guaranteed-b",
           "slotKey": "guaranteed-b",
           "slotLabel": "Guaranteed B",
           "slotType": "guaranteed",
@@ -6177,8 +6177,8 @@
           "playerId": "player96",
           "overall": 103,
           "potential": 124,
-          "intakeTeam": "Sporting CP",
-          "rightsTeam": "Sporting CP"
+          "intakeTeam": "Arsenal",
+          "rightsTeam": "Arsenal"
         },
         {
           "name": "GG Jackson II",
@@ -6231,7 +6231,7 @@
           "tierRaw": "C",
           "tier": "C",
           "prospectKey": "ggjacksonii|39433|81",
-          "slotId": "sportingcp:guaranteed-c",
+          "slotId": "arsenal:guaranteed-c",
           "slotKey": "guaranteed-c",
           "slotLabel": "Guaranteed C",
           "slotType": "guaranteed",
@@ -6246,8 +6246,8 @@
           "playerId": "player97",
           "overall": 80,
           "potential": 96,
-          "intakeTeam": "Sporting CP",
-          "rightsTeam": "Sporting CP"
+          "intakeTeam": "Arsenal",
+          "rightsTeam": "Arsenal"
         },
         {
           "name": "Jason Lawson",
@@ -6300,7 +6300,7 @@
           "tierRaw": "D",
           "tier": "D",
           "prospectKey": "jasonlawson|27274|83",
-          "slotId": "sportingcp:wildcard-1",
+          "slotId": "arsenal:wildcard-1",
           "slotKey": "wildcard-1",
           "slotLabel": "Conference Wildcard B/D",
           "slotType": "wildcard",
@@ -6315,8 +6315,8 @@
           "playerId": "player98",
           "overall": 80,
           "potential": 86,
-          "intakeTeam": "Sporting CP",
-          "rightsTeam": "Sporting CP"
+          "intakeTeam": "Arsenal",
+          "rightsTeam": "Arsenal"
         },
         {
           "name": "Eddie Jones",
@@ -6369,7 +6369,7 @@
           "tierRaw": "A",
           "tier": "A",
           "prospectKey": "eddiejones|26226|78",
-          "slotId": "sportingcp:wildcard-2",
+          "slotId": "arsenal:wildcard-2",
           "slotKey": "wildcard-2",
           "slotLabel": "Conference Wildcard A/D",
           "slotType": "wildcard",
@@ -6384,8 +6384,8 @@
           "playerId": "player99",
           "overall": 124,
           "potential": 147,
-          "intakeTeam": "Sporting CP",
-          "rightsTeam": "Sporting CP"
+          "intakeTeam": "Arsenal",
+          "rightsTeam": "Arsenal"
         }
       ]
     },

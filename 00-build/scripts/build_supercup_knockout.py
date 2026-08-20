@@ -103,8 +103,8 @@ TEAM_LOGO_FILES = {
     "Monaco": "monaco.jpg",
     "Paris Saint-Germain": "psg.jpg",
     "Real Madrid": "realmadrid.jpg",
-    "Sheffield United": "sheffield.jpg",
-    "Sporting CP": "sportingcp.jpg",
+    "AC Sparta Praha": "acspartapraha.png",
+    "Arsenal": "arsenal.png",
     "Tottenham Hotspur": "tottenham.jpg",
     "Valencia": "valencia.jpg",
 }

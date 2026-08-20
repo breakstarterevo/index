@@ -1,4 +1,4 @@
-﻿(function () {
+(function () {
   "use strict";
 
   const HISTORY_ROOT = "../../../00-build/history/";
@@ -62,11 +62,21 @@
     "paris saint-germain": "psg.jpg",
     psg: "psg.jpg",
     "real madrid": "realmadrid.jpg",
-    "sheffield united": "sheffield.jpg",
-    "sporting cp": "sportingcp.jpg",
+    "ac sparta praha": "acspartapraha.png",
+    "arsenal": "arsenal.png",
     tottenham: "tottenham.jpg",
     "tottenham hotspur": "tottenham.jpg",
     valencia: "valencia.jpg"
+  };
+  const CANONICAL_TEAM_NAMES_BY_FILE = {
+    roster16: "AC Sparta Praha",
+    roster20: "Monaco",
+    roster23: "Arsenal"
+  };
+  const LEGACY_TEAM_NAMES = {
+    "sheffield united": "AC Sparta Praha",
+    sheffield: "AC Sparta Praha",
+    "sporting cp": "Arsenal"
   };
 
   const state = {
@@ -95,8 +105,16 @@
   const seasonNumber = (season) => Number((String(season || "").match(/\d+/) || [0])[0]);
   const latestSeason = () => (state.index?.seasons || []).slice().sort((a, b) => seasonNumber(a.season) - seasonNumber(b.season)).at(-1)?.season || "season-1";
   const seasonLabel = (season) => (state.index?.seasons || []).find((item) => item.season === season)?.label || season;
-  const logoFor = (team) => LOGO_MAP[String(team || "").toLowerCase()] ? `${LOGO_ROOT}${LOGO_MAP[String(team || "").toLowerCase()]}` : "";
-  const teamLink = (file, label) => `<a href="team.htm?id=${encodeURIComponent(fileStem(file))}">${esc(label || fileStem(file))}</a>`;
+  const canonicalTeamName = (team, file = "") => {
+    const rosterId = fileStem(file).toLowerCase();
+    const clean = String(team || "").trim();
+    return CANONICAL_TEAM_NAMES_BY_FILE[rosterId] || LEGACY_TEAM_NAMES[clean.toLowerCase()] || clean;
+  };
+  const logoFor = (team, file = "") => {
+    const canonical = canonicalTeamName(team, file).toLowerCase();
+    return LOGO_MAP[canonical] ? `${LOGO_ROOT}${LOGO_MAP[canonical]}` : "";
+  };
+  const teamLink = (file, label) => `<a href="team.htm?id=${encodeURIComponent(fileStem(file))}">${esc(canonicalTeamName(label || fileStem(file), file))}</a>`;
   const playerLink = (season, file, label) => {
     const key = state.playerIndex?.seasonMaps?.[season]?.[file] || "";
     return key ? `<a href="player.htm?key=${encodeURIComponent(key)}">${esc(label)}</a>` : esc(label);
@@ -244,7 +262,7 @@
       if (!config) throw new Error(`Unknown history feed: ${feed}`);
       const requestKey = `${season}:${feed}`;
       if (!state.seasonFeedPromises.has(requestKey)) {
-        state.seasonFeedPromises.set(requestKey, fetchJson(`${base}${config[0]}`, config[1], { cache: "force-cache" })
+        state.seasonFeedPromises.set(requestKey, fetchJson(`${base}${config[0]}`, config[1], { cache: "no-store" })
           .then((value) => { data[feed] = value; })
           .finally(() => { state.seasonFeedPromises.delete(requestKey); }));
       }
@@ -267,7 +285,7 @@
       state.playerProfileCache.set(bucket, fetchJson(
         `${HISTORY_ROOT}player_profiles/${encodeURIComponent(bucket)}.json`,
         { players: {} },
-        { cache: "force-cache" }
+        { cache: "no-store" }
       ));
     }
     const payload = await state.playerProfileCache.get(bucket);
@@ -543,6 +561,7 @@
       seen.add(id);
       return {
         ...team,
+        team: canonicalTeamName(team.team, team.rosterFile),
         id,
         tier: tierFromTitle(section.title),
         position: index + 1,
@@ -669,7 +688,7 @@
   }
 
   function teamMini(teamName, file) {
-    const logo = logoFor(teamName);
+    const logo = logoFor(teamName, file);
     return `<span class="team-mini">${logo ? `<img src="${logo}" alt="">` : ""}${teamLink(file, teamName)}</span>`;
   }
 
@@ -1002,7 +1021,7 @@
   }
 
   function sameTeamName(left, right) {
-    return slug(left) === slug(right);
+    return slug(canonicalTeamName(left)) === slug(canonicalTeamName(right));
   }
 
   function supercupPerformance(data, teamName) {
@@ -1258,7 +1277,7 @@
     const rows = opponents.map((row) => {
       const largest = row.combined?.largestWin || {};
       const biggestWin = largest.margin
-        ? `+${esc(largest.margin)} (${esc(largest.score)}) · ${esc(largest.competition || "")} · ${esc(largest.label || "")}`
+        ? `+${esc(largest.margin)} (${esc(largest.score)}) &middot; ${esc(largest.competition || "")} &middot; ${esc(largest.label || "")}`
         : "-";
       const diff = Number(row.combined?.avgDiff || 0);
       return `<tr>
@@ -1289,12 +1308,12 @@
       $("#history-app").innerHTML = `<section class="history-hero"><h1>Team Not Found</h1></section>`;
       return;
     }
-    const teamName = team.name || team.team;
     const rosterFile = team.file || team.rosterFile || `${id}.htm`;
+    const teamName = canonicalTeamName(team.name || team.team, rosterFile);
     const standing = selectedTeamStanding(data, id);
     const players = (data.players || []).filter((p) => fileStem(p.team) === id || p.teamLabel === teamName).sort((a, b) => (num(b.overall) || 0) - (num(a.overall) || 0));
     const teamStats = (data.teamStats.teams || []).find((row) => fileStem(row.file) === id) || {};
-    const headToHeadPromise = fetchJson(`${HISTORY_ROOT}head_to_head.json`, { throughLabel: seasonLabel(latestSeason()), teams: {} }, { cache: "force-cache" });
+    const headToHeadPromise = fetchJson(`${HISTORY_ROOT}head_to_head.json`, { throughLabel: seasonLabel(latestSeason()), teams: {} }, { cache: "no-store" });
     const positionHistory = await teamPositionHistory(id);
     const supercupHistory = await teamSupercupHistory(positionHistory, teamName);
     const timelineHtml = await renderTeamTimeline(positionHistory, id, supercupHistory);
@@ -1961,7 +1980,7 @@
   }
 
   async function renderFinance() {
-    const feed = await fetchJson(`${HISTORY_ROOT}finance_history.json`, { throughLabel: seasonLabel(latestSeason()), capHistory: [], earnings: [] }, { cache: "force-cache" });
+    const feed = await fetchJson(`${HISTORY_ROOT}finance_history.json`, { throughLabel: seasonLabel(latestSeason()), capHistory: [], earnings: [] }, { cache: "no-store" });
     const identityMap = new Map((state.playerIndex?.identities || []).map((identity) => [identity.key, identity]));
     const p = params();
     const selectedSeason = p.get("season") || "all";
@@ -2210,7 +2229,7 @@
     const team = teams.find((row) => row.team === selectedTeam) || {};
     const visibleTeams = selectedTeam === "all" ? teams : teams.filter((row) => row.team === selectedTeam);
     const intakeTitle = selected === "all"
-      ? (selectedTeam === "all" ? "All Seasons Intake" : `${team.team || "Team"} · All Seasons Intake`)
+      ? (selectedTeam === "all" ? "All Seasons Intake" : `${team.team || "Team"} &middot; All Seasons Intake`)
       : (selectedTeam === "all" ? "All Teams Intake" : `${team.team || "Team"} Intake`);
     const intakeHtml = selected === "all"
       ? renderYouthAllSeasons(allData, selectedTeam)
@@ -2292,13 +2311,13 @@
       const detailId = `intake-class-${slug(row.season)}-${slug(row.team)}-${index}`;
       const preview = row.members.map((member) => member.player.name).join(", ");
       const playerRows = row.members.slice().sort((a, b) => b.peakOvr - a.peakOvr).map((member) => `<div class="intake-player-grid-row" role="row"><div role="cell">${youthPlayerLink(member.player, member.season)}</div><div role="cell">${esc(member.player.Position || "-")}</div><div role="cell">${ratingChip("OVR", member.initialOvr)}</div><div role="cell">${ratingChip("POT", member.initialPot)}</div><div role="cell">${ratingChip("OVR", member.peakOvr)}</div><div role="cell">${esc(member.peakSeason ? seasonLabel(member.peakSeason) : "-")}</div><div role="cell">${esc(member.outcome)}</div></div>`).join("");
-      return `<tr class="intake-class-summary" data-detail-id="${esc(detailId)}"><td class="num">${index + 1}</td><td>${esc(seasonLabel(row.season))}</td><td><button class="intake-class-toggle" type="button" aria-expanded="false" aria-controls="${esc(detailId)}" data-preview="${esc(preview)}" title="${esc(preview)}"><span>${esc(row.team)}</span><span class="intake-class-chevron" aria-hidden="true">▸</span></button></td><td class="num">${row.count}</td><td class="num">${oneDecimal(row.avgPeak)}</td><td class="num">${oneDecimal(row.hits * 100 / row.count)}%</td><td class="num">${row.matureWildcards ? `${oneDecimal(row.busts * 100 / row.matureWildcards)}%` : "-"}</td><td class="num">${row.count ? `${oneDecimal(row.homeRuns * 100 / row.count)}%` : "-"}</td></tr><tr class="intake-class-detail-row" id="${esc(detailId)}" data-expanded="false" hidden><td colspan="8"><div class="intake-player-grid" role="table" aria-label="${esc(row.team)} ${esc(seasonLabel(row.season))} intake players"><div class="intake-player-grid-row header" role="row"><div role="columnheader">Player</div><div role="columnheader">Pos</div><div role="columnheader">Intake OVR</div><div role="columnheader">Intake POT</div><div role="columnheader">Peak OVR</div><div role="columnheader">Peak Season</div><div role="columnheader">Outcome</div></div>${playerRows}</div></td></tr>`;
+      return `<tr class="intake-class-summary" data-detail-id="${esc(detailId)}"><td class="num">${index + 1}</td><td>${esc(seasonLabel(row.season))}</td><td><button class="intake-class-toggle" type="button" aria-expanded="false" aria-controls="${esc(detailId)}" data-preview="${esc(preview)}" title="${esc(preview)}"><span>${esc(row.team)}</span><span class="intake-class-chevron" aria-hidden="true">&#9656;</span></button></td><td class="num">${row.count}</td><td class="num">${oneDecimal(row.avgPeak)}</td><td class="num">${oneDecimal(row.hits * 100 / row.count)}%</td><td class="num">${row.matureWildcards ? `${oneDecimal(row.busts * 100 / row.matureWildcards)}%` : "-"}</td><td class="num">${row.count ? `${oneDecimal(row.homeRuns * 100 / row.count)}%` : "-"}</td></tr><tr class="intake-class-detail-row" id="${esc(detailId)}" data-expanded="false" hidden><td colspan="8"><div class="intake-player-grid" role="table" aria-label="${esc(row.team)} ${esc(seasonLabel(row.season))} intake players"><div class="intake-player-grid-row header" role="row"><div role="columnheader">Player</div><div role="columnheader">Pos</div><div role="columnheader">Intake OVR</div><div role="columnheader">Intake POT</div><div role="columnheader">Peak OVR</div><div role="columnheader">Peak Season</div><div role="columnheader">Outcome</div></div>${playerRows}</div></td></tr>`;
     }), "No evaluated intake classes");
     const franchisesTable = table(["Rank", "Team", "Elite Pool", "Elite Pool Score", "Elite Prospect Rate", "Bust Rate", "Home Run Rate"], franchiseAnalytics.map((row, index) => {
       const detailId = `intake-franchise-${slug(row.team)}-${index}`;
       const preview = row.members.map((member) => member.player.name).join(", ");
       const playerRows = row.members.slice().sort((a, b) => seasonNumber(a.season) - seasonNumber(b.season) || b.peakOvr - a.peakOvr).map((member) => `<div class="intake-player-grid-row" role="row"><div role="cell">${youthPlayerLink(member.player, member.season)}</div><div role="cell">${esc(seasonLabel(member.season))}</div><div role="cell">${ratingChip("OVR", member.initialOvr)}</div><div role="cell">${ratingChip("POT", member.initialPot)}</div><div role="cell">${ratingChip("OVR", member.peakOvr)}</div><div role="cell">${esc(member.peakSeason ? seasonLabel(member.peakSeason) : "-")}</div><div role="cell">${esc(member.outcome)}</div></div>`).join("");
-      return `<tr class="intake-class-summary" data-detail-id="${esc(detailId)}"><td class="num">${index + 1}</td><td><button class="intake-class-toggle" type="button" aria-expanded="false" aria-controls="${esc(detailId)}" data-preview="${esc(preview)}" title="${esc(preview)}"><span>${esc(row.team)}</span><span class="intake-class-chevron" aria-hidden="true">▸</span></button></td><td class="num">${row.elitePoolCount}/${row.count}</td><td class="num">${oneDecimal(row.elitePoolScore)}</td><td class="num">${row.count ? `${oneDecimal(row.hits * 100 / row.count)}%` : "-"}</td><td class="num">${row.matureWildcards ? `${oneDecimal(row.busts * 100 / row.matureWildcards)}%` : "-"}</td><td class="num">${row.count ? `${oneDecimal(row.homeRuns * 100 / row.count)}%` : "-"}</td></tr><tr class="intake-class-detail-row" id="${esc(detailId)}" data-expanded="false" hidden><td colspan="7"><div class="intake-player-grid franchise-player-grid" role="table" aria-label="${esc(row.team)} franchise intake players"><div class="intake-player-grid-row header" role="row"><div role="columnheader">Player</div><div role="columnheader">Intake Season</div><div role="columnheader">Intake OVR</div><div role="columnheader">Intake POT</div><div role="columnheader">Peak OVR</div><div role="columnheader">Peak Season</div><div role="columnheader">Outcome</div></div>${playerRows}</div></td></tr>`;
+      return `<tr class="intake-class-summary" data-detail-id="${esc(detailId)}"><td class="num">${index + 1}</td><td><button class="intake-class-toggle" type="button" aria-expanded="false" aria-controls="${esc(detailId)}" data-preview="${esc(preview)}" title="${esc(preview)}"><span>${esc(row.team)}</span><span class="intake-class-chevron" aria-hidden="true">&#9656;</span></button></td><td class="num">${row.elitePoolCount}/${row.count}</td><td class="num">${oneDecimal(row.elitePoolScore)}</td><td class="num">${row.count ? `${oneDecimal(row.hits * 100 / row.count)}%` : "-"}</td><td class="num">${row.matureWildcards ? `${oneDecimal(row.busts * 100 / row.matureWildcards)}%` : "-"}</td><td class="num">${row.count ? `${oneDecimal(row.homeRuns * 100 / row.count)}%` : "-"}</td></tr><tr class="intake-class-detail-row" id="${esc(detailId)}" data-expanded="false" hidden><td colspan="7"><div class="intake-player-grid franchise-player-grid" role="table" aria-label="${esc(row.team)} franchise intake players"><div class="intake-player-grid-row header" role="row"><div role="columnheader">Player</div><div role="columnheader">Intake Season</div><div role="columnheader">Intake OVR</div><div role="columnheader">Intake POT</div><div role="columnheader">Peak OVR</div><div role="columnheader">Peak Season</div><div role="columnheader">Outcome</div></div>${playerRows}</div></td></tr>`;
     }), "No franchise development data");
     $("#history-app").innerHTML = `
       <section class="history-hero"><h1>Development Stats</h1><p class="muted">Youth development outcomes across every archived season.</p></section>
@@ -2306,7 +2325,7 @@
         <label>Team <select id="teamSelect"><option value="all" ${selectedTeam === "all" ? "selected" : ""}>All</option>${teamNames.map((teamName) => `<option value="${esc(teamName)}" ${teamName === selectedTeam ? "selected" : ""}>${esc(teamName)}</option>`).join("")}</select></label>
       </div></section>
       <section class="dashboard-grid compact-summary">
-        ${dashboardCard("Best Intake Class", bestClass ? `${esc(bestClass.team)} · ${esc(seasonLabel(bestClass.season))}` : "-", `${oneDecimal(bestClass?.avgPeak)} top-two average peak OVR`)}
+        ${dashboardCard("Best Intake Class", bestClass ? `${esc(bestClass.team)} &middot; ${esc(seasonLabel(bestClass.season))}` : "-", `${oneDecimal(bestClass?.avgPeak)} top-two average peak OVR`)}
         ${dashboardCard("Elite Prospect Rate", overallYouth.count ? `${oneDecimal(overallYouth.hits * 100 / overallYouth.count)}%` : "-", `${overallYouth.hits}/${overallYouth.count} players entered with 115+ POT`)}
         ${dashboardCard("Biggest Development Gain", biggestGain ? youthPlayerLink(biggestGain.player, biggestGain.season) : "-", biggestGain ? `+${biggestGain.gain} OVR` : "No evaluated players")}
       </section>
@@ -2314,7 +2333,7 @@
         <h2>${selectedView === "classes" ? "Best Intake Classes" : "Franchise Development"}</h2>${selectedView === "classes" ? classesTable : franchisesTable}
       </section>
       <section class="reference-section"><h2>Biggest Development Surprises</h2>${table(["Player", "Team", "Intake POT", "Peak OVR", "vs POT", "Outcome"], development.slice(0, 25).map((row) => `<tr><td>${youthPlayerLink(row.player, row.season)}</td><td>${esc(row.team)}</td><td>${ratingChip("POT", row.initialPot)}</td><td>${ratingChip("OVR", row.peakOvr)}</td><td class="num">${row.versusPot === null ? "-" : `${row.versusPot >= 0 ? "+" : ""}${row.versusPot}`}</td><td>${esc(row.outcome)}</td></tr>`), "No development data")}</section>
-      <details class="development-definitions"><summary>How outcomes work</summary><p>Class average peak OVR uses the best two players when a class has three or more. Franchise rank uses an Elite Pool Score based on the top 25% of its intake players by peak OVR, with at least three players when available. Rank weights decrease linearly from 2× for the best player to 1× for the lowest player in the pool, then normalize into one comparable score. Elite Prospect = an intake player who entered with at least 115 POT. Bust = an Elite Prospect who has not reached initial POT after five post-intake archive seasons. Development home run = peak OVR at least 10 points above initial POT. Elite Prospects inside that five-season window remain developing.</p></details>`;
+      <details class="development-definitions"><summary>How outcomes work</summary><p>Class average peak OVR uses the best two players when a class has three or more. Franchise rank uses an Elite Pool Score based on the top 25% of its intake players by peak OVR, with at least three players when available. Rank weights decrease linearly from 2&times; for the best player to 1&times; for the lowest player in the pool, then normalize into one comparable score. Elite Prospect = an intake player who entered with at least 115 POT. Bust = an Elite Prospect who has not reached initial POT after five post-intake archive seasons. Development home run = peak OVR at least 10 points above initial POT. Elite Prospects inside that five-season window remain developing.</p></details>`;
     $("#teamSelect")?.addEventListener("change", (event) => { navigate(`development-stats.htm?team=${encodeURIComponent(event.target.value)}&view=${encodeURIComponent(selectedView)}`); });
     const toggleIntakeClass = (summaryRow) => {
       const detailRow = document.getElementById(summaryRow?.dataset.detailId || "");

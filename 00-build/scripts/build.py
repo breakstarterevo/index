@@ -15,6 +15,7 @@ DRY_RUN = "--dry-run" in sys.argv
 VERBOSE = "--verbose" in sys.argv
 
 SCRIPTS = [
+    (os.path.join(BUILD_DIR, "rebrand_teams.py"), "Applying canonical team rebrands"),
     (os.path.join(BUILD_DIR, "build_players_json.py"), "Building database JSON files"),
     (os.path.join(BUILD_DIR, "build_player_photos_json.py"), "Building player photo mapping"),
     (os.path.join(BUILD_DIR, "build_player_database_json.py"), "Building season-aware player database feeds"),

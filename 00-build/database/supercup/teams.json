@@ -14,6 +14,20 @@
         }
     },
     {
+        "id": "roster25",
+        "name": "AC Sparta Praha",
+        "file": "roster25.htm",
+        "url": "../rosters/roster25.htm",
+        "starPlayer": {
+            "name": "Bill Cartwright",
+            "url": "../players/player887.htm",
+            "pos": "C",
+            "age": "22",
+            "overall": "122",
+            "potential": "122"
+        }
+    },
+    {
         "id": "roster6",
         "name": "AFC Richmond",
         "file": "roster6.htm",
@@ -39,6 +53,20 @@
             "age": "18",
             "overall": "141",
             "potential": "175"
+        }
+    },
+    {
+        "id": "roster26",
+        "name": "Arsenal",
+        "file": "roster26.htm",
+        "url": "../rosters/roster26.htm",
+        "starPlayer": {
+            "name": "Chris Bosh",
+            "url": "../players/player622.htm",
+            "pos": "PF",
+            "age": "18",
+            "overall": "119",
+            "potential": "141"
         }
     },
     {
@@ -277,34 +305,6 @@
             "age": "22",
             "overall": "157",
             "potential": "157"
-        }
-    },
-    {
-        "id": "roster25",
-        "name": "Sheffield United",
-        "file": "roster25.htm",
-        "url": "../rosters/roster25.htm",
-        "starPlayer": {
-            "name": "Bill Cartwright",
-            "url": "../players/player887.htm",
-            "pos": "C",
-            "age": "22",
-            "overall": "122",
-            "potential": "122"
-        }
-    },
-    {
-        "id": "roster26",
-        "name": "Sporting CP",
-        "file": "roster26.htm",
-        "url": "../rosters/roster26.htm",
-        "starPlayer": {
-            "name": "Chris Bosh",
-            "url": "../players/player622.htm",
-            "pos": "PF",
-            "age": "18",
-            "overall": "119",
-            "potential": "141"
         }
     },
     {

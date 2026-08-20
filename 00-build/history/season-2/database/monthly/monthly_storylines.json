@@ -111,11 +111,11 @@
             "id": "coldest-team",
             "type": "team_trend",
             "title": "Coldest Team of the Month",
-            "summary": "Sporting CP had the roughest month at 0-6 and now carries a L6 slide.",
+            "summary": "Arsenal had the roughest month at 0-6 and now carries a L6 slide.",
             "tier": "Tier 3",
             "importance": 84,
             "data": {
-                "team": "Sporting CP",
+                "team": "Arsenal",
                 "record": "0-6",
                 "streak": "L6",
                 "avgMargin": -12.67,
@@ -124,7 +124,7 @@
                     "opponent": "Paris Saint-Germain",
                     "result": "L",
                     "margin": 30,
-                    "score": "@Paris Saint-Germain 113, Sporting CP 83",
+                    "score": "@Paris Saint-Germain 113, Arsenal 83",
                     "boxscoreUrl": "./boxes/box168-2.htm",
                     "section": "Regular Season"
                 },
@@ -198,7 +198,7 @@
                         "rosterUrl": "./rosters/roster11.htm"
                     },
                     {
-                        "team": "Sheffield United",
+                        "team": "AC Sparta Praha",
                         "record": "3-3",
                         "standingRank": 2,
                         "streak": "W1",

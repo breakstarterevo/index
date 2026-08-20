@@ -711,8 +711,8 @@
       parisstgermain: { primary: "#004170", secondary: "#da291c" },
       parisgermain: { primary: "#004170", secondary: "#da291c" },
       realmadrid: { primary: "#552583", secondary: "#febe10" },
-      sheffieldunited: { primary: "#ee2737", secondary: "#000000" },
-      sportingcp: { primary: "#00843d", secondary: "#ffffff" },
+      acspartapraha: { primary: "#000000", secondary: "#c71d20" },
+      arsenal: { primary: "#db0007", secondary: "#d3bc8d" },
       tottenhamhotspur: { primary: "#132257", secondary: "#ffffff" },
       valencia: { primary: "#f15a24", secondary: "#000000" }
     };

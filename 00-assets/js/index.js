@@ -1,4 +1,4 @@
-ï»¿(function () {
+(function () {
   "use strict";
 
   var STYLE_ID = "league-index-shell-styles";
@@ -304,7 +304,7 @@
     search.className = "site-shell-search";
     search.id = "siteShellSearch";
     searchStatus.className = "site-shell-search-status";
-    searchStatus.textContent = getStatusFromDocumentTitle() || "Sim 2 Â· Dec 1983";
+    searchStatus.textContent = getStatusFromDocumentTitle() || "Sim 2 · Dec 1983";
     searchStatus.title = "Latest league status";
     searchInput.className = "site-shell-search-input";
     searchInput.type = "search";
@@ -679,14 +679,14 @@
         }
 
         if (labelParts.length) {
-          node.textContent = labelParts.join(" Â· ");
+          node.textContent = labelParts.join(" · ");
         }
         if (updatedThrough) {
           node.title = "Latest sim: updated through " + updatedThrough;
         }
       })
       .catch(function () {
-        node.textContent = titleStatus || "Sim 2 Â· Dec 1983";
+        node.textContent = titleStatus || "Sim 2 · Dec 1983";
         node.title = titleStatus ? "Latest league status" : "Latest sim: updated through 31/12/1983";
       });
   }
@@ -714,8 +714,8 @@
       "Monaco": ["MON", "monaco"],
       "Paris Saint-Germain": ["PSG", "psg"],
       "Real Madrid": ["RMA", "realmadrid"],
-      "Sheffield United": ["SHU", "sheffield"],
-      "Sporting CP": ["SCP", "sportingcp"],
+      "AC Sparta Praha": ["ACS", "acspartapraha.png"],
+      "Arsenal": ["ARS", "arsenal.png"],
       "Tottenham Hotspur": ["TOT", "tottenham"],
       "Valencia": ["VAL", "valencia"]
     };
@@ -724,10 +724,11 @@
       return part.charAt(0);
     }).join("").slice(0, 3).toUpperCase();
     var slug = data ? data[1] : clean.toLowerCase().replace(/[^a-z0-9]+/g, "");
+    var filename = /\.[a-z0-9]+$/i.test(slug) ? slug : slug + ".jpg";
 
     return {
       abbr: abbr || "---",
-      img: getRepoScopedPath("00-assets/photos/" + slug + ".jpg")
+      img: getRepoScopedPath("00-assets/photos/" + filename)
     };
   }
 

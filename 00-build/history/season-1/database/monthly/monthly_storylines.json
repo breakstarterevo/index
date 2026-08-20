@@ -111,11 +111,11 @@
             "id": "coldest-team",
             "type": "team_trend",
             "title": "Coldest Team of the Month",
-            "summary": "Sporting CP had the roughest month at 0-5 and now carries a L5 slide.",
+            "summary": "Arsenal had the roughest month at 0-5 and now carries a L5 slide.",
             "tier": "Tier 3",
             "importance": 84,
             "data": {
-                "team": "Sporting CP",
+                "team": "Arsenal",
                 "record": "0-5",
                 "streak": "L5",
                 "avgMargin": -17.4,
@@ -124,7 +124,7 @@
                     "opponent": "Valencia",
                     "result": "L",
                     "margin": 24,
-                    "score": "@Valencia 102, Sporting CP 78",
+                    "score": "@Valencia 102, Arsenal 78",
                     "boxscoreUrl": "./boxes/box184-4.htm",
                     "section": "Regular Season"
                 },
@@ -264,7 +264,7 @@
                         "rosterUrl": "./rosters/roster15.htm"
                     },
                     {
-                        "team": "Sheffield United",
+                        "team": "AC Sparta Praha",
                         "record": "4-2",
                         "standingRank": 2,
                         "streak": "W2",

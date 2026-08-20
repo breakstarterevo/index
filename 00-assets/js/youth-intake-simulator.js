@@ -17,8 +17,8 @@
     "Chelsea":"chelsea.jpg","Crystal Palace":"crystalpalace.jpg","FL Fart":"flfart.jpg",
     "Inter Milan":"intermilan.jpg","Juventus":"juventus.jpg","Manchester City":"manchestercity.jpg",
     "Manchester United":"manutd.jpg","Marseille":"marseille.jpg","Monaco":"monaco.jpg",
-    "Paris Saint-Germain":"psg.jpg","Real Madrid":"realmadrid.jpg","Sheffield United":"sheffield.jpg",
-    "Sporting CP":"sportingcp.jpg","Tottenham Hotspur":"tottenham.jpg","Valencia":"valencia.jpg"
+    "Paris Saint-Germain":"psg.jpg","Real Madrid":"realmadrid.jpg","AC Sparta Praha":"acspartapraha.png",
+    "Arsenal":"arsenal.png","Tottenham Hotspur":"tottenham.jpg","Valencia":"valencia.jpg"
   };
   var DIVISION_LABELS = {CLB:"Champions League",ELB:"Europa League",ECL:"Conference League"};
   var state = {

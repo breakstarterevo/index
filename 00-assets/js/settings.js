@@ -460,7 +460,7 @@
       nextSettings.spoilerMode = "show";
       core.saveSettings(nextSettings);
       applySavedPreferences();
-      status.textContent = "Saved. Dark mode applies now. Reload the main page to apply default page, menu startup, and player link destination changes.";
+      status.textContent = "Saved. Dark mode applies now. Reload the main page to apply default page, menu startup, and team/player link destination changes.";
     });
 
     document.getElementById("league-settings-reset").addEventListener("click", function () {
