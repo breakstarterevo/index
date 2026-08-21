@@ -6877,9 +6877,42 @@
       "tradedAt": "2026-08-18T09:03:44Z",
       "note": "trade",
       "transactionId": "rights-0006-de510886e154"
+    },
+    {
+      "revision": 7,
+      "prospectKey": "mikemiller|29270|80",
+      "playerName": "Mike Miller",
+      "intakeTeam": "AFC Richmond",
+      "fromTeam": "AFC Richmond",
+      "toTeam": "Arsenal",
+      "tradedAt": "2026-08-21T02:21:26Z",
+      "note": "trade",
+      "transactionId": "rights-0007-11a69a0fad68"
+    },
+    {
+      "revision": 8,
+      "prospectKey": "derrickcoleman|24644|82",
+      "playerName": "Derrick Coleman",
+      "intakeTeam": "AC Sparta Praha",
+      "fromTeam": "AC Sparta Praha",
+      "toTeam": "Paris Saint-Germain",
+      "tradedAt": "2026-08-21T02:27:56Z",
+      "note": "trade",
+      "transactionId": "rights-0008-12b07ee752bd"
+    },
+    {
+      "revision": 9,
+      "prospectKey": "donyellmarshall|26802|81",
+      "playerName": "Donyell Marshall",
+      "intakeTeam": "Tottenham Hotspur",
+      "fromTeam": "Paris Saint-Germain",
+      "toTeam": "AC Sparta Praha",
+      "tradedAt": "2026-08-21T02:28:20Z",
+      "note": "trade",
+      "transactionId": "rights-0009-427902dd4288"
     }
   ],
-  "rightsRevision": 6,
-  "rightsUpdatedAt": "2026-08-18T09:03:44Z",
-  "rightsHash": "f0fb48ad7129fcf597c06f1bb1cfc789b6172d63054c6417859975164511f8b4"
+  "rightsRevision": 9,
+  "rightsUpdatedAt": "2026-08-21T02:28:20Z",
+  "rightsHash": "3cdbed7744aadbe3b134d52f990b9713808275526578e5b25e67cf1ecc9f2fd2"
 }

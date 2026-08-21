@@ -10,9 +10,9 @@
   "publishedAt": "2026-08-17T01:21:53Z",
   "draftHash": "7ecfbecacd07e0df0078819cd96bb36b845d0d922aa5c5d4471d4b4a3d28a15c",
   "publicationHash": "f1440648d817cade69c45deef7c900eb7e41a65c3a526f934cdc30662d2c3466",
-  "rightsRevision": 6,
-  "rightsUpdatedAt": "2026-08-18T09:03:44Z",
-  "rightsHash": "f0fb48ad7129fcf597c06f1bb1cfc789b6172d63054c6417859975164511f8b4",
+  "rightsRevision": 9,
+  "rightsUpdatedAt": "2026-08-21T02:28:20Z",
+  "rightsHash": "3cdbed7744aadbe3b134d52f990b9713808275526578e5b25e67cf1ecc9f2fd2",
   "rightsTransfers": [
     {
       "revision": 1,
@@ -79,6 +79,39 @@
       "tradedAt": "2026-08-18T09:03:44Z",
       "note": "trade",
       "transactionId": "rights-0006-de510886e154"
+    },
+    {
+      "revision": 7,
+      "prospectKey": "mikemiller|29270|80",
+      "playerName": "Mike Miller",
+      "intakeTeam": "AFC Richmond",
+      "fromTeam": "AFC Richmond",
+      "toTeam": "Arsenal",
+      "tradedAt": "2026-08-21T02:21:26Z",
+      "note": "trade",
+      "transactionId": "rights-0007-11a69a0fad68"
+    },
+    {
+      "revision": 8,
+      "prospectKey": "derrickcoleman|24644|82",
+      "playerName": "Derrick Coleman",
+      "intakeTeam": "AC Sparta Praha",
+      "fromTeam": "AC Sparta Praha",
+      "toTeam": "Paris Saint-Germain",
+      "tradedAt": "2026-08-21T02:27:56Z",
+      "note": "trade",
+      "transactionId": "rights-0008-12b07ee752bd"
+    },
+    {
+      "revision": 9,
+      "prospectKey": "donyellmarshall|26802|81",
+      "playerName": "Donyell Marshall",
+      "intakeTeam": "Tottenham Hotspur",
+      "fromTeam": "Paris Saint-Germain",
+      "toTeam": "AC Sparta Praha",
+      "tradedAt": "2026-08-21T02:28:20Z",
+      "note": "trade",
+      "transactionId": "rights-0009-427902dd4288"
     }
   ],
   "focusPolicy": {
@@ -2348,7 +2381,7 @@
           "Weight": 210,
           "Position": "SF",
           "DOB": 36894,
-          "Age": "18",
+          "Age": "19",
           "Uniform": 9,
           "City": "Beit Zera",
           "State": "Israel",
@@ -2642,7 +2675,7 @@
           "overall": 89,
           "potential": 117,
           "intakeTeam": "AFC Richmond",
-          "rightsTeam": "AFC Richmond"
+          "rightsTeam": "Arsenal"
         },
         {
           "name": "Jared Rhoden",
@@ -3260,7 +3293,7 @@
           "Weight": 270,
           "Position": "C",
           "DOB": 31023,
-          "Age": "20",
+          "Age": "21",
           "Uniform": 34,
           "City": "Tarzana",
           "State": "CA",
@@ -4051,7 +4084,7 @@
           "overall": 118,
           "potential": 132,
           "intakeTeam": "AC Sparta Praha",
-          "rightsTeam": "AC Sparta Praha"
+          "rightsTeam": "Paris Saint-Germain"
         }
       ]
     },
@@ -5318,7 +5351,7 @@
           "Weight": 195,
           "Position": "PG",
           "DOB": 32851,
-          "Age": "18",
+          "Age": "19",
           "Uniform": 12,
           "City": "Birmingham",
           "State": "AL",
@@ -6095,7 +6128,7 @@
           "overall": 83,
           "potential": 125,
           "intakeTeam": "Tottenham Hotspur",
-          "rightsTeam": "Paris Saint-Germain"
+          "rightsTeam": "AC Sparta Praha"
         }
       ]
     },
@@ -6188,7 +6221,7 @@
           "Weight": 214,
           "Position": "PF",
           "DOB": 39433,
-          "Age": "15",
+          "Age": "16",
           "Uniform": 45,
           "City": "Columbia",
           "State": "SC",
@@ -6699,7 +6732,7 @@
           "Weight": 240,
           "Position": "PF",
           "DOB": 22278,
-          "Age": "21",
+          "Age": "22",
           "Uniform": 0,
           "City": 0,
           "State": 0,
