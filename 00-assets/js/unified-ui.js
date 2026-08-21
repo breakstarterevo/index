@@ -69,8 +69,25 @@
     return TEAM_COLORS[String(value || "").trim()] || fallback || "#111b36";
   }
 
+  function contrastColor(value) {
+    var hex = String(value || "").replace("#", "");
+    var channels;
+    var luminance;
+
+    if (!/^[0-9a-f]{6}$/i.test(hex)) { return "#ffffff"; }
+    channels = [hex.slice(0, 2), hex.slice(2, 4), hex.slice(4, 6)].map(function (part) {
+      var channel = parseInt(part, 16) / 255;
+      return channel <= 0.03928 ? channel / 12.92 : Math.pow((channel + 0.055) / 1.055, 2.4);
+    });
+    luminance = channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+    return (luminance + 0.05) / 0.05 > 1.05 / (luminance + 0.05) ? "#111827" : "#ffffff";
+  }
+
   function setTeamColor(primary, secondary) {
-    if (primary) { document.documentElement.style.setProperty("--ui-team", primary); }
+    if (primary) {
+      document.documentElement.style.setProperty("--ui-team", primary);
+      document.documentElement.style.setProperty("--ui-team-contrast", contrastColor(primary));
+    }
     if (secondary) { document.documentElement.style.setProperty("--ui-team-secondary", secondary); }
   }
 

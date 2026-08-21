@@ -11,6 +11,11 @@ html.league-theme-dark {
   --ui-card: #182031;
   --ui-line: #354057;
   --ui-soft: #253049;
+  --box-accent-text: color-mix(in srgb, var(--ui-team) 28%, #fff);
+}
+
+html.league-theme-dark .boxscore-shell .ui-panel-title {
+  color: var(--box-accent-text);
 }
 
 .boxscore-shell {
@@ -298,6 +303,10 @@ html.league-theme-dark {
   font-weight: 950;
 }
 
+html.league-theme-dark .boxscore-tab-score {
+  color: color-mix(in srgb, var(--team-tab-color) 42%, #fff);
+}
+
 .boxscore-potg {
   display: grid;
   grid-template-columns: 76px minmax(0, 1fr);
@@ -376,6 +385,7 @@ html.league-theme-dark {
   text-align: center;
 }
 .boxscore-comparison-stat strong.has-edge { color: var(--ui-team); }
+html.league-theme-dark .boxscore-comparison-stat strong.has-edge { color: var(--box-accent-text); }
 .boxscore-comparison-label {
   color: var(--ui-muted);
   font-size: .55rem;
@@ -517,6 +527,15 @@ html.league-theme-dark {
 .boxscore-positive { color: var(--ui-good); font-weight: 850; }
 .boxscore-negative { color: var(--ui-bad); font-weight: 850; }
 .boxscore-points { color: var(--ui-team); font-weight: 950; }
+
+html.league-theme-dark .boxscore-potg-fallback,
+html.league-theme-dark .boxscore-potg-name:hover,
+html.league-theme-dark .boxscore-player-link:hover,
+html.league-theme-dark .boxscore-points {
+  color: var(--box-accent-text);
+}
+
+html.league-theme-dark .boxscore-negative { color: #ff9188; }
 
 @media (max-width: 980px) {
   .boxscore-hero {

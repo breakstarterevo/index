@@ -7,7 +7,7 @@
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/unified-components.css">
-  <script src="../js/unified-ui.js"></script>
+  <script src="../js/unified-ui.js?v=dark-contrast-2"></script>
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
   <style>
@@ -2068,6 +2068,7 @@
         .then((bundle) => {
           document.documentElement.style.setProperty("--team-color", bundle.colors.main);
           document.documentElement.style.setProperty("--team-color-2", bundle.colors.secondary);
+          window.ESLUnifiedUI?.setTeamColor(bundle.colors.main, bundle.colors.secondary);
         })
         .catch(() => {});
     }

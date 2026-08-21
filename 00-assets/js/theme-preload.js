@@ -23,10 +23,12 @@
   }
 
   if (theme === "dark") {
+    root.setAttribute("data-theme", "dark");
     root.className = (root.className + " league-theme-dark").replace(/\s+/g, " ").trim();
     root.style.backgroundColor = "#0d1118";
     root.style.colorScheme = "dark";
   } else {
+    root.setAttribute("data-theme", "light");
     root.className = (root.className + " league-theme-light").replace(/\s+/g, " ").trim();
   }
 }());

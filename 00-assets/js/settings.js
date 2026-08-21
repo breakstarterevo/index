@@ -27,25 +27,44 @@
       "html.league-theme-dark input, html.league-theme-dark select, html.league-theme-dark textarea { background: #192231; border-color: rgba(148, 163, 184, .34); color: #f3f7ff; }",
       "html.league-theme-dark input::placeholder, html.league-theme-dark textarea::placeholder { color: #7f8ca1; opacity: 1; }",
       "html.league-theme-dark .panel, html.league-theme-dark .tc-panel, html.league-theme-dark .trade-panel, html.league-theme-dark .trade-team-card, html.league-theme-dark .depth-panel, html.league-theme-dark .gm-dashboard-panel, html.league-theme-dark .knockout-round, html.league-theme-dark .fa-panel, html.league-theme-dark .league-settings__card, html.league-theme-dark .leader-card, html.league-theme-dark .summary-card, html.league-theme-dark .stat-card, html.league-theme-dark .metric-card, html.league-theme-dark .reference-card, html.league-theme-dark .media-card, html.league-theme-dark .rating-card, html.league-theme-dark .knockout-card { background: #151b25; border-color: rgba(148, 163, 184, .22); box-shadow: none; color: #e8eef7; }",
-      "html.league-theme-dark .panel-head, html.league-theme-dark .tc-panel-head, html.league-theme-dark .trade-panel__head, html.league-theme-dark .depth-panel__head, html.league-theme-dark .knockout-round-head { background: #1a2331; border-color: rgba(148, 163, 184, .18); color: #e8eef7; }",
+      "html.league-theme-dark .ui-panel, html.league-theme-dark .db-panel, html.league-theme-dark .trade-panel__body, html.league-theme-dark .trade-team-card__body, html.league-theme-dark .trade-card-section, html.league-theme-dark .trade-asset-row, html.league-theme-dark .trade-cut-row, html.league-theme-dark .trade-flow-row, html.league-theme-dark .trade-override-row, html.league-theme-dark .trade-drag-handle, html.league-theme-dark .trade-empty, html.league-theme-dark .depth-panel__body, html.league-theme-dark .depth-gameplan-section, html.league-theme-dark .depth-gameplan-bold, html.league-theme-dark .depth-ir-list, html.league-theme-dark .fa-output, html.league-theme-dark .fa-player-popover, html.league-theme-dark .camp-output, html.league-theme-dark .slot-search, html.league-theme-dark .slot-results, html.league-theme-dark .slot-option, html.league-theme-dark .rating-card, html.league-theme-dark .stat-card, html.league-theme-dark .rating-mini, html.league-theme-dark .stat-mini, html.league-theme-dark .skill-chip, html.league-theme-dark .potential-grade, html.league-theme-dark .hero-award-badge, html.league-theme-dark .media-mention-card, html.league-theme-dark .analyst-summary-card, html.league-theme-dark .analyst-list, html.league-theme-dark .development-trend, html.league-theme-dark .accolade-total, html.league-theme-dark .accolade-season, html.league-theme-dark .gm-card, html.league-theme-dark .gm-stat-grid div, html.league-theme-dark .gm-chip, html.league-theme-dark .month-nav, html.league-theme-dark .schedule-view-btn, html.league-theme-dark .schedule-list, html.league-theme-dark .calendar, html.league-theme-dark .day-cell, html.league-theme-dark .standing-card, html.league-theme-dark .form-card, html.league-theme-dark .search-results, html.league-theme-dark .yi-toast { background: #151b25 !important; border-color: rgba(148, 163, 184, .22) !important; color: #e8eef7 !important; box-shadow: none; }",
+      "html.league-theme-dark .panel-head, html.league-theme-dark .tc-panel-head, html.league-theme-dark .trade-panel__head, html.league-theme-dark .depth-panel__head, html.league-theme-dark .knockout-round-head, html.league-theme-dark .rating-category-title, html.league-theme-dark .rating-card-title, html.league-theme-dark .stat-card-title { background: #1a2331 !important; border-color: rgba(148, 163, 184, .18); color: #e8eef7 !important; }",
       "html.league-theme-dark .kicker, html.league-theme-dark .fa-kicker, html.league-theme-dark .tc-kicker, html.league-theme-dark .search-label, html.league-theme-dark .slot-label, html.league-theme-dark .fa-label, html.league-theme-dark .trade-card-label, html.league-theme-dark .trade-field-label, html.league-theme-dark .depth-label, html.league-theme-dark .preset-label, html.league-theme-dark .reference-card-kicker, html.league-theme-dark .media-kicker, html.league-theme-dark .gm-bar-label, html.league-theme-dark .gm-bar-value, html.league-theme-dark .weekday { color: #9fc5ff; }",
       "html.league-theme-dark .panel-title, html.league-theme-dark .tc-panel-title, html.league-theme-dark .fa-panel-title, html.league-theme-dark .rating-card-title, html.league-theme-dark .stat-card-title, html.league-theme-dark .reference-card-title, html.league-theme-dark .media-title, html.league-theme-dark .gm-card h3, html.league-theme-dark .gm-subhead, html.league-theme-dark .month-title, html.league-theme-dark .team-name, html.league-theme-dark .compare-title, html.league-theme-dark .tc-title, html.league-theme-dark .fa-title, html.league-theme-dark .depth-title, html.league-theme-dark .camp-title { color: #f8fbff; }",
       "html.league-theme-dark .note, html.league-theme-dark .empty, html.league-theme-dark .status, html.league-theme-dark .status-text, html.league-theme-dark .team-sub, html.league-theme-dark .compare-subtitle, html.league-theme-dark .tc-subtitle, html.league-theme-dark .fa-subtitle, html.league-theme-dark .reference-card-copy, html.league-theme-dark .media-mention-meta, html.league-theme-dark .media-mention-blurb, html.league-theme-dark .trade-note, html.league-theme-dark .depth-subtitle, html.league-theme-dark .camp-subtitle { color: #a9b6c8; }",
-      "html.league-theme-dark .btn, html.league-theme-dark .tab, html.league-theme-dark .tab-btn, html.league-theme-dark .btn-link, html.league-theme-dark .league-btn, html.league-theme-dark .quick-link, html.league-theme-dark .trade-btn, html.league-theme-dark .trade-mini-btn, html.league-theme-dark .depth-button, html.league-theme-dark .camp-button, html.league-theme-dark .tc-button, html.league-theme-dark .player-search-option { background: #1a2537; border-color: rgba(148, 163, 184, .32); color: #edf4ff; }",
+      "html.league-theme-dark .btn, html.league-theme-dark .ui-button, html.league-theme-dark .tab, html.league-theme-dark .tab-btn, html.league-theme-dark .btn-link, html.league-theme-dark .path-link, html.league-theme-dark .slot-clear, html.league-theme-dark .league-btn, html.league-theme-dark .quick-link, html.league-theme-dark .trade-btn, html.league-theme-dark .trade-mini-btn, html.league-theme-dark .depth-button, html.league-theme-dark .camp-button, html.league-theme-dark .tc-button, html.league-theme-dark .player-search-option { background: #1a2537 !important; border-color: rgba(148, 163, 184, .32) !important; color: #edf4ff !important; }",
+      "html.league-theme-dark .db-button, html.league-theme-dark .db-input, html.league-theme-dark .db-select, html.league-theme-dark .team-picker, html.league-theme-dark .search-input, html.league-theme-dark .filter-select, html.league-theme-dark .slot-search, html.league-theme-dark .fa-toggle, html.league-theme-dark .fa-input, html.league-theme-dark .fa-select, html.league-theme-dark .fa-textarea, html.league-theme-dark .fa-button--secondary, html.league-theme-dark .camp-select, html.league-theme-dark .camp-input, html.league-theme-dark .trade-select, html.league-theme-dark .trade-input, html.league-theme-dark .trade-textarea, html.league-theme-dark .depth-select, html.league-theme-dark .depth-input, html.league-theme-dark .depth-output { background: #192231 !important; border-color: rgba(148, 163, 184, .34) !important; color: #f3f7ff !important; }",
       "html.league-theme-dark .tab.active, html.league-theme-dark .tab-btn.active, html.league-theme-dark .player-search-option.active, html.league-theme-dark .trade-btn--primary, html.league-theme-dark .depth-button--primary, html.league-theme-dark .camp-button--primary { background: var(--team-color, #1f4f91); border-color: var(--team-color, #1f4f91); color: #ffffff; }",
       "html.league-theme-dark .data-table, html.league-theme-dark .compare-table, html.league-theme-dark .contract-table, html.league-theme-dark .standings-table, html.league-theme-dark .leaders-table, html.league-theme-dark .intake-table, html.league-theme-dark .tc-table, html.league-theme-dark .table, html.league-theme-dark .depth-table { background: #141b26; color: #edf3fb; }",
-      "html.league-theme-dark .data-table th, html.league-theme-dark .compare-table th, html.league-theme-dark .contract-table th, html.league-theme-dark .standings-table th, html.league-theme-dark .leaders-table th, html.league-theme-dark .intake-table th, html.league-theme-dark .tc-table th, html.league-theme-dark .table th, html.league-theme-dark .depth-table th { background: var(--team-color, #0f172a); border-color: rgba(148, 163, 184, .16); color: #ffffff; }",
+      "html.league-theme-dark .data-table th, html.league-theme-dark .compare-table th, html.league-theme-dark .contract-table th, html.league-theme-dark .standings-table th, html.league-theme-dark .leaders-table th, html.league-theme-dark .intake-table th, html.league-theme-dark .tc-table th, html.league-theme-dark .table th, html.league-theme-dark .depth-table th { background: var(--team-color, #0f172a); border-color: rgba(148, 163, 184, .16); color: var(--ui-team-contrast, #ffffff); }",
       "html.league-theme-dark .data-table td, html.league-theme-dark .compare-table td, html.league-theme-dark .contract-table td, html.league-theme-dark .standings-table td, html.league-theme-dark .leaders-table td, html.league-theme-dark .intake-table td, html.league-theme-dark .tc-table td, html.league-theme-dark .table td, html.league-theme-dark .depth-table td { background: #141b26; border-color: rgba(148, 163, 184, .18); color: #edf3fb; }",
       "html.league-theme-dark .data-table tbody tr:nth-child(even) td, html.league-theme-dark .compare-table tbody tr:nth-child(even) td, html.league-theme-dark .contract-table tbody tr:nth-child(even) td, html.league-theme-dark .standings-table tbody tr:nth-child(even) td, html.league-theme-dark .leaders-table tbody tr:nth-child(even) td, html.league-theme-dark .intake-table tbody tr:nth-child(even) td, html.league-theme-dark .tc-table tbody tr:nth-child(even) td, html.league-theme-dark .table tbody tr:nth-child(even) td, html.league-theme-dark .depth-table tr:nth-child(even) td { background: #1a2331; }",
+      "html.league-theme-dark .data-table tbody tr:nth-child(odd) td, html.league-theme-dark .compare-table tbody tr:nth-child(odd) td, html.league-theme-dark .db-table tbody td, html.league-theme-dark .fa-table tbody td, html.league-theme-dark .standings-table tbody td, html.league-theme-dark .leaders-table tbody td, html.league-theme-dark .intake-table tbody td, html.league-theme-dark .tc-table tbody td, html.league-theme-dark .table tbody td, html.league-theme-dark .depth-table tbody td { background: #141b26 !important; border-color: rgba(148, 163, 184, .18) !important; color: #edf3fb !important; }",
+      "html.league-theme-dark .data-table tbody tr:nth-child(even) td, html.league-theme-dark .compare-table tbody tr:nth-child(even) td, html.league-theme-dark .db-table tbody tr:nth-child(even) td, html.league-theme-dark .fa-table tbody tr:nth-child(even) td, html.league-theme-dark .standings-table tbody tr:nth-child(even) td, html.league-theme-dark .leaders-table tbody tr:nth-child(even) td, html.league-theme-dark .intake-table tbody tr:nth-child(even) td, html.league-theme-dark .tc-table tbody tr:nth-child(even) td, html.league-theme-dark .table tbody tr:nth-child(even) td, html.league-theme-dark .depth-table tbody tr:nth-child(even) td { background: #1a2331 !important; }",
+      "html.league-theme-dark .data-table tbody tr:hover td, html.league-theme-dark .compare-table tbody tr:hover td, html.league-theme-dark .db-table tbody tr:hover td, html.league-theme-dark .fa-table tbody tr:hover td, html.league-theme-dark .standings-table tbody tr:hover td, html.league-theme-dark .leaders-table tbody tr:hover td, html.league-theme-dark .intake-table tbody tr:hover td, html.league-theme-dark .tc-table tbody tr:hover td, html.league-theme-dark .table tbody tr:hover td, html.league-theme-dark .depth-table tbody tr:hover td { background: #202e48 !important; }",
+      "html.league-theme-dark .db-table th, html.league-theme-dark .db-table th.db-player, html.league-theme-dark .fa-table th { background: var(--team-color, #111b36) !important; border-color: rgba(148, 163, 184, .18) !important; color: #ffffff !important; }",
       "html.league-theme-dark .data-table tbody tr td.rating-purple, html.league-theme-dark #playerTable.data-table td.rating-purple { background: #7e22ce !important; color: #ffffff !important; font-weight: 900 !important; }",
       "html.league-theme-dark .data-table tbody tr td.rating-blue, html.league-theme-dark #playerTable.data-table td.rating-blue { background: #1d4ed8 !important; color: #ffffff !important; font-weight: 900 !important; }",
       "html.league-theme-dark .data-table tbody tr td.rating-green, html.league-theme-dark #playerTable.data-table td.rating-green { background: #15803d !important; color: #ffffff !important; font-weight: 900 !important; }",
       "html.league-theme-dark .data-table tbody tr td.rating-yellow, html.league-theme-dark #playerTable.data-table td.rating-yellow { background: #facc15 !important; color: #1f2937 !important; font-weight: 900 !important; }",
-      "html.league-theme-dark .data-table tbody tr td.rating-orange, html.league-theme-dark #playerTable.data-table td.rating-orange { background: #f97316 !important; color: #ffffff !important; font-weight: 900 !important; }",
+      "html.league-theme-dark .data-table tbody tr td.rating-orange, html.league-theme-dark #playerTable.data-table td.rating-orange { background: #f97316 !important; color: #1f2937 !important; font-weight: 900 !important; }",
+      "html.league-theme-dark .rating-orange, html.league-theme-dark .ui-rating--orange { color: #1f2937 !important; }",
       "html.league-theme-dark .hero { background: linear-gradient(90deg, var(--team-color, #1d3666), #06080f); border-color: rgba(148, 163, 184, .24); color: #ffffff; }",
+      "html.league-theme-dark .trade-btn--warn, html.league-theme-dark .trade-pill--warn, html.league-theme-dark .trade-tag--rights, html.league-theme-dark .fa-warning, html.league-theme-dark .camp-warning-list li, html.league-theme-dark .regular-camp-chip, html.league-theme-dark .db-note { background: #382e17 !important; border-color: #7d6630 !important; color: #f1d286 !important; }",
+      "html.league-theme-dark .trade-btn--danger, html.league-theme-dark .trade-mini-btn--remove, html.league-theme-dark .trade-pill--bad, html.league-theme-dark .fa-warning--bad, html.league-theme-dark .camp-button--danger, html.league-theme-dark .regular-camp-chip--max, html.league-theme-dark .injury-chip { background: #421f23 !important; border-color: #7f3d44 !important; color: #ffaaa1 !important; }",
+      "html.league-theme-dark .camp-warning-list li.is-good, html.league-theme-dark .gm-chip.stable { background: #183d28 !important; border-color: #326c46 !important; color: #8ee0aa !important; }",
+      "html.league-theme-dark .league-favorite-row > td, html.league-theme-dark tbody tr.favorite-team-row td, html.league-theme-dark .leader-card.favorite-team-card { background: #433816 !important; color: #f4d76b !important; }",
+      "html.league-theme-dark .rating-bar { background: #253049 !important; }",
+      "html.league-theme-dark .form-chip { color: #ffffff !important; }",
+      "html.league-theme-dark .stat-chip--gold { background: #382e17 !important; border-color: #7d6630 !important; color: #f1d286 !important; }",
+      "html.league-theme-dark .stat-chip--green { background: #183d28 !important; color: #8ee0aa !important; }",
+      "html.league-theme-dark .stat-chip--red { background: #421f23 !important; color: #ffaaa1 !important; }",
+      "html.league-theme-dark .tracker-banner-mark { color: #dbeafe !important; }",
+      "html.league-theme-dark .hero-award-count { color: var(--ui-team-contrast, #ffffff) !important; }",
+      "html.league-theme-dark .yi-rights-revision { color: #8ec5ff !important; }",
       "html.league-theme-dark .player-header { border-left-color: var(--team-color, #1d3666); }",
       "html.league-theme-dark .fa-header, html.league-theme-dark .fa-panel, html.league-theme-dark .fa-player-popover { border-top-color: var(--fa-accent, #1f4f91); }",
-      "html.league-theme-dark .fa-button, html.league-theme-dark .fa-table th, html.league-theme-dark .fa-rating, html.league-theme-dark .fa-popover-stats, html.league-theme-dark .fa-drawer-head { background: var(--fa-accent, #1f4f91); border-color: var(--fa-accent, #1f4f91); color: #ffffff; }",
+      "html.league-theme-dark .fa-button, html.league-theme-dark .fa-table th, html.league-theme-dark .fa-popover-stats, html.league-theme-dark .fa-drawer-head { background: var(--fa-accent, #1f4f91); border-color: var(--fa-accent, #1f4f91); color: #ffffff; }",
       "html.league-theme-dark .depth-header, html.league-theme-dark .camp-header { background: #151b25; border-color: rgba(148, 163, 184, .24); border-top-color: var(--depth-team-color, var(--camp-accent, #1f4f91)); box-shadow: none; }",
       "html.league-theme-dark .depth-panel__head, html.league-theme-dark .depth-table th { background: var(--depth-team-color, #0f172a); border-color: var(--depth-team-color, #0f172a); color: #ffffff; }",
       "html.league-theme-dark .camp-panel { border-top-color: var(--camp-accent, #1f4f91); }",
@@ -85,21 +104,19 @@
 
   function getContrastText(hex) {
     var normalized = normalizeHexColor(hex).slice(1);
-    var red;
-    var green;
-    var blue;
-    var brightness;
+    var channels;
+    var luminance;
 
     if (!normalized) {
       return "#ffffff";
     }
 
-    red = parseInt(normalized.slice(0, 2), 16);
-    green = parseInt(normalized.slice(2, 4), 16);
-    blue = parseInt(normalized.slice(4, 6), 16);
-    brightness = (red * 299 + green * 587 + blue * 114) / 1000;
-
-    return brightness > 150 ? "#111827" : "#ffffff";
+    channels = [normalized.slice(0, 2), normalized.slice(2, 4), normalized.slice(4, 6)].map(function (part) {
+      var channel = parseInt(part, 16) / 255;
+      return channel <= 0.03928 ? channel / 12.92 : Math.pow((channel + 0.055) / 1.055, 2.4);
+    });
+    luminance = channels[0] * 0.2126 + channels[1] * 0.7152 + channels[2] * 0.0722;
+    return (luminance + 0.05) / 0.05 > 1.05 / (luminance + 0.05) ? "#111827" : "#ffffff";
   }
 
   function extractClassicTeamColor() {
@@ -149,6 +166,7 @@
   function applySavedPreferences() {
     var settings = core.getSettings();
     var root = document.documentElement;
+    var theme = normalizeTheme(settings.theme);
 
     ensurePreferenceStyles();
     applyClassicTeamColor();
@@ -165,7 +183,8 @@
       "league-pref-density-spacious"
     );
 
-    root.classList.add("league-theme-" + normalizeTheme(settings.theme));
+    root.setAttribute("data-theme", theme);
+    root.classList.add("league-theme-" + theme);
     root.classList.add("league-pref-text-" + (settings.textSize || "normal"));
     root.classList.add("league-pref-density-" + (settings.tableDensity || "normal"));
   }

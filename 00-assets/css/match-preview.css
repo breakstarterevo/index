@@ -218,6 +218,22 @@ html.league-theme-dark {
 .preview-card-record,
 .preview-card-injuries { color: var(--ui-muted); font-size: .53rem; font-weight: 800; }
 .preview-card-injuries.has-injuries { color: var(--ui-bad); }
+
+html.league-theme-dark .preview-card-injuries.has-injuries,
+html.league-theme-dark .preview-player-injury,
+html.league-theme-dark .preview-injury-detail {
+  color: #ff9188;
+}
+
+html.league-theme-dark .match-centre-page .preview-card-line,
+html.league-theme-dark .match-centre-page .preview-comparison-value.has-edge,
+html.league-theme-dark .match-centre-page .preview-player-photo-fallback,
+html.league-theme-dark .match-centre-page .preview-player-name:hover,
+html.league-theme-dark .match-centre-page .preview-mini-team,
+html.league-theme-dark .match-centre-page .preview-history-score,
+html.league-theme-dark .match-centre-page .preview-injury-name:hover {
+  color: var(--match-centre-accent-text, #c9d9f7);
+}
 .preview-card-centre {
   display: grid;
   place-items: center;

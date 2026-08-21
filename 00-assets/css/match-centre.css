@@ -2,6 +2,14 @@
   max-width: 1420px;
 }
 
+html.league-theme-dark .match-centre-page {
+  --match-centre-accent-text: color-mix(in srgb, var(--ui-team) 28%, #fff);
+}
+
+html.league-theme-dark .match-centre-page .ui-panel-title {
+  color: var(--match-centre-accent-text);
+}
+
 .match-centre-boxscore {
   display: grid;
   gap: .7rem;
@@ -107,6 +115,10 @@
   color: var(--result-color, var(--ui-team));
 }
 
+html.league-theme-dark .match-centre-result-team.is-winner .match-centre-result-score {
+  color: color-mix(in srgb, var(--result-color, var(--ui-team)) 42%, #fff);
+}
+
 .match-centre-result-centre {
   display: grid;
   place-items: center;
@@ -124,6 +136,10 @@
   font-weight: 950;
   letter-spacing: .1em;
   text-transform: uppercase;
+}
+
+html.league-theme-dark .match-centre-result-final {
+  color: var(--match-centre-accent-text);
 }
 
 .match-centre-result-date,
