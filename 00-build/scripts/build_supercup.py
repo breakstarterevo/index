@@ -18,7 +18,6 @@ PROJECT_ROOT = os.path.dirname(os.path.dirname(BUILD_DIR))
 DRY_RUN = "--dry-run" in sys.argv
 
 SCRIPTS = [
-    (os.path.join(BUILD_DIR, "rebrand_teams.py"), "Applying canonical team rebrands"),
     (os.path.join(BUILD_DIR, "build_supercup_json.py"), "Building Super Cup database JSON files"),
     (os.path.join(BUILD_DIR, "build_supercup_knockout.py"), "Building Super Cup unified knockout page"),
     (os.path.join(BUILD_DIR, "build_supercup_ui.py"), "Injecting shared CSS/JS into Super Cup HTML"),
