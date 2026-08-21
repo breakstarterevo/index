@@ -1894,3 +1894,131 @@ nav {
   }
 }
 
+/* Dark presentation for current package articles. Keep the print hierarchy and
+   board rules while replacing the paper whites and fixed dark inks together. */
+html.league-theme-dark body.media-article {
+  color-scheme: dark;
+  --gold: #9fc5ff;
+  --red: #9fc5ff;
+  --ink: #eef3fb;
+  --paper: #0d1118;
+  --cream: #151b25;
+  --off-white: #0d1118;
+  --mid: #aeb9ca;
+  --light: #3a4659;
+  --rule: #9fc5ff;
+  background: var(--paper) !important;
+  color: var(--ink) !important;
+}
+
+html.league-theme-dark .media-article .package-paper {
+  background: var(--cream);
+  border-top-color: #05070b;
+  box-shadow: 4px 4px 0 #31598f, 8px 8px 0 #05070b;
+  color: var(--ink);
+}
+
+html.league-theme-dark .media-article :is(
+  .package-masthead,
+  .package-byline-bar,
+  .footer-rule
+) {
+  border-color: #68758a;
+}
+
+html.league-theme-dark .media-article :is(
+  .package-headline,
+  .package-byline,
+  .package-body p,
+  .ballot .name,
+  .ballot .note,
+  .ranking-team,
+  .ranking-copy,
+  .ranking-detail-text,
+  .board-notes-list li,
+  .stock-title,
+  .race-title,
+  .article-rec-link
+) {
+  color: var(--ink);
+}
+
+html.league-theme-dark .media-article :is(
+  .package-section-label,
+  .package-dek,
+  .package-dateline,
+  .ballot .meta,
+  .ranking-meta,
+  .ranking-detail-label,
+  .footer-text,
+  .race-meta,
+  .article-rail-note,
+  .article-rec-blurb
+) {
+  color: var(--mid);
+}
+
+html.league-theme-dark .media-article :is(
+  .package-league-name,
+  .package-section-header,
+  .package-body .drop-cap::first-letter,
+  .ballot .rank,
+  .ranking-number,
+  .board-notes-title,
+  .article-rail-title,
+  .article-rail-label,
+  .article-rec-meta
+) {
+  color: var(--gold);
+}
+
+html.league-theme-dark .media-article .package-section-header {
+  border-bottom-color: var(--gold);
+}
+
+html.league-theme-dark .media-article :is(
+  .ballot,
+  .ranking-board,
+  .ranking-detail,
+  .board-notes,
+  .stock-card,
+  .race-card,
+  .article-rail-card
+) {
+  background: #192231;
+  border-color: #4a5870;
+  color: var(--ink);
+}
+
+html.league-theme-dark .media-article :is(.ballot-item, .ranking-card, .article-rec-item) {
+  border-color: rgba(174, 185, 202, 0.25);
+}
+
+html.league-theme-dark .media-article :is(.ballot-head, .ranking-board-head, .ranking-move) {
+  background: #070a10;
+  color: #f8fbff;
+}
+
+html.league-theme-dark .media-article .ranking-detail {
+  border-left-color: var(--gold);
+}
+
+html.league-theme-dark .media-article .pull-quote {
+  background: #202a3a !important;
+  border-color: var(--gold) !important;
+  color: var(--ink);
+}
+
+html.league-theme-dark .media-article .pull-quote,
+html.league-theme-dark .media-article .pull-quote p {
+  color: var(--ink);
+}
+
+html.league-theme-dark .media-article .article-rail-card {
+  box-shadow: 3px 3px 0 rgba(0, 0, 0, 0.34);
+}
+
+html.league-theme-dark .media-article .article-ad-card img {
+  border-color: #4a5870;
+}
+

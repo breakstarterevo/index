@@ -26,6 +26,98 @@ window.ESL_TEAM_LOGOS = {
 };
 
 window.ESL_MEDIA_ARTICLES = [
+  // Season 5 Sim 2 - December 1985 package
+  {
+    file: "articles/season_5_sim_2_month_in_review.html",
+    title: "December 1985 Review: Aston Villa Refused To Lose",
+    category: "Recap",
+    desk: "Analysis",
+    sortKey: "2026-08-21-07",
+    tag: "Month in Review",
+    author: "Graham Trent",
+    meta: "Season 5 - Sim 2",
+    blurb: "Aston Villa's perfect month, Barcelona's control and Bayern Munich's collapse redrew the ESL races in December.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Juventus", "Manchester City", "Manchester United", "Marseille", "Paris Saint-Germain", "AC Sparta Praha", "Arsenal", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Andre Iguodala", "Bernard King", "Chris Bosh", "Kevin McHale", "Larry Nance", "Maurice Cheeks", "Paul Pierce", "Tree Rollins"]
+  },
+  {
+    file: "articles/season_5_sim_2_mvp_race.html",
+    title: "December 1985 MVP Race: Moses Malone Wins The Hard Question",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-08-21-06",
+    tag: "MVP Race",
+    author: "Damon Cross",
+    meta: "Season 5 - Sim 2",
+    blurb: "Moses Malone, Larry Nance and Bernard King lead three ballots where extraordinary production must also explain winning.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Barcelona", "Benfica", "Brighton", "FL Fart", "Marseille", "Monaco", "Real Madrid", "AC Sparta Praha", "Arsenal", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Andre Drummond", "Andre Iguodala", "Bernard King", "Chris Bosh", "Isiah Thomas", "Joe Barry Carroll", "Kiki Vandeweghe", "Larry Drew", "Larry Nance", "Michael Cooper", "Moses Malone", "Otis Thorpe", "Robert Parish", "Sidney Moncrief", "Steve Johnson", "Steve Kerr", "Tom Chambers"]
+  },
+  {
+    file: "articles/season_5_sim_2_stock_up_stock_down.html",
+    title: "December 1985 Stock Report: Villa Bought Every Share",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-08-21-05",
+    tag: "Stock Report",
+    author: "Damon Cross",
+    meta: "Season 5 - Sim 2",
+    blurb: "Villa, Barcelona and Manchester City rise while Bayern, Chelsea and Manchester United absorb December's hardest verdicts.",
+    teams: ["Ajax", "Aston Villa", "Barcelona", "Bayern Munich", "Brighton", "Chelsea", "Crystal Palace", "Juventus", "Manchester City", "Manchester United", "Monaco", "Paris Saint-Germain", "Valencia"],
+    playerTags: ["Bernard King", "Jim Paxson", "Kevin McHale", "Larry Nance", "Paul Pierce", "Tree Rollins"]
+  },
+  {
+    file: "articles/season_5_sim_2_promotion_relegation_watch.html",
+    title: "December 1985 Race Watch: Villa Changed The Price Of Promotion",
+    category: "Analysis",
+    desk: "Analysis",
+    sortKey: "2026-08-21-04",
+    tag: "Race Watch",
+    author: "Nina Vale",
+    meta: "Season 5 - Sim 2",
+    blurb: "Palace and Chelsea hold Tier 1's bottom two, Ajax and Villa control promotion, and Barcelona own a three-game cushion.",
+    teams: ["AC Milan", "AFC Richmond", "Ajax", "Aston Villa", "Atletico Madrid", "Barcelona", "Bayern Munich", "Brighton", "Chelsea", "Crystal Palace", "FL Fart", "Inter Milan", "Manchester City", "Monaco", "AC Sparta Praha", "Arsenal", "Valencia"],
+    playerTags: []
+  },
+  {
+    file: "articles/season_5_sim_2_tier_1_power_rankings.html",
+    title: "December 1985 Tier 1 Power Rankings: Richmond Keep The Room",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-08-21-03",
+    tag: "Tier 1 Rankings",
+    author: "Nina Vale",
+    meta: "Season 5 - Sim 2",
+    blurb: "Richmond remain first, Benfica and PSG hold the chase, and Chelsea fall to the bottom of the Tier 1 trust board.",
+    teams: ["AC Milan", "AFC Richmond", "Benfica", "Brighton", "Chelsea", "Crystal Palace", "Paris Saint-Germain", "Real Madrid"],
+    playerTags: ["Alex English", "Darrell Griffith", "Jim Paxson", "Joe Barry Carroll", "Kelly Tripucka", "Kiki Vandeweghe", "Michael Cooper", "Moses Malone", "Sidney Moncrief"]
+  },
+  {
+    file: "articles/season_5_sim_2_tier_2_power_rankings.html",
+    title: "December 1985 Tier 2 Power Rankings: Ajax Lead, Villa Apply Heat",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-08-21-02",
+    tag: "Tier 2 Rankings",
+    author: "Nina Vale",
+    meta: "Season 5 - Sim 2",
+    blurb: "Ajax retain the strongest profile while Aston Villa's perfect December redraws the Tier 2 promotion board.",
+    teams: ["Ajax", "Aston Villa", "Atletico Madrid", "Bayern Munich", "FL Fart", "Inter Milan", "Marseille", "AC Sparta Praha"],
+    playerTags: ["Andre Iguodala", "Johnny Moore", "Larry Drew", "Larry Nance", "Maurice Cheeks", "Robert Parish", "Steve Johnson", "Tree Rollins", "World B. Free"]
+  },
+  {
+    file: "articles/season_5_sim_2_tier_3_power_rankings.html",
+    title: "December 1985 Tier 3 Power Rankings: Barcelona Create Distance",
+    category: "Rankings",
+    desk: "Analysis",
+    sortKey: "2026-08-21-01",
+    tag: "Tier 3 Rankings",
+    author: "Nina Vale",
+    meta: "Season 5 - Sim 2",
+    blurb: "Barcelona remain the standard as Arsenal and Manchester City make December's largest moves up the trust board.",
+    teams: ["Barcelona", "Juventus", "Manchester City", "Manchester United", "Monaco", "Arsenal", "Tottenham Hotspur", "Valencia"],
+    playerTags: ["Andre Drummond", "Bernard King", "Brian Shaw", "Chris Bosh", "Hubert Davis", "Isiah Thomas", "J.J. Redick", "Larry Smith", "Luol Deng", "Otis Thorpe", "Paul Pierce", "Steve Kerr"]
+  },
   // Season 5 Sim 1 - November 1985 package
   {
     file: "articles/season_5_sim_1_month_in_review.html",
