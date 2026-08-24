@@ -7,21 +7,21 @@
       "teams": [
         {
           "name": "AFC Richmond",
-          "wins": 12,
-          "losses": 4,
+          "wins": 16,
+          "losses": 8,
           "streak": "W1"
         },
         {
           "name": "Benfica",
-          "wins": 11,
-          "losses": 6,
-          "streak": "L1"
+          "wins": 16,
+          "losses": 9,
+          "streak": "W4"
         },
         {
-          "name": "Paris Saint-Germain",
-          "wins": 9,
-          "losses": 6,
-          "streak": "W2"
+          "name": "Brighton",
+          "wins": 15,
+          "losses": 9,
+          "streak": "W1"
         }
       ]
     },
@@ -30,21 +30,21 @@
       "teams": [
         {
           "name": "Ajax",
-          "wins": 11,
-          "losses": 3,
-          "streak": "W5"
-        },
-        {
-          "name": "Aston Villa",
-          "wins": 12,
-          "losses": 5,
-          "streak": "W10"
+          "wins": 17,
+          "losses": 4,
+          "streak": "L1"
         },
         {
           "name": "Inter Milan",
-          "wins": 10,
-          "losses": 6,
-          "streak": "W1"
+          "wins": 14,
+          "losses": 8,
+          "streak": "W3"
+        },
+        {
+          "name": "FL Fart",
+          "wins": 15,
+          "losses": 9,
+          "streak": "L1"
         }
       ]
     },
@@ -53,21 +53,21 @@
       "teams": [
         {
           "name": "Barcelona",
-          "wins": 12,
-          "losses": 4,
-          "streak": "W6"
+          "wins": 18,
+          "losses": 6,
+          "streak": "W3"
+        },
+        {
+          "name": "Monaco",
+          "wins": 14,
+          "losses": 8,
+          "streak": "W9"
         },
         {
           "name": "Arsenal",
-          "wins": 8,
-          "losses": 6,
-          "streak": "W1"
-        },
-        {
-          "name": "Manchester City",
-          "wins": 9,
-          "losses": 7,
-          "streak": "W3"
+          "wins": 13,
+          "losses": 10,
+          "streak": "L2"
         }
       ]
     }
@@ -75,33 +75,33 @@
   "leaders": [
     {
       "category": "Minutes",
-      "player": "Rickey Green",
-      "team": "Brighton",
-      "value": "45.6"
+      "player": "Adrian Dantley",
+      "team": "Benfica",
+      "value": "43.4"
     },
     {
       "category": "Points",
       "player": "Kiki Vandeweghe",
       "team": "Brighton",
-      "value": "38.7"
+      "value": "37.5"
     },
     {
       "category": "Rebounds",
       "player": "Moses Malone",
       "team": "Benfica",
-      "value": "11.2"
+      "value": "11.4"
     },
     {
       "category": "Assists",
       "player": "Rickey Green",
       "team": "Brighton",
-      "value": "12.3"
+      "value": "11.9"
     },
     {
       "category": "Steals",
-      "player": "Jim Paxson",
-      "team": "Chelsea",
-      "value": "2.6"
+      "player": "Rickey Green",
+      "team": "Brighton",
+      "value": "2.7"
     }
   ]
 }

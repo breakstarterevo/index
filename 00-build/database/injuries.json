@@ -2,146 +2,80 @@
     "source": "injuries.htm",
     "injuries": [
         {
+            "pos": "PG",
+            "name": "Kirk Hinrich",
+            "url": "",
+            "team": "roster28",
+            "teamName": "Manchester City",
+            "rosterUrl": "./rosters/roster28.htm",
+            "length": "39",
+            "injury": "Stress Fracture",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "C",
+            "name": "Kurt Nimphius",
+            "url": "",
+            "team": "roster10",
+            "teamName": "Brighton",
+            "rosterUrl": "./rosters/roster10.htm",
+            "length": "31",
+            "injury": "Patellar Tendanitis",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "PF",
+            "name": "Glen Gondrezick",
+            "url": "",
+            "team": "roster28",
+            "teamName": "Manchester City",
+            "rosterUrl": "./rosters/roster28.htm",
+            "length": "30",
+            "injury": "Stress Fracture",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "SF",
+            "name": "Kelly Tripucka",
+            "url": "",
+            "team": "roster21",
+            "teamName": "Paris Saint-Germain",
+            "rosterUrl": "./rosters/roster21.htm",
+            "length": "18",
+            "injury": "Patellar Tendanitis",
+            "rowClass": "row2"
+        },
+        {
+            "pos": "C",
+            "name": "Jalen Duren",
+            "url": "",
+            "team": "roster24",
+            "teamName": "Barcelona",
+            "rosterUrl": "./rosters/roster24.htm",
+            "length": "12",
+            "injury": "Broken Foot",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "SF",
+            "name": "Kyle Macy",
+            "url": "",
+            "team": "roster22",
+            "teamName": "Tottenham Hotspur",
+            "rosterUrl": "./rosters/roster22.htm",
+            "length": "10",
+            "injury": "Concussion",
+            "rowClass": "row2"
+        },
+        {
             "pos": "PF",
             "name": "Kenyon Martin",
             "url": "",
             "team": "roster25",
             "teamName": "Valencia",
             "rosterUrl": "./rosters/roster25.htm",
-            "length": "32",
+            "length": "1",
             "injury": "Patellar Tendanitis",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "C",
-            "name": "A.C. Green",
-            "url": "",
-            "team": "roster25",
-            "teamName": "Valencia",
-            "rosterUrl": "./rosters/roster25.htm",
-            "length": "29",
-            "injury": "Hernia",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SG",
-            "name": "Quincy Douby",
-            "url": "",
-            "team": "roster16",
-            "teamName": "AC Sparta Praha",
-            "rosterUrl": "./rosters/roster16.htm",
-            "length": "28",
-            "injury": "Broken Foot",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "SG",
-            "name": "John Lucas",
-            "url": "",
-            "team": "roster9",
-            "teamName": "AC Milan",
-            "rosterUrl": "./rosters/roster9.htm",
-            "length": "27",
-            "injury": "Broken Ankle",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SF",
-            "name": "Louis Orr",
-            "url": "",
-            "team": "roster7",
-            "teamName": "Bayern Munich",
-            "rosterUrl": "./rosters/roster7.htm",
-            "length": "25",
-            "injury": "Torn Ligament",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "PF",
-            "name": "Orlando Woolridge",
-            "url": "",
-            "team": "roster23",
-            "teamName": "Arsenal",
-            "rosterUrl": "./rosters/roster23.htm",
-            "length": "23",
-            "injury": "Concussion",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "C",
-            "name": "Chet Holmgren",
-            "url": "",
-            "team": "roster17",
-            "teamName": "Chelsea",
-            "rosterUrl": "./rosters/roster17.htm",
-            "length": "20",
-            "injury": "Concussion",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "C",
-            "name": "Joel Przybilla",
-            "url": "",
-            "team": "roster25",
-            "teamName": "Valencia",
-            "rosterUrl": "./rosters/roster25.htm",
-            "length": "14",
-            "injury": "Concussion",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "PG",
-            "name": "Norm Nixon",
-            "url": "",
-            "team": "roster26",
-            "teamName": "Inter Milan",
-            "rosterUrl": "./rosters/roster26.htm",
-            "length": "9",
-            "injury": "Strained Back",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "SG",
-            "name": "Chris Smith",
-            "url": "",
-            "team": "roster11",
-            "teamName": "Atletico Madrid",
-            "rosterUrl": "./rosters/roster11.htm",
-            "length": "7",
-            "injury": "Blurred Vision",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "PF",
-            "name": "Gene Banks",
-            "url": "",
-            "team": "roster11",
-            "teamName": "Atletico Madrid",
-            "rosterUrl": "./rosters/roster11.htm",
-            "length": "7",
-            "injury": "Sprained Ankle",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "C",
-            "name": "Herb Williams",
-            "url": "",
-            "team": "roster22",
-            "teamName": "Tottenham Hotspur",
-            "rosterUrl": "./rosters/roster22.htm",
-            "length": "6",
-            "injury": "Dislocated Shoulder",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "SF",
-            "name": "Greg Ballard",
-            "url": "",
-            "team": "roster26",
-            "teamName": "Inter Milan",
-            "rosterUrl": "./rosters/roster26.htm",
-            "length": "5",
-            "injury": "Stiff Neck",
             "rowClass": "row1"
         }
     ]
