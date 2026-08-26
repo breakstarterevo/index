@@ -2,15 +2,48 @@
     "source": "injuries.htm",
     "injuries": [
         {
+            "pos": "SG",
+            "name": "Nick Anderson",
+            "url": "",
+            "team": "roster28",
+            "teamName": "Manchester City",
+            "rosterUrl": "./rosters/roster28.htm",
+            "length": "27",
+            "injury": "Broken Foot",
+            "rowClass": "row1"
+        },
+        {
+            "pos": "C",
+            "name": "Mike Gminski",
+            "url": "",
+            "team": "roster21",
+            "teamName": "Paris Saint-Germain",
+            "rosterUrl": "./rosters/roster21.htm",
+            "length": "25",
+            "injury": "Dislocated Shoulder",
+            "rowClass": "row2"
+        },
+        {
             "pos": "PG",
             "name": "Kirk Hinrich",
             "url": "",
             "team": "roster28",
             "teamName": "Manchester City",
             "rosterUrl": "./rosters/roster28.htm",
-            "length": "39",
+            "length": "11",
             "injury": "Stress Fracture",
             "rowClass": "row1"
+        },
+        {
+            "pos": "PG",
+            "name": "B.J. Armstrong",
+            "url": "",
+            "team": "roster28",
+            "teamName": "Manchester City",
+            "rosterUrl": "./rosters/roster28.htm",
+            "length": "3",
+            "injury": "Sprained Ankle",
+            "rowClass": "row2"
         },
         {
             "pos": "C",
@@ -19,9 +52,9 @@
             "team": "roster10",
             "teamName": "Brighton",
             "rosterUrl": "./rosters/roster10.htm",
-            "length": "31",
+            "length": "3",
             "injury": "Patellar Tendanitis",
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "pos": "PF",
@@ -30,53 +63,9 @@
             "team": "roster28",
             "teamName": "Manchester City",
             "rosterUrl": "./rosters/roster28.htm",
-            "length": "30",
+            "length": "2",
             "injury": "Stress Fracture",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "SF",
-            "name": "Kelly Tripucka",
-            "url": "",
-            "team": "roster21",
-            "teamName": "Paris Saint-Germain",
-            "rosterUrl": "./rosters/roster21.htm",
-            "length": "18",
-            "injury": "Patellar Tendanitis",
             "rowClass": "row2"
-        },
-        {
-            "pos": "C",
-            "name": "Jalen Duren",
-            "url": "",
-            "team": "roster24",
-            "teamName": "Barcelona",
-            "rosterUrl": "./rosters/roster24.htm",
-            "length": "12",
-            "injury": "Broken Foot",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "SF",
-            "name": "Kyle Macy",
-            "url": "",
-            "team": "roster22",
-            "teamName": "Tottenham Hotspur",
-            "rosterUrl": "./rosters/roster22.htm",
-            "length": "10",
-            "injury": "Concussion",
-            "rowClass": "row2"
-        },
-        {
-            "pos": "PF",
-            "name": "Kenyon Martin",
-            "url": "",
-            "team": "roster25",
-            "teamName": "Valencia",
-            "rosterUrl": "./rosters/roster25.htm",
-            "length": "1",
-            "injury": "Patellar Tendanitis",
-            "rowClass": "row1"
         }
     ]
 }

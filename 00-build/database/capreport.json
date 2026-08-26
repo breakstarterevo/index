@@ -152,12 +152,12 @@
                     "team": "AC Sparta Praha",
                     "rosterUrl": "./rosters/roster16.htm",
                     "rosterFile": "roster16.htm",
-                    "salary": 48992117.0,
-                    "salaryText": "$48,992,117",
-                    "capRoom": 21007883.0,
-                    "capRoomText": "$21,007,883",
-                    "budgetRoom": 51007883.0,
-                    "budgetRoomText": "$51,007,883",
+                    "salary": 42544616.0,
+                    "salaryText": "$42,544,616",
+                    "capRoom": 27455384.0,
+                    "capRoomText": "$27,455,384",
+                    "budgetRoom": 57455384.0,
+                    "budgetRoomText": "$57,455,384",
                     "midException": -0.0,
                     "midExceptionText": "($0)",
                     "lowException": -0.0,
@@ -291,23 +291,6 @@
             "entries": [
                 {
                     "pick": 1,
-                    "team": "Manchester United",
-                    "rosterUrl": "./rosters/roster5.htm",
-                    "rosterFile": "roster5.htm",
-                    "salary": 33296940.0,
-                    "salaryText": "$33,296,940",
-                    "capRoom": 16703060.0,
-                    "capRoomText": "$16,703,060",
-                    "budgetRoom": 66703060.0,
-                    "budgetRoomText": "$66,703,060",
-                    "midException": -0.0,
-                    "midExceptionText": "($0)",
-                    "lowException": -0.0,
-                    "lowExceptionText": "($0)",
-                    "rowClass": "row1"
-                },
-                {
-                    "pick": 2,
                     "team": "Monaco",
                     "rosterUrl": "./rosters/roster20.htm",
                     "rosterFile": "roster20.htm",
@@ -321,10 +304,10 @@
                     "midExceptionText": "($0)",
                     "lowException": -0.0,
                     "lowExceptionText": "($0)",
-                    "rowClass": "row2"
+                    "rowClass": "row1"
                 },
                 {
-                    "pick": 3,
+                    "pick": 2,
                     "team": "Arsenal",
                     "rosterUrl": "./rosters/roster23.htm",
                     "rosterFile": "roster23.htm",
@@ -338,10 +321,10 @@
                     "midExceptionText": "($0)",
                     "lowException": -0.0,
                     "lowExceptionText": "($0)",
-                    "rowClass": "row1"
+                    "rowClass": "row2"
                 },
                 {
-                    "pick": 4,
+                    "pick": 3,
                     "team": "Juventus",
                     "rosterUrl": "./rosters/roster14.htm",
                     "rosterFile": "roster14.htm",
@@ -355,10 +338,10 @@
                     "midExceptionText": "($0)",
                     "lowException": -0.0,
                     "lowExceptionText": "($0)",
-                    "rowClass": "row2"
+                    "rowClass": "row1"
                 },
                 {
-                    "pick": 5,
+                    "pick": 4,
                     "team": "Valencia",
                     "rosterUrl": "./rosters/roster25.htm",
                     "rosterFile": "roster25.htm",
@@ -368,6 +351,23 @@
                     "capRoomText": "$1,756,101",
                     "budgetRoom": 51756101.0,
                     "budgetRoomText": "$51,756,101",
+                    "midException": -0.0,
+                    "midExceptionText": "($0)",
+                    "lowException": -0.0,
+                    "lowExceptionText": "($0)",
+                    "rowClass": "row2"
+                },
+                {
+                    "pick": 5,
+                    "team": "Manchester United",
+                    "rosterUrl": "./rosters/roster5.htm",
+                    "rosterFile": "roster5.htm",
+                    "salary": 48296940.0,
+                    "salaryText": "$48,296,940",
+                    "capRoom": 1703060.0,
+                    "capRoomText": "$1,703,060",
+                    "budgetRoom": 51703060.0,
+                    "budgetRoomText": "$51,703,060",
                     "midException": -0.0,
                     "midExceptionText": "($0)",
                     "lowException": -0.0,

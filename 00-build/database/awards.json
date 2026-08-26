@@ -10,6 +10,74 @@
                     "slug": "player-of-the-week",
                     "awards": [
                         {
+                            "date": "02/23/1986",
+                            "pos": "PF",
+                            "player": "Kiki Vandeweghe",
+                            "playerUrl": "./players/player701.htm",
+                            "playerFile": "player701.htm",
+                            "team": "roster10",
+                            "teamName": "Brighton",
+                            "teamUrl": "./rosters/roster10.htm",
+                            "teamFile": "roster10.htm",
+                            "ppg": 39.0,
+                            "rpg": 8.0,
+                            "apg": 3.5,
+                            "spg": 2.0,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/16/1986",
+                            "pos": "PF",
+                            "player": "Alex English",
+                            "playerUrl": "./players/player711.htm",
+                            "playerFile": "player711.htm",
+                            "team": "roster6",
+                            "teamName": "Crystal Palace",
+                            "teamUrl": "./rosters/roster6.htm",
+                            "teamFile": "roster6.htm",
+                            "ppg": 24.3,
+                            "rpg": 7.3,
+                            "apg": 4.7,
+                            "spg": 2.0,
+                            "bpg": 2.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "09/02/1986",
+                            "pos": "C",
+                            "player": "Moses Malone",
+                            "playerUrl": "./players/player872.htm",
+                            "playerFile": "player872.htm",
+                            "team": "roster13",
+                            "teamName": "Benfica",
+                            "teamUrl": "./rosters/roster13.htm",
+                            "teamFile": "roster13.htm",
+                            "ppg": 40.0,
+                            "rpg": 12.0,
+                            "apg": 6.0,
+                            "spg": 1.0,
+                            "bpg": 6.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/02/1986",
+                            "pos": "PF",
+                            "player": "Tom Chambers",
+                            "playerUrl": "./players/player724.htm",
+                            "playerFile": "player724.htm",
+                            "team": "roster12",
+                            "teamName": "AFC Richmond",
+                            "teamUrl": "./rosters/roster12.htm",
+                            "teamFile": "roster12.htm",
+                            "ppg": 39.5,
+                            "rpg": 6.0,
+                            "apg": 2.0,
+                            "spg": 0.5,
+                            "bpg": 1.0,
+                            "rowClass": "row2"
+                        },
+                        {
                             "date": "01/26/1986",
                             "pos": "PG",
                             "player": "Reggie Theus",
@@ -237,6 +305,23 @@
                     "slug": "player-of-the-month",
                     "awards": [
                         {
+                            "date": "February",
+                            "pos": "C",
+                            "player": "Moses Malone",
+                            "playerUrl": "./players/player872.htm",
+                            "playerFile": "player872.htm",
+                            "team": "roster13",
+                            "teamName": "Benfica",
+                            "teamUrl": "./rosters/roster13.htm",
+                            "teamFile": "roster13.htm",
+                            "ppg": 36.0,
+                            "rpg": 12.2,
+                            "apg": 2.2,
+                            "spg": 0.5,
+                            "bpg": 3.8,
+                            "rowClass": "row1"
+                        },
+                        {
                             "date": "January",
                             "pos": "PF",
                             "player": "Kiki Vandeweghe",
@@ -251,7 +336,7 @@
                             "apg": 2.2,
                             "spg": 0.4,
                             "bpg": 0.1,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -268,7 +353,7 @@
                             "apg": 3.0,
                             "spg": 0.5,
                             "bpg": 0.1,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -285,7 +370,7 @@
                             "apg": 1.5,
                             "spg": 1.1,
                             "bpg": 4.1,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 },
@@ -293,6 +378,23 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "February",
+                            "pos": "SG",
+                            "player": "Sidney Moncrief",
+                            "playerUrl": "./players/player699.htm",
+                            "playerFile": "player699.htm",
+                            "team": "roster8",
+                            "teamName": "Real Madrid",
+                            "teamUrl": "./rosters/roster8.htm",
+                            "teamFile": "roster8.htm",
+                            "ppg": 32.8,
+                            "rpg": 6.0,
+                            "apg": 5.2,
+                            "spg": 2.2,
+                            "bpg": 0.2,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "January",
                             "pos": "SG",
@@ -308,7 +410,7 @@
                             "apg": 4.6,
                             "spg": 2.1,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -325,7 +427,7 @@
                             "apg": 5.6,
                             "spg": 1.6,
                             "bpg": 0.0,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -342,7 +444,7 @@
                             "apg": 3.8,
                             "spg": 2.2,
                             "bpg": 0.3,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 }
@@ -356,6 +458,74 @@
                     "title": "Player of the Week",
                     "slug": "player-of-the-week",
                     "awards": [
+                        {
+                            "date": "02/23/1986",
+                            "pos": "C",
+                            "player": "Steve Johnson",
+                            "playerUrl": "./players/player897.htm",
+                            "playerFile": "player897.htm",
+                            "team": "roster16",
+                            "teamName": "AC Sparta Praha",
+                            "teamUrl": "./rosters/roster16.htm",
+                            "teamFile": "roster16.htm",
+                            "ppg": 31.0,
+                            "rpg": 11.0,
+                            "apg": 3.0,
+                            "spg": 1.0,
+                            "bpg": 2.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/16/1986",
+                            "pos": "SG",
+                            "player": "Dennis Johnson",
+                            "playerUrl": "./players/player715.htm",
+                            "playerFile": "player715.htm",
+                            "team": "roster11",
+                            "teamName": "Atletico Madrid",
+                            "teamUrl": "./rosters/roster11.htm",
+                            "teamFile": "roster11.htm",
+                            "ppg": 25.3,
+                            "rpg": 5.0,
+                            "apg": 8.0,
+                            "spg": 2.3,
+                            "bpg": 0.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "09/02/1986",
+                            "pos": "PG",
+                            "player": "Maurice Cheeks",
+                            "playerUrl": "./players/player886.htm",
+                            "playerFile": "player886.htm",
+                            "team": "roster18",
+                            "teamName": "Ajax",
+                            "teamUrl": "./rosters/roster18.htm",
+                            "teamFile": "roster18.htm",
+                            "ppg": 16.0,
+                            "rpg": 6.0,
+                            "apg": 12.0,
+                            "spg": 4.0,
+                            "bpg": 0.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/02/1986",
+                            "pos": "C",
+                            "player": "Larry Nance",
+                            "playerUrl": "./players/player880.htm",
+                            "playerFile": "player880.htm",
+                            "team": "roster19",
+                            "teamName": "Aston Villa",
+                            "teamUrl": "./rosters/roster19.htm",
+                            "teamFile": "roster19.htm",
+                            "ppg": 35.5,
+                            "rpg": 9.0,
+                            "apg": 5.0,
+                            "spg": 3.0,
+                            "bpg": 3.0,
+                            "rowClass": "row2"
+                        },
                         {
                             "date": "01/26/1986",
                             "pos": "C",
@@ -584,6 +754,23 @@
                     "slug": "player-of-the-month",
                     "awards": [
                         {
+                            "date": "February",
+                            "pos": "SG",
+                            "player": "Dennis Johnson",
+                            "playerUrl": "./players/player715.htm",
+                            "playerFile": "player715.htm",
+                            "team": "roster11",
+                            "teamName": "Atletico Madrid",
+                            "teamUrl": "./rosters/roster11.htm",
+                            "teamFile": "roster11.htm",
+                            "ppg": 23.9,
+                            "rpg": 4.5,
+                            "apg": 7.3,
+                            "spg": 2.5,
+                            "bpg": 0.4,
+                            "rowClass": "row1"
+                        },
+                        {
                             "date": "January",
                             "pos": "C",
                             "player": "Larry Nance",
@@ -598,7 +785,7 @@
                             "apg": 3.3,
                             "spg": 2.4,
                             "bpg": 2.9,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -615,7 +802,7 @@
                             "apg": 3.3,
                             "spg": 1.5,
                             "bpg": 1.6,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -632,7 +819,7 @@
                             "apg": 2.9,
                             "spg": 1.0,
                             "bpg": 1.6,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 },
@@ -640,6 +827,23 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "February",
+                            "pos": "SF",
+                            "player": "Louis Orr",
+                            "playerUrl": "./players/player742.htm",
+                            "playerFile": "player742.htm",
+                            "team": "roster7",
+                            "teamName": "Bayern Munich",
+                            "teamUrl": "./rosters/roster7.htm",
+                            "teamFile": "roster7.htm",
+                            "ppg": 19.7,
+                            "rpg": 7.0,
+                            "apg": 3.6,
+                            "spg": 1.4,
+                            "bpg": 0.7,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "January",
                             "pos": "SG",
@@ -655,7 +859,7 @@
                             "apg": 7.3,
                             "spg": 2.0,
                             "bpg": 0.2,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -672,7 +876,7 @@
                             "apg": 7.3,
                             "spg": 1.1,
                             "bpg": 0.1,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -689,7 +893,7 @@
                             "apg": 4.5,
                             "spg": 2.3,
                             "bpg": 0.1,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 }
@@ -703,6 +907,74 @@
                     "title": "Player of the Week",
                     "slug": "player-of-the-week",
                     "awards": [
+                        {
+                            "date": "02/23/1986",
+                            "pos": "SF",
+                            "player": "Paul Pierce",
+                            "playerUrl": "./players/player693.htm",
+                            "playerFile": "player693.htm",
+                            "team": "roster24",
+                            "teamName": "Barcelona",
+                            "teamUrl": "./rosters/roster24.htm",
+                            "teamFile": "roster24.htm",
+                            "ppg": 44.0,
+                            "rpg": 5.0,
+                            "apg": 3.0,
+                            "spg": 7.0,
+                            "bpg": 1.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/16/1986",
+                            "pos": "PF",
+                            "player": "Orlando Woolridge",
+                            "playerUrl": "./players/player749.htm",
+                            "playerFile": "player749.htm",
+                            "team": "roster23",
+                            "teamName": "Arsenal",
+                            "teamUrl": "./rosters/roster23.htm",
+                            "teamFile": "roster23.htm",
+                            "ppg": 40.0,
+                            "rpg": 13.0,
+                            "apg": 3.0,
+                            "spg": 0.0,
+                            "bpg": 1.0,
+                            "rowClass": "row2"
+                        },
+                        {
+                            "date": "09/02/1986",
+                            "pos": "C",
+                            "player": "Chris Bosh",
+                            "playerUrl": "./players/player622.htm",
+                            "playerFile": "player622.htm",
+                            "team": "roster23",
+                            "teamName": "Arsenal",
+                            "teamUrl": "./rosters/roster23.htm",
+                            "teamFile": "roster23.htm",
+                            "ppg": 22.5,
+                            "rpg": 7.5,
+                            "apg": 1.5,
+                            "spg": 0.5,
+                            "bpg": 4.0,
+                            "rowClass": "row1"
+                        },
+                        {
+                            "date": "02/02/1986",
+                            "pos": "PF",
+                            "player": "Orlando Woolridge",
+                            "playerUrl": "./players/player749.htm",
+                            "playerFile": "player749.htm",
+                            "team": "roster23",
+                            "teamName": "Arsenal",
+                            "teamUrl": "./rosters/roster23.htm",
+                            "teamFile": "roster23.htm",
+                            "ppg": 31.0,
+                            "rpg": 8.0,
+                            "apg": 2.5,
+                            "spg": 0.5,
+                            "bpg": 0.5,
+                            "rowClass": "row2"
+                        },
                         {
                             "date": "01/26/1986",
                             "pos": "PG",
@@ -931,6 +1203,23 @@
                     "slug": "player-of-the-month",
                     "awards": [
                         {
+                            "date": "February",
+                            "pos": "PF",
+                            "player": "Orlando Woolridge",
+                            "playerUrl": "./players/player749.htm",
+                            "playerFile": "player749.htm",
+                            "team": "roster23",
+                            "teamName": "Arsenal",
+                            "teamUrl": "./rosters/roster23.htm",
+                            "teamFile": "roster23.htm",
+                            "ppg": 33.7,
+                            "rpg": 9.5,
+                            "apg": 3.2,
+                            "spg": 0.0,
+                            "bpg": 1.0,
+                            "rowClass": "row1"
+                        },
+                        {
                             "date": "January",
                             "pos": "SG",
                             "player": "John Drew",
@@ -945,7 +1234,7 @@
                             "apg": 2.7,
                             "spg": 2.0,
                             "bpg": 0.1,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -962,7 +1251,7 @@
                             "apg": 4.9,
                             "spg": 1.3,
                             "bpg": 0.4,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -979,7 +1268,7 @@
                             "apg": 2.0,
                             "spg": 1.6,
                             "bpg": 2.1,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 },
@@ -987,6 +1276,23 @@
                     "title": "Rookie of the Month",
                     "slug": "rookie-of-the-month",
                     "awards": [
+                        {
+                            "date": "February",
+                            "pos": "PF",
+                            "player": "Orlando Woolridge",
+                            "playerUrl": "./players/player749.htm",
+                            "playerFile": "player749.htm",
+                            "team": "roster23",
+                            "teamName": "Arsenal",
+                            "teamUrl": "./rosters/roster23.htm",
+                            "teamFile": "roster23.htm",
+                            "ppg": 33.7,
+                            "rpg": 9.5,
+                            "apg": 3.2,
+                            "spg": 0.0,
+                            "bpg": 1.0,
+                            "rowClass": "row1"
+                        },
                         {
                             "date": "January",
                             "pos": "SG",
@@ -1002,7 +1308,7 @@
                             "apg": 2.7,
                             "spg": 2.0,
                             "bpg": 0.1,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         },
                         {
                             "date": "December",
@@ -1019,7 +1325,7 @@
                             "apg": 4.9,
                             "spg": 1.3,
                             "bpg": 0.4,
-                            "rowClass": "row2"
+                            "rowClass": "row1"
                         },
                         {
                             "date": "November",
@@ -1036,7 +1342,7 @@
                             "apg": 3.9,
                             "spg": 2.1,
                             "bpg": 0.0,
-                            "rowClass": "row1"
+                            "rowClass": "row2"
                         }
                     ]
                 }
