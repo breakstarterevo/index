@@ -6910,9 +6910,20 @@
       "tradedAt": "2026-08-21T02:28:20Z",
       "note": "trade",
       "transactionId": "rights-0009-427902dd4288"
+    },
+    {
+      "revision": 10,
+      "prospectKey": "jonsundvold|22464|74",
+      "playerName": "Jon Sundvold",
+      "intakeTeam": "Ajax",
+      "fromTeam": "Ajax",
+      "toTeam": "Manchester United",
+      "tradedAt": "2026-08-27T01:08:56Z",
+      "note": "trade",
+      "transactionId": "rights-0010-3557e5bbe834"
     }
   ],
-  "rightsRevision": 9,
-  "rightsUpdatedAt": "2026-08-21T02:28:20Z",
-  "rightsHash": "3cdbed7744aadbe3b134d52f990b9713808275526578e5b25e67cf1ecc9f2fd2"
+  "rightsRevision": 10,
+  "rightsUpdatedAt": "2026-08-27T01:08:56Z",
+  "rightsHash": "dd0c59b88fc354f53949b19bd67d75df0d78e5ead2c02d605a985992e28996c1"
 }
