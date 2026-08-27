@@ -1,12 +1,7 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-20T05:05:07Z",
+  "updatedAt": "2026-08-27T01:53:13Z",
   "teams": [
-    {
-      "team": "AFC Richmond",
-      "gm": "Ted Lasso",
-      "positionFocus": "SF"
-    },
     {
       "team": "Benfica",
       "gm": "christofu",
@@ -23,19 +18,14 @@
       "positionFocus": "C"
     },
     {
+      "team": "AFC Richmond",
+      "gm": "Ted Lasso",
+      "positionFocus": "SF"
+    },
+    {
       "team": "Paris Saint-Germain",
       "gm": "Vinh",
       "positionFocus": "PF"
-    },
-    {
-      "team": "Chelsea",
-      "gm": "Max",
-      "positionFocus": "SG"
-    },
-    {
-      "team": "AC Milan",
-      "gm": "Dr Tequila",
-      "positionFocus": "SF"
     },
     {
       "team": "Crystal Palace",
@@ -43,9 +33,14 @@
       "positionFocus": "C"
     },
     {
-      "team": "Inter Milan",
-      "gm": "Reflex",
-      "positionFocus": "C"
+      "team": "AC Milan",
+      "gm": "Dr Tequila",
+      "positionFocus": "SF"
+    },
+    {
+      "team": "Chelsea",
+      "gm": "Max",
+      "positionFocus": "SG"
     },
     {
       "team": "Ajax",
@@ -58,9 +53,9 @@
       "positionFocus": "SG"
     },
     {
-      "team": "AC Sparta Praha",
-      "gm": "October",
-      "positionFocus": "SF"
+      "team": "Inter Milan",
+      "gm": "Reflex",
+      "positionFocus": "C"
     },
     {
       "team": "Aston Villa",
@@ -68,14 +63,14 @@
       "positionFocus": "PG"
     },
     {
+      "team": "AC Sparta Praha",
+      "gm": "October",
+      "positionFocus": "SF"
+    },
+    {
       "team": "Marseille",
       "gm": "Hans",
       "positionFocus": "PF"
-    },
-    {
-      "team": "Bayern Munich",
-      "gm": "Derick Rose",
-      "positionFocus": "C"
     },
     {
       "team": "Atletico Madrid",
@@ -83,14 +78,34 @@
       "positionFocus": "PG"
     },
     {
+      "team": "Bayern Munich",
+      "gm": "Derick Rose",
+      "positionFocus": "C"
+    },
+    {
       "team": "Barcelona",
       "gm": "JDK",
       "positionFocus": "PF"
     },
     {
+      "team": "Arsenal",
+      "gm": "lionbryant",
+      "positionFocus": "C"
+    },
+    {
+      "team": "Monaco",
+      "gm": "omni2sweet",
+      "positionFocus": "PG"
+    },
+    {
       "team": "Valencia",
       "gm": "Alley",
       "positionFocus": "C"
+    },
+    {
+      "team": "Manchester City",
+      "gm": "Skillriky",
+      "positionFocus": "PF"
     },
     {
       "team": "Juventus",
@@ -101,21 +116,6 @@
       "team": "Tottenham Hotspur",
       "gm": "Yaworski",
       "positionFocus": "SF"
-    },
-    {
-      "team": "Monaco",
-      "gm": "omni2sweet",
-      "positionFocus": "PG"
-    },
-    {
-      "team": "Arsenal",
-      "gm": "lionbryant",
-      "positionFocus": "C"
-    },
-    {
-      "team": "Manchester City",
-      "gm": "Skillriky",
-      "positionFocus": "PF"
     },
     {
       "team": "Manchester United",

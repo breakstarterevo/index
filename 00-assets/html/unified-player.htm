@@ -724,6 +724,46 @@
       width: auto;
       z-index: auto;
     }
+    .data-table.is-attribute-history {
+      min-width: 1180px;
+    }
+    .data-table.is-attribute-history th,
+    .data-table.is-attribute-history td {
+      font-size: 0.74rem;
+      padding: 0.3rem 0.25rem;
+    }
+    .data-table.is-attribute-history th {
+      cursor: default;
+    }
+    .data-table.is-attribute-history th:first-child,
+    .data-table.is-attribute-history td:first-child {
+      min-width: 76px;
+      width: 76px;
+    }
+    .data-table.is-attribute-history th:nth-child(2),
+    .data-table.is-attribute-history td:nth-child(2) {
+      left: 76px;
+      min-width: 102px;
+      width: 102px;
+    }
+    .data-table.is-attribute-history .attribute-group-start {
+      border-left: 2px solid var(--line);
+    }
+    .data-table.is-attribute-history .attribute-current-row td {
+      background: #eef4fb;
+      font-weight: 800;
+    }
+    .attribute-value {
+      font-variant-numeric: tabular-nums;
+    }
+    .attribute-delta {
+      display: inline-block;
+      font-size: 0.66rem;
+      font-weight: 900;
+      margin-left: 0.2rem;
+    }
+    .attribute-delta.is-up { color: #15803d; }
+    .attribute-delta.is-down { color: #b91c1c; }
     .data-table td:first-child,
     .data-table th:first-child,
     .data-table td:nth-child(2),
@@ -731,6 +771,19 @@
     .data-table td:nth-child(3),
     .data-table th:nth-child(3) {
       text-align: left;
+    }
+    .stats-team-cell {
+      align-items: center;
+      display: inline-flex;
+      gap: 0.28rem;
+      min-width: 0;
+    }
+    .stats-team-logo {
+      display: block;
+      flex: 0 0 18px;
+      height: 18px;
+      object-fit: contain;
+      width: 18px;
     }
     .empty {
       padding: 0.75rem;
@@ -1405,6 +1458,35 @@
       "Valencia": "valencia.jpg"
     };
 
+    const TEAM_CODE_NAMES = {
+      ACM: "AC Milan",
+      AJX: "Ajax",
+      ARS: "Arsenal",
+      ASP: "AC Sparta Praha",
+      ATM: "Atletico Madrid",
+      AVL: "Aston Villa",
+      BAR: "Barcelona",
+      BAY: "Bayern Munich",
+      BEN: "Benfica",
+      BHA: "Brighton",
+      CHE: "Chelsea",
+      CRY: "Crystal Palace",
+      FLF: "FL Fart",
+      INT: "Inter Milan",
+      JUV: "Juventus",
+      MAR: "Marseille",
+      MCI: "Manchester City",
+      MON: "Monaco",
+      MUN: "Manchester United",
+      PSG: "Paris Saint-Germain",
+      RIC: "AFC Richmond",
+      RMA: "Real Madrid",
+      SCP: "Arsenal",
+      SHU: "AC Sparta Praha",
+      TOT: "Tottenham Hotspur",
+      VAL: "Valencia"
+    };
+
     const RATING_GROUPS = [
       {
         title: "Offense",
@@ -1434,6 +1516,27 @@
       }
     ];
 
+    const ATTRIBUTE_HISTORY_FIELDS = [
+      { key: "overall", label: "OVR", title: "Overall", groupStart: true },
+      { key: "potential", label: "POT", title: "Potential" },
+      { key: "Ins", label: "INS", title: "Inside", groupStart: true },
+      { key: "Jps", label: "JPS", title: "Jump Shot" },
+      { key: "Fts", label: "FTS", title: "Free Throw" },
+      { key: "3ps", label: "3PS", title: "Three" },
+      { key: "Hnd", label: "HND", title: "Handle" },
+      { key: "Pas", label: "PAS", title: "Pass" },
+      { key: "Orb", label: "ORB", title: "Offensive Rebound" },
+      { key: "Drb", label: "DRB", title: "Defensive Rebound", groupStart: true },
+      { key: "Psd", label: "PSD", title: "Post Defense" },
+      { key: "Prd", label: "PRD", title: "Perimeter Defense" },
+      { key: "Stl", label: "STL", title: "Steal" },
+      { key: "Blk", label: "BLK", title: "Block" },
+      { key: "Qkn", label: "QKN", title: "Quickness", groupStart: true },
+      { key: "Str", label: "STR", title: "Strength" },
+      { key: "Jmp", label: "JMP", title: "Jump" },
+      { key: "Sta", label: "STA", title: "Stamina" }
+    ];
+
     const STAT_TABS = [
       { id: "season_averages", label: "Averages" },
       { id: "shooting_averages", label: "Shooting" },
@@ -1441,7 +1544,8 @@
       { id: "efficiency", label: "Efficiency" },
       { id: "playoff_averages", label: "Playoffs" },
       { id: "playoff_shooting", label: "Playoff Shooting" },
-      { id: "career_highs", label: "Highs" }
+      { id: "career_highs", label: "Highs" },
+      { id: "attribute_history", label: "Attribute History" }
     ];
 
     const state = {
@@ -1958,6 +2062,13 @@
       return false;
     }
 
+    function historyIdentityForPlayer(player) {
+      const identities = state.playerHistory && Array.isArray(state.playerHistory.identities)
+        ? state.playerHistory.identities
+        : [];
+      return identities.find((entry) => trendIdentityMatches(entry, player)) || null;
+    }
+
     function seasonSortValue(label) {
       const match = String(label || "").match(/(\d+)/);
       return match ? Number(match[1]) : 9999;
@@ -1975,8 +2086,7 @@
     }
 
     function developmentTrendRows(player) {
-      const identities = state.playerHistory && Array.isArray(state.playerHistory.identities) ? state.playerHistory.identities : [];
-      const identity = identities.find((entry) => trendIdentityMatches(entry, player));
+      const identity = historyIdentityForPlayer(player);
       const rows = identity && Array.isArray(identity.appearances)
         ? identity.appearances.map((row) => ({
           label: seasonLabel(row.season),
@@ -2382,11 +2492,90 @@
       return count ? `${base}_${count + 1}` : base;
     }
 
+    function statsTeamCell(value) {
+      const code = clean(value).toUpperCase();
+      const teamName = TEAM_CODE_NAMES[code];
+      if (!teamName) return escapeHtml(fmt(value));
+      const logoFile = TEAM_LOGOS[teamName] || `${slugify(teamName)}.jpg`;
+      return `<span class="stats-team-cell" title="${escapeHtml(teamName)}" aria-label="${escapeHtml(`${teamName} (${code})`)}"><img class="stats-team-logo" src="../../00-assets/photos/${escapeHtml(logoFile)}" alt="" loading="lazy"><span aria-hidden="true">${escapeHtml(code)}</span></span>`;
+    }
+
+    function attributeHistoryNumber(value) {
+      const raw = clean(value);
+      if (!raw) return null;
+      const parsed = Number(raw.replace(/,/g, ""));
+      return Number.isFinite(parsed) ? parsed : null;
+    }
+
+    function attributeHistoryRows(player) {
+      const identity = historyIdentityForPlayer(player);
+      const appearances = identity && Array.isArray(identity.appearances) ? identity.appearances : [];
+      const archivedRows = appearances.map((row) => ({
+        ...row,
+        historyLabel: clean(row.seasonLabel) || seasonLabel(row.season),
+        historySort: seasonSortValue(row.season),
+        isCurrent: false
+      })).sort((a, b) => a.historySort - b.historySort || a.historyLabel.localeCompare(b.historyLabel));
+      const currentRow = {
+        historyLabel: "Current",
+        historySort: 10000,
+        team: clean(player && (player.teamLabel || player.team)) || "FA",
+        isCurrent: true
+      };
+      ATTRIBUTE_HISTORY_FIELDS.forEach((field) => {
+        currentRow[field.key] = player ? player[field.key] : "";
+      });
+      return [...archivedRows, currentRow];
+    }
+
+    function attributeHistoryCell(rows, rowIndex, field) {
+      const value = clean(rows[rowIndex] && rows[rowIndex][field.key]);
+      if (!value) return "--";
+      const current = attributeHistoryNumber(value);
+      let previous = null;
+      for (let index = rowIndex - 1; index >= 0; index -= 1) {
+        previous = attributeHistoryNumber(rows[index] && rows[index][field.key]);
+        if (previous !== null) break;
+      }
+      let deltaHtml = "";
+      if (current !== null && previous !== null && current !== previous) {
+        const delta = current - previous;
+        const direction = delta > 0 ? "is-up" : "is-down";
+        const signed = delta > 0 ? `+${delta}` : String(delta);
+        const aria = delta > 0 ? `increased by ${delta}` : `decreased by ${Math.abs(delta)}`;
+        deltaHtml = `<span class="attribute-delta ${direction}" aria-label="${aria}">(${signed})</span>`;
+      }
+      return `<span class="attribute-value">${escapeHtml(value)}</span>${deltaHtml}`;
+    }
+
+    function renderAttributeHistoryTable(table) {
+      const rows = attributeHistoryRows(state.current || {});
+      const fixedHeaders = '<th title="Archived season">Season</th><th title="Team at snapshot">Team</th>';
+      const attributeHeaders = ATTRIBUTE_HISTORY_FIELDS.map((field) => {
+        const groupClass = field.groupStart ? ' class="attribute-group-start"' : "";
+        return `<th${groupClass} title="${escapeHtml(field.title)}">${escapeHtml(field.label)}</th>`;
+      }).join("");
+      const body = rows.map((row, rowIndex) => {
+        const rowClass = row.isCurrent ? ' class="attribute-current-row"' : "";
+        const cells = ATTRIBUTE_HISTORY_FIELDS.map((field) => {
+          const groupClass = field.groupStart ? ' class="attribute-group-start"' : "";
+          return `<td${groupClass}>${attributeHistoryCell(rows, rowIndex, field)}</td>`;
+        }).join("");
+        return `<tr${rowClass}><td>${escapeHtml(row.historyLabel)}</td><td>${escapeHtml(clean(row.team) || "FA")}</td>${cells}</tr>`;
+      }).join("");
+      table.innerHTML = `<thead><tr>${fixedHeaders}${attributeHeaders}</tr></thead><tbody>${body}</tbody>`;
+    }
+
     function renderTable() {
       const table = document.getElementById("statsTable");
       const stats = state.currentStats && state.currentStats.stats;
       const section = stats && stats[state.activeTab];
       table.classList.toggle("is-highs", state.activeTab === "career_highs");
+      table.classList.toggle("is-attribute-history", state.activeTab === "attribute_history");
+      if (state.activeTab === "attribute_history") {
+        renderAttributeHistoryTable(table);
+        return;
+      }
       if (!section || !Array.isArray(section.headers) || !Array.isArray(section.rows) || !section.headers.length) {
         table.innerHTML = `<tbody><tr><td><div class="empty ui-state">No table data for this section</div></td></tr></tbody>`;
         return;
@@ -2395,7 +2584,7 @@
       const keys = section.headers.map((h) => keyFromHeader(h, used));
       const head = `<thead><tr>${section.headers.map((h) => `<th>${h || "-"}</th>`).join("")}</tr></thead>`;
       const rows = section.rows.length ? section.rows.map((row) =>
-        `<tr>${keys.map((key) => `<td>${fmt(row[key])}</td>`).join("")}</tr>`
+        `<tr>${keys.map((key) => `<td>${key === "team" ? statsTeamCell(row[key]) : fmt(row[key])}</td>`).join("")}</tr>`
       ).join("") : `<tr><td colspan="${section.headers.length}">No rows</td></tr>`;
       table.innerHTML = `${head}<tbody>${rows}</tbody>`;
       makeTableSortable(table);
@@ -2928,7 +3117,7 @@
     function renderTabs() {
       const root = document.getElementById("statsTabs");
       const stats = state.currentStats && state.currentStats.stats ? state.currentStats.stats : {};
-      const tabs = STAT_TABS.filter((tab) => stats[tab.id]);
+      const tabs = STAT_TABS.filter((tab) => tab.id === "attribute_history" || stats[tab.id]);
       if (!tabs.some((tab) => tab.id === state.activeTab)) {
         state.activeTab = tabs[0] ? tabs[0].id : "season_averages";
       }

@@ -21,6 +21,26 @@
     supercupResults: ["supercup/game_results.json", { results: [] }]
   };
   const ATTR_KEYS = ["Ins", "Jps", "Fts", "3ps", "Hnd", "Pas", "Orb", "Drb", "Psd", "Prd", "Stl", "Blk", "Qkn", "Str", "Jmp", "Sta"];
+  const ATTRIBUTE_HISTORY_FIELDS = [
+    ["overall", "OVR", "Overall", true],
+    ["potential", "POT", "Potential", false],
+    ["Ins", "INS", "Inside", true],
+    ["Jps", "JPS", "Jump Shot", false],
+    ["Fts", "FTS", "Free Throw", false],
+    ["3ps", "3PS", "Three", false],
+    ["Hnd", "HND", "Handle", false],
+    ["Pas", "PAS", "Pass", false],
+    ["Orb", "ORB", "Offensive Rebound", false],
+    ["Drb", "DRB", "Defensive Rebound", true],
+    ["Psd", "PSD", "Post Defense", false],
+    ["Prd", "PRD", "Perimeter Defense", false],
+    ["Stl", "STL", "Steal", false],
+    ["Blk", "BLK", "Block", false],
+    ["Qkn", "QKN", "Quickness", true],
+    ["Str", "STR", "Strength", false],
+    ["Jmp", "JMP", "Jump", false],
+    ["Sta", "STA", "Stamina", false]
+  ];
   const FUTURE_POOL_ATTRS = [
     ["INS", "InsideScoring", "PotInside"],
     ["JPS", "JumpShot", "PotJumpShot"],
@@ -1298,6 +1318,48 @@
     return `${totalHtml}${seasonHtml ? `<div class="accolade-season-grid">${seasonHtml}</div>` : ""}`;
   }
 
+  function attributeHistoryNumber(value) {
+    const raw = String(value ?? "").trim();
+    if (!raw) return null;
+    const parsed = Number(raw.replace(/,/g, ""));
+    return Number.isFinite(parsed) ? parsed : null;
+  }
+
+  function attributeHistoryCell(rows, rowIndex, key) {
+    const raw = String(rows[rowIndex]?.[key] ?? "").trim();
+    if (!raw) return "-";
+    const current = attributeHistoryNumber(raw);
+    let previous = null;
+    for (let index = rowIndex - 1; index >= 0; index -= 1) {
+      previous = attributeHistoryNumber(rows[index]?.[key]);
+      if (previous !== null) break;
+    }
+    let deltaHtml = "";
+    if (current !== null && previous !== null && current !== previous) {
+      const delta = current - previous;
+      const direction = delta > 0 ? "is-up" : "is-down";
+      const signed = delta > 0 ? `+${delta}` : String(delta);
+      const aria = delta > 0 ? `increased by ${delta}` : `decreased by ${Math.abs(delta)}`;
+      deltaHtml = `<span class="attribute-delta ${direction}" aria-label="${aria}">(${signed})</span>`;
+    }
+    return `<span class="attribute-value">${esc(raw)}</span>${deltaHtml}`;
+  }
+
+  function renderAttributeHistory(appearances) {
+    const rows = (appearances || []).slice().sort((a, b) => seasonNumber(a.season) - seasonNumber(b.season));
+    if (!rows.length) return `<div class="empty">No archived attribute history</div>`;
+    const headers = ATTRIBUTE_HISTORY_FIELDS.map(([, label, title, groupStart]) => (
+      `<th class="${groupStart ? "attribute-group-start" : ""}" title="${esc(title)}">${esc(label)}</th>`
+    )).join("");
+    const body = rows.map((row, rowIndex) => {
+      const values = ATTRIBUTE_HISTORY_FIELDS.map(([key, , , groupStart]) => (
+        `<td class="num${groupStart ? " attribute-group-start" : ""}">${attributeHistoryCell(rows, rowIndex, key)}</td>`
+      )).join("");
+      return `<tr><td>${esc(row.seasonLabel || seasonLabel(row.season))}</td><td>${esc(row.team || "FA")}</td>${values}</tr>`;
+    }).join("");
+    return `<div class="table-wrap attribute-history-wrap"><table class="ref-table attribute-history-table"><thead><tr><th>Season</th><th>Team</th>${headers}</tr></thead><tbody>${body}</tbody></table></div>`;
+  }
+
   async function renderPlayer() {
     const identity = findIdentityByParam();
     if (!identity) {
@@ -1352,6 +1414,7 @@
       <div class="history-grid main-rail">
         <div>
           <section class="reference-section"><h2>Career Arc</h2>${renderCareerChart(snapshots)}</section>
+          <section class="reference-section"><h2>Attribute History</h2><p class="muted">Season-end ratings with changes from the previous archived season.</p>${renderAttributeHistory(appearances)}</section>
           <section class="reference-section"><h2>Player Stats</h2>${playerStatsView.controls}${playerStatsView.tableHtml}</section>
           <section class="reference-section"><h2>Accolades</h2>${renderAccolades(accolades)}</section>
         </div>

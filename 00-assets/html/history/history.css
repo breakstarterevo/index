@@ -733,6 +733,71 @@ table.ref-table {
   box-shadow: 8px 0 10px -10px rgba(8, 24, 50, 0.75);
 }
 
+.attribute-history-wrap .ref-table {
+  font-size: 11px;
+  min-width: 1180px;
+  width: max-content;
+}
+
+.attribute-history-wrap .ref-table th,
+.attribute-history-wrap .ref-table td {
+  padding: 4px;
+}
+
+.attribute-history-wrap .ref-table th:first-child,
+.attribute-history-wrap .ref-table td:first-child {
+  left: 0;
+  min-width: 76px;
+  width: 76px;
+}
+
+.attribute-history-wrap .ref-table th:nth-child(2),
+.attribute-history-wrap .ref-table td:nth-child(2) {
+  left: 76px;
+  min-width: 102px;
+  position: sticky;
+  width: 102px;
+}
+
+.attribute-history-wrap .ref-table th:first-child,
+.attribute-history-wrap .ref-table th:nth-child(2) {
+  z-index: 4;
+}
+
+.attribute-history-wrap .ref-table td:first-child,
+.attribute-history-wrap .ref-table td:nth-child(2) {
+  background: #fff;
+  z-index: 2;
+}
+
+.attribute-history-wrap .ref-table tr:nth-child(even) td:first-child,
+.attribute-history-wrap .ref-table tr:nth-child(even) td:nth-child(2) {
+  background: #f7f9fc;
+}
+
+.attribute-history-wrap .ref-table th:nth-child(2),
+.attribute-history-wrap .ref-table td:nth-child(2) {
+  box-shadow: 8px 0 10px -10px rgba(8, 24, 50, 0.75);
+}
+
+.attribute-history-wrap .attribute-group-start {
+  border-left: 2px solid #aeb8c6;
+}
+
+.attribute-value {
+  font-variant-numeric: tabular-nums;
+}
+
+.attribute-delta {
+  display: inline-block;
+  font-size: 9px;
+  font-weight: 900;
+  margin-left: 2px;
+}
+
+.attribute-delta.is-up { color: #006b3a; }
+.attribute-delta.is-down { color: #a40000; }
+
 .rank-good { color: #006b3a; font-weight: 800; }
 .rank-bad { color: #a40000; font-weight: 800; }
 

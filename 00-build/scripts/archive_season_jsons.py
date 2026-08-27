@@ -11,6 +11,26 @@ from html import unescape
 from pathlib import Path
 
 
+ATTRIBUTE_HISTORY_KEYS = [
+    "Ins",
+    "Jps",
+    "Fts",
+    "3ps",
+    "Hnd",
+    "Pas",
+    "Orb",
+    "Drb",
+    "Psd",
+    "Prd",
+    "Stl",
+    "Blk",
+    "Qkn",
+    "Str",
+    "Jmp",
+    "Sta",
+]
+
+
 def repo_root() -> Path:
     return Path(__file__).resolve().parents[2]
 
@@ -21,8 +41,12 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--season",
-        required=True,
         help="Season number or label, for example 1 or season-1.",
+    )
+    parser.add_argument(
+        "--rebuild-index-only",
+        action="store_true",
+        help="Rebuild cross-season history indexes without changing an archived season.",
     )
     parser.add_argument(
         "--force",
@@ -38,7 +62,10 @@ def parse_args() -> argparse.Namespace:
         "--label",
         help='Display label for menus, for example "1981-82". Defaults to the season slug.',
     )
-    return parser.parse_args()
+    args = parser.parse_args()
+    if not args.rebuild_index_only and not args.season:
+        parser.error("--season is required unless --rebuild-index-only is used.")
+    return args
 
 
 def season_slug(value: str) -> str:
@@ -379,6 +406,12 @@ def build_player_identity_index(history_root: Path) -> dict[str, object]:
             continue
 
         season = season_dir.name
+        manifest = read_json(season_dir / "manifest.json", {})
+        season_label = (
+            clean(manifest.get("label", ""))
+            if isinstance(manifest, dict)
+            else ""
+        )
         season_key_map: dict[str, str] = {}
         for player in collapse_exact_duplicates([p for p in players if isinstance(p, dict)]):
             name = clean(player.get("name", ""))
@@ -415,6 +448,7 @@ def build_player_identity_index(history_root: Path) -> dict[str, object]:
             file_name = player_file_from_url(player)
             appearance = {
                 "season": season,
+                "seasonLabel": season_label or default_season_label(season),
                 "playerFile": file_name,
                 "name": name,
                 "team": clean(player.get("teamLabel", player.get("team", ""))),
@@ -423,6 +457,9 @@ def build_player_identity_index(history_root: Path) -> dict[str, object]:
                 "overall": clean(player.get("overall", "")),
                 "potential": clean(player.get("potential", "")),
             }
+            appearance.update(
+                {key: clean(player.get(key, "")) for key in ATTRIBUTE_HISTORY_KEYS}
+            )
             identity.setdefault("appearances", []).append(appearance)
             if file_name:
                 season_key_map[file_name] = str(identity["key"])
@@ -441,6 +478,7 @@ def build_player_identity_index(history_root: Path) -> dict[str, object]:
         "source": "00-build/history/*/database/players.json",
         "generatedAtUtc": datetime.now(timezone.utc).isoformat(),
         "identityCount": len(identities),
+        "attributeHistoryKeys": ATTRIBUTE_HISTORY_KEYS,
         "identities": sorted(identities, key=lambda item: str(item.get("name", "")).casefold()),
         "seasonMaps": player_key_maps,
     }
@@ -451,11 +489,89 @@ def build_player_identity_index(history_root: Path) -> dict[str, object]:
     return payload
 
 
+def enrich_player_identity_index(history_root: Path) -> dict[str, object]:
+    index_path = history_root / "player_index.json"
+    payload = read_json(index_path, {})
+    if not isinstance(payload, dict) or not isinstance(payload.get("identities"), list):
+        return build_player_identity_index(history_root)
+
+    players_by_season: dict[str, dict[str, list[dict[str, object]]]] = {}
+    labels_by_season: dict[str, str] = {}
+
+    def archived_players(season: str) -> dict[str, list[dict[str, object]]]:
+        if season in players_by_season:
+            return players_by_season[season]
+        season_dir = history_root / season
+        players = read_json(season_dir / "database" / "players.json", [])
+        by_file: dict[str, list[dict[str, object]]] = {}
+        if isinstance(players, list):
+            for player in players:
+                if not isinstance(player, dict):
+                    continue
+                file_name = player_file_from_url(player)
+                if file_name:
+                    by_file.setdefault(file_name, []).append(player)
+        manifest = read_json(season_dir / "manifest.json", {})
+        labels_by_season[season] = (
+            clean(manifest.get("label", ""))
+            if isinstance(manifest, dict)
+            else ""
+        ) or default_season_label(season)
+        players_by_season[season] = by_file
+        return by_file
+
+    enriched_count = 0
+    for identity in payload["identities"]:
+        if not isinstance(identity, dict):
+            continue
+        appearances = identity.get("appearances", [])
+        if not isinstance(appearances, list):
+            continue
+        for appearance in appearances:
+            if not isinstance(appearance, dict):
+                continue
+            season = clean(appearance.get("season", ""))
+            file_name = clean(appearance.get("playerFile", ""))
+            if not season or not file_name:
+                continue
+            candidates = archived_players(season).get(file_name, [])
+            if not candidates:
+                continue
+            appearance_name = clean(appearance.get("name", "")).casefold()
+            player = next(
+                (
+                    candidate
+                    for candidate in candidates
+                    if clean(candidate.get("name", "")).casefold() == appearance_name
+                ),
+                candidates[0],
+            )
+            appearance["seasonLabel"] = labels_by_season[season]
+            appearance.update(
+                {key: clean(player.get(key, "")) for key in ATTRIBUTE_HISTORY_KEYS}
+            )
+            enriched_count += 1
+
+    payload["generatedAtUtc"] = datetime.now(timezone.utc).isoformat()
+    payload["attributeHistoryKeys"] = ATTRIBUTE_HISTORY_KEYS
+    index_path.write_text(json.dumps(payload, indent=2) + "\n", encoding="utf-8")
+    payload["enrichedAppearanceCount"] = enriched_count
+    return payload
+
+
 def main() -> int:
     args = parse_args()
     root = repo_root()
-    source = root / "00-build" / "database"
     history_root = root / "00-build" / "history"
+    if args.rebuild_index_only:
+        player_index = enrich_player_identity_index(history_root)
+        print(
+            "Enriched player identity index with "
+            f"{player_index.get('enrichedAppearanceCount', 0)} archived appearance(s)"
+        )
+        return 0
+
+    source = root / "00-build" / "database"
     season_dir = history_root / season_slug(args.season)
     database_archive = season_dir / "database"
     season_awards_out = source / "season_awards.json"
