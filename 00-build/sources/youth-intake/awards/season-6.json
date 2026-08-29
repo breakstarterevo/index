@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "season": "season-6",
+  "revision": 2,
+  "awards": [],
+  "transactions": [
+    {
+      "revision": 1,
+      "action": "created",
+      "awardId": "award-86faeb3a686da019",
+      "team": "Crystal Palace",
+      "playerName": "Jaren Jackson",
+      "recordedAt": "2026-08-29T00:23:54Z",
+      "note": "test prospect"
+    },
+    {
+      "revision": 2,
+      "action": "removed",
+      "awardId": "award-86faeb3a686da019",
+      "team": "Crystal Palace",
+      "playerName": "Jaren Jackson",
+      "recordedAt": "2026-08-29T00:25:58Z",
+      "note": "Removed before official draw"
+    }
+  ],
+  "updatedAt": "2026-08-29T00:25:58Z"
+}

@@ -1,21 +1,16 @@
 {
   "schemaVersion": 1,
-  "updatedAt": "2026-08-27T01:53:13Z",
+  "updatedAt": "2026-08-29T00:26:47Z",
   "teams": [
-    {
-      "team": "Benfica",
-      "gm": "christofu",
-      "positionFocus": "PG"
-    },
-    {
-      "team": "Real Madrid",
-      "gm": "Sus",
-      "positionFocus": "SF"
-    },
     {
       "team": "Brighton",
       "gm": "Lamora",
       "positionFocus": "C"
+    },
+    {
+      "team": "Benfica",
+      "gm": "christofu",
+      "positionFocus": "PG"
     },
     {
       "team": "AFC Richmond",
@@ -23,14 +18,19 @@
       "positionFocus": "SF"
     },
     {
-      "team": "Paris Saint-Germain",
-      "gm": "Vinh",
-      "positionFocus": "PF"
+      "team": "Real Madrid",
+      "gm": "Sus",
+      "positionFocus": "SF"
     },
     {
       "team": "Crystal Palace",
       "gm": "Superbat",
       "positionFocus": "C"
+    },
+    {
+      "team": "Paris Saint-Germain",
+      "gm": "Vinh",
+      "positionFocus": "PF"
     },
     {
       "team": "AC Milan",
@@ -63,24 +63,24 @@
       "positionFocus": "PG"
     },
     {
-      "team": "AC Sparta Praha",
-      "gm": "October",
-      "positionFocus": "SF"
-    },
-    {
       "team": "Marseille",
       "gm": "Hans",
       "positionFocus": "PF"
     },
     {
-      "team": "Atletico Madrid",
-      "gm": "Young Wolf",
-      "positionFocus": "PG"
+      "team": "AC Sparta Praha",
+      "gm": "October",
+      "positionFocus": "SF"
     },
     {
       "team": "Bayern Munich",
       "gm": "Derick Rose",
       "positionFocus": "C"
+    },
+    {
+      "team": "Atletico Madrid",
+      "gm": "Young Wolf",
+      "positionFocus": "PG"
     },
     {
       "team": "Barcelona",
