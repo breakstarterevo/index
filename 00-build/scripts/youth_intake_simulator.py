@@ -231,7 +231,7 @@ def _slot_order(slot_key):
     return order.get(slot_key, 99)
 
 
-def generate_simulation(*, standings, config, rules, prospects, excluded_names, seed, season, mode):
+def generate_simulation(*, standings, config, rules, prospects, excluded_names, seed, season, mode, manual_awards=None):
     issues = validate_team_config(standings, config)
     if issues:
         raise SimulationError(" ".join(issues))
@@ -243,6 +243,10 @@ def generate_simulation(*, standings, config, rules, prospects, excluded_names, 
     eligible = eligible_prospects(prospects, excluded_names)
     if not eligible:
         raise SimulationError("No eligible future prospects are available.")
+    manual_awards = [
+        copy.deepcopy(award) for award in (manual_awards or [])
+        if str(award.get("status", "active")).lower() in {"active", "staged", "published"}
+    ]
 
     enriched_teams = []
     for team in teams:
@@ -261,8 +265,15 @@ def generate_simulation(*, standings, config, rules, prospects, excluded_names, 
     if focus_threshold < 0 or focus_threshold > 10000:
         raise SimulationError("focusChanceBasisPoints must be between 0 and 10000.")
 
-    remaining = list(eligible)
-    selected_keys = set()
+    awarded_keys = {
+        str((award.get("player") or {}).get("prospectKey") or award.get("prospectKey") or "").strip()
+        for award in manual_awards
+    }
+    awarded_keys.discard("")
+    if len(awarded_keys) != len(manual_awards):
+        raise SimulationError("Manual awards contain a missing or duplicate prospect key.")
+    remaining = [player for player in eligible if player["prospectKey"] not in awarded_keys]
+    selected_keys = set(awarded_keys)
     audit = []
     allocation_order = []
 
@@ -338,6 +349,64 @@ def generate_simulation(*, standings, config, rules, prospects, excluded_names, 
         })
         team["intakePlayers"].append(player)
 
+    for award_offset, award in enumerate(manual_awards, start=1):
+        team_name = str(award.get("team", "")).strip()
+        team = team_by_name.get(team_name)
+        if not team:
+            raise SimulationError(f"Manual award references unknown team {team_name or 'blank'}.")
+        if str(award.get("division", "")).upper() != team["division"]:
+            raise SimulationError(f"Manual award division does not match {team_name}.")
+        player = copy.deepcopy(award.get("player") or {})
+        key = str(player.get("prospectKey") or award.get("prospectKey") or "").strip()
+        player.update({
+            "prospectKey": key,
+            "awardId": award.get("awardId", ""),
+            "manualAward": True,
+            "awardType": award.get("awardType", ""),
+            "awardNote": award.get("note", ""),
+            "awardedAt": award.get("awardedAt", ""),
+            "slotId": award.get("slotId", f"{normalize_name(team_name)}:manual-award:{award_offset}"),
+            "slotKey": award.get("slotKey", "manual-award"),
+            "slotLabel": award.get("slotLabel", "Extra award"),
+            "slotType": "manual-award",
+            "wildcard": bool(award.get("wildcard", False)),
+            "selectedTier": award.get("selectedTier") or player.get("tier", ""),
+            "focusRoll": award.get("focusRoll"),
+            "focusThreshold": award.get("focusThreshold"),
+            "focusApplied": bool(award.get("focusApplied", False)),
+            "focusOutcome": award.get("focusOutcome", "Random"),
+            "eligibleCount": award.get("eligibleCount", 0),
+            "allocationIndex": len(slots) + award_offset,
+        })
+        team["intakePlayers"].append(player)
+        allocation_order.append(player["slotId"])
+        audit.append({
+            "allocationIndex": player["allocationIndex"],
+            "awardId": award.get("awardId", ""),
+            "manualAward": True,
+            "slotId": player["slotId"],
+            "slotKey": player["slotKey"],
+            "slotLabel": player["slotLabel"],
+            "slotType": "manual-award",
+            "team": team_name,
+            "division": team["division"],
+            "tier": player["selectedTier"],
+            "tierWeights": award.get("tierWeights", {}),
+            "tierRoll": award.get("tierRoll"),
+            "tierRollRange": award.get("tierRollRange"),
+            "focus": team["positionFocus"],
+            "focusRoll": player["focusRoll"],
+            "focusThreshold": player["focusThreshold"],
+            "focusApplied": player["focusApplied"],
+            "focusOutcome": player["focusOutcome"],
+            "eligibleCount": player["eligibleCount"],
+            "playerIndex": award.get("playerIndex"),
+            "prospectKey": key,
+            "playerName": player.get("name", ""),
+            "seed": award.get("seed", ""),
+            "note": award.get("note", ""),
+        })
+
     for team in enriched_teams:
         team["intakePlayers"].sort(key=lambda player: _slot_order(player.get("slotKey")))
 
@@ -358,6 +427,9 @@ def generate_simulation(*, standings, config, rules, prospects, excluded_names, 
         "revealOrder": reveal_order,
         "teams": enriched_teams,
         "audit": audit,
+        "manualAwards": manual_awards,
+        "awardTransactions": [],
+        "awardsRevision": 0,
         "counts": {
             "teams": len(enriched_teams),
             "prospects": len(selected_keys),

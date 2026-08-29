@@ -193,6 +193,7 @@ class YouthIntakeAppStateTests(unittest.TestCase):
             "DRAFT_PATH": self.source / "drafts" / "current.json",
             "VOIDS_DIR": self.source / "voids",
             "SEASONS_DIR": self.source / "seasons",
+            "AWARDS_DIR": self.source / "awards",
             "CONFIG_PATH": self.source / "config.json",
             "RULES_PATH": self.source / "rules.json",
             "USED_PATH": self.source / "used-prospects.json",
@@ -316,6 +317,114 @@ class YouthIntakeAppStateTests(unittest.TestCase):
         })
         self.assertEqual(returned["transfer"]["fromTeam"], destination)
         self.assertEqual(returned["publication"]["rightsRevision"], 2)
+
+    def test_staged_award_supplements_draw_and_removal_restores_pool(self):
+        before = app.bootstrap_payload("season-9")["pool"]["total"]
+        created = app.create_staged_award({
+            "season": "season-9",
+            "team": "ELB Team 1",
+            "awardType": "europa-wildcard",
+            "note": "Commissioner compensation",
+            "seed": "staged-award-seed",
+            "expectedRevision": 0,
+        })
+        award = created["award"]
+        self.assertEqual(award["division"], "ELB")
+        self.assertIn(award["selectedTier"], {"A", "B", "D"})
+        self.assertEqual(created["bootstrap"]["pool"]["total"], before - 1)
+
+        result = app.generate(season="season-9", mode="test", seed="draw-with-award")
+        self.assertEqual(result["counts"]["prospects"], 73)
+        self.assertEqual(result["counts"]["ELB"], 25)
+        selected = [player for team in result["teams"] for player in team["intakePlayers"]]
+        self.assertEqual(sum(bool(player.get("manualAward")) for player in selected), 1)
+        self.assertEqual(len({player["prospectKey"] for player in selected}), 73)
+
+        removed = app.remove_staged_award({
+            "season": "season-9",
+            "awardId": award["awardId"],
+            "expectedRevision": 1,
+        })
+        self.assertEqual(removed["bootstrap"]["pool"]["total"], before)
+
+    def test_award_types_enforce_divisions_and_refresh_lock(self):
+        with self.assertRaisesRegex(SimulationError, "not available"):
+            app.create_staged_award({
+                "season": "season-9", "team": "CLB Team 1", "awardType": "europa-wildcard",
+                "note": "Invalid division", "seed": "invalid-award", "expectedRevision": 0,
+            })
+        created = app.create_staged_award({
+            "season": "season-9", "team": "CLB Team 1", "awardType": "guaranteed-b",
+            "note": "Guaranteed award", "seed": "guaranteed-award", "expectedRevision": 0,
+        })
+        self.assertEqual(created["award"]["selectedTier"], "B")
+        with self.assertRaisesRegex(SimulationError, "staged individual awards"):
+            app.refresh_pool()
+
+    def test_staged_award_is_published_and_fbb3_reduces_fillers(self):
+        app.create_staged_award({
+            "season": "season-9", "team": "ECL Team 1", "awardType": "ecl-wildcard-a",
+            "note": "Academy ruling", "seed": "publish-award", "expectedRevision": 0,
+        })
+        draft = app.create_official_draft({"season": "season-9"})
+        self.assertEqual(draft["counts"]["ECL"], 33)
+        published = app.publish_draft(draft["draftHash"])["publication"]
+        self.assertEqual(published["manualAwards"][0]["status"], "published")
+        archive_bytes, _ = app.build_fbb3_export(published)
+        with zipfile.ZipFile(io.BytesIO(archive_bytes)) as archive:
+            manifest_name = next(name for name in archive.namelist() if name.endswith("-export.json"))
+            manifest = json.loads(archive.read(manifest_name))
+        self.assertEqual(manifest["divisions"]["ECL"]["realProspects"], 33)
+        self.assertEqual(manifest["divisions"]["ECL"]["fillerProspects"], 68)
+
+    def test_published_award_reversal_is_audited_and_restores_eligibility(self):
+        draft = app.create_official_draft({"season": "season-9"})
+        publication = app.publish_draft(draft["draftHash"])["publication"]
+        created = app.create_published_award({
+            "season": "season-9", "team": "CLB Team 1", "awardType": "guaranteed-b",
+            "note": "Published compensation", "seed": "published-award", "expectedRevision": 0,
+        })
+        award = created["award"]
+        self.assertEqual(created["publication"]["counts"]["prospects"], 73)
+        self.assertEqual(created["publication"]["awardsRevision"], 1)
+        self.assertIn(award["slotId"], created["publication"]["allocationOrder"])
+        self.assertEqual(created["publication"]["audit"][-1]["awardId"], award["awardId"])
+        with self.assertRaisesRegex(SimulationError, "Reload"):
+            app.reverse_published_award({"awardId": award["awardId"], "reason": "Stale", "expectedRevision": 0})
+
+        reversed_result = app.reverse_published_award({
+            "awardId": award["awardId"], "reason": "Commissioner correction", "expectedRevision": 1,
+        })
+        self.assertEqual(reversed_result["publication"]["counts"]["prospects"], 72)
+        self.assertEqual(reversed_result["publication"]["awardsRevision"], 2)
+        self.assertEqual(reversed_result["award"]["status"], "reversed")
+        self.assertNotIn(award["slotId"], reversed_result["publication"]["allocationOrder"])
+        self.assertEqual(reversed_result["publication"]["audit"][-1]["awardStatus"], "reversed")
+        ledger = json.loads(self.paths["USED_PATH"].read_text(encoding="utf-8"))
+        ledger_award = next(entry for entry in ledger["players"] if entry.get("awardId") == award["awardId"])
+        self.assertEqual(ledger_award["status"], "reversed")
+        eligible_names = {normalize_name(player["name"]) for player in eligible_prospects(
+            json.loads(self.paths["FUTURE_PLAYERS_PATH"].read_text(encoding="utf-8")),
+            app.collect_excluded_names(ledger),
+        )}
+        self.assertIn(normalize_name(award["playerName"]), eligible_names)
+
+    def test_published_award_reversal_requires_intake_team_rights(self):
+        draft = app.create_official_draft({"season": "season-9"})
+        app.publish_draft(draft["draftHash"])
+        created = app.create_published_award({
+            "season": "season-9", "team": "CLB Team 1", "awardType": "guaranteed-c",
+            "note": "Published award", "seed": "rights-award", "expectedRevision": 0,
+        })
+        award = created["award"]
+        app.transfer_rights({
+            "prospectKey": award["prospectKey"], "toTeam": "CLB Team 2",
+            "note": "Award rights traded", "expectedRevision": 0,
+        })
+        with self.assertRaisesRegex(SimulationError, "Return this prospect's youth rights"):
+            app.reverse_published_award({
+                "awardId": award["awardId"], "reason": "Correction", "expectedRevision": 1,
+            })
 
     def test_fbb3_export_uses_draw_divisions_and_zero_rated_fillers(self):
         draft = app.create_official_draft({"season": "season-9"})

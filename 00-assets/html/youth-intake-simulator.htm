@@ -7,10 +7,10 @@
   <script src="../js/theme-preload.js"></script>
   <link rel="stylesheet" href="../css/styles.css">
   <link rel="stylesheet" href="../css/unified-components.css">
-  <link rel="stylesheet" href="../css/youth-intake-simulator.css?v=6">
+  <link rel="stylesheet" href="../css/youth-intake-simulator.css?v=7">
   <script src="../js/core.js" defer></script>
   <script src="../js/settings.js" defer></script>
-  <script src="../js/youth-intake-simulator.js?v=6" defer></script>
+  <script src="../js/youth-intake-simulator.js?v=7" defer></script>
 </head>
 <body class="yi-app ui-page">
   <main class="yi-shell">
@@ -64,6 +64,30 @@
           <button class="yi-button yi-button--quiet" id="testDrawButton" type="button">Run test draw</button>
           <button class="yi-button yi-button--primary" id="officialDrawButton" type="button">Generate official draw</button>
         </div>
+      </div>
+    </section>
+
+    <section class="yi-panel yi-awards" id="awardPanel" aria-labelledby="awardTitle">
+      <div class="yi-panel-head">
+        <div>
+          <p class="yi-section-label">Individual allocation</p>
+          <h2 id="awardTitle">Extra prospect awards</h2>
+          <p class="yi-panel-copy" id="awardModeCopy">Roll and stage extra prospects before the official draw.</p>
+        </div>
+        <span class="yi-rights-revision" id="awardRevision">Revision 0</span>
+      </div>
+      <div class="yi-award-form">
+        <label class="yi-field"><span>Team</span><select id="awardTeam"></select></label>
+        <label class="yi-field"><span>Prospect type</span><select id="awardType"></select></label>
+        <label class="yi-field yi-field--wide"><span>Commissioner note / reference</span><input id="awardNote" type="text" maxlength="240" autocomplete="off" placeholder="e.g. Academy compensation, ruling 12"></label>
+        <button class="yi-button yi-button--primary" id="createAwardButton" type="button">Roll &amp; stage prospect</button>
+      </div>
+      <div class="yi-rule-strip yi-award-capacity" id="awardCapacity" role="status"></div>
+      <div class="yi-table-wrap yi-award-history-wrap">
+        <table class="yi-table yi-award-table">
+          <thead><tr><th>Status</th><th>Team</th><th>Type</th><th>Prospect</th><th>Tier</th><th>Pos</th><th>Focus</th><th>Note</th><th>Action</th></tr></thead>
+          <tbody id="awardRows"><tr><td colspan="9">No individual awards recorded.</td></tr></tbody>
+        </table>
       </div>
     </section>
 

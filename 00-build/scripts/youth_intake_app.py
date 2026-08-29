@@ -28,8 +28,10 @@ from build_youth_intake_json import (
     build_app_youth_intake_payload,
 )
 from youth_intake_simulator import (
+    CounterRng,
     SimulationError,
     canonical_hash,
+    eligible_prospects,
     generate_simulation,
     normalize_name,
     pool_summary,
@@ -50,6 +52,7 @@ SOURCE_DIR = BUILD_DIR / "sources" / "youth-intake"
 DRAFT_PATH = SOURCE_DIR / "drafts" / "current.json"
 VOIDS_DIR = SOURCE_DIR / "voids"
 SEASONS_DIR = SOURCE_DIR / "seasons"
+AWARDS_DIR = SOURCE_DIR / "awards"
 CONFIG_PATH = SOURCE_DIR / "config.json"
 RULES_PATH = SOURCE_DIR / "rules.json"
 USED_PATH = SOURCE_DIR / "used-prospects.json"
@@ -73,6 +76,28 @@ FBB3_DIVISIONS = {
     "CLB": {"tier": "T1", "real": 16, "total": 81},
     "ELB": {"tier": "T2", "real": 24, "total": 79},
     "ECL": {"tier": "T3", "real": 32, "total": 101},
+}
+AWARD_TYPES = {
+    "guaranteed-b": {
+        "label": "Guaranteed B", "divisions": ("CLB", "ELB", "ECL"),
+        "tierWeights": {"B": 1}, "wildcard": False,
+    },
+    "guaranteed-c": {
+        "label": "Guaranteed C", "divisions": ("CLB", "ELB", "ECL"),
+        "tierWeights": {"C": 1}, "wildcard": False,
+    },
+    "europa-wildcard": {
+        "label": "Europa Wildcard", "divisions": ("ELB",),
+        "tierWeights": {"A": 25, "B": 25, "D": 50}, "wildcard": True,
+    },
+    "ecl-wildcard-a": {
+        "label": "ECL Wildcard A", "divisions": ("ECL",),
+        "tierWeights": {"A": 50, "D": 50}, "wildcard": True,
+    },
+    "ecl-wildcard-b": {
+        "label": "ECL Wildcard B", "divisions": ("ECL",),
+        "tierWeights": {"B": 50, "D": 50}, "wildcard": True,
+    },
 }
 
 
@@ -145,9 +170,9 @@ def build_fbb3_export(simulation):
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
         for division, rule in FBB3_DIVISIONS.items():
             players = players_by_division[division]
-            if len(players) != rule["real"]:
+            if len(players) < rule["real"] or len(players) > rule["total"]:
                 raise SimulationError(
-                    f"{division} export requires {rule['real']} intake prospects; found {len(players)}."
+                    f"{division} export supports {rule['real']} to {rule['total']} intake prospects; found {len(players)}."
                 )
             filler_count = rule["total"] - len(players)
             filename = f"{season}-{rule['tier']}-{division}-Youth-Intake.csv"
@@ -194,6 +219,63 @@ def names_from_intake(payload):
     return names
 
 
+def _award_path(season):
+    return AWARDS_DIR / f"{safe_season_slug(season)}.json"
+
+
+def read_award_state(season):
+    season = safe_season_slug(season)
+    return read_json(_award_path(season), {
+        "schemaVersion": 1,
+        "season": season,
+        "revision": 0,
+        "awards": [],
+        "transactions": [],
+    })
+
+
+def active_staged_awards(season):
+    return [
+        award for award in read_award_state(season).get("awards", [])
+        if str(award.get("status", "staged")).lower() == "staged"
+    ]
+
+
+def all_staged_awards():
+    awards = []
+    for path in AWARDS_DIR.glob("*.json"):
+        state = read_json(path, {}) or {}
+        awards.extend(
+            award for award in state.get("awards", [])
+            if str(award.get("status", "staged")).lower() == "staged"
+        )
+    return awards
+
+
+def award_types_payload():
+    return [
+        {"id": key, **value}
+        for key, value in AWARD_TYPES.items()
+    ]
+
+
+def _refresh_counts(publication):
+    teams = publication.get("teams", [])
+    publication["counts"] = {
+        "teams": len(teams),
+        "prospects": sum(len(team.get("intakePlayers", [])) for team in teams),
+        "CLB": sum(len(team.get("intakePlayers", [])) for team in teams if team.get("division") == "CLB"),
+        "ELB": sum(len(team.get("intakePlayers", [])) for team in teams if team.get("division") == "ELB"),
+        "ECL": sum(len(team.get("intakePlayers", [])) for team in teams if team.get("division") == "ECL"),
+    }
+    return publication["counts"]
+
+
+def _award_capacity(division, extra_count=0):
+    rule = FBB3_DIVISIONS[division]
+    return max(0, rule["total"] - rule["real"] - int(extra_count or 0))
+
+
 def seed_used_ledger():
     ledger = read_json(USED_PATH, {"schemaVersion": 1, "players": []})
     existing = {normalize_name(player.get("name")) for player in ledger.get("players", [])}
@@ -235,7 +317,13 @@ def collect_excluded_names(ledger=None):
             names.add(name)
     ledger = ledger or read_json(USED_PATH, {"players": []})
     for player in ledger.get("players", []):
+        if str(player.get("status", "active")).lower() == "reversed":
+            continue
         name = str(player.get("name", "") or "").strip()
+        if name:
+            names.add(name)
+    for award in all_staged_awards():
+        name = str((award.get("player") or {}).get("name", "") or "").strip()
         if name:
             names.add(name)
     for season_path in SEASONS_DIR.glob("*.json"):
@@ -288,7 +376,7 @@ def default_season():
     return f"season-{max(numbers, default=0) + 1}"
 
 
-def bootstrap_payload():
+def bootstrap_payload(season=None):
     inputs = load_inputs()
     standings = standings_teams(inputs["standings"])
     config_by_name = {
@@ -304,6 +392,13 @@ def bootstrap_payload():
             "positionFocus": str(info.get("positionFocus", "") or ""),
         })
     issues = validate_team_config(inputs["standings"], inputs["config"])
+    selected_season = safe_season_slug(season or default_season())
+    staged_state = read_award_state(selected_season)
+    staged = active_staged_awards(selected_season)
+    staged_counts = {
+        division: sum(1 for award in staged if award.get("division") == division)
+        for division in FBB3_DIVISIONS
+    }
     return {
         "schemaVersion": 1,
         "defaultSeason": default_season(),
@@ -315,11 +410,20 @@ def bootstrap_payload():
         "inputHashes": inputs["hashes"],
         "activeDraft": read_json(DRAFT_PATH),
         "currentPublished": read_json(CURRENT_SOURCE_PATH),
+        "awardTypes": award_types_payload(),
+        "awardSeason": selected_season,
+        "stagedAwards": staged,
+        "awardRevision": int(staged_state.get("revision", 0) or 0),
+        "awardCapacity": {
+            division: _award_capacity(division, staged_counts[division])
+            for division in FBB3_DIVISIONS
+        },
     }
 
 
 def generate(*, season, mode, seed=None):
     inputs = load_inputs()
+    season = safe_season_slug(season)
     simulation = generate_simulation(
         standings=inputs["standings"],
         config=inputs["config"],
@@ -327,14 +431,188 @@ def generate(*, season, mode, seed=None):
         prospects=inputs["prospects"],
         excluded_names=inputs["excludedNames"],
         seed=seed or secrets.token_hex(32),
-        season=safe_season_slug(season),
+        season=season,
         mode=mode,
+        manual_awards=active_staged_awards(season),
     )
     simulation["inputHashes"] = inputs["hashes"]
     simulation["draftHash"] = canonical_hash({
         key: value for key, value in simulation.items() if key != "draftHash"
     })
     return simulation
+
+
+def _validate_award_note(value, label="award note"):
+    note = str(value or "").strip()
+    if not note:
+        raise SimulationError(f"A commissioner {label} is required.")
+    if len(note) > 240:
+        raise SimulationError(f"The commissioner {label} must be 240 characters or fewer.")
+    return note
+
+
+def _award_team(inputs, requested_team):
+    teams = standings_teams(inputs["standings"])
+    by_key = {normalize_name(team["team"]): team for team in teams}
+    team = by_key.get(normalize_name(requested_team))
+    if not team:
+        raise SimulationError("Choose a valid team for the individual award.")
+    config_by_key = {
+        normalize_name(entry.get("team")): entry
+        for entry in inputs["config"].get("teams", [])
+    }
+    info = config_by_key.get(normalize_name(team["team"]), {})
+    focus = str(info.get("positionFocus", "")).upper().strip()
+    if focus not in POSITIONS:
+        raise SimulationError(f"{team['team']} requires a valid Academy Focus before receiving an award.")
+    return {**team, "positionFocus": focus, "gm": str(info.get("gm", "")).strip()}
+
+
+def _roll_award(payload, *, status):
+    inputs = load_inputs()
+    team = _award_team(inputs, payload.get("team"))
+    award_type = str(payload.get("awardType", "")).strip().lower()
+    rule = AWARD_TYPES.get(award_type)
+    if not rule:
+        raise SimulationError("Choose a valid individual award type.")
+    if team["division"] not in rule["divisions"]:
+        raise SimulationError(f"{rule['label']} is not available to {team['division']} teams.")
+    note = _validate_award_note(payload.get("note"))
+
+    seed = str(payload.get("seed") or secrets.token_hex(32))
+    rng = CounterRng(seed)
+    tier, tier_roll, tier_total = rng.weighted_choice(rule["tierWeights"])
+    threshold = int(inputs["rules"].get("focusChanceBasisPoints", 4000))
+    focus_roll = rng.below(10000)
+    focus_applied = focus_roll < threshold
+    candidates = [
+        player for player in eligible_prospects(inputs["prospects"], inputs["excludedNames"])
+        if player["tier"] == tier and (
+            player["Position"] == team["positionFocus"]
+            if focus_applied else player["Position"] != team["positionFocus"]
+        )
+    ]
+    if not candidates:
+        branch = f"focused position {team['positionFocus']}" if focus_applied else f"non-{team['positionFocus']} positions"
+        raise SimulationError(
+            f"No eligible Tier {tier} prospects remain for {team['team']} ({rule['label']}, {branch})."
+        )
+    player_index = rng.below(len(candidates))
+    player = dict(candidates[player_index])
+    awarded_at = utc_now()
+    award_id = "award-" + canonical_hash({
+        "seed": seed,
+        "team": team["team"],
+        "awardType": award_type,
+        "prospectKey": player["prospectKey"],
+        "awardedAt": awarded_at,
+    })[:16]
+    slot_label = f"Extra award · {rule['label']}"
+    player.update({
+        "awardId": award_id,
+        "manualAward": True,
+        "awardType": award_type,
+        "awardNote": note,
+        "awardedAt": awarded_at,
+        "slotId": f"{normalize_name(team['team'])}:manual-award:{award_id}",
+        "slotKey": f"manual-award-{award_type}",
+        "slotLabel": slot_label,
+        "slotType": "manual-award",
+        "wildcard": bool(rule["wildcard"]),
+        "selectedTier": tier,
+        "focusRoll": focus_roll,
+        "focusThreshold": threshold,
+        "focusApplied": focus_applied,
+        "focusOutcome": "Focused" if focus_applied else "Random",
+        "eligibleCount": len(candidates),
+    })
+    return {
+        "awardId": award_id,
+        "status": status,
+        "season": safe_season_slug(payload.get("season")),
+        "team": team["team"],
+        "division": team["division"],
+        "awardType": award_type,
+        "awardLabel": rule["label"],
+        "slotId": player["slotId"],
+        "slotKey": player["slotKey"],
+        "slotLabel": slot_label,
+        "wildcard": bool(rule["wildcard"]),
+        "tierWeights": dict(rule["tierWeights"]),
+        "selectedTier": tier,
+        "tierRoll": tier_roll,
+        "tierRollRange": tier_total,
+        "focus": team["positionFocus"],
+        "focusRoll": focus_roll,
+        "focusThreshold": threshold,
+        "focusApplied": focus_applied,
+        "focusOutcome": player["focusOutcome"],
+        "eligibleCount": len(candidates),
+        "playerIndex": player_index,
+        "prospectKey": player["prospectKey"],
+        "playerName": player["name"],
+        "seed": seed,
+        "note": note,
+        "awardedAt": awarded_at,
+        "player": player,
+    }
+
+
+def create_staged_award(payload):
+    if DRAFT_PATH.exists():
+        raise SimulationError("Void or publish the active official draft before changing individual awards.")
+    season = safe_season_slug(payload.get("season"))
+    current = read_json(CURRENT_SOURCE_PATH)
+    if current and safe_season_slug(current.get("season")) == season:
+        raise SimulationError("Use the published-award action for the current published season.")
+    state = read_award_state(season)
+    expected = payload.get("expectedRevision")
+    revision = int(state.get("revision", 0) or 0)
+    if expected is not None and int(expected) != revision:
+        raise SimulationError("Individual awards changed. Reload the commissioner app and try again.")
+    award = _roll_award({**payload, "season": season}, status="staged")
+    division_awards = sum(
+        1 for entry in state.get("awards", [])
+        if entry.get("status") == "staged" and entry.get("division") == award["division"]
+    )
+    if _award_capacity(award["division"], division_awards) <= 0:
+        raise SimulationError(f"{award['division']} has reached its FBB3 prospect capacity.")
+    revision += 1
+    state.setdefault("awards", []).append(award)
+    state.setdefault("transactions", []).append({
+        "revision": revision, "action": "created", "awardId": award["awardId"],
+        "team": award["team"], "playerName": award["playerName"], "recordedAt": award["awardedAt"],
+        "note": award["note"],
+    })
+    state["revision"] = revision
+    state["updatedAt"] = utc_now()
+    write_json(_award_path(season), state)
+    return {"award": award, "awardState": state, "bootstrap": bootstrap_payload(season)}
+
+
+def remove_staged_award(payload):
+    if DRAFT_PATH.exists():
+        raise SimulationError("Void or publish the active official draft before changing individual awards.")
+    season = safe_season_slug(payload.get("season"))
+    state = read_award_state(season)
+    revision = int(state.get("revision", 0) or 0)
+    if payload.get("expectedRevision") is not None and int(payload["expectedRevision"]) != revision:
+        raise SimulationError("Individual awards changed. Reload the commissioner app and try again.")
+    award_id = str(payload.get("awardId", "")).strip()
+    award = next((entry for entry in state.get("awards", []) if entry.get("awardId") == award_id and entry.get("status") == "staged"), None)
+    if not award:
+        raise SimulationError("That staged individual award is no longer available.")
+    state["awards"] = [entry for entry in state.get("awards", []) if entry.get("awardId") != award_id]
+    revision += 1
+    state.setdefault("transactions", []).append({
+        "revision": revision, "action": "removed", "awardId": award_id,
+        "team": award["team"], "playerName": award["playerName"], "recordedAt": utc_now(),
+        "note": "Removed before official draw",
+    })
+    state["revision"] = revision
+    state["updatedAt"] = utc_now()
+    write_json(_award_path(season), state)
+    return {"removed": award, "awardState": state, "bootstrap": bootstrap_payload(season)}
 
 
 def save_config(payload):
@@ -398,6 +676,13 @@ def _update_used_ledger(publication):
         name = str(player.get("name", "") or "").strip()
         key = normalize_name(name)
         if key in by_name:
+            by_name[key].update({
+                "status": "active",
+                "season": publication.get("season", ""),
+                "team": team.get("team", ""),
+                "publishedAt": publication.get("publishedAt", ""),
+                "awardId": player.get("awardId", by_name[key].get("awardId", "")),
+            })
             continue
         entry = {
             "prospectKey": player.get("prospectKey") or prospect_key(player),
@@ -406,6 +691,8 @@ def _update_used_ledger(publication):
             "team": team.get("team", ""),
             "publishedAt": publication.get("publishedAt", ""),
             "source": "commissioner-app",
+            "status": "active",
+            "awardId": player.get("awardId", ""),
         }
         ledger.setdefault("players", []).append(entry)
         by_name[key] = entry
@@ -444,6 +731,16 @@ def publish_draft(requested_hash):
         "status": "published",
         "publishedAt": utc_now(),
     }
+    for award in publication.get("manualAwards", []):
+        if award.get("status") == "staged":
+            award["status"] = "published"
+    for team in publication.get("teams", []):
+        for player in team.get("intakePlayers", []):
+            if player.get("manualAward"):
+                player["awardStatus"] = "published"
+    publication.setdefault("awardTransactions", [])
+    publication.setdefault("awardsRevision", 0)
+    _refresh_counts(publication)
     publication["publicationHash"] = canonical_hash(publication)
     write_json(season_path, publication)
     write_json(CURRENT_SOURCE_PATH, publication)
@@ -452,6 +749,14 @@ def publish_draft(requested_hash):
     ratings = _load_player_ratings(str(PLAYERS_PATH))
     public_payload = build_app_youth_intake_payload(publication, ratings)
     write_json(PUBLIC_INTAKE_PATH, public_payload)
+    award_state = read_award_state(season)
+    if award_state.get("awards"):
+        for award in award_state["awards"]:
+            if award.get("status") == "staged":
+                award["status"] = "published"
+                award["publishedAt"] = publication["publishedAt"]
+        award_state["updatedAt"] = utc_now()
+        write_json(_award_path(season), award_state)
     DRAFT_PATH.unlink(missing_ok=True)
     return {
         "publication": publication,
@@ -555,9 +860,184 @@ def transfer_rights(payload):
     }
 
 
+def _persist_publication(publication):
+    write_json(CURRENT_SOURCE_PATH, publication)
+    season_path = SEASONS_DIR / f"{safe_season_slug(publication.get('season'))}.json"
+    write_json(season_path, publication)
+    ratings = _load_player_ratings(str(PLAYERS_PATH))
+    write_json(PUBLIC_INTAKE_PATH, build_app_youth_intake_payload(publication, ratings))
+
+
+def _update_awards_audit(publication, transaction):
+    revision = int(publication.get("awardsRevision", 0) or 0) + 1
+    transaction["revision"] = revision
+    transaction["transactionId"] = f"award-{revision:04d}-{canonical_hash(transaction)[:12]}"
+    publication.setdefault("awardTransactions", []).append(transaction)
+    publication["schemaVersion"] = max(3, int(publication.get("schemaVersion", 1) or 1))
+    publication["awardsRevision"] = revision
+    publication["awardsUpdatedAt"] = transaction["recordedAt"]
+    publication["awardsHash"] = canonical_hash({
+        "season": publication.get("season", ""),
+        "revision": revision,
+        "manualAwards": publication.get("manualAwards", []),
+        "transactions": publication["awardTransactions"],
+    })
+    _refresh_counts(publication)
+    return transaction
+
+
+def create_published_award(payload):
+    publication = read_json(CURRENT_SOURCE_PATH)
+    if not publication or publication.get("status") != "published":
+        raise SimulationError("Publish an official intake before adding a published individual award.")
+    season = safe_season_slug(payload.get("season") or publication.get("season"))
+    if season != safe_season_slug(publication.get("season")):
+        raise SimulationError("Published awards can only be added to the current published season.")
+    current_revision = int(publication.get("awardsRevision", 0) or 0)
+    if payload.get("expectedRevision") is not None and int(payload["expectedRevision"]) != current_revision:
+        raise SimulationError("Published individual awards changed. Reload the commissioner app and try again.")
+
+    team_lookup = {
+        normalize_name(team.get("team")): team
+        for team in publication.get("teams", [])
+    }
+    target = team_lookup.get(normalize_name(payload.get("team")))
+    if not target:
+        raise SimulationError("Choose a valid team from the current published intake.")
+    division = str(target.get("division", "")).upper()
+    division_count = sum(
+        len(team.get("intakePlayers", []))
+        for team in publication.get("teams", [])
+        if str(team.get("division", "")).upper() == division
+    )
+    if division_count >= FBB3_DIVISIONS[division]["total"]:
+        raise SimulationError(f"{division} has reached its FBB3 prospect capacity.")
+
+    award = _roll_award({**payload, "season": season, "team": target["team"]}, status="published")
+    award["publishedAt"] = utc_now()
+    existing_indexes = [
+        int(player.get("allocationIndex", 0) or 0)
+        for team in publication.get("teams", [])
+        for player in team.get("intakePlayers", [])
+    ]
+    player = dict(award["player"])
+    player["allocationIndex"] = max(existing_indexes, default=0) + 1
+    player["awardStatus"] = "published"
+    target.setdefault("intakePlayers", []).append(player)
+    publication.setdefault("allocationOrder", []).append(player["slotId"])
+    publication.setdefault("audit", []).append({
+        "allocationIndex": player["allocationIndex"],
+        "awardId": award["awardId"],
+        "manualAward": True,
+        "awardStatus": "published",
+        "slotId": player["slotId"],
+        "slotKey": player["slotKey"],
+        "slotLabel": player["slotLabel"],
+        "slotType": "manual-award",
+        "team": award["team"],
+        "division": award["division"],
+        "tier": award["selectedTier"],
+        "tierWeights": award["tierWeights"],
+        "tierRoll": award["tierRoll"],
+        "tierRollRange": award["tierRollRange"],
+        "focus": award["focus"],
+        "focusRoll": award["focusRoll"],
+        "focusThreshold": award["focusThreshold"],
+        "focusApplied": award["focusApplied"],
+        "focusOutcome": award["focusOutcome"],
+        "eligibleCount": award["eligibleCount"],
+        "playerIndex": award["playerIndex"],
+        "prospectKey": award["prospectKey"],
+        "playerName": award["playerName"],
+        "seed": award["seed"],
+        "note": award["note"],
+    })
+    publication.setdefault("manualAwards", []).append(award)
+    transaction = _update_awards_audit(publication, {
+        "action": "created",
+        "awardId": award["awardId"],
+        "team": award["team"],
+        "playerName": award["playerName"],
+        "prospectKey": award["prospectKey"],
+        "awardType": award["awardType"],
+        "recordedAt": award["publishedAt"],
+        "note": award["note"],
+    })
+    _update_used_ledger(publication)
+    _persist_publication(publication)
+    return {"publication": publication, "award": award, "transaction": transaction}
+
+
+def reverse_published_award(payload):
+    publication = read_json(CURRENT_SOURCE_PATH)
+    if not publication or publication.get("status") != "published":
+        raise SimulationError("No current published intake is available.")
+    current_revision = int(publication.get("awardsRevision", 0) or 0)
+    if payload.get("expectedRevision") is not None and int(payload["expectedRevision"]) != current_revision:
+        raise SimulationError("Published individual awards changed. Reload the commissioner app and try again.")
+    reason = _validate_award_note(payload.get("reason"), "reversal reason")
+    award_id = str(payload.get("awardId", "")).strip()
+    award = next((
+        entry for entry in publication.get("manualAwards", [])
+        if entry.get("awardId") == award_id and entry.get("status") == "published"
+    ), None)
+    if not award:
+        raise SimulationError("That published individual award is no longer active.")
+    prospect_key_value = str(award.get("prospectKey", ""))
+    if normalize_name(current_rights_team(publication, prospect_key_value, award["team"])) != normalize_name(award["team"]):
+        raise SimulationError("Return this prospect's youth rights to the intake team before reversing the award.")
+
+    removed = False
+    for team in publication.get("teams", []):
+        before = len(team.get("intakePlayers", []))
+        team["intakePlayers"] = [
+            player for player in team.get("intakePlayers", [])
+            if player.get("awardId") != award_id
+        ]
+        removed = removed or len(team["intakePlayers"]) != before
+    if not removed:
+        raise SimulationError("The awarded prospect is missing from the published intake.")
+    reversed_at = utc_now()
+    award["status"] = "reversed"
+    award["reversedAt"] = reversed_at
+    award["reversalReason"] = reason
+    publication["allocationOrder"] = [
+        slot_id for slot_id in publication.get("allocationOrder", [])
+        if slot_id != award.get("slotId")
+    ]
+    for audit_entry in publication.get("audit", []):
+        if audit_entry.get("awardId") == award_id:
+            audit_entry["awardStatus"] = "reversed"
+            audit_entry["reversedAt"] = reversed_at
+            audit_entry["reversalReason"] = reason
+    transaction = _update_awards_audit(publication, {
+        "action": "reversed",
+        "awardId": award_id,
+        "team": award["team"],
+        "playerName": award["playerName"],
+        "prospectKey": prospect_key_value,
+        "awardType": award["awardType"],
+        "recordedAt": reversed_at,
+        "note": reason,
+    })
+    ledger = read_json(USED_PATH, {"schemaVersion": 1, "players": []})
+    for entry in ledger.get("players", []):
+        if entry.get("awardId") == award_id or str(entry.get("prospectKey", "")) == prospect_key_value:
+            entry["status"] = "reversed"
+            entry["reversedAt"] = reversed_at
+            entry["reversalReason"] = reason
+    ledger["schemaVersion"] = max(2, int(ledger.get("schemaVersion", 1) or 1))
+    ledger["updatedAt"] = reversed_at
+    write_json(USED_PATH, ledger)
+    _persist_publication(publication)
+    return {"publication": publication, "award": award, "transaction": transaction}
+
+
 def refresh_pool():
     if DRAFT_PATH.exists():
         raise SimulationError("Void or publish the active draft before refreshing the prospect pool.")
+    if all_staged_awards():
+        raise SimulationError("Remove or publish staged individual awards before refreshing the prospect pool.")
     script = SCRIPT_DIR / "build_future_players_json.py"
     result = subprocess.run(
         [sys.executable, str(script)],
@@ -630,7 +1110,8 @@ class YouthIntakeHandler(SimpleHTTPRequestHandler):
                 return
             try:
                 if parsed.path == "/api/youth-intake/bootstrap":
-                    self._json(HTTPStatus.OK, {"ok": True, "data": bootstrap_payload()})
+                    query = parse_qs(parsed.query)
+                    self._json(HTTPStatus.OK, {"ok": True, "data": bootstrap_payload((query.get("season") or [None])[0])})
                 else:
                     query = parse_qs(parsed.query)
                     simulation = fbb3_export_source((query.get("draftHash") or [""])[0])
@@ -667,6 +1148,14 @@ class YouthIntakeHandler(SimpleHTTPRequestHandler):
                 result = publish_draft(body.get("draftHash"))
             elif parsed.path == "/api/youth-intake/rights/transfer":
                 result = transfer_rights(body)
+            elif parsed.path == "/api/youth-intake/awards/staged/create":
+                result = create_staged_award(body)
+            elif parsed.path == "/api/youth-intake/awards/staged/remove":
+                result = remove_staged_award(body)
+            elif parsed.path == "/api/youth-intake/awards/published/create":
+                result = create_published_award(body)
+            elif parsed.path == "/api/youth-intake/awards/published/reverse":
+                result = reverse_published_award(body)
             elif parsed.path == "/api/youth-intake/pool/refresh":
                 result = refresh_pool()
             else:

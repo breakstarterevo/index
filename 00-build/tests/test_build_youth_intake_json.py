@@ -49,6 +49,23 @@ class YouthIntakeJsonTests(unittest.TestCase):
         self.assertEqual(player["intakeTeam"], "AC Milan")
         self.assertEqual(player["rightsTeam"], "Chelsea")
 
+    def test_app_payload_preserves_manual_award_audit_metadata(self):
+        source = {
+            "schemaVersion": 3,
+            "season": "season-9",
+            "status": "published",
+            "awardsRevision": 2,
+            "awardsHash": "awards-hash",
+            "manualAwards": [{"awardId": "award-1", "status": "reversed"}],
+            "awardTransactions": [{"transactionId": "award-0002-test", "action": "reversed"}],
+            "teams": [],
+        }
+        payload = build_app_youth_intake_payload(source, {})
+        self.assertEqual(payload["awardsRevision"], 2)
+        self.assertEqual(payload["awardsHash"], "awards-hash")
+        self.assertEqual(payload["manualAwards"], source["manualAwards"])
+        self.assertEqual(payload["awardTransactions"], source["awardTransactions"])
+
     def test_live_ratings_replace_current_fields_but_preserve_potential_fields(self):
         intake_player = {
             "name": "Mike Dunleavy",

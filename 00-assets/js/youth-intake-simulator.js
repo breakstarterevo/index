@@ -53,6 +53,9 @@
     document.querySelectorAll("#configRows input,#configRows select").forEach(function (control) {
       control.disabled = state.busy || state.setupLocked;
     });
+    document.querySelectorAll("#awardPanel input,#awardPanel select,#awardPanel button").forEach(function (control) {
+      control.disabled = state.busy || state.setupLocked;
+    });
   }
   function setBusy(busy, text) {
     state.busy = !!busy;
@@ -158,6 +161,68 @@
       ? "All 24 teams have a valid GM and Academy Focus. Official generation is available."
       : validation.issues.join(" ");
   }
+  function publishedAwardMode() {
+    var published = state.bootstrap && state.bootstrap.currentPublished;
+    return !!published && published.status === "published" &&
+      String(published.season || "") === String(el("seasonInput").value.trim());
+  }
+  function syncAwardTypes() {
+    var teamName = el("awardTeam").value;
+    var team = (state.bootstrap.teams || []).find(function (entry) { return entry.team === teamName; });
+    var previous = el("awardType").value;
+    var types = (state.bootstrap.awardTypes || []).filter(function (type) {
+      return team && (type.divisions || []).indexOf(team.division) !== -1;
+    });
+    el("awardType").innerHTML = types.map(function (type) {
+      var odds = Object.keys(type.tierWeights || {}).map(function (tier) {
+        return tier + " " + type.tierWeights[tier];
+      }).join("/");
+      return '<option value="' + escapeHtml(type.id) + '">' + escapeHtml(type.label) + " · " + escapeHtml(odds) + "</option>";
+    }).join("");
+    if (types.some(function (type) { return type.id === previous; })) el("awardType").value = previous;
+  }
+  function renderAwardPanel() {
+    var teams = (state.bootstrap.teams || []).slice().sort(function (a,b) { return a.team.localeCompare(b.team); });
+    var previousTeam = el("awardTeam").value;
+    el("awardTeam").innerHTML = teams.map(function (team) {
+      return '<option value="' + escapeHtml(team.team) + '">' + escapeHtml(team.team) + " · " + escapeHtml(team.division) + "</option>";
+    }).join("");
+    if (teams.some(function (team) { return team.team === previousTeam; })) el("awardTeam").value = previousTeam;
+    syncAwardTypes();
+
+    var published = publishedAwardMode();
+    var publication = state.bootstrap.currentPublished || {};
+    var awards = published ? (publication.manualAwards || []) : (state.bootstrap.stagedAwards || []);
+    var revision = published ? Number(publication.awardsRevision || 0) : Number(state.bootstrap.awardRevision || 0);
+    el("awardRevision").textContent = "Revision " + revision;
+    el("awardModeCopy").textContent = published
+      ? "Roll an audited extra prospect into the current published intake. Published corrections use recorded reversals."
+      : "Roll and stage extra prospects for " + el("seasonInput").value + ". They will supplement all 72 normal slots.";
+    el("createAwardButton").textContent = published ? "Roll & add published prospect" : "Roll & stage prospect";
+    var capacity = state.bootstrap.awardCapacity || {};
+    if (published && publication.counts) {
+      capacity = {CLB:81-Number(publication.counts.CLB || 0),ELB:79-Number(publication.counts.ELB || 0),ECL:101-Number(publication.counts.ECL || 0)};
+    }
+    el("awardCapacity").textContent = "Remaining FBB3 capacity · CLB " + Math.max(0,capacity.CLB || 0) +
+      " · ELB " + Math.max(0,capacity.ELB || 0) + " · ECL " + Math.max(0,capacity.ECL || 0);
+    el("awardRows").innerHTML = awards.length ? awards.slice().reverse().map(function (award) {
+      var player = award.player || {};
+      var active = award.status === "staged" || award.status === "published";
+      var action = active
+        ? '<button class="yi-button yi-button--danger yi-button--small" type="button" data-award-action="' + (published ? "reverse" : "remove") + '" data-award-id="' + escapeHtml(award.awardId) + '">' + (published ? "Reverse" : "Remove") + "</button>"
+        : "—";
+      return "<tr>" +
+        '<td><span class="yi-award-status is-' + escapeHtml(award.status) + '">' + escapeHtml(award.status) + "</span></td>" +
+        "<td><strong>" + escapeHtml(award.team) + "</strong></td>" +
+        "<td>" + escapeHtml(award.awardLabel || award.awardType) + "</td>" +
+        "<td><strong>" + escapeHtml(award.playerName || player.name) + "</strong></td>" +
+        "<td>" + tierBadge(award.selectedTier || player.tier) + "</td>" +
+        "<td>" + escapeHtml(player.Position) + "</td>" +
+        "<td>" + focusBadge(award.focusOutcome) + "</td>" +
+        '<td class="yi-award-note">' + escapeHtml(award.note) + "</td><td>" + action + "</td></tr>";
+    }).join("") : '<tr><td colspan="9">No individual awards recorded for this season.</td></tr>';
+    syncDisabled();
+  }
   function renderBootstrap() {
     var pool = state.bootstrap.pool || {};
     var requestedSeason = el("seasonInput").value.trim();
@@ -180,6 +245,7 @@
       el("officialDetail").textContent = state.bootstrap.currentPublished.season || "Current intake";
       renderResult(false);
     }
+    renderAwardPanel();
   }
   function lockSetup(locked) {
     state.setupLocked = !!locked;
@@ -191,7 +257,8 @@
     return config;
   }
   async function reloadBootstrap() {
-    state.bootstrap = await api("/api/youth-intake/bootstrap");
+    var season = el("seasonInput").value.trim();
+    state.bootstrap = await api("/api/youth-intake/bootstrap" + (season ? "?season=" + encodeURIComponent(season) : ""));
     renderBootstrap();
   }
 
@@ -284,6 +351,7 @@
   }
   function compactSlot(team, player) {
     var division = String(team.division || "").toUpperCase();
+    if (player.manualAward || player.slotType === "manual-award") return "EXTRA";
     if (player.slotType !== "wildcard") {
       return division + " " + String(player.selectedTier || player.tier || "").toUpperCase();
     }
@@ -363,6 +431,7 @@
         "<td>" + escapeHtml(player.POT) + "</td>" +
         '<td><details class="yi-audit"><summary>Rolls</summary><div>' +
           "Allocation #" + escapeHtml(player.allocationIndex) +
+          (player.manualAward ? "<br>Individual award " + escapeHtml(player.awardId) : "") +
           "<br>Focus roll " + escapeHtml(player.focusRoll) + " / 10000" +
           "<br>Eligible pool " + escapeHtml(player.eligibleCount) +
           "<br>Prospect key " + escapeHtml(player.prospectKey) +
@@ -457,7 +526,8 @@
         }).join("") +
       "</div>" +
       '<p class="yi-class-roll">' +
-        (wildcard ? "Wildcard: Tier " + escapeHtml(player.selectedTier) : "Guaranteed Tier " + escapeHtml(player.selectedTier)) +
+        (player.manualAward ? "Extra award: Tier " + escapeHtml(player.selectedTier) :
+          (wildcard ? "Wildcard: Tier " + escapeHtml(player.selectedTier) : "Guaranteed Tier " + escapeHtml(player.selectedTier))) +
         " / Focus " + escapeHtml(team.positionFocus) + ": " + escapeHtml(player.focusOutcome) +
         (player.focusApplied ? "" : " (focus excluded)") +
       "</p></section>";
@@ -582,6 +652,70 @@
     } catch (error) { toast(error.message,true); }
     finally { setBusy(false); }
   }
+  async function createAward() {
+    var note = el("awardNote").value.trim();
+    if (!note) { toast("Add a commissioner note or reference.",true); return; }
+    var published = publishedAwardMode();
+    var team = el("awardTeam").value;
+    var type = el("awardType").value;
+    if (!team || !type) { toast("Choose a team and prospect type.",true); return; }
+    if (published && !confirm("Roll and immediately add this extra prospect to the published intake?")) return;
+    setBusy(true,published ? "Adding published award" : "Staging award");
+    try {
+      var payload = {
+        season:el("seasonInput").value.trim(), team:team, awardType:type, note:note,
+        expectedRevision:published
+          ? Number((state.bootstrap.currentPublished || {}).awardsRevision || 0)
+          : Number(state.bootstrap.awardRevision || 0)
+      };
+      var result = await api(published
+        ? "/api/youth-intake/awards/published/create"
+        : "/api/youth-intake/awards/staged/create",payload);
+      el("awardNote").value = "";
+      if (published) {
+        state.result = result.publication;
+        state.bootstrap.currentPublished = result.publication;
+        renderResult(false);
+        renderAwardPanel();
+      } else {
+        state.bootstrap = result.bootstrap;
+        renderBootstrap();
+      }
+      toast("Awarded " + result.award.playerName + " to " + result.award.team + ".");
+    } catch (error) { toast(error.message,true); }
+    finally { setBusy(false); }
+  }
+  async function removeStagedAward(awardId) {
+    if (!confirm("Remove this staged award and return its prospect to the eligible pool?")) return;
+    setBusy(true,"Removing staged award");
+    try {
+      var result = await api("/api/youth-intake/awards/staged/remove",{
+        season:el("seasonInput").value.trim(), awardId:awardId,
+        expectedRevision:Number(state.bootstrap.awardRevision || 0)
+      });
+      state.bootstrap = result.bootstrap;
+      renderBootstrap();
+      toast("Staged award removed.");
+    } catch (error) { toast(error.message,true); }
+    finally { setBusy(false); }
+  }
+  async function reversePublishedAward(awardId) {
+    var reason = prompt("Why is this published individual award being reversed? The reversal is permanent and audited.");
+    if (!reason || !reason.trim()) return;
+    setBusy(true,"Reversing published award");
+    try {
+      var result = await api("/api/youth-intake/awards/published/reverse",{
+        awardId:awardId, reason:reason.trim(),
+        expectedRevision:Number((state.bootstrap.currentPublished || {}).awardsRevision || 0)
+      });
+      state.result = result.publication;
+      state.bootstrap.currentPublished = result.publication;
+      renderResult(false);
+      renderAwardPanel();
+      toast("Published award reversed and prospect returned to the eligible pool.");
+    } catch (error) { toast(error.message,true); }
+    finally { setBusy(false); }
+  }
   async function exportFbb3Csvs() {
     if (!state.result || (state.result.status !== "draft" && state.result.status !== "published")) return;
     setBusy(true,"Preparing FBB3 CSVs");
@@ -633,6 +767,18 @@
     el("voidButton").addEventListener("click",voidOfficial);
     el("rightsPlayer").addEventListener("change",syncRightsForm);
     el("recordRightsButton").addEventListener("click",recordRightsTransfer);
+    el("awardTeam").addEventListener("change",syncAwardTypes);
+    el("createAwardButton").addEventListener("click",createAward);
+    el("awardRows").addEventListener("click",function (event) {
+      var button = event.target.closest("[data-award-action]");
+      if (!button) return;
+      if (button.dataset.awardAction === "remove") removeStagedAward(button.dataset.awardId);
+      if (button.dataset.awardAction === "reverse") reversePublishedAward(button.dataset.awardId);
+    });
+    el("seasonInput").addEventListener("change",function () {
+      setBusy(true,"Loading season awards");
+      reloadBootstrap().catch(function (error) { toast(error.message,true); }).finally(function () { setBusy(false); });
+    });
     el("divisionFilter").addEventListener("change",function () {
       state.filters.division = this.value;
       state.filters.team = "";
