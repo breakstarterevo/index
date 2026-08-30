@@ -333,7 +333,11 @@ def _build_combined_current_intake_players(sheets):
     players_by_name = {}
     for _sheet_name, rows in _find_database_sheets(sheets):
         for player in _build_current_intake_players(rows):
-            key = _normalize_key(player.get("name", ""))
+            key = _normalize_key(
+                player.get("poolIdentity")
+                or player.get("Name + Pot")
+                or player.get("name", "")
+            )
             if not key:
                 continue
             existing = players_by_name.get(key)
@@ -364,7 +368,6 @@ def _build_database_lookup(rows):
     header_norm = [_normalize_key(value) for value in header]
     first_name_col = header_norm.index("firstname") if "firstname" in header_norm else -1
     last_name_col = header_norm.index("lastname") if "lastname" in header_norm else -1
-
     modern_layout = first_name_col >= 0 and last_name_col >= 0
     name_col = 0
     start_col = first_name_col if modern_layout else 3
@@ -428,6 +431,8 @@ def _build_current_intake_players(rows):
     header_norm = [_normalize_key(value) for value in header]
     first_name_col = header_norm.index("firstname") if "firstname" in header_norm else -1
     last_name_col = header_norm.index("lastname") if "lastname" in header_norm else -1
+    name_pot_col = header_norm.index("namepot") if "namepot" in header_norm else -1
+    column2_col = header_norm.index("column2") if "column2" in header_norm else -1
     modern_layout = first_name_col >= 0 and last_name_col >= 0
     name_col = 0
     start_col = first_name_col if modern_layout else 3
@@ -450,6 +455,14 @@ def _build_current_intake_players(rows):
             continue
 
         player = {"name": name}
+        if name_pot_col >= 0:
+            name_pot = str(row[name_pot_col] if len(row) > name_pot_col else "").strip()
+            if name_pot and not re.fullmatch(r"0+", name_pot):
+                player["Name + Pot"] = name_pot
+                column2 = str(row[column2_col] if column2_col >= 0 and len(row) > column2_col else "").strip()
+                if column2:
+                    player["Column2"] = column2
+                player["poolIdentity"] = f"{name_pot}|{column2}" if column2 else name_pot
         for idx, col in enumerate(range(start_col, start_col + len(keys))):
             key = keys[idx]
             raw = row[col] if len(row) > col else ""

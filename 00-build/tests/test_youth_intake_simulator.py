@@ -148,6 +148,28 @@ class YouthIntakeSimulatorTests(unittest.TestCase):
         eligible = eligible_prospects(prospects, ())
         self.assertEqual(len(eligible), 1)
 
+    def test_pool_keeps_same_name_when_name_plus_pot_differs(self):
+        prospects = [
+            {"name": "Charles Jones", "Name + Pot": "Charles Jones100", "tier": "B", "Position": "PG", "DOB": "one", "Height": 75},
+            {"name": "Charles Jones", "Name + Pot": "Charles Jones120", "tier": "A", "Position": "SG", "DOB": "two", "Height": 76},
+        ]
+        eligible = eligible_prospects(prospects, ())
+        self.assertEqual(len(eligible), 2)
+        self.assertEqual({player["poolIdentity"] for player in eligible}, {"Charles Jones100", "Charles Jones120"})
+
+    def test_pool_keeps_same_name_and_pot_when_column2_differs(self):
+        prospects = [
+            {"name": "Charles Jones", "Name + Pot": "Charles Jones93", "Column2": "CharlesJones81", "tier": "C", "Position": "PG"},
+            {"name": "Charles Jones", "Name + Pot": "Charles Jones93", "Column2": "CharlesJones80", "tier": "C", "Position": "SG"},
+            {"name": "Charles Jones", "Name + Pot": "Charles Jones93", "Column2": "CharlesJones80", "tier": "C", "Position": "SG"},
+        ]
+        eligible = eligible_prospects(prospects, ())
+        self.assertEqual(len(eligible), 2)
+        self.assertEqual(
+            {player["poolIdentity"] for player in eligible},
+            {"Charles Jones93|CharlesJones80", "Charles Jones93|CharlesJones81"},
+        )
+
     def test_insufficient_pool_aborts(self):
         data = synthetic_inputs()
         data["prospects"] = [player for player in data["prospects"] if player["tier"] != "C"]

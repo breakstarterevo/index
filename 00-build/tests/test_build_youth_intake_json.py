@@ -10,11 +10,31 @@ sys.path.insert(0, str(SCRIPTS))
 from build_youth_intake_json import (  # noqa: E402
     _enrich_intake_player,
     build_app_youth_intake_payload,
+    build_future_players_payload,
     build_youth_intake_payload,
 )
 
 
 class YouthIntakeJsonTests(unittest.TestCase):
+    def test_future_pool_uses_name_plus_pot_and_column2_as_identity(self):
+        sheets = {"Database": [
+            ["Name + Pot", "Column2", "FirstName", "LastName", "Position", "Tier", "POT"],
+            ["Charles Jones100", "CharlesJones81", "Charles", "Jones", "PG", "B", 100],
+            ["Charles Jones100", "CharlesJones80", "Charles", "Jones", "SG", "B", 100],
+            ["Charles Jones120", "CharlesJones81", "Charles", "Jones", "SG", "A", 120],
+            ["Charles Jones120", "CharlesJones81", "Charles", "Jones", "SG", "A", 120],
+        ]}
+        players = build_future_players_payload("unused.xlsx", sheets=sheets)
+        self.assertEqual(len(players), 3)
+        self.assertEqual(
+            {player["poolIdentity"] for player in players},
+            {
+                "Charles Jones100|CharlesJones80",
+                "Charles Jones100|CharlesJones81",
+                "Charles Jones120|CharlesJones81",
+            },
+        )
+
     def test_app_payload_derives_current_rights_without_moving_intake_team(self):
         source = {
             "schemaVersion": 2,

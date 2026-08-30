@@ -163,19 +163,26 @@ def validate_team_config(standings, config):
 def eligible_prospects(prospects, excluded_names):
     excluded = {normalize_name(name) for name in excluded_names if normalize_name(name)}
     eligible = []
-    seen_names = set()
+    seen_identities = set()
     for raw in prospects:
         player = copy.deepcopy(raw)
         name = str(player.get("name") or f"{player.get('FirstName', '')} {player.get('LastName', '')}").strip()
         normalized = normalize_name(name)
+        pool_identity = str(player.get("poolIdentity") or "").strip()
+        if not pool_identity:
+            name_pot = str(player.get("Name + Pot") or "").strip()
+            column2 = str(player.get("Column2") or "").strip()
+            pool_identity = f"{name_pot}|{column2}" if name_pot and column2 else name_pot or name
+        normalized_identity = normalize_name(pool_identity)
         tier = str(player.get("tier") or player.get("Tier") or "").strip().upper()
         position = str(player.get("Position") or player.get("position") or "").strip().upper()
-        if not name or normalized in excluded or normalized in seen_names:
+        if not name or normalized in excluded or normalized_identity in seen_identities:
             continue
         if tier not in {"A", "B", "C", "D"} or position not in PRIMARY_POSITIONS:
             continue
-        seen_names.add(normalized)
+        seen_identities.add(normalized_identity)
         player["name"] = name
+        player["poolIdentity"] = pool_identity
         player["tier"] = tier
         player["tierRaw"] = str(player.get("tierRaw") or player.get("Tier") or tier)
         player["Position"] = position
