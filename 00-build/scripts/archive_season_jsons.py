@@ -377,6 +377,41 @@ def identity_matches(identity: dict[str, object], player: dict[str, object], sea
     return True
 
 
+def file_identity_matches(identity: dict[str, object], player: dict[str, object]) -> bool:
+    """Confirm that a stable player file still describes the same person."""
+    return (
+        clean(identity.get("name", "")).casefold()
+        == clean(player.get("name", "")).casefold()
+        and clean(identity.get("height", "")) == clean(player.get("ht", ""))
+    )
+
+
+def adjacent_identity_match(
+    identities: list[dict[str, object]],
+    player: dict[str, object],
+    season: str,
+) -> dict[str, object] | None:
+    """Resolve one unambiguous same-player continuation from the prior season."""
+    current_season_number = season_number(season)
+    if current_season_number is None:
+        return None
+    candidates = []
+    for identity in identities:
+        if not file_identity_matches(identity, player):
+            continue
+        appearances = identity.get("appearances", [])
+        appearance_seasons = {
+            season_number(clean(appearance.get("season", "")))
+            for appearance in appearances
+            if isinstance(appearance, dict)
+        }
+        if current_season_number in appearance_seasons:
+            continue
+        if current_season_number - 1 in appearance_seasons:
+            candidates.append(identity)
+    return candidates[0] if len(candidates) == 1 else None
+
+
 def collapse_exact_duplicates(players: list[dict[str, object]]) -> list[dict[str, object]]:
     seen: set[tuple[str, str, str, str, str, str, str, str]] = set()
     unique: list[dict[str, object]] = []
@@ -394,6 +429,7 @@ def build_player_identity_index(history_root: Path) -> dict[str, object]:
     used_keys: set[str] = set()
     by_key: dict[str, dict[str, object]] = {}
     player_key_maps: dict[str, dict[str, str]] = {}
+    identities_by_player_file: dict[str, dict[str, object]] = {}
 
     season_dirs = sorted(
         [path for path in history_root.glob("season-*") if path.is_dir()],
@@ -413,15 +449,30 @@ def build_player_identity_index(history_root: Path) -> dict[str, object]:
             else ""
         )
         season_key_map: dict[str, str] = {}
-        for player in collapse_exact_duplicates([p for p in players if isinstance(p, dict)]):
+        season_players = collapse_exact_duplicates([p for p in players if isinstance(p, dict)])
+        season_name_counts: dict[str, int] = {}
+        for player in season_players:
+            normalized_name = clean(player.get("name", "")).casefold()
+            if normalized_name:
+                season_name_counts[normalized_name] = season_name_counts.get(normalized_name, 0) + 1
+
+        for player in season_players:
             name = clean(player.get("name", ""))
             if not name:
                 continue
 
-            identity = next(
-                (item for item in identities if identity_matches(item, player, season)),
-                None,
+            file_name = player_file_from_url(player)
+            file_identity = identities_by_player_file.get(file_name) if file_name else None
+            identity = (
+                file_identity
+                if file_identity and file_identity_matches(file_identity, player)
+                else next(
+                    (item for item in identities if identity_matches(item, player, season)),
+                    None,
+                )
             )
+            if identity is None and season_name_counts.get(name.casefold(), 0) == 1:
+                identity = adjacent_identity_match(identities, player, season)
             if identity is None:
                 base_key = history_base_key(player, season)
                 key = base_key
@@ -445,7 +496,6 @@ def build_player_identity_index(history_root: Path) -> dict[str, object]:
                 by_key[key] = identity
 
             identity["latestSeason"] = season
-            file_name = player_file_from_url(player)
             appearance = {
                 "season": season,
                 "seasonLabel": season_label or default_season_label(season),
@@ -462,6 +512,7 @@ def build_player_identity_index(history_root: Path) -> dict[str, object]:
             )
             identity.setdefault("appearances", []).append(appearance)
             if file_name:
+                identities_by_player_file[file_name] = identity
                 season_key_map[file_name] = str(identity["key"])
 
         player_key_maps[season] = season_key_map
@@ -564,11 +615,12 @@ def main() -> int:
     root = repo_root()
     history_root = root / "00-build" / "history"
     if args.rebuild_index_only:
-        player_index = enrich_player_identity_index(history_root)
-        print(
-            "Enriched player identity index with "
-            f"{player_index.get('enrichedAppearanceCount', 0)} archived appearance(s)"
-        )
+        seasons = update_history_index(history_root)
+        player_index = build_player_identity_index(history_root)
+        records_script = root / "00-build" / "scripts" / "build_history_records.py"
+        subprocess.run([sys.executable, str(records_script)], cwd=root, check=True)
+        print(f"Updated history index with {len(seasons)} season(s)")
+        print(f"Updated player identity index with {player_index['identityCount']} player(s)")
         return 0
 
     source = root / "00-build" / "database"
