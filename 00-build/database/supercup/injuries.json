@@ -1,27 +1,4 @@
 {
     "source": "injuries.htm",
-    "injuries": [
-        {
-            "pos": "C",
-            "name": "James Donaldson",
-            "url": "",
-            "team": "roster9",
-            "teamName": "Atletico Madrid",
-            "rosterUrl": "./rosters/roster9.htm",
-            "length": "54",
-            "injury": "Broken Leg",
-            "rowClass": "row1"
-        },
-        {
-            "pos": "PF",
-            "name": "Maurice Lucas",
-            "url": "",
-            "team": "roster27",
-            "teamName": "Tottenham Hotspur",
-            "rosterUrl": "./rosters/roster27.htm",
-            "length": "4",
-            "injury": "Pulled Hamstring",
-            "rowClass": "row2"
-        }
-    ]
+    "injuries": []
 }
