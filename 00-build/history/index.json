@@ -1,7 +1,7 @@
 {
   "source": "00-build/history",
-  "updatedAtUtc": "2026-08-06T14:31:28.552026+00:00",
-  "seasonCount": 4,
+  "updatedAtUtc": "2026-09-04T04:22:57.416175+00:00",
+  "seasonCount": 5,
   "seasons": [
     {
       "season": "season-1",
@@ -76,6 +76,28 @@
       "jsonCount": 50,
       "manifest": "season-4/manifest.json",
       "database": "season-4/database",
+      "feeds": {
+        "players.json": true,
+        "player_stats.json": true,
+        "standings.json": true,
+        "leaders.json": true,
+        "teams.json": true,
+        "team_stats.json": true,
+        "awards.json": true,
+        "season_awards.json": true,
+        "youth_intake.json": true,
+        "youth_intake_players.json": true,
+        "supercup/standings.json": true,
+        "supercup/leaders.json": true
+      }
+    },
+    {
+      "season": "season-5",
+      "label": "1985-1986",
+      "archivedAtUtc": "2026-09-04T04:22:57.369431+00:00",
+      "jsonCount": 51,
+      "manifest": "season-5/manifest.json",
+      "database": "season-5/database",
       "feeds": {
         "players.json": true,
         "player_stats.json": true,

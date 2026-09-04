@@ -3,15 +3,15 @@
     "id": "roster9",
     "name": "AC Milan",
     "record": {
-      "wins": 14,
-      "losses": 28,
-      "pct": 0.333
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "CLB Standings",
-    "pf": 107.4,
-    "pa": 113.3,
-    "diff": -5.9,
-    "streak": "L1",
+    "section": "ELB Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "3-7",
     "starPlayer": {
       "name": "Joe Barry Carroll",
@@ -22,34 +22,34 @@
       "potential": "151"
     },
     "cap": {
-      "salary": "$92,895,807",
-      "room": "$7,104,193"
+      "salary": "$82,213,521",
+      "room": "($12,213,521)"
     },
     "strengths": [
       {
-        "label": "Turnovers",
-        "value": 16.6,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Fouls",
-        "value": 20.1,
-        "rank": 3
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "FG%",
-        "value": 0.501,
-        "rank": 3
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Points Per Shot",
-        "value": 1.29,
-        "rank": 4
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Paris Saint-Germain 120, AC Milan 117",
       "boxscoreFile": "box185-3.htm"
     },
@@ -60,53 +60,53 @@
     "id": "roster16",
     "name": "AC Sparta Praha",
     "record": {
-      "wins": 17,
-      "losses": 25,
-      "pct": 0.405
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ELB Standings",
-    "pf": 106.3,
-    "pa": 111.6,
-    "diff": -5.3,
-    "streak": "L2",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "5-5",
     "starPlayer": {
       "name": "Steve Johnson",
       "url": "../players/player897.htm",
       "pos": "C",
-      "age": "26",
+      "age": "25",
       "overall": "126",
       "potential": "128"
     },
     "cap": {
-      "salary": "$41,581,679",
-      "room": "$28,418,321"
+      "salary": "$40,825,880",
+      "room": "$29,174,120"
     },
     "strengths": [
       {
-        "label": "Fouls",
-        "value": 25.5,
-        "rank": 3
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "3PT%",
-        "value": 0.366,
-        "rank": 3
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Blocks",
-        "value": 5.3,
-        "rank": 4
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Adjusted FG%",
-        "value": 0.531,
-        "rank": 4
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "FL Fart 112, @AC Sparta Praha 108",
       "boxscoreFile": "box185-7.htm"
     },
@@ -117,15 +117,15 @@
     "id": "roster12",
     "name": "AFC Richmond",
     "record": {
-      "wins": 23,
-      "losses": 19,
-      "pct": 0.548
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 112.3,
-    "pa": 109.5,
-    "diff": 2.9,
-    "streak": "L3",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "4-6",
     "starPlayer": {
       "name": "Michael Cooper",
@@ -136,34 +136,34 @@
       "potential": "147"
     },
     "cap": {
-      "salary": "$95,130,670",
-      "room": "$4,869,330"
+      "salary": "$61,040,937",
+      "room": "$38,959,063"
     },
     "strengths": [
       {
-        "label": "Rebounds",
-        "value": 41.9,
-        "rank": 2
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Points",
-        "value": 112.3,
-        "rank": 3
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "D.Rebounds",
-        "value": 29.0,
-        "rank": 3
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Blocks",
-        "value": 8.4,
-        "rank": 3
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Brighton 110, AFC Richmond 94",
       "boxscoreFile": "box185-2.htm"
     },
@@ -174,15 +174,15 @@
     "id": "roster18",
     "name": "Ajax",
     "record": {
-      "wins": 32,
-      "losses": 10,
-      "pct": 0.762
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "ELB Standings",
-    "pf": 122.7,
-    "pa": 109.5,
-    "diff": 13.1,
-    "streak": "W1",
+    "section": "CLB Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "7-3",
     "starPlayer": {
       "name": "Andre Iguodala",
@@ -193,34 +193,34 @@
       "potential": "176"
     },
     "cap": {
-      "salary": "$67,361,688",
-      "room": "$2,638,312"
+      "salary": "$81,330,236",
+      "room": "$18,669,764"
     },
     "strengths": [
       {
         "label": "Points",
-        "value": 122.7,
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Steals",
-        "value": 10.7,
+        "label": "O.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Turnovers",
-        "value": 15.3,
+        "label": "D.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Fouls",
-        "value": 22.4,
+        "label": "Rebounds",
+        "value": 0.0,
         "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Ajax 129, Marseille 128",
       "boxscoreFile": "box185-6.htm"
     },
@@ -231,15 +231,15 @@
     "id": "roster23",
     "name": "Arsenal",
     "record": {
-      "wins": 29,
-      "losses": 13,
-      "pct": 0.69
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "ECL Standings",
-    "pf": 121.1,
-    "pa": 114.0,
-    "diff": 7.1,
-    "streak": "W1",
+    "section": "ELB Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "7-3",
     "starPlayer": {
       "name": "Chris Bosh",
@@ -250,34 +250,34 @@
       "potential": "143"
     },
     "cap": {
-      "salary": "$36,679,151",
-      "room": "$13,320,849"
+      "salary": "$74,601,396",
+      "room": "($4,601,396)"
     },
     "strengths": [
       {
         "label": "Points",
-        "value": 121.1,
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "FG%",
-        "value": 0.537,
+        "label": "O.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "FT%",
-        "value": 0.767,
+        "label": "D.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Points Per Shot",
-        "value": 1.44,
+        "label": "Rebounds",
+        "value": 0.0,
         "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "Arsenal 145, @Barcelona 134",
       "boxscoreFile": "box185-9.htm"
     },
@@ -288,53 +288,53 @@
     "id": "roster19",
     "name": "Aston Villa",
     "record": {
-      "wins": 23,
-      "losses": 19,
-      "pct": 0.548
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ELB Standings",
-    "pf": 120.4,
-    "pa": 119.6,
-    "diff": 0.7,
-    "streak": "L1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "5-5",
     "starPlayer": {
       "name": "Larry Nance",
       "url": "../players/player880.htm",
       "pos": "C",
-      "age": "24",
+      "age": "25",
       "overall": "130",
       "potential": "130"
     },
     "cap": {
-      "salary": "$65,220,995",
-      "room": "$4,779,005"
+      "salary": "$36,578,988",
+      "room": "$33,421,012"
     },
     "strengths": [
       {
-        "label": "FG%",
-        "value": 0.536,
-        "rank": 1
-      },
-      {
-        "label": "Points Per Shot",
-        "value": 1.43,
-        "rank": 1
-      },
-      {
-        "label": "Adjusted FG%",
-        "value": 0.56,
-        "rank": 1
-      },
-      {
         "label": "Points",
-        "value": 120.4,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Inter Milan 125, Aston Villa 111",
       "boxscoreFile": "box185-5.htm"
     },
@@ -345,53 +345,53 @@
     "id": "roster11",
     "name": "Atletico Madrid",
     "record": {
-      "wins": 11,
-      "losses": 31,
-      "pct": 0.262
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "ELB Standings",
-    "pf": 111.7,
-    "pa": 119.5,
-    "diff": -7.8,
-    "streak": "L2",
+    "section": "ECL Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "3-7",
     "starPlayer": {
-      "name": "Johnny Moore",
-      "url": "../players/player727.htm",
-      "pos": "PG",
-      "age": "26",
-      "overall": "126",
-      "potential": "126"
+      "name": "Reggie Miller",
+      "url": "../players/player55.htm",
+      "pos": "SG",
+      "age": "21",
+      "overall": "130",
+      "potential": "154"
     },
     "cap": {
-      "salary": "$69,830,722",
-      "room": "$169,278"
+      "salary": "$61,678,033",
+      "room": "($11,678,033)"
     },
     "strengths": [
       {
-        "label": "Assists",
-        "value": 28.3,
-        "rank": 2
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Steals",
-        "value": 8.8,
-        "rank": 3
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Turnovers",
-        "value": 15.7,
-        "rank": 3
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "FG%",
-        "value": 0.508,
-        "rank": 4
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "Bayern Munich 120, @Atletico Madrid 94",
       "boxscoreFile": "box185-8.htm"
     },
@@ -402,15 +402,15 @@
     "id": "roster24",
     "name": "Barcelona",
     "record": {
-      "wins": 27,
-      "losses": 15,
-      "pct": 0.643
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 119.1,
-    "pa": 113.1,
-    "diff": 6.0,
-    "streak": "L2",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "4-6",
     "starPlayer": {
       "name": "Paul Pierce",
@@ -421,34 +421,34 @@
       "potential": "178"
     },
     "cap": {
-      "salary": "$49,247,933",
-      "room": "$752,067"
+      "salary": "$47,749,156",
+      "room": "$2,250,844"
     },
     "strengths": [
       {
-        "label": "Steals",
-        "value": 9.3,
-        "rank": 1
-      },
-      {
-        "label": "Adjusted FG%",
-        "value": 0.559,
-        "rank": 1
-      },
-      {
         "label": "Points",
-        "value": 119.1,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Assists",
-        "value": 27.9,
-        "rank": 2
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "Arsenal 145, @Barcelona 134",
       "boxscoreFile": "box185-9.htm"
     },
@@ -459,15 +459,15 @@
     "id": "roster7",
     "name": "Bayern Munich",
     "record": {
-      "wins": 13,
-      "losses": 29,
-      "pct": 0.31
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ELB Standings",
-    "pf": 105.6,
-    "pa": 114.2,
-    "diff": -8.6,
-    "streak": "W1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "4-6",
     "starPlayer": {
       "name": "Tree Rollins",
@@ -478,34 +478,34 @@
       "potential": "120"
     },
     "cap": {
-      "salary": "$80,669,200",
-      "room": "($10,669,200)"
+      "salary": "$74,296,128",
+      "room": "($4,296,128)"
     },
     "strengths": [
       {
-        "label": "Blocks",
-        "value": 6.1,
-        "rank": 3
-      },
-      {
-        "label": "FT%",
-        "value": 0.74,
-        "rank": 3
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "O.Rebounds",
-        "value": 12.9,
-        "rank": 4
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "Rebounds",
-        "value": 42.2,
-        "rank": 4
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "Bayern Munich 120, @Atletico Madrid 94",
       "boxscoreFile": "box185-8.htm"
     },
@@ -516,15 +516,15 @@
     "id": "roster13",
     "name": "Benfica",
     "record": {
-      "wins": 25,
-      "losses": 17,
-      "pct": 0.595
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 116.2,
-    "pa": 111.5,
-    "diff": 4.7,
-    "streak": "W3",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "5-5",
     "starPlayer": {
       "name": "Moses Malone",
@@ -535,34 +535,34 @@
       "potential": "157"
     },
     "cap": {
-      "salary": "$99,499,188",
-      "room": "$500,812"
+      "salary": "$97,442,239",
+      "room": "$2,557,761"
     },
     "strengths": [
       {
         "label": "Points",
-        "value": 116.2,
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "O.Rebounds",
-        "value": 14.1,
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "D.Rebounds",
-        "value": 30.2,
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "Rebounds",
-        "value": 44.3,
+        "value": 0.0,
         "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Benfica 114, Crystal Palace 107",
       "boxscoreFile": "box185-1.htm"
     },
@@ -573,53 +573,53 @@
     "id": "roster10",
     "name": "Brighton",
     "record": {
-      "wins": 27,
-      "losses": 15,
-      "pct": 0.643
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 110.7,
-    "pa": 107.2,
-    "diff": 3.6,
-    "streak": "W1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "7-3",
     "starPlayer": {
       "name": "Kiki Vandeweghe",
       "url": "../players/player701.htm",
       "pos": "SG",
-      "age": "26",
+      "age": "25",
       "overall": "172",
       "potential": "173"
     },
     "cap": {
-      "salary": "$93,711,041",
-      "room": "$6,288,959"
+      "salary": "$88,842,613",
+      "room": "$11,157,387"
     },
     "strengths": [
       {
-        "label": "Blocks",
-        "value": 12.2,
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "O.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "D.Rebounds",
-        "value": 29.4,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Turnovers",
-        "value": 16.7,
-        "rank": 2
-      },
-      {
-        "label": "Fouls",
-        "value": 19.8,
-        "rank": 2
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Brighton 110, AFC Richmond 94",
       "boxscoreFile": "box185-2.htm"
     },
@@ -630,15 +630,15 @@
     "id": "roster17",
     "name": "Chelsea",
     "record": {
-      "wins": 13,
-      "losses": 29,
-      "pct": 0.31
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "CLB Standings",
-    "pf": 106.0,
-    "pa": 116.6,
-    "diff": -10.6,
-    "streak": "W1",
+    "section": "ELB Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "6-4",
     "starPlayer": {
       "name": "Jim Paxson",
@@ -649,24 +649,34 @@
       "potential": "142"
     },
     "cap": {
-      "salary": "$98,544,140",
-      "room": "$1,455,860"
+      "salary": "$68,194,134",
+      "room": "$1,805,866"
     },
     "strengths": [
       {
-        "label": "Steals",
-        "value": 10.3,
-        "rank": 2
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "FT%",
-        "value": 0.795,
-        "rank": 2
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "Chelsea 125, @Real Madrid 110",
       "boxscoreFile": "box185-4.htm"
     },
@@ -677,53 +687,53 @@
     "id": "roster6",
     "name": "Crystal Palace",
     "record": {
-      "wins": 21,
-      "losses": 21,
-      "pct": 0.5
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 116.0,
-    "pa": 112.2,
-    "diff": 3.8,
-    "streak": "L1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "5-5",
     "starPlayer": {
-      "name": "Darrell Griffith",
-      "url": "../players/player703.htm",
-      "pos": "SG",
+      "name": "Reggie Theus",
+      "url": "../players/player708.htm",
+      "pos": "PG",
       "age": "26",
       "overall": "149",
-      "potential": "149"
+      "potential": "151"
     },
     "cap": {
-      "salary": "$98,610,737",
-      "room": "$1,389,263"
+      "salary": "$63,805,472",
+      "room": "$36,194,528"
     },
     "strengths": [
       {
-        "label": "Assists",
-        "value": 28.8,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Points",
-        "value": 116.0,
-        "rank": 2
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "FG%",
-        "value": 0.506,
-        "rank": 2
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Points Per Shot",
-        "value": 1.31,
-        "rank": 2
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Benfica 114, Crystal Palace 107",
       "boxscoreFile": "box185-1.htm"
     },
@@ -734,15 +744,15 @@
     "id": "roster27",
     "name": "FL Fart",
     "record": {
-      "wins": 30,
-      "losses": 12,
-      "pct": 0.714
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
-    "section": "ELB Standings",
-    "pf": 118.1,
-    "pa": 110.8,
-    "diff": 7.3,
-    "streak": "W5",
+    "section": "CLB Standings",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "8-2",
     "starPlayer": {
       "name": "Larry Drew",
@@ -753,34 +763,34 @@
       "potential": "141"
     },
     "cap": {
-      "salary": "$69,979,620",
-      "room": "$20,380"
+      "salary": "$76,283,734",
+      "room": "$23,716,266"
     },
     "strengths": [
       {
-        "label": "Assists",
-        "value": 29.7,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Blocks",
-        "value": 7.2,
+        "label": "O.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "D.Rebounds",
-        "value": 31.7,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "Rebounds",
-        "value": 44.9,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "FL Fart 112, @AC Sparta Praha 108",
       "boxscoreFile": "box185-7.htm"
     },
@@ -791,60 +801,53 @@
     "id": "roster26",
     "name": "Inter Milan",
     "record": {
-      "wins": 26,
-      "losses": 16,
-      "pct": 0.619
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ELB Standings",
-    "pf": 119.5,
-    "pa": 114.0,
-    "diff": 5.5,
-    "streak": "W2",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "5-5",
     "starPlayer": {
-      "name": "World B. Free",
-      "url": "../players/player1048.htm",
-      "pos": "SG",
-      "age": "29",
-      "overall": "141",
-      "potential": "141"
+      "name": "David West",
+      "url": "../players/player262.htm",
+      "pos": "PF",
+      "age": "26",
+      "overall": "118",
+      "potential": "123"
     },
     "cap": {
-      "salary": "$66,501,326",
-      "room": "$3,498,674"
+      "salary": "$40,918,594",
+      "room": "$29,081,406"
     },
     "strengths": [
       {
-        "label": "D.Rebounds",
-        "value": 32.3,
-        "rank": 1
-      },
-      {
-        "label": "Rebounds",
-        "value": 46.0,
-        "rank": 1
-      },
-      {
-        "label": "FT%",
-        "value": 0.802,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "O.Rebounds",
-        "value": 13.7,
-        "rank": 2
-      }
-    ],
-    "injuries": [
+        "value": 0.0,
+        "rank": 1
+      },
       {
-        "name": "World B. Free",
-        "pos": "SG",
-        "injury": "Broken Leg",
-        "length": "16"
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
+    "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Inter Milan 125, Aston Villa 111",
       "boxscoreFile": "box185-5.htm"
     },
@@ -855,15 +858,15 @@
     "id": "roster14",
     "name": "Juventus",
     "record": {
-      "wins": 18,
-      "losses": 24,
-      "pct": 0.429
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 110.7,
-    "pa": 112.7,
-    "diff": -2.0,
-    "streak": "L1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "5-5",
     "starPlayer": {
       "name": "Larry Smith",
@@ -874,34 +877,34 @@
       "potential": "119"
     },
     "cap": {
-      "salary": "$46,033,186",
-      "room": "$3,966,814"
+      "salary": "$35,547,449",
+      "room": "$14,452,551"
     },
     "strengths": [
       {
-        "label": "O.Rebounds",
-        "value": 15.8,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Rebounds",
-        "value": 45.7,
+        "label": "O.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "D.Rebounds",
-        "value": 29.9,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Blocks",
-        "value": 5.7,
-        "rank": 4
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "Manchester City 113, @Juventus 102",
       "boxscoreFile": "box185-12.htm"
     },
@@ -912,15 +915,15 @@
     "id": "roster28",
     "name": "Manchester City",
     "record": {
-      "wins": 23,
-      "losses": 19,
-      "pct": 0.548
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 110.7,
-    "pa": 108.1,
-    "diff": 2.6,
-    "streak": "W3",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "8-2",
     "starPlayer": {
       "name": "Luol Deng",
@@ -931,34 +934,34 @@
       "potential": "150"
     },
     "cap": {
-      "salary": "$48,889,144",
-      "room": "$1,110,856"
+      "salary": "$51,786,624",
+      "room": "($1,786,624)"
     },
     "strengths": [
       {
-        "label": "3PT%",
-        "value": 0.396,
-        "rank": 2
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "O.Rebounds",
-        "value": 11.9,
-        "rank": 3
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "Rebounds",
-        "value": 41.6,
-        "rank": 3
-      },
-      {
-        "label": "FT%",
-        "value": 0.749,
-        "rank": 3
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "Manchester City 113, @Juventus 102",
       "boxscoreFile": "box185-12.htm"
     },
@@ -969,53 +972,53 @@
     "id": "roster5",
     "name": "Manchester United",
     "record": {
-      "wins": 8,
-      "losses": 34,
-      "pct": 0.19
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 101.4,
-    "pa": 112.7,
-    "diff": -11.3,
-    "streak": "L6",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "1-9",
     "starPlayer": {
-      "name": "Mike McGee",
-      "url": "../players/player736.htm",
-      "pos": "SG",
-      "age": "24",
-      "overall": "120",
-      "potential": "129"
+      "name": "Dewayne Dedmon",
+      "url": "../players/player183.htm",
+      "pos": "C",
+      "age": "25",
+      "overall": "110",
+      "potential": "114"
     },
     "cap": {
-      "salary": "$48,296,940",
-      "room": "$1,703,060"
+      "salary": "$44,305,507",
+      "room": "$5,694,493"
     },
     "strengths": [
       {
-        "label": "Fouls",
-        "value": 21.5,
-        "rank": 2
-      },
-      {
-        "label": "3PT%",
-        "value": 0.351,
-        "rank": 4
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "O.Rebounds",
-        "value": 11.3,
-        "rank": 5
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Assists",
-        "value": 22.6,
-        "rank": 5
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Tottenham Hotspur 129, Manchester United 104",
       "boxscoreFile": "box185-11.htm"
     },
@@ -1026,15 +1029,15 @@
     "id": "roster15",
     "name": "Marseille",
     "record": {
-      "wins": 16,
-      "losses": 26,
-      "pct": 0.381
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ELB Standings",
-    "pf": 116.3,
-    "pa": 121.3,
-    "diff": -5.0,
-    "streak": "L1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "3-7",
     "starPlayer": {
       "name": "Robert Parish",
@@ -1045,34 +1048,34 @@
       "potential": "137"
     },
     "cap": {
-      "salary": "$69,244,099",
-      "room": "$755,901"
+      "salary": "$76,158,448",
+      "room": "($6,158,448)"
     },
     "strengths": [
       {
-        "label": "O.Rebounds",
-        "value": 14.0,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "3PT%",
-        "value": 0.372,
-        "rank": 2
-      },
-      {
-        "label": "Rebounds",
-        "value": 43.4,
-        "rank": 3
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "D.Rebounds",
-        "value": 29.4,
-        "rank": 4
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Ajax 129, Marseille 128",
       "boxscoreFile": "box185-6.htm"
     },
@@ -1083,53 +1086,53 @@
     "id": "roster20",
     "name": "Monaco",
     "record": {
-      "wins": 24,
-      "losses": 18,
-      "pct": 0.571
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 101.9,
-    "pa": 103.1,
-    "diff": -1.2,
-    "streak": "W2",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "4-6",
     "starPlayer": {
-      "name": "Andre Drummond",
-      "url": "../players/player378.htm",
-      "pos": "PF",
+      "name": "Alvin Robertson",
+      "url": "../players/player423.htm",
+      "pos": "SG",
       "age": "22",
-      "overall": "131",
-      "potential": "131"
+      "overall": "121",
+      "potential": "151"
     },
     "cap": {
-      "salary": "$36,610,271",
-      "room": "$13,389,729"
+      "salary": "$35,668,572",
+      "room": "$14,331,428"
     },
     "strengths": [
       {
-        "label": "Blocks",
-        "value": 7.6,
-        "rank": 1
-      },
-      {
-        "label": "Fouls",
-        "value": 21.5,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "O.Rebounds",
-        "value": 13.3,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       },
       {
         "label": "D.Rebounds",
-        "value": 29.9,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Monaco 98, Valencia 93",
       "boxscoreFile": "box185-10.htm"
     },
@@ -1140,15 +1143,15 @@
     "id": "roster21",
     "name": "Paris Saint-Germain",
     "record": {
-      "wins": 21,
-      "losses": 21,
-      "pct": 0.5
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 108.1,
-    "pa": 107.4,
-    "diff": 0.7,
-    "streak": "W3",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "6-4",
     "starPlayer": {
       "name": "Kelly Tripucka",
@@ -1159,34 +1162,34 @@
       "potential": "146"
     },
     "cap": {
-      "salary": "$99,675,651",
-      "room": "$324,349"
+      "salary": "$108,313,629",
+      "room": "($8,313,629)"
     },
     "strengths": [
       {
-        "label": "FT%",
-        "value": 0.811,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "3PT%",
-        "value": 0.391,
+        "label": "O.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Steals",
-        "value": 9.7,
-        "rank": 4
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Fouls",
-        "value": 21.2,
-        "rank": 4
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Paris Saint-Germain 120, AC Milan 117",
       "boxscoreFile": "box185-3.htm"
     },
@@ -1197,15 +1200,15 @@
     "id": "roster8",
     "name": "Real Madrid",
     "record": {
-      "wins": 24,
-      "losses": 18,
-      "pct": 0.571
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "CLB Standings",
-    "pf": 109.1,
-    "pa": 108.2,
-    "diff": 0.9,
-    "streak": "L2",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "5-5",
     "starPlayer": {
       "name": "Sidney Moncrief",
@@ -1216,34 +1219,34 @@
       "potential": "157"
     },
     "cap": {
-      "salary": "$91,546,519",
-      "room": "$8,453,481"
+      "salary": "$82,647,707",
+      "room": "$17,352,293"
     },
     "strengths": [
       {
-        "label": "Steals",
-        "value": 10.4,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
         "label": "O.Rebounds",
-        "value": 13.1,
-        "rank": 2
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Assists",
-        "value": 28.5,
-        "rank": 2
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Blocks",
-        "value": 9.7,
-        "rank": 2
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "Chelsea 125, @Real Madrid 110",
       "boxscoreFile": "box185-4.htm"
     },
@@ -1254,15 +1257,15 @@
     "id": "roster22",
     "name": "Tottenham Hotspur",
     "record": {
-      "wins": 14,
-      "losses": 28,
-      "pct": 0.333
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 105.7,
-    "pa": 111.6,
-    "diff": -5.9,
-    "streak": "W1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "3-7",
     "starPlayer": {
       "name": "Hubert Davis",
@@ -1273,34 +1276,34 @@
       "potential": "143"
     },
     "cap": {
-      "salary": "$49,197,202",
-      "room": "$802,798"
+      "salary": "$40,000,455",
+      "room": "$9,999,545"
     },
     "strengths": [
       {
-        "label": "Turnovers",
-        "value": 13.3,
+        "label": "Points",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "3PT%",
-        "value": 0.397,
+        "label": "O.Rebounds",
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "FT%",
-        "value": 0.756,
-        "rank": 2
+        "label": "D.Rebounds",
+        "value": 0.0,
+        "rank": 1
       },
       {
-        "label": "Steals",
-        "value": 8.0,
-        "rank": 3
+        "label": "Rebounds",
+        "value": 0.0,
+        "rank": 1
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Tottenham Hotspur 129, Manchester United 104",
       "boxscoreFile": "box185-11.htm"
     },
@@ -1311,15 +1314,15 @@
     "id": "roster25",
     "name": "Valencia",
     "record": {
-      "wins": 25,
-      "losses": 17,
-      "pct": 0.595
+      "wins": 0,
+      "losses": 0,
+      "pct": 0.0
     },
     "section": "ECL Standings",
-    "pf": 115.9,
-    "pa": 111.2,
-    "diff": 4.7,
-    "streak": "L1",
+    "pf": 0.0,
+    "pa": 0.0,
+    "diff": 0.0,
+    "streak": "-",
     "last10": "8-2",
     "starPlayer": {
       "name": "Brian Shaw",
@@ -1330,34 +1333,34 @@
       "potential": "134"
     },
     "cap": {
-      "salary": "$48,243,899",
-      "room": "$1,756,101"
+      "salary": "$54,873,802",
+      "room": "($4,873,802)"
     },
     "strengths": [
       {
+        "label": "Points",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
+        "label": "O.Rebounds",
+        "value": 0.0,
+        "rank": 1
+      },
+      {
         "label": "D.Rebounds",
-        "value": 30.1,
+        "value": 0.0,
         "rank": 1
       },
       {
-        "label": "Assists",
-        "value": 32.2,
+        "label": "Rebounds",
+        "value": 0.0,
         "rank": 1
-      },
-      {
-        "label": "Steals",
-        "value": 8.0,
-        "rank": 2
-      },
-      {
-        "label": "FG%",
-        "value": 0.537,
-        "rank": 2
       }
     ],
     "injuries": [],
     "recentGame": {
-      "date": "17/04/1986",
+      "date": "4/17/1986",
       "text": "@Monaco 98, Valencia 93",
       "boxscoreFile": "box185-10.htm"
     },

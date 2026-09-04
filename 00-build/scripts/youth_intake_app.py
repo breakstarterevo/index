@@ -3,6 +3,7 @@
 from __future__ import annotations
 
 import argparse
+import copy
 import csv
 import io
 import json
@@ -170,9 +171,9 @@ def build_fbb3_export(simulation):
     with zipfile.ZipFile(archive, "w", compression=zipfile.ZIP_DEFLATED) as bundle:
         for division, rule in FBB3_DIVISIONS.items():
             players = players_by_division[division]
-            if len(players) < rule["real"] or len(players) > rule["total"]:
+            if len(players) > rule["total"]:
                 raise SimulationError(
-                    f"{division} export supports {rule['real']} to {rule['total']} intake prospects; found {len(players)}."
+                    f"{division} export supports up to {rule['total']} intake prospects; found {len(players)}."
                 )
             filler_count = rule["total"] - len(players)
             filename = f"{season}-{rule['tier']}-{division}-Youth-Intake.csv"
@@ -203,7 +204,7 @@ def fbb3_export_source(requested_hash=""):
     requested_hash = str(requested_hash or "")
     for candidate in (draft, current):
         if candidate and (not requested_hash or requested_hash == str(candidate.get("draftHash", ""))):
-            return candidate
+            return _with_current_divisions(candidate)
     if requested_hash:
         raise SimulationError("That official intake is no longer the active or published draw.")
     raise SimulationError("Generate an official draw before exporting FBB3 CSVs.")
@@ -269,6 +270,31 @@ def _refresh_counts(publication):
         "ECL": sum(len(team.get("intakePlayers", [])) for team in teams if team.get("division") == "ECL"),
     }
     return publication["counts"]
+
+
+def _with_current_divisions(publication):
+    """Present a published intake using the league's current tier alignment.
+
+    The published draw remains immutable, but promotions and relegations can happen
+    before the FBB3 rookie files are imported. Rebase the presentation/export copy
+    from standings.json so the review and CSV bundle follow the new season's tiers.
+    """
+    if not publication or publication.get("status") != "published":
+        return publication
+
+    current_teams = {
+        normalize_name(team.get("team")): team
+        for team in standings_teams(read_json(STANDINGS_PATH, {}) or {})
+    }
+    rebased = copy.deepcopy(publication)
+    for team in rebased.get("teams", []):
+        current = current_teams.get(normalize_name(team.get("team")))
+        if not current:
+            continue
+        team["division"] = current["division"]
+        team["divisionLabel"] = current["divisionLabel"]
+    _refresh_counts(rebased)
+    return rebased
 
 
 def _award_capacity(division, extra_count=0):
@@ -409,7 +435,7 @@ def bootstrap_payload(season=None):
         "validation": {"ok": not issues, "issues": issues},
         "inputHashes": inputs["hashes"],
         "activeDraft": read_json(DRAFT_PATH),
-        "currentPublished": read_json(CURRENT_SOURCE_PATH),
+        "currentPublished": _with_current_divisions(read_json(CURRENT_SOURCE_PATH)),
         "awardTypes": award_types_payload(),
         "awardSeason": selected_season,
         "stagedAwards": staged,

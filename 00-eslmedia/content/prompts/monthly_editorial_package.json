@@ -71,6 +71,126 @@
                 ],
                 "teamPool": [
                     {
+                        "team": "Ajax",
+                        "overall": {
+                            "record": "32-10",
+                            "streak": "W1",
+                            "last3": "WLW",
+                            "avgMargin": 13.14,
+                            "pointDiff": 552,
+                            "bestWin": {
+                                "date": "2/5/1986",
+                                "opponent": "Atletico Madrid",
+                                "result": "W",
+                                "margin": 52,
+                                "score": "@Ajax 143, Atletico Madrid 91",
+                                "boxscoreUrl": "./boxes/box114-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "2/26/1986",
+                                "opponent": "AC Sparta Praha",
+                                "result": "L",
+                                "margin": 23,
+                                "score": "@AC Sparta Praha 123, Ajax 100",
+                                "boxscoreUrl": "./boxes/box135-3.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 4
+                        },
+                        "latestSim": {
+                            "record": "3-2",
+                            "streak": "W1",
+                            "last3": "WLW",
+                            "avgMargin": 11.8,
+                            "pointDiff": 59,
+                            "bestWin": {
+                                "date": "4/11/1986",
+                                "opponent": "Inter Milan",
+                                "result": "W",
+                                "margin": 44,
+                                "score": "@Ajax 140, Inter Milan 96",
+                                "boxscoreUrl": "./boxes/box179-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "4/16/1986",
+                                "opponent": "Aston Villa",
+                                "result": "L",
+                                "margin": 10,
+                                "score": "Aston Villa 139, @Ajax 129",
+                                "boxscoreUrl": "./boxes/box184-3.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 1
+                        },
+                        "rosterUrl": "./rosters/roster18.htm",
+                        "starPlayer": {
+                            "name": "Andre Iguodala",
+                            "url": "../players/player1314.htm",
+                            "pos": "SF",
+                            "age": "22",
+                            "overall": "152",
+                            "potential": "176"
+                        }
+                    },
+                    {
+                        "team": "FL Fart",
+                        "overall": {
+                            "record": "30-12",
+                            "streak": "W5",
+                            "last3": "WWW",
+                            "avgMargin": 7.29,
+                            "pointDiff": 306,
+                            "bestWin": {
+                                "date": "2/16/1986",
+                                "opponent": "Atletico Madrid",
+                                "result": "W",
+                                "margin": 48,
+                                "score": "FL Fart 121, @Atletico Madrid 73",
+                                "boxscoreUrl": "./boxes/box125-3.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "2/12/1986",
+                                "opponent": "Inter Milan",
+                                "result": "L",
+                                "margin": 25,
+                                "score": "@Inter Milan 127, FL Fart 102",
+                                "boxscoreUrl": "./boxes/box121-3.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 10
+                        },
+                        "latestSim": {
+                            "record": "4-0",
+                            "streak": "W4",
+                            "last3": "WWW",
+                            "avgMargin": 11.5,
+                            "pointDiff": 46,
+                            "bestWin": {
+                                "date": "4/16/1986",
+                                "opponent": "AC Sparta Praha",
+                                "result": "W",
+                                "margin": 31,
+                                "score": "@FL Fart 118, AC Sparta Praha 87",
+                                "boxscoreUrl": "./boxes/box184-5.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": null,
+                            "closeGameCount": 2
+                        },
+                        "rosterUrl": "./rosters/roster27.htm",
+                        "starPlayer": {
+                            "name": "Larry Drew",
+                            "url": "../players/player1053.htm",
+                            "pos": "PG",
+                            "age": "26",
+                            "overall": "140",
+                            "potential": "141"
+                        }
+                    },
+                    {
                         "team": "Brighton",
                         "overall": {
                             "record": "27-15",
@@ -79,7 +199,7 @@
                             "avgMargin": 3.57,
                             "pointDiff": 150,
                             "bestWin": {
-                                "date": "7/01/1986",
+                                "date": "1/7/1986",
                                 "opponent": "Chelsea",
                                 "result": "W",
                                 "margin": 42,
@@ -88,7 +208,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "12/03/1986",
+                                "date": "3/12/1986",
                                 "opponent": "Chelsea",
                                 "result": "L",
                                 "margin": 38,
@@ -105,7 +225,7 @@
                             "avgMargin": -0.8,
                             "pointDiff": -4,
                             "bestWin": {
-                                "date": "3/04/1986",
+                                "date": "4/3/1986",
                                 "opponent": "Paris Saint-Germain",
                                 "result": "W",
                                 "margin": 17,
@@ -114,7 +234,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "12/04/1986",
+                                "date": "4/12/1986",
                                 "opponent": "Crystal Palace",
                                 "result": "L",
                                 "margin": 29,
@@ -129,7 +249,7 @@
                             "name": "Kiki Vandeweghe",
                             "url": "../players/player701.htm",
                             "pos": "SG",
-                            "age": "26",
+                            "age": "25",
                             "overall": "172",
                             "potential": "173"
                         }
@@ -143,7 +263,7 @@
                             "avgMargin": 4.69,
                             "pointDiff": 197,
                             "bestWin": {
-                                "date": "28/01/1986",
+                                "date": "1/28/1986",
                                 "opponent": "Chelsea",
                                 "result": "W",
                                 "margin": 39,
@@ -152,7 +272,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "1/04/1986",
+                                "date": "4/1/1986",
                                 "opponent": "Crystal Palace",
                                 "result": "L",
                                 "margin": 47,
@@ -169,7 +289,7 @@
                             "avgMargin": -0.6,
                             "pointDiff": -3,
                             "bestWin": {
-                                "date": "15/04/1986",
+                                "date": "4/15/1986",
                                 "opponent": "Real Madrid",
                                 "result": "W",
                                 "margin": 33,
@@ -178,7 +298,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "1/04/1986",
+                                "date": "4/1/1986",
                                 "opponent": "Crystal Palace",
                                 "result": "L",
                                 "margin": 47,
@@ -207,7 +327,7 @@
                             "avgMargin": 0.86,
                             "pointDiff": 36,
                             "bestWin": {
-                                "date": "25/12/1985",
+                                "date": "12/25/1985",
                                 "opponent": "Chelsea",
                                 "result": "W",
                                 "margin": 27,
@@ -216,7 +336,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "13/02/1986",
+                                "date": "2/13/1986",
                                 "opponent": "AFC Richmond",
                                 "result": "L",
                                 "margin": 40,
@@ -233,7 +353,7 @@
                             "avgMargin": -3.6,
                             "pointDiff": -18,
                             "bestWin": {
-                                "date": "10/04/1986",
+                                "date": "4/10/1986",
                                 "opponent": "Chelsea",
                                 "result": "W",
                                 "margin": 17,
@@ -242,7 +362,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "15/04/1986",
+                                "date": "4/15/1986",
                                 "opponent": "Benfica",
                                 "result": "L",
                                 "margin": 33,
@@ -271,7 +391,7 @@
                             "avgMargin": 2.88,
                             "pointDiff": 121,
                             "bestWin": {
-                                "date": "29/11/1985",
+                                "date": "11/29/1985",
                                 "opponent": "Chelsea",
                                 "result": "W",
                                 "margin": 44,
@@ -280,7 +400,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "12/03/1986",
+                                "date": "3/12/1986",
                                 "opponent": "Crystal Palace",
                                 "result": "L",
                                 "margin": 47,
@@ -297,7 +417,7 @@
                             "avgMargin": -8.5,
                             "pointDiff": -34,
                             "bestWin": {
-                                "date": "3/04/1986",
+                                "date": "4/3/1986",
                                 "opponent": "Crystal Palace",
                                 "result": "W",
                                 "margin": 7,
@@ -306,7 +426,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "17/04/1986",
+                                "date": "4/17/1986",
                                 "opponent": "Brighton",
                                 "result": "L",
                                 "margin": 16,
@@ -335,7 +455,7 @@
                             "avgMargin": 3.76,
                             "pointDiff": 158,
                             "bestWin": {
-                                "date": "12/03/1986",
+                                "date": "3/12/1986",
                                 "opponent": "AFC Richmond",
                                 "result": "W",
                                 "margin": 47,
@@ -344,7 +464,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "3/11/1985",
+                                "date": "11/3/1985",
                                 "opponent": "Benfica",
                                 "result": "L",
                                 "margin": 24,
@@ -361,7 +481,7 @@
                             "avgMargin": 10.17,
                             "pointDiff": 61,
                             "bestWin": {
-                                "date": "1/04/1986",
+                                "date": "4/1/1986",
                                 "opponent": "Benfica",
                                 "result": "W",
                                 "margin": 47,
@@ -370,7 +490,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "3/04/1986",
+                                "date": "4/3/1986",
                                 "opponent": "AFC Richmond",
                                 "result": "L",
                                 "margin": 7,
@@ -382,12 +502,12 @@
                         },
                         "rosterUrl": "./rosters/roster6.htm",
                         "starPlayer": {
-                            "name": "Darrell Griffith",
-                            "url": "../players/player703.htm",
-                            "pos": "SG",
+                            "name": "Reggie Theus",
+                            "url": "../players/player708.htm",
+                            "pos": "PG",
                             "age": "26",
                             "overall": "149",
-                            "potential": "149"
+                            "potential": "151"
                         }
                     },
                     {
@@ -399,7 +519,7 @@
                             "avgMargin": 0.74,
                             "pointDiff": 31,
                             "bestWin": {
-                                "date": "21/12/1985",
+                                "date": "12/21/1985",
                                 "opponent": "Chelsea",
                                 "result": "W",
                                 "margin": 38,
@@ -408,7 +528,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "16/02/1986",
+                                "date": "2/16/1986",
                                 "opponent": "Benfica",
                                 "result": "L",
                                 "margin": 36,
@@ -425,7 +545,7 @@
                             "avgMargin": 0.0,
                             "pointDiff": 0,
                             "bestWin": {
-                                "date": "13/04/1986",
+                                "date": "4/13/1986",
                                 "opponent": "AFC Richmond",
                                 "result": "W",
                                 "margin": 13,
@@ -434,7 +554,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "3/04/1986",
+                                "date": "4/3/1986",
                                 "opponent": "Brighton",
                                 "result": "L",
                                 "margin": 17,
@@ -452,134 +572,6 @@
                             "age": "25",
                             "overall": "144",
                             "potential": "146"
-                        }
-                    },
-                    {
-                        "team": "AC Milan",
-                        "overall": {
-                            "record": "14-28",
-                            "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -5.88,
-                            "pointDiff": -247,
-                            "bestWin": {
-                                "date": "2/02/1986",
-                                "opponent": "Chelsea",
-                                "result": "W",
-                                "margin": 35,
-                                "score": "@AC Milan 122, Chelsea 87",
-                                "boxscoreUrl": "./boxes/box111-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "26/12/1985",
-                                "opponent": "Benfica",
-                                "result": "L",
-                                "margin": 32,
-                                "score": "@Benfica 125, AC Milan 93",
-                                "boxscoreUrl": "./boxes/box73-2.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 13
-                        },
-                        "latestSim": {
-                            "record": "2-4",
-                            "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -2.0,
-                            "pointDiff": -12,
-                            "bestWin": {
-                                "date": "15/04/1986",
-                                "opponent": "Chelsea",
-                                "result": "W",
-                                "margin": 8,
-                                "score": "AC Milan 106, @Chelsea 98",
-                                "boxscoreUrl": "./boxes/box183-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "2/04/1986",
-                                "opponent": "Chelsea",
-                                "result": "L",
-                                "margin": 8,
-                                "score": "Chelsea 117, @AC Milan 109",
-                                "boxscoreUrl": "./boxes/box170-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 3
-                        },
-                        "rosterUrl": "./rosters/roster9.htm",
-                        "starPlayer": {
-                            "name": "Joe Barry Carroll",
-                            "url": "../players/player710.htm",
-                            "pos": "C",
-                            "age": "25",
-                            "overall": "150",
-                            "potential": "151"
-                        }
-                    },
-                    {
-                        "team": "Chelsea",
-                        "overall": {
-                            "record": "13-29",
-                            "streak": "W1",
-                            "last3": "LLW",
-                            "avgMargin": -10.62,
-                            "pointDiff": -446,
-                            "bestWin": {
-                                "date": "12/03/1986",
-                                "opponent": "Brighton",
-                                "result": "W",
-                                "margin": 38,
-                                "score": "@Chelsea 125, Brighton 87",
-                                "boxscoreUrl": "./boxes/box149-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "29/11/1985",
-                                "opponent": "AFC Richmond",
-                                "result": "L",
-                                "margin": 44,
-                                "score": "@AFC Richmond 126, Chelsea 82",
-                                "boxscoreUrl": "./boxes/box46-3.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 4
-                        },
-                        "latestSim": {
-                            "record": "3-2",
-                            "streak": "W1",
-                            "last3": "LLW",
-                            "avgMargin": 2.0,
-                            "pointDiff": 10,
-                            "bestWin": {
-                                "date": "17/04/1986",
-                                "opponent": "Real Madrid",
-                                "result": "W",
-                                "margin": 15,
-                                "score": "Chelsea 125, @Real Madrid 110",
-                                "boxscoreUrl": "./boxes/box185-4.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "10/04/1986",
-                                "opponent": "Real Madrid",
-                                "result": "L",
-                                "margin": 17,
-                                "score": "Real Madrid 113, @Chelsea 96",
-                                "boxscoreUrl": "./boxes/box178-1.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 0
-                        },
-                        "rosterUrl": "./rosters/roster17.htm",
-                        "starPlayer": {
-                            "name": "Jim Paxson",
-                            "url": "../players/player875.htm",
-                            "pos": "SG",
-                            "age": "26",
-                            "overall": "142",
-                            "potential": "142"
                         }
                     }
                 ]
@@ -641,123 +633,67 @@
                 ],
                 "teamPool": [
                     {
-                        "team": "Ajax",
+                        "team": "Arsenal",
                         "overall": {
-                            "record": "32-10",
+                            "record": "29-13",
                             "streak": "W1",
                             "last3": "WLW",
-                            "avgMargin": 13.14,
-                            "pointDiff": 552,
+                            "avgMargin": 7.1,
+                            "pointDiff": 298,
                             "bestWin": {
-                                "date": "5/02/1986",
-                                "opponent": "Atletico Madrid",
+                                "date": "3/30/1986",
+                                "opponent": "Monaco",
                                 "result": "W",
-                                "margin": 52,
-                                "score": "@Ajax 143, Atletico Madrid 91",
-                                "boxscoreUrl": "./boxes/box114-1.htm",
+                                "margin": 26,
+                                "score": "@Arsenal 121, Monaco 95",
+                                "boxscoreUrl": "./boxes/box167-2.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "26/02/1986",
-                                "opponent": "AC Sparta Praha",
+                                "date": "3/26/1986",
+                                "opponent": "Barcelona",
                                 "result": "L",
-                                "margin": 23,
-                                "score": "@AC Sparta Praha 123, Ajax 100",
-                                "boxscoreUrl": "./boxes/box135-3.htm",
+                                "margin": 34,
+                                "score": "@Barcelona 141, Arsenal 107",
+                                "boxscoreUrl": "./boxes/box163-5.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 4
+                            "closeGameCount": 7
                         },
                         "latestSim": {
-                            "record": "3-2",
+                            "record": "4-1",
                             "streak": "W1",
                             "last3": "WLW",
-                            "avgMargin": 11.8,
-                            "pointDiff": 59,
+                            "avgMargin": 6.6,
+                            "pointDiff": 33,
                             "bestWin": {
-                                "date": "11/04/1986",
-                                "opponent": "Inter Milan",
+                                "date": "4/4/1986",
+                                "opponent": "Manchester United",
                                 "result": "W",
-                                "margin": 44,
-                                "score": "@Ajax 140, Inter Milan 96",
-                                "boxscoreUrl": "./boxes/box179-2.htm",
+                                "margin": 14,
+                                "score": "Arsenal 129, @Manchester United 115",
+                                "boxscoreUrl": "./boxes/box172-3.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "16/04/1986",
-                                "opponent": "Aston Villa",
+                                "date": "4/16/1986",
+                                "opponent": "Manchester City",
                                 "result": "L",
                                 "margin": 10,
-                                "score": "Aston Villa 139, @Ajax 129",
-                                "boxscoreUrl": "./boxes/box184-3.htm",
+                                "score": "Manchester City 133, @Arsenal 123",
+                                "boxscoreUrl": "./boxes/box184-7.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 1
+                            "closeGameCount": 0
                         },
-                        "rosterUrl": "./rosters/roster18.htm",
+                        "rosterUrl": "./rosters/roster23.htm",
                         "starPlayer": {
-                            "name": "Andre Iguodala",
-                            "url": "../players/player1314.htm",
-                            "pos": "SF",
+                            "name": "Chris Bosh",
+                            "url": "../players/player622.htm",
+                            "pos": "C",
                             "age": "22",
-                            "overall": "152",
-                            "potential": "176"
-                        }
-                    },
-                    {
-                        "team": "FL Fart",
-                        "overall": {
-                            "record": "30-12",
-                            "streak": "W5",
-                            "last3": "WWW",
-                            "avgMargin": 7.29,
-                            "pointDiff": 306,
-                            "bestWin": {
-                                "date": "16/02/1986",
-                                "opponent": "Atletico Madrid",
-                                "result": "W",
-                                "margin": 48,
-                                "score": "FL Fart 121, @Atletico Madrid 73",
-                                "boxscoreUrl": "./boxes/box125-3.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "12/02/1986",
-                                "opponent": "Inter Milan",
-                                "result": "L",
-                                "margin": 25,
-                                "score": "@Inter Milan 127, FL Fart 102",
-                                "boxscoreUrl": "./boxes/box121-3.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 10
-                        },
-                        "latestSim": {
-                            "record": "4-0",
-                            "streak": "W4",
-                            "last3": "WWW",
-                            "avgMargin": 11.5,
-                            "pointDiff": 46,
-                            "bestWin": {
-                                "date": "16/04/1986",
-                                "opponent": "AC Sparta Praha",
-                                "result": "W",
-                                "margin": 31,
-                                "score": "@FL Fart 118, AC Sparta Praha 87",
-                                "boxscoreUrl": "./boxes/box184-5.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": null,
-                            "closeGameCount": 2
-                        },
-                        "rosterUrl": "./rosters/roster27.htm",
-                        "starPlayer": {
-                            "name": "Larry Drew",
-                            "url": "../players/player1053.htm",
-                            "pos": "PG",
-                            "age": "26",
-                            "overall": "140",
-                            "potential": "141"
+                            "overall": "131",
+                            "potential": "143"
                         }
                     },
                     {
@@ -769,7 +705,7 @@
                             "avgMargin": 5.55,
                             "pointDiff": 233,
                             "bestWin": {
-                                "date": "25/11/1985",
+                                "date": "11/25/1985",
                                 "opponent": "Bayern Munich",
                                 "result": "W",
                                 "margin": 43,
@@ -778,7 +714,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "11/04/1986",
+                                "date": "4/11/1986",
                                 "opponent": "Ajax",
                                 "result": "L",
                                 "margin": 44,
@@ -795,7 +731,7 @@
                             "avgMargin": -1.0,
                             "pointDiff": -6,
                             "bestWin": {
-                                "date": "5/04/1986",
+                                "date": "4/5/1986",
                                 "opponent": "Marseille",
                                 "result": "W",
                                 "margin": 36,
@@ -804,7 +740,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "11/04/1986",
+                                "date": "4/11/1986",
                                 "opponent": "Ajax",
                                 "result": "L",
                                 "margin": 44,
@@ -816,12 +752,12 @@
                         },
                         "rosterUrl": "./rosters/roster26.htm",
                         "starPlayer": {
-                            "name": "World B. Free",
-                            "url": "../players/player1048.htm",
-                            "pos": "SG",
-                            "age": "29",
-                            "overall": "141",
-                            "potential": "141"
+                            "name": "David West",
+                            "url": "../players/player262.htm",
+                            "pos": "PF",
+                            "age": "26",
+                            "overall": "118",
+                            "potential": "123"
                         }
                     },
                     {
@@ -833,7 +769,7 @@
                             "avgMargin": 0.74,
                             "pointDiff": 31,
                             "bestWin": {
-                                "date": "22/12/1985",
+                                "date": "12/22/1985",
                                 "opponent": "AC Sparta Praha",
                                 "result": "W",
                                 "margin": 27,
@@ -842,7 +778,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "23/01/1986",
+                                "date": "1/23/1986",
                                 "opponent": "Ajax",
                                 "result": "L",
                                 "margin": 40,
@@ -859,7 +795,7 @@
                             "avgMargin": -0.6,
                             "pointDiff": -3,
                             "bestWin": {
-                                "date": "4/04/1986",
+                                "date": "4/4/1986",
                                 "opponent": "Atletico Madrid",
                                 "result": "W",
                                 "margin": 13,
@@ -868,7 +804,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "12/04/1986",
+                                "date": "4/12/1986",
                                 "opponent": "AC Sparta Praha",
                                 "result": "L",
                                 "margin": 19,
@@ -883,7 +819,7 @@
                             "name": "Larry Nance",
                             "url": "../players/player880.htm",
                             "pos": "C",
-                            "age": "24",
+                            "age": "25",
                             "overall": "130",
                             "potential": "130"
                         }
@@ -897,7 +833,7 @@
                             "avgMargin": -5.29,
                             "pointDiff": -222,
                             "bestWin": {
-                                "date": "15/03/1986",
+                                "date": "3/15/1986",
                                 "opponent": "Atletico Madrid",
                                 "result": "W",
                                 "margin": 24,
@@ -906,7 +842,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "31/12/1985",
+                                "date": "12/31/1985",
                                 "opponent": "Inter Milan",
                                 "result": "L",
                                 "margin": 39,
@@ -923,7 +859,7 @@
                             "avgMargin": 1.5,
                             "pointDiff": 9,
                             "bestWin": {
-                                "date": "10/04/1986",
+                                "date": "4/10/1986",
                                 "opponent": "Marseille",
                                 "result": "W",
                                 "margin": 22,
@@ -932,7 +868,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "16/04/1986",
+                                "date": "4/16/1986",
                                 "opponent": "FL Fart",
                                 "result": "L",
                                 "margin": 31,
@@ -947,7 +883,7 @@
                             "name": "Steve Johnson",
                             "url": "../players/player897.htm",
                             "pos": "C",
-                            "age": "26",
+                            "age": "25",
                             "overall": "126",
                             "potential": "128"
                         }
@@ -961,7 +897,7 @@
                             "avgMargin": -5.0,
                             "pointDiff": -210,
                             "bestWin": {
-                                "date": "21/11/1985",
+                                "date": "11/21/1985",
                                 "opponent": "AC Sparta Praha",
                                 "result": "W",
                                 "margin": 25,
@@ -970,7 +906,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "5/04/1986",
+                                "date": "4/5/1986",
                                 "opponent": "Inter Milan",
                                 "result": "L",
                                 "margin": 36,
@@ -987,7 +923,7 @@
                             "avgMargin": -13.25,
                             "pointDiff": -53,
                             "bestWin": {
-                                "date": "16/04/1986",
+                                "date": "4/16/1986",
                                 "opponent": "Bayern Munich",
                                 "result": "W",
                                 "margin": 6,
@@ -996,7 +932,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "5/04/1986",
+                                "date": "4/5/1986",
                                 "opponent": "Inter Milan",
                                 "result": "L",
                                 "margin": 36,
@@ -1017,6 +953,70 @@
                         }
                     },
                     {
+                        "team": "AC Milan",
+                        "overall": {
+                            "record": "14-28",
+                            "streak": "L1",
+                            "last3": "LWL",
+                            "avgMargin": -5.88,
+                            "pointDiff": -247,
+                            "bestWin": {
+                                "date": "2/2/1986",
+                                "opponent": "Chelsea",
+                                "result": "W",
+                                "margin": 35,
+                                "score": "@AC Milan 122, Chelsea 87",
+                                "boxscoreUrl": "./boxes/box111-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "12/26/1985",
+                                "opponent": "Benfica",
+                                "result": "L",
+                                "margin": 32,
+                                "score": "@Benfica 125, AC Milan 93",
+                                "boxscoreUrl": "./boxes/box73-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 13
+                        },
+                        "latestSim": {
+                            "record": "2-4",
+                            "streak": "L1",
+                            "last3": "LWL",
+                            "avgMargin": -2.0,
+                            "pointDiff": -12,
+                            "bestWin": {
+                                "date": "4/15/1986",
+                                "opponent": "Chelsea",
+                                "result": "W",
+                                "margin": 8,
+                                "score": "AC Milan 106, @Chelsea 98",
+                                "boxscoreUrl": "./boxes/box183-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "4/2/1986",
+                                "opponent": "Chelsea",
+                                "result": "L",
+                                "margin": 8,
+                                "score": "Chelsea 117, @AC Milan 109",
+                                "boxscoreUrl": "./boxes/box170-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 3
+                        },
+                        "rosterUrl": "./rosters/roster9.htm",
+                        "starPlayer": {
+                            "name": "Joe Barry Carroll",
+                            "url": "../players/player710.htm",
+                            "pos": "C",
+                            "age": "25",
+                            "overall": "150",
+                            "potential": "151"
+                        }
+                    },
+                    {
                         "team": "Bayern Munich",
                         "overall": {
                             "record": "13-29",
@@ -1025,7 +1025,7 @@
                             "avgMargin": -8.6,
                             "pointDiff": -361,
                             "bestWin": {
-                                "date": "21/02/1986",
+                                "date": "2/21/1986",
                                 "opponent": "Aston Villa",
                                 "result": "W",
                                 "margin": 39,
@@ -1034,7 +1034,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "25/11/1985",
+                                "date": "11/25/1985",
                                 "opponent": "Inter Milan",
                                 "result": "L",
                                 "margin": 43,
@@ -1051,7 +1051,7 @@
                             "avgMargin": -4.5,
                             "pointDiff": -27,
                             "bestWin": {
-                                "date": "17/04/1986",
+                                "date": "4/17/1986",
                                 "opponent": "Atletico Madrid",
                                 "result": "W",
                                 "margin": 26,
@@ -1060,7 +1060,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "4/04/1986",
+                                "date": "4/4/1986",
                                 "opponent": "Ajax",
                                 "result": "L",
                                 "margin": 32,
@@ -1081,67 +1081,67 @@
                         }
                     },
                     {
-                        "team": "Atletico Madrid",
+                        "team": "Chelsea",
                         "overall": {
-                            "record": "11-31",
-                            "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": -7.83,
-                            "pointDiff": -329,
+                            "record": "13-29",
+                            "streak": "W1",
+                            "last3": "LLW",
+                            "avgMargin": -10.62,
+                            "pointDiff": -446,
                             "bestWin": {
-                                "date": "9/04/1986",
-                                "opponent": "Bayern Munich",
+                                "date": "3/12/1986",
+                                "opponent": "Brighton",
                                 "result": "W",
-                                "margin": 21,
-                                "score": "@Atletico Madrid 119, Bayern Munich 98",
-                                "boxscoreUrl": "./boxes/box177-2.htm",
+                                "margin": 38,
+                                "score": "@Chelsea 125, Brighton 87",
+                                "boxscoreUrl": "./boxes/box149-1.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "5/02/1986",
-                                "opponent": "Ajax",
+                                "date": "11/29/1985",
+                                "opponent": "AFC Richmond",
                                 "result": "L",
-                                "margin": 52,
-                                "score": "@Ajax 143, Atletico Madrid 91",
-                                "boxscoreUrl": "./boxes/box114-1.htm",
+                                "margin": 44,
+                                "score": "@AFC Richmond 126, Chelsea 82",
+                                "boxscoreUrl": "./boxes/box46-3.htm",
                                 "section": "Regular Season"
                             },
-                            "closeGameCount": 10
+                            "closeGameCount": 4
                         },
                         "latestSim": {
-                            "record": "1-3",
-                            "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": -6.25,
-                            "pointDiff": -25,
+                            "record": "3-2",
+                            "streak": "W1",
+                            "last3": "LLW",
+                            "avgMargin": 2.0,
+                            "pointDiff": 10,
                             "bestWin": {
-                                "date": "9/04/1986",
-                                "opponent": "Bayern Munich",
+                                "date": "4/17/1986",
+                                "opponent": "Real Madrid",
                                 "result": "W",
-                                "margin": 21,
-                                "score": "@Atletico Madrid 119, Bayern Munich 98",
-                                "boxscoreUrl": "./boxes/box177-2.htm",
+                                "margin": 15,
+                                "score": "Chelsea 125, @Real Madrid 110",
+                                "boxscoreUrl": "./boxes/box185-4.htm",
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "17/04/1986",
-                                "opponent": "Bayern Munich",
+                                "date": "4/10/1986",
+                                "opponent": "Real Madrid",
                                 "result": "L",
-                                "margin": 26,
-                                "score": "Bayern Munich 120, @Atletico Madrid 94",
-                                "boxscoreUrl": "./boxes/box185-8.htm",
+                                "margin": 17,
+                                "score": "Real Madrid 113, @Chelsea 96",
+                                "boxscoreUrl": "./boxes/box178-1.htm",
                                 "section": "Regular Season"
                             },
                             "closeGameCount": 0
                         },
-                        "rosterUrl": "./rosters/roster11.htm",
+                        "rosterUrl": "./rosters/roster17.htm",
                         "starPlayer": {
-                            "name": "Johnny Moore",
-                            "url": "../players/player727.htm",
-                            "pos": "PG",
+                            "name": "Jim Paxson",
+                            "url": "../players/player875.htm",
+                            "pos": "SG",
                             "age": "26",
-                            "overall": "126",
-                            "potential": "126"
+                            "overall": "142",
+                            "potential": "142"
                         }
                     }
                 ]
@@ -1203,70 +1203,6 @@
                 ],
                 "teamPool": [
                     {
-                        "team": "Arsenal",
-                        "overall": {
-                            "record": "29-13",
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 7.1,
-                            "pointDiff": 298,
-                            "bestWin": {
-                                "date": "30/03/1986",
-                                "opponent": "Monaco",
-                                "result": "W",
-                                "margin": 26,
-                                "score": "@Arsenal 121, Monaco 95",
-                                "boxscoreUrl": "./boxes/box167-2.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "26/03/1986",
-                                "opponent": "Barcelona",
-                                "result": "L",
-                                "margin": 34,
-                                "score": "@Barcelona 141, Arsenal 107",
-                                "boxscoreUrl": "./boxes/box163-5.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 7
-                        },
-                        "latestSim": {
-                            "record": "4-1",
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 6.6,
-                            "pointDiff": 33,
-                            "bestWin": {
-                                "date": "4/04/1986",
-                                "opponent": "Manchester United",
-                                "result": "W",
-                                "margin": 14,
-                                "score": "Arsenal 129, @Manchester United 115",
-                                "boxscoreUrl": "./boxes/box172-3.htm",
-                                "section": "Regular Season"
-                            },
-                            "worstLoss": {
-                                "date": "16/04/1986",
-                                "opponent": "Manchester City",
-                                "result": "L",
-                                "margin": 10,
-                                "score": "Manchester City 133, @Arsenal 123",
-                                "boxscoreUrl": "./boxes/box184-7.htm",
-                                "section": "Regular Season"
-                            },
-                            "closeGameCount": 0
-                        },
-                        "rosterUrl": "./rosters/roster23.htm",
-                        "starPlayer": {
-                            "name": "Chris Bosh",
-                            "url": "../players/player622.htm",
-                            "pos": "C",
-                            "age": "22",
-                            "overall": "131",
-                            "potential": "143"
-                        }
-                    },
-                    {
                         "team": "Barcelona",
                         "overall": {
                             "record": "27-15",
@@ -1284,7 +1220,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "12/04/1986",
+                                "date": "4/12/1986",
                                 "opponent": "Manchester City",
                                 "result": "L",
                                 "margin": 33,
@@ -1301,7 +1237,7 @@
                             "avgMargin": 0.2,
                             "pointDiff": 1,
                             "bestWin": {
-                                "date": "8/04/1986",
+                                "date": "4/8/1986",
                                 "opponent": "Monaco",
                                 "result": "W",
                                 "margin": 31,
@@ -1310,7 +1246,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "12/04/1986",
+                                "date": "4/12/1986",
                                 "opponent": "Manchester City",
                                 "result": "L",
                                 "margin": 33,
@@ -1339,7 +1275,7 @@
                             "avgMargin": 4.69,
                             "pointDiff": 197,
                             "bestWin": {
-                                "date": "22/12/1985",
+                                "date": "12/22/1985",
                                 "opponent": "Juventus",
                                 "result": "W",
                                 "margin": 42,
@@ -1348,7 +1284,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "23/12/1985",
+                                "date": "12/23/1985",
                                 "opponent": "Barcelona",
                                 "result": "L",
                                 "margin": 33,
@@ -1365,7 +1301,7 @@
                             "avgMargin": 12.75,
                             "pointDiff": 51,
                             "bestWin": {
-                                "date": "1/04/1986",
+                                "date": "4/1/1986",
                                 "opponent": "Juventus",
                                 "result": "W",
                                 "margin": 24,
@@ -1374,7 +1310,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "17/04/1986",
+                                "date": "4/17/1986",
                                 "opponent": "Monaco",
                                 "result": "L",
                                 "margin": 5,
@@ -1403,7 +1339,7 @@
                             "avgMargin": -1.21,
                             "pointDiff": -51,
                             "bestWin": {
-                                "date": "26/12/1985",
+                                "date": "12/26/1985",
                                 "opponent": "Manchester United",
                                 "result": "W",
                                 "margin": 33,
@@ -1412,7 +1348,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "8/04/1986",
+                                "date": "4/8/1986",
                                 "opponent": "Barcelona",
                                 "result": "L",
                                 "margin": 31,
@@ -1429,7 +1365,7 @@
                             "avgMargin": -10.0,
                             "pointDiff": -50,
                             "bestWin": {
-                                "date": "16/04/1986",
+                                "date": "4/16/1986",
                                 "opponent": "Tottenham Hotspur",
                                 "result": "W",
                                 "margin": 9,
@@ -1438,7 +1374,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "8/04/1986",
+                                "date": "4/8/1986",
                                 "opponent": "Barcelona",
                                 "result": "L",
                                 "margin": 31,
@@ -1450,12 +1386,12 @@
                         },
                         "rosterUrl": "./rosters/roster20.htm",
                         "starPlayer": {
-                            "name": "Andre Drummond",
-                            "url": "../players/player378.htm",
-                            "pos": "PF",
+                            "name": "Alvin Robertson",
+                            "url": "../players/player423.htm",
+                            "pos": "SG",
                             "age": "22",
-                            "overall": "131",
-                            "potential": "131"
+                            "overall": "121",
+                            "potential": "151"
                         }
                     },
                     {
@@ -1467,7 +1403,7 @@
                             "avgMargin": 2.6,
                             "pointDiff": 109,
                             "bestWin": {
-                                "date": "12/04/1986",
+                                "date": "4/12/1986",
                                 "opponent": "Barcelona",
                                 "result": "W",
                                 "margin": 33,
@@ -1476,7 +1412,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "18/11/1985",
+                                "date": "11/18/1985",
                                 "opponent": "Barcelona",
                                 "result": "L",
                                 "margin": 22,
@@ -1493,7 +1429,7 @@
                             "avgMargin": 9.8,
                             "pointDiff": 49,
                             "bestWin": {
-                                "date": "12/04/1986",
+                                "date": "4/12/1986",
                                 "opponent": "Barcelona",
                                 "result": "W",
                                 "margin": 33,
@@ -1502,7 +1438,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "8/04/1986",
+                                "date": "4/8/1986",
                                 "opponent": "Juventus",
                                 "result": "L",
                                 "margin": 11,
@@ -1531,7 +1467,7 @@
                             "avgMargin": -2.02,
                             "pointDiff": -85,
                             "bestWin": {
-                                "date": "30/10/1985",
+                                "date": "10/30/1985",
                                 "opponent": "Manchester United",
                                 "result": "W",
                                 "margin": 37,
@@ -1540,7 +1476,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "22/12/1985",
+                                "date": "12/22/1985",
                                 "opponent": "Valencia",
                                 "result": "L",
                                 "margin": 42,
@@ -1557,7 +1493,7 @@
                             "avgMargin": -0.6,
                             "pointDiff": -3,
                             "bestWin": {
-                                "date": "8/04/1986",
+                                "date": "4/8/1986",
                                 "opponent": "Manchester City",
                                 "result": "W",
                                 "margin": 11,
@@ -1566,7 +1502,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "1/04/1986",
+                                "date": "4/1/1986",
                                 "opponent": "Valencia",
                                 "result": "L",
                                 "margin": 24,
@@ -1595,7 +1531,7 @@
                             "avgMargin": -5.9,
                             "pointDiff": -248,
                             "bestWin": {
-                                "date": "17/04/1986",
+                                "date": "4/17/1986",
                                 "opponent": "Manchester United",
                                 "result": "W",
                                 "margin": 25,
@@ -1604,7 +1540,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "30/01/1986",
+                                "date": "1/30/1986",
                                 "opponent": "Valencia",
                                 "result": "L",
                                 "margin": 42,
@@ -1621,7 +1557,7 @@
                             "avgMargin": -0.83,
                             "pointDiff": -5,
                             "bestWin": {
-                                "date": "17/04/1986",
+                                "date": "4/17/1986",
                                 "opponent": "Manchester United",
                                 "result": "W",
                                 "margin": 25,
@@ -1630,7 +1566,7 @@
                                 "section": "Regular Season"
                             },
                             "worstLoss": {
-                                "date": "8/04/1986",
+                                "date": "4/8/1986",
                                 "opponent": "Valencia",
                                 "result": "L",
                                 "margin": 15,
@@ -1651,6 +1587,70 @@
                         }
                     },
                     {
+                        "team": "Atletico Madrid",
+                        "overall": {
+                            "record": "11-31",
+                            "streak": "L2",
+                            "last3": "WLL",
+                            "avgMargin": -7.83,
+                            "pointDiff": -329,
+                            "bestWin": {
+                                "date": "4/9/1986",
+                                "opponent": "Bayern Munich",
+                                "result": "W",
+                                "margin": 21,
+                                "score": "@Atletico Madrid 119, Bayern Munich 98",
+                                "boxscoreUrl": "./boxes/box177-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "2/5/1986",
+                                "opponent": "Ajax",
+                                "result": "L",
+                                "margin": 52,
+                                "score": "@Ajax 143, Atletico Madrid 91",
+                                "boxscoreUrl": "./boxes/box114-1.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 10
+                        },
+                        "latestSim": {
+                            "record": "1-3",
+                            "streak": "L2",
+                            "last3": "WLL",
+                            "avgMargin": -6.25,
+                            "pointDiff": -25,
+                            "bestWin": {
+                                "date": "4/9/1986",
+                                "opponent": "Bayern Munich",
+                                "result": "W",
+                                "margin": 21,
+                                "score": "@Atletico Madrid 119, Bayern Munich 98",
+                                "boxscoreUrl": "./boxes/box177-2.htm",
+                                "section": "Regular Season"
+                            },
+                            "worstLoss": {
+                                "date": "4/17/1986",
+                                "opponent": "Bayern Munich",
+                                "result": "L",
+                                "margin": 26,
+                                "score": "Bayern Munich 120, @Atletico Madrid 94",
+                                "boxscoreUrl": "./boxes/box185-8.htm",
+                                "section": "Regular Season"
+                            },
+                            "closeGameCount": 0
+                        },
+                        "rosterUrl": "./rosters/roster11.htm",
+                        "starPlayer": {
+                            "name": "Reggie Miller",
+                            "url": "../players/player55.htm",
+                            "pos": "SG",
+                            "age": "21",
+                            "overall": "130",
+                            "potential": "154"
+                        }
+                    },
+                    {
                         "team": "Manchester United",
                         "overall": {
                             "record": "8-34",
@@ -1659,7 +1659,7 @@
                             "avgMargin": -11.26,
                             "pointDiff": -473,
                             "bestWin": {
-                                "date": "25/03/1986",
+                                "date": "3/25/1986",
                                 "opponent": "Tottenham Hotspur",
                                 "result": "W",
                                 "margin": 18,
@@ -1686,7 +1686,7 @@
                             "pointDiff": -76,
                             "bestWin": null,
                             "worstLoss": {
-                                "date": "17/04/1986",
+                                "date": "4/17/1986",
                                 "opponent": "Tottenham Hotspur",
                                 "result": "L",
                                 "margin": 25,
@@ -1698,12 +1698,12 @@
                         },
                         "rosterUrl": "./rosters/roster5.htm",
                         "starPlayer": {
-                            "name": "Mike McGee",
-                            "url": "../players/player736.htm",
-                            "pos": "SG",
-                            "age": "24",
-                            "overall": "120",
-                            "potential": "129"
+                            "name": "Dewayne Dedmon",
+                            "url": "../players/player183.htm",
+                            "pos": "C",
+                            "age": "25",
+                            "overall": "110",
+                            "potential": "114"
                         }
                     }
                 ]
@@ -1760,8 +1760,8 @@
                     "tier": "Tier 1",
                     "type": "relegation",
                     "slots": 2,
-                    "lineTeam": "AC Milan",
-                    "lineRecord": "2-4",
+                    "lineTeam": "Brighton",
+                    "lineRecord": "2-3",
                     "entries": [
                         {
                             "team": "AFC Richmond",
@@ -1776,21 +1776,9 @@
                             "rosterUrl": "./rosters/roster12.htm"
                         },
                         {
-                            "team": "AC Milan",
-                            "record": "2-4",
-                            "standingRank": 7,
-                            "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -2.0,
-                            "pointDiff": -12,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster9.htm"
-                        },
-                        {
                             "team": "Brighton",
                             "record": "2-3",
-                            "standingRank": 1,
+                            "standingRank": 3,
                             "streak": "W1",
                             "last3": "LLW",
                             "avgMargin": -0.8,
@@ -1802,7 +1790,7 @@
                         {
                             "team": "Real Madrid",
                             "record": "3-2",
-                            "standingRank": 3,
+                            "standingRank": 2,
                             "streak": "L2",
                             "last3": "WLL",
                             "avgMargin": -3.6,
@@ -1810,6 +1798,18 @@
                             "gapToLine": 1,
                             "status": "above_safety",
                             "rosterUrl": "./rosters/roster8.htm"
+                        },
+                        {
+                            "team": "Benfica",
+                            "record": "3-2",
+                            "standingRank": 5,
+                            "streak": "W3",
+                            "last3": "WWW",
+                            "avgMargin": -0.6,
+                            "pointDiff": -3,
+                            "gapToLine": 1,
+                            "status": "above_safety",
+                            "rosterUrl": "./rosters/roster13.htm"
                         }
                     ]
                 },
@@ -1818,37 +1818,37 @@
                     "tier": "Tier 2",
                     "type": "promotion",
                     "slots": 2,
-                    "lineTeam": "Ajax",
+                    "lineTeam": "Chelsea",
                     "lineRecord": "3-2",
                     "entries": [
                         {
-                            "team": "FL Fart",
-                            "record": "4-0",
-                            "standingRank": 2,
-                            "streak": "W4",
-                            "last3": "WWW",
-                            "avgMargin": 11.5,
-                            "pointDiff": 46,
-                            "gapToLine": -1,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster27.htm"
-                        },
-                        {
-                            "team": "Ajax",
-                            "record": "3-2",
-                            "standingRank": 1,
+                            "team": "Arsenal",
+                            "record": "4-1",
+                            "standingRank": 7,
                             "streak": "W1",
                             "last3": "WLW",
-                            "avgMargin": 11.8,
-                            "pointDiff": 59,
+                            "avgMargin": 6.6,
+                            "pointDiff": 33,
+                            "gapToLine": -1,
+                            "status": "on_or_above_line",
+                            "rosterUrl": "./rosters/roster23.htm"
+                        },
+                        {
+                            "team": "Chelsea",
+                            "record": "3-2",
+                            "standingRank": 5,
+                            "streak": "W1",
+                            "last3": "LLW",
+                            "avgMargin": 2.0,
+                            "pointDiff": 10,
                             "gapToLine": 0,
                             "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster18.htm"
+                            "rosterUrl": "./rosters/roster17.htm"
                         },
                         {
                             "team": "AC Sparta Praha",
                             "record": "3-3",
-                            "standingRank": 5,
+                            "standingRank": 4,
                             "streak": "L2",
                             "last3": "WLL",
                             "avgMargin": 1.5,
@@ -1860,7 +1860,7 @@
                         {
                             "team": "Aston Villa",
                             "record": "3-2",
-                            "standingRank": 4,
+                            "standingRank": 6,
                             "streak": "L1",
                             "last3": "LWL",
                             "avgMargin": -0.6,
@@ -1882,7 +1882,7 @@
                         {
                             "team": "Marseille",
                             "record": "1-3",
-                            "standingRank": 6,
+                            "standingRank": 3,
                             "streak": "L1",
                             "last3": "LWL",
                             "avgMargin": -13.25,
@@ -1892,21 +1892,9 @@
                             "rosterUrl": "./rosters/roster15.htm"
                         },
                         {
-                            "team": "Atletico Madrid",
-                            "record": "1-3",
-                            "standingRank": 8,
-                            "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": -6.25,
-                            "pointDiff": -25,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster11.htm"
-                        },
-                        {
                             "team": "Bayern Munich",
                             "record": "2-4",
-                            "standingRank": 7,
+                            "standingRank": 1,
                             "streak": "W1",
                             "last3": "LLW",
                             "avgMargin": -4.5,
@@ -1914,6 +1902,18 @@
                             "gapToLine": 1,
                             "status": "above_safety",
                             "rosterUrl": "./rosters/roster7.htm"
+                        },
+                        {
+                            "team": "AC Milan",
+                            "record": "2-4",
+                            "standingRank": 2,
+                            "streak": "L1",
+                            "last3": "LWL",
+                            "avgMargin": -2.0,
+                            "pointDiff": -12,
+                            "gapToLine": 1,
+                            "status": "above_safety",
+                            "rosterUrl": "./rosters/roster9.htm"
                         }
                     ]
                 },
@@ -1928,7 +1928,7 @@
                         {
                             "team": "Manchester City",
                             "record": "4-1",
-                            "standingRank": 5,
+                            "standingRank": 8,
                             "streak": "W3",
                             "last3": "WWW",
                             "avgMargin": 9.8,
@@ -1938,21 +1938,9 @@
                             "rosterUrl": "./rosters/roster28.htm"
                         },
                         {
-                            "team": "Arsenal",
-                            "record": "4-1",
-                            "standingRank": 1,
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 6.6,
-                            "pointDiff": 33,
-                            "gapToLine": 0,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster23.htm"
-                        },
-                        {
                             "team": "Valencia",
                             "record": "3-1",
-                            "standingRank": 3,
+                            "standingRank": 7,
                             "streak": "L1",
                             "last3": "WWL",
                             "avgMargin": 12.75,
@@ -1960,6 +1948,18 @@
                             "gapToLine": 1,
                             "status": "chasing",
                             "rosterUrl": "./rosters/roster25.htm"
+                        },
+                        {
+                            "team": "Juventus",
+                            "record": "3-2",
+                            "standingRank": 3,
+                            "streak": "L1",
+                            "last3": "WWL",
+                            "avgMargin": -0.6,
+                            "pointDiff": -3,
+                            "gapToLine": 1,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster14.htm"
                         }
                     ]
                 }
@@ -1970,8 +1970,8 @@
                     "tier": "Tier 1",
                     "type": "relegation",
                     "slots": 2,
-                    "lineTeam": "AC Milan",
-                    "lineRecord": "2-4",
+                    "lineTeam": "Brighton",
+                    "lineRecord": "2-3",
                     "entries": [
                         {
                             "team": "AFC Richmond",
@@ -1986,21 +1986,9 @@
                             "rosterUrl": "./rosters/roster12.htm"
                         },
                         {
-                            "team": "AC Milan",
-                            "record": "2-4",
-                            "standingRank": 7,
-                            "streak": "L1",
-                            "last3": "LWL",
-                            "avgMargin": -2.0,
-                            "pointDiff": -12,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster9.htm"
-                        },
-                        {
                             "team": "Brighton",
                             "record": "2-3",
-                            "standingRank": 1,
+                            "standingRank": 3,
                             "streak": "W1",
                             "last3": "LLW",
                             "avgMargin": -0.8,
@@ -2012,7 +2000,7 @@
                         {
                             "team": "Real Madrid",
                             "record": "3-2",
-                            "standingRank": 3,
+                            "standingRank": 2,
                             "streak": "L2",
                             "last3": "WLL",
                             "avgMargin": -3.6,
@@ -2020,6 +2008,18 @@
                             "gapToLine": 1,
                             "status": "above_safety",
                             "rosterUrl": "./rosters/roster8.htm"
+                        },
+                        {
+                            "team": "Benfica",
+                            "record": "3-2",
+                            "standingRank": 5,
+                            "streak": "W3",
+                            "last3": "WWW",
+                            "avgMargin": -0.6,
+                            "pointDiff": -3,
+                            "gapToLine": 1,
+                            "status": "above_safety",
+                            "rosterUrl": "./rosters/roster13.htm"
                         }
                     ]
                 },
@@ -2028,37 +2028,37 @@
                     "tier": "Tier 2",
                     "type": "promotion",
                     "slots": 2,
-                    "lineTeam": "Ajax",
+                    "lineTeam": "Chelsea",
                     "lineRecord": "3-2",
                     "entries": [
                         {
-                            "team": "FL Fart",
-                            "record": "4-0",
-                            "standingRank": 2,
-                            "streak": "W4",
-                            "last3": "WWW",
-                            "avgMargin": 11.5,
-                            "pointDiff": 46,
-                            "gapToLine": -1,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster27.htm"
-                        },
-                        {
-                            "team": "Ajax",
-                            "record": "3-2",
-                            "standingRank": 1,
+                            "team": "Arsenal",
+                            "record": "4-1",
+                            "standingRank": 7,
                             "streak": "W1",
                             "last3": "WLW",
-                            "avgMargin": 11.8,
-                            "pointDiff": 59,
+                            "avgMargin": 6.6,
+                            "pointDiff": 33,
+                            "gapToLine": -1,
+                            "status": "on_or_above_line",
+                            "rosterUrl": "./rosters/roster23.htm"
+                        },
+                        {
+                            "team": "Chelsea",
+                            "record": "3-2",
+                            "standingRank": 5,
+                            "streak": "W1",
+                            "last3": "LLW",
+                            "avgMargin": 2.0,
+                            "pointDiff": 10,
                             "gapToLine": 0,
                             "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster18.htm"
+                            "rosterUrl": "./rosters/roster17.htm"
                         },
                         {
                             "team": "AC Sparta Praha",
                             "record": "3-3",
-                            "standingRank": 5,
+                            "standingRank": 4,
                             "streak": "L2",
                             "last3": "WLL",
                             "avgMargin": 1.5,
@@ -2070,7 +2070,7 @@
                         {
                             "team": "Aston Villa",
                             "record": "3-2",
-                            "standingRank": 4,
+                            "standingRank": 6,
                             "streak": "L1",
                             "last3": "LWL",
                             "avgMargin": -0.6,
@@ -2092,7 +2092,7 @@
                         {
                             "team": "Marseille",
                             "record": "1-3",
-                            "standingRank": 6,
+                            "standingRank": 3,
                             "streak": "L1",
                             "last3": "LWL",
                             "avgMargin": -13.25,
@@ -2102,21 +2102,9 @@
                             "rosterUrl": "./rosters/roster15.htm"
                         },
                         {
-                            "team": "Atletico Madrid",
-                            "record": "1-3",
-                            "standingRank": 8,
-                            "streak": "L2",
-                            "last3": "WLL",
-                            "avgMargin": -6.25,
-                            "pointDiff": -25,
-                            "gapToLine": 0,
-                            "status": "on_or_below_line",
-                            "rosterUrl": "./rosters/roster11.htm"
-                        },
-                        {
                             "team": "Bayern Munich",
                             "record": "2-4",
-                            "standingRank": 7,
+                            "standingRank": 1,
                             "streak": "W1",
                             "last3": "LLW",
                             "avgMargin": -4.5,
@@ -2124,6 +2112,18 @@
                             "gapToLine": 1,
                             "status": "above_safety",
                             "rosterUrl": "./rosters/roster7.htm"
+                        },
+                        {
+                            "team": "AC Milan",
+                            "record": "2-4",
+                            "standingRank": 2,
+                            "streak": "L1",
+                            "last3": "LWL",
+                            "avgMargin": -2.0,
+                            "pointDiff": -12,
+                            "gapToLine": 1,
+                            "status": "above_safety",
+                            "rosterUrl": "./rosters/roster9.htm"
                         }
                     ]
                 },
@@ -2138,7 +2138,7 @@
                         {
                             "team": "Manchester City",
                             "record": "4-1",
-                            "standingRank": 5,
+                            "standingRank": 8,
                             "streak": "W3",
                             "last3": "WWW",
                             "avgMargin": 9.8,
@@ -2148,21 +2148,9 @@
                             "rosterUrl": "./rosters/roster28.htm"
                         },
                         {
-                            "team": "Arsenal",
-                            "record": "4-1",
-                            "standingRank": 1,
-                            "streak": "W1",
-                            "last3": "WLW",
-                            "avgMargin": 6.6,
-                            "pointDiff": 33,
-                            "gapToLine": 0,
-                            "status": "on_or_above_line",
-                            "rosterUrl": "./rosters/roster23.htm"
-                        },
-                        {
                             "team": "Valencia",
                             "record": "3-1",
-                            "standingRank": 3,
+                            "standingRank": 7,
                             "streak": "L1",
                             "last3": "WWL",
                             "avgMargin": 12.75,
@@ -2170,6 +2158,18 @@
                             "gapToLine": 1,
                             "status": "chasing",
                             "rosterUrl": "./rosters/roster25.htm"
+                        },
+                        {
+                            "team": "Juventus",
+                            "record": "3-2",
+                            "standingRank": 3,
+                            "streak": "L1",
+                            "last3": "WWL",
+                            "avgMargin": -0.6,
+                            "pointDiff": -3,
+                            "gapToLine": 1,
+                            "status": "chasing",
+                            "rosterUrl": "./rosters/roster14.htm"
                         }
                     ]
                 }
@@ -2212,7 +2212,7 @@
                     "team": "Manchester City",
                     "tier": "Tier 3",
                     "tierShort": "T3",
-                    "standingRank": 5,
+                    "standingRank": 8,
                     "rosterUrl": "./rosters/roster28.htm",
                     "rosterFile": "roster28.htm",
                     "standingsLast10": "8-2",
@@ -2226,7 +2226,7 @@
                     "streak": "W3",
                     "recentResults": [
                         {
-                            "date": "4/04/1986",
+                            "date": "4/4/1986",
                             "opponent": "Tottenham Hotspur",
                             "result": "W",
                             "margin": 6,
@@ -2235,7 +2235,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "8/04/1986",
+                            "date": "4/8/1986",
                             "opponent": "Juventus",
                             "result": "L",
                             "margin": 11,
@@ -2244,7 +2244,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "12/04/1986",
+                            "date": "4/12/1986",
                             "opponent": "Barcelona",
                             "result": "W",
                             "margin": 33,
@@ -2253,7 +2253,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "16/04/1986",
+                            "date": "4/16/1986",
                             "opponent": "Arsenal",
                             "result": "W",
                             "margin": 10,
@@ -2262,7 +2262,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "17/04/1986",
+                            "date": "4/17/1986",
                             "opponent": "Juventus",
                             "result": "W",
                             "margin": 11,
@@ -2272,7 +2272,7 @@
                         }
                     ],
                     "bestWin": {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Barcelona",
                         "result": "W",
                         "margin": 33,
@@ -2281,7 +2281,7 @@
                         "section": "Regular Season"
                     },
                     "worstLoss": {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Juventus",
                         "result": "L",
                         "margin": 11,
@@ -2292,7 +2292,7 @@
                     "closeGames": [],
                     "blowoutWins": [
                         {
-                            "date": "12/04/1986",
+                            "date": "4/12/1986",
                             "opponent": "Barcelona",
                             "result": "W",
                             "margin": 33,
@@ -2308,9 +2308,9 @@
                 },
                 {
                     "team": "FL Fart",
-                    "tier": "Tier 2",
-                    "tierShort": "T2",
-                    "standingRank": 2,
+                    "tier": "Tier 1",
+                    "tierShort": "T1",
+                    "standingRank": 8,
                     "rosterUrl": "./rosters/roster27.htm",
                     "rosterFile": "roster27.htm",
                     "standingsLast10": "8-2",
@@ -2324,7 +2324,7 @@
                     "streak": "W4",
                     "recentResults": [
                         {
-                            "date": "7/04/1986",
+                            "date": "4/7/1986",
                             "opponent": "Ajax",
                             "result": "W",
                             "margin": 8,
@@ -2333,7 +2333,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "12/04/1986",
+                            "date": "4/12/1986",
                             "opponent": "Bayern Munich",
                             "result": "W",
                             "margin": 3,
@@ -2342,7 +2342,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "16/04/1986",
+                            "date": "4/16/1986",
                             "opponent": "AC Sparta Praha",
                             "result": "W",
                             "margin": 31,
@@ -2351,7 +2351,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "17/04/1986",
+                            "date": "4/17/1986",
                             "opponent": "AC Sparta Praha",
                             "result": "W",
                             "margin": 4,
@@ -2361,7 +2361,7 @@
                         }
                     ],
                     "bestWin": {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "AC Sparta Praha",
                         "result": "W",
                         "margin": 31,
@@ -2372,7 +2372,7 @@
                     "worstLoss": null,
                     "closeGames": [
                         {
-                            "date": "12/04/1986",
+                            "date": "4/12/1986",
                             "opponent": "Bayern Munich",
                             "result": "W",
                             "margin": 3,
@@ -2381,7 +2381,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "17/04/1986",
+                            "date": "4/17/1986",
                             "opponent": "AC Sparta Praha",
                             "result": "W",
                             "margin": 4,
@@ -2392,7 +2392,7 @@
                     ],
                     "blowoutWins": [
                         {
-                            "date": "16/04/1986",
+                            "date": "4/16/1986",
                             "opponent": "AC Sparta Praha",
                             "result": "W",
                             "margin": 31,
@@ -2408,9 +2408,9 @@
                 },
                 {
                     "team": "Arsenal",
-                    "tier": "Tier 3",
-                    "tierShort": "T3",
-                    "standingRank": 1,
+                    "tier": "Tier 2",
+                    "tierShort": "T2",
+                    "standingRank": 7,
                     "rosterUrl": "./rosters/roster23.htm",
                     "rosterFile": "roster23.htm",
                     "standingsLast10": "7-3",
@@ -2424,7 +2424,7 @@
                     "streak": "W1",
                     "recentResults": [
                         {
-                            "date": "4/04/1986",
+                            "date": "4/4/1986",
                             "opponent": "Manchester United",
                             "result": "W",
                             "margin": 14,
@@ -2433,7 +2433,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "8/04/1986",
+                            "date": "4/8/1986",
                             "opponent": "Manchester United",
                             "result": "W",
                             "margin": 10,
@@ -2442,7 +2442,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "12/04/1986",
+                            "date": "4/12/1986",
                             "opponent": "Tottenham Hotspur",
                             "result": "W",
                             "margin": 8,
@@ -2451,7 +2451,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "16/04/1986",
+                            "date": "4/16/1986",
                             "opponent": "Manchester City",
                             "result": "L",
                             "margin": 10,
@@ -2460,7 +2460,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "17/04/1986",
+                            "date": "4/17/1986",
                             "opponent": "Barcelona",
                             "result": "W",
                             "margin": 11,
@@ -2470,7 +2470,7 @@
                         }
                     ],
                     "bestWin": {
-                        "date": "4/04/1986",
+                        "date": "4/4/1986",
                         "opponent": "Manchester United",
                         "result": "W",
                         "margin": 14,
@@ -2479,7 +2479,7 @@
                         "section": "Regular Season"
                     },
                     "worstLoss": {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Manchester City",
                         "result": "L",
                         "margin": 10,
@@ -2500,7 +2500,7 @@
                     "team": "Manchester United",
                     "tier": "Tier 3",
                     "tierShort": "T3",
-                    "standingRank": 8,
+                    "standingRank": 1,
                     "rosterUrl": "./rosters/roster5.htm",
                     "rosterFile": "roster5.htm",
                     "standingsLast10": "1-9",
@@ -2514,7 +2514,7 @@
                     "streak": "L5",
                     "recentResults": [
                         {
-                            "date": "4/04/1986",
+                            "date": "4/4/1986",
                             "opponent": "Arsenal",
                             "result": "L",
                             "margin": 14,
@@ -2523,7 +2523,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "8/04/1986",
+                            "date": "4/8/1986",
                             "opponent": "Arsenal",
                             "result": "L",
                             "margin": 10,
@@ -2532,7 +2532,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "12/04/1986",
+                            "date": "4/12/1986",
                             "opponent": "Valencia",
                             "result": "L",
                             "margin": 17,
@@ -2541,7 +2541,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "16/04/1986",
+                            "date": "4/16/1986",
                             "opponent": "Juventus",
                             "result": "L",
                             "margin": 10,
@@ -2550,7 +2550,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "17/04/1986",
+                            "date": "4/17/1986",
                             "opponent": "Tottenham Hotspur",
                             "result": "L",
                             "margin": 25,
@@ -2561,7 +2561,7 @@
                     ],
                     "bestWin": null,
                     "worstLoss": {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Tottenham Hotspur",
                         "result": "L",
                         "margin": 25,
@@ -2573,7 +2573,7 @@
                     "blowoutWins": [],
                     "blowoutLosses": [
                         {
-                            "date": "12/04/1986",
+                            "date": "4/12/1986",
                             "opponent": "Valencia",
                             "result": "L",
                             "margin": 17,
@@ -2582,7 +2582,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "17/04/1986",
+                            "date": "4/17/1986",
                             "opponent": "Tottenham Hotspur",
                             "result": "L",
                             "margin": 25,
@@ -2599,7 +2599,7 @@
                     "team": "Marseille",
                     "tier": "Tier 2",
                     "tierShort": "T2",
-                    "standingRank": 6,
+                    "standingRank": 3,
                     "rosterUrl": "./rosters/roster15.htm",
                     "rosterFile": "roster15.htm",
                     "standingsLast10": "3-7",
@@ -2613,7 +2613,7 @@
                     "streak": "L1",
                     "recentResults": [
                         {
-                            "date": "5/04/1986",
+                            "date": "4/5/1986",
                             "opponent": "Inter Milan",
                             "result": "L",
                             "margin": 36,
@@ -2622,7 +2622,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "10/04/1986",
+                            "date": "4/10/1986",
                             "opponent": "AC Sparta Praha",
                             "result": "L",
                             "margin": 22,
@@ -2631,7 +2631,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "16/04/1986",
+                            "date": "4/16/1986",
                             "opponent": "Bayern Munich",
                             "result": "W",
                             "margin": 6,
@@ -2640,7 +2640,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "17/04/1986",
+                            "date": "4/17/1986",
                             "opponent": "Ajax",
                             "result": "L",
                             "margin": 1,
@@ -2650,7 +2650,7 @@
                         }
                     ],
                     "bestWin": {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Bayern Munich",
                         "result": "W",
                         "margin": 6,
@@ -2659,7 +2659,7 @@
                         "section": "Regular Season"
                     },
                     "worstLoss": {
-                        "date": "5/04/1986",
+                        "date": "4/5/1986",
                         "opponent": "Inter Milan",
                         "result": "L",
                         "margin": 36,
@@ -2669,7 +2669,7 @@
                     },
                     "closeGames": [
                         {
-                            "date": "17/04/1986",
+                            "date": "4/17/1986",
                             "opponent": "Ajax",
                             "result": "L",
                             "margin": 1,
@@ -2681,7 +2681,7 @@
                     "blowoutWins": [],
                     "blowoutLosses": [
                         {
-                            "date": "5/04/1986",
+                            "date": "4/5/1986",
                             "opponent": "Inter Milan",
                             "result": "L",
                             "margin": 36,
@@ -2690,7 +2690,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "10/04/1986",
+                            "date": "4/10/1986",
                             "opponent": "AC Sparta Praha",
                             "result": "L",
                             "margin": 22,
@@ -2721,7 +2721,7 @@
                     "streak": "L3",
                     "recentResults": [
                         {
-                            "date": "3/04/1986",
+                            "date": "4/3/1986",
                             "opponent": "Crystal Palace",
                             "result": "W",
                             "margin": 7,
@@ -2730,7 +2730,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "9/04/1986",
+                            "date": "4/9/1986",
                             "opponent": "Chelsea",
                             "result": "L",
                             "margin": 12,
@@ -2739,7 +2739,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "13/04/1986",
+                            "date": "4/13/1986",
                             "opponent": "Paris Saint-Germain",
                             "result": "L",
                             "margin": 13,
@@ -2748,7 +2748,7 @@
                             "section": "Regular Season"
                         },
                         {
-                            "date": "17/04/1986",
+                            "date": "4/17/1986",
                             "opponent": "Brighton",
                             "result": "L",
                             "margin": 16,
@@ -2758,7 +2758,7 @@
                         }
                     ],
                     "bestWin": {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "Crystal Palace",
                         "result": "W",
                         "margin": 7,
@@ -2767,7 +2767,7 @@
                         "section": "Regular Season"
                     },
                     "worstLoss": {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Brighton",
                         "result": "L",
                         "margin": 16,
@@ -2779,7 +2779,7 @@
                     "blowoutWins": [],
                     "blowoutLosses": [
                         {
-                            "date": "17/04/1986",
+                            "date": "4/17/1986",
                             "opponent": "Brighton",
                             "result": "L",
                             "margin": 16,
@@ -2849,7 +2849,7 @@
                     "data": {
                         "section": "Regular Season",
                         "sectionSlug": "regular-season",
-                        "date": "1/04/1986",
+                        "date": "4/1/1986",
                         "matchupText": "@Crystal Palace 139, Benfica 92",
                         "boxscoreUrl": "./boxes/box169-1.htm",
                         "boxscoreFile": "box169-1.htm",
@@ -2879,7 +2879,7 @@
                         "streak": "W3",
                         "avgMargin": 9.8,
                         "bestWin": {
-                            "date": "12/04/1986",
+                            "date": "4/12/1986",
                             "opponent": "Barcelona",
                             "result": "W",
                             "margin": 33,
@@ -2900,7 +2900,7 @@
                     "data": {
                         "section": "Regular Season",
                         "sectionSlug": "regular-season",
-                        "date": "7/04/1986",
+                        "date": "4/7/1986",
                         "matchupText": "Paris Saint-Germain 117, @Benfica 116",
                         "boxscoreUrl": "./boxes/box175-1.htm",
                         "boxscoreFile": "box175-1.htm",
@@ -2930,7 +2930,7 @@
                         "streak": "L5",
                         "avgMargin": -15.2,
                         "worstLoss": {
-                            "date": "17/04/1986",
+                            "date": "4/17/1986",
                             "opponent": "Tottenham Hotspur",
                             "result": "L",
                             "margin": 25,
@@ -2945,27 +2945,27 @@
                     "id": "upset-of-the-month",
                     "type": "game",
                     "title": "Upset of the Month",
-                    "summary": "Crystal Palace landed the sharpest upset of the sim by beating Brighton.",
-                    "tier": "Tier 1",
+                    "summary": "Valencia landed the sharpest upset of the sim by beating Manchester United.",
+                    "tier": "Tier 3",
                     "importance": 82,
                     "data": {
                         "section": "Regular Season",
                         "sectionSlug": "regular-season",
-                        "date": "12/04/1986",
-                        "matchupText": "@Crystal Palace 115, Brighton 86",
-                        "boxscoreUrl": "./boxes/box180-1.htm",
-                        "boxscoreFile": "box180-1.htm",
-                        "homeTeam": "roster6",
-                        "homeTeamName": "Crystal Palace",
-                        "homeScore": 115,
-                        "awayTeam": "roster10",
-                        "awayTeamName": "Brighton",
-                        "awayScore": 86,
-                        "winner": "roster6",
-                        "winnerName": "Crystal Palace",
-                        "loser": "roster10",
-                        "loserName": "Brighton",
-                        "margin": 29
+                        "date": "4/12/1986",
+                        "matchupText": "Valencia 116, @Manchester United 99",
+                        "boxscoreUrl": "./boxes/box180-6.htm",
+                        "boxscoreFile": "box180-6.htm",
+                        "homeTeam": "roster5",
+                        "homeTeamName": "Manchester United",
+                        "homeScore": 99,
+                        "awayTeam": "roster25",
+                        "awayTeamName": "Valencia",
+                        "awayScore": 116,
+                        "winner": "roster25",
+                        "winnerName": "Valencia",
+                        "loser": "roster5",
+                        "loserName": "Manchester United",
+                        "margin": 17
                     }
                 }
             ],
@@ -2987,7 +2987,7 @@
                         "name": "Steve Johnson",
                         "url": "../players/player897.htm",
                         "pos": "C",
-                        "age": "26",
+                        "age": "25",
                         "overall": "126",
                         "potential": "128"
                     }
@@ -3031,7 +3031,7 @@
                         "name": "Larry Nance",
                         "url": "../players/player880.htm",
                         "pos": "C",
-                        "age": "24",
+                        "age": "25",
                         "overall": "130",
                         "potential": "130"
                     }
@@ -3039,12 +3039,12 @@
                 {
                     "team": "Atletico Madrid",
                     "starPlayer": {
-                        "name": "Johnny Moore",
-                        "url": "../players/player727.htm",
-                        "pos": "PG",
-                        "age": "26",
-                        "overall": "126",
-                        "potential": "126"
+                        "name": "Reggie Miller",
+                        "url": "../players/player55.htm",
+                        "pos": "SG",
+                        "age": "21",
+                        "overall": "130",
+                        "potential": "154"
                     }
                 },
                 {
@@ -3086,7 +3086,7 @@
                         "name": "Kiki Vandeweghe",
                         "url": "../players/player701.htm",
                         "pos": "SG",
-                        "age": "26",
+                        "age": "25",
                         "overall": "172",
                         "potential": "173"
                     }
@@ -3105,12 +3105,12 @@
                 {
                     "team": "Crystal Palace",
                     "starPlayer": {
-                        "name": "Darrell Griffith",
-                        "url": "../players/player703.htm",
-                        "pos": "SG",
+                        "name": "Reggie Theus",
+                        "url": "../players/player708.htm",
+                        "pos": "PG",
                         "age": "26",
                         "overall": "149",
-                        "potential": "149"
+                        "potential": "151"
                     }
                 },
                 {
@@ -3127,12 +3127,12 @@
                 {
                     "team": "Inter Milan",
                     "starPlayer": {
-                        "name": "World B. Free",
-                        "url": "../players/player1048.htm",
-                        "pos": "SG",
-                        "age": "29",
-                        "overall": "141",
-                        "potential": "141"
+                        "name": "David West",
+                        "url": "../players/player262.htm",
+                        "pos": "PF",
+                        "age": "26",
+                        "overall": "118",
+                        "potential": "123"
                     }
                 },
                 {
@@ -3160,12 +3160,12 @@
                 {
                     "team": "Manchester United",
                     "starPlayer": {
-                        "name": "Mike McGee",
-                        "url": "../players/player736.htm",
-                        "pos": "SG",
-                        "age": "24",
-                        "overall": "120",
-                        "potential": "129"
+                        "name": "Dewayne Dedmon",
+                        "url": "../players/player183.htm",
+                        "pos": "C",
+                        "age": "25",
+                        "overall": "110",
+                        "potential": "114"
                     }
                 },
                 {
@@ -3182,12 +3182,12 @@
                 {
                     "team": "Monaco",
                     "starPlayer": {
-                        "name": "Andre Drummond",
-                        "url": "../players/player378.htm",
-                        "pos": "PF",
+                        "name": "Alvin Robertson",
+                        "url": "../players/player423.htm",
+                        "pos": "SG",
                         "age": "22",
-                        "overall": "131",
-                        "potential": "131"
+                        "overall": "121",
+                        "potential": "151"
                     }
                 },
                 {
@@ -3309,8 +3309,8 @@
                             "usage": 35.6
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 96.69
+                        "leaderboardPresence": false,
+                        "candidateScore": 92.69
                     },
                     {
                         "name": "Moses Malone",
@@ -3339,8 +3339,8 @@
                             "usage": 30.0
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 92.48
+                        "leaderboardPresence": false,
+                        "candidateScore": 88.48
                     },
                     {
                         "name": "Joe Barry Carroll",
@@ -3369,8 +3369,8 @@
                             "usage": 32.4
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 91.74
+                        "leaderboardPresence": false,
+                        "candidateScore": 87.74
                     },
                     {
                         "name": "Sidney Moncrief",
@@ -3399,13 +3399,13 @@
                             "usage": 35.5
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 84.84
+                        "leaderboardPresence": false,
+                        "candidateScore": 80.84
                     },
                     {
                         "name": "Tom Chambers",
-                        "team": "roster12",
-                        "teamName": "AFC Richmond",
+                        "team": "FA",
+                        "teamName": "FA",
                         "pos": "PF",
                         "url": "../players/player724.htm",
                         "overall": "133",
@@ -3429,13 +3429,13 @@
                             "usage": 33.3
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 75.66
+                        "leaderboardPresence": false,
+                        "candidateScore": 71.66
                     },
                     {
                         "name": "Alex English",
-                        "team": "roster6",
-                        "teamName": "Crystal Palace",
+                        "team": "FA",
+                        "teamName": "FA",
                         "pos": "PF",
                         "url": "../players/player711.htm",
                         "overall": "135",
@@ -3493,34 +3493,34 @@
                         "candidateScore": 63.94
                     },
                     {
-                        "name": "Reggie Theus",
-                        "team": "roster6",
-                        "teamName": "Crystal Palace",
-                        "pos": "PG",
-                        "url": "../players/player708.htm",
-                        "overall": "149",
+                        "name": "Kevin McHale",
+                        "team": "roster7",
+                        "teamName": "Bayern Munich",
+                        "pos": "PF",
+                        "url": "../players/player717.htm",
+                        "overall": "119",
                         "season": {
                             "games": 42,
-                            "minutes": 36.2,
-                            "points": 17.0,
-                            "rebounds": 4.4,
-                            "assists": 8.9,
-                            "steals": 1.9,
-                            "blocks": 0.2,
-                            "fgPct": 0.501,
-                            "ftPct": 0.811,
-                            "threePct": 0.286
+                            "minutes": 38.0,
+                            "points": 27.0,
+                            "rebounds": 8.0,
+                            "assists": 2.6,
+                            "steals": 0.4,
+                            "blocks": 1.7,
+                            "fgPct": 0.509,
+                            "ftPct": 0.784,
+                            "threePct": 0.172
                         },
                         "efficiency": {
-                            "per": 18.3,
-                            "ewa": 5.5,
-                            "plusMinus": 2.9,
-                            "tsPct": 0.577,
-                            "usage": 22.9
+                            "per": 19.0,
+                            "ewa": 5.9,
+                            "plusMinus": -5.0,
+                            "tsPct": 0.582,
+                            "usage": 28.0
                         },
-                        "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 57.03
+                        "awardWinner": false,
+                        "leaderboardPresence": false,
+                        "candidateScore": 54.12
                     }
                 ],
                 "Tier 2": [
@@ -3551,8 +3551,8 @@
                             "usage": 34.6
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 109.16
+                        "leaderboardPresence": false,
+                        "candidateScore": 105.16
                     },
                     {
                         "name": "Larry Nance",
@@ -3581,8 +3581,8 @@
                             "usage": 27.1
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 96.13
+                        "leaderboardPresence": false,
+                        "candidateScore": 92.13
                     },
                     {
                         "name": "Robert Parish",
@@ -3611,13 +3611,13 @@
                             "usage": 27.8
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 85.19
+                        "leaderboardPresence": false,
+                        "candidateScore": 81.19
                     },
                     {
                         "name": "Dennis Johnson",
-                        "team": "roster11",
-                        "teamName": "Atletico Madrid",
+                        "team": "roster23",
+                        "teamName": "Arsenal",
                         "pos": "SG",
                         "url": "../players/player715.htm",
                         "overall": "125",
@@ -3641,8 +3641,8 @@
                             "usage": 29.9
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 71.16
+                        "leaderboardPresence": false,
+                        "candidateScore": 67.16
                     },
                     {
                         "name": "Jeff Ruland",
@@ -3671,8 +3671,8 @@
                             "usage": 24.9
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 66.16
+                        "leaderboardPresence": false,
+                        "candidateScore": 62.16
                     },
                     {
                         "name": "Larry Drew",
@@ -3701,8 +3701,8 @@
                             "usage": 29.1
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 64.92
+                        "leaderboardPresence": false,
+                        "candidateScore": 60.92
                     },
                     {
                         "name": "Andre Iguodala",
@@ -3731,13 +3731,13 @@
                             "usage": 26.7
                         },
                         "awardWinner": false,
-                        "leaderboardPresence": true,
-                        "candidateScore": 62.16
+                        "leaderboardPresence": false,
+                        "candidateScore": 58.16
                     },
                     {
                         "name": "George Gervin",
-                        "team": "roster26",
-                        "teamName": "Inter Milan",
+                        "team": "FA",
+                        "teamName": "FA",
                         "pos": "SG",
                         "url": "../players/player1046.htm",
                         "overall": "139",
@@ -3793,8 +3793,8 @@
                             "usage": 32.3
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 79.19
+                        "leaderboardPresence": false,
+                        "candidateScore": 75.19
                     },
                     {
                         "name": "Orlando Woolridge",
@@ -3823,8 +3823,8 @@
                             "usage": 31.2
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 77.28
+                        "leaderboardPresence": false,
+                        "candidateScore": 73.28
                     },
                     {
                         "name": "Chris Bosh",
@@ -3853,8 +3853,8 @@
                             "usage": 23.8
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 77.16
+                        "leaderboardPresence": false,
+                        "candidateScore": 73.16
                     },
                     {
                         "name": "Isiah Thomas",
@@ -3883,8 +3883,8 @@
                             "usage": 27.9
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 69.44
+                        "leaderboardPresence": false,
+                        "candidateScore": 65.44
                     },
                     {
                         "name": "John Drew",
@@ -3913,68 +3913,8 @@
                             "usage": 27.2
                         },
                         "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 69.35
-                    },
-                    {
-                        "name": "Andre Drummond",
-                        "team": "roster20",
-                        "teamName": "Monaco",
-                        "pos": "PF",
-                        "url": "../players/player378.htm",
-                        "overall": "131",
-                        "season": {
-                            "games": 42,
-                            "minutes": 35.8,
-                            "points": 20.7,
-                            "rebounds": 11.6,
-                            "assists": 1.7,
-                            "steals": 1.3,
-                            "blocks": 1.8,
-                            "fgPct": 0.582,
-                            "ftPct": 0.423,
-                            "threePct": 0.0
-                        },
-                        "efficiency": {
-                            "per": 22.1,
-                            "ewa": 7.9,
-                            "plusMinus": -1.6,
-                            "tsPct": 0.566,
-                            "usage": 24.5
-                        },
-                        "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 67.98
-                    },
-                    {
-                        "name": "Otis Thorpe",
-                        "team": "roster25",
-                        "teamName": "Valencia",
-                        "pos": "PF",
-                        "url": "../players/player178.htm",
-                        "overall": "114",
-                        "season": {
-                            "games": 42,
-                            "minutes": 35.3,
-                            "points": 25.0,
-                            "rebounds": 8.8,
-                            "assists": 2.2,
-                            "steals": 0.4,
-                            "blocks": 0.6,
-                            "fgPct": 0.622,
-                            "ftPct": 0.68,
-                            "threePct": 0.0
-                        },
-                        "efficiency": {
-                            "per": 21.0,
-                            "ewa": 7.0,
-                            "plusMinus": 4.2,
-                            "tsPct": 0.652,
-                            "usage": 25.4
-                        },
-                        "awardWinner": true,
-                        "leaderboardPresence": true,
-                        "candidateScore": 65.45
+                        "leaderboardPresence": false,
+                        "candidateScore": 65.35
                     },
                     {
                         "name": "Paul Pierce",
@@ -4005,6 +3945,66 @@
                         "awardWinner": true,
                         "leaderboardPresence": false,
                         "candidateScore": 65.18
+                    },
+                    {
+                        "name": "Andre Drummond",
+                        "team": "FA",
+                        "teamName": "FA",
+                        "pos": "PF",
+                        "url": "../players/player378.htm",
+                        "overall": "131",
+                        "season": {
+                            "games": 42,
+                            "minutes": 35.8,
+                            "points": 20.7,
+                            "rebounds": 11.6,
+                            "assists": 1.7,
+                            "steals": 1.3,
+                            "blocks": 1.8,
+                            "fgPct": 0.582,
+                            "ftPct": 0.423,
+                            "threePct": 0.0
+                        },
+                        "efficiency": {
+                            "per": 22.1,
+                            "ewa": 7.9,
+                            "plusMinus": -1.6,
+                            "tsPct": 0.566,
+                            "usage": 24.5
+                        },
+                        "awardWinner": true,
+                        "leaderboardPresence": false,
+                        "candidateScore": 63.98
+                    },
+                    {
+                        "name": "Otis Thorpe",
+                        "team": "roster25",
+                        "teamName": "Valencia",
+                        "pos": "PF",
+                        "url": "../players/player178.htm",
+                        "overall": "114",
+                        "season": {
+                            "games": 42,
+                            "minutes": 35.3,
+                            "points": 25.0,
+                            "rebounds": 8.8,
+                            "assists": 2.2,
+                            "steals": 0.4,
+                            "blocks": 0.6,
+                            "fgPct": 0.622,
+                            "ftPct": 0.68,
+                            "threePct": 0.0
+                        },
+                        "efficiency": {
+                            "per": 21.0,
+                            "ewa": 7.0,
+                            "plusMinus": 4.2,
+                            "tsPct": 0.652,
+                            "usage": 25.4
+                        },
+                        "awardWinner": true,
+                        "leaderboardPresence": false,
+                        "candidateScore": 61.45
                     }
                 ]
             },

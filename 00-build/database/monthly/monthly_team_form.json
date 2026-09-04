@@ -6,10 +6,110 @@
     "tiers": {
         "Tier 1": [
             {
+                "team": "FL Fart",
+                "tier": "Tier 1",
+                "tierShort": "T1",
+                "standingRank": 8,
+                "rosterUrl": "./rosters/roster27.htm",
+                "rosterFile": "roster27.htm",
+                "standingsLast10": "8-2",
+                "wins": 4,
+                "losses": 0,
+                "games": 4,
+                "pointsFor": 465,
+                "pointsAgainst": 419,
+                "pointDiff": 46,
+                "avgMargin": 11.5,
+                "streak": "W4",
+                "recentResults": [
+                    {
+                        "date": "4/7/1986",
+                        "opponent": "Ajax",
+                        "result": "W",
+                        "margin": 8,
+                        "score": "@FL Fart 128, Ajax 120",
+                        "boxscoreUrl": "./boxes/box175-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1986",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "@FL Fart 107, Bayern Munich 104",
+                        "boxscoreUrl": "./boxes/box180-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1986",
+                        "opponent": "AC Sparta Praha",
+                        "result": "W",
+                        "margin": 31,
+                        "score": "@FL Fart 118, AC Sparta Praha 87",
+                        "boxscoreUrl": "./boxes/box184-5.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1986",
+                        "opponent": "AC Sparta Praha",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "FL Fart 112, @AC Sparta Praha 108",
+                        "boxscoreUrl": "./boxes/box185-7.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/16/1986",
+                    "opponent": "AC Sparta Praha",
+                    "result": "W",
+                    "margin": 31,
+                    "score": "@FL Fart 118, AC Sparta Praha 87",
+                    "boxscoreUrl": "./boxes/box184-5.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": null,
+                "closeGames": [
+                    {
+                        "date": "4/12/1986",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 3,
+                        "score": "@FL Fart 107, Bayern Munich 104",
+                        "boxscoreUrl": "./boxes/box180-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1986",
+                        "opponent": "AC Sparta Praha",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "FL Fart 112, @AC Sparta Praha 108",
+                        "boxscoreUrl": "./boxes/box185-7.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [
+                    {
+                        "date": "4/16/1986",
+                        "opponent": "AC Sparta Praha",
+                        "result": "W",
+                        "margin": 31,
+                        "score": "@FL Fart 118, AC Sparta Praha 87",
+                        "boxscoreUrl": "./boxes/box184-5.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [],
+                "record": "4-0",
+                "closeGameCount": 2,
+                "last3": "WWW"
+            },
+            {
                 "team": "Crystal Palace",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 6,
+                "standingRank": 1,
                 "rosterUrl": "./rosters/roster6.htm",
                 "rosterFile": "roster6.htm",
                 "standingsLast10": "5-5",
@@ -23,7 +123,7 @@
                 "streak": "L1",
                 "recentResults": [
                     {
-                        "date": "1/04/1986",
+                        "date": "4/1/1986",
                         "opponent": "Benfica",
                         "result": "W",
                         "margin": 47,
@@ -32,7 +132,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "AFC Richmond",
                         "result": "L",
                         "margin": 7,
@@ -41,7 +141,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "AC Milan",
                         "result": "L",
                         "margin": 4,
@@ -50,7 +150,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Brighton",
                         "result": "W",
                         "margin": 29,
@@ -59,7 +159,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Brighton",
                         "result": "W",
                         "margin": 3,
@@ -68,7 +168,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Benfica",
                         "result": "L",
                         "margin": 7,
@@ -78,7 +178,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "1/04/1986",
+                    "date": "4/1/1986",
                     "opponent": "Benfica",
                     "result": "W",
                     "margin": 47,
@@ -87,7 +187,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "3/04/1986",
+                    "date": "4/3/1986",
                     "opponent": "AFC Richmond",
                     "result": "L",
                     "margin": 7,
@@ -97,7 +197,7 @@
                 },
                 "closeGames": [
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "AC Milan",
                         "result": "L",
                         "margin": 4,
@@ -106,7 +206,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Brighton",
                         "result": "W",
                         "margin": 3,
@@ -117,7 +217,7 @@
                 ],
                 "blowoutWins": [
                     {
-                        "date": "1/04/1986",
+                        "date": "4/1/1986",
                         "opponent": "Benfica",
                         "result": "W",
                         "margin": 47,
@@ -126,7 +226,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Brighton",
                         "result": "W",
                         "margin": 29,
@@ -141,118 +241,127 @@
                 "last3": "WWL"
             },
             {
-                "team": "Chelsea",
+                "team": "Ajax",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 8,
-                "rosterUrl": "./rosters/roster17.htm",
-                "rosterFile": "roster17.htm",
-                "standingsLast10": "6-4",
+                "standingRank": 6,
+                "rosterUrl": "./rosters/roster18.htm",
+                "rosterFile": "roster18.htm",
+                "standingsLast10": "7-3",
                 "wins": 3,
                 "losses": 2,
                 "games": 5,
-                "pointsFor": 561,
-                "pointsAgainst": 551,
-                "pointDiff": 10,
-                "avgMargin": 2.0,
+                "pointsFor": 634,
+                "pointsAgainst": 575,
+                "pointDiff": 59,
+                "avgMargin": 11.8,
                 "streak": "W1",
                 "recentResults": [
                     {
-                        "date": "2/04/1986",
-                        "opponent": "AC Milan",
+                        "date": "4/4/1986",
+                        "opponent": "Bayern Munich",
                         "result": "W",
-                        "margin": 8,
-                        "score": "Chelsea 117, @AC Milan 109",
-                        "boxscoreUrl": "./boxes/box170-1.htm",
+                        "margin": 32,
+                        "score": "@Ajax 116, Bayern Munich 84",
+                        "boxscoreUrl": "./boxes/box172-2.htm",
                         "section": "Regular Season"
                     },
                     {
-                        "date": "9/04/1986",
-                        "opponent": "AFC Richmond",
-                        "result": "W",
-                        "margin": 12,
-                        "score": "Chelsea 125, @AFC Richmond 113",
-                        "boxscoreUrl": "./boxes/box177-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "10/04/1986",
-                        "opponent": "Real Madrid",
-                        "result": "L",
-                        "margin": 17,
-                        "score": "Real Madrid 113, @Chelsea 96",
-                        "boxscoreUrl": "./boxes/box178-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "15/04/1986",
-                        "opponent": "AC Milan",
+                        "date": "4/7/1986",
+                        "opponent": "FL Fart",
                         "result": "L",
                         "margin": 8,
-                        "score": "AC Milan 106, @Chelsea 98",
-                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "score": "@FL Fart 128, Ajax 120",
+                        "boxscoreUrl": "./boxes/box175-2.htm",
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
-                        "opponent": "Real Madrid",
+                        "date": "4/11/1986",
+                        "opponent": "Inter Milan",
                         "result": "W",
-                        "margin": 15,
-                        "score": "Chelsea 125, @Real Madrid 110",
-                        "boxscoreUrl": "./boxes/box185-4.htm",
+                        "margin": 44,
+                        "score": "@Ajax 140, Inter Milan 96",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1986",
+                        "opponent": "Aston Villa",
+                        "result": "L",
+                        "margin": 10,
+                        "score": "Aston Villa 139, @Ajax 129",
+                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1986",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Ajax 129, Marseille 128",
+                        "boxscoreUrl": "./boxes/box185-6.htm",
                         "section": "Regular Season"
                     }
                 ],
                 "bestWin": {
-                    "date": "17/04/1986",
-                    "opponent": "Real Madrid",
+                    "date": "4/11/1986",
+                    "opponent": "Inter Milan",
                     "result": "W",
-                    "margin": 15,
-                    "score": "Chelsea 125, @Real Madrid 110",
-                    "boxscoreUrl": "./boxes/box185-4.htm",
+                    "margin": 44,
+                    "score": "@Ajax 140, Inter Milan 96",
+                    "boxscoreUrl": "./boxes/box179-2.htm",
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "10/04/1986",
-                    "opponent": "Real Madrid",
+                    "date": "4/16/1986",
+                    "opponent": "Aston Villa",
                     "result": "L",
-                    "margin": 17,
-                    "score": "Real Madrid 113, @Chelsea 96",
-                    "boxscoreUrl": "./boxes/box178-1.htm",
+                    "margin": 10,
+                    "score": "Aston Villa 139, @Ajax 129",
+                    "boxscoreUrl": "./boxes/box184-3.htm",
                     "section": "Regular Season"
                 },
-                "closeGames": [],
+                "closeGames": [
+                    {
+                        "date": "4/17/1986",
+                        "opponent": "Marseille",
+                        "result": "W",
+                        "margin": 1,
+                        "score": "@Ajax 129, Marseille 128",
+                        "boxscoreUrl": "./boxes/box185-6.htm",
+                        "section": "Regular Season"
+                    }
+                ],
                 "blowoutWins": [
                     {
-                        "date": "17/04/1986",
-                        "opponent": "Real Madrid",
+                        "date": "4/4/1986",
+                        "opponent": "Bayern Munich",
                         "result": "W",
-                        "margin": 15,
-                        "score": "Chelsea 125, @Real Madrid 110",
-                        "boxscoreUrl": "./boxes/box185-4.htm",
+                        "margin": 32,
+                        "score": "@Ajax 116, Bayern Munich 84",
+                        "boxscoreUrl": "./boxes/box172-2.htm",
                         "section": "Regular Season"
-                    }
-                ],
-                "blowoutLosses": [
+                    },
                     {
-                        "date": "10/04/1986",
-                        "opponent": "Real Madrid",
-                        "result": "L",
-                        "margin": 17,
-                        "score": "Real Madrid 113, @Chelsea 96",
-                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "date": "4/11/1986",
+                        "opponent": "Inter Milan",
+                        "result": "W",
+                        "margin": 44,
+                        "score": "@Ajax 140, Inter Milan 96",
+                        "boxscoreUrl": "./boxes/box179-2.htm",
                         "section": "Regular Season"
                     }
                 ],
+                "blowoutLosses": [],
                 "record": "3-2",
-                "closeGameCount": 0,
-                "last3": "LLW"
+                "closeGameCount": 1,
+                "last3": "WLW"
             },
             {
                 "team": "Paris Saint-Germain",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 5,
+                "standingRank": 7,
                 "rosterUrl": "./rosters/roster21.htm",
                 "rosterFile": "roster21.htm",
                 "standingsLast10": "6-4",
@@ -266,7 +375,7 @@
                 "streak": "W3",
                 "recentResults": [
                     {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "Brighton",
                         "result": "L",
                         "margin": 17,
@@ -275,7 +384,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "7/04/1986",
+                        "date": "4/7/1986",
                         "opponent": "Benfica",
                         "result": "W",
                         "margin": 1,
@@ -284,7 +393,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "13/04/1986",
+                        "date": "4/13/1986",
                         "opponent": "AFC Richmond",
                         "result": "W",
                         "margin": 13,
@@ -293,7 +402,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "AC Milan",
                         "result": "W",
                         "margin": 3,
@@ -303,7 +412,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "13/04/1986",
+                    "date": "4/13/1986",
                     "opponent": "AFC Richmond",
                     "result": "W",
                     "margin": 13,
@@ -312,7 +421,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "3/04/1986",
+                    "date": "4/3/1986",
                     "opponent": "Brighton",
                     "result": "L",
                     "margin": 17,
@@ -322,7 +431,7 @@
                 },
                 "closeGames": [
                     {
-                        "date": "7/04/1986",
+                        "date": "4/7/1986",
                         "opponent": "Benfica",
                         "result": "W",
                         "margin": 1,
@@ -331,7 +440,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "AC Milan",
                         "result": "W",
                         "margin": 3,
@@ -343,7 +452,7 @@
                 "blowoutWins": [],
                 "blowoutLosses": [
                     {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "Brighton",
                         "result": "L",
                         "margin": 17,
@@ -360,7 +469,7 @@
                 "team": "Benfica",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 2,
+                "standingRank": 5,
                 "rosterUrl": "./rosters/roster13.htm",
                 "rosterFile": "roster13.htm",
                 "standingsLast10": "5-5",
@@ -374,7 +483,7 @@
                 "streak": "W3",
                 "recentResults": [
                     {
-                        "date": "1/04/1986",
+                        "date": "4/1/1986",
                         "opponent": "Crystal Palace",
                         "result": "L",
                         "margin": 47,
@@ -383,7 +492,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "7/04/1986",
+                        "date": "4/7/1986",
                         "opponent": "Paris Saint-Germain",
                         "result": "L",
                         "margin": 1,
@@ -392,7 +501,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "11/04/1986",
+                        "date": "4/11/1986",
                         "opponent": "AC Milan",
                         "result": "W",
                         "margin": 5,
@@ -401,7 +510,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "15/04/1986",
+                        "date": "4/15/1986",
                         "opponent": "Real Madrid",
                         "result": "W",
                         "margin": 33,
@@ -410,7 +519,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Crystal Palace",
                         "result": "W",
                         "margin": 7,
@@ -420,7 +529,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "15/04/1986",
+                    "date": "4/15/1986",
                     "opponent": "Real Madrid",
                     "result": "W",
                     "margin": 33,
@@ -429,7 +538,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "1/04/1986",
+                    "date": "4/1/1986",
                     "opponent": "Crystal Palace",
                     "result": "L",
                     "margin": 47,
@@ -439,7 +548,7 @@
                 },
                 "closeGames": [
                     {
-                        "date": "7/04/1986",
+                        "date": "4/7/1986",
                         "opponent": "Paris Saint-Germain",
                         "result": "L",
                         "margin": 1,
@@ -448,7 +557,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "11/04/1986",
+                        "date": "4/11/1986",
                         "opponent": "AC Milan",
                         "result": "W",
                         "margin": 5,
@@ -459,7 +568,7 @@
                 ],
                 "blowoutWins": [
                     {
-                        "date": "15/04/1986",
+                        "date": "4/15/1986",
                         "opponent": "Real Madrid",
                         "result": "W",
                         "margin": 33,
@@ -470,7 +579,7 @@
                 ],
                 "blowoutLosses": [
                     {
-                        "date": "1/04/1986",
+                        "date": "4/1/1986",
                         "opponent": "Crystal Palace",
                         "result": "L",
                         "margin": 47,
@@ -487,7 +596,7 @@
                 "team": "Real Madrid",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 3,
+                "standingRank": 2,
                 "rosterUrl": "./rosters/roster8.htm",
                 "rosterFile": "roster8.htm",
                 "standingsLast10": "5-5",
@@ -501,7 +610,7 @@
                 "streak": "L2",
                 "recentResults": [
                     {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "AC Milan",
                         "result": "W",
                         "margin": 8,
@@ -510,7 +619,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Brighton",
                         "result": "W",
                         "margin": 5,
@@ -519,7 +628,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "10/04/1986",
+                        "date": "4/10/1986",
                         "opponent": "Chelsea",
                         "result": "W",
                         "margin": 17,
@@ -528,7 +637,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "15/04/1986",
+                        "date": "4/15/1986",
                         "opponent": "Benfica",
                         "result": "L",
                         "margin": 33,
@@ -537,7 +646,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Chelsea",
                         "result": "L",
                         "margin": 15,
@@ -547,7 +656,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "10/04/1986",
+                    "date": "4/10/1986",
                     "opponent": "Chelsea",
                     "result": "W",
                     "margin": 17,
@@ -556,7 +665,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "15/04/1986",
+                    "date": "4/15/1986",
                     "opponent": "Benfica",
                     "result": "L",
                     "margin": 33,
@@ -566,7 +675,7 @@
                 },
                 "closeGames": [
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Brighton",
                         "result": "W",
                         "margin": 5,
@@ -577,7 +686,7 @@
                 ],
                 "blowoutWins": [
                     {
-                        "date": "10/04/1986",
+                        "date": "4/10/1986",
                         "opponent": "Chelsea",
                         "result": "W",
                         "margin": 17,
@@ -588,7 +697,7 @@
                 ],
                 "blowoutLosses": [
                     {
-                        "date": "15/04/1986",
+                        "date": "4/15/1986",
                         "opponent": "Benfica",
                         "result": "L",
                         "margin": 33,
@@ -597,7 +706,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Chelsea",
                         "result": "L",
                         "margin": 15,
@@ -614,7 +723,7 @@
                 "team": "Brighton",
                 "tier": "Tier 1",
                 "tierShort": "T1",
-                "standingRank": 1,
+                "standingRank": 3,
                 "rosterUrl": "./rosters/roster10.htm",
                 "rosterFile": "roster10.htm",
                 "standingsLast10": "7-3",
@@ -628,7 +737,7 @@
                 "streak": "W1",
                 "recentResults": [
                     {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "Paris Saint-Germain",
                         "result": "W",
                         "margin": 17,
@@ -637,7 +746,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Real Madrid",
                         "result": "L",
                         "margin": 5,
@@ -646,7 +755,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Crystal Palace",
                         "result": "L",
                         "margin": 29,
@@ -655,7 +764,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Crystal Palace",
                         "result": "L",
                         "margin": 3,
@@ -664,7 +773,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "AFC Richmond",
                         "result": "W",
                         "margin": 16,
@@ -674,7 +783,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "3/04/1986",
+                    "date": "4/3/1986",
                     "opponent": "Paris Saint-Germain",
                     "result": "W",
                     "margin": 17,
@@ -683,7 +792,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "12/04/1986",
+                    "date": "4/12/1986",
                     "opponent": "Crystal Palace",
                     "result": "L",
                     "margin": 29,
@@ -693,7 +802,7 @@
                 },
                 "closeGames": [
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Real Madrid",
                         "result": "L",
                         "margin": 5,
@@ -702,7 +811,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Crystal Palace",
                         "result": "L",
                         "margin": 3,
@@ -713,7 +822,7 @@
                 ],
                 "blowoutWins": [
                     {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "Paris Saint-Germain",
                         "result": "W",
                         "margin": 17,
@@ -722,7 +831,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "AFC Richmond",
                         "result": "W",
                         "margin": 16,
@@ -733,7 +842,7 @@
                 ],
                 "blowoutLosses": [
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Crystal Palace",
                         "result": "L",
                         "margin": 29,
@@ -745,131 +854,6 @@
                 "record": "2-3",
                 "closeGameCount": 2,
                 "last3": "LLW"
-            },
-            {
-                "team": "AC Milan",
-                "tier": "Tier 1",
-                "tierShort": "T1",
-                "standingRank": 7,
-                "rosterUrl": "./rosters/roster9.htm",
-                "rosterFile": "roster9.htm",
-                "standingsLast10": "3-7",
-                "wins": 2,
-                "losses": 4,
-                "games": 6,
-                "pointsFor": 654,
-                "pointsAgainst": 666,
-                "pointDiff": -12,
-                "avgMargin": -2.0,
-                "streak": "L1",
-                "recentResults": [
-                    {
-                        "date": "2/04/1986",
-                        "opponent": "Chelsea",
-                        "result": "L",
-                        "margin": 8,
-                        "score": "Chelsea 117, @AC Milan 109",
-                        "boxscoreUrl": "./boxes/box170-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "3/04/1986",
-                        "opponent": "Real Madrid",
-                        "result": "L",
-                        "margin": 8,
-                        "score": "@Real Madrid 110, AC Milan 102",
-                        "boxscoreUrl": "./boxes/box171-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "8/04/1986",
-                        "opponent": "Crystal Palace",
-                        "result": "W",
-                        "margin": 4,
-                        "score": "AC Milan 114, @Crystal Palace 110",
-                        "boxscoreUrl": "./boxes/box176-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "11/04/1986",
-                        "opponent": "Benfica",
-                        "result": "L",
-                        "margin": 5,
-                        "score": "@Benfica 111, AC Milan 106",
-                        "boxscoreUrl": "./boxes/box179-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "15/04/1986",
-                        "opponent": "Chelsea",
-                        "result": "W",
-                        "margin": 8,
-                        "score": "AC Milan 106, @Chelsea 98",
-                        "boxscoreUrl": "./boxes/box183-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "17/04/1986",
-                        "opponent": "Paris Saint-Germain",
-                        "result": "L",
-                        "margin": 3,
-                        "score": "@Paris Saint-Germain 120, AC Milan 117",
-                        "boxscoreUrl": "./boxes/box185-3.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "15/04/1986",
-                    "opponent": "Chelsea",
-                    "result": "W",
-                    "margin": 8,
-                    "score": "AC Milan 106, @Chelsea 98",
-                    "boxscoreUrl": "./boxes/box183-1.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": {
-                    "date": "2/04/1986",
-                    "opponent": "Chelsea",
-                    "result": "L",
-                    "margin": 8,
-                    "score": "Chelsea 117, @AC Milan 109",
-                    "boxscoreUrl": "./boxes/box170-1.htm",
-                    "section": "Regular Season"
-                },
-                "closeGames": [
-                    {
-                        "date": "8/04/1986",
-                        "opponent": "Crystal Palace",
-                        "result": "W",
-                        "margin": 4,
-                        "score": "AC Milan 114, @Crystal Palace 110",
-                        "boxscoreUrl": "./boxes/box176-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "11/04/1986",
-                        "opponent": "Benfica",
-                        "result": "L",
-                        "margin": 5,
-                        "score": "@Benfica 111, AC Milan 106",
-                        "boxscoreUrl": "./boxes/box179-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "17/04/1986",
-                        "opponent": "Paris Saint-Germain",
-                        "result": "L",
-                        "margin": 3,
-                        "score": "@Paris Saint-Germain 120, AC Milan 117",
-                        "boxscoreUrl": "./boxes/box185-3.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutWins": [],
-                "blowoutLosses": [],
-                "record": "2-4",
-                "closeGameCount": 3,
-                "last3": "LWL"
             },
             {
                 "team": "AFC Richmond",
@@ -889,7 +873,7 @@
                 "streak": "L3",
                 "recentResults": [
                     {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "Crystal Palace",
                         "result": "W",
                         "margin": 7,
@@ -898,7 +882,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "9/04/1986",
+                        "date": "4/9/1986",
                         "opponent": "Chelsea",
                         "result": "L",
                         "margin": 12,
@@ -907,7 +891,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "13/04/1986",
+                        "date": "4/13/1986",
                         "opponent": "Paris Saint-Germain",
                         "result": "L",
                         "margin": 13,
@@ -916,7 +900,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Brighton",
                         "result": "L",
                         "margin": 16,
@@ -926,7 +910,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "3/04/1986",
+                    "date": "4/3/1986",
                     "opponent": "Crystal Palace",
                     "result": "W",
                     "margin": 7,
@@ -935,7 +919,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "17/04/1986",
+                    "date": "4/17/1986",
                     "opponent": "Brighton",
                     "result": "L",
                     "margin": 16,
@@ -947,7 +931,7 @@
                 "blowoutWins": [],
                 "blowoutLosses": [
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Brighton",
                         "result": "L",
                         "margin": 16,
@@ -963,227 +947,206 @@
         ],
         "Tier 2": [
             {
-                "team": "FL Fart",
+                "team": "Arsenal",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 2,
-                "rosterUrl": "./rosters/roster27.htm",
-                "rosterFile": "roster27.htm",
-                "standingsLast10": "8-2",
-                "wins": 4,
-                "losses": 0,
-                "games": 4,
-                "pointsFor": 465,
-                "pointsAgainst": 419,
-                "pointDiff": 46,
-                "avgMargin": 11.5,
-                "streak": "W4",
-                "recentResults": [
-                    {
-                        "date": "7/04/1986",
-                        "opponent": "Ajax",
-                        "result": "W",
-                        "margin": 8,
-                        "score": "@FL Fart 128, Ajax 120",
-                        "boxscoreUrl": "./boxes/box175-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "12/04/1986",
-                        "opponent": "Bayern Munich",
-                        "result": "W",
-                        "margin": 3,
-                        "score": "@FL Fart 107, Bayern Munich 104",
-                        "boxscoreUrl": "./boxes/box180-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "16/04/1986",
-                        "opponent": "AC Sparta Praha",
-                        "result": "W",
-                        "margin": 31,
-                        "score": "@FL Fart 118, AC Sparta Praha 87",
-                        "boxscoreUrl": "./boxes/box184-5.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "17/04/1986",
-                        "opponent": "AC Sparta Praha",
-                        "result": "W",
-                        "margin": 4,
-                        "score": "FL Fart 112, @AC Sparta Praha 108",
-                        "boxscoreUrl": "./boxes/box185-7.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "16/04/1986",
-                    "opponent": "AC Sparta Praha",
-                    "result": "W",
-                    "margin": 31,
-                    "score": "@FL Fart 118, AC Sparta Praha 87",
-                    "boxscoreUrl": "./boxes/box184-5.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": null,
-                "closeGames": [
-                    {
-                        "date": "12/04/1986",
-                        "opponent": "Bayern Munich",
-                        "result": "W",
-                        "margin": 3,
-                        "score": "@FL Fart 107, Bayern Munich 104",
-                        "boxscoreUrl": "./boxes/box180-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "17/04/1986",
-                        "opponent": "AC Sparta Praha",
-                        "result": "W",
-                        "margin": 4,
-                        "score": "FL Fart 112, @AC Sparta Praha 108",
-                        "boxscoreUrl": "./boxes/box185-7.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutWins": [
-                    {
-                        "date": "16/04/1986",
-                        "opponent": "AC Sparta Praha",
-                        "result": "W",
-                        "margin": 31,
-                        "score": "@FL Fart 118, AC Sparta Praha 87",
-                        "boxscoreUrl": "./boxes/box184-5.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutLosses": [],
-                "record": "4-0",
-                "closeGameCount": 2,
-                "last3": "WWW"
-            },
-            {
-                "team": "Ajax",
-                "tier": "Tier 2",
-                "tierShort": "T2",
-                "standingRank": 1,
-                "rosterUrl": "./rosters/roster18.htm",
-                "rosterFile": "roster18.htm",
+                "standingRank": 7,
+                "rosterUrl": "./rosters/roster23.htm",
+                "rosterFile": "roster23.htm",
                 "standingsLast10": "7-3",
-                "wins": 3,
-                "losses": 2,
+                "wins": 4,
+                "losses": 1,
                 "games": 5,
-                "pointsFor": 634,
-                "pointsAgainst": 575,
-                "pointDiff": 59,
-                "avgMargin": 11.8,
+                "pointsFor": 635,
+                "pointsAgainst": 602,
+                "pointDiff": 33,
+                "avgMargin": 6.6,
                 "streak": "W1",
                 "recentResults": [
                     {
-                        "date": "4/04/1986",
-                        "opponent": "Bayern Munich",
+                        "date": "4/4/1986",
+                        "opponent": "Manchester United",
                         "result": "W",
-                        "margin": 32,
-                        "score": "@Ajax 116, Bayern Munich 84",
-                        "boxscoreUrl": "./boxes/box172-2.htm",
+                        "margin": 14,
+                        "score": "Arsenal 129, @Manchester United 115",
+                        "boxscoreUrl": "./boxes/box172-3.htm",
                         "section": "Regular Season"
                     },
                     {
-                        "date": "7/04/1986",
-                        "opponent": "FL Fart",
-                        "result": "L",
+                        "date": "4/8/1986",
+                        "opponent": "Manchester United",
+                        "result": "W",
+                        "margin": 10,
+                        "score": "@Arsenal 114, Manchester United 104",
+                        "boxscoreUrl": "./boxes/box176-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/12/1986",
+                        "opponent": "Tottenham Hotspur",
+                        "result": "W",
                         "margin": 8,
-                        "score": "@FL Fart 128, Ajax 120",
-                        "boxscoreUrl": "./boxes/box175-2.htm",
+                        "score": "Arsenal 124, @Tottenham Hotspur 116",
+                        "boxscoreUrl": "./boxes/box180-7.htm",
                         "section": "Regular Season"
                     },
                     {
-                        "date": "11/04/1986",
-                        "opponent": "Inter Milan",
-                        "result": "W",
-                        "margin": 44,
-                        "score": "@Ajax 140, Inter Milan 96",
-                        "boxscoreUrl": "./boxes/box179-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "16/04/1986",
-                        "opponent": "Aston Villa",
+                        "date": "4/16/1986",
+                        "opponent": "Manchester City",
                         "result": "L",
                         "margin": 10,
-                        "score": "Aston Villa 139, @Ajax 129",
-                        "boxscoreUrl": "./boxes/box184-3.htm",
+                        "score": "Manchester City 133, @Arsenal 123",
+                        "boxscoreUrl": "./boxes/box184-7.htm",
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
-                        "opponent": "Marseille",
+                        "date": "4/17/1986",
+                        "opponent": "Barcelona",
                         "result": "W",
-                        "margin": 1,
-                        "score": "@Ajax 129, Marseille 128",
-                        "boxscoreUrl": "./boxes/box185-6.htm",
+                        "margin": 11,
+                        "score": "Arsenal 145, @Barcelona 134",
+                        "boxscoreUrl": "./boxes/box185-9.htm",
                         "section": "Regular Season"
                     }
                 ],
                 "bestWin": {
-                    "date": "11/04/1986",
-                    "opponent": "Inter Milan",
+                    "date": "4/4/1986",
+                    "opponent": "Manchester United",
                     "result": "W",
-                    "margin": 44,
-                    "score": "@Ajax 140, Inter Milan 96",
-                    "boxscoreUrl": "./boxes/box179-2.htm",
+                    "margin": 14,
+                    "score": "Arsenal 129, @Manchester United 115",
+                    "boxscoreUrl": "./boxes/box172-3.htm",
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "16/04/1986",
-                    "opponent": "Aston Villa",
+                    "date": "4/16/1986",
+                    "opponent": "Manchester City",
                     "result": "L",
                     "margin": 10,
-                    "score": "Aston Villa 139, @Ajax 129",
-                    "boxscoreUrl": "./boxes/box184-3.htm",
+                    "score": "Manchester City 133, @Arsenal 123",
+                    "boxscoreUrl": "./boxes/box184-7.htm",
                     "section": "Regular Season"
                 },
-                "closeGames": [
+                "closeGames": [],
+                "blowoutWins": [],
+                "blowoutLosses": [],
+                "record": "4-1",
+                "closeGameCount": 0,
+                "last3": "WLW"
+            },
+            {
+                "team": "Chelsea",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 5,
+                "rosterUrl": "./rosters/roster17.htm",
+                "rosterFile": "roster17.htm",
+                "standingsLast10": "6-4",
+                "wins": 3,
+                "losses": 2,
+                "games": 5,
+                "pointsFor": 561,
+                "pointsAgainst": 551,
+                "pointDiff": 10,
+                "avgMargin": 2.0,
+                "streak": "W1",
+                "recentResults": [
                     {
-                        "date": "17/04/1986",
-                        "opponent": "Marseille",
+                        "date": "4/2/1986",
+                        "opponent": "AC Milan",
                         "result": "W",
-                        "margin": 1,
-                        "score": "@Ajax 129, Marseille 128",
-                        "boxscoreUrl": "./boxes/box185-6.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutWins": [
-                    {
-                        "date": "4/04/1986",
-                        "opponent": "Bayern Munich",
-                        "result": "W",
-                        "margin": 32,
-                        "score": "@Ajax 116, Bayern Munich 84",
-                        "boxscoreUrl": "./boxes/box172-2.htm",
+                        "margin": 8,
+                        "score": "Chelsea 117, @AC Milan 109",
+                        "boxscoreUrl": "./boxes/box170-1.htm",
                         "section": "Regular Season"
                     },
                     {
-                        "date": "11/04/1986",
-                        "opponent": "Inter Milan",
+                        "date": "4/9/1986",
+                        "opponent": "AFC Richmond",
                         "result": "W",
-                        "margin": 44,
-                        "score": "@Ajax 140, Inter Milan 96",
-                        "boxscoreUrl": "./boxes/box179-2.htm",
+                        "margin": 12,
+                        "score": "Chelsea 125, @AFC Richmond 113",
+                        "boxscoreUrl": "./boxes/box177-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/10/1986",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "Real Madrid 113, @Chelsea 96",
+                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1986",
+                        "opponent": "AC Milan",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "AC Milan 106, @Chelsea 98",
+                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1986",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "Chelsea 125, @Real Madrid 110",
+                        "boxscoreUrl": "./boxes/box185-4.htm",
                         "section": "Regular Season"
                     }
                 ],
-                "blowoutLosses": [],
+                "bestWin": {
+                    "date": "4/17/1986",
+                    "opponent": "Real Madrid",
+                    "result": "W",
+                    "margin": 15,
+                    "score": "Chelsea 125, @Real Madrid 110",
+                    "boxscoreUrl": "./boxes/box185-4.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/10/1986",
+                    "opponent": "Real Madrid",
+                    "result": "L",
+                    "margin": 17,
+                    "score": "Real Madrid 113, @Chelsea 96",
+                    "boxscoreUrl": "./boxes/box178-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/17/1986",
+                        "opponent": "Real Madrid",
+                        "result": "W",
+                        "margin": 15,
+                        "score": "Chelsea 125, @Real Madrid 110",
+                        "boxscoreUrl": "./boxes/box185-4.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/10/1986",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 17,
+                        "score": "Real Madrid 113, @Chelsea 96",
+                        "boxscoreUrl": "./boxes/box178-1.htm",
+                        "section": "Regular Season"
+                    }
+                ],
                 "record": "3-2",
-                "closeGameCount": 1,
-                "last3": "WLW"
+                "closeGameCount": 0,
+                "last3": "LLW"
             },
             {
                 "team": "AC Sparta Praha",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 5,
+                "standingRank": 4,
                 "rosterUrl": "./rosters/roster16.htm",
                 "rosterFile": "roster16.htm",
                 "standingsLast10": "5-5",
@@ -1197,7 +1160,7 @@
                 "streak": "L2",
                 "recentResults": [
                     {
-                        "date": "1/04/1986",
+                        "date": "4/1/1986",
                         "opponent": "Inter Milan",
                         "result": "W",
                         "margin": 12,
@@ -1206,7 +1169,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "5/04/1986",
+                        "date": "4/5/1986",
                         "opponent": "Bayern Munich",
                         "result": "L",
                         "margin": 9,
@@ -1215,7 +1178,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "10/04/1986",
+                        "date": "4/10/1986",
                         "opponent": "Marseille",
                         "result": "W",
                         "margin": 22,
@@ -1224,7 +1187,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Aston Villa",
                         "result": "W",
                         "margin": 19,
@@ -1233,7 +1196,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "FL Fart",
                         "result": "L",
                         "margin": 31,
@@ -1242,7 +1205,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "FL Fart",
                         "result": "L",
                         "margin": 4,
@@ -1252,7 +1215,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "10/04/1986",
+                    "date": "4/10/1986",
                     "opponent": "Marseille",
                     "result": "W",
                     "margin": 22,
@@ -1261,7 +1224,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "16/04/1986",
+                    "date": "4/16/1986",
                     "opponent": "FL Fart",
                     "result": "L",
                     "margin": 31,
@@ -1271,7 +1234,7 @@
                 },
                 "closeGames": [
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "FL Fart",
                         "result": "L",
                         "margin": 4,
@@ -1282,7 +1245,7 @@
                 ],
                 "blowoutWins": [
                     {
-                        "date": "10/04/1986",
+                        "date": "4/10/1986",
                         "opponent": "Marseille",
                         "result": "W",
                         "margin": 22,
@@ -1291,7 +1254,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Aston Villa",
                         "result": "W",
                         "margin": 19,
@@ -1302,7 +1265,7 @@
                 ],
                 "blowoutLosses": [
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "FL Fart",
                         "result": "L",
                         "margin": 31,
@@ -1319,7 +1282,7 @@
                 "team": "Aston Villa",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 4,
+                "standingRank": 6,
                 "rosterUrl": "./rosters/roster19.htm",
                 "rosterFile": "roster19.htm",
                 "standingsLast10": "5-5",
@@ -1333,7 +1296,7 @@
                 "streak": "L1",
                 "recentResults": [
                     {
-                        "date": "4/04/1986",
+                        "date": "4/4/1986",
                         "opponent": "Atletico Madrid",
                         "result": "W",
                         "margin": 13,
@@ -1342,7 +1305,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "6/04/1986",
+                        "date": "4/6/1986",
                         "opponent": "Inter Milan",
                         "result": "W",
                         "margin": 7,
@@ -1351,7 +1314,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "AC Sparta Praha",
                         "result": "L",
                         "margin": 19,
@@ -1360,7 +1323,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Ajax",
                         "result": "W",
                         "margin": 10,
@@ -1369,7 +1332,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Inter Milan",
                         "result": "L",
                         "margin": 14,
@@ -1379,7 +1342,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "4/04/1986",
+                    "date": "4/4/1986",
                     "opponent": "Atletico Madrid",
                     "result": "W",
                     "margin": 13,
@@ -1388,7 +1351,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "12/04/1986",
+                    "date": "4/12/1986",
                     "opponent": "AC Sparta Praha",
                     "result": "L",
                     "margin": 19,
@@ -1400,7 +1363,7 @@
                 "blowoutWins": [],
                 "blowoutLosses": [
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "AC Sparta Praha",
                         "result": "L",
                         "margin": 19,
@@ -1417,7 +1380,7 @@
                 "team": "Inter Milan",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 3,
+                "standingRank": 8,
                 "rosterUrl": "./rosters/roster26.htm",
                 "rosterFile": "roster26.htm",
                 "standingsLast10": "5-5",
@@ -1431,7 +1394,7 @@
                 "streak": "W2",
                 "recentResults": [
                     {
-                        "date": "1/04/1986",
+                        "date": "4/1/1986",
                         "opponent": "AC Sparta Praha",
                         "result": "L",
                         "margin": 12,
@@ -1440,7 +1403,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "5/04/1986",
+                        "date": "4/5/1986",
                         "opponent": "Marseille",
                         "result": "W",
                         "margin": 36,
@@ -1449,7 +1412,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "6/04/1986",
+                        "date": "4/6/1986",
                         "opponent": "Aston Villa",
                         "result": "L",
                         "margin": 7,
@@ -1458,7 +1421,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "11/04/1986",
+                        "date": "4/11/1986",
                         "opponent": "Ajax",
                         "result": "L",
                         "margin": 44,
@@ -1467,7 +1430,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Atletico Madrid",
                         "result": "W",
                         "margin": 7,
@@ -1476,7 +1439,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Aston Villa",
                         "result": "W",
                         "margin": 14,
@@ -1486,7 +1449,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "5/04/1986",
+                    "date": "4/5/1986",
                     "opponent": "Marseille",
                     "result": "W",
                     "margin": 36,
@@ -1495,7 +1458,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "11/04/1986",
+                    "date": "4/11/1986",
                     "opponent": "Ajax",
                     "result": "L",
                     "margin": 44,
@@ -1506,7 +1469,7 @@
                 "closeGames": [],
                 "blowoutWins": [
                     {
-                        "date": "5/04/1986",
+                        "date": "4/5/1986",
                         "opponent": "Marseille",
                         "result": "W",
                         "margin": 36,
@@ -1517,7 +1480,7 @@
                 ],
                 "blowoutLosses": [
                     {
-                        "date": "11/04/1986",
+                        "date": "4/11/1986",
                         "opponent": "Ajax",
                         "result": "L",
                         "margin": 44,
@@ -1531,10 +1494,135 @@
                 "last3": "LWW"
             },
             {
+                "team": "AC Milan",
+                "tier": "Tier 2",
+                "tierShort": "T2",
+                "standingRank": 2,
+                "rosterUrl": "./rosters/roster9.htm",
+                "rosterFile": "roster9.htm",
+                "standingsLast10": "3-7",
+                "wins": 2,
+                "losses": 4,
+                "games": 6,
+                "pointsFor": 654,
+                "pointsAgainst": 666,
+                "pointDiff": -12,
+                "avgMargin": -2.0,
+                "streak": "L1",
+                "recentResults": [
+                    {
+                        "date": "4/2/1986",
+                        "opponent": "Chelsea",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "Chelsea 117, @AC Milan 109",
+                        "boxscoreUrl": "./boxes/box170-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/3/1986",
+                        "opponent": "Real Madrid",
+                        "result": "L",
+                        "margin": 8,
+                        "score": "@Real Madrid 110, AC Milan 102",
+                        "boxscoreUrl": "./boxes/box171-3.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/8/1986",
+                        "opponent": "Crystal Palace",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "AC Milan 114, @Crystal Palace 110",
+                        "boxscoreUrl": "./boxes/box176-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1986",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "@Benfica 111, AC Milan 106",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/15/1986",
+                        "opponent": "Chelsea",
+                        "result": "W",
+                        "margin": 8,
+                        "score": "AC Milan 106, @Chelsea 98",
+                        "boxscoreUrl": "./boxes/box183-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1986",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Paris Saint-Germain 120, AC Milan 117",
+                        "boxscoreUrl": "./boxes/box185-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/15/1986",
+                    "opponent": "Chelsea",
+                    "result": "W",
+                    "margin": 8,
+                    "score": "AC Milan 106, @Chelsea 98",
+                    "boxscoreUrl": "./boxes/box183-1.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/2/1986",
+                    "opponent": "Chelsea",
+                    "result": "L",
+                    "margin": 8,
+                    "score": "Chelsea 117, @AC Milan 109",
+                    "boxscoreUrl": "./boxes/box170-1.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [
+                    {
+                        "date": "4/8/1986",
+                        "opponent": "Crystal Palace",
+                        "result": "W",
+                        "margin": 4,
+                        "score": "AC Milan 114, @Crystal Palace 110",
+                        "boxscoreUrl": "./boxes/box176-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/11/1986",
+                        "opponent": "Benfica",
+                        "result": "L",
+                        "margin": 5,
+                        "score": "@Benfica 111, AC Milan 106",
+                        "boxscoreUrl": "./boxes/box179-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1986",
+                        "opponent": "Paris Saint-Germain",
+                        "result": "L",
+                        "margin": 3,
+                        "score": "@Paris Saint-Germain 120, AC Milan 117",
+                        "boxscoreUrl": "./boxes/box185-3.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutWins": [],
+                "blowoutLosses": [],
+                "record": "2-4",
+                "closeGameCount": 3,
+                "last3": "LWL"
+            },
+            {
                 "team": "Bayern Munich",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 7,
+                "standingRank": 1,
                 "rosterUrl": "./rosters/roster7.htm",
                 "rosterFile": "roster7.htm",
                 "standingsLast10": "4-6",
@@ -1548,7 +1636,7 @@
                 "streak": "W1",
                 "recentResults": [
                     {
-                        "date": "4/04/1986",
+                        "date": "4/4/1986",
                         "opponent": "Ajax",
                         "result": "L",
                         "margin": 32,
@@ -1557,7 +1645,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "5/04/1986",
+                        "date": "4/5/1986",
                         "opponent": "AC Sparta Praha",
                         "result": "W",
                         "margin": 9,
@@ -1566,7 +1654,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "9/04/1986",
+                        "date": "4/9/1986",
                         "opponent": "Atletico Madrid",
                         "result": "L",
                         "margin": 21,
@@ -1575,7 +1663,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "FL Fart",
                         "result": "L",
                         "margin": 3,
@@ -1584,7 +1672,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Marseille",
                         "result": "L",
                         "margin": 6,
@@ -1593,7 +1681,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Atletico Madrid",
                         "result": "W",
                         "margin": 26,
@@ -1603,7 +1691,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "17/04/1986",
+                    "date": "4/17/1986",
                     "opponent": "Atletico Madrid",
                     "result": "W",
                     "margin": 26,
@@ -1612,7 +1700,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "4/04/1986",
+                    "date": "4/4/1986",
                     "opponent": "Ajax",
                     "result": "L",
                     "margin": 32,
@@ -1622,7 +1710,7 @@
                 },
                 "closeGames": [
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "FL Fart",
                         "result": "L",
                         "margin": 3,
@@ -1633,7 +1721,7 @@
                 ],
                 "blowoutWins": [
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Atletico Madrid",
                         "result": "W",
                         "margin": 26,
@@ -1644,7 +1732,7 @@
                 ],
                 "blowoutLosses": [
                     {
-                        "date": "4/04/1986",
+                        "date": "4/4/1986",
                         "opponent": "Ajax",
                         "result": "L",
                         "margin": 32,
@@ -1653,7 +1741,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "9/04/1986",
+                        "date": "4/9/1986",
                         "opponent": "Atletico Madrid",
                         "result": "L",
                         "margin": 21,
@@ -1667,109 +1755,10 @@
                 "last3": "LLW"
             },
             {
-                "team": "Atletico Madrid",
-                "tier": "Tier 2",
-                "tierShort": "T2",
-                "standingRank": 8,
-                "rosterUrl": "./rosters/roster11.htm",
-                "rosterFile": "roster11.htm",
-                "standingsLast10": "3-7",
-                "wins": 1,
-                "losses": 3,
-                "games": 4,
-                "pointsFor": 436,
-                "pointsAgainst": 461,
-                "pointDiff": -25,
-                "avgMargin": -6.25,
-                "streak": "L2",
-                "recentResults": [
-                    {
-                        "date": "4/04/1986",
-                        "opponent": "Aston Villa",
-                        "result": "L",
-                        "margin": 13,
-                        "score": "@Aston Villa 123, Atletico Madrid 110",
-                        "boxscoreUrl": "./boxes/box172-1.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "9/04/1986",
-                        "opponent": "Bayern Munich",
-                        "result": "W",
-                        "margin": 21,
-                        "score": "@Atletico Madrid 119, Bayern Munich 98",
-                        "boxscoreUrl": "./boxes/box177-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "16/04/1986",
-                        "opponent": "Inter Milan",
-                        "result": "L",
-                        "margin": 7,
-                        "score": "@Inter Milan 120, Atletico Madrid 113",
-                        "boxscoreUrl": "./boxes/box184-2.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "17/04/1986",
-                        "opponent": "Bayern Munich",
-                        "result": "L",
-                        "margin": 26,
-                        "score": "Bayern Munich 120, @Atletico Madrid 94",
-                        "boxscoreUrl": "./boxes/box185-8.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "9/04/1986",
-                    "opponent": "Bayern Munich",
-                    "result": "W",
-                    "margin": 21,
-                    "score": "@Atletico Madrid 119, Bayern Munich 98",
-                    "boxscoreUrl": "./boxes/box177-2.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": {
-                    "date": "17/04/1986",
-                    "opponent": "Bayern Munich",
-                    "result": "L",
-                    "margin": 26,
-                    "score": "Bayern Munich 120, @Atletico Madrid 94",
-                    "boxscoreUrl": "./boxes/box185-8.htm",
-                    "section": "Regular Season"
-                },
-                "closeGames": [],
-                "blowoutWins": [
-                    {
-                        "date": "9/04/1986",
-                        "opponent": "Bayern Munich",
-                        "result": "W",
-                        "margin": 21,
-                        "score": "@Atletico Madrid 119, Bayern Munich 98",
-                        "boxscoreUrl": "./boxes/box177-2.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "blowoutLosses": [
-                    {
-                        "date": "17/04/1986",
-                        "opponent": "Bayern Munich",
-                        "result": "L",
-                        "margin": 26,
-                        "score": "Bayern Munich 120, @Atletico Madrid 94",
-                        "boxscoreUrl": "./boxes/box185-8.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "record": "1-3",
-                "closeGameCount": 0,
-                "last3": "WLL"
-            },
-            {
                 "team": "Marseille",
                 "tier": "Tier 2",
                 "tierShort": "T2",
-                "standingRank": 6,
+                "standingRank": 3,
                 "rosterUrl": "./rosters/roster15.htm",
                 "rosterFile": "roster15.htm",
                 "standingsLast10": "3-7",
@@ -1783,7 +1772,7 @@
                 "streak": "L1",
                 "recentResults": [
                     {
-                        "date": "5/04/1986",
+                        "date": "4/5/1986",
                         "opponent": "Inter Milan",
                         "result": "L",
                         "margin": 36,
@@ -1792,7 +1781,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "10/04/1986",
+                        "date": "4/10/1986",
                         "opponent": "AC Sparta Praha",
                         "result": "L",
                         "margin": 22,
@@ -1801,7 +1790,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Bayern Munich",
                         "result": "W",
                         "margin": 6,
@@ -1810,7 +1799,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Ajax",
                         "result": "L",
                         "margin": 1,
@@ -1820,7 +1809,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "16/04/1986",
+                    "date": "4/16/1986",
                     "opponent": "Bayern Munich",
                     "result": "W",
                     "margin": 6,
@@ -1829,7 +1818,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "5/04/1986",
+                    "date": "4/5/1986",
                     "opponent": "Inter Milan",
                     "result": "L",
                     "margin": 36,
@@ -1839,7 +1828,7 @@
                 },
                 "closeGames": [
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Ajax",
                         "result": "L",
                         "margin": 1,
@@ -1851,7 +1840,7 @@
                 "blowoutWins": [],
                 "blowoutLosses": [
                     {
-                        "date": "5/04/1986",
+                        "date": "4/5/1986",
                         "opponent": "Inter Milan",
                         "result": "L",
                         "margin": 36,
@@ -1860,7 +1849,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "10/04/1986",
+                        "date": "4/10/1986",
                         "opponent": "AC Sparta Praha",
                         "result": "L",
                         "margin": 22,
@@ -1879,7 +1868,7 @@
                 "team": "Manchester City",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 5,
+                "standingRank": 8,
                 "rosterUrl": "./rosters/roster28.htm",
                 "rosterFile": "roster28.htm",
                 "standingsLast10": "8-2",
@@ -1893,7 +1882,7 @@
                 "streak": "W3",
                 "recentResults": [
                     {
-                        "date": "4/04/1986",
+                        "date": "4/4/1986",
                         "opponent": "Tottenham Hotspur",
                         "result": "W",
                         "margin": 6,
@@ -1902,7 +1891,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Juventus",
                         "result": "L",
                         "margin": 11,
@@ -1911,7 +1900,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Barcelona",
                         "result": "W",
                         "margin": 33,
@@ -1920,7 +1909,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Arsenal",
                         "result": "W",
                         "margin": 10,
@@ -1929,7 +1918,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Juventus",
                         "result": "W",
                         "margin": 11,
@@ -1939,7 +1928,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "12/04/1986",
+                    "date": "4/12/1986",
                     "opponent": "Barcelona",
                     "result": "W",
                     "margin": 33,
@@ -1948,7 +1937,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "8/04/1986",
+                    "date": "4/8/1986",
                     "opponent": "Juventus",
                     "result": "L",
                     "margin": 11,
@@ -1959,7 +1948,7 @@
                 "closeGames": [],
                 "blowoutWins": [
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Barcelona",
                         "result": "W",
                         "margin": 33,
@@ -1974,98 +1963,10 @@
                 "last3": "WWW"
             },
             {
-                "team": "Arsenal",
-                "tier": "Tier 3",
-                "tierShort": "T3",
-                "standingRank": 1,
-                "rosterUrl": "./rosters/roster23.htm",
-                "rosterFile": "roster23.htm",
-                "standingsLast10": "7-3",
-                "wins": 4,
-                "losses": 1,
-                "games": 5,
-                "pointsFor": 635,
-                "pointsAgainst": 602,
-                "pointDiff": 33,
-                "avgMargin": 6.6,
-                "streak": "W1",
-                "recentResults": [
-                    {
-                        "date": "4/04/1986",
-                        "opponent": "Manchester United",
-                        "result": "W",
-                        "margin": 14,
-                        "score": "Arsenal 129, @Manchester United 115",
-                        "boxscoreUrl": "./boxes/box172-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "8/04/1986",
-                        "opponent": "Manchester United",
-                        "result": "W",
-                        "margin": 10,
-                        "score": "@Arsenal 114, Manchester United 104",
-                        "boxscoreUrl": "./boxes/box176-3.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "12/04/1986",
-                        "opponent": "Tottenham Hotspur",
-                        "result": "W",
-                        "margin": 8,
-                        "score": "Arsenal 124, @Tottenham Hotspur 116",
-                        "boxscoreUrl": "./boxes/box180-7.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "16/04/1986",
-                        "opponent": "Manchester City",
-                        "result": "L",
-                        "margin": 10,
-                        "score": "Manchester City 133, @Arsenal 123",
-                        "boxscoreUrl": "./boxes/box184-7.htm",
-                        "section": "Regular Season"
-                    },
-                    {
-                        "date": "17/04/1986",
-                        "opponent": "Barcelona",
-                        "result": "W",
-                        "margin": 11,
-                        "score": "Arsenal 145, @Barcelona 134",
-                        "boxscoreUrl": "./boxes/box185-9.htm",
-                        "section": "Regular Season"
-                    }
-                ],
-                "bestWin": {
-                    "date": "4/04/1986",
-                    "opponent": "Manchester United",
-                    "result": "W",
-                    "margin": 14,
-                    "score": "Arsenal 129, @Manchester United 115",
-                    "boxscoreUrl": "./boxes/box172-3.htm",
-                    "section": "Regular Season"
-                },
-                "worstLoss": {
-                    "date": "16/04/1986",
-                    "opponent": "Manchester City",
-                    "result": "L",
-                    "margin": 10,
-                    "score": "Manchester City 133, @Arsenal 123",
-                    "boxscoreUrl": "./boxes/box184-7.htm",
-                    "section": "Regular Season"
-                },
-                "closeGames": [],
-                "blowoutWins": [],
-                "blowoutLosses": [],
-                "record": "4-1",
-                "closeGameCount": 0,
-                "last3": "WLW"
-            },
-            {
                 "team": "Valencia",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 3,
+                "standingRank": 7,
                 "rosterUrl": "./rosters/roster25.htm",
                 "rosterFile": "roster25.htm",
                 "standingsLast10": "8-2",
@@ -2079,7 +1980,7 @@
                 "streak": "L1",
                 "recentResults": [
                     {
-                        "date": "1/04/1986",
+                        "date": "4/1/1986",
                         "opponent": "Juventus",
                         "result": "W",
                         "margin": 24,
@@ -2088,7 +1989,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Tottenham Hotspur",
                         "result": "W",
                         "margin": 15,
@@ -2097,7 +1998,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Manchester United",
                         "result": "W",
                         "margin": 17,
@@ -2106,7 +2007,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Monaco",
                         "result": "L",
                         "margin": 5,
@@ -2116,7 +2017,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "1/04/1986",
+                    "date": "4/1/1986",
                     "opponent": "Juventus",
                     "result": "W",
                     "margin": 24,
@@ -2125,7 +2026,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "17/04/1986",
+                    "date": "4/17/1986",
                     "opponent": "Monaco",
                     "result": "L",
                     "margin": 5,
@@ -2135,7 +2036,7 @@
                 },
                 "closeGames": [
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Monaco",
                         "result": "L",
                         "margin": 5,
@@ -2146,7 +2047,7 @@
                 ],
                 "blowoutWins": [
                     {
-                        "date": "1/04/1986",
+                        "date": "4/1/1986",
                         "opponent": "Juventus",
                         "result": "W",
                         "margin": 24,
@@ -2155,7 +2056,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Tottenham Hotspur",
                         "result": "W",
                         "margin": 15,
@@ -2164,7 +2065,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Manchester United",
                         "result": "W",
                         "margin": 17,
@@ -2182,7 +2083,7 @@
                 "team": "Juventus",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 6,
+                "standingRank": 3,
                 "rosterUrl": "./rosters/roster14.htm",
                 "rosterFile": "roster14.htm",
                 "standingsLast10": "5-5",
@@ -2196,7 +2097,7 @@
                 "streak": "L1",
                 "recentResults": [
                     {
-                        "date": "1/04/1986",
+                        "date": "4/1/1986",
                         "opponent": "Valencia",
                         "result": "L",
                         "margin": 24,
@@ -2205,7 +2106,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Manchester City",
                         "result": "W",
                         "margin": 11,
@@ -2214,7 +2115,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Monaco",
                         "result": "W",
                         "margin": 11,
@@ -2223,7 +2124,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Manchester United",
                         "result": "W",
                         "margin": 10,
@@ -2232,7 +2133,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Manchester City",
                         "result": "L",
                         "margin": 11,
@@ -2242,7 +2143,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "8/04/1986",
+                    "date": "4/8/1986",
                     "opponent": "Manchester City",
                     "result": "W",
                     "margin": 11,
@@ -2251,7 +2152,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "1/04/1986",
+                    "date": "4/1/1986",
                     "opponent": "Valencia",
                     "result": "L",
                     "margin": 24,
@@ -2263,7 +2164,7 @@
                 "blowoutWins": [],
                 "blowoutLosses": [
                     {
-                        "date": "1/04/1986",
+                        "date": "4/1/1986",
                         "opponent": "Valencia",
                         "result": "L",
                         "margin": 24,
@@ -2280,7 +2181,7 @@
                 "team": "Barcelona",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 2,
+                "standingRank": 6,
                 "rosterUrl": "./rosters/roster24.htm",
                 "rosterFile": "roster24.htm",
                 "standingsLast10": "4-6",
@@ -2294,7 +2195,7 @@
                 "streak": "L2",
                 "recentResults": [
                     {
-                        "date": "2/04/1986",
+                        "date": "4/2/1986",
                         "opponent": "Tottenham Hotspur",
                         "result": "L",
                         "margin": 8,
@@ -2303,7 +2204,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "Monaco",
                         "result": "W",
                         "margin": 22,
@@ -2312,7 +2213,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Monaco",
                         "result": "W",
                         "margin": 31,
@@ -2321,7 +2222,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Manchester City",
                         "result": "L",
                         "margin": 33,
@@ -2330,7 +2231,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Arsenal",
                         "result": "L",
                         "margin": 11,
@@ -2340,7 +2241,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "8/04/1986",
+                    "date": "4/8/1986",
                     "opponent": "Monaco",
                     "result": "W",
                     "margin": 31,
@@ -2349,7 +2250,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "12/04/1986",
+                    "date": "4/12/1986",
                     "opponent": "Manchester City",
                     "result": "L",
                     "margin": 33,
@@ -2360,7 +2261,7 @@
                 "closeGames": [],
                 "blowoutWins": [
                     {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "Monaco",
                         "result": "W",
                         "margin": 22,
@@ -2369,7 +2270,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Monaco",
                         "result": "W",
                         "margin": 31,
@@ -2380,7 +2281,7 @@
                 ],
                 "blowoutLosses": [
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Manchester City",
                         "result": "L",
                         "margin": 33,
@@ -2397,7 +2298,7 @@
                 "team": "Tottenham Hotspur",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 7,
+                "standingRank": 5,
                 "rosterUrl": "./rosters/roster22.htm",
                 "rosterFile": "roster22.htm",
                 "standingsLast10": "3-7",
@@ -2411,7 +2312,7 @@
                 "streak": "W1",
                 "recentResults": [
                     {
-                        "date": "2/04/1986",
+                        "date": "4/2/1986",
                         "opponent": "Barcelona",
                         "result": "W",
                         "margin": 8,
@@ -2420,7 +2321,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "4/04/1986",
+                        "date": "4/4/1986",
                         "opponent": "Manchester City",
                         "result": "L",
                         "margin": 6,
@@ -2429,7 +2330,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Valencia",
                         "result": "L",
                         "margin": 15,
@@ -2438,7 +2339,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Arsenal",
                         "result": "L",
                         "margin": 8,
@@ -2447,7 +2348,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Monaco",
                         "result": "L",
                         "margin": 9,
@@ -2456,7 +2357,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Manchester United",
                         "result": "W",
                         "margin": 25,
@@ -2466,7 +2367,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "17/04/1986",
+                    "date": "4/17/1986",
                     "opponent": "Manchester United",
                     "result": "W",
                     "margin": 25,
@@ -2475,7 +2376,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "8/04/1986",
+                    "date": "4/8/1986",
                     "opponent": "Valencia",
                     "result": "L",
                     "margin": 15,
@@ -2486,7 +2387,7 @@
                 "closeGames": [],
                 "blowoutWins": [
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Manchester United",
                         "result": "W",
                         "margin": 25,
@@ -2497,7 +2398,7 @@
                 ],
                 "blowoutLosses": [
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Valencia",
                         "result": "L",
                         "margin": 15,
@@ -2528,7 +2429,7 @@
                 "streak": "W2",
                 "recentResults": [
                     {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "Barcelona",
                         "result": "L",
                         "margin": 22,
@@ -2537,7 +2438,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Barcelona",
                         "result": "L",
                         "margin": 31,
@@ -2546,7 +2447,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Juventus",
                         "result": "L",
                         "margin": 11,
@@ -2555,7 +2456,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Tottenham Hotspur",
                         "result": "W",
                         "margin": 9,
@@ -2564,7 +2465,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Valencia",
                         "result": "W",
                         "margin": 5,
@@ -2574,7 +2475,7 @@
                     }
                 ],
                 "bestWin": {
-                    "date": "16/04/1986",
+                    "date": "4/16/1986",
                     "opponent": "Tottenham Hotspur",
                     "result": "W",
                     "margin": 9,
@@ -2583,7 +2484,7 @@
                     "section": "Regular Season"
                 },
                 "worstLoss": {
-                    "date": "8/04/1986",
+                    "date": "4/8/1986",
                     "opponent": "Barcelona",
                     "result": "L",
                     "margin": 31,
@@ -2593,7 +2494,7 @@
                 },
                 "closeGames": [
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Valencia",
                         "result": "W",
                         "margin": 5,
@@ -2605,7 +2506,7 @@
                 "blowoutWins": [],
                 "blowoutLosses": [
                     {
-                        "date": "3/04/1986",
+                        "date": "4/3/1986",
                         "opponent": "Barcelona",
                         "result": "L",
                         "margin": 22,
@@ -2614,7 +2515,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Barcelona",
                         "result": "L",
                         "margin": 31,
@@ -2628,10 +2529,109 @@
                 "last3": "LWW"
             },
             {
+                "team": "Atletico Madrid",
+                "tier": "Tier 3",
+                "tierShort": "T3",
+                "standingRank": 2,
+                "rosterUrl": "./rosters/roster11.htm",
+                "rosterFile": "roster11.htm",
+                "standingsLast10": "3-7",
+                "wins": 1,
+                "losses": 3,
+                "games": 4,
+                "pointsFor": 436,
+                "pointsAgainst": 461,
+                "pointDiff": -25,
+                "avgMargin": -6.25,
+                "streak": "L2",
+                "recentResults": [
+                    {
+                        "date": "4/4/1986",
+                        "opponent": "Aston Villa",
+                        "result": "L",
+                        "margin": 13,
+                        "score": "@Aston Villa 123, Atletico Madrid 110",
+                        "boxscoreUrl": "./boxes/box172-1.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/9/1986",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "@Atletico Madrid 119, Bayern Munich 98",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/16/1986",
+                        "opponent": "Inter Milan",
+                        "result": "L",
+                        "margin": 7,
+                        "score": "@Inter Milan 120, Atletico Madrid 113",
+                        "boxscoreUrl": "./boxes/box184-2.htm",
+                        "section": "Regular Season"
+                    },
+                    {
+                        "date": "4/17/1986",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 26,
+                        "score": "Bayern Munich 120, @Atletico Madrid 94",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "bestWin": {
+                    "date": "4/9/1986",
+                    "opponent": "Bayern Munich",
+                    "result": "W",
+                    "margin": 21,
+                    "score": "@Atletico Madrid 119, Bayern Munich 98",
+                    "boxscoreUrl": "./boxes/box177-2.htm",
+                    "section": "Regular Season"
+                },
+                "worstLoss": {
+                    "date": "4/17/1986",
+                    "opponent": "Bayern Munich",
+                    "result": "L",
+                    "margin": 26,
+                    "score": "Bayern Munich 120, @Atletico Madrid 94",
+                    "boxscoreUrl": "./boxes/box185-8.htm",
+                    "section": "Regular Season"
+                },
+                "closeGames": [],
+                "blowoutWins": [
+                    {
+                        "date": "4/9/1986",
+                        "opponent": "Bayern Munich",
+                        "result": "W",
+                        "margin": 21,
+                        "score": "@Atletico Madrid 119, Bayern Munich 98",
+                        "boxscoreUrl": "./boxes/box177-2.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "blowoutLosses": [
+                    {
+                        "date": "4/17/1986",
+                        "opponent": "Bayern Munich",
+                        "result": "L",
+                        "margin": 26,
+                        "score": "Bayern Munich 120, @Atletico Madrid 94",
+                        "boxscoreUrl": "./boxes/box185-8.htm",
+                        "section": "Regular Season"
+                    }
+                ],
+                "record": "1-3",
+                "closeGameCount": 0,
+                "last3": "WLL"
+            },
+            {
                 "team": "Manchester United",
                 "tier": "Tier 3",
                 "tierShort": "T3",
-                "standingRank": 8,
+                "standingRank": 1,
                 "rosterUrl": "./rosters/roster5.htm",
                 "rosterFile": "roster5.htm",
                 "standingsLast10": "1-9",
@@ -2645,7 +2645,7 @@
                 "streak": "L5",
                 "recentResults": [
                     {
-                        "date": "4/04/1986",
+                        "date": "4/4/1986",
                         "opponent": "Arsenal",
                         "result": "L",
                         "margin": 14,
@@ -2654,7 +2654,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "8/04/1986",
+                        "date": "4/8/1986",
                         "opponent": "Arsenal",
                         "result": "L",
                         "margin": 10,
@@ -2663,7 +2663,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Valencia",
                         "result": "L",
                         "margin": 17,
@@ -2672,7 +2672,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "16/04/1986",
+                        "date": "4/16/1986",
                         "opponent": "Juventus",
                         "result": "L",
                         "margin": 10,
@@ -2681,7 +2681,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Tottenham Hotspur",
                         "result": "L",
                         "margin": 25,
@@ -2692,7 +2692,7 @@
                 ],
                 "bestWin": null,
                 "worstLoss": {
-                    "date": "17/04/1986",
+                    "date": "4/17/1986",
                     "opponent": "Tottenham Hotspur",
                     "result": "L",
                     "margin": 25,
@@ -2704,7 +2704,7 @@
                 "blowoutWins": [],
                 "blowoutLosses": [
                     {
-                        "date": "12/04/1986",
+                        "date": "4/12/1986",
                         "opponent": "Valencia",
                         "result": "L",
                         "margin": 17,
@@ -2713,7 +2713,7 @@
                         "section": "Regular Season"
                     },
                     {
-                        "date": "17/04/1986",
+                        "date": "4/17/1986",
                         "opponent": "Tottenham Hotspur",
                         "result": "L",
                         "margin": 25,

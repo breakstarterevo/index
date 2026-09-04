@@ -473,6 +473,40 @@ class YouthIntakeAppStateTests(unittest.TestCase):
                 self.assertTrue(all(int(row["InsideScoring"]) == 0 for row in fillers))
                 self.assertTrue(all(int(row["InjuryAvoidance"]) == 0 for row in fillers))
 
+    def test_published_review_and_fbb3_export_use_current_divisions(self):
+        draft = app.create_official_draft({"season": "season-9"})
+        published = app.publish_draft(draft["draftHash"])["publication"]
+        clb_team = published["teams"][0]["team"]
+        ecl_team = next(team["team"] for team in published["teams"] if team["division"] == "ECL")
+
+        standings = json.loads(self.paths["STANDINGS_PATH"].read_text(encoding="utf-8"))
+        clb_section = standings["sections"][0]["teams"]
+        ecl_section = standings["sections"][2]["teams"]
+        promoted = next(team for team in ecl_section if team["team"] == ecl_team)
+        relegated = next(team for team in clb_section if team["team"] == clb_team)
+        standings["sections"][0]["teams"] = [
+            team for team in clb_section if team["team"] != clb_team
+        ] + [promoted]
+        standings["sections"][2]["teams"] = [
+            team for team in ecl_section if team["team"] != ecl_team
+        ] + [relegated]
+        self.paths["STANDINGS_PATH"].write_text(json.dumps(standings), encoding="utf-8")
+
+        review = app.bootstrap_payload("season-9")["currentPublished"]
+        review_divisions = {team["team"]: team["division"] for team in review["teams"]}
+        self.assertEqual(review_divisions[ecl_team], "CLB")
+        self.assertEqual(review_divisions[clb_team], "ECL")
+        self.assertEqual(review["counts"]["CLB"], 18)
+        self.assertEqual(review["counts"]["ECL"], 30)
+
+        export_source = app.fbb3_export_source(published["draftHash"])
+        archive_bytes, _ = app.build_fbb3_export(export_source)
+        with zipfile.ZipFile(io.BytesIO(archive_bytes)) as archive:
+            manifest_name = next(name for name in archive.namelist() if name.endswith("-export.json"))
+            manifest = json.loads(archive.read(manifest_name))
+        self.assertEqual(manifest["divisions"]["CLB"]["realProspects"], 18)
+        self.assertEqual(manifest["divisions"]["ECL"]["realProspects"], 30)
+
     def test_stale_input_blocks_publish_without_partial_files(self):
         draft = app.create_official_draft({"season": "season-9"})
         config = json.loads(self.paths["CONFIG_PATH"].read_text(encoding="utf-8"))

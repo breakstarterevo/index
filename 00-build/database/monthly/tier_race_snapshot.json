@@ -8,8 +8,8 @@
             "tier": "Tier 1",
             "type": "relegation",
             "slots": 2,
-            "lineTeam": "AC Milan",
-            "lineRecord": "2-4",
+            "lineTeam": "Brighton",
+            "lineRecord": "2-3",
             "entries": [
                 {
                     "team": "AFC Richmond",
@@ -24,21 +24,9 @@
                     "rosterUrl": "./rosters/roster12.htm"
                 },
                 {
-                    "team": "AC Milan",
-                    "record": "2-4",
-                    "standingRank": 7,
-                    "streak": "L1",
-                    "last3": "LWL",
-                    "avgMargin": -2.0,
-                    "pointDiff": -12,
-                    "gapToLine": 0,
-                    "status": "on_or_below_line",
-                    "rosterUrl": "./rosters/roster9.htm"
-                },
-                {
                     "team": "Brighton",
                     "record": "2-3",
-                    "standingRank": 1,
+                    "standingRank": 3,
                     "streak": "W1",
                     "last3": "LLW",
                     "avgMargin": -0.8,
@@ -50,7 +38,7 @@
                 {
                     "team": "Real Madrid",
                     "record": "3-2",
-                    "standingRank": 3,
+                    "standingRank": 2,
                     "streak": "L2",
                     "last3": "WLL",
                     "avgMargin": -3.6,
@@ -58,6 +46,18 @@
                     "gapToLine": 1,
                     "status": "above_safety",
                     "rosterUrl": "./rosters/roster8.htm"
+                },
+                {
+                    "team": "Benfica",
+                    "record": "3-2",
+                    "standingRank": 5,
+                    "streak": "W3",
+                    "last3": "WWW",
+                    "avgMargin": -0.6,
+                    "pointDiff": -3,
+                    "gapToLine": 1,
+                    "status": "above_safety",
+                    "rosterUrl": "./rosters/roster13.htm"
                 }
             ]
         },
@@ -66,37 +66,37 @@
             "tier": "Tier 2",
             "type": "promotion",
             "slots": 2,
-            "lineTeam": "Ajax",
+            "lineTeam": "Chelsea",
             "lineRecord": "3-2",
             "entries": [
                 {
-                    "team": "FL Fart",
-                    "record": "4-0",
-                    "standingRank": 2,
-                    "streak": "W4",
-                    "last3": "WWW",
-                    "avgMargin": 11.5,
-                    "pointDiff": 46,
-                    "gapToLine": -1,
-                    "status": "on_or_above_line",
-                    "rosterUrl": "./rosters/roster27.htm"
-                },
-                {
-                    "team": "Ajax",
-                    "record": "3-2",
-                    "standingRank": 1,
+                    "team": "Arsenal",
+                    "record": "4-1",
+                    "standingRank": 7,
                     "streak": "W1",
                     "last3": "WLW",
-                    "avgMargin": 11.8,
-                    "pointDiff": 59,
+                    "avgMargin": 6.6,
+                    "pointDiff": 33,
+                    "gapToLine": -1,
+                    "status": "on_or_above_line",
+                    "rosterUrl": "./rosters/roster23.htm"
+                },
+                {
+                    "team": "Chelsea",
+                    "record": "3-2",
+                    "standingRank": 5,
+                    "streak": "W1",
+                    "last3": "LLW",
+                    "avgMargin": 2.0,
+                    "pointDiff": 10,
                     "gapToLine": 0,
                     "status": "on_or_above_line",
-                    "rosterUrl": "./rosters/roster18.htm"
+                    "rosterUrl": "./rosters/roster17.htm"
                 },
                 {
                     "team": "AC Sparta Praha",
                     "record": "3-3",
-                    "standingRank": 5,
+                    "standingRank": 4,
                     "streak": "L2",
                     "last3": "WLL",
                     "avgMargin": 1.5,
@@ -108,7 +108,7 @@
                 {
                     "team": "Aston Villa",
                     "record": "3-2",
-                    "standingRank": 4,
+                    "standingRank": 6,
                     "streak": "L1",
                     "last3": "LWL",
                     "avgMargin": -0.6,
@@ -130,7 +130,7 @@
                 {
                     "team": "Marseille",
                     "record": "1-3",
-                    "standingRank": 6,
+                    "standingRank": 3,
                     "streak": "L1",
                     "last3": "LWL",
                     "avgMargin": -13.25,
@@ -140,21 +140,9 @@
                     "rosterUrl": "./rosters/roster15.htm"
                 },
                 {
-                    "team": "Atletico Madrid",
-                    "record": "1-3",
-                    "standingRank": 8,
-                    "streak": "L2",
-                    "last3": "WLL",
-                    "avgMargin": -6.25,
-                    "pointDiff": -25,
-                    "gapToLine": 0,
-                    "status": "on_or_below_line",
-                    "rosterUrl": "./rosters/roster11.htm"
-                },
-                {
                     "team": "Bayern Munich",
                     "record": "2-4",
-                    "standingRank": 7,
+                    "standingRank": 1,
                     "streak": "W1",
                     "last3": "LLW",
                     "avgMargin": -4.5,
@@ -162,6 +150,18 @@
                     "gapToLine": 1,
                     "status": "above_safety",
                     "rosterUrl": "./rosters/roster7.htm"
+                },
+                {
+                    "team": "AC Milan",
+                    "record": "2-4",
+                    "standingRank": 2,
+                    "streak": "L1",
+                    "last3": "LWL",
+                    "avgMargin": -2.0,
+                    "pointDiff": -12,
+                    "gapToLine": 1,
+                    "status": "above_safety",
+                    "rosterUrl": "./rosters/roster9.htm"
                 }
             ]
         },
@@ -176,7 +176,7 @@
                 {
                     "team": "Manchester City",
                     "record": "4-1",
-                    "standingRank": 5,
+                    "standingRank": 8,
                     "streak": "W3",
                     "last3": "WWW",
                     "avgMargin": 9.8,
@@ -186,21 +186,9 @@
                     "rosterUrl": "./rosters/roster28.htm"
                 },
                 {
-                    "team": "Arsenal",
-                    "record": "4-1",
-                    "standingRank": 1,
-                    "streak": "W1",
-                    "last3": "WLW",
-                    "avgMargin": 6.6,
-                    "pointDiff": 33,
-                    "gapToLine": 0,
-                    "status": "on_or_above_line",
-                    "rosterUrl": "./rosters/roster23.htm"
-                },
-                {
                     "team": "Valencia",
                     "record": "3-1",
-                    "standingRank": 3,
+                    "standingRank": 7,
                     "streak": "L1",
                     "last3": "WWL",
                     "avgMargin": 12.75,
@@ -208,6 +196,18 @@
                     "gapToLine": 1,
                     "status": "chasing",
                     "rosterUrl": "./rosters/roster25.htm"
+                },
+                {
+                    "team": "Juventus",
+                    "record": "3-2",
+                    "standingRank": 3,
+                    "streak": "L1",
+                    "last3": "WWL",
+                    "avgMargin": -0.6,
+                    "pointDiff": -3,
+                    "gapToLine": 1,
+                    "status": "chasing",
+                    "rosterUrl": "./rosters/roster14.htm"
                 }
             ]
         }

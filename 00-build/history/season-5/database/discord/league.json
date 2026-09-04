@@ -1,0 +1,107 @@
+{
+  "name": "European Super League",
+  "url": "https://eurosuperleague.github.io/index/index.htm",
+  "sections": [
+    {
+      "title": "CLB Standings",
+      "teams": [
+        {
+          "name": "Brighton",
+          "wins": 27,
+          "losses": 15,
+          "streak": "W1"
+        },
+        {
+          "name": "Benfica",
+          "wins": 25,
+          "losses": 17,
+          "streak": "W3"
+        },
+        {
+          "name": "Real Madrid",
+          "wins": 24,
+          "losses": 18,
+          "streak": "L2"
+        }
+      ]
+    },
+    {
+      "title": "ELB Standings",
+      "teams": [
+        {
+          "name": "Ajax",
+          "wins": 32,
+          "losses": 10,
+          "streak": "W1"
+        },
+        {
+          "name": "FL Fart",
+          "wins": 30,
+          "losses": 12,
+          "streak": "W5"
+        },
+        {
+          "name": "Inter Milan",
+          "wins": 26,
+          "losses": 16,
+          "streak": "W2"
+        }
+      ]
+    },
+    {
+      "title": "ECL Standings",
+      "teams": [
+        {
+          "name": "Arsenal",
+          "wins": 29,
+          "losses": 13,
+          "streak": "W1"
+        },
+        {
+          "name": "Barcelona",
+          "wins": 27,
+          "losses": 15,
+          "streak": "L2"
+        },
+        {
+          "name": "Valencia",
+          "wins": 25,
+          "losses": 17,
+          "streak": "L1"
+        }
+      ]
+    }
+  ],
+  "leaders": [
+    {
+      "category": "Minutes",
+      "player": "Adrian Dantley",
+      "team": "Benfica",
+      "value": "43.5"
+    },
+    {
+      "category": "Points",
+      "player": "Kiki Vandeweghe",
+      "team": "Brighton",
+      "value": "37.6"
+    },
+    {
+      "category": "Rebounds",
+      "player": "Moses Malone",
+      "team": "Benfica",
+      "value": "11.0"
+    },
+    {
+      "category": "Assists",
+      "player": "Rickey Green",
+      "team": "Brighton",
+      "value": "10.8"
+    },
+    {
+      "category": "Steals",
+      "player": "Rickey Green",
+      "team": "Brighton",
+      "value": "2.5"
+    }
+  ]
+}
