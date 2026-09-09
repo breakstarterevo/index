@@ -21,6 +21,8 @@ OUTPUT_PATH = os.path.join(BUILD_DIR, "database", "camp_tracker.json")
 TRACKER_URL = "https://docs.google.com/spreadsheets/d/1ZCa_G7E9h6Z7Yf6gdFCBL9Aj4nhi92Um2rxb0rgDYew/gviz/tq?tqx=out:csv"
 REGULAR_CAREER_LIMIT = 3
 REHAB_CAREER_LIMIT = 1
+# Resolve confirmed same-name identities without overriding spreadsheet counts.
+TRACKER_PLAYER_ID_OVERRIDES = {"eddiejohnson": "player704"}
 
 
 def normalize_name(value):
@@ -101,6 +103,9 @@ def build_tracker_payload(players, tracker_rows, source_url=TRACKER_URL):
             continue
 
         candidates = database_by_name.get(key, [])
+        override_id = TRACKER_PLAYER_ID_OVERRIDES.get(key)
+        if override_id:
+            candidates = [candidate for candidate in candidates if candidate["playerId"] == override_id]
         if not candidates:
             issues.append(
                 {

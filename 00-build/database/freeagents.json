@@ -577,7 +577,7 @@
             "url": "./players/player68.htm",
             "file": "player68.htm",
             "pos": "C",
-            "age": 21,
+            "age": 22,
             "ht": "6-11",
             "wt": 217,
             "currentRatingColor": "#B0040C",
@@ -805,7 +805,7 @@
             "url": "./players/player76.htm",
             "file": "player76.htm",
             "pos": "PG",
-            "age": 21,
+            "age": 22,
             "ht": "6-0",
             "wt": 202,
             "currentRatingColor": "#B0040C",
@@ -1104,44 +1104,6 @@
             "rowClass": "row1"
         },
         {
-            "number": 27,
-            "name": "Gordon Hayward",
-            "url": "./players/player87.htm",
-            "file": "player87.htm",
-            "pos": "SF",
-            "age": 19,
-            "ht": "6-8",
-            "wt": 220,
-            "currentRatingColor": "#EDBE30",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "91",
-            "futureRating": "108",
-            "lastTeam": "AC Sparta Praha",
-            "lastTeamId": "roster16",
-            "birdYears": 1,
-            "greed": "61",
-            "playForWinner": "80",
-            "loyalty": "99",
-            "happiness": "42",
-            "Ins": 32,
-            "Jps": 38,
-            "Fts": 78,
-            "3ps": 72,
-            "Hnd": 47,
-            "Pas": 28,
-            "Orb": 19,
-            "Drb": 25,
-            "Psd": 36,
-            "Prd": 39,
-            "Stl": 27,
-            "Blk": 32,
-            "Qkn": 61,
-            "Jmp": 73,
-            "Str": 50,
-            "Sta": 77,
-            "rowClass": "row2"
-        },
-        {
             "number": 9,
             "name": "Terence Davis",
             "url": "./players/player88.htm",
@@ -1177,7 +1139,7 @@
             "Jmp": 28,
             "Str": 46,
             "Sta": 64,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 25,
@@ -1215,7 +1177,7 @@
             "Jmp": 28,
             "Str": 59,
             "Sta": 78,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 10,
@@ -1253,7 +1215,83 @@
             "Jmp": 45,
             "Str": 18,
             "Sta": 55,
+            "rowClass": "row2"
+        },
+        {
+            "number": 5,
+            "name": "Cole Anthony",
+            "url": "./players/player92.htm",
+            "file": "player92.htm",
+            "pos": "PG",
+            "age": 19,
+            "ht": "6-2",
+            "wt": 185,
+            "currentRatingColor": "#F2662A",
+            "futureRatingColor": "#307B1A",
+            "currentRating": "77",
+            "futureRating": "101",
+            "lastTeam": "",
+            "lastTeamId": "",
+            "birdYears": 0,
+            "greed": "60",
+            "playForWinner": "10",
+            "loyalty": "87",
+            "happiness": "65",
+            "Ins": 42,
+            "Jps": 49,
+            "Fts": 82,
+            "3ps": 62,
+            "Hnd": 48,
+            "Pas": 21,
+            "Orb": 11,
+            "Drb": 41,
+            "Psd": 27,
+            "Prd": 35,
+            "Stl": 21,
+            "Blk": 21,
+            "Qkn": 94,
+            "Jmp": 44,
+            "Str": 34,
+            "Sta": 82,
             "rowClass": "row1"
+        },
+        {
+            "number": 20,
+            "name": "Doug West",
+            "url": "./players/player94.htm",
+            "file": "player94.htm",
+            "pos": "SG",
+            "age": 21,
+            "ht": "6-6",
+            "wt": 200,
+            "currentRatingColor": "#EDBE30",
+            "futureRatingColor": "#307B1A",
+            "currentRating": "83",
+            "futureRating": "105",
+            "lastTeam": "",
+            "lastTeamId": "",
+            "birdYears": 0,
+            "greed": "49",
+            "playForWinner": "6",
+            "loyalty": "76",
+            "happiness": "52",
+            "Ins": 36,
+            "Jps": 48,
+            "Fts": 77,
+            "3ps": 10,
+            "Hnd": 41,
+            "Pas": 16,
+            "Orb": 31,
+            "Drb": 24,
+            "Psd": 32,
+            "Prd": 41,
+            "Stl": 51,
+            "Blk": 35,
+            "Qkn": 70,
+            "Jmp": 54,
+            "Str": 55,
+            "Sta": 72,
+            "rowClass": "row2"
         },
         {
             "number": 14,
@@ -1291,7 +1329,7 @@
             "Jmp": 68,
             "Str": 45,
             "Sta": 78,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 50,
@@ -1329,44 +1367,6 @@
             "Jmp": 41,
             "Str": 63,
             "Sta": 80,
-            "rowClass": "row1"
-        },
-        {
-            "number": 53,
-            "name": "Andris Biedrins",
-            "url": "./players/player102.htm",
-            "file": "player102.htm",
-            "pos": "C",
-            "age": 18,
-            "ht": "6-11",
-            "wt": 245,
-            "currentRatingColor": "#EDBE30",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "82",
-            "futureRating": "113",
-            "lastTeam": "",
-            "lastTeamId": "",
-            "birdYears": 0,
-            "greed": "72",
-            "playForWinner": "59",
-            "loyalty": "8",
-            "happiness": "5",
-            "Ins": 26,
-            "Jps": 10,
-            "Fts": 31,
-            "3ps": 0,
-            "Hnd": 33,
-            "Pas": 12,
-            "Orb": 66,
-            "Drb": 47,
-            "Psd": 42,
-            "Prd": 15,
-            "Stl": 18,
-            "Blk": 62,
-            "Qkn": 22,
-            "Jmp": 55,
-            "Str": 87,
-            "Sta": 68,
             "rowClass": "row2"
         },
         {
@@ -2092,6 +2092,44 @@
             "rowClass": "row1"
         },
         {
+            "number": 4,
+            "name": "Gary Trent Jr.",
+            "url": "./players/player129.htm",
+            "file": "player129.htm",
+            "pos": "SG",
+            "age": 18,
+            "ht": "6-5",
+            "wt": 209,
+            "currentRatingColor": "#EDBE30",
+            "futureRatingColor": "#307B1A",
+            "currentRating": "83",
+            "futureRating": "109",
+            "lastTeam": "",
+            "lastTeamId": "",
+            "birdYears": 0,
+            "greed": "69",
+            "playForWinner": "93",
+            "loyalty": "27",
+            "happiness": "71",
+            "Ins": 25,
+            "Jps": 59,
+            "Fts": 74,
+            "3ps": 63,
+            "Hnd": 36,
+            "Pas": 10,
+            "Orb": 11,
+            "Drb": 9,
+            "Psd": 26,
+            "Prd": 38,
+            "Stl": 27,
+            "Blk": 17,
+            "Qkn": 75,
+            "Jmp": 39,
+            "Str": 45,
+            "Sta": 72,
+            "rowClass": "row2"
+        },
+        {
             "number": 33,
             "name": "Mahmoud Abdul-Rauf",
             "url": "./players/player131.htm",
@@ -2127,7 +2165,7 @@
             "Jmp": 28,
             "Str": 44,
             "Sta": 79,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 7,
@@ -2165,7 +2203,7 @@
             "Jmp": 42,
             "Str": 52,
             "Sta": 72,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 34,
@@ -2203,7 +2241,7 @@
             "Jmp": 83,
             "Str": 63,
             "Sta": 77,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -2241,7 +2279,7 @@
             "Jmp": 62,
             "Str": 58,
             "Sta": 67,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 12,
@@ -2256,8 +2294,8 @@
             "futureRatingColor": "#EDBE30",
             "currentRating": "95",
             "futureRating": "95",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "8",
             "playForWinner": "74",
@@ -2279,7 +2317,7 @@
             "Jmp": 53,
             "Str": 53,
             "Sta": 81,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 35,
@@ -2287,15 +2325,15 @@
             "url": "./players/player136.htm",
             "file": "player136.htm",
             "pos": "SF",
-            "age": 24,
+            "age": 25,
             "ht": "6-6",
             "wt": 230,
             "currentRatingColor": "#EDBE30",
             "futureRatingColor": "#EDBE30",
             "currentRating": "94",
             "futureRating": "97",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "66",
             "playForWinner": "30",
@@ -2317,7 +2355,7 @@
             "Jmp": 93,
             "Str": 70,
             "Sta": 77,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 3,
@@ -2355,7 +2393,7 @@
             "Jmp": 61,
             "Str": 45,
             "Sta": 94,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 45,
@@ -2393,7 +2431,7 @@
             "Jmp": 16,
             "Str": 62,
             "Sta": 68,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 25,
@@ -2431,7 +2469,7 @@
             "Jmp": 53,
             "Str": 42,
             "Sta": 77,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 30,
@@ -2469,7 +2507,7 @@
             "Jmp": 28,
             "Str": 55,
             "Sta": 60,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 20,
@@ -2507,7 +2545,7 @@
             "Jmp": 20,
             "Str": 74,
             "Sta": 75,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 33,
@@ -2545,7 +2583,7 @@
             "Jmp": 36,
             "Str": 70,
             "Sta": 100,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 23,
@@ -2583,7 +2621,7 @@
             "Jmp": 34,
             "Str": 66,
             "Sta": 65,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 24,
@@ -2621,7 +2659,7 @@
             "Jmp": 21,
             "Str": 77,
             "Sta": 86,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 25,
@@ -2629,7 +2667,7 @@
             "url": "./players/player146.htm",
             "file": "player146.htm",
             "pos": "SG",
-            "age": 24,
+            "age": 25,
             "ht": "6-5",
             "wt": 212,
             "currentRatingColor": "#B0040C",
@@ -2659,7 +2697,7 @@
             "Jmp": 11,
             "Str": 43,
             "Sta": 78,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 5,
@@ -2697,7 +2735,7 @@
             "Jmp": 22,
             "Str": 61,
             "Sta": 83,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 25,
@@ -2735,7 +2773,7 @@
             "Jmp": 38,
             "Str": 64,
             "Sta": 84,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 20,
@@ -2773,7 +2811,7 @@
             "Jmp": 45,
             "Str": 83,
             "Sta": 71,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 34,
@@ -2811,7 +2849,7 @@
             "Jmp": 59,
             "Str": 78,
             "Sta": 74,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 10,
@@ -2849,7 +2887,7 @@
             "Jmp": 32,
             "Str": 61,
             "Sta": 77,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 8,
@@ -2887,7 +2925,7 @@
             "Jmp": 20,
             "Str": 57,
             "Sta": 80,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 33,
@@ -2925,7 +2963,7 @@
             "Jmp": 42,
             "Str": 71,
             "Sta": 75,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 22,
@@ -2963,7 +3001,7 @@
             "Jmp": 37,
             "Str": 59,
             "Sta": 85,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 4,
@@ -3001,7 +3039,7 @@
             "Jmp": 33,
             "Str": 82,
             "Sta": 80,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 35,
@@ -3039,7 +3077,7 @@
             "Jmp": 34,
             "Str": 67,
             "Sta": 49,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 50,
@@ -3077,7 +3115,7 @@
             "Jmp": 48,
             "Str": 76,
             "Sta": 40,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 52,
@@ -3115,7 +3153,7 @@
             "Jmp": 33,
             "Str": 76,
             "Sta": 58,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 45,
@@ -3123,7 +3161,7 @@
             "url": "./players/player159.htm",
             "file": "player159.htm",
             "pos": "PF",
-            "age": 25,
+            "age": 26,
             "ht": "6-6",
             "wt": 237,
             "currentRatingColor": "#B0040C",
@@ -3153,7 +3191,7 @@
             "Jmp": 36,
             "Str": 73,
             "Sta": 70,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 42,
@@ -3161,7 +3199,7 @@
             "url": "./players/player160.htm",
             "file": "player160.htm",
             "pos": "C",
-            "age": 25,
+            "age": 26,
             "ht": "7-0",
             "wt": 263,
             "currentRatingColor": "#B0040C",
@@ -3191,7 +3229,7 @@
             "Jmp": 28,
             "Str": 85,
             "Sta": 31,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 45,
@@ -3229,7 +3267,7 @@
             "Jmp": 58,
             "Str": 57,
             "Sta": 50,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 41,
@@ -3267,7 +3305,7 @@
             "Jmp": 19,
             "Str": 68,
             "Sta": 71,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -3305,44 +3343,6 @@
             "Jmp": 36,
             "Str": 76,
             "Sta": 68,
-            "rowClass": "row1"
-        },
-        {
-            "number": 50,
-            "name": "DeAndre Jordan",
-            "url": "./players/player164.htm",
-            "file": "player164.htm",
-            "pos": "C",
-            "age": 22,
-            "ht": "6-11",
-            "wt": 277,
-            "currentRatingColor": "#EDBE30",
-            "futureRatingColor": "#EDBE30",
-            "currentRating": "99",
-            "futureRating": "99",
-            "lastTeam": "Barcelona",
-            "lastTeamId": "roster24",
-            "birdYears": 1,
-            "greed": "51",
-            "playForWinner": "18",
-            "loyalty": "77",
-            "happiness": "22",
-            "Ins": 29,
-            "Jps": 10,
-            "Fts": 18,
-            "3ps": 0,
-            "Hnd": 28,
-            "Pas": 9,
-            "Orb": 67,
-            "Drb": 64,
-            "Psd": 64,
-            "Prd": 11,
-            "Stl": 13,
-            "Blk": 57,
-            "Qkn": 21,
-            "Jmp": 85,
-            "Str": 97,
-            "Sta": 69,
             "rowClass": "row2"
         },
         {
@@ -3422,44 +3422,6 @@
             "rowClass": "row2"
         },
         {
-            "number": 32,
-            "name": "Bilal Coulibaly",
-            "url": "./players/player168.htm",
-            "file": "player168.htm",
-            "pos": "SF",
-            "age": 21,
-            "ht": "6-6",
-            "wt": 198,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "105",
-            "futureRating": "123",
-            "lastTeam": "Monaco",
-            "lastTeamId": "roster20",
-            "birdYears": 0,
-            "greed": "85",
-            "playForWinner": "28",
-            "loyalty": "54",
-            "happiness": "87",
-            "Ins": 47,
-            "Jps": 37,
-            "Fts": 58,
-            "3ps": 69,
-            "Hnd": 34,
-            "Pas": 18,
-            "Orb": 15,
-            "Drb": 27,
-            "Psd": 40,
-            "Prd": 54,
-            "Stl": 38,
-            "Blk": 44,
-            "Qkn": 76,
-            "Jmp": 55,
-            "Str": 65,
-            "Sta": 79,
-            "rowClass": "row1"
-        },
-        {
             "number": 25,
             "name": "Mamadi Diakite",
             "url": "./players/player169.htm",
@@ -3495,7 +3457,7 @@
             "Jmp": 42,
             "Str": 63,
             "Sta": 69,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 52,
@@ -3533,7 +3495,7 @@
             "Jmp": 32,
             "Str": 81,
             "Sta": 76,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 42,
@@ -3571,7 +3533,7 @@
             "Jmp": 52,
             "Str": 73,
             "Sta": 70,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 53,
@@ -3609,7 +3571,7 @@
             "Jmp": 41,
             "Str": 65,
             "Sta": 65,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -3647,44 +3609,6 @@
             "Jmp": 55,
             "Str": 64,
             "Sta": 74,
-            "rowClass": "row2"
-        },
-        {
-            "number": 33,
-            "name": "Anderson Varejao",
-            "url": "./players/player174.htm",
-            "file": "player174.htm",
-            "pos": "PF",
-            "age": 23,
-            "ht": "6-10",
-            "wt": 246,
-            "currentRatingColor": "#EDBE30",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "98",
-            "futureRating": "100",
-            "lastTeam": "Barcelona",
-            "lastTeamId": "roster24",
-            "birdYears": 1,
-            "greed": "36",
-            "playForWinner": "89",
-            "loyalty": "70",
-            "happiness": "58",
-            "Ins": 37,
-            "Jps": 15,
-            "Fts": 51,
-            "3ps": 0,
-            "Hnd": 36,
-            "Pas": 16,
-            "Orb": 70,
-            "Drb": 70,
-            "Psd": 66,
-            "Prd": 30,
-            "Stl": 58,
-            "Blk": 49,
-            "Qkn": 41,
-            "Jmp": 81,
-            "Str": 74,
-            "Sta": 72,
             "rowClass": "row1"
         },
         {
@@ -5061,7 +4985,7 @@
             "url": "./players/player216.htm",
             "file": "player216.htm",
             "pos": "SF",
-            "age": 23,
+            "age": 24,
             "ht": "6-9",
             "wt": 228,
             "currentRatingColor": "#B0040C",
@@ -5778,44 +5702,6 @@
             "rowClass": "row2"
         },
         {
-            "number": 1,
-            "name": "Xavier McDaniel",
-            "url": "./players/player238.htm",
-            "file": "player238.htm",
-            "pos": "PF",
-            "age": 25,
-            "ht": "6-7",
-            "wt": 228,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "127",
-            "futureRating": "127",
-            "lastTeam": "Aston Villa",
-            "lastTeamId": "roster19",
-            "birdYears": 4,
-            "greed": "75",
-            "playForWinner": "56",
-            "loyalty": "77",
-            "happiness": "51",
-            "Ins": 95,
-            "Jps": 56,
-            "Fts": 62,
-            "3ps": 27,
-            "Hnd": 45,
-            "Pas": 40,
-            "Orb": 87,
-            "Drb": 58,
-            "Psd": 44,
-            "Prd": 50,
-            "Stl": 58,
-            "Blk": 40,
-            "Qkn": 68,
-            "Jmp": 64,
-            "Str": 67,
-            "Sta": 95,
-            "rowClass": "row1"
-        },
-        {
             "number": 41,
             "name": "Chris Johnson",
             "url": "./players/player239.htm",
@@ -5851,7 +5737,7 @@
             "Jmp": 49,
             "Str": 65,
             "Sta": 75,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 43,
@@ -5889,7 +5775,7 @@
             "Jmp": 16,
             "Str": 89,
             "Sta": 80,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 14,
@@ -5927,44 +5813,6 @@
             "Jmp": 49,
             "Str": 45,
             "Sta": 96,
-            "rowClass": "row2"
-        },
-        {
-            "number": 22,
-            "name": "Doug Christie",
-            "url": "./players/player243.htm",
-            "file": "player243.htm",
-            "pos": "SF",
-            "age": 25,
-            "ht": "6-6",
-            "wt": 221,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "135",
-            "futureRating": "141",
-            "lastTeam": "Paris Saint-Germain",
-            "lastTeamId": "roster21",
-            "birdYears": 4,
-            "greed": "19",
-            "playForWinner": "36",
-            "loyalty": "13",
-            "happiness": "9",
-            "Ins": 49,
-            "Jps": 65,
-            "Fts": 79,
-            "3ps": 80,
-            "Hnd": 54,
-            "Pas": 51,
-            "Orb": 31,
-            "Drb": 41,
-            "Psd": 36,
-            "Prd": 76,
-            "Stl": 88,
-            "Blk": 34,
-            "Qkn": 72,
-            "Jmp": 67,
-            "Str": 58,
-            "Sta": 79,
             "rowClass": "row1"
         },
         {
@@ -6163,7 +6011,7 @@
             "url": "./players/player249.htm",
             "file": "player249.htm",
             "pos": "PG",
-            "age": 23,
+            "age": 24,
             "ht": "6-5",
             "wt": 213,
             "currentRatingColor": "#307B1A",
@@ -6310,82 +6158,6 @@
             "rowClass": "row2"
         },
         {
-            "number": 50,
-            "name": "Theo Ratliff",
-            "url": "./players/player254.htm",
-            "file": "player254.htm",
-            "pos": "C",
-            "age": 25,
-            "ht": "6-10",
-            "wt": 262,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "109",
-            "futureRating": "109",
-            "lastTeam": "Chelsea",
-            "lastTeamId": "roster17",
-            "birdYears": 4,
-            "greed": "94",
-            "playForWinner": "13",
-            "loyalty": "56",
-            "happiness": "44",
-            "Ins": 45,
-            "Jps": 36,
-            "Fts": 63,
-            "3ps": 0,
-            "Hnd": 41,
-            "Pas": 9,
-            "Orb": 64,
-            "Drb": 66,
-            "Psd": 74,
-            "Prd": 17,
-            "Stl": 27,
-            "Blk": 100,
-            "Qkn": 22,
-            "Jmp": 70,
-            "Str": 81,
-            "Sta": 75,
-            "rowClass": "row1"
-        },
-        {
-            "number": 8,
-            "name": "Steve Nash",
-            "url": "./players/player255.htm",
-            "file": "player255.htm",
-            "pos": "SG",
-            "age": 25,
-            "ht": "6-3",
-            "wt": 200,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "122",
-            "futureRating": "125",
-            "lastTeam": "Aston Villa",
-            "lastTeamId": "roster19",
-            "birdYears": 4,
-            "greed": "78",
-            "playForWinner": "88",
-            "loyalty": "29",
-            "happiness": "70",
-            "Ins": 36,
-            "Jps": 82,
-            "Fts": 86,
-            "3ps": 84,
-            "Hnd": 77,
-            "Pas": 81,
-            "Orb": 12,
-            "Drb": 25,
-            "Psd": 21,
-            "Prd": 56,
-            "Stl": 37,
-            "Blk": 8,
-            "Qkn": 92,
-            "Jmp": 57,
-            "Str": 70,
-            "Sta": 90,
-            "rowClass": "row2"
-        },
-        {
             "number": 10,
             "name": "Greg Grant",
             "url": "./players/player256.htm",
@@ -6512,8 +6284,8 @@
             "futureRatingColor": "#EDBE30",
             "currentRating": "87",
             "futureRating": "87",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "5",
             "playForWinner": "89",
@@ -6652,44 +6424,6 @@
             "rowClass": "row1"
         },
         {
-            "number": 55,
-            "name": "Jalen Duren",
-            "url": "./players/player264.htm",
-            "file": "player264.htm",
-            "pos": "C",
-            "age": 22,
-            "ht": "6-11",
-            "wt": 282,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "125",
-            "futureRating": "128",
-            "lastTeam": "Barcelona",
-            "lastTeamId": "roster24",
-            "birdYears": 4,
-            "greed": "100",
-            "playForWinner": "62",
-            "loyalty": "25",
-            "happiness": "40",
-            "Ins": 66,
-            "Jps": 23,
-            "Fts": 54,
-            "3ps": 10,
-            "Hnd": 13,
-            "Pas": 21,
-            "Orb": 80,
-            "Drb": 87,
-            "Psd": 77,
-            "Prd": 16,
-            "Stl": 33,
-            "Blk": 74,
-            "Qkn": 31,
-            "Jmp": 60,
-            "Str": 96,
-            "Sta": 72,
-            "rowClass": "row2"
-        },
-        {
             "number": 44,
             "name": "Dan McClintock",
             "url": "./players/player265.htm",
@@ -6725,44 +6459,6 @@
             "Jmp": 33,
             "Str": 88,
             "Sta": 70,
-            "rowClass": "row1"
-        },
-        {
-            "number": 34,
-            "name": "Festus Ezeli",
-            "url": "./players/player266.htm",
-            "file": "player266.htm",
-            "pos": "C",
-            "age": 25,
-            "ht": "6-11",
-            "wt": 273,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "113",
-            "futureRating": "121",
-            "lastTeam": "Crystal Palace",
-            "lastTeamId": "roster6",
-            "birdYears": 4,
-            "greed": "38",
-            "playForWinner": "69",
-            "loyalty": "43",
-            "happiness": "2",
-            "Ins": 43,
-            "Jps": 18,
-            "Fts": 43,
-            "3ps": 0,
-            "Hnd": 25,
-            "Pas": 14,
-            "Orb": 100,
-            "Drb": 72,
-            "Psd": 70,
-            "Prd": 11,
-            "Stl": 27,
-            "Blk": 92,
-            "Qkn": 21,
-            "Jmp": 60,
-            "Str": 56,
-            "Sta": 75,
             "rowClass": "row2"
         },
         {
@@ -7683,7 +7379,7 @@
             "url": "./players/player292.htm",
             "file": "player292.htm",
             "pos": "C",
-            "age": 24,
+            "age": 25,
             "ht": "6-11",
             "wt": 278,
             "currentRatingColor": "#B0040C",
@@ -7906,6 +7602,44 @@
             "rowClass": "row2"
         },
         {
+            "number": 13,
+            "name": "Tottenham Hotspur Mascot",
+            "url": "./players/player298.htm",
+            "file": "player298.htm",
+            "pos": "PG",
+            "age": 40,
+            "ht": "6-5",
+            "wt": 195,
+            "currentRatingColor": "#B0040C",
+            "futureRatingColor": "#B0040C",
+            "currentRating": "0",
+            "futureRating": "0",
+            "lastTeam": "",
+            "lastTeamId": "",
+            "birdYears": 0,
+            "greed": "80",
+            "playForWinner": "92",
+            "loyalty": "44",
+            "happiness": "65",
+            "Ins": 0,
+            "Jps": 0,
+            "Fts": 0,
+            "3ps": 0,
+            "Hnd": 0,
+            "Pas": 0,
+            "Orb": 0,
+            "Drb": 0,
+            "Psd": 0,
+            "Prd": 0,
+            "Stl": 0,
+            "Blk": 0,
+            "Qkn": 0,
+            "Jmp": 0,
+            "Str": 0,
+            "Sta": 0,
+            "rowClass": "row1"
+        },
+        {
             "number": 0,
             "name": "Valencia Mascot",
             "url": "./players/player299.htm",
@@ -7941,7 +7675,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 26,
@@ -7979,7 +7713,7 @@
             "Jmp": 34,
             "Str": 65,
             "Sta": 34,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -8017,7 +7751,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -8055,7 +7789,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -8093,7 +7827,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -8131,7 +7865,7 @@
             "Jmp": 60,
             "Str": 44,
             "Sta": 48,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -8169,7 +7903,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -8207,7 +7941,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -8245,7 +7979,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -8283,7 +8017,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -8321,7 +8055,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -8359,7 +8093,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -8397,7 +8131,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -8435,7 +8169,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -8473,7 +8207,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -8511,7 +8245,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -8549,7 +8283,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 53,
@@ -8587,7 +8321,7 @@
             "Jmp": 54,
             "Str": 65,
             "Sta": 82,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 20,
@@ -8625,7 +8359,7 @@
             "Jmp": 43,
             "Str": 45,
             "Sta": 83,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 21,
@@ -8663,7 +8397,7 @@
             "Jmp": 26,
             "Str": 70,
             "Sta": 77,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -8701,7 +8435,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 26,
@@ -8709,7 +8443,7 @@
             "url": "./players/player323.htm",
             "file": "player323.htm",
             "pos": "PF",
-            "age": 24,
+            "age": 25,
             "ht": "6-6",
             "wt": 228,
             "currentRatingColor": "#EDBE30",
@@ -8739,7 +8473,7 @@
             "Jmp": 93,
             "Str": 70,
             "Sta": 77,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 16,
@@ -8777,7 +8511,7 @@
             "Jmp": 66,
             "Str": 56,
             "Sta": 83,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 23,
@@ -8785,7 +8519,7 @@
             "url": "./players/player326.htm",
             "file": "player326.htm",
             "pos": "SF",
-            "age": 20,
+            "age": 21,
             "ht": "6-6",
             "wt": 219,
             "currentRatingColor": "#EDBE30",
@@ -8815,7 +8549,7 @@
             "Jmp": 30,
             "Str": 55,
             "Sta": 75,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 24,
@@ -8853,7 +8587,7 @@
             "Jmp": 25,
             "Str": 29,
             "Sta": 78,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 52,
@@ -8891,7 +8625,7 @@
             "Jmp": 74,
             "Str": 72,
             "Sta": 70,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 2,
@@ -8929,7 +8663,7 @@
             "Jmp": 67,
             "Str": 26,
             "Sta": 84,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 41,
@@ -8967,7 +8701,7 @@
             "Jmp": 36,
             "Str": 80,
             "Sta": 67,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 34,
@@ -9005,7 +8739,7 @@
             "Jmp": 64,
             "Str": 82,
             "Sta": 70,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 33,
@@ -9043,7 +8777,7 @@
             "Jmp": 60,
             "Str": 48,
             "Sta": 85,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 7,
@@ -9081,7 +8815,7 @@
             "Jmp": 53,
             "Str": 45,
             "Sta": 80,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 20,
@@ -9119,7 +8853,7 @@
             "Jmp": 49,
             "Str": 46,
             "Sta": 92,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 30,
@@ -9157,7 +8891,7 @@
             "Jmp": 60,
             "Str": 66,
             "Sta": 67,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -9195,7 +8929,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 31,
@@ -9233,7 +8967,7 @@
             "Jmp": 32,
             "Str": 37,
             "Sta": 62,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 5,
@@ -9271,7 +9005,7 @@
             "Jmp": 55,
             "Str": 37,
             "Sta": 85,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 34,
@@ -9309,7 +9043,7 @@
             "Jmp": 51,
             "Str": 32,
             "Sta": 80,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 50,
@@ -9347,7 +9081,7 @@
             "Jmp": 34,
             "Str": 63,
             "Sta": 69,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 44,
@@ -9385,7 +9119,7 @@
             "Jmp": 37,
             "Str": 65,
             "Sta": 74,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 52,
@@ -9423,7 +9157,7 @@
             "Jmp": 43,
             "Str": 57,
             "Sta": 66,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -9461,7 +9195,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 1,
@@ -9499,7 +9233,7 @@
             "Jmp": 55,
             "Str": 51,
             "Sta": 71,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 1,
@@ -9537,7 +9271,7 @@
             "Jmp": 57,
             "Str": 57,
             "Sta": 73,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 51,
@@ -9575,7 +9309,7 @@
             "Jmp": 74,
             "Str": 73,
             "Sta": 75,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 26,
@@ -9613,7 +9347,7 @@
             "Jmp": 61,
             "Str": 66,
             "Sta": 78,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -9651,7 +9385,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -9689,7 +9423,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 22,
@@ -9727,7 +9461,7 @@
             "Jmp": 18,
             "Str": 46,
             "Sta": 83,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -9765,7 +9499,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -9803,7 +9537,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 20,
@@ -9841,7 +9575,7 @@
             "Jmp": 52,
             "Str": 53,
             "Sta": 82,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 35,
@@ -9879,7 +9613,7 @@
             "Jmp": 20,
             "Str": 65,
             "Sta": 43,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -9917,7 +9651,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -9955,7 +9689,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 15,
@@ -9993,7 +9727,7 @@
             "Jmp": 72,
             "Str": 47,
             "Sta": 78,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -10031,7 +9765,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -10069,7 +9803,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -10107,7 +9841,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 28,
@@ -10145,7 +9879,7 @@
             "Jmp": 78,
             "Str": 66,
             "Sta": 74,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 45,
@@ -10183,7 +9917,7 @@
             "Jmp": 23,
             "Str": 83,
             "Sta": 77,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 30,
@@ -10221,7 +9955,7 @@
             "Jmp": 80,
             "Str": 81,
             "Sta": 77,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 15,
@@ -10259,7 +9993,7 @@
             "Jmp": 34,
             "Str": 52,
             "Sta": 86,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 22,
@@ -10297,7 +10031,7 @@
             "Jmp": 45,
             "Str": 63,
             "Sta": 81,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 20,
@@ -10335,7 +10069,7 @@
             "Jmp": 59,
             "Str": 60,
             "Sta": 90,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 5,
@@ -10373,7 +10107,7 @@
             "Jmp": 69,
             "Str": 46,
             "Sta": 95,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 33,
@@ -10411,7 +10145,7 @@
             "Jmp": 57,
             "Str": 82,
             "Sta": 79,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 34,
@@ -10449,7 +10183,7 @@
             "Jmp": 29,
             "Str": 53,
             "Sta": 85,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 5,
@@ -10487,7 +10221,7 @@
             "Jmp": 36,
             "Str": 48,
             "Sta": 95,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 11,
@@ -10525,7 +10259,7 @@
             "Jmp": 82,
             "Str": 51,
             "Sta": 82,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 18,
@@ -10563,7 +10297,7 @@
             "Jmp": 63,
             "Str": 63,
             "Sta": 79,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 44,
@@ -10571,7 +10305,7 @@
             "url": "./players/player384.htm",
             "file": "player384.htm",
             "pos": "C",
-            "age": 27,
+            "age": 28,
             "ht": "6-11",
             "wt": 252,
             "currentRatingColor": "#EDBE30",
@@ -10601,7 +10335,7 @@
             "Jmp": 58,
             "Str": 69,
             "Sta": 82,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 13,
@@ -10639,44 +10373,6 @@
             "Jmp": 57,
             "Str": 59,
             "Sta": 75,
-            "rowClass": "row2"
-        },
-        {
-            "number": 45,
-            "name": "Chet Holmgren",
-            "url": "./players/player387.htm",
-            "file": "player387.htm",
-            "pos": "C",
-            "age": 24,
-            "ht": "7-0",
-            "wt": 213,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "108",
-            "futureRating": "108",
-            "lastTeam": "Chelsea",
-            "lastTeamId": "roster17",
-            "birdYears": 4,
-            "greed": "54",
-            "playForWinner": "12",
-            "loyalty": "27",
-            "happiness": "44",
-            "Ins": 52,
-            "Jps": 60,
-            "Fts": 71,
-            "3ps": 56,
-            "Hnd": 39,
-            "Pas": 31,
-            "Orb": 30,
-            "Drb": 55,
-            "Psd": 59,
-            "Prd": 37,
-            "Stl": 37,
-            "Blk": 92,
-            "Qkn": 54,
-            "Jmp": 43,
-            "Str": 82,
-            "Sta": 84,
             "rowClass": "row1"
         },
         {
@@ -10756,44 +10452,6 @@
             "rowClass": "row1"
         },
         {
-            "number": 4,
-            "name": "Scott Skiles",
-            "url": "./players/player390.htm",
-            "file": "player390.htm",
-            "pos": "SG",
-            "age": 25,
-            "ht": "6-1",
-            "wt": 190,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "107",
-            "futureRating": "118",
-            "lastTeam": "Ajax",
-            "lastTeamId": "roster18",
-            "birdYears": 4,
-            "greed": "100",
-            "playForWinner": "12",
-            "loyalty": "52",
-            "happiness": "28",
-            "Ins": 42,
-            "Jps": 55,
-            "Fts": 91,
-            "3ps": 84,
-            "Hnd": 86,
-            "Pas": 68,
-            "Orb": 13,
-            "Drb": 24,
-            "Psd": 15,
-            "Prd": 52,
-            "Stl": 52,
-            "Blk": 7,
-            "Qkn": 93,
-            "Jmp": 67,
-            "Str": 42,
-            "Sta": 83,
-            "rowClass": "row2"
-        },
-        {
             "number": 7,
             "name": "Wayne Ellington",
             "url": "./players/player391.htm",
@@ -10829,7 +10487,7 @@
             "Jmp": 19,
             "Str": 44,
             "Sta": 82,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 25,
@@ -10867,7 +10525,7 @@
             "Jmp": 51,
             "Str": 35,
             "Sta": 88,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 24,
@@ -10905,7 +10563,7 @@
             "Jmp": 40,
             "Str": 37,
             "Sta": 89,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 23,
@@ -10943,7 +10601,7 @@
             "Jmp": 35,
             "Str": 70,
             "Sta": 68,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 33,
@@ -10981,7 +10639,7 @@
             "Jmp": 42,
             "Str": 66,
             "Sta": 85,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 8,
@@ -11019,7 +10677,7 @@
             "Jmp": 43,
             "Str": 40,
             "Sta": 100,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 12,
@@ -11057,7 +10715,7 @@
             "Jmp": 29,
             "Str": 33,
             "Sta": 78,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -11095,7 +10753,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 52,
@@ -11133,7 +10791,7 @@
             "Jmp": 39,
             "Str": 79,
             "Sta": 66,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -11171,7 +10829,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -11209,7 +10867,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -11247,7 +10905,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -11285,7 +10943,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -11323,7 +10981,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -11361,7 +11019,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 34,
@@ -11399,7 +11057,7 @@
             "Jmp": 35,
             "Str": 41,
             "Sta": 78,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -11437,7 +11095,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 23,
@@ -11475,7 +11133,7 @@
             "Jmp": 31,
             "Str": 49,
             "Sta": 79,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -11513,7 +11171,7 @@
             "Jmp": 46,
             "Str": 63,
             "Sta": 68,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 9,
@@ -11551,7 +11209,7 @@
             "Jmp": 22,
             "Str": 76,
             "Sta": 74,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -11589,7 +11247,7 @@
             "Jmp": 79,
             "Str": 57,
             "Sta": 69,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 23,
@@ -11627,7 +11285,7 @@
             "Jmp": 14,
             "Str": 65,
             "Sta": 75,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 23,
@@ -11665,7 +11323,7 @@
             "Jmp": 64,
             "Str": 42,
             "Sta": 74,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 44,
@@ -11703,7 +11361,7 @@
             "Jmp": 57,
             "Str": 66,
             "Sta": 64,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 5,
@@ -11741,7 +11399,7 @@
             "Jmp": 50,
             "Str": 37,
             "Sta": 81,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 3,
@@ -11779,7 +11437,7 @@
             "Jmp": 39,
             "Str": 41,
             "Sta": 76,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 9,
@@ -11817,7 +11475,7 @@
             "Jmp": 31,
             "Str": 49,
             "Sta": 84,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 9,
@@ -11855,7 +11513,7 @@
             "Jmp": 44,
             "Str": 46,
             "Sta": 75,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 34,
@@ -11893,7 +11551,7 @@
             "Jmp": 41,
             "Str": 64,
             "Sta": 70,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -11931,6 +11589,44 @@
             "Jmp": 47,
             "Str": 66,
             "Sta": 69,
+            "rowClass": "row1"
+        },
+        {
+            "number": 28,
+            "name": "Jared Rhoden",
+            "url": "./players/player435.htm",
+            "file": "player435.htm",
+            "pos": "SG",
+            "age": 23,
+            "ht": "6-6",
+            "wt": 210,
+            "currentRatingColor": "#F2662A",
+            "futureRatingColor": "#EDBE30",
+            "currentRating": "75",
+            "futureRating": "91",
+            "lastTeam": "",
+            "lastTeamId": "",
+            "birdYears": 0,
+            "greed": "41",
+            "playForWinner": "32",
+            "loyalty": "73",
+            "happiness": "65",
+            "Ins": 34,
+            "Jps": 27,
+            "Fts": 70,
+            "3ps": 49,
+            "Hnd": 38,
+            "Pas": 11,
+            "Orb": 20,
+            "Drb": 35,
+            "Psd": 22,
+            "Prd": 34,
+            "Stl": 37,
+            "Blk": 20,
+            "Qkn": 65,
+            "Jmp": 31,
+            "Str": 50,
+            "Sta": 73,
             "rowClass": "row2"
         },
         {
@@ -13725,7 +13421,7 @@
             "url": "./players/player509.htm",
             "file": "player509.htm",
             "pos": "C",
-            "age": 22,
+            "age": 23,
             "ht": "6-9",
             "wt": 220,
             "currentRatingColor": "#F2662A",
@@ -17710,44 +17406,6 @@
             "rowClass": "row2"
         },
         {
-            "number": 18,
-            "name": "Cameron Thomas",
-            "url": "./players/player624.htm",
-            "file": "player624.htm",
-            "pos": "SG",
-            "age": 24,
-            "ht": "6-4",
-            "wt": 215,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "114",
-            "futureRating": "118",
-            "lastTeam": "Benfica",
-            "lastTeamId": "roster13",
-            "birdYears": 4,
-            "greed": "53",
-            "playForWinner": "23",
-            "loyalty": "13",
-            "happiness": "2",
-            "Ins": 67,
-            "Jps": 73,
-            "Fts": 57,
-            "3ps": 81,
-            "Hnd": 40,
-            "Pas": 16,
-            "Orb": 15,
-            "Drb": 22,
-            "Psd": 28,
-            "Prd": 49,
-            "Stl": 44,
-            "Blk": 33,
-            "Qkn": 74,
-            "Jmp": 61,
-            "Str": 50,
-            "Sta": 87,
-            "rowClass": "row1"
-        },
-        {
             "number": 34,
             "name": "Kobe Brown",
             "url": "./players/player625.htm",
@@ -17783,7 +17441,7 @@
             "Jmp": 36,
             "Str": 94,
             "Sta": 70,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 14,
@@ -17821,7 +17479,7 @@
             "Jmp": 39,
             "Str": 63,
             "Sta": 82,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 30,
@@ -17859,7 +17517,7 @@
             "Jmp": 80,
             "Str": 78,
             "Sta": 74,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 31,
@@ -17897,7 +17555,7 @@
             "Jmp": 42,
             "Str": 48,
             "Sta": 83,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 31,
@@ -17935,7 +17593,7 @@
             "Jmp": 53,
             "Str": 58,
             "Sta": 81,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 33,
@@ -17973,7 +17631,7 @@
             "Jmp": 58,
             "Str": 85,
             "Sta": 68,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 24,
@@ -18011,7 +17669,7 @@
             "Jmp": 31,
             "Str": 56,
             "Sta": 87,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 53,
@@ -18049,7 +17707,7 @@
             "Jmp": 40,
             "Str": 78,
             "Sta": 82,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 43,
@@ -18087,7 +17745,7 @@
             "Jmp": 29,
             "Str": 92,
             "Sta": 74,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 40,
@@ -18125,7 +17783,7 @@
             "Jmp": 42,
             "Str": 89,
             "Sta": 73,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 4,
@@ -18163,7 +17821,7 @@
             "Jmp": 39,
             "Str": 45,
             "Sta": 100,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 44,
@@ -18201,7 +17859,7 @@
             "Jmp": 30,
             "Str": 49,
             "Sta": 28,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -18239,7 +17897,7 @@
             "Jmp": 39,
             "Str": 51,
             "Sta": 17,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 51,
@@ -18277,7 +17935,7 @@
             "Jmp": 42,
             "Str": 46,
             "Sta": 52,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -18315,7 +17973,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -18353,7 +18011,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -18391,7 +18049,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -18429,7 +18087,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -18467,7 +18125,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -18505,7 +18163,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -18543,7 +18201,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -18581,7 +18239,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -18619,7 +18277,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -18657,7 +18315,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -18695,7 +18353,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -18733,7 +18391,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -18771,7 +18429,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -18809,7 +18467,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -18847,7 +18505,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 34,
@@ -18885,7 +18543,7 @@
             "Jmp": 42,
             "Str": 78,
             "Sta": 12,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -18923,7 +18581,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -18961,7 +18619,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -18999,7 +18657,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -19037,7 +18695,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -19075,7 +18733,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 31,
@@ -19113,7 +18771,7 @@
             "Jmp": 43,
             "Str": 55,
             "Sta": 17,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 52,
@@ -19151,7 +18809,7 @@
             "Jmp": 35,
             "Str": 59,
             "Sta": 37,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -19189,7 +18847,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 15,
@@ -19227,7 +18885,7 @@
             "Jmp": 42,
             "Str": 52,
             "Sta": 60,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 2,
@@ -19265,7 +18923,7 @@
             "Jmp": 26,
             "Str": 76,
             "Sta": 39,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 18,
@@ -19303,7 +18961,7 @@
             "Jmp": 24,
             "Str": 64,
             "Sta": 36,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 20,
@@ -19341,7 +18999,7 @@
             "Jmp": 34,
             "Str": 54,
             "Sta": 66,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -19379,7 +19037,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 2,
@@ -19417,7 +19075,7 @@
             "Jmp": 35,
             "Str": 63,
             "Sta": 79,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 53,
@@ -19432,8 +19090,8 @@
             "futureRatingColor": "#307B1A",
             "currentRating": "102",
             "futureRating": "108",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 1,
             "greed": "33",
             "playForWinner": "75",
@@ -19455,7 +19113,7 @@
             "Jmp": 39,
             "Str": 56,
             "Sta": 74,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -19493,7 +19151,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 31,
@@ -19531,44 +19189,6 @@
             "Jmp": 38,
             "Str": 73,
             "Sta": 71,
-            "rowClass": "row2"
-        },
-        {
-            "number": 11,
-            "name": "Mike Conley",
-            "url": "./players/player674.htm",
-            "file": "player674.htm",
-            "pos": "PG",
-            "age": 21,
-            "ht": "6-1",
-            "wt": 196,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "101",
-            "futureRating": "103",
-            "lastTeam": "Monaco",
-            "lastTeamId": "roster20",
-            "birdYears": 1,
-            "greed": "26",
-            "playForWinner": "46",
-            "loyalty": "67",
-            "happiness": "28",
-            "Ins": 35,
-            "Jps": 56,
-            "Fts": 77,
-            "3ps": 67,
-            "Hnd": 77,
-            "Pas": 65,
-            "Orb": 7,
-            "Drb": 23,
-            "Psd": 20,
-            "Prd": 61,
-            "Stl": 64,
-            "Blk": 11,
-            "Qkn": 94,
-            "Jmp": 52,
-            "Str": 43,
-            "Sta": 87,
             "rowClass": "row1"
         },
         {
@@ -20180,44 +19800,6 @@
             "rowClass": "row1"
         },
         {
-            "number": 26,
-            "name": "Larry Bird",
-            "url": "./players/player697.htm",
-            "file": "player697.htm",
-            "pos": "SF",
-            "age": 26,
-            "ht": "6-9",
-            "wt": 244,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "142",
-            "futureRating": "142",
-            "lastTeam": "AFC Richmond",
-            "lastTeamId": "roster12",
-            "birdYears": 5,
-            "greed": "36",
-            "playForWinner": "37",
-            "loyalty": "13",
-            "happiness": "60",
-            "Ins": 83,
-            "Jps": 56,
-            "Fts": 90,
-            "3ps": 64,
-            "Hnd": 42,
-            "Pas": 57,
-            "Orb": 43,
-            "Drb": 71,
-            "Psd": 59,
-            "Prd": 42,
-            "Stl": 57,
-            "Blk": 38,
-            "Qkn": 70,
-            "Jmp": 74,
-            "Str": 82,
-            "Sta": 98,
-            "rowClass": "row2"
-        },
-        {
             "number": 21,
             "name": "Julius Erving",
             "url": "./players/player700.htm",
@@ -20253,7 +19835,7 @@
             "Jmp": 69,
             "Str": 56,
             "Sta": 89,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 21,
@@ -20291,44 +19873,6 @@
             "Jmp": 56,
             "Str": 61,
             "Sta": 99,
-            "rowClass": "row2"
-        },
-        {
-            "number": 4,
-            "name": "Eddie Johnson",
-            "url": "./players/player704.htm",
-            "file": "player704.htm",
-            "pos": "PF",
-            "age": 25,
-            "ht": "6-9",
-            "wt": 240,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "132",
-            "futureRating": "139",
-            "lastTeam": "Crystal Palace",
-            "lastTeamId": "roster6",
-            "birdYears": 4,
-            "greed": "25",
-            "playForWinner": "2",
-            "loyalty": "56",
-            "happiness": "8",
-            "Ins": 90,
-            "Jps": 63,
-            "Fts": 83,
-            "3ps": 74,
-            "Hnd": 40,
-            "Pas": 40,
-            "Orb": 60,
-            "Drb": 40,
-            "Psd": 36,
-            "Prd": 35,
-            "Stl": 38,
-            "Blk": 16,
-            "Qkn": 69,
-            "Jmp": 61,
-            "Str": 78,
-            "Sta": 91,
             "rowClass": "row1"
         },
         {
@@ -20344,8 +19888,8 @@
             "futureRatingColor": "#307B1A",
             "currentRating": "113",
             "futureRating": "113",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 1,
             "greed": "95",
             "playForWinner": "52",
@@ -20368,44 +19912,6 @@
             "Str": 74,
             "Sta": 70,
             "rowClass": "row2"
-        },
-        {
-            "number": 15,
-            "name": "Alex English",
-            "url": "./players/player711.htm",
-            "file": "player711.htm",
-            "pos": "PF",
-            "age": 30,
-            "ht": "6-7",
-            "wt": 219,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "135",
-            "futureRating": "135",
-            "lastTeam": "Crystal Palace",
-            "lastTeamId": "roster6",
-            "birdYears": 5,
-            "greed": "56",
-            "playForWinner": "46",
-            "loyalty": "77",
-            "happiness": "53",
-            "Ins": 100,
-            "Jps": 70,
-            "Fts": 83,
-            "3ps": 1,
-            "Hnd": 50,
-            "Pas": 61,
-            "Orb": 75,
-            "Drb": 47,
-            "Psd": 56,
-            "Prd": 54,
-            "Stl": 53,
-            "Blk": 57,
-            "Qkn": 68,
-            "Jmp": 76,
-            "Str": 67,
-            "Sta": 91,
-            "rowClass": "row1"
         },
         {
             "number": 42,
@@ -20443,7 +19949,7 @@
             "Jmp": 60,
             "Str": 61,
             "Sta": 97,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 28,
@@ -20481,7 +19987,7 @@
             "Jmp": 73,
             "Str": 63,
             "Sta": 87,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 1,
@@ -20519,196 +20025,6 @@
             "Jmp": 23,
             "Str": 38,
             "Sta": 75,
-            "rowClass": "row2"
-        },
-        {
-            "number": 50,
-            "name": "Tom Chambers",
-            "url": "./players/player724.htm",
-            "file": "player724.htm",
-            "pos": "PF",
-            "age": 25,
-            "ht": "6-10",
-            "wt": 256,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "133",
-            "futureRating": "134",
-            "lastTeam": "AFC Richmond",
-            "lastTeamId": "roster12",
-            "birdYears": 5,
-            "greed": "92",
-            "playForWinner": "6",
-            "loyalty": "84",
-            "happiness": "51",
-            "Ins": 100,
-            "Jps": 39,
-            "Fts": 73,
-            "3ps": 55,
-            "Hnd": 45,
-            "Pas": 42,
-            "Orb": 63,
-            "Drb": 60,
-            "Psd": 58,
-            "Prd": 29,
-            "Stl": 40,
-            "Blk": 47,
-            "Qkn": 52,
-            "Jmp": 100,
-            "Str": 75,
-            "Sta": 92,
-            "rowClass": "row1"
-        },
-        {
-            "number": 6,
-            "name": "Norm Nixon",
-            "url": "./players/player726.htm",
-            "file": "player726.htm",
-            "pos": "PG",
-            "age": 28,
-            "ht": "6-2",
-            "wt": 190,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "123",
-            "futureRating": "123",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
-            "birdYears": 1,
-            "greed": "19",
-            "playForWinner": "87",
-            "loyalty": "11",
-            "happiness": "71",
-            "Ins": 81,
-            "Jps": 77,
-            "Fts": 73,
-            "3ps": 34,
-            "Hnd": 94,
-            "Pas": 97,
-            "Orb": 16,
-            "Drb": 17,
-            "Psd": 18,
-            "Prd": 74,
-            "Stl": 70,
-            "Blk": 4,
-            "Qkn": 95,
-            "Jmp": 33,
-            "Str": 48,
-            "Sta": 100,
-            "rowClass": "row2"
-        },
-        {
-            "number": 30,
-            "name": "Greg Ballard",
-            "url": "./players/player728.htm",
-            "file": "player728.htm",
-            "pos": "SF",
-            "age": 29,
-            "ht": "6-7",
-            "wt": 223,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "135",
-            "futureRating": "135",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
-            "birdYears": 1,
-            "greed": "20",
-            "playForWinner": "93",
-            "loyalty": "73",
-            "happiness": "27",
-            "Ins": 79,
-            "Jps": 68,
-            "Fts": 74,
-            "3ps": 55,
-            "Hnd": 49,
-            "Pas": 55,
-            "Orb": 58,
-            "Drb": 76,
-            "Psd": 56,
-            "Prd": 67,
-            "Stl": 83,
-            "Blk": 29,
-            "Qkn": 66,
-            "Jmp": 35,
-            "Str": 58,
-            "Sta": 100,
-            "rowClass": "row1"
-        },
-        {
-            "number": 26,
-            "name": "Micheal Ray Richardson",
-            "url": "./players/player729.htm",
-            "file": "player729.htm",
-            "pos": "SF",
-            "age": 29,
-            "ht": "6-5",
-            "wt": 198,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "120",
-            "futureRating": "120",
-            "lastTeam": "Real Madrid",
-            "lastTeamId": "roster8",
-            "birdYears": 5,
-            "greed": "75",
-            "playForWinner": "46",
-            "loyalty": "87",
-            "happiness": "60",
-            "Ins": 73,
-            "Jps": 70,
-            "Fts": 62,
-            "3ps": 18,
-            "Hnd": 68,
-            "Pas": 77,
-            "Orb": 48,
-            "Drb": 43,
-            "Psd": 33,
-            "Prd": 81,
-            "Stl": 100,
-            "Blk": 26,
-            "Qkn": 81,
-            "Jmp": 43,
-            "Str": 53,
-            "Sta": 98,
-            "rowClass": "row2"
-        },
-        {
-            "number": 13,
-            "name": "Otis Birdsong",
-            "url": "./players/player730.htm",
-            "file": "player730.htm",
-            "pos": "SF",
-            "age": 27,
-            "ht": "6-4",
-            "wt": 202,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "114",
-            "futureRating": "114",
-            "lastTeam": "Aston Villa",
-            "lastTeamId": "roster19",
-            "birdYears": 5,
-            "greed": "71",
-            "playForWinner": "18",
-            "loyalty": "73",
-            "happiness": "66",
-            "Ins": 83,
-            "Jps": 75,
-            "Fts": 52,
-            "3ps": 23,
-            "Hnd": 41,
-            "Pas": 44,
-            "Orb": 31,
-            "Drb": 17,
-            "Psd": 27,
-            "Prd": 60,
-            "Stl": 69,
-            "Blk": 17,
-            "Qkn": 84,
-            "Jmp": 65,
-            "Str": 68,
-            "Sta": 93,
             "rowClass": "row1"
         },
         {
@@ -20724,8 +20040,8 @@
             "futureRatingColor": "#EDBE30",
             "currentRating": "93",
             "futureRating": "93",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "21",
             "playForWinner": "9",
@@ -20788,44 +20104,6 @@
             "rowClass": "row1"
         },
         {
-            "number": 33,
-            "name": "Dave Corzine",
-            "url": "./players/player733.htm",
-            "file": "player733.htm",
-            "pos": "C",
-            "age": 28,
-            "ht": "6-11",
-            "wt": 270,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "103",
-            "futureRating": "103",
-            "lastTeam": "Tottenham Hotspur",
-            "lastTeamId": "roster22",
-            "birdYears": 3,
-            "greed": "40",
-            "playForWinner": "18",
-            "loyalty": "90",
-            "happiness": "47",
-            "Ins": 47,
-            "Jps": 42,
-            "Fts": 66,
-            "3ps": 0,
-            "Hnd": 41,
-            "Pas": 36,
-            "Orb": 67,
-            "Drb": 61,
-            "Psd": 63,
-            "Prd": 16,
-            "Stl": 26,
-            "Blk": 74,
-            "Qkn": 27,
-            "Jmp": 53,
-            "Str": 60,
-            "Sta": 96,
-            "rowClass": "row2"
-        },
-        {
             "number": 2,
             "name": "Scevola Esposito",
             "url": "./players/player735.htm",
@@ -20861,44 +20139,6 @@
             "Jmp": 41,
             "Str": 77,
             "Sta": 56,
-            "rowClass": "row1"
-        },
-        {
-            "number": 1,
-            "name": "Mike McGee",
-            "url": "./players/player736.htm",
-            "file": "player736.htm",
-            "pos": "SG",
-            "age": 24,
-            "ht": "6-5",
-            "wt": 212,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "120",
-            "futureRating": "129",
-            "lastTeam": "Manchester United",
-            "lastTeamId": "roster5",
-            "birdYears": 1,
-            "greed": "73",
-            "playForWinner": "88",
-            "loyalty": "3",
-            "happiness": "12",
-            "Ins": 63,
-            "Jps": 72,
-            "Fts": 44,
-            "3ps": 74,
-            "Hnd": 45,
-            "Pas": 22,
-            "Orb": 53,
-            "Drb": 13,
-            "Psd": 26,
-            "Prd": 64,
-            "Stl": 81,
-            "Blk": 18,
-            "Qkn": 79,
-            "Jmp": 48,
-            "Str": 73,
-            "Sta": 80,
             "rowClass": "row2"
         },
         {
@@ -21206,44 +20446,6 @@
             "rowClass": "row2"
         },
         {
-            "number": 20,
-            "name": "Frank Johnson",
-            "url": "./players/player747.htm",
-            "file": "player747.htm",
-            "pos": "SG",
-            "age": 24,
-            "ht": "6-3",
-            "wt": 191,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "114",
-            "futureRating": "114",
-            "lastTeam": "Crystal Palace",
-            "lastTeamId": "roster6",
-            "birdYears": 5,
-            "greed": "43",
-            "playForWinner": "0",
-            "loyalty": "66",
-            "happiness": "2",
-            "Ins": 61,
-            "Jps": 65,
-            "Fts": 68,
-            "3ps": 18,
-            "Hnd": 79,
-            "Pas": 86,
-            "Orb": 16,
-            "Drb": 20,
-            "Psd": 19,
-            "Prd": 75,
-            "Stl": 84,
-            "Blk": 8,
-            "Qkn": 95,
-            "Jmp": 63,
-            "Str": 49,
-            "Sta": 100,
-            "rowClass": "row1"
-        },
-        {
             "number": 35,
             "name": "Freeman Williams",
             "url": "./players/player748.htm",
@@ -21279,7 +20481,7 @@
             "Jmp": 55,
             "Str": 44,
             "Sta": 97,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 2,
@@ -21317,7 +20519,7 @@
             "Jmp": 97,
             "Str": 62,
             "Sta": 92,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 5,
@@ -21332,8 +20534,8 @@
             "futureRatingColor": "#EDBE30",
             "currentRating": "90",
             "futureRating": "90",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "48",
             "playForWinner": "28",
@@ -21355,7 +20557,7 @@
             "Jmp": 66,
             "Str": 52,
             "Sta": 90,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 44,
@@ -21393,7 +20595,7 @@
             "Jmp": 64,
             "Str": 51,
             "Sta": 75,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 55,
@@ -21431,7 +20633,7 @@
             "Jmp": 80,
             "Str": 46,
             "Sta": 76,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 20,
@@ -21469,7 +20671,7 @@
             "Jmp": 97,
             "Str": 57,
             "Sta": 87,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 53,
@@ -21507,7 +20709,7 @@
             "Jmp": 50,
             "Str": 69,
             "Sta": 54,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 5,
@@ -21545,7 +20747,7 @@
             "Jmp": 74,
             "Str": 69,
             "Sta": 97,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 21,
@@ -21583,7 +20785,7 @@
             "Jmp": 38,
             "Str": 50,
             "Sta": 94,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 14,
@@ -21621,7 +20823,7 @@
             "Jmp": 16,
             "Str": 24,
             "Sta": 89,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 40,
@@ -21659,7 +20861,7 @@
             "Jmp": 40,
             "Str": 51,
             "Sta": 68,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 41,
@@ -21697,7 +20899,7 @@
             "Jmp": 52,
             "Str": 73,
             "Sta": 83,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 27,
@@ -21735,7 +20937,7 @@
             "Jmp": 56,
             "Str": 61,
             "Sta": 91,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 40,
@@ -21773,7 +20975,7 @@
             "Jmp": 31,
             "Str": 50,
             "Sta": 78,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 41,
@@ -21811,7 +21013,7 @@
             "Jmp": 43,
             "Str": 71,
             "Sta": 94,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 25,
@@ -21826,8 +21028,8 @@
             "futureRatingColor": "#307B1A",
             "currentRating": "103",
             "futureRating": "103",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "12",
             "playForWinner": "19",
@@ -21849,7 +21051,7 @@
             "Jmp": 38,
             "Str": 48,
             "Sta": 100,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 35,
@@ -21887,7 +21089,7 @@
             "Jmp": 39,
             "Str": 52,
             "Sta": 93,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 30,
@@ -21925,7 +21127,7 @@
             "Jmp": 40,
             "Str": 50,
             "Sta": 81,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 28,
@@ -21963,7 +21165,7 @@
             "Jmp": 35,
             "Str": 39,
             "Sta": 100,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 24,
@@ -21971,7 +21173,7 @@
             "url": "./players/player771.htm",
             "file": "player771.htm",
             "pos": "SF",
-            "age": 31,
+            "age": 32,
             "ht": "6-7",
             "wt": 226,
             "currentRatingColor": "#EDBE30",
@@ -22001,7 +21203,7 @@
             "Jmp": 2,
             "Str": 44,
             "Sta": 87,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 45,
@@ -22039,83 +21241,7 @@
             "Jmp": 100,
             "Str": 83,
             "Sta": 93,
-            "rowClass": "row2"
-        },
-        {
-            "number": 25,
-            "name": "Jim Spanarkel",
-            "url": "./players/player773.htm",
-            "file": "player773.htm",
-            "pos": "SF",
-            "age": 27,
-            "ht": "6-5",
-            "wt": 206,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "101",
-            "futureRating": "101",
-            "lastTeam": "Barcelona",
-            "lastTeamId": "roster24",
-            "birdYears": 1,
-            "greed": "21",
-            "playForWinner": "57",
-            "loyalty": "87",
-            "happiness": "68",
-            "Ins": 60,
-            "Jps": 40,
-            "Fts": 82,
-            "3ps": 10,
-            "Hnd": 44,
-            "Pas": 34,
-            "Orb": 40,
-            "Drb": 22,
-            "Psd": 25,
-            "Prd": 66,
-            "Stl": 78,
-            "Blk": 12,
-            "Qkn": 74,
-            "Jmp": 94,
-            "Str": 60,
-            "Sta": 99,
             "rowClass": "row1"
-        },
-        {
-            "number": 45,
-            "name": "Jerome Whitehead",
-            "url": "./players/player774.htm",
-            "file": "player774.htm",
-            "pos": "C",
-            "age": 27,
-            "ht": "6-10",
-            "wt": 259,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "109",
-            "futureRating": "110",
-            "lastTeam": "AC Milan",
-            "lastTeamId": "roster9",
-            "birdYears": 2,
-            "greed": "45",
-            "playForWinner": "98",
-            "loyalty": "20",
-            "happiness": "5",
-            "Ins": 58,
-            "Jps": 55,
-            "Fts": 62,
-            "3ps": 0,
-            "Hnd": 42,
-            "Pas": 21,
-            "Orb": 97,
-            "Drb": 88,
-            "Psd": 61,
-            "Prd": 28,
-            "Stl": 37,
-            "Blk": 44,
-            "Qkn": 47,
-            "Jmp": 52,
-            "Str": 79,
-            "Sta": 86,
-            "rowClass": "row2"
         },
         {
             "number": 4,
@@ -22153,7 +21279,7 @@
             "Jmp": 59,
             "Str": 55,
             "Sta": 47,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 21,
@@ -22191,7 +21317,7 @@
             "Jmp": 15,
             "Str": 50,
             "Sta": 68,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 6,
@@ -22229,7 +21355,7 @@
             "Jmp": 56,
             "Str": 51,
             "Sta": 80,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 52,
@@ -22267,7 +21393,7 @@
             "Jmp": 58,
             "Str": 57,
             "Sta": 73,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 28,
@@ -22305,7 +21431,7 @@
             "Jmp": 39,
             "Str": 46,
             "Sta": 85,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 26,
@@ -22343,7 +21469,7 @@
             "Jmp": 56,
             "Str": 61,
             "Sta": 65,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 15,
@@ -22381,7 +21507,7 @@
             "Jmp": 27,
             "Str": 60,
             "Sta": 93,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 40,
@@ -22419,7 +21545,7 @@
             "Jmp": 78,
             "Str": 74,
             "Sta": 92,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 41,
@@ -22457,7 +21583,7 @@
             "Jmp": 68,
             "Str": 64,
             "Sta": 86,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 5,
@@ -22495,7 +21621,7 @@
             "Jmp": 43,
             "Str": 58,
             "Sta": 92,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 53,
@@ -22533,7 +21659,7 @@
             "Jmp": 53,
             "Str": 62,
             "Sta": 82,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 51,
@@ -22571,7 +21697,7 @@
             "Jmp": 45,
             "Str": 68,
             "Sta": 95,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 6,
@@ -22609,7 +21735,7 @@
             "Jmp": 53,
             "Str": 50,
             "Sta": 89,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 41,
@@ -22647,7 +21773,7 @@
             "Jmp": 48,
             "Str": 49,
             "Sta": 81,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 12,
@@ -22685,7 +21811,7 @@
             "Jmp": 74,
             "Str": 46,
             "Sta": 100,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 43,
@@ -22723,7 +21849,7 @@
             "Jmp": 62,
             "Str": 68,
             "Sta": 83,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 5,
@@ -22761,7 +21887,7 @@
             "Jmp": 46,
             "Str": 61,
             "Sta": 90,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 33,
@@ -22799,7 +21925,7 @@
             "Jmp": 43,
             "Str": 46,
             "Sta": 84,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 5,
@@ -22837,7 +21963,7 @@
             "Jmp": 42,
             "Str": 54,
             "Sta": 90,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 22,
@@ -22875,7 +22001,7 @@
             "Jmp": 64,
             "Str": 13,
             "Sta": 96,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 20,
@@ -22913,7 +22039,7 @@
             "Jmp": 45,
             "Str": 56,
             "Sta": 96,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -22951,7 +22077,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 42,
@@ -22989,7 +22115,7 @@
             "Jmp": 72,
             "Str": 61,
             "Sta": 86,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 53,
@@ -23027,7 +22153,7 @@
             "Jmp": 56,
             "Str": 39,
             "Sta": 65,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 31,
@@ -23065,7 +22191,7 @@
             "Jmp": 35,
             "Str": 68,
             "Sta": 85,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 11,
@@ -23103,7 +22229,7 @@
             "Jmp": 48,
             "Str": 25,
             "Sta": 94,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 26,
@@ -23141,7 +22267,7 @@
             "Jmp": 33,
             "Str": 75,
             "Sta": 80,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 4,
@@ -23179,7 +22305,7 @@
             "Jmp": 35,
             "Str": 38,
             "Sta": 70,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 9,
@@ -23217,7 +22343,7 @@
             "Jmp": 38,
             "Str": 56,
             "Sta": 96,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 17,
@@ -23255,7 +22381,7 @@
             "Jmp": 61,
             "Str": 68,
             "Sta": 85,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 41,
@@ -23293,7 +22419,7 @@
             "Jmp": 32,
             "Str": 46,
             "Sta": 70,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 41,
@@ -23331,7 +22457,7 @@
             "Jmp": 50,
             "Str": 78,
             "Sta": 81,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 30,
@@ -23369,7 +22495,7 @@
             "Jmp": 36,
             "Str": 80,
             "Sta": 84,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 13,
@@ -23377,7 +22503,7 @@
             "url": "./players/player808.htm",
             "file": "player808.htm",
             "pos": "PG",
-            "age": 27,
+            "age": 28,
             "ht": "6-2",
             "wt": 185,
             "currentRatingColor": "#F2662A",
@@ -23407,7 +22533,7 @@
             "Jmp": 34,
             "Str": 36,
             "Sta": 96,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 1,
@@ -23445,7 +22571,7 @@
             "Jmp": 44,
             "Str": 61,
             "Sta": 88,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 12,
@@ -23483,7 +22609,7 @@
             "Jmp": 38,
             "Str": 31,
             "Sta": 96,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 16,
@@ -23521,7 +22647,7 @@
             "Jmp": 35,
             "Str": 46,
             "Sta": 94,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 50,
@@ -23559,7 +22685,7 @@
             "Jmp": 49,
             "Str": 66,
             "Sta": 6,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 42,
@@ -23597,7 +22723,7 @@
             "Jmp": 52,
             "Str": 60,
             "Sta": 13,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 2,
@@ -23635,7 +22761,7 @@
             "Jmp": 38,
             "Str": 52,
             "Sta": 88,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 26,
@@ -23673,7 +22799,7 @@
             "Jmp": 43,
             "Str": 46,
             "Sta": 85,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 30,
@@ -23711,7 +22837,7 @@
             "Jmp": 36,
             "Str": 61,
             "Sta": 66,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 43,
@@ -23749,7 +22875,7 @@
             "Jmp": 32,
             "Str": 80,
             "Sta": 18,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 54,
@@ -23787,7 +22913,7 @@
             "Jmp": 37,
             "Str": 95,
             "Sta": 58,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -23825,7 +22951,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 9,
@@ -23863,7 +22989,7 @@
             "Jmp": 37,
             "Str": 58,
             "Sta": 86,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 20,
@@ -23901,7 +23027,7 @@
             "Jmp": 25,
             "Str": 4,
             "Sta": 88,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 31,
@@ -23939,7 +23065,7 @@
             "Jmp": 51,
             "Str": 74,
             "Sta": 50,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 7,
@@ -23977,7 +23103,7 @@
             "Jmp": 23,
             "Str": 71,
             "Sta": 51,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 54,
@@ -24015,7 +23141,7 @@
             "Jmp": 31,
             "Str": 93,
             "Sta": 25,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 27,
@@ -24053,7 +23179,7 @@
             "Jmp": 27,
             "Str": 60,
             "Sta": 70,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 50,
@@ -24091,7 +23217,7 @@
             "Jmp": 45,
             "Str": 82,
             "Sta": 58,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 53,
@@ -24129,7 +23255,7 @@
             "Jmp": 20,
             "Str": 53,
             "Sta": 52,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 53,
@@ -24167,7 +23293,7 @@
             "Jmp": 63,
             "Str": 44,
             "Sta": 41,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 34,
@@ -24205,7 +23331,7 @@
             "Jmp": 59,
             "Str": 62,
             "Sta": 27,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 3,
@@ -24243,7 +23369,7 @@
             "Jmp": 36,
             "Str": 55,
             "Sta": 63,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 16,
@@ -24281,7 +23407,7 @@
             "Jmp": 50,
             "Str": 46,
             "Sta": 54,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 54,
@@ -24319,7 +23445,7 @@
             "Jmp": 34,
             "Str": 61,
             "Sta": 70,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 9,
@@ -24357,7 +23483,7 @@
             "Jmp": 50,
             "Str": 52,
             "Sta": 75,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 32,
@@ -24395,7 +23521,7 @@
             "Jmp": 44,
             "Str": 62,
             "Sta": 35,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 31,
@@ -24433,7 +23559,7 @@
             "Jmp": 26,
             "Str": 59,
             "Sta": 22,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 34,
@@ -24471,7 +23597,7 @@
             "Jmp": 23,
             "Str": 93,
             "Sta": 23,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 55,
@@ -24509,7 +23635,7 @@
             "Jmp": 31,
             "Str": 72,
             "Sta": 31,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 27,
@@ -24547,7 +23673,7 @@
             "Jmp": 32,
             "Str": 65,
             "Sta": 55,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 45,
@@ -24585,7 +23711,7 @@
             "Jmp": 39,
             "Str": 85,
             "Sta": 7,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 24,
@@ -24623,7 +23749,7 @@
             "Jmp": 23,
             "Str": 72,
             "Sta": 61,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 53,
@@ -24631,7 +23757,7 @@
             "url": "./players/player841.htm",
             "file": "player841.htm",
             "pos": "C",
-            "age": 21,
+            "age": 22,
             "ht": "6-11",
             "wt": 270,
             "currentRatingColor": "#B0040C",
@@ -24661,7 +23787,7 @@
             "Jmp": 41,
             "Str": 59,
             "Sta": 25,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 31,
@@ -24699,7 +23825,7 @@
             "Jmp": 21,
             "Str": 85,
             "Sta": 52,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 53,
@@ -24737,7 +23863,7 @@
             "Jmp": 25,
             "Str": 69,
             "Sta": 25,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 31,
@@ -24775,7 +23901,7 @@
             "Jmp": 41,
             "Str": 67,
             "Sta": 35,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 33,
@@ -24813,7 +23939,7 @@
             "Jmp": 22,
             "Str": 76,
             "Sta": 7,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 32,
@@ -24851,7 +23977,7 @@
             "Jmp": 34,
             "Str": 77,
             "Sta": 48,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 51,
@@ -24889,7 +24015,7 @@
             "Jmp": 25,
             "Str": 45,
             "Sta": 42,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 30,
@@ -24927,7 +24053,7 @@
             "Jmp": 19,
             "Str": 57,
             "Sta": 32,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 28,
@@ -24965,7 +24091,7 @@
             "Jmp": 47,
             "Str": 64,
             "Sta": 62,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 45,
@@ -25003,7 +24129,7 @@
             "Jmp": 25,
             "Str": 53,
             "Sta": 13,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 11,
@@ -25041,7 +24167,7 @@
             "Jmp": 47,
             "Str": 48,
             "Sta": 82,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 8,
@@ -25079,7 +24205,7 @@
             "Jmp": 29,
             "Str": 60,
             "Sta": 78,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 14,
@@ -25117,7 +24243,7 @@
             "Jmp": 29,
             "Str": 42,
             "Sta": 74,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 54,
@@ -25155,7 +24281,7 @@
             "Jmp": 39,
             "Str": 59,
             "Sta": 18,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 54,
@@ -25193,7 +24319,7 @@
             "Jmp": 15,
             "Str": 33,
             "Sta": 22,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -25231,7 +24357,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 35,
@@ -25269,7 +24395,7 @@
             "Jmp": 27,
             "Str": 69,
             "Sta": 71,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 35,
@@ -25307,7 +24433,7 @@
             "Jmp": 22,
             "Str": 37,
             "Sta": 60,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 54,
@@ -25345,7 +24471,7 @@
             "Jmp": 38,
             "Str": 81,
             "Sta": 45,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 4,
@@ -25383,7 +24509,7 @@
             "Jmp": 31,
             "Str": 65,
             "Sta": 42,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 41,
@@ -25421,7 +24547,7 @@
             "Jmp": 44,
             "Str": 55,
             "Sta": 51,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 34,
@@ -25459,7 +24585,7 @@
             "Jmp": 29,
             "Str": 57,
             "Sta": 17,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 4,
@@ -25497,7 +24623,7 @@
             "Jmp": 25,
             "Str": 61,
             "Sta": 55,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 35,
@@ -25535,7 +24661,7 @@
             "Jmp": 49,
             "Str": 64,
             "Sta": 15,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 45,
@@ -25573,7 +24699,7 @@
             "Jmp": 40,
             "Str": 52,
             "Sta": 27,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 32,
@@ -25611,7 +24737,7 @@
             "Jmp": 40,
             "Str": 61,
             "Sta": 47,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 50,
@@ -25649,7 +24775,7 @@
             "Jmp": 14,
             "Str": 77,
             "Sta": 43,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 52,
@@ -25687,196 +24813,6 @@
             "Jmp": 29,
             "Str": 69,
             "Sta": 23,
-            "rowClass": "row2"
-        },
-        {
-            "number": 40,
-            "name": "Jack Sikma",
-            "url": "./players/player870.htm",
-            "file": "player870.htm",
-            "pos": "PF",
-            "age": 27,
-            "ht": "6-11",
-            "wt": 272,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "130",
-            "futureRating": "130",
-            "lastTeam": "Brighton",
-            "lastTeamId": "roster10",
-            "birdYears": 1,
-            "greed": "98",
-            "playForWinner": "41",
-            "loyalty": "42",
-            "happiness": "7",
-            "Ins": 87,
-            "Jps": 41,
-            "Fts": 83,
-            "3ps": 33,
-            "Hnd": 40,
-            "Pas": 43,
-            "Orb": 56,
-            "Drb": 82,
-            "Psd": 68,
-            "Prd": 27,
-            "Stl": 49,
-            "Blk": 49,
-            "Qkn": 30,
-            "Jmp": 94,
-            "Str": 57,
-            "Sta": 100,
-            "rowClass": "row1"
-        },
-        {
-            "number": 35,
-            "name": "Danny Ainge",
-            "url": "./players/player876.htm",
-            "file": "player876.htm",
-            "pos": "SG",
-            "age": 25,
-            "ht": "6-5",
-            "wt": 206,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "112",
-            "futureRating": "112",
-            "lastTeam": "FL Fart",
-            "lastTeamId": "roster27",
-            "birdYears": 1,
-            "greed": "63",
-            "playForWinner": "77",
-            "loyalty": "100",
-            "happiness": "76",
-            "Ins": 44,
-            "Jps": 70,
-            "Fts": 76,
-            "3ps": 80,
-            "Hnd": 63,
-            "Pas": 51,
-            "Orb": 22,
-            "Drb": 21,
-            "Psd": 20,
-            "Prd": 50,
-            "Stl": 64,
-            "Blk": 10,
-            "Qkn": 79,
-            "Jmp": 46,
-            "Str": 71,
-            "Sta": 86,
-            "rowClass": "row2"
-        },
-        {
-            "number": 40,
-            "name": "Kareem Abdul-Jabbar",
-            "url": "./players/player877.htm",
-            "file": "player877.htm",
-            "pos": "C",
-            "age": 37,
-            "ht": "7-2",
-            "wt": 256,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "103",
-            "futureRating": "103",
-            "lastTeam": "Ajax",
-            "lastTeamId": "roster18",
-            "birdYears": 1,
-            "greed": "65",
-            "playForWinner": "16",
-            "loyalty": "28",
-            "happiness": "26",
-            "Ins": 81,
-            "Jps": 50,
-            "Fts": 66,
-            "3ps": 0,
-            "Hnd": 45,
-            "Pas": 35,
-            "Orb": 43,
-            "Drb": 55,
-            "Psd": 62,
-            "Prd": 21,
-            "Stl": 25,
-            "Blk": 62,
-            "Qkn": 23,
-            "Jmp": 57,
-            "Str": 66,
-            "Sta": 59,
-            "rowClass": "row1"
-        },
-        {
-            "number": 32,
-            "name": "John Lucas",
-            "url": "./players/player878.htm",
-            "file": "player878.htm",
-            "pos": "SG",
-            "age": 29,
-            "ht": "6-3",
-            "wt": 186,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "117",
-            "futureRating": "117",
-            "lastTeam": "AC Milan",
-            "lastTeamId": "roster9",
-            "birdYears": 2,
-            "greed": "68",
-            "playForWinner": "75",
-            "loyalty": "6",
-            "happiness": "32",
-            "Ins": 52,
-            "Jps": 58,
-            "Fts": 69,
-            "3ps": 49,
-            "Hnd": 79,
-            "Pas": 88,
-            "Orb": 13,
-            "Drb": 24,
-            "Psd": 19,
-            "Prd": 71,
-            "Stl": 81,
-            "Blk": 6,
-            "Qkn": 93,
-            "Jmp": 61,
-            "Str": 47,
-            "Sta": 91,
-            "rowClass": "row2"
-        },
-        {
-            "number": 21,
-            "name": "Purvis Short",
-            "url": "./players/player879.htm",
-            "file": "player879.htm",
-            "pos": "PF",
-            "age": 27,
-            "ht": "6-7",
-            "wt": 226,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "123",
-            "futureRating": "123",
-            "lastTeam": "Paris Saint-Germain",
-            "lastTeamId": "roster21",
-            "birdYears": 1,
-            "greed": "74",
-            "playForWinner": "26",
-            "loyalty": "70",
-            "happiness": "6",
-            "Ins": 90,
-            "Jps": 59,
-            "Fts": 80,
-            "3ps": 32,
-            "Hnd": 38,
-            "Pas": 37,
-            "Orb": 48,
-            "Drb": 31,
-            "Psd": 34,
-            "Prd": 45,
-            "Stl": 60,
-            "Blk": 17,
-            "Qkn": 79,
-            "Jmp": 74,
-            "Str": 69,
-            "Sta": 91,
             "rowClass": "row1"
         },
         {
@@ -25915,82 +24851,6 @@
             "Jmp": 69,
             "Str": 77,
             "Sta": 96,
-            "rowClass": "row2"
-        },
-        {
-            "number": 6,
-            "name": "Robert Reid",
-            "url": "./players/player885.htm",
-            "file": "player885.htm",
-            "pos": "PF",
-            "age": 28,
-            "ht": "6-8",
-            "wt": 218,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "124",
-            "futureRating": "124",
-            "lastTeam": "Chelsea",
-            "lastTeamId": "roster17",
-            "birdYears": 1,
-            "greed": "58",
-            "playForWinner": "84",
-            "loyalty": "52",
-            "happiness": "12",
-            "Ins": 65,
-            "Jps": 73,
-            "Fts": 63,
-            "3ps": 39,
-            "Hnd": 54,
-            "Pas": 55,
-            "Orb": 44,
-            "Drb": 50,
-            "Psd": 42,
-            "Prd": 58,
-            "Stl": 72,
-            "Blk": 35,
-            "Qkn": 79,
-            "Jmp": 39,
-            "Str": 60,
-            "Sta": 100,
-            "rowClass": "row1"
-        },
-        {
-            "number": 32,
-            "name": "Bill Cartwright",
-            "url": "./players/player887.htm",
-            "file": "player887.htm",
-            "pos": "C",
-            "age": 26,
-            "ht": "7-1",
-            "wt": 276,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "125",
-            "futureRating": "125",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
-            "birdYears": 1,
-            "greed": "43",
-            "playForWinner": "21",
-            "loyalty": "92",
-            "happiness": "66",
-            "Ins": 80,
-            "Jps": 39,
-            "Fts": 70,
-            "3ps": 0,
-            "Hnd": 45,
-            "Pas": 33,
-            "Orb": 63,
-            "Drb": 64,
-            "Psd": 77,
-            "Prd": 19,
-            "Stl": 29,
-            "Blk": 62,
-            "Qkn": 24,
-            "Jmp": 100,
-            "Str": 90,
-            "Sta": 85,
             "rowClass": "row2"
         },
         {
@@ -26070,44 +24930,6 @@
             "rowClass": "row2"
         },
         {
-            "number": 25,
-            "name": "Gerald Henderson",
-            "url": "./players/player890.htm",
-            "file": "player890.htm",
-            "pos": "PG",
-            "age": 28,
-            "ht": "6-2",
-            "wt": 181,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "124",
-            "futureRating": "124",
-            "lastTeam": "Crystal Palace",
-            "lastTeamId": "roster6",
-            "birdYears": 1,
-            "greed": "7",
-            "playForWinner": "58",
-            "loyalty": "71",
-            "happiness": "5",
-            "Ins": 56,
-            "Jps": 81,
-            "Fts": 70,
-            "3ps": 61,
-            "Hnd": 85,
-            "Pas": 81,
-            "Orb": 26,
-            "Drb": 19,
-            "Psd": 19,
-            "Prd": 75,
-            "Stl": 89,
-            "Blk": 13,
-            "Qkn": 95,
-            "Jmp": 68,
-            "Str": 53,
-            "Sta": 88,
-            "rowClass": "row1"
-        },
-        {
             "number": 1,
             "name": "Spencer Crossman",
             "url": "./players/player896.htm",
@@ -26143,7 +24965,7 @@
             "Jmp": 37,
             "Str": 69,
             "Sta": 39,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 10,
@@ -26181,7 +25003,7 @@
             "Jmp": 50,
             "Str": 65,
             "Sta": 90,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 15,
@@ -26219,7 +25041,7 @@
             "Jmp": 49,
             "Str": 67,
             "Sta": 93,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 11,
@@ -26257,44 +25079,6 @@
             "Jmp": 48,
             "Str": 72,
             "Sta": 81,
-            "rowClass": "row1"
-        },
-        {
-            "number": 35,
-            "name": "Ray Williams",
-            "url": "./players/player903.htm",
-            "file": "player903.htm",
-            "pos": "PG",
-            "age": 29,
-            "ht": "6-2",
-            "wt": 191,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "121",
-            "futureRating": "121",
-            "lastTeam": "Chelsea",
-            "lastTeamId": "roster17",
-            "birdYears": 1,
-            "greed": "91",
-            "playForWinner": "38",
-            "loyalty": "17",
-            "happiness": "25",
-            "Ins": 88,
-            "Jps": 61,
-            "Fts": 79,
-            "3ps": 30,
-            "Hnd": 63,
-            "Pas": 89,
-            "Orb": 34,
-            "Drb": 33,
-            "Psd": 26,
-            "Prd": 69,
-            "Stl": 100,
-            "Blk": 28,
-            "Qkn": 89,
-            "Jmp": 71,
-            "Str": 40,
-            "Sta": 100,
             "rowClass": "row2"
         },
         {
@@ -26348,8 +25132,8 @@
             "futureRatingColor": "#307B1A",
             "currentRating": "103",
             "futureRating": "103",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "58",
             "playForWinner": "2",
@@ -27552,44 +26336,6 @@
             "rowClass": "row1"
         },
         {
-            "number": 41,
-            "name": "Brad Branson",
-            "url": "./players/player939.htm",
-            "file": "player939.htm",
-            "pos": "PF",
-            "age": 25,
-            "ht": "6-10",
-            "wt": 258,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "107",
-            "futureRating": "108",
-            "lastTeam": "AFC Richmond",
-            "lastTeamId": "roster12",
-            "birdYears": 3,
-            "greed": "55",
-            "playForWinner": "74",
-            "loyalty": "44",
-            "happiness": "5",
-            "Ins": 61,
-            "Jps": 30,
-            "Fts": 63,
-            "3ps": 0,
-            "Hnd": 32,
-            "Pas": 22,
-            "Orb": 84,
-            "Drb": 69,
-            "Psd": 70,
-            "Prd": 43,
-            "Stl": 65,
-            "Blk": 74,
-            "Qkn": 49,
-            "Jmp": 49,
-            "Str": 61,
-            "Sta": 75,
-            "rowClass": "row2"
-        },
-        {
             "number": 8,
             "name": "Joe Bryant",
             "url": "./players/player940.htm",
@@ -27625,7 +26371,7 @@
             "Jmp": 47,
             "Str": 57,
             "Sta": 95,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 28,
@@ -27663,7 +26409,7 @@
             "Jmp": 20,
             "Str": 60,
             "Sta": 29,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 55,
@@ -27701,7 +26447,7 @@
             "Jmp": 38,
             "Str": 53,
             "Sta": 76,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 28,
@@ -27739,7 +26485,7 @@
             "Jmp": 57,
             "Str": 43,
             "Sta": 86,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 42,
@@ -27777,7 +26523,7 @@
             "Jmp": 42,
             "Str": 29,
             "Sta": 80,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 43,
@@ -27815,44 +26561,6 @@
             "Jmp": 68,
             "Str": 72,
             "Sta": 85,
-            "rowClass": "row2"
-        },
-        {
-            "number": 34,
-            "name": "Franklin Edwards",
-            "url": "./players/player946.htm",
-            "file": "player946.htm",
-            "pos": "PG",
-            "age": 25,
-            "ht": "6-1",
-            "wt": 193,
-            "currentRatingColor": "#EDBE30",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "95",
-            "futureRating": "100",
-            "lastTeam": "Brighton",
-            "lastTeamId": "roster10",
-            "birdYears": 0,
-            "greed": "45",
-            "playForWinner": "22",
-            "loyalty": "29",
-            "happiness": "5",
-            "Ins": 53,
-            "Jps": 68,
-            "Fts": 73,
-            "3ps": 0,
-            "Hnd": 59,
-            "Pas": 46,
-            "Orb": 14,
-            "Drb": 19,
-            "Psd": 21,
-            "Prd": 84,
-            "Stl": 97,
-            "Blk": 16,
-            "Qkn": 96,
-            "Jmp": 49,
-            "Str": 47,
-            "Sta": 96,
             "rowClass": "row1"
         },
         {
@@ -28920,44 +27628,6 @@
             "rowClass": "row1"
         },
         {
-            "number": 33,
-            "name": "Kyle Lowry",
-            "url": "./players/player975.htm",
-            "file": "player975.htm",
-            "pos": "PG",
-            "age": 22,
-            "ht": "6-0",
-            "wt": 178,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "111",
-            "futureRating": "119",
-            "lastTeam": "Bayern Munich",
-            "lastTeamId": "roster7",
-            "birdYears": 4,
-            "greed": "82",
-            "playForWinner": "62",
-            "loyalty": "100",
-            "happiness": "33",
-            "Ins": 33,
-            "Jps": 45,
-            "Fts": 70,
-            "3ps": 77,
-            "Hnd": 69,
-            "Pas": 76,
-            "Orb": 15,
-            "Drb": 27,
-            "Psd": 23,
-            "Prd": 72,
-            "Stl": 71,
-            "Blk": 16,
-            "Qkn": 96,
-            "Jmp": 90,
-            "Str": 42,
-            "Sta": 85,
-            "rowClass": "row2"
-        },
-        {
             "number": 42,
             "name": "Steven Griner",
             "url": "./players/player976.htm",
@@ -28993,7 +27663,7 @@
             "Jmp": 48,
             "Str": 62,
             "Sta": 53,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 33,
@@ -29031,7 +27701,7 @@
             "Jmp": 54,
             "Str": 53,
             "Sta": 60,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 25,
@@ -29069,7 +27739,7 @@
             "Jmp": 40,
             "Str": 71,
             "Sta": 79,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 52,
@@ -29107,7 +27777,7 @@
             "Jmp": 39,
             "Str": 64,
             "Sta": 51,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 6,
@@ -29145,7 +27815,7 @@
             "Jmp": 28,
             "Str": 46,
             "Sta": 75,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 25,
@@ -29183,7 +27853,7 @@
             "Jmp": 33,
             "Str": 74,
             "Sta": 74,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 5,
@@ -29221,7 +27891,7 @@
             "Jmp": 49,
             "Str": 43,
             "Sta": 100,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 5,
@@ -29259,7 +27929,7 @@
             "Jmp": 40,
             "Str": 39,
             "Sta": 80,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 23,
@@ -29297,7 +27967,7 @@
             "Jmp": 44,
             "Str": 63,
             "Sta": 82,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 50,
@@ -29335,7 +28005,7 @@
             "Jmp": 36,
             "Str": 53,
             "Sta": 30,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 28,
@@ -29373,7 +28043,7 @@
             "Jmp": 40,
             "Str": 65,
             "Sta": 57,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 50,
@@ -29411,7 +28081,7 @@
             "Jmp": 27,
             "Str": 56,
             "Sta": 23,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 25,
@@ -29449,7 +28119,7 @@
             "Jmp": 21,
             "Str": 57,
             "Sta": 72,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 43,
@@ -29487,7 +28157,7 @@
             "Jmp": 36,
             "Str": 56,
             "Sta": 40,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 20,
@@ -29525,7 +28195,7 @@
             "Jmp": 47,
             "Str": 53,
             "Sta": 65,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 34,
@@ -29563,7 +28233,7 @@
             "Jmp": 34,
             "Str": 42,
             "Sta": 72,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 42,
@@ -29601,7 +28271,7 @@
             "Jmp": 29,
             "Str": 60,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 45,
@@ -29639,7 +28309,7 @@
             "Jmp": 42,
             "Str": 79,
             "Sta": 51,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 55,
@@ -29677,7 +28347,7 @@
             "Jmp": 30,
             "Str": 82,
             "Sta": 57,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 7,
@@ -29715,7 +28385,7 @@
             "Jmp": 40,
             "Str": 19,
             "Sta": 42,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 21,
@@ -29723,7 +28393,7 @@
             "url": "./players/player996.htm",
             "file": "player996.htm",
             "pos": "SF",
-            "age": 24,
+            "age": 25,
             "ht": "6-9",
             "wt": 212,
             "currentRatingColor": "#B0040C",
@@ -29753,7 +28423,7 @@
             "Jmp": 43,
             "Str": 49,
             "Sta": 83,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -29791,7 +28461,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 24,
@@ -29829,7 +28499,7 @@
             "Jmp": 43,
             "Str": 66,
             "Sta": 57,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 43,
@@ -29867,7 +28537,7 @@
             "Jmp": 15,
             "Str": 95,
             "Sta": 38,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 43,
@@ -29905,7 +28575,7 @@
             "Jmp": 34,
             "Str": 71,
             "Sta": 37,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -29943,7 +28613,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 30,
@@ -29981,7 +28651,7 @@
             "Jmp": 63,
             "Str": 60,
             "Sta": 67,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 34,
@@ -30019,7 +28689,7 @@
             "Jmp": 26,
             "Str": 81,
             "Sta": 47,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 20,
@@ -30057,7 +28727,7 @@
             "Jmp": 15,
             "Str": 76,
             "Sta": 76,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 4,
@@ -30095,7 +28765,7 @@
             "Jmp": 37,
             "Str": 57,
             "Sta": 24,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 40,
@@ -30133,7 +28803,7 @@
             "Jmp": 30,
             "Str": 57,
             "Sta": 54,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 0,
@@ -30171,7 +28841,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 15,
@@ -30209,7 +28879,7 @@
             "Jmp": 51,
             "Str": 29,
             "Sta": 98,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 5,
@@ -30247,7 +28917,7 @@
             "Jmp": 41,
             "Str": 45,
             "Sta": 67,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 24,
@@ -30285,7 +28955,7 @@
             "Jmp": 36,
             "Str": 51,
             "Sta": 26,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 32,
@@ -30323,7 +28993,7 @@
             "Jmp": 50,
             "Str": 77,
             "Sta": 49,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 4,
@@ -30361,7 +29031,7 @@
             "Jmp": 48,
             "Str": 59,
             "Sta": 63,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 18,
@@ -30399,7 +29069,7 @@
             "Jmp": 33,
             "Str": 40,
             "Sta": 48,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 1,
@@ -30437,7 +29107,7 @@
             "Jmp": 21,
             "Str": 67,
             "Sta": 69,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 52,
@@ -30475,7 +29145,7 @@
             "Jmp": 38,
             "Str": 67,
             "Sta": 56,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 27,
@@ -30513,7 +29183,7 @@
             "Jmp": 40,
             "Str": 36,
             "Sta": 51,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 18,
@@ -30551,7 +29221,7 @@
             "Jmp": 32,
             "Str": 54,
             "Sta": 70,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 28,
@@ -30589,7 +29259,7 @@
             "Jmp": 29,
             "Str": 36,
             "Sta": 69,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 6,
@@ -30627,7 +29297,7 @@
             "Jmp": 28,
             "Str": 57,
             "Sta": 67,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 32,
@@ -30665,7 +29335,7 @@
             "Jmp": 41,
             "Str": 65,
             "Sta": 57,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 33,
@@ -30703,7 +29373,7 @@
             "Jmp": 40,
             "Str": 68,
             "Sta": 60,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 22,
@@ -30741,7 +29411,7 @@
             "Jmp": 31,
             "Str": 57,
             "Sta": 40,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 55,
@@ -30779,7 +29449,7 @@
             "Jmp": 19,
             "Str": 72,
             "Sta": 70,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 24,
@@ -30817,7 +29487,7 @@
             "Jmp": 44,
             "Str": 44,
             "Sta": 47,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 22,
@@ -30855,7 +29525,7 @@
             "Jmp": 26,
             "Str": 48,
             "Sta": 36,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 0,
@@ -30893,7 +29563,7 @@
             "Jmp": 0,
             "Str": 0,
             "Sta": 0,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 44,
@@ -30931,7 +29601,7 @@
             "Jmp": 43,
             "Str": 95,
             "Sta": 24,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 52,
@@ -30969,6 +29639,44 @@
             "Jmp": 15,
             "Str": 83,
             "Sta": 59,
+            "rowClass": "row2"
+        },
+        {
+            "number": 22,
+            "name": "Rod Burcham",
+            "url": "./players/player1029.htm",
+            "file": "player1029.htm",
+            "pos": "SG",
+            "age": 22,
+            "ht": "6-8",
+            "wt": 215,
+            "currentRatingColor": "#B0040C",
+            "futureRatingColor": "#B0040C",
+            "currentRating": "28",
+            "futureRating": "34",
+            "lastTeam": "",
+            "lastTeamId": "",
+            "birdYears": 0,
+            "greed": "14",
+            "playForWinner": "31",
+            "loyalty": "95",
+            "happiness": "65",
+            "Ins": 6,
+            "Jps": 24,
+            "Fts": 59,
+            "3ps": 8,
+            "Hnd": 8,
+            "Pas": 4,
+            "Orb": 3,
+            "Drb": 3,
+            "Psd": 2,
+            "Prd": 6,
+            "Stl": 7,
+            "Blk": 3,
+            "Qkn": 58,
+            "Jmp": 22,
+            "Str": 45,
+            "Sta": 64,
             "rowClass": "row1"
         },
         {
@@ -31167,7 +29875,7 @@
             "url": "./players/player1035.htm",
             "file": "player1035.htm",
             "pos": "SG",
-            "age": 21,
+            "age": 22,
             "ht": "6-5",
             "wt": 227,
             "currentRatingColor": "#B0040C",
@@ -31580,196 +30288,6 @@
             "rowClass": "row1"
         },
         {
-            "number": 20,
-            "name": "George Gervin",
-            "url": "./players/player1046.htm",
-            "file": "player1046.htm",
-            "pos": "SG",
-            "age": 32,
-            "ht": "6-7",
-            "wt": 217,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "139",
-            "futureRating": "139",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
-            "birdYears": 1,
-            "greed": "15",
-            "playForWinner": "73",
-            "loyalty": "18",
-            "happiness": "35",
-            "Ins": 100,
-            "Jps": 75,
-            "Fts": 82,
-            "3ps": 27,
-            "Hnd": 44,
-            "Pas": 32,
-            "Orb": 36,
-            "Drb": 31,
-            "Psd": 38,
-            "Prd": 62,
-            "Stl": 45,
-            "Blk": 41,
-            "Qkn": 83,
-            "Jmp": 80,
-            "Str": 51,
-            "Sta": 86,
-            "rowClass": "row2"
-        },
-        {
-            "number": 26,
-            "name": "World B. Free",
-            "url": "./players/player1048.htm",
-            "file": "player1048.htm",
-            "pos": "SG",
-            "age": 29,
-            "ht": "6-3",
-            "wt": 195,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "141",
-            "futureRating": "141",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
-            "birdYears": 5,
-            "greed": "90",
-            "playForWinner": "23",
-            "loyalty": "55",
-            "happiness": "17",
-            "Ins": 100,
-            "Jps": 57,
-            "Fts": 72,
-            "3ps": 54,
-            "Hnd": 49,
-            "Pas": 46,
-            "Orb": 30,
-            "Drb": 16,
-            "Psd": 20,
-            "Prd": 71,
-            "Stl": 61,
-            "Blk": 15,
-            "Qkn": 98,
-            "Jmp": 99,
-            "Str": 43,
-            "Sta": 100,
-            "rowClass": "row1"
-        },
-        {
-            "number": 41,
-            "name": "Alton Lister",
-            "url": "./players/player1050.htm",
-            "file": "player1050.htm",
-            "pos": "C",
-            "age": 25,
-            "ht": "7-0",
-            "wt": 273,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "119",
-            "futureRating": "126",
-            "lastTeam": "FL Fart",
-            "lastTeamId": "roster27",
-            "birdYears": 1,
-            "greed": "84",
-            "playForWinner": "64",
-            "loyalty": "13",
-            "happiness": "52",
-            "Ins": 45,
-            "Jps": 21,
-            "Fts": 46,
-            "3ps": 0,
-            "Hnd": 29,
-            "Pas": 28,
-            "Orb": 83,
-            "Drb": 86,
-            "Psd": 64,
-            "Prd": 17,
-            "Stl": 27,
-            "Blk": 96,
-            "Qkn": 24,
-            "Jmp": 74,
-            "Str": 89,
-            "Sta": 75,
-            "rowClass": "row2"
-        },
-        {
-            "number": 11,
-            "name": "John Long",
-            "url": "./players/player1052.htm",
-            "file": "player1052.htm",
-            "pos": "SF",
-            "age": 27,
-            "ht": "6-5",
-            "wt": 213,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "131",
-            "futureRating": "135",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
-            "birdYears": 1,
-            "greed": "14",
-            "playForWinner": "3",
-            "loyalty": "34",
-            "happiness": "17",
-            "Ins": 87,
-            "Jps": 88,
-            "Fts": 87,
-            "3ps": 51,
-            "Hnd": 40,
-            "Pas": 39,
-            "Orb": 38,
-            "Drb": 28,
-            "Psd": 31,
-            "Prd": 71,
-            "Stl": 84,
-            "Blk": 20,
-            "Qkn": 81,
-            "Jmp": 49,
-            "Str": 58,
-            "Sta": 87,
-            "rowClass": "row1"
-        },
-        {
-            "number": 28,
-            "name": "Calvin Natt",
-            "url": "./players/player1055.htm",
-            "file": "player1055.htm",
-            "pos": "SF",
-            "age": 27,
-            "ht": "6-6",
-            "wt": 224,
-            "currentRatingColor": "#307B1A",
-            "futureRatingColor": "#307B1A",
-            "currentRating": "114",
-            "futureRating": "114",
-            "lastTeam": "AC Milan",
-            "lastTeamId": "roster9",
-            "birdYears": 5,
-            "greed": "67",
-            "playForWinner": "90",
-            "loyalty": "22",
-            "happiness": "36",
-            "Ins": 82,
-            "Jps": 56,
-            "Fts": 71,
-            "3ps": 1,
-            "Hnd": 40,
-            "Pas": 36,
-            "Orb": 58,
-            "Drb": 55,
-            "Psd": 39,
-            "Prd": 36,
-            "Stl": 38,
-            "Blk": 20,
-            "Qkn": 70,
-            "Jmp": 88,
-            "Str": 83,
-            "Sta": 91,
-            "rowClass": "row2"
-        },
-        {
             "number": 11,
             "name": "Brian Taylor",
             "url": "./players/player1057.htm",
@@ -31805,44 +30323,6 @@
             "Jmp": 27,
             "Str": 50,
             "Sta": 87,
-            "rowClass": "row1"
-        },
-        {
-            "number": 35,
-            "name": "Darryl Dawkins",
-            "url": "./players/player1058.htm",
-            "file": "player1058.htm",
-            "pos": "PF",
-            "age": 27,
-            "ht": "6-11",
-            "wt": 272,
-            "currentRatingColor": "#0052C3",
-            "futureRatingColor": "#0052C3",
-            "currentRating": "116",
-            "futureRating": "116",
-            "lastTeam": "Benfica",
-            "lastTeamId": "roster13",
-            "birdYears": 2,
-            "greed": "80",
-            "playForWinner": "58",
-            "loyalty": "11",
-            "happiness": "16",
-            "Ins": 68,
-            "Jps": 47,
-            "Fts": 59,
-            "3ps": 0,
-            "Hnd": 33,
-            "Pas": 30,
-            "Orb": 56,
-            "Drb": 67,
-            "Psd": 55,
-            "Prd": 18,
-            "Stl": 32,
-            "Blk": 75,
-            "Qkn": 25,
-            "Jmp": 97,
-            "Str": 95,
-            "Sta": 81,
             "rowClass": "row2"
         },
         {
@@ -31851,7 +30331,7 @@
             "url": "./players/player1059.htm",
             "file": "player1059.htm",
             "pos": "C",
-            "age": 33,
+            "age": 34,
             "ht": "6-11",
             "wt": 259,
             "currentRatingColor": "#EDBE30",
@@ -32352,8 +30832,8 @@
             "futureRatingColor": "#EDBE30",
             "currentRating": "91",
             "futureRating": "91",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "7",
             "playForWinner": "9",
@@ -32383,7 +30863,7 @@
             "url": "./players/player1078.htm",
             "file": "player1078.htm",
             "pos": "PG",
-            "age": 30,
+            "age": 31,
             "ht": "6-6",
             "wt": 205,
             "currentRatingColor": "#EDBE30",
@@ -32846,8 +31326,8 @@
             "futureRatingColor": "#EDBE30",
             "currentRating": "94",
             "futureRating": "94",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "14",
             "playForWinner": "64",
@@ -33074,8 +31554,8 @@
             "futureRatingColor": "#EDBE30",
             "currentRating": "92",
             "futureRating": "92",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "12",
             "playForWinner": "28",
@@ -33409,7 +31889,7 @@
             "url": "./players/player1106.htm",
             "file": "player1106.htm",
             "pos": "C",
-            "age": 28,
+            "age": 29,
             "ht": "7-0",
             "wt": 252,
             "currentRatingColor": "#EDBE30",
@@ -33644,8 +32124,8 @@
             "futureRatingColor": "#EDBE30",
             "currentRating": "92",
             "futureRating": "96",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "66",
             "playForWinner": "69",
@@ -34290,8 +32770,8 @@
             "futureRatingColor": "#F2662A",
             "currentRating": "73",
             "futureRating": "73",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 0,
             "greed": "93",
             "playForWinner": "31",
@@ -37399,7 +35879,7 @@
             "url": "./players/player1211.htm",
             "file": "player1211.htm",
             "pos": "PF",
-            "age": 24,
+            "age": 25,
             "ht": "7-0",
             "wt": 262,
             "currentRatingColor": "#B0040C",
@@ -38197,7 +36677,7 @@
             "url": "./players/player1232.htm",
             "file": "player1232.htm",
             "pos": "SF",
-            "age": 23,
+            "age": 24,
             "ht": "6-7",
             "wt": 229,
             "currentRatingColor": "#B0040C",
@@ -38306,6 +36786,44 @@
             "rowClass": "row2"
         },
         {
+            "number": 51,
+            "name": "Jerry Knight",
+            "url": "./players/player1235.htm",
+            "file": "player1235.htm",
+            "pos": "PF",
+            "age": 22,
+            "ht": "6-9",
+            "wt": 228,
+            "currentRatingColor": "#B0040C",
+            "futureRatingColor": "#B0040C",
+            "currentRating": "20",
+            "futureRating": "29",
+            "lastTeam": "",
+            "lastTeamId": "",
+            "birdYears": 0,
+            "greed": "96",
+            "playForWinner": "10",
+            "loyalty": "41",
+            "happiness": "65",
+            "Ins": 1,
+            "Jps": 4,
+            "Fts": 37,
+            "3ps": 9,
+            "Hnd": 16,
+            "Pas": 4,
+            "Orb": 6,
+            "Drb": 5,
+            "Psd": 9,
+            "Prd": 1,
+            "Stl": 3,
+            "Blk": 13,
+            "Qkn": 14,
+            "Jmp": 36,
+            "Str": 50,
+            "Sta": 13,
+            "rowClass": "row1"
+        },
+        {
             "number": 27,
             "name": "Nathanial Hernandez",
             "url": "./players/player1236.htm",
@@ -38341,7 +36859,7 @@
             "Jmp": 26,
             "Str": 72,
             "Sta": 54,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 27,
@@ -38379,7 +36897,7 @@
             "Jmp": 40,
             "Str": 54,
             "Sta": 65,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 13,
@@ -38417,7 +36935,7 @@
             "Jmp": 40,
             "Str": 81,
             "Sta": 50,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 41,
@@ -38455,7 +36973,7 @@
             "Jmp": 26,
             "Str": 80,
             "Sta": 48,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 32,
@@ -38493,7 +37011,7 @@
             "Jmp": 24,
             "Str": 54,
             "Sta": 49,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 51,
@@ -38531,7 +37049,7 @@
             "Jmp": 38,
             "Str": 75,
             "Sta": 49,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 42,
@@ -38569,7 +37087,7 @@
             "Jmp": 30,
             "Str": 69,
             "Sta": 29,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 44,
@@ -38607,7 +37125,7 @@
             "Jmp": 43,
             "Str": 68,
             "Sta": 47,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 41,
@@ -38645,7 +37163,7 @@
             "Jmp": 33,
             "Str": 65,
             "Sta": 30,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 52,
@@ -38683,7 +37201,7 @@
             "Jmp": 51,
             "Str": 67,
             "Sta": 53,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 52,
@@ -38721,7 +37239,7 @@
             "Jmp": 39,
             "Str": 71,
             "Sta": 34,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 42,
@@ -38759,7 +37277,7 @@
             "Jmp": 53,
             "Str": 40,
             "Sta": 21,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 44,
@@ -38797,7 +37315,7 @@
             "Jmp": 29,
             "Str": 81,
             "Sta": 32,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 52,
@@ -38835,7 +37353,7 @@
             "Jmp": 40,
             "Str": 63,
             "Sta": 44,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 45,
@@ -38873,7 +37391,7 @@
             "Jmp": 35,
             "Str": 80,
             "Sta": 29,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 34,
@@ -38911,7 +37429,7 @@
             "Jmp": 28,
             "Str": 62,
             "Sta": 31,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 42,
@@ -38949,7 +37467,7 @@
             "Jmp": 33,
             "Str": 57,
             "Sta": 58,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 35,
@@ -38987,7 +37505,7 @@
             "Jmp": 27,
             "Str": 39,
             "Sta": 14,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 50,
@@ -39025,7 +37543,7 @@
             "Jmp": 28,
             "Str": 67,
             "Sta": 38,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 30,
@@ -39063,7 +37581,7 @@
             "Jmp": 40,
             "Str": 65,
             "Sta": 48,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 52,
@@ -39101,7 +37619,7 @@
             "Jmp": 33,
             "Str": 78,
             "Sta": 42,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 42,
@@ -39139,7 +37657,7 @@
             "Jmp": 24,
             "Str": 56,
             "Sta": 42,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 30,
@@ -39177,7 +37695,7 @@
             "Jmp": 55,
             "Str": 84,
             "Sta": 46,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 30,
@@ -39185,7 +37703,7 @@
             "url": "./players/player1259.htm",
             "file": "player1259.htm",
             "pos": "PF",
-            "age": 21,
+            "age": 22,
             "ht": "6-10",
             "wt": 252,
             "currentRatingColor": "#B0040C",
@@ -39215,7 +37733,7 @@
             "Jmp": 30,
             "Str": 65,
             "Sta": 65,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 30,
@@ -39253,7 +37771,7 @@
             "Jmp": 46,
             "Str": 69,
             "Sta": 55,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 52,
@@ -39291,7 +37809,7 @@
             "Jmp": 38,
             "Str": 46,
             "Sta": 46,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 24,
@@ -39329,7 +37847,7 @@
             "Jmp": 36,
             "Str": 61,
             "Sta": 27,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 25,
@@ -39367,7 +37885,7 @@
             "Jmp": 41,
             "Str": 69,
             "Sta": 53,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 26,
@@ -39405,7 +37923,7 @@
             "Jmp": 27,
             "Str": 66,
             "Sta": 58,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 23,
@@ -39443,7 +37961,7 @@
             "Jmp": 39,
             "Str": 63,
             "Sta": 79,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 25,
@@ -39481,7 +37999,7 @@
             "Jmp": 29,
             "Str": 51,
             "Sta": 55,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 27,
@@ -39519,7 +38037,7 @@
             "Jmp": 32,
             "Str": 47,
             "Sta": 57,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 1,
@@ -39557,7 +38075,7 @@
             "Jmp": 71,
             "Str": 30,
             "Sta": 77,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 4,
@@ -39595,7 +38113,7 @@
             "Jmp": 46,
             "Str": 49,
             "Sta": 70,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 8,
@@ -39633,7 +38151,7 @@
             "Jmp": 31,
             "Str": 42,
             "Sta": 56,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 33,
@@ -39671,7 +38189,7 @@
             "Jmp": 48,
             "Str": 24,
             "Sta": 47,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 8,
@@ -39709,7 +38227,7 @@
             "Jmp": 32,
             "Str": 71,
             "Sta": 61,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 18,
@@ -39747,7 +38265,7 @@
             "Jmp": 30,
             "Str": 62,
             "Sta": 76,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 26,
@@ -39785,7 +38303,7 @@
             "Jmp": 36,
             "Str": 66,
             "Sta": 79,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 30,
@@ -39823,7 +38341,7 @@
             "Jmp": 49,
             "Str": 40,
             "Sta": 52,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 12,
@@ -39861,7 +38379,7 @@
             "Jmp": 40,
             "Str": 30,
             "Sta": 61,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 27,
@@ -39899,7 +38417,7 @@
             "Jmp": 47,
             "Str": 52,
             "Sta": 51,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 23,
@@ -39937,7 +38455,7 @@
             "Jmp": 18,
             "Str": 62,
             "Sta": 57,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 26,
@@ -39945,7 +38463,7 @@
             "url": "./players/player1279.htm",
             "file": "player1279.htm",
             "pos": "SG",
-            "age": 21,
+            "age": 22,
             "ht": "6-6",
             "wt": 210,
             "currentRatingColor": "#B0040C",
@@ -39975,7 +38493,7 @@
             "Jmp": 32,
             "Str": 45,
             "Sta": 49,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 1,
@@ -40013,7 +38531,7 @@
             "Jmp": 31,
             "Str": 55,
             "Sta": 45,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 26,
@@ -40051,7 +38569,7 @@
             "Jmp": 28,
             "Str": 49,
             "Sta": 65,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 24,
@@ -40089,7 +38607,7 @@
             "Jmp": 22,
             "Str": 69,
             "Sta": 63,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 21,
@@ -40127,7 +38645,7 @@
             "Jmp": 67,
             "Str": 47,
             "Sta": 21,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 7,
@@ -40165,7 +38683,7 @@
             "Jmp": 39,
             "Str": 54,
             "Sta": 27,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 30,
@@ -40203,7 +38721,7 @@
             "Jmp": 27,
             "Str": 76,
             "Sta": 45,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 5,
@@ -40241,7 +38759,7 @@
             "Jmp": 31,
             "Str": 66,
             "Sta": 66,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 30,
@@ -40279,7 +38797,7 @@
             "Jmp": 38,
             "Str": 72,
             "Sta": 36,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 26,
@@ -40317,7 +38835,7 @@
             "Jmp": 31,
             "Str": 47,
             "Sta": 35,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 32,
@@ -40355,7 +38873,7 @@
             "Jmp": 18,
             "Str": 62,
             "Sta": 41,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 52,
@@ -40393,7 +38911,7 @@
             "Jmp": 16,
             "Str": 70,
             "Sta": 40,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 12,
@@ -40431,7 +38949,7 @@
             "Jmp": 43,
             "Str": 36,
             "Sta": 72,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 30,
@@ -40469,7 +38987,7 @@
             "Jmp": 37,
             "Str": 52,
             "Sta": 74,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 23,
@@ -40507,7 +39025,7 @@
             "Jmp": 22,
             "Str": 56,
             "Sta": 69,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 30,
@@ -40545,7 +39063,7 @@
             "Jmp": 22,
             "Str": 59,
             "Sta": 38,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 10,
@@ -40583,7 +39101,7 @@
             "Jmp": 42,
             "Str": 43,
             "Sta": 75,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 32,
@@ -40621,7 +39139,7 @@
             "Jmp": 43,
             "Str": 43,
             "Sta": 76,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 10,
@@ -40659,7 +39177,7 @@
             "Jmp": 83,
             "Str": 50,
             "Sta": 87,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 23,
@@ -40697,7 +39215,7 @@
             "Jmp": 38,
             "Str": 57,
             "Sta": 69,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 22,
@@ -40735,7 +39253,7 @@
             "Jmp": 25,
             "Str": 70,
             "Sta": 62,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 4,
@@ -40773,7 +39291,7 @@
             "Jmp": 49,
             "Str": 58,
             "Sta": 79,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 20,
@@ -40811,7 +39329,7 @@
             "Jmp": 24,
             "Str": 49,
             "Sta": 69,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 28,
@@ -40849,7 +39367,7 @@
             "Jmp": 49,
             "Str": 62,
             "Sta": 67,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 24,
@@ -40887,7 +39405,7 @@
             "Jmp": 34,
             "Str": 65,
             "Sta": 69,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 21,
@@ -40925,7 +39443,7 @@
             "Jmp": 25,
             "Str": 45,
             "Sta": 68,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 35,
@@ -40963,7 +39481,7 @@
             "Jmp": 35,
             "Str": 63,
             "Sta": 72,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 25,
@@ -41001,7 +39519,7 @@
             "Jmp": 39,
             "Str": 47,
             "Sta": 100,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 35,
@@ -41039,7 +39557,7 @@
             "Jmp": 43,
             "Str": 29,
             "Sta": 44,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 22,
@@ -41047,7 +39565,7 @@
             "url": "./players/player1311.htm",
             "file": "player1311.htm",
             "pos": "SG",
-            "age": 20,
+            "age": 21,
             "ht": "6-2",
             "wt": 188,
             "currentRatingColor": "#B0040C",
@@ -41077,7 +39595,7 @@
             "Jmp": 61,
             "Str": 32,
             "Sta": 68,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 28,
@@ -41115,7 +39633,7 @@
             "Jmp": 49,
             "Str": 47,
             "Sta": 76,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 54,
@@ -41130,8 +39648,8 @@
             "futureRatingColor": "#307B1A",
             "currentRating": "104",
             "futureRating": "110",
-            "lastTeam": "Inter Milan",
-            "lastTeamId": "roster26",
+            "lastTeam": "Benfica",
+            "lastTeamId": "roster13",
             "birdYears": 1,
             "greed": "76",
             "playForWinner": "73",
@@ -41153,7 +39671,7 @@
             "Jmp": 75,
             "Str": 60,
             "Sta": 70,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 20,
@@ -41191,7 +39709,7 @@
             "Jmp": 47,
             "Str": 60,
             "Sta": 96,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 45,
@@ -41229,7 +39747,7 @@
             "Jmp": 56,
             "Str": 64,
             "Sta": 88,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 11,
@@ -41267,7 +39785,7 @@
             "Jmp": 83,
             "Str": 73,
             "Sta": 71,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 1,
@@ -41305,7 +39823,7 @@
             "Jmp": 63,
             "Str": 37,
             "Sta": 87,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 10,
@@ -41343,7 +39861,7 @@
             "Jmp": 47,
             "Str": 33,
             "Sta": 71,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 41,
@@ -41381,7 +39899,7 @@
             "Jmp": 35,
             "Str": 66,
             "Sta": 77,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 26,
@@ -41389,7 +39907,7 @@
             "url": "./players/player1322.htm",
             "file": "player1322.htm",
             "pos": "SG",
-            "age": 26,
+            "age": 27,
             "ht": "6-4",
             "wt": 210,
             "currentRatingColor": "#EDBE30",
@@ -41419,7 +39937,7 @@
             "Jmp": 27,
             "Str": 54,
             "Sta": 82,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 32,
@@ -41457,7 +39975,7 @@
             "Jmp": 27,
             "Str": 56,
             "Sta": 75,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 32,
@@ -41495,7 +40013,7 @@
             "Jmp": 79,
             "Str": 22,
             "Sta": 70,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 33,
@@ -41503,7 +40021,7 @@
             "url": "./players/player1328.htm",
             "file": "player1328.htm",
             "pos": "PG",
-            "age": 25,
+            "age": 26,
             "ht": "6-1",
             "wt": 181,
             "currentRatingColor": "#EDBE30",
@@ -41533,7 +40051,7 @@
             "Jmp": 69,
             "Str": 34,
             "Sta": 82,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 13,
@@ -41571,7 +40089,7 @@
             "Jmp": 49,
             "Str": 47,
             "Sta": 84,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 10,
@@ -41609,7 +40127,7 @@
             "Jmp": 30,
             "Str": 45,
             "Sta": 92,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 5,
@@ -41647,7 +40165,7 @@
             "Jmp": 45,
             "Str": 27,
             "Sta": 88,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 21,
@@ -41685,7 +40203,7 @@
             "Jmp": 28,
             "Str": 46,
             "Sta": 77,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 32,
@@ -41723,7 +40241,7 @@
             "Jmp": 53,
             "Str": 37,
             "Sta": 79,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 23,
@@ -41761,7 +40279,7 @@
             "Jmp": 12,
             "Str": 41,
             "Sta": 92,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 44,
@@ -41799,7 +40317,7 @@
             "Jmp": 55,
             "Str": 70,
             "Sta": 81,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 20,
@@ -41837,7 +40355,7 @@
             "Jmp": 41,
             "Str": 57,
             "Sta": 77,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 32,
@@ -41875,7 +40393,7 @@
             "Jmp": 18,
             "Str": 68,
             "Sta": 34,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 22,
@@ -41913,7 +40431,7 @@
             "Jmp": 33,
             "Str": 51,
             "Sta": 63,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 28,
@@ -41951,7 +40469,7 @@
             "Jmp": 39,
             "Str": 58,
             "Sta": 66,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 2,
@@ -41989,7 +40507,7 @@
             "Jmp": 58,
             "Str": 63,
             "Sta": 77,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 32,
@@ -42027,7 +40545,7 @@
             "Jmp": 31,
             "Str": 48,
             "Sta": 36,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 6,
@@ -42065,7 +40583,7 @@
             "Jmp": 38,
             "Str": 76,
             "Sta": 44,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 3,
@@ -42103,7 +40621,7 @@
             "Jmp": 38,
             "Str": 40,
             "Sta": 82,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 5,
@@ -42141,7 +40659,7 @@
             "Jmp": 44,
             "Str": 71,
             "Sta": 60,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 7,
@@ -42179,7 +40697,7 @@
             "Jmp": 29,
             "Str": 33,
             "Sta": 74,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 7,
@@ -42217,7 +40735,7 @@
             "Jmp": 35,
             "Str": 62,
             "Sta": 45,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 17,
@@ -42255,7 +40773,7 @@
             "Jmp": 39,
             "Str": 38,
             "Sta": 53,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 31,
@@ -42293,7 +40811,7 @@
             "Jmp": 66,
             "Str": 62,
             "Sta": 85,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 5,
@@ -42331,7 +40849,7 @@
             "Jmp": 47,
             "Str": 63,
             "Sta": 52,
-            "rowClass": "row2"
+            "rowClass": "row1"
         },
         {
             "number": 31,
@@ -42369,7 +40887,7 @@
             "Jmp": 35,
             "Str": 45,
             "Sta": 44,
-            "rowClass": "row1"
+            "rowClass": "row2"
         },
         {
             "number": 18,
@@ -42407,7 +40925,7 @@
             "Jmp": 50,
             "Str": 34,
             "Sta": 47,
-            "rowClass": "row2"
+            "rowClass": "row1"
         }
     ]
 }

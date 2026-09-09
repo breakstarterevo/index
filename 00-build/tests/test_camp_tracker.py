@@ -43,6 +43,21 @@ class CampTrackerMatchingTests(unittest.TestCase):
         self.assertEqual(payload["issues"][0]["type"], "duplicate_tracker_name")
         self.assertEqual(payload["issues"][0]["rows"], [2, 5])
 
+    def test_eddie_johnson_override_preserves_sheet_counts(self):
+        players = [player("Eddie Johnson", "player739"), player("Eddie Johnson", "player704")]
+        payload = MODULE.build_tracker_payload(players, [tracker_row("Eddie Johnson", "2", "1")])
+        self.assertEqual(set(payload["players"]), {"player704"})
+        self.assertEqual(payload["players"]["player704"]["regular"], 2)
+        self.assertEqual(payload["players"]["player704"]["rehab"], 1)
+        self.assertEqual(payload["issues"], [])
+
+    def test_missing_override_target_does_not_select_namesake(self):
+        payload = MODULE.build_tracker_payload(
+            [player("Eddie Johnson", "player739")], [tracker_row("Eddie Johnson")]
+        )
+        self.assertEqual(payload["players"], {})
+        self.assertEqual(payload["issues"][0]["type"], "player_not_in_database")
+
     def test_invalid_regular_count_is_flagged(self):
         payload = MODULE.build_tracker_payload([player("Larry Bird", "player1")], [tracker_row("Larry Bird", "4")])
         self.assertEqual(payload["issues"][0]["type"], "invalid_camp_count")
